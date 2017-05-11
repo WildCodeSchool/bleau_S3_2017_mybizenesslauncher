@@ -14,3 +14,8 @@ MBLBundle\Entity\TypeDeProjet:
             length: 255
             column: TypeDeProjet
     lifecycleCallbacks: {  }
+
+    oneToMany:
+        projets:
+            targetEntity: MBLBundle\Entity\Projet
+            mappedBy: typeDeProjet

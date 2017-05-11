@@ -12,3 +12,8 @@ MBLBundle\Entity\Matching:
         date:
             type: datetime
     lifecycleCallbacks: {  }
+
+    oneToMany:
+        projets:
+            targetEntity: MBLBundle\Entity\Projet
+

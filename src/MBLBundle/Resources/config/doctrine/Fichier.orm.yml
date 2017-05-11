@@ -13,3 +13,8 @@ MBLBundle\Entity\Fichier:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+
+    manyToOne:
+        projet:
+            targetEntity: MBLBundle\Entity\Projet
