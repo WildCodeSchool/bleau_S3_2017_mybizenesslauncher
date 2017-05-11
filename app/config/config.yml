@@ -65,10 +65,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
+    transport: gmail
+    host: stmp.gmail.com
+    username: mybizenesslauncher.noreply@gmail.com
+    password: jecode4bleau
     spool: { type: memory }
 
 fos_user:
@@ -76,5 +76,17 @@ fos_user:
     firewall_name: main
     user_class: MBLBundle\Entity\Profil
     from_email:
-        address: "%mailer_user%"
-        sender_name: "%mailer_user%"
+        address: mybizenesslauncher.noreply@gmail.com
+        sender_name: MBL
+
+    registration:
+        confirmation:
+            enabled: true
+            template:   '@FOSUser/Registration/email.txt.twig'
+
+    resetting:
+        email:
+            template:    '@FOSUser/Resetting/email.txt.twig'
+
+    service:
+        mailer: fos_user.mailer.twig_swift

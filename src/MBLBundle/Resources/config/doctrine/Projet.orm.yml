@@ -28,3 +28,27 @@ MBLBundle\Entity\Projet:
         dateCreation:
             type: datetime
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        secteur:
+            targetEntity: MBLBundle\Entity\Secteur
+            inversedBy: projets
+
+        typeDeProjet:
+            targetEntity: MBLBundle\Entity\TypeDeProjet
+            inversedBy: projets
+
+        matching:
+            targetEntity: MBLBundle\Entity\Matching
+
+
+    oneToMany:
+        fichiers:
+            targetEntity: MBLBundle\Entity\Fichier
+
+
+
+    manyToMany:
+        profilRecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
+            inversedBy: projets
