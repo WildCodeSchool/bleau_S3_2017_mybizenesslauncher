@@ -1,0 +1,29 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+
+
+{% block subject %} Activation du compte réussie!
+{%- autoescape false -%}
+
+{{ 'registration.email.subject'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
+{%- endautoescape -%}
+{% endblock %}
+
+{% block body_text %}
+Bonjour {{ user.username }} !
+
+Votre compte a bien été activé, bienvenue chez nous! {{ confirmationUrl }}
+
+MyBiznessLauncher Team
+{% autoescape false %}
+{{ 'registration.email.message'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}) }}
+{% endautoescape %}
+{% endblock %}
+
+
+
+
+
+{% block body_html %}               {% endblock %}
