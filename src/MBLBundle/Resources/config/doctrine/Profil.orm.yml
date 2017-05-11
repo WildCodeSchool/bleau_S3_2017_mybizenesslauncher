@@ -1,0 +1,30 @@
+MBLBundle\Entity\Profil:
+    type: entity
+    table: fos_user
+    repositoryClass: MBLBundle\Repository\ProfilRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+            nullable: true
+        prenom:
+            type: string
+            length: 255
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        linkedIn:
+            type: string
+            length: 255
+            nullable: true
+        localisation:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }

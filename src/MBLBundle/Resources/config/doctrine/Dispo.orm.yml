@@ -1,0 +1,15 @@
+MBLBundle\Entity\Dispo:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\DispoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dispo:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

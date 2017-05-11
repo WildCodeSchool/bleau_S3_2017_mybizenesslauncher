@@ -1,0 +1,15 @@
+MBLBundle\Entity\Fichier:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\FichierRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        photo:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+MBLBundle\Entity\Projet:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ProjetRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        description:
+            type: text
+        siteInternet:
+            type: string
+            length: 255
+            nullable: true
+        ebustaUrl:
+            type: string
+            length: 255
+            nullable: true
+        localisation:
+            type: string
+            length: 255
+        dateCreation:
+            type: datetime
+    lifecycleCallbacks: {  }

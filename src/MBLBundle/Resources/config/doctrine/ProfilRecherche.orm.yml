@@ -1,0 +1,30 @@
+MBLBundle\Entity\ProfilRecherche:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ProfilRechercheRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        disponibleETQ:
+            type: string
+            length: 255
+        competences:
+            type: string
+            length: 255
+        ou:
+            type: string
+            length: 255
+        invest:
+            type: string
+            length: 255
+        dispo:
+            type: string
+            length: 255
+        metier:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
