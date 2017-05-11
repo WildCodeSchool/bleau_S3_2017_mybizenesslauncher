@@ -1,0 +1,15 @@
+MBLBundle\Entity\Invest:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\InvestRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        invest:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

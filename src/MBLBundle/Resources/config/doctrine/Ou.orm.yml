@@ -1,0 +1,15 @@
+MBLBundle\Entity\Ou:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\OuRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        ou:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

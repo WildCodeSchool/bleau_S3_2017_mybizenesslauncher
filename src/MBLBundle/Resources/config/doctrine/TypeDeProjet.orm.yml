@@ -1,0 +1,16 @@
+MBLBundle\Entity\TypeDeProjet:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\TypeDeProjetRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        typeDeProjet:
+            type: string
+            length: 255
+            column: TypeDeProjet
+    lifecycleCallbacks: {  }

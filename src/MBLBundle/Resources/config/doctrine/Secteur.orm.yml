@@ -1,0 +1,15 @@
+MBLBundle\Entity\Secteur:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\SecteurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        secteurActivite:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

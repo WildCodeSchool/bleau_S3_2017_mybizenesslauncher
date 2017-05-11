@@ -1,0 +1,15 @@
+MBLBundle\Entity\ETQ:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ETQRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        etq:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

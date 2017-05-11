@@ -1,0 +1,14 @@
+MBLBundle\Entity\Matching:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\MatchingRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+    lifecycleCallbacks: {  }

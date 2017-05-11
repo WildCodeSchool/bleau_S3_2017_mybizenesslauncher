@@ -1,0 +1,15 @@
+MBLBundle\Entity\Metier:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\MetierRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        metier:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
