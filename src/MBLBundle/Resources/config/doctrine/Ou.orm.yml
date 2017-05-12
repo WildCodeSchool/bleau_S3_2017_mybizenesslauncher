@@ -13,3 +13,16 @@ MBLBundle\Entity\Ou:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+
+
+    oneToOne:
+        profilrecherche:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
+            mappedBy: ou
+
+
+    oneToMany:
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: ou

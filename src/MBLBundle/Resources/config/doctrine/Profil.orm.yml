@@ -28,3 +28,39 @@ MBLBundle\Entity\Profil:
             length: 255
             nullable: true
     lifecycleCallbacks: {  }
+
+
+    manyToOne:
+        etq:
+            targetEntity: MBLBundle\Entity\ETQ
+            inversedBy: profils
+
+        dispo:
+            targetEntity: MBLBundle\Entity\Dispo
+            inversedBy: profils
+
+        ou:
+            targetEntity: MBLBundle\Entity\Ou
+            inversedBy: profils
+
+        metier:
+            targetEntity: MBLBundle\Entity\Metier
+            inversedBy: profils
+
+
+
+
+    manyToMany:
+        competences:
+            targetEntity: MBLBundle\Entity\Competences
+            inversedBy: profils
+
+        matchings:
+            targetEntity: MBLBundle\Entity\Matching
+            mappedBy: projets
+
+    oneToOne:
+        invest:
+            targetEntity: MBLBundle\Entity\Invest
+            investedBy: profil
+

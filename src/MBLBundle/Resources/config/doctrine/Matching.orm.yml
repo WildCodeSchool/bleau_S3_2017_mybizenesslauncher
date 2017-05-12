@@ -13,7 +13,11 @@ MBLBundle\Entity\Matching:
             type: datetime
     lifecycleCallbacks: {  }
 
-    oneToMany:
+    manyToMany:
         projets:
             targetEntity: MBLBundle\Entity\Projet
+            inversedBy: matchings
 
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            inversedBy: matchings

@@ -13,6 +13,7 @@ class Profil extends BaseUser
     // Generated code
 
 
+
     /**
      * @var string
      */
@@ -38,16 +39,41 @@ class Profil extends BaseUser
      */
     private $localisation;
 
+    /**
+     * @var \MBLBundle\Entity\Invest
+     */
+    private $invest;
 
     /**
-     * Get id
-     *
-     * @return int
+     * @var \MBLBundle\Entity\ETQ
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $etq;
+
+    /**
+     * @var \MBLBundle\Entity\Dispo
+     */
+    private $dispo;
+
+    /**
+     * @var \MBLBundle\Entity\Ou
+     */
+    private $ou;
+
+    /**
+     * @var \MBLBundle\Entity\Metier
+     */
+    private $metier;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $competences;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $matchings;
+
 
     /**
      * Set nom
@@ -168,5 +194,192 @@ class Profil extends BaseUser
     {
         return $this->localisation;
     }
-}
 
+    /**
+     * Set invest
+     *
+     * @param \MBLBundle\Entity\Invest $invest
+     *
+     * @return Profil
+     */
+    public function setInvest(\MBLBundle\Entity\Invest $invest = null)
+    {
+        $this->invest = $invest;
+
+        return $this;
+    }
+
+    /**
+     * Get invest
+     *
+     * @return \MBLBundle\Entity\Invest
+     */
+    public function getInvest()
+    {
+        return $this->invest;
+    }
+
+    /**
+     * Set etq
+     *
+     * @param \MBLBundle\Entity\ETQ $etq
+     *
+     * @return Profil
+     */
+    public function setEtq(\MBLBundle\Entity\ETQ $etq = null)
+    {
+        $this->etq = $etq;
+
+        return $this;
+    }
+
+    /**
+     * Get etq
+     *
+     * @return \MBLBundle\Entity\ETQ
+     */
+    public function getEtq()
+    {
+        return $this->etq;
+    }
+
+    /**
+     * Set dispo
+     *
+     * @param \MBLBundle\Entity\Dispo $dispo
+     *
+     * @return Profil
+     */
+    public function setDispo(\MBLBundle\Entity\Dispo $dispo = null)
+    {
+        $this->dispo = $dispo;
+
+        return $this;
+    }
+
+    /**
+     * Get dispo
+     *
+     * @return \MBLBundle\Entity\Dispo
+     */
+    public function getDispo()
+    {
+        return $this->dispo;
+    }
+
+    /**
+     * Set ou
+     *
+     * @param \MBLBundle\Entity\Ou $ou
+     *
+     * @return Profil
+     */
+    public function setOu(\MBLBundle\Entity\Ou $ou = null)
+    {
+        $this->ou = $ou;
+
+        return $this;
+    }
+
+    /**
+     * Get ou
+     *
+     * @return \MBLBundle\Entity\Ou
+     */
+    public function getOu()
+    {
+        return $this->ou;
+    }
+
+    /**
+     * Set metier
+     *
+     * @param \MBLBundle\Entity\Metier $metier
+     *
+     * @return Profil
+     */
+    public function setMetier(\MBLBundle\Entity\Metier $metier = null)
+    {
+        $this->metier = $metier;
+
+        return $this;
+    }
+
+    /**
+     * Get metier
+     *
+     * @return \MBLBundle\Entity\Metier
+     */
+    public function getMetier()
+    {
+        return $this->metier;
+    }
+
+    /**
+     * Add competence
+     *
+     * @param \MBLBundle\Entity\Competences $competence
+     *
+     * @return Profil
+     */
+    public function addCompetence(\MBLBundle\Entity\Competences $competence)
+    {
+        $this->competences[] = $competence;
+
+        return $this;
+    }
+
+    /**
+     * Remove competence
+     *
+     * @param \MBLBundle\Entity\Competences $competence
+     */
+    public function removeCompetence(\MBLBundle\Entity\Competences $competence)
+    {
+        $this->competences->removeElement($competence);
+    }
+
+    /**
+     * Get competences
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCompetences()
+    {
+        return $this->competences;
+    }
+
+    /**
+     * Add matching
+     *
+     * @param \MBLBundle\Entity\Matching $matching
+     *
+     * @return Profil
+     */
+    public function addMatching(\MBLBundle\Entity\Matching $matching)
+    {
+        $this->matchings[] = $matching;
+
+        return $this;
+    }
+
+    /**
+     * Remove matching
+     *
+     * @param \MBLBundle\Entity\Matching $matching
+     */
+    public function removeMatching(\MBLBundle\Entity\Matching $matching)
+    {
+        $this->matchings->removeElement($matching);
+    }
+
+    /**
+     * Get matchings
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMatchings()
+    {
+        return $this->matchings;
+    }
+}

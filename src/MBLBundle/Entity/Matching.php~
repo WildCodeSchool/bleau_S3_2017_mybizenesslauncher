@@ -1,0 +1,11 @@
+<?php
+
+namespace MBLBundle\Entity;
+
+/**
+ * Matching
+ */
+class Matching
+{
+
+}

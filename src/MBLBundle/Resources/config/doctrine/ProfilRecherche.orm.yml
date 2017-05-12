@@ -8,32 +8,35 @@ MBLBundle\Entity\ProfilRecherche:
             id: true
             generator:
                 strategy: AUTO
-    fields:
-        disponibleETQ:
-            type: string
-            length: 255
-        competences:
-            type: string
-            length: 255
-        ou:
-            type: string
-            length: 255
-        invest:
-            type: string
-            length: 255
-        dispo:
-            type: string
-            length: 255
-        metier:
-            type: string
-            length: 255
-    lifecycleCallbacks: {  }
 
 
     manyToMany:
         projets:
             targetEntity: MBLBundle\Entity\Projet
-            mappedBy: profilRecherches
+            mappedBy: profilsrecherches
+
+        competences:
+            targetEntity: MBLBundle\Entity\Competences
+            inversedBy: profilsrecherches
 
 
+    oneToOne:
+        etq:
+            targetEntity: MBLBundle\Entity\ETQ
+            inversedBy: profilrecherche
 
+        ou:
+            targetEntity: MBLBundle\Entity\Ou
+            inversedBy: profilrecherche
+
+        invest:
+            targetEntity: MBLBundle\Entity\Invest
+            inversedBy: profilrecherche
+
+        dispo:
+            targetEntity: MBLBundle\Entity\Dispo
+            inversedBy: profilrecherche
+
+        metier:
+            targetEntity: MBLBundle\Entity\Metier
+            inversedBy: profilrecherche

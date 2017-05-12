@@ -13,3 +13,14 @@ MBLBundle\Entity\Metier:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+
+    oneToOne:
+        profilrecherche:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
+            mappedBy: metier
+
+    oneToMany:
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: metier

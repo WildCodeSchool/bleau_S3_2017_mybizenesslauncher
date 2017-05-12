@@ -14,3 +14,11 @@ MBLBundle\Entity\Competences:
             length: 255
     lifecycleCallbacks: {  }
 
+    manyToMany:
+        profilsrecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
+            mappedBy: competences
+
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: competences
