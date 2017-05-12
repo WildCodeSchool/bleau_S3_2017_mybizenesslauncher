@@ -7,8 +7,11 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
+
+ 
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -42,11 +45,39 @@ class Projet
      */
     private $dateCreation;
 
+    /**
+     * @var \MBLBundle\Entity\Secteur
+     */
+    private $secteur;
+
+    /**
+     * @var \MBLBundle\Entity\TypeDeProjet
+     */
+    private $typeDeProjet;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profilsrecherches;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $matchings;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->matchings = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -196,5 +227,120 @@ class Projet
     {
         return $this->dateCreation;
     }
-}
 
+    /**
+     * Set secteur
+     *
+     * @param \MBLBundle\Entity\Secteur $secteur
+     *
+     * @return Projet
+     */
+    public function setSecteur(\MBLBundle\Entity\Secteur $secteur = null)
+    {
+        $this->secteur = $secteur;
+
+        return $this;
+    }
+
+    /**
+     * Get secteur
+     *
+     * @return \MBLBundle\Entity\Secteur
+     */
+    public function getSecteur()
+    {
+        return $this->secteur;
+    }
+
+    /**
+     * Set typeDeProjet
+     *
+     * @param \MBLBundle\Entity\TypeDeProjet $typeDeProjet
+     *
+     * @return Projet
+     */
+    public function setTypeDeProjet(\MBLBundle\Entity\TypeDeProjet $typeDeProjet = null)
+    {
+        $this->typeDeProjet = $typeDeProjet;
+
+        return $this;
+    }
+
+    /**
+     * Get typeDeProjet
+     *
+     * @return \MBLBundle\Entity\TypeDeProjet
+     */
+    public function getTypeDeProjet()
+    {
+        return $this->typeDeProjet;
+    }
+
+    /**
+     * Add profilsrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilsrecherch
+     *
+     * @return Projet
+     */
+    public function addProfilsrecherch(\MBLBundle\Entity\ProfilRecherche $profilsrecherch)
+    {
+        $this->profilsrecherches[] = $profilsrecherch;
+
+        return $this;
+    }
+
+    /**
+     * Remove profilsrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilsrecherch
+     */
+    public function removeProfilsrecherch(\MBLBundle\Entity\ProfilRecherche $profilsrecherch)
+    {
+        $this->profilsrecherches->removeElement($profilsrecherch);
+    }
+
+    /**
+     * Get profilsrecherches
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfilsrecherches()
+    {
+        return $this->profilsrecherches;
+    }
+
+    /**
+     * Add matching
+     *
+     * @param \MBLBundle\Entity\Matching $matching
+     *
+     * @return Projet
+     */
+    public function addMatching(\MBLBundle\Entity\Matching $matching)
+    {
+        $this->matchings[] = $matching;
+
+        return $this;
+    }
+
+    /**
+     * Remove matching
+     *
+     * @param \MBLBundle\Entity\Matching $matching
+     */
+    public function removeMatching(\MBLBundle\Entity\Matching $matching)
+    {
+        $this->matchings->removeElement($matching);
+    }
+
+    /**
+     * Get matchings
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMatchings()
+    {
+        return $this->matchings;
+    }
+}

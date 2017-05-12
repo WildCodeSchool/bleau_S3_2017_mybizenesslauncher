@@ -18,3 +18,6 @@ MBLBundle\Entity\Fichier:
     manyToOne:
         projet:
             targetEntity: MBLBundle\Entity\Projet
+
+        profil:
+            targetEntity: MBLBundle\Entity\Profil

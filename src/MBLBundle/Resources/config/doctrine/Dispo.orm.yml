@@ -13,3 +13,14 @@ MBLBundle\Entity\Dispo:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
+
+    oneToOne:
+        profilrecherche:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
+            mappedBy: dispo
+
+    oneToMany:
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: dispo
