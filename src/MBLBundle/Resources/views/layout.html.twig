@@ -6,7 +6,7 @@
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">Bonjour  {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a></li>
+                <li><a href="#!">Bonjour  {{app.user.username}}</a></li>
                 <li><a href="#!">Mon profil</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">Mes projets</a></li>
