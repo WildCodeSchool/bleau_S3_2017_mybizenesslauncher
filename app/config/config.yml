@@ -11,7 +11,6 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
     translator: ~
     secret: '%secret%'
     router:
@@ -65,11 +64,16 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
+
     transport: gmail
     host: stmp.gmail.com
     encryption: ssl
     username: mybizenesslauncher.noreply@gmail.com
     password: jecode4bleau
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
     spool: { type: memory }
 
 fos_user:
@@ -96,4 +100,4 @@ fos_user:
             template:    '@FOSUser/Resetting/email.txt.twig'
 
     service:
-        mailer: fos_user.mailer.twig_swift
+        mailer: fos_user.mailer.default
