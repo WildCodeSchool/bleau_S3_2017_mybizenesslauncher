@@ -1,3 +1,7 @@
 mbl_homepage:
     path:     /
     defaults: { _controller: MBLBundle:Default:index }
+
+userHomepage:
+    path: /userHomepage
+    defaults: { _controller: MBLBundle:Default:userHomepage }

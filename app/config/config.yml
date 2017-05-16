@@ -7,7 +7,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: fr
+    locale: en
 
 framework:
     #esi: ~
@@ -67,6 +67,7 @@ doctrine:
 swiftmailer:
     transport: gmail
     host: stmp.gmail.com
+    encryption: ssl
     username: mybizenesslauncher.noreply@gmail.com
     password: jecode4bleau
     spool: { type: memory }
@@ -76,16 +77,22 @@ fos_user:
     firewall_name: main
     user_class: MBLBundle\Entity\Profil
     from_email:
-        address: mybizenesslauncher.noreply@gmail.com
-        sender_name: MBL
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
 
     registration:
         confirmation:
             enabled: true
+            from-email:
+                address: mybizenesslauncher.noreply@gmail.com
+                sender_name:  MyBuzinessLauncher Registration
             template:   '@FOSUser/Registration/email.txt.twig'
 
     resetting:
         email:
+            from-email:
+                address: mybizenesslauncher.noreply@gmail.com
+                sender_name:  MyBuzinessLauncher Resetting
             template:    '@FOSUser/Resetting/email.txt.twig'
 
     service:
