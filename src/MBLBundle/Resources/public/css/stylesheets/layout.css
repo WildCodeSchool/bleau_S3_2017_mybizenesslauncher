@@ -1,45 +1,52 @@
 /*
-Variable globale
+Error: Invalid CSS after "...t-align: center": expected "{", was ";"
+        on line 20 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/layout.scss
 
-CONSTANTE
+15:   //border-top: 3px solid white;
+16:   //border-bottom: 3px solid white;
+17:   height: 120px;
+18:   background-color: $Colorblue;
+19: <<<<<<< HEAD
+20:   text-align: center;
+21: =======
+22:   color: White;
+23:   text-align: center;
+24:   padding-top: 5px;
+25: >>>>>>> dev
+
+Backtrace:
+/var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/layout.scss:20
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:665:in `block'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:658:in `ruleset'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
+/var/lib/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/var/lib/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/var/lib/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
 */
-/*
-Variable globale
-
-BALISE
-*/
-/* line 16, ../sass/global.scss */
-h1 {
-  size: 1.5em;
-  color: white;
-}
-
-/* line 21, ../sass/global.scss */
-h2 {
-  color: white;
-}
-
-/*
-Layout.html.twig
-*/
-/* line 5, ../sass/layout.scss */
-.header {
-  background-color: #f0f0f0;
-}
-
-/* line 9, ../sass/layout.scss */
-.footer {
-  background-color: #4b494b;
-}
-
-/* line 13, ../sass/layout.scss */
-.bandeau {
-  height: 120px;
-  background-color: #98d4e1;
-  text-align: center;
-}
-
-/* line 22, ../sass/layout.scss */
-.bandeauH2 {
-  color: White;
-}
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...t-align: center\": expected \"{\", was \";\"\A         on line 20 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/layout.scss\A \A 15:   //border-top: 3px solid white;\A 16:   //border-bottom: 3px solid white;\A 17:   height: 120px;\A 18:   background-color: $Colorblue;\A 19: <<<<<<< HEAD\A 20:   text-align: center;\A 21: =======\A 22:   color: White;\A 23:   text-align: center;\A 24:   padding-top: 5px;\A 25: >>>>>>> dev"; }
