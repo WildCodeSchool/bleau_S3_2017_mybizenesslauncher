@@ -1,23 +1,20 @@
-/* line 4, ../sass/global.scss */
-.header {
-  background-color: lightskyblue;
-}
+/*
+Variable globale
 
-/* line 8, ../sass/global.scss */
-.footer {
-  background-color: lightskyblue;
-}
+CONSTANTE
+*/
+/*
+Variable globale
 
-/* line 12, ../sass/global.scss */
-.bandeau {
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
-  height: 120px;
-  background-color: cornflowerblue;
-}
-
-/* line 19, ../sass/global.scss */
-.bandeauH2 {
+BALISE
+*/
+/* line 16, ../sass/global.scss */
+h1 {
+  size: 1.5em;
   color: white;
-  text-align: center;
+}
+
+/* line 21, ../sass/global.scss */
+h2 {
+  color: white;
 }

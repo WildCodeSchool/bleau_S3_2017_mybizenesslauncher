@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheetsLayout %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/layout.css') }}"/>
+{% endblock %}
 {% block title %} MyBizenessLauncher {% endblock %}
 {% block header %}
 
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-            <ul id="dropdown1" class="dropdown-content">
+            <ul id="dropdown1" class="dropdown-content header">
                 <li><a href="#!">Bonjour  {{app.user.username}}</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">Mon profil</a></li>

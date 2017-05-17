@@ -1,0 +1,46 @@
+/*
+Variable globale
+
+CONSTANTE
+*/
+/*
+Variable globale
+
+BALISE
+*/
+/* line 16, ../sass/global.scss */
+h1 {
+  size: 1.5em;
+  color: white;
+}
+
+/* line 21, ../sass/global.scss */
+h2 {
+  color: white;
+}
+
+/*
+Layout.html.twig
+*/
+/* line 5, ../sass/layout.scss */
+.header {
+  color: #98d4e1;
+  background-color: #f0f0f0;
+}
+
+/* line 10, ../sass/layout.scss */
+.footer {
+  background-color: #4b494b;
+}
+
+/* line 14, ../sass/layout.scss */
+.bandeau {
+  height: 120px;
+  background-color: #98d4e1;
+}
+
+/* line 22, ../sass/layout.scss */
+.bandeauH2 {
+  color: White;
+  text-align: center;
+}
