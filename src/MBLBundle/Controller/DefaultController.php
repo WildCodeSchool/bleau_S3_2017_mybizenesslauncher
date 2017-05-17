@@ -38,7 +38,7 @@ class DefaultController extends Controller
             ->add('dispo', ChoiceType::class)
             ->add('ou', ChoiceType::class)
             ->add('invest', ChoiceType::class)
-            ->add('fichier', FileType::class) // ajouter Option Multiple à FyleType
+            ->add('fichier', FileType::class)
             ->add('valider', SubmitType::class)
             ->add('publierProjet', SubmitType::class)
         ;
