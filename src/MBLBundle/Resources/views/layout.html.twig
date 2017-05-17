@@ -1,12 +1,88 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} MyBizenessLauncher {% endblock %}
-{% header header %}
+{% block header %}
+
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Bonjour  {{app.user.username}}</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Mon profil</a></li>
+                <li><a href="#!">Mes projets</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+
+            </ul>
+            <nav>
+                <div class="nav-wrapper header">
+                    <a href="#!" class="brand-logo">MyBizenessLauncher.com</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#">Parcourir les projets</a></li>
+                        <li><a href="#">Parcourir les profils</a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        {% else %}
+
+            <nav>
+                <div class="nav-wrapper header">
+                    <a href="#" class="brand-logo">MyBizenessLauncher.com</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="">Parcourir les projets</a></li>
+                        <li><a href="">Parcourir les profils</a></li>
+                        <li> <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
+        {% endif %}
+
 
 
 {% endblock %}
 
+{% block bandeau %}
+
+    <div class=" bandeau">
+        <div class="col s12">
+            {% block titreH2 %} <h2>Ecrivez votre titre!</h2> {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+
 
 {% block footer %}
+    <footer class="page-footer footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Liens utiles</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">A propos</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Mention légales</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Presse</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Les projets</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Les profils</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Conseils</a></li>
+                    </ul>
+                </div>
+                <div class="col l6 s12">
+                    <h5 class="white-text">Suivez MyBizenessLauncher.com</h5>
+                    <p class="grey-text text-lighten-4"><Facebook></Facebook></p>
+                </div>
 
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
