@@ -6,7 +6,9 @@ CONSTANTE
 $Colorblue : #98d4e1;
 $Colorgrey : #f0f0f0;
 $ColorDarkGrey: #4b494b;
+$ColorWhite : white;
 $BoxShadow: 2px 2px 3px grey;
+
 /*
 Variable globale
 
@@ -18,6 +20,19 @@ h1
   size: 1.5em;
   color: white;
 }
+
+/*
+  Condition pour color font H2
+@function colorH2($bkgColor) {
+  $colorH2: '';
+
+  @if ($bkgColor == 'bleu') {
+    $colorH2: white;
+  } @else if ($bkgColor == 'gris') {
+    $colorH2: black;
+  }
+  @return $colorH2;
+*/
 h2
 {
   color:white;
@@ -25,4 +40,7 @@ h2
 body{
   background-color: $Colorgrey;
 }
+
+
+
 
