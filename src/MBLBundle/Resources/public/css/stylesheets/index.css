@@ -8,7 +8,7 @@ Variable globale
 
 BALISE
 */
-/* line 17, ../sass/global.scss */
+/* line 18, ../sass/global.scss */
 h1 {
   size: 1.5em;
   color: white;
@@ -26,12 +26,12 @@ h1 {
   }
   @return $colorH2;
 */
-/* line 35, ../sass/global.scss */
+/* line 36, ../sass/global.scss */
 h2 {
   color: white;
 }
 
-/* line 39, ../sass/global.scss */
+/* line 40, ../sass/global.scss */
 body {
   background-color: #f0f0f0;
 }
@@ -65,6 +65,7 @@ h1 {
 .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
+  box-shadow: 2px 2px 3px grey;
 }
 /* line 28, ../sass/index.scss */
 .btn_bandeau_homepage:hover {

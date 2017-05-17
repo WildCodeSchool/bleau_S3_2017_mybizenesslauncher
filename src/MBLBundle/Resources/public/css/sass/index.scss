@@ -24,7 +24,7 @@ h1 {
 .btn_bandeau_homepage {
   background-color : $ColorWhite;
   color : $Colorblue;
-  // box-shadow: $boxShadow;
+  box-shadow: $BoxShadow;
     &:hover {
       background-color : $ColorWhite;
     }
