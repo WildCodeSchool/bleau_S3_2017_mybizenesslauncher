@@ -3,8 +3,9 @@ Variable globale
 
 CONSTANTE
 */
-$Colorblue : #98d4e1;
+  $Colorblue : #98d4e1;
 $Colorgrey : #f0f0f0;
+$ColorDarkGrey: #4b494b;
 
 /*
 Variable globale
@@ -14,6 +15,7 @@ BALISE
 
 h1
 {
+  size: 1.5em;
   color: white;
 }
 
@@ -28,8 +30,15 @@ h1
     $colorH2: black;
   }
   @return $colorH2;
-}
 */
+h2
+{
+  color:white;
+}
+body{
+  background-color: $Colorgrey;
+}
+
 
 
 

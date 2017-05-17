@@ -8,8 +8,9 @@ Variable globale
 
 BALISE
 */
-/* line 15, ../sass/global.scss */
+/* line 16, ../sass/global.scss */
 h1 {
+  size: 1.5em;
   color: white;
 }
 
@@ -24,31 +25,42 @@ h1 {
     $colorH2: black;
   }
   @return $colorH2;
-}
 */
+/* line 34, ../sass/global.scss */
+h2 {
+  color: white;
+}
+
+/* line 38, ../sass/global.scss */
+body {
+  background-color: #f0f0f0;
+}
+
 /*
 Layout.html.twig
 */
 /* line 5, ../sass/layout.scss */
 .header {
-  background-color: #98d4e1;
+  color: #98d4e1;
+  background-color: #f0f0f0;
 }
 
-/* line 9, ../sass/layout.scss */
+/* line 10, ../sass/layout.scss */
 .footer {
-  background-color: #98d4e1;
+  background-color: #4b494b;
 }
 
-/* line 13, ../sass/layout.scss */
+/* line 14, ../sass/layout.scss */
 .bandeau {
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
   height: 120px;
-  background-color: cornflowerblue;
+  background-color: #98d4e1;
+  color: White;
+  text-align: center;
+  padding-top: 5px;
 }
 
-/* line 21, ../sass/layout.scss */
+/* line 25, ../sass/layout.scss */
 .bandeauH2 {
-  color: #f0f0f0;
+  color: White;
   text-align: center;
 }

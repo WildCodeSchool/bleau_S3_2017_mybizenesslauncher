@@ -8,8 +8,9 @@ Variable globale
 
 BALISE
 */
-/* line 15, ../sass/global.scss */
+/* line 16, ../sass/global.scss */
 h1 {
+  size: 1.5em;
   color: white;
 }
 
@@ -24,5 +25,13 @@ h1 {
     $colorH2: black;
   }
   @return $colorH2;
-}
 */
+/* line 34, ../sass/global.scss */
+h2 {
+  color: white;
+}
+
+/* line 38, ../sass/global.scss */
+body {
+  background-color: #f0f0f0;
+}
