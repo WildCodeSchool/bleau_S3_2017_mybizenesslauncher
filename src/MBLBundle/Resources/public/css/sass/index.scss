@@ -4,8 +4,12 @@
 .bandeau_homepage {
   width: 100%;
   margin: 0;
-  padding: 0;
   background : $Colorblue;
+  color : $ColorWhite;
+  padding-top : 2000px;
+    h2 {
+      font-size: 1.5em;
+    }
 
 }
 .container {
@@ -15,4 +19,26 @@
 }
 h1 {
   width: 100%;
+}
+
+.btn_bandeau_homepage {
+  background-color : $ColorWhite;
+  color : $Colorblue;
+  // box-shadow: $boxShadow;
+    &:hover {
+      background-color : $ColorWhite;
+    }
+    &:focus {
+      background-color :$ColorWhite;
+    }
+}
+
+.Outils{
+  padding-top: 70px;
+}
+.btn_eBusta {
+  margin-top: 40px;
+}
+.Finance {
+  margin-top: 30px;
 }
