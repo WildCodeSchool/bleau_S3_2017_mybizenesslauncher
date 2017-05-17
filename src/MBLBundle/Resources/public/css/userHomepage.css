@@ -1,4 +1,18 @@
 .bandeau {
     border: 1px solid red;
+    width: 100%;
+    text-align: center;
+}
 
+.btnlink {
+    text-align: center;
+    height:100px;
+}
+
+.btn{
+    float:right;
+}
+
+.btnG{
+    float:left;
 }
