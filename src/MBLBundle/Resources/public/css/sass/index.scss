@@ -1,8 +1,10 @@
+@import "global";
+
 .bandeau_homepage {
   width: 100%;
   margin: 0;
   padding: 0;
-  background : #98d4e1;
+  background : $Colorblue;
 }
 .container {
   width: 100%;

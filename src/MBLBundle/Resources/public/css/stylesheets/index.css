@@ -1,4 +1,25 @@
-/* line 1, ../sass/index.scss */
+/*
+Variable globale
+
+CONSTANTE
+*/
+/*
+Variable globale
+
+BALISE
+*/
+/* line 16, ../sass/global.scss */
+h1 {
+  size: 1.5em;
+  color: white;
+}
+
+/* line 21, ../sass/global.scss */
+h2 {
+  color: white;
+}
+
+/* line 3, ../sass/index.scss */
 .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -6,14 +27,14 @@
   background: #98d4e1;
 }
 
-/* line 7, ../sass/index.scss */
+/* line 9, ../sass/index.scss */
 .container {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* line 12, ../sass/index.scss */
+/* line 14, ../sass/index.scss */
 h1 {
   width: 100%;
 }
