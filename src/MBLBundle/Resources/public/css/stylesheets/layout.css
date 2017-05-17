@@ -46,7 +46,12 @@ Layout.html.twig
   padding-top: 5px;
 }
 
-/* line 26, ../sass/layout.scss */
+/* line 25, ../sass/layout.scss */
+.color {
+  color: #98d4e1;
+}
+
+/* line 29, ../sass/layout.scss */
 .bandeauH2 {
   color: White;
 }

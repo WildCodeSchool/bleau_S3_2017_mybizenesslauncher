@@ -8,20 +8,20 @@
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content header">
-                <li><a href="#!">Bonjour  {{app.user.username}}</a></li>
+                <li><a class="color" href="#">Bonjour  {{app.user.username}}</a></li>
                 <li class="divider"></li>
-                <li><a href="{{ path('userHomepage') }}">Mon compte</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+                <li><a class="color" href="{{ path('userHomepage') }}">Mon compte</a></li>
+                <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
 
             </ul>
             <nav>
                 <div class="nav-wrapper header">
-                    <a href="{{ path('mbl_homepage') }}" class="brand-logo grey-text">MyBizenessLauncher.com</a>
+                    <a href="{{ path('mbl_homepage') }}" class="color">MyBizenessLauncher.com</a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="grey-text" href="#">Parcourir les projets</a></li>
-                        <li><a class="grey-text" href="#">Parcourir les profils</a></li>
+                        <li><a class="color" href="#">Parcourir les projets</a></li>
+                        <li><a class="color" href="#">Parcourir les profils</a></li>
                         <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-button grey-text" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
+                        <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -29,11 +29,11 @@
 
             <nav>
                 <div class="nav-wrapper header">
-                    <a href="#" class="brand-logo grey-text">MyBizenessLauncher.com</a>
+                    <a href="#" class="color">MyBizenessLauncher.com</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a class="grey-text" href="">Parcourir les projets</a></li>
-                        <li><a class="grey-text" href="">Parcourir les profils</a></li>
-                        <li> <a class="grey-text" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                        <li><a class="color" href="">Parcourir les projets</a></li>
+                        <li><a class="color" href="">Parcourir les profils</a></li>
+                        <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
                     </ul>
                 </div>
             </nav>
