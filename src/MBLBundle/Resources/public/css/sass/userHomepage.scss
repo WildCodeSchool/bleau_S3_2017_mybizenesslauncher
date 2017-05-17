@@ -1,0 +1,33 @@
+@import "global";
+
+.UHP{
+  width:100%;
+  padding-top:100px;
+}
+
+.btnlink {
+  text-align: center;
+  height:100px;
+}
+
+.btnlink1{
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: $Colorblue;
+  &:hover
+  {
+    background-color: $Colorblue;
+    box-shadow: $BoxShadow;
+  }
+  &:focus{
+    background-color: $Colorblue;
+  }
+}
+
+//.btn:hover{
+//  background-color: $Colorblue;
+//
+//}
+

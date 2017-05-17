@@ -1,23 +1,29 @@
-* {
+/*
+Variable globale
 
-}
-.header
+CONSTANTE
+*/
+  $Colorblue : #98d4e1;
+$Colorgrey : #f0f0f0;
+$ColorDarkGrey: #4b494b;
+$BoxShadow: 2px 2px 3px grey;
+/*
+Variable globale
+
+BALISE
+*/
+
+h1
 {
-  background-color:lightskyblue;
-}
-.footer
-{
-  background-color: lightskyblue;
-}
-.bandeau
-{
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
-  height: 120px;
-  background-color: cornflowerblue;
-}
-.bandeauH2
-{
+  size: 1.5em;
   color: white;
-  text-align: center;
 }
+h2
+{
+
+  color:white;
+}
+body{
+  background-color: $Colorgrey;
+}
+

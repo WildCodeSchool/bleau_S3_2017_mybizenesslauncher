@@ -1,0 +1,56 @@
+/*
+Variable globale
+
+CONSTANTE
+*/
+/*
+Variable globale
+
+BALISE
+*/
+/* line 16, ../sass/global.scss */
+h1 {
+  size: 1.5em;
+  color: white;
+}
+
+/* line 21, ../sass/global.scss */
+h2 {
+  color: white;
+}
+
+/* line 26, ../sass/global.scss */
+body {
+  background-color: #f0f0f0;
+}
+
+/* line 3, ../sass/userHomepage.scss */
+.UHP {
+  width: 100%;
+  padding-top: 100px;
+}
+
+/* line 8, ../sass/userHomepage.scss */
+.btnlink {
+  text-align: center;
+  height: 100px;
+}
+
+/* line 13, ../sass/userHomepage.scss */
+.btnlink1 {
+  margin-bottom: 40px;
+}
+
+/* line 17, ../sass/userHomepage.scss */
+.btn {
+  background-color: #98d4e1;
+}
+/* line 19, ../sass/userHomepage.scss */
+.btn:hover {
+  background-color: #98d4e1;
+  box-shadow: 2px 2px 3px grey;
+}
+/* line 24, ../sass/userHomepage.scss */
+.btn:focus {
+  background-color: #98d4e1;
+}

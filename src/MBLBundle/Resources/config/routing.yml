@@ -6,3 +6,6 @@ mbl_addProjet:
     path:     /ajout-projet
     defaults: { _controller: MBLBundle:Default:addProjet }
 
+userHomepage:
+    path: /userHomepage
+    defaults: { _controller: MBLBundle:Default:userHomepage }
