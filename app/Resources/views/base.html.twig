@@ -9,12 +9,13 @@
         <!-- Favicon internet -->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <!-- CSS Global -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/global.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/global.css') }}" />
         {% block stylesheets %}
         {% endblock %}
     </head>
     <body>
         {% block header %}{% endblock %}
+        {% block bandeau %}{% endblock %}
         {% block body %}{% endblock %}
         {% block footer %}{% endblock %}
 

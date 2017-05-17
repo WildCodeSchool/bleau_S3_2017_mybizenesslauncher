@@ -1,8 +1,46 @@
 {% extends '@MBL/layout.html.twig' %}
 
 {% block stylesheets %} 
-   <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/index.css') }}" />
+   <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/index.css') }}" />
 {% endblock %}
- {% block body %}
+{% block body %}
 
+    <div>
+        <div class="row">
+            <div class="col s12 bandeau_homepage">
+                <div class="col s5">
+                    <h2>Pour les porteurs de projet<br/></h2>
+                    <p>Tu peux créer ton projet, le décrire et détailler les
+                        profi ls de cofondateurs et associés que tu cherches.
+                        Ils auront alors accès à la description du projet et
+                        pourront te contacter.<br/></p>
+                    <h2>Pour ceux qui cherchent un projet à intégrer<br/></h2>
+                    <p>Tu es un véritable startupper en herbe, tu as des
+                        compétences à mettre au profi t d’un projet existant,
+                        parcours les projets pour trouver celui que tu pourrais
+                        aider à porter au sommet!</p>
+                </div>
+                <div class="col s2">
+                    <p>Trouve sur MyStartupTools.com
+
+                        tous les outils pour t’aider à lancer
+
+                        ton activité.</p>
+                </div>
+                <div class="col s5">
+                    <p>Avec ses enveloppes publiques, E-busta.com vous
+
+                        propose de réaliser des campagnes de Crowdfunding
+
+                        de don en contrepartie pour vous aider à fi nancer
+
+                        votre projet. Seule une commission de 4% du montant
+
+                        collecté sera appliquée, faisant de E-busta le site de
+
+                        Crowdfunding le moins cher du marché.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
