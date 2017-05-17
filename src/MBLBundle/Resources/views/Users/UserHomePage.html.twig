@@ -1,45 +1,34 @@
 {% extends '@MBL/layout.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/userHomepage.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/userHomepage.css') }}" />
 {% endblock %}
 
 {% block body %}
-
-{#<div class="container userhomepage">#}
-
-{% block bandeau %}
-    <div class="row bandeau">
-        <div class="col s12 ">
-           {% block titreH2 %} <h2>Ecrivez votre titre!</h2> {% endblock %}
-        </div>
-    </div>
-{% endblock %}
-
-
+<div class="UHP">
     <div class="row btnlink">
-        <div class="col s6 ">
+        <div class="col s3 offset-s3">
             <a class="waves-effect waves-light btn" href="#">Gérer mon profil</a>
         </div>
-        <div class="col s6">
-            <a class="waves-effect waves-light btnG" href="#">Voir mon profil public</a>
+        <div class="col s3">
+            <a class="waves-effect waves-light btn" href="#">Voir mon profil public</a>
         </div>
      </div>
 
     <div class="row btnlink">
-        <div class="col s6">
+        <div class="col s3 offset-s3">
             <a class="waves-effect waves-light btn" href="#">Créer un projet</a>
         </div>
-        <div class="col s6">
-            <a class="waves-effect waves-light btnG" href="#">Gérer mes projets</a>
+        <div class="col s3">
+            <a class="waves-effect waves-light btn" href="#">Gérer mes projets</a>
         </div>
     </div>
 
-    <div class="row btnlink">
-        <div class="col s6">
+    <div class="row btnlink btnlink1 ">
+        <div class="col s3 offset-s3">
             <a class="waves-effect waves-light btn" href="#">Mes discussions</a>
         </div>
     </div>
-
+</div>
 
 {% endblock %}
