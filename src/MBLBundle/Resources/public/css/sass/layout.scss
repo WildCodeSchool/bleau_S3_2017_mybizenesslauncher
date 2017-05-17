@@ -1,0 +1,25 @@
+@import 'global';
+/*
+Layout.html.twig
+*/
+.header
+{
+  background-color:$Colorblue;
+}
+.footer
+{
+  background-color:$Colorblue;
+}
+.bandeau
+{
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  height: 120px;
+  background-color: cornflowerblue;
+}
+
+.bandeauH2
+{
+  color: $Colorgrey;
+  text-align: center;
+}

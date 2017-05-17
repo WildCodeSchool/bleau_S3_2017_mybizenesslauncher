@@ -1,6 +1,7 @@
 /*
 Error: Invalid CSS after "  color": expected "{", was ": ;"
         on line 22 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/global.scss
+        from line 1 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/layout.scss
 
 17:   color: white;
 18: }
@@ -12,6 +13,7 @@ Error: Invalid CSS after "  color": expected "{", was ": ;"
 
 Backtrace:
 /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/global.scss:22
+/var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/layout.scss:1
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
@@ -28,6 +30,31 @@ Backtrace:
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:312:in `to_tree'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `block in with_import'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `with_import'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:20:in `render'
 /var/lib/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
 /var/lib/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
 /var/lib/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
@@ -47,4 +74,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  color\": expected \"{\", was \": ;\"\A         on line 22 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/global.scss\A \A 17:   color: white;\A 18: }\A 19: h2\A 20: {\A 21:   @if(background-color)\A 22:   color: ;\A 23: }"; }
+  content: "Error: Invalid CSS after \"  color\": expected \"{\", was \": ;\"\A         on line 22 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/global.scss\A         from line 1 of /var/www/html/bleau_S3_2017_mybizenesslauncher/src/MBLBundle/Resources/public/css/sass/layout.scss\A \A 17:   color: white;\A 18: }\A 19: h2\A 20: {\A 21:   @if(background-color)\A 22:   color: ;\A 23: }"; }
