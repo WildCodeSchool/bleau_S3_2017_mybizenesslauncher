@@ -1,0 +1,21 @@
+/* line 1, ../sass/userHomepage.scss */
+.UHP {
+  width: 100%;
+  padding-top: 100px;
+}
+
+/* line 6, ../sass/userHomepage.scss */
+.btnlink {
+  text-align: center;
+  height: 100px;
+}
+
+/* line 11, ../sass/userHomepage.scss */
+.btnlink1 {
+  margin-bottom: 40px;
+}
+
+/* line 15, ../sass/userHomepage.scss */
+.btn {
+  background-color: #98d4e1;
+}

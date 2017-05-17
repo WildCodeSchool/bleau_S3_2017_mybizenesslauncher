@@ -19,6 +19,11 @@ h2 {
   color: white;
 }
 
+/* line 26, ../sass/global.scss */
+body {
+  background-color: #f0f0f0;
+}
+
 /*
 Layout.html.twig
 */
@@ -37,9 +42,12 @@ Layout.html.twig
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
+  color: White;
+  text-align: center;
+  padding-top: 5px;
 }
 
-/* line 22, ../sass/layout.scss */
+/* line 25, ../sass/layout.scss */
 .bandeauH2 {
   color: White;
   text-align: center;

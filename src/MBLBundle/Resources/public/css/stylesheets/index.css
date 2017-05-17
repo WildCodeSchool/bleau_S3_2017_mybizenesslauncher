@@ -19,6 +19,11 @@ h2 {
   color: white;
 }
 
+/* line 26, ../sass/global.scss */
+body {
+  background-color: #f0f0f0;
+}
+
 /* line 3, ../sass/index.scss */
 .bandeau_homepage {
   width: 100%;

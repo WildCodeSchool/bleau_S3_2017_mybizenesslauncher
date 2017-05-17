@@ -1,0 +1,35 @@
+{% extends '@MBL/layout.html.twig' %}
+{% block titreH2 %} <h2>Mon compte</h2> {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/userHomepage.css') }}" />
+{% endblock %}
+
+{% block body %}
+<div class="UHP">
+    <div class="row btnlink">
+        <div class="col s3 offset-s3">
+            <a class="waves-effect waves-light btn" href="#">Gérer mon profil</a>
+        </div>
+        <div class="col s3">
+            <a class="waves-effect waves-light btn" href="#">Voir mon profil public</a>
+        </div>
+     </div>
+
+    <div class="row btnlink">
+        <div class="col s3 offset-s3">
+            <a class="waves-effect waves-light btn" href="#">Créer un projet</a>
+        </div>
+        <div class="col s3">
+            <a class="waves-effect waves-light btn" href="#">Gérer mes projets</a>
+        </div>
+    </div>
+
+    <div class="row btnlink btnlink1 ">
+        <div class="col s3 offset-s3">
+            <a class="waves-effect waves-light btn" href="#">Mes discussions</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
