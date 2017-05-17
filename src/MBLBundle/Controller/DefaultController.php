@@ -2,8 +2,16 @@
 
 namespace MBLBundle\Controller;
 
+use MBLBundle\Entity\Projet;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\DateTimeType;
+
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use function Sodium\add;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -21,32 +29,22 @@ class DefaultController extends Controller
     public function addProjetAction(Request $request)
     {
         $projet = new Projet();
+        $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
+        $form->handleRequest($request);
 
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $projet);
-        $formBuilder
-            ->add('titre', TextType::class)
-            ->add('description', TextareaType::class)
-            ->add('siteInternet', UrlType::class)
-            ->add('ebustaUrl', UrlType::class)
-            ->add('localisation', TextType::class)
-            ->add('dateCreation', DateTimeType::class)
-            ->add('secteur', ChoiceType::class)
-            ->add('typeDeProjet', ChoiceType::class)
-            ->add('profilsrecherches', ChoiceType::class)
-            ->add('etq', ChoiceType::class)
-            ->add('competences', CollectionType::class)
-            ->add('dispo', ChoiceType::class)
-            ->add('ou', ChoiceType::class)
-            ->add('invest', ChoiceType::class)
-            ->add('fichier', FileType::class)
-            ->add('valider', SubmitType::class)
-            ->add('publierProjet', SubmitType::class)
-        ;
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $em = $getDoctrine()->$getManager();
+            $em->persist($projet);
+            $em->flush();
 
-        $formAddProjet = $formBuilder->getForm();
+            return $this->redirectToRoute('/');
 
-        return $this->render('MBLBundle:Default:addProjet.html.twig',
-            array('formAddProjet' => $formAddProjet->createView(),
-            ))
+        }
+
+
+        return $this->render('MBLBundle:Users:addProjet.html.twig',
+            array('form' => $form->createView(),
+            ));
     }
 }

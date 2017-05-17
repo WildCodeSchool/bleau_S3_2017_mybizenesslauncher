@@ -1,3 +1,8 @@
 mbl_homepage:
     path:     /
     defaults: { _controller: MBLBundle:Default:index }
+
+mbl_addProjet:
+    path:     /ajout-projet
+    defaults: { _controller: MBLBundle:Default:addProjet }
+

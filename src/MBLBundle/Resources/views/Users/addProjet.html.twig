@@ -1,7 +1,11 @@
 {# src/MBLBundle/Resources/views/Users/addProjet.html.twig #}
 
-<h3>Nouveau Projet</h3>
+{% extends 'MBLBundle::layout.html.twig' %}
 
+{% block titreH2 %}<h2>Nouveau Projet</h2>{% endblock %}
+
+{% block body %}
 <div class="form_projet">
     {{ form(form) }}
 </div>
+{% endblock %}
