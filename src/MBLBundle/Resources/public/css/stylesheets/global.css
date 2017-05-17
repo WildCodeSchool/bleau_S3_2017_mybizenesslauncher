@@ -1,9 +1,23 @@
-/* line 1, ../sass/global.scss */
+/* line 4, ../sass/global.scss */
 .header {
+  background-color: lightskyblue;
+}
+
+/* line 8, ../sass/global.scss */
+.footer {
+  background-color: lightskyblue;
+}
+
+/* line 12, ../sass/global.scss */
+.bandeau {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  height: 120px;
   background-color: cornflowerblue;
 }
 
-/* line 5, ../sass/global.scss */
-.footer {
-  background-color: cornflowerblue;
+/* line 19, ../sass/global.scss */
+.bandeauH2 {
+  color: white;
+  text-align: center;
 }
