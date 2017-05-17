@@ -12,3 +12,17 @@ BALISE
 h1 {
   color: white;
 }
+
+/*
+  Condition pour color font H2
+@function colorH2($bkgColor) {
+  $colorH2: '';
+
+  @if ($bkgColor == 'bleu') {
+    $colorH2: white;
+  } @else if ($bkgColor == 'gris') {
+    $colorH2: black;
+  }
+  @return $colorH2;
+}
+*/

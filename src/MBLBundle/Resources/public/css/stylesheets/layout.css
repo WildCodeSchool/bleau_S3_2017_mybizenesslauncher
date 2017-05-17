@@ -14,6 +14,19 @@ h1 {
 }
 
 /*
+  Condition pour color font H2
+@function colorH2($bkgColor) {
+  $colorH2: '';
+
+  @if ($bkgColor == 'bleu') {
+    $colorH2: white;
+  } @else if ($bkgColor == 'gris') {
+    $colorH2: black;
+  }
+  @return $colorH2;
+}
+*/
+/*
 Layout.html.twig
 */
 /* line 5, ../sass/layout.scss */
