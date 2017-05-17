@@ -1,3 +1,5 @@
+@import "global";
+
 .UHP{
   width:100%;
   padding-top:100px;
@@ -12,6 +14,20 @@
   margin-bottom: 40px;
 }
 
-.btn{
-  background-color:#98d4e1;
+.btn {
+  background-color: $Colorblue;
+  &:hover
+  {
+    background-color: $Colorblue;
+    box-shadow: $BoxShadow;
+  }
+  &:focus{
+    background-color: $Colorblue;
+  }
 }
+
+//.btn:hover{
+//  background-color: $Colorblue;
+//
+//}
+
