@@ -3,13 +3,21 @@
 }
 .header
 {
-    background-color:cornflowerblue;
+    background-color:lightskyblue;
 }
 .footer
 {
-    background-color: cornflowerblue;
+    background-color: lightskyblue;
 }
 .bandeau
 {
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    height: 120px;
     background-color: cornflowerblue;
+}
+.bandeauH2
+{
+color: white;
+ text-align: center;
 }
