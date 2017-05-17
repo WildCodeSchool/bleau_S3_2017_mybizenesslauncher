@@ -4,7 +4,6 @@ Layout.html.twig
 */
 .header
 {
-  color: $Colorblue;
   background-color:$Colorgrey;
 }
 .footer
@@ -17,11 +16,12 @@ Layout.html.twig
   //border-bottom: 3px solid white;
   height: 120px;
   background-color: $Colorblue;
+  text-align: center;
 }
 
 .bandeauH2
 {
   color: White;
-  text-align: center;
+
 }
 

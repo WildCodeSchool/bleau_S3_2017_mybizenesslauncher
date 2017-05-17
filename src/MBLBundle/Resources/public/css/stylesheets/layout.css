@@ -24,23 +24,22 @@ Layout.html.twig
 */
 /* line 5, ../sass/layout.scss */
 .header {
-  color: #98d4e1;
   background-color: #f0f0f0;
 }
 
-/* line 10, ../sass/layout.scss */
+/* line 9, ../sass/layout.scss */
 .footer {
   background-color: #4b494b;
 }
 
-/* line 14, ../sass/layout.scss */
+/* line 13, ../sass/layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
+  text-align: center;
 }
 
 /* line 22, ../sass/layout.scss */
 .bandeauH2 {
   color: White;
-  text-align: center;
 }
