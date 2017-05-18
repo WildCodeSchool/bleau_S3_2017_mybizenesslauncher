@@ -10,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Collections\Collection;
-
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use function Sodium\add;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -33,24 +32,48 @@ class DefaultController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function addProjetAction(Request $request)
     {
         $projet = new Projet();
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        $em = $getDoctrine()->$getManager();
+        $secteur = $em->getRepository('MBLBundle:Secteur')->findAll();
+
+        $formSecteur = $this->createForm('MBLBundle\Form\SecteurType', $secteur);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $em = $getDoctrine()->$getManager();
             $em->persist($projet);
             $em->flush();
 
             return $this->redirectToRoute('/');
-
         }
-
-
         return $this->render('MBLBundle:Users:addProjet.html.twig',
+            array('form' => $form->createView(),
+                'form_secteur' =>  $formSecteur->createView()
+            ));
+    }
+
+    public function addProfilAction(Request $request)
+    {
+        $profil = new Profil();
+        $form = $this->createForm('MBLBundle\Form\ProfilType', $profil);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $getDoctrine()->$getManager();
+            $em->persist($profil);
+            $em->flush();
+
+            return $this->redirectToRoute('/');
+        }
+        return $this->render('MBLBundle:Users:addProfil.html.twig',
             array('form' => $form->createView(),
             ));
     }

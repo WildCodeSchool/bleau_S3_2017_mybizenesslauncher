@@ -13,7 +13,18 @@ class ProfilType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('description')->add('linkedIn')->add('localisation')->add('invest')->add('etq')->add('dispo')->add('ou')->add('metier')->add('competences')->add('matchings');
+        $builder->add('nom')
+            ->add('prenom')
+            ->add('description')
+            ->add('linkedIn')
+            ->add('localisation')
+            ->add('invest')
+            ->add('etq')
+            ->add('dispo')
+            ->add('ou')
+            ->add('metier')
+            ->add('competences')
+            ->add('matchings');
     }
     
     /**
