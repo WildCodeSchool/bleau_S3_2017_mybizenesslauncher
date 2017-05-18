@@ -55,12 +55,12 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Competences
             inversedBy: profils
 
-        matchings:
+        matching:
             targetEntity: MBLBundle\Entity\Matching
             mappedBy: projets
 
     oneToOne:
         invest:
             targetEntity: MBLBundle\Entity\Invest
-            investedBy: profil
+            inversedBy: profil
 

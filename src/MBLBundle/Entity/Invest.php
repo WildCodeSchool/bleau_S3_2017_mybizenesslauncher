@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class Invest
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,21 @@ class Invest
      */
     private $invest;
 
+    /**
+     * @var \MBLBundle\Entity\ProfilRecherche
+     */
+    private $profilrecherche;
+
+    /**
+     * @var \MBLBundle\Entity\Profil
+     */
+    private $profil;
+
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -51,16 +62,6 @@ class Invest
     {
         return $this->invest;
     }
-    /**
-     * @var \MBLBundle\Entity\ProfilRecherche
-     */
-    private $profilrecherche;
-
-    /**
-     * @var \MBLBundle\Entity\Profil
-     */
-    private $profil;
-
 
     /**
      * Set profilrecherche

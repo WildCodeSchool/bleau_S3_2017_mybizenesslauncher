@@ -20,4 +20,4 @@ MBLBundle\Entity\Matching:
 
         profils:
             targetEntity: MBLBundle\Entity\Profil
-            inversedBy: matchings
+            inversedBy: matching
