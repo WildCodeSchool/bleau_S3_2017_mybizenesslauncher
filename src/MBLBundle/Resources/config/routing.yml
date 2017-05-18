@@ -3,9 +3,9 @@ mbl_homepage:
     defaults: { _controller: MBLBundle:User:index }
 
 admin:
-    resource: "@MBLBundle/Resources/config/routing/admin.yml"
+    resource: "@MBLBundle/Resources/config/routing_admin.yml"
     prefix:   /admin
 
 user:
-    resource: "@MBLBundle/Resources/config/routing/user.yml"
+    resource: "@MBLBundle/Resources/config/routing_user.yml"
     prefix:   /

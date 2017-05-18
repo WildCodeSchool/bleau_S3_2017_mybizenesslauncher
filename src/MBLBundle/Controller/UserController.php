@@ -12,14 +12,19 @@ class UserController extends Controller
 
     }
 
-    public function userHomepageAction()
+    public function homepageProfilAction()
     {
-        return $this->render('@MBL/Users/UserHomePage.html.twig');
+        return $this->render('@MBL/Users/homepageProfil.html.twig');
 
     }
-    public function createProfilAction()
+    public function editProfilAction()
     {
-        return $this->render('@MBL/Users/createProfil.html.twig');
+        return $this->render('@MBL/Users/editProfil.html.twig');
+
+    }
+    public function showProfilAction()
+    {
+        return $this->render('@MBL/Users/showProfil.html.twig');
 
     }
 }
