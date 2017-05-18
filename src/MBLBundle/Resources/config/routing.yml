@@ -1,6 +1,6 @@
 mbl_homepage:
     path:     /
-    defaults: { _controller: MBLBundle:Default:index }
+    defaults: { _controller: MBLBundle:User:index }
 
 mbl_addProjet:
     path:     /ajout-projet
@@ -13,3 +13,12 @@ mbl_addProfil:
 userHomepage:
     path: /userHomepage
     defaults: { _controller: MBLBundle:Default:userHomepage }
+
+admin:
+    resource: "@MBLBundle/Resources/config/routing_admin.yml"
+    prefix:   /admin
+
+user:
+    resource: "@MBLBundle/Resources/config/routing_user.yml"
+    prefix:   /
+
