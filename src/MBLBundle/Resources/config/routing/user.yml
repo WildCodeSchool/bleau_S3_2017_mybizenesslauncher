@@ -1,0 +1,7 @@
+userHomepage:
+    path: /userHomepage
+    defaults: { _controller: MBLBundle:User:userHomepage }
+
+createProfil:
+    path: /createProfil
+    defaults: { _controller: MBLBundle:User:createProfil }

@@ -4,7 +4,7 @@ namespace MBLBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class UserController extends Controller
 {
     public function indexAction()
     {
@@ -15,6 +15,11 @@ class DefaultController extends Controller
     public function userHomepageAction()
     {
         return $this->render('@MBL/Users/UserHomePage.html.twig');
+
+    }
+    public function createProfilAction()
+    {
+        return $this->render('@MBL/Users/createProfil.html.twig');
 
     }
 }
