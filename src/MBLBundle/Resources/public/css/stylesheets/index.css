@@ -3,10 +3,15 @@ Variable globale
 
 CONSTANTE
 */
+/* line 12, ../sass/global.scss */
+img {
+  width: 100%;
+}
+
 /*
 Font
 */
-/* line 17, ../sass/global.scss */
+/* line 20, ../sass/global.scss */
 * {
   text-align: justify;
 }
@@ -16,7 +21,7 @@ Variable globale
 
 BALISE
 */
-/* line 27, ../sass/global.scss */
+/* line 30, ../sass/global.scss */
 h1 {
   size: 1.5em;
   color: white;
@@ -34,12 +39,12 @@ h1 {
   }
   @return $colorH2;
 */
-/* line 45, ../sass/global.scss */
+/* line 48, ../sass/global.scss */
 h2 {
   color: white;
 }
 
-/* line 49, ../sass/global.scss */
+/* line 52, ../sass/global.scss */
 body {
   background-color: #f0f0f0;
 }
@@ -85,4 +90,34 @@ body {
 /* line 33, ../sass/index.scss */
 .Finance {
   margin-top: 30px;
+}
+
+/* line 36, ../sass/index.scss */
+.box_projet_profil * {
+  text-align: center;
+}
+/* line 39, ../sass/index.scss */
+.box_projet_profil * .vignette_projet {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 53px;
+}
+/* line 44, ../sass/index.scss */
+.box_projet_profil * .info_projet {
+  border-radius: 8px;
+}
+/* line 47, ../sass/index.scss */
+.box_projet_profil * .vignette {
+  border-radius: 8px;
+}
+/* line 50, ../sass/index.scss */
+.box_projet_profil * .photo_profil {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* line 55, ../sass/index.scss */
+.photo_profil, .info_projet {
+  background: white;
+  margin-bottom: 10px;
 }

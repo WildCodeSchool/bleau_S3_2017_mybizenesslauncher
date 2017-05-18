@@ -33,3 +33,26 @@
 .Finance {
   margin-top: 30px;
 }
+.box_projet_profil * {
+  text-align: center;
+
+  .vignette_projet {
+    background-color: $ColorDarkGrey;
+    border-radius: $BorderRadius;
+    margin-bottom: 53px;
+  }
+    .info_projet {
+      border-radius: $BorderRadius;
+    }
+    .vignette {
+      border-radius: $BorderRadius;
+    }
+      .photo_profil {
+        border-radius: $BorderRadius;
+        padding: 10px;
+      }
+}
+.photo_profil, .info_projet {
+  background: $ColorWhite;
+  margin-bottom: 10px;
+}

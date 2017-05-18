@@ -3,10 +3,15 @@ Variable globale
 
 CONSTANTE
 */
+/* line 12, ../sass/global.scss */
+img {
+  width: 100%;
+}
+
 /*
 Font
 */
-/* line 17, ../sass/global.scss */
+/* line 20, ../sass/global.scss */
 * {
   text-align: justify;
 }
@@ -16,7 +21,7 @@ Variable globale
 
 BALISE
 */
-/* line 27, ../sass/global.scss */
+/* line 30, ../sass/global.scss */
 h1 {
   size: 1.5em;
   color: white;
@@ -34,12 +39,12 @@ h1 {
   }
   @return $colorH2;
 */
-/* line 45, ../sass/global.scss */
+/* line 48, ../sass/global.scss */
 h2 {
   color: white;
 }
 
-/* line 49, ../sass/global.scss */
+/* line 52, ../sass/global.scss */
 body {
   background-color: #f0f0f0;
 }
