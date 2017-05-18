@@ -60,6 +60,18 @@ class DefaultController extends Controller
             ));
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
     public function addProfilAction(Request $request)
     {
         $profil = new Profil();
