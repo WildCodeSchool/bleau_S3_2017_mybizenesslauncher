@@ -43,7 +43,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         $em = $getDoctrine()->$getManager();
-        $secteur = $em->getRepository('MBLBundle:Secteur')->findAll();
+        $secteur = $em->getRepository()->findAll();
 
         $formSecteur = $this->createForm('MBLBundle\Form\SecteurType', $secteur);
 
