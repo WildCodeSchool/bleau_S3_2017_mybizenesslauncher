@@ -1,6 +1,3 @@
-@import "global";
-
-
 .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -33,15 +30,19 @@
 .Finance {
   margin-top: 30px;
 }
+
 .box_projet_profil * {
   text-align: center;
 
   .vignette_projet {
     background-color: $ColorDarkGrey;
     border-radius: $BorderRadius;
-    margin-bottom: 53px;
   }
-    .info_projet {
+  .vignette_profil {
+    background-color: $Colorblue;
+    border-radius: $BorderRadius;
+  }
+    .info_projet, .info_profil {
       border-radius: $BorderRadius;
     }
     .vignette {
@@ -52,7 +53,10 @@
         padding: 10px;
       }
 }
-.photo_profil, .info_projet {
+.photo_profil, .info_projet, .info_profil {
   background: $ColorWhite;
   margin-bottom: 10px;
+}
+.projet {
+  margin-left : 59px;
 }

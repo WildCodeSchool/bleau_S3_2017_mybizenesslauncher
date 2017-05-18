@@ -29,10 +29,12 @@ BALISE
 
 h1
 {
-  size: 1.5em;
+  font-size: 1.5em;
   color: white;
 }
-
+h3 {
+  font-size : 1.5em;
+}
 /*
   Condition pour color font H2
 @function colorH2($bkgColor) {
