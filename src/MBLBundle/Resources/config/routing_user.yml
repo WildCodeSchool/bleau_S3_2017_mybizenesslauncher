@@ -1,0 +1,22 @@
+mbl_homepage:
+    path:     /
+    defaults: { _controller: MBLBundle:User:index }
+
+homepageProfil:
+    path: /homepageProfil
+    defaults: { _controller: MBLBundle:User:homepageProfil }
+
+editProfil:
+    path: /editProfil
+    defaults: { _controller: MBLBundle:User:editProfil }
+
+showProfil:
+    path: /showProfil
+    defaults: { _controller: MBLBundle:User:showProfil }
+
+
+
+
+
+
+

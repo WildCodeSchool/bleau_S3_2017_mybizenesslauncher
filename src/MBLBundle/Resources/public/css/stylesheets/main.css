@@ -56,7 +56,7 @@ body {
 }
 
 /* 2. INDEX */
-/* line 1, ../sass/_index.scss */
+/* line 3, ../sass/_index.scss */
 .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -64,76 +64,76 @@ body {
   color: white;
   padding-top: 2000px;
 }
-/* line 7, ../sass/_index.scss */
+/* line 9, ../sass/_index.scss */
 .bandeau_homepage h2 {
   font-size: 1.5em;
 }
 
-/* line 13, ../sass/_index.scss */
+/* line 15, ../sass/_index.scss */
 .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 17, ../sass/_index.scss */
+/* line 19, ../sass/_index.scss */
 .btn_bandeau_homepage:hover {
   background-color: white;
 }
-/* line 20, ../sass/_index.scss */
+/* line 22, ../sass/_index.scss */
 .btn_bandeau_homepage:focus {
   background-color: white;
 }
 
-/* line 24, ../sass/_index.scss */
+/* line 26, ../sass/_index.scss */
 .Outils {
   padding-top: 70px;
 }
 
-/* line 27, ../sass/_index.scss */
+/* line 29, ../sass/_index.scss */
 .btn_eBusta {
   margin-top: 40px;
 }
 
-/* line 30, ../sass/_index.scss */
+/* line 32, ../sass/_index.scss */
 .Finance {
   margin-top: 30px;
 }
 
-/* line 34, ../sass/_index.scss */
+/* line 36, ../sass/_index.scss */
 .box_projet_profil * {
   text-align: center;
 }
-/* line 37, ../sass/_index.scss */
+/* line 39, ../sass/_index.scss */
 .box_projet_profil * .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
 }
-/* line 41, ../sass/_index.scss */
+/* line 43, ../sass/_index.scss */
 .box_projet_profil * .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
 }
-/* line 45, ../sass/_index.scss */
+/* line 47, ../sass/_index.scss */
 .box_projet_profil * .info_projet, .box_projet_profil * .info_profil {
   border-radius: 8px;
 }
-/* line 48, ../sass/_index.scss */
+/* line 50, ../sass/_index.scss */
 .box_projet_profil * .vignette {
   border-radius: 8px;
 }
-/* line 51, ../sass/_index.scss */
+/* line 53, ../sass/_index.scss */
 .box_projet_profil * .photo_profil {
   border-radius: 8px;
   padding: 10px;
 }
 
-/* line 56, ../sass/_index.scss */
+/* line 58, ../sass/_index.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
   margin-bottom: 10px;
 }
 
-/* line 60, ../sass/_index.scss */
+/* line 62, ../sass/_index.scss */
 .projet {
   margin-left: 59px;
 }
@@ -143,16 +143,15 @@ Layout.html.twig
 */
 /* line 5, ../sass/_layout.scss */
 .header {
-  color: #98d4e1;
   background-color: #f0f0f0;
 }
 
-/* line 10, ../sass/_layout.scss */
+/* line 9, ../sass/_layout.scss */
 .footer {
   background-color: #4b494b;
 }
 
-/* line 14, ../sass/_layout.scss */
+/* line 13, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -162,9 +161,13 @@ Layout.html.twig
 }
 
 /* line 25, ../sass/_layout.scss */
+.color {
+  color: #98d4e1;
+}
+
+/* line 29, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
-  text-align: center;
 }
 
 /* line 3, ../sass/_userHomepage.scss */

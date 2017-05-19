@@ -72,7 +72,7 @@ class Profil extends BaseUser
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $matchings;
+    private $matching;
 
 
     /**
@@ -358,7 +358,7 @@ class Profil extends BaseUser
      */
     public function addMatching(\MBLBundle\Entity\Matching $matching)
     {
-        $this->matchings[] = $matching;
+        $this->matching[] = $matching;
 
         return $this;
     }
@@ -370,16 +370,16 @@ class Profil extends BaseUser
      */
     public function removeMatching(\MBLBundle\Entity\Matching $matching)
     {
-        $this->matchings->removeElement($matching);
+        $this->matching->removeElement($matching);
     }
 
     /**
-     * Get matchings
+     * Get matching
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMatchings()
+    public function getMatching()
     {
-        return $this->matchings;
+        return $this->matching;
     }
 }

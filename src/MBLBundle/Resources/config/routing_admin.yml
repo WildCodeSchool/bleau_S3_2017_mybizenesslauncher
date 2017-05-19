@@ -1,0 +1,3 @@
+mbl_homepage:
+    path:     /
+    defaults: { _controller: MBLBundle:User:index }
