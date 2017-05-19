@@ -8,6 +8,18 @@ $Colorgrey : #f0f0f0;
 $ColorDarkGrey: #4b494b;
 $ColorWhite : white;
 $BoxShadow: 2px 2px 3px grey;
+$BorderRadius : 8px;
+img {
+  width: 100%;
+}
+
+/*
+Font
+*/
+
+* {
+  text-align: justify;
+}
 
 /*
 Variable globale
@@ -17,10 +29,12 @@ BALISE
 
 h1
 {
-  size: 1.5em;
+  font-size: 1.5em;
   color: white;
 }
-
+h3 {
+  font-size : 1.5em;
+}
 /*
   Condition pour color font H2
 @function colorH2($bkgColor) {
@@ -35,7 +49,7 @@ h1
 */
 h2
 {
-  color:white;
+  color:$ColorWhite;
 }
 body{
   background-color: $Colorgrey;
