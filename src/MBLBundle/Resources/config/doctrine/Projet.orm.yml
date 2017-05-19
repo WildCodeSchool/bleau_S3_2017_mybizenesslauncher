@@ -38,16 +38,7 @@ MBLBundle\Entity\Projet:
             targetEntity: MBLBundle\Entity\TypeDeProjet
             inversedBy: projets
 
-
-
-
-
-
     manyToMany:
         profilsrecherches:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             inversedBy: projets
-
-        matchings:
-            targetEntity: MBLBundle\Entity\Matching
-            mappedBy: profils
