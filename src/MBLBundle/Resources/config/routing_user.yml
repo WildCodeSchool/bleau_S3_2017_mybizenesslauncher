@@ -14,9 +14,9 @@ showProfil:
     path: /showProfil
     defaults: { _controller: MBLBundle:User:showProfil }
 
-mbl_addProjet:
-    path:     /ajout-projet
-    defaults: { _controller: MBLBundle:User:addProjet }
+createProjet:
+    path:     /createProject
+    defaults: { _controller: MBLBundle:User:createProject }
 
 
 

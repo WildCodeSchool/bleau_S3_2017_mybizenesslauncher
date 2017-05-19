@@ -32,6 +32,25 @@ class UserController extends Controller
         return $this->render('@MBL/Users/showProfil.html.twig');
 
     }
+
+
+    public function addProfilAction(Request $request)
+    {
+        $profil = new Profil();
+        $form = $this->createForm('MBLBundle\Form\ProfilType', $profil);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $getDoctrine()->$getManager();
+            $em->persist($profil);
+            $em->flush();
+
+            return $this->redirectToRoute('/');
+        }
+        return $this->render('MBLBundle:Users:addProfil.html.twig',
+            array('form' => $form->createView(),
+            ));
+    }
     public function addProjetAction(Request $request)
     {
         $projet = new Projet();
@@ -52,21 +71,24 @@ class UserController extends Controller
 
             ));
     }
-    public function addProfilAction(Request $request)
+    public function createProjectAction(Request $request)
     {
-        $profil = new Profil();
-        $form = $this->createForm('MBLBundle\Form\ProfilType', $profil);
+        $projet = new Projet();
+        $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $getDoctrine()->$getManager();
-            $em->persist($profil);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($projet);
             $em->flush();
 
-            return $this->redirectToRoute('/');
+            return $this->redirectToRoute('homepageProfil');
         }
-        return $this->render('MBLBundle:Users:addProfil.html.twig',
+
+        return $this->render('@MBL/Users/addProjet.html.twig',
             array('form' => $form->createView(),
+
             ));
     }
 }

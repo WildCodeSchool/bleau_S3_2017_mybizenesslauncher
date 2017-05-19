@@ -27,11 +27,11 @@ class ProjetType extends AbstractType
 //            ->add('siteInternet')
 //            ->add('ebustaUrl')
 //            ->add('localisation')
-            $builder->add('secteur', EntityType::class,
+            $builder->add('Secteur', EntityType::class,
                 array(
                     'class' => 'MBLBundle:Secteur',
                     'choice_label' =>'secteurActivite',
-                    'multiple'=> true,
+                    'multiple'=> false,
                     'expanded'=> false,
 
                 ))
