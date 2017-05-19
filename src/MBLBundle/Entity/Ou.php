@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class Ou
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,28 @@ class Ou
      */
     private $ou;
 
+    /**
+     * @var \MBLBundle\Entity\ProfilRecherche
+     */
+    private $profilrecherche;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -50,23 +68,6 @@ class Ou
     public function getOu()
     {
         return $this->ou;
-    }
-    /**
-     * @var \MBLBundle\Entity\ProfilRecherche
-     */
-    private $profilrecherche;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profils;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

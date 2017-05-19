@@ -19,26 +19,25 @@ class LoadMetiersData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager){
 
         $metiers = array(
-            array('profil' => 'Graphiste'),
-            array('profil' => 'Marketer'),
-            array('profil' => 'Business Developpeur'),
-            array('profil' => 'Développeur'),
-            array('profil' => 'Ingénieur'),
-            array('profil' => 'Responsable des Opérations'),
-            array('profil' => 'Juriste'),
-            array('profil' => 'Responsable Financier'),
-            array('profil' => 'Investisseur'),
-            array('profil' => 'Autre')
+            'Graphiste',
+            'Marketer',
+            'Business Developpeur',
+            'Développeur',
+            'Ingénieur',
+            'Responsable des Opérations',
+            'Juriste',
+            'Responsable Financier',
+            'Investisseur',
+            'Autre'
             );
 
         foreach ($metiers as $metier){
             $m = new Metier();
-            $m->setMetier($metier['profil']);
+            $m->setMetier($metier);
             $manager->persist($m);
         }
 
         $manager->flush();
-
     }
 
     public function getOrder()
@@ -53,92 +52,92 @@ class LoadCompetencesData extends AbstractFixture implements OrderedFixtureInter
     public function load(ObjectManager $manager) {
 
         $competences = array(
-            array('competences' => '3D Graphic Design'),
-            array('competences' => 'Comptabilité'),
-            array('competences' => 'Adobe Suite'),
-            array('competences' => 'Autre'),
-            array('competences' => 'B2B'),
-            array('competences' => 'B2C'),
-            array('competences' => 'Développeur Backend'),
-            array('competences' => 'Bloggeur'),
-            array('competences' => 'Business Developpeur'),
-            array('competences' => 'C'),
+            '3D Graphic Design',
+            'Comptabilité',
+            'Adobe Suite',
+            'Autre',
+            'B2B',
+            'B2C',
+            'Développeur Backend',
+            'Bloggeur',
+            'Business Developpeur',
+            'C',
 
-            array('competences' => 'C++'),
-            array('competences' => 'Community Management'),
-            array('competences' => 'Négociation de contrat'),
-            array('competences' => 'CSS'),
-            array('competences' => 'Customer Relationship Management (CMR)'),
-            array('competences' => 'Customer Service'),
-            array('competences' => 'Base de Données'),
-            array('competences' => 'Développeur'),
-            array('competences' => 'Digital Marketing'),
-            array('competences' => 'Droit'),
+            'C++',
+            'Community Management',
+            'Négociation de contrat',
+            'CSS',
+            'Customer Relationship Management (CMR)',
+            'Customer Service',
+            'Base de Données',
+            'Développeur',
+            'Digital Marketing',
+            'Droit',
 
-            array('competences' => 'Event Management'),
-            array('competences' => 'Event Planning'),
-            array('competences' => 'Fashion'),
-            array('competences' => 'Finance'),
-            array('competences' => 'Développeur Frontend'),
-            array('competences' => 'Développeur Fullstack'),
-            array('competences' => 'Google Analytics'),
-            array('competences' => 'Graphic Design'),
-            array('competences' => 'Growth Hacker'),
-            array('competences' => 'HTML'),
+            'Event Management',
+            'Event Planning',
+            'Fashion',
+            'Finance',
+            'Développeur Frontend',
+            'Développeur Fullstack',
+            'Google Analytics',
+            'Graphic Design',
+            'Growth Hacker',
+            'HTML',
 
-            array('competences' => 'Ressources Humaines'),
-            array('competences' => 'Illustrator'),
-            array('competences' => 'Indesign'),
-            array('competences' => 'Java'),
-            array('competences' => 'Javascript'),
-            array('competences' => 'JQuery'),
-            array('competences' => 'KPI'),
-            array('competences' => 'Leadership'),
-            array('competences' => 'Legal'),
-            array('competences' => 'Linux'),
+            'Ressources Humaines',
+            'Illustrator',
+            'Indesign',
+            'Java',
+            'Javascript',
+            'JQuery',
+            'KPI',
+            'Leadership',
+            'Legal',
+            'Linux',
 
-            array('competences' => 'Logo Design'),
-            array('competences' => 'Management'),
-            array('competences' => 'Marketing'),
-            array('competences' => 'Microsoft Excel'),
-            array('competences' => 'Microsoft Office'),
-            array('competences' => 'Microsoft PowerPoint'),
-            array('competences' => 'Microsoft Word'),
-            array('competences' => 'MySQL'),
-            array('competences' => 'Negociation'),
-            array('competences' => 'Node.Js'),
+            'Logo Design',
+            'Management',
+            'Marketing',
+            'Microsoft Excel',
+            'Microsoft Office',
+            'Microsoft PowerPoint',
+            'Microsoft Word',
+            'MySQL',
+            'Negociation',
+            'Node.Js',
 
-            array('competences' => 'Office Suite'),
-            array('competences' => 'Online Marketing'),
-            array('competences' => 'Photoshop'),
-            array('competences' => 'PHP'),
-            array('competences' => 'Achats'),
-            array('competences' => 'Project Management'),
-            array('competences' => 'Conférencier'),
-            array('competences' => 'QuarkXPress'),
-            array('competences' => 'Recrutement'),
-            array('competences' => 'Ruby'),
+            'Office Suite',
+            'Online Marketing',
+            'Photoshop',
+            'PHP',
+            'Achats',
+            'Project Management',
+            'Conférencier',
+            'QuarkXPress',
+            'Recrutement',
+            'Ruby',
 
-            array('competences' => 'Ventes'),
-            array('competences' => 'SEO'),
-            array('competences' => 'SQL'),
-            array('competences' => 'Social Media Marketing'),
-            array('competences' => 'Production'),
-            array('competences' => 'Travail d\'équipe'),
-            array('competences' => 'Video'),
-            array('competences' => 'Video Game'),
-            array('competences' => 'Video Production'),
-            array('competences' => 'Visual Basic'),
+            'Ventes',
+            'SEO',
+            'SQL',
+            'Social Media Marketing',
+            'Production',
+            'Travail d\'équipe',
+            'Video',
+            'Video Game',
+            'Video Production',
+            'Visual Basic',
 
-            array('competences' => 'Web Design'),
-            array('competences' => 'Développement Web'),
-            array('competences' => 'WordPress'),
-            array('competences' => 'Xpress')
+            'Web Design',
+            'Développement Web',
+            'WordPress',
+            'Xpress'
         );
 
         foreach ($competences as $competence){
             $m = new Competences();
-            $m->setCompetences($competence['competences']);
+            $m->setCompetences($competence);
             $manager->persist($m);
         }
 
@@ -158,17 +157,17 @@ class LoadDisponibiliteData extends AbstractFixture implements OrderedFixtureInt
     {
 
         $dispos = array(
-            array('dispo' => 'Plein-temps'),
-            array('dispo' => '5 heures par semaine'),
-            array('dispo' => '10 heures par semaine'),
-            array('dispo' => '15 heures par semaine'),
-            array('dispo' => '20 heures par semaine'),
-            array('dispo' => '25 heures par semaine')
+            'Plein-temps',
+            '5 heures par semaine',
+            '10 heures par semaine',
+            '15 heures par semaine',
+            '20 heures par semaine',
+            '25 heures par semaine'
         );
 
         foreach ($dispos as $dispo) {
             $m = new Dispo();
-            $m->setDispo($dispo['dispo']);
+            $m->setDispo($dispo);
             $manager->persist($m);
         }
         $manager->flush();
@@ -188,14 +187,14 @@ class LoadOuCaData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $oucas = array(
-            array('ouca' => 'Télétravail'),
-            array('ouca' => 'Sur place'),
-            array('ouca' => 'Flexible')
+            'Télétravail',
+            'Sur place',
+            'Flexible'
         );
 
         foreach ($oucas as $ouca) {
             $m = new Ou();
-            $m->setOu($ouca['ouca']);
+            $m->setOu($ouca);
             $manager->persist($m);
         }
         $manager->flush();
@@ -212,20 +211,20 @@ class LoadInvestissementData extends AbstractFixture implements OrderedFixtureIn
     public function load(ObjectManager $manager)
     {
         $invests = array(
-            array('invest' => 'Non'),
-            array('invest' => 'moin de 1000'),
-            array('invest' => '1000-5000'),
-            array('invest' => '5000-10000'),
-            array('invest' => '10000-20000'),
-            array('invest' => '20000-50000'),
-            array('invest' => '50000-100000'),
-            array('invest' => '100000-200000'),
-            array('invest' => 'plus de 200000')
+            'Non',
+            'moin de 1000',
+            '1000-5000',
+            '5000-10000',
+            '10000-20000',
+            '20000-50000',
+            '50000-100000',
+            '100000-200000',
+            'plus de 200000'
         );
 
         foreach ($invests as $invest) {
             $m = new Invest();
-            $m->setInvest($invest['invest']);
+            $m->setInvest($invest);
             $manager->persist($m);
         }
         $manager->flush();
@@ -242,15 +241,15 @@ class LoadDispoETQData extends AbstractFixture implements OrderedFixtureInterfac
     public function load(ObjectManager $manager)
     {
         $dispoETQ = array(
-            array('ETQ' => 'Associé'),
-            array('ETQ' => 'Employé'),
-            array('ETQ' => 'Flexible')
+            'Associé',
+            'Employé',
+            'Flexible'
         );
 
 
         foreach ($dispoETQ as $ETQ) {
             $m = new ETQ();
-            $m->setETQ($ETQ['ETQ']);
+            $m->setETQ($ET);
             $manager->persist($m);
         }
         $manager->flush();
@@ -267,19 +266,19 @@ class LoadTypeDeProjetData extends AbstractFixture implements OrderedFixtureInte
     public function load(ObjectManager $manager)
     {
         $typedeprojets = array(
-            array('typedeprojet' => 'Application Mobile'),
-            array('typedeprojet' => 'Jeu Video'),
-            array('typedeprojet' => 'Logiciel'),
-            array('typedeprojet' => 'Site Internet'),
-            array('typedeprojet' => 'Commerce'),
-            array('typedeprojet' => 'Société de Services'),
-            array('typedeprojet' => 'Produit'),
-            array('typedeprojet' => 'Autre')
+            'Application Mobile',
+            'Jeu Video',
+            'Logiciel',
+            'Site Internet',
+            'Commerce',
+            'Société de Services',
+            'Produit',
+            'Autre'
         );
 
         foreach ($typedeprojets as $typedeprojet) {
             $m = new TypeDeProjet();
-            $m->setTypeDeProjet($typedeprojet['typedeprojet']);
+            $m->setTypeDeProjet($typedeproje);
             $manager->persist($m);
         }
         $manager->flush();
@@ -296,47 +295,47 @@ class LoadSecteurData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $secteurs = array(
-            array('secteur' => 'Activité commerciale'),
-            array('secteur' => 'Agriculture'),
-            array('secteur' => 'Agroalimentaire'),
-            array('secteur' => 'Animaux'),
-            array('secteur' => 'Art et Culture'),
-            array('secteur' => 'Autre'),
-            array('secteur' => 'Big Data'),
-            array('secteur' => 'BioTech/MedTech'),
-            array('secteur' => 'CleanTech'),
-            array('secteur' => 'Digital'),
+            'Activité commerciale',
+            'Agriculture',
+            'Agroalimentaire',
+            'Animaux',
+            'Art et Culture',
+            'Autre',
+            'Big Data',
+            'BioTech/MedTech',
+            'CleanTech',
+            'Digital',
 
-            array('secteur' => 'Education'),
-            array('secteur' => 'Environnement'),
-            array('secteur' => 'Finance'),
-            array('secteur' => 'Formation'),
-            array('secteur' => 'Immobilier'),
-            array('secteur' => 'Industrie'),
-            array('secteur' => 'Jeux'),
-            array('secteur' => 'Luxe'),
-            array('secteur' => 'Media'),
-            array('secteur' => 'Mode'),
+            'Education',
+            'Environnement',
+            'Finance',
+            'Formation',
+            'Immobilier',
+            'Industrie',
+            'Jeux',
+            'Luxe',
+            'Media',
+            'Mode',
 
-            array('secteur' => 'Photo'),
-            array('secteur' => 'Publicité'),
-            array('secteur' => 'Restauration'),
-            array('secteur' => 'Robotique'),
-            array('secteur' => 'Santé '),
-            array('secteur' => 'Sécurité'),
-            array('secteur' => 'Services '),
-            array('secteur' => 'Silver Economy'),
-            array('secteur' => 'Sport'),
-            array('secteur' => 'Technologie'),
+            'Photo',
+            'Publicité',
+            'Restauration',
+            'Robotique',
+            'Santé ',
+            'Sécurité',
+            'Services ',
+            'Silver Economy',
+            'Sport',
+            'Technologie',
 
-            array('secteur' => 'Tourisme'),
-            array('secteur' => 'Transport/Logistique'),
-            array('secteur' => 'Web')
+            'Tourisme',
+            'Transport/Logistique',
+            'Web'
         );
 
         foreach ($secteurs as $secteur) {
             $m = new Secteur();
-            $m->setSecteurActivite($secteur['secteur']);
+            $m->setSecteurActivite($secteur);
             $manager->persist($m);
         }
         $manager->flush();

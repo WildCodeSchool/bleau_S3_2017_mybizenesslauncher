@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class ETQ
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,28 @@ class ETQ
      */
     private $etq;
 
+    /**
+     * @var \MBLBundle\Entity\ProfilRecherche
+     */
+    private $profilrecherche;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -50,23 +68,6 @@ class ETQ
     public function getEtq()
     {
         return $this->etq;
-    }
-    /**
-     * @var \MBLBundle\Entity\ProfilRecherche
-     */
-    private $profilrecherche;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profils;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

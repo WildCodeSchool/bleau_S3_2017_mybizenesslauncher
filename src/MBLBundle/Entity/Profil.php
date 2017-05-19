@@ -13,7 +13,6 @@ class Profil extends BaseUser
     // Generated code
 
 
-
     /**
      * @var string
      */

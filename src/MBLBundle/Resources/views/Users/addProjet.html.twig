@@ -6,7 +6,11 @@
 
 {% block body %}
 <div>
-    {{ form(form) }}
-    {{ form(form_secteur) }}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+
+    {{ form_end(form) }}
+
 </div>
 {% endblock %}

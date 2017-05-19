@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class Competences
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,29 @@ class Competences
      */
     private $competences;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profilsrecherches;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -50,24 +69,6 @@ class Competences
     public function getCompetences()
     {
         return $this->competences;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profilsrecherches;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profils;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

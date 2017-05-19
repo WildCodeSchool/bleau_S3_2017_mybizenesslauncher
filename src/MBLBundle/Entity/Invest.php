@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Invest
 {
 
+
     /**
      * @var integer
      */
