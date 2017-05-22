@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Controller;
 
+use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -74,13 +75,19 @@ class UserController extends Controller
     public function createProjectAction(Request $request)
     {
         $projet = new Projet();
+        $projet_profil = new ProfilRecherche();
+        $projet->setDateCreation(new \DateTime());
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
+        $form_profil = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
         $form->handleRequest($request);
+        $form_profil->handleRequest($request);
+
 
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($projet);
+            $em->persist($projet_profil);
             $em->flush();
 
             return $this->redirectToRoute('homepageProfil');
@@ -88,6 +95,7 @@ class UserController extends Controller
 
         return $this->render('@MBL/Users/addProjet.html.twig',
             array('form' => $form->createView(),
+                'form_profil'=>$form_profil->createView()
 
             ));
     }
