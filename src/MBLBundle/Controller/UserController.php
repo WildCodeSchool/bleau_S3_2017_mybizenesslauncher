@@ -61,14 +61,9 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            //        $projet_profil->addProjet($projet);
-            //        $projet->addProfilsrecherch($projet_profil);
             $projet->setDateCreation(new \DateTime());
-
-//            $projet->setSecteur($projet->);
-//
-//            $projet->setTypeDeProjet($projet);
-
+//          $profil -> addprojet
+//          $projet -> addprofil
             $em->persist($projet);
             $em->flush();
             $id = $projet->getId();
@@ -91,6 +86,11 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
+        $profil_Recheche_exist = $projet->getProfilsrecherches() ;
+
+//        $projet->getProfilRecherche
+//        $profil_Recheche_exist = $em->getRepository('MBLBundle:ProfilRecherche')->myFindProject($projet->getId());
+
         $projet_profil = new ProfilRecherche();
         $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
         $form_pro->handleRequest($request);
@@ -105,12 +105,15 @@ class UserController extends Controller
 
             $em->flush();
 
-            return $this->redirectToRoute('homepageProfil');
+            return $this->redirectToRoute('createProfilRechercheProjet', array(
+                'id' =>$id
+            ));
         }
 
         return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
             array('form_pro' => $form_pro->createView(),
                 'projet' => $projet,
+'profil_Recheche_exist' => $profil_Recheche_exist,
 
             ));
     }
