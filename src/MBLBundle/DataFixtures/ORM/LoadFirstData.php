@@ -249,7 +249,7 @@ class LoadDispoETQData extends AbstractFixture implements OrderedFixtureInterfac
 
         foreach ($dispoETQ as $ETQ) {
             $m = new ETQ();
-            $m->setETQ($ET);
+            $m->setETQ($ETQ);
             $manager->persist($m);
         }
         $manager->flush();
@@ -278,7 +278,7 @@ class LoadTypeDeProjetData extends AbstractFixture implements OrderedFixtureInte
 
         foreach ($typedeprojets as $typedeprojet) {
             $m = new TypeDeProjet();
-            $m->setTypeDeProjet($typedeproje);
+            $m->setTypeDeProjet($typedeprojet);
             $manager->persist($m);
         }
         $manager->flush();

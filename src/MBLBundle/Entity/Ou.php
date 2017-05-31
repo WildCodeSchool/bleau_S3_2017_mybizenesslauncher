@@ -19,14 +19,14 @@ class Ou
     private $ou;
 
     /**
-     * @var \MBLBundle\Entity\ProfilRecherche
+     * @var \Doctrine\Common\Collections\Collection
      */
-    private $profilrecherche;
+    private $profils;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $profils;
+    private $profilrecherches;
 
     /**
      * Constructor
@@ -34,6 +34,7 @@ class Ou
     public function __construct()
     {
         $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profilrecherches = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -71,30 +72,6 @@ class Ou
     }
 
     /**
-     * Set profilrecherche
-     *
-     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherche
-     *
-     * @return Ou
-     */
-    public function setProfilrecherche(\MBLBundle\Entity\ProfilRecherche $profilrecherche = null)
-    {
-        $this->profilrecherche = $profilrecherche;
-
-        return $this;
-    }
-
-    /**
-     * Get profilrecherche
-     *
-     * @return \MBLBundle\Entity\ProfilRecherche
-     */
-    public function getProfilrecherche()
-    {
-        return $this->profilrecherche;
-    }
-
-    /**
      * Add profil
      *
      * @param \MBLBundle\Entity\Profil $profil
@@ -126,5 +103,39 @@ class Ou
     public function getProfils()
     {
         return $this->profils;
+    }
+
+    /**
+     * Add profilrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
+     *
+     * @return Ou
+     */
+    public function addProfilrecherch(\MBLBundle\Entity\ProfilRecherche $profilrecherch)
+    {
+        $this->profilrecherches[] = $profilrecherch;
+
+        return $this;
+    }
+
+    /**
+     * Remove profilrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
+     */
+    public function removeProfilrecherch(\MBLBundle\Entity\ProfilRecherche $profilrecherch)
+    {
+        $this->profilrecherches->removeElement($profilrecherch);
+    }
+
+    /**
+     * Get profilrecherches
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfilrecherches()
+    {
+        return $this->profilrecherches;
     }
 }

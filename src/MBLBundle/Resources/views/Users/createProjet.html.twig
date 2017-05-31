@@ -12,12 +12,15 @@
 
     {{ form_end(form) }}
     </div>
-    <div class="row">
-        {{ form_start(form_profil) }}
 
-
-        {{ form_end(form_profil) }}
-    </div>
 </div>
 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
 {% endblock %}

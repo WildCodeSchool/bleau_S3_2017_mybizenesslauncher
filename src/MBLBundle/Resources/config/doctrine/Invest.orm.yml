@@ -15,11 +15,12 @@ MBLBundle\Entity\Invest:
     lifecycleCallbacks: {  }
 
     oneToOne:
-        profilrecherche:
-            targetEntity: MBLBundle\Entity\ProfilRecherche
-            mappedBy: invest
-
         profil:
             targetEntity: MBLBundle\Entity\Profil
+            mappedBy: invest
+
+    oneToMany:
+        profilrecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: invest
 

@@ -18,7 +18,11 @@ createProjet:
     path: /createProject
     defaults: { _controller: MBLBundle:User:createProject }
 
-
+createProfilRechercheProjet:
+    path: /createProfilRechercheProject/{id}
+    defaults:
+        _controller: MBLBundle:User:createProfilRechercheProject
+        id: null
 
 
 

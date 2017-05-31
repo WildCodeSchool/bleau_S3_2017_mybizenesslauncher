@@ -26,7 +26,7 @@ class ProfilRechercheType extends AbstractType
                 'class' => Metier::class,
                 'choice_label' =>'metier',
                 'multiple'=> false,
-                'expanded'=> true
+                'expanded'=> false
 
             ))
             ->add('etq', EntityType::class,
@@ -34,7 +34,7 @@ class ProfilRechercheType extends AbstractType
                     'class' => ETQ::class,
                     'choice_label' =>'etq',
                     'multiple'=> false,
-                    'expanded'=> true
+                    'expanded'=> false
 
                 ))
             ->add('ou', EntityType::class,
@@ -42,7 +42,7 @@ class ProfilRechercheType extends AbstractType
                     'class' => Ou::class,
                     'choice_label' =>'ou',
                     'multiple'=> false,
-                    'expanded'=> true
+                    'expanded'=> false
 
                 ))
             ->add('invest', EntityType::class,
@@ -50,7 +50,7 @@ class ProfilRechercheType extends AbstractType
                     'class' => Invest::class,
                     'choice_label' =>'invest',
                     'multiple'=> false,
-                    'expanded'=> true
+                    'expanded'=> false
 
                 ))
 
@@ -59,7 +59,7 @@ class ProfilRechercheType extends AbstractType
                     'class' => Dispo::class,
                     'choice_label' =>'dispo',
                     'multiple'=> false,
-                    'expanded'=> true
+                    'expanded'=> false
 
                 ))
             ->add('competences', EntityType::class,
@@ -67,7 +67,7 @@ class ProfilRechercheType extends AbstractType
                     'class' => Competences::class,
                     'choice_label' =>'competences',
                     'multiple'=> true,
-                    'expanded'=> true
+                    'expanded'=> false
 
                 ))
             ->add('ajouter', SubmitType::class);

@@ -52,50 +52,65 @@ class UserController extends Controller
             array('form' => $form->createView(),
             ));
     }
-    public function addProjetAction(Request $request)
-    {
-        $projet = new Projet();
-        $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
-        $form->handleRequest($request);
 
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($projet);
-            $em->flush();
-
-            return $this->redirectToRoute('homepageProfil');
-        }
-
-        return $this->render('@MBL/Users/addProjet.html.twig',
-            array('form' => $form->createView(),
-
-            ));
-    }
     public function createProjectAction(Request $request)
     {
         $projet = new Projet();
-        $projet_profil = new ProfilRecherche();
-        $projet->setDateCreation(new \DateTime());
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
-        $form_profil = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
         $form->handleRequest($request);
-        $form_profil->handleRequest($request);
-
-
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            //        $projet_profil->addProjet($projet);
+            //        $projet->addProfilsrecherch($projet_profil);
+            $projet->setDateCreation(new \DateTime());
+
+//            $projet->setSecteur($projet->);
+//
+//            $projet->setTypeDeProjet($projet);
+
             $em->persist($projet);
+            $em->flush();
+            $id = $projet->getId();
+            return $this->redirectToRoute('createProfilRechercheProjet', array(
+                'id' =>$id
+            ));
+        }
+
+
+        return $this->render('@MBL/Users/createProjet.html.twig',
+            array(
+                'form' => $form->createView(),
+                
+
+
+            ));
+    }
+    public function createProfilRechercheProjectAction(Request $request, $id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
+        $projet_profil = new ProfilRecherche();
+        $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
+        $form_pro->handleRequest($request);
+
+        if ($form_pro->isSubmitted() && $form_pro->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+
+            $projet->addProfilsrecherch($projet_profil);
+            $projet_profil->addProjet($projet);
             $em->persist($projet_profil);
+
             $em->flush();
 
             return $this->redirectToRoute('homepageProfil');
         }
 
-        return $this->render('@MBL/Users/addProjet.html.twig',
-            array('form' => $form->createView(),
-                'form_profil'=>$form_profil->createView()
+        return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
+            array('form_pro' => $form_pro->createView(),
+                'projet' => $projet,
 
             ));
     }

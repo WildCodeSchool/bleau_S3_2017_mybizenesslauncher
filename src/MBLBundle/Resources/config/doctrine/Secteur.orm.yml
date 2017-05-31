@@ -18,3 +18,4 @@ MBLBundle\Entity\Secteur:
         projets:
             targetEntity: MBLBundle\Entity\Projet
             mappedBy: secteur
+            cascade: ["persist"]

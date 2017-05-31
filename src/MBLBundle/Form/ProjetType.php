@@ -10,6 +10,7 @@ use MBLBundle\Entity\Projet;
 use MBLBundle\Entity\Secteur;
 use MBLBundle\Entity\TypeDeProjet;
 use MBLBundle\MBLBundle;
+use MBLBundle\Repository\SecteurRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -29,27 +30,40 @@ class ProjetType extends AbstractType
             ->add('siteInternet')
             ->add('ebustaUrl')
             ->add('localisation')
-            ->add('secteur', EntityType::class,
-                array(
-                    'class' => Secteur::class,
-                    'choice_label' =>function ($secteur) {
-                        return $secteur->getSecteurActivite();
-                    },
-                    'expanded'=> true,
-                    'multiple'=> false
 
 
-                ))
-            ->add('typeDeProjet', EntityType::class,
-                array(
-                    'class' => TypeDeProjet::class,
-                    'choice_label' =>'typeDeProjet',
-                    'multiple'=> false,
-                    'expanded'=> true
+            ->add('secteur', EntityType::class, array(
+                'class'         => 'MBLBundle\Entity\Secteur',
+                'choice_label'  => 'secteurActivite',
+                'multiple'      => false,
+                'expanded'      => false))
+            ->add('typeDeProjet', EntityType::class, array(
+                'class'         => 'MBLBundle\Entity\TypeDeProjet',
+                'choice_label'  => 'typeDeProjet',
+                'multiple'      => false,
+                'expanded'      => false))
+//
+        ->add('Création', SubmitType::class);
 
-                ))
 
-            ->add('submit', SubmitType::class);
+
+
+//                'query_builder' => function(SecteurRepository $secteurRepository){
+//
+//                    return $secteurRepository->getSecteursQueryBuilder();
+//
+//                }));
+
+//            ->add('typeDeProjet', EntityType::class,
+//                array(
+//                    'class' => TypeDeProjetType::class,
+//                    'choice_label' =>'typeDeProjet',
+//                    'multiple'=> false,
+//                    'expanded'=> false
+//
+//                ));
+
+
     }
     
     /**

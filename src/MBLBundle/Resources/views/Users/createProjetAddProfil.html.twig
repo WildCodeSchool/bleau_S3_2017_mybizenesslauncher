@@ -1,0 +1,25 @@
+
+{% extends 'MBLBundle::layout.html.twig' %}
+
+{% block titreH2 %}<h2>Nouveau Projet</h2>{% endblock %}
+
+{% block body %}
+    <div class="container">
+{{ dump(projet)}}
+        <div class="row">
+            {{ form_start(form_pro) }}
+
+
+            {{ form_end(form_pro) }}
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+{% endblock %}
