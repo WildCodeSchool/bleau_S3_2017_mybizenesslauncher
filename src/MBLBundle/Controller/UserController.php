@@ -125,7 +125,7 @@ class UserController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository('MBLBundle:Projet')->findAll();
+        $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc();
 
         return $this->render('@MBL/Users/showProject.html.twig', array(
             'projects'=> $projects,
