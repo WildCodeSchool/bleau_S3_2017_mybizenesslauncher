@@ -14,8 +14,12 @@ class UserController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@MBL/Users/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $projet = $em->getRepository('MBLBundle:Projet')->findLast4();
 
+        return $this->render('@MBL/Users/index.html.twig',
+            array('projet' => $projet,
+            ));
     }
 
     public function homepageProfilAction()
