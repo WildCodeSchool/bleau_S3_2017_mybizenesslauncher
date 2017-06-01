@@ -7,50 +7,43 @@
     <div class="container">
 
         <div class="row">
+            <div class="col s6 center">
 
-           Titre : {{ projet.titre }} <br>
-           Description : {{ projet.description }} <br>
-           Site Internet : {{ projet.siteInternet }} <br>
-           E-busta Url : {{ projet.ebustaUrl }} <br>
-           Localisation : {{ projet.localisation }} <br>
-           Secteur : {{ projet.secteur.secteurActivite}} <br>
-            Type de projet : {{projet.typeDeProjet.typeDeProjet }}<br>
-</div>
-
-
-
-
-{% for profil in profil_Recheche_exist %}
-<div class="row">
-           Disponibilité : {{ profil.dispo.dispo }} <br>
-           ETQ : {{ profil.ETQ.etq }} <br>
-   Ou : {{ profil.ou.ou }} <br>
-    Investissement : {{ profil.invest.invest }} <br>
-    {#Metier : {{ profil.metier.metier }} <br>#}
-    {#Compétences : {% for comp in profil.competences.competences %}#}
-        {#{{ comp }} <br>#}
-        {#{% endfor %}#}
-
-</div>
-{% endfor %}
-
-        {#<div class="row">#}
-
-            {#Titre : {{ projet.titre }} <br>#}
-            {#Description : {{ projet.description }} <br>#}
-            {#Site Internet : {{ projet.siteInternet }} <br>#}
-            {#E-busta Url : {{ projet.ebustaUrl }} <br>#}
-            {#Localisation : {{ projet.localisation }} <br>#}
-            {#Secteur : {{ projet.secteur.secteurActivite}} <br>#}
-            {#Type de projet : {{projet.typeDeProjet.typeDeProjet }}<br>#}
-
-        {#</div>#}
-        <div class="row">
-            {{ form_start(form_pro) }}
+                Titre : {{ projet.titre }} <br>
+                Description : {{ projet.description }} <br>
+                Site Internet : {{ projet.siteInternet }} <br>
+                E-busta Url : {{ projet.ebustaUrl }} <br>
+                Localisation : {{ projet.localisation }} <br>
+                Secteur : {{ projet.secteur.secteurActivite}} <br>
+                Type de projet : {{projet.typeDeProjet.typeDeProjet }}<br>
+            </div>
+            <div class="col s6">
+                {{ form_start(form_pro) }}
+                {{ form_end(form_pro) }}
+            </div>
 
 
-            {{ form_end(form_pro) }}
         </div>
+
+
+
+        <div class="row">
+        {% for profil in profil_Recheche_exist %}
+
+                <div class="col s3">
+                    Disponibilité : {{ profil.dispo.dispo }} <br>
+                    ETQ : {{ profil.ETQ.etq }} <br>
+                    Ou : {{ profil.ou.ou }} <br>
+                    Investissement : {{ profil.invest.invest }} <br>
+                    Metier : {{ profil.metier.metier }} <br>
+                    {% for comp in profil.competences %}
+                        Compétences : {{ comp.competences }} <br>
+                    {% endfor %}
+                </div>
+
+        {% endfor %}
+    </div>
+
     </div>
 
 {% endblock %}
