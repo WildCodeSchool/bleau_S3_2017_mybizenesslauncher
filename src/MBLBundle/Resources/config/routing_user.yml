@@ -14,11 +14,19 @@ showProfil:
     path: /showProfil
     defaults: { _controller: MBLBundle:User:showProfil }
 
-mbl_addProjet:
-    path:     /ajout-projet
-    defaults: { _controller: MBLBundle:User:addProjet }
+createProjet:
+    path: /createProject
+    defaults: { _controller: MBLBundle:User:createProject }
 
+createProfilRechercheProjet:
+    path: /createProfilRechercheProject/{id}
+    defaults:
+        _controller: MBLBundle:User:createProfilRechercheProject
+        id: null
 
+showProject:
+    path: /showProject
+    defaults: { _controller: MBLBundle:User:showProject }
 
 
 

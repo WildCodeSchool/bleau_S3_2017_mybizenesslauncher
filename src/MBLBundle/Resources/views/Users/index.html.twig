@@ -68,11 +68,11 @@
                 </div>
             </div>
             <div class="row">
-                {% for i in 0..2 %}
+                {% for pro in projet %}
                     <div class="col col s5 offset-s1 vignette_projet z-depth-5">
                         <div class="row vignette">
                             <div class="col s12">
-                                <h4>Projet X</h4>
+                                <h4>Projet : {{ pro.titre }}</h4>
                             </div>
                             <div class="col s8 offset-s2 photo_profil">
                                 <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
@@ -80,54 +80,22 @@
                         </div>
                         <div class="row info_projet">
                             <div class="col s12">
-                                <h5>Type de projet</h5>
-                                <p>Lorem de mes popopo</p>
-                            </div>
-                            <div class="col s12">
                                 <h5>Profils recherchés</h5>
-                                <p>Lorem de mes popopo</p>
+                                {% for profil in pro.profilsrecherches %}
+                                <p>{{ profil.metier.metier}}</p>
+                                {% endfor %}
                             </div>
                             <div class="col s12">
                                 <h5>Localisation</h5>
-                                <p>Fontainebleau, France</p>
+                                <p>{{ pro.localisation }}</p>
                             </div>
                             <div class="col s12">
                                 <h5>Description</h5>
-                                <p>Application Jean Michel et Guigui pour aider les gens à vider leurs cache</p>
+                                <p>{{ pro.description }}</p>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
-
-                <div class="col s2"></div>
-                <div class="col col s5 offset-s1  vignette_projet z-depth-5">
-                    <div class="row vignette">
-                        <div class="col s12">
-                            <h4>Projet X</h4>
-                        </div>
-                        <div class="col s8 offset-s2 photo_profil">
-                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                        </div>
-                    </div>
-                    <div class="row info_projet">
-                        <div class="col s12">
-                            <h5>Type de projet</h5>
-                            <p>Lorem de mes popopo</p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Profils recherchés</h5>
-                            <p>Lorem de mes popopo</p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Localisation</h5>
-                            <p>Fontainebleau, France</p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Description</h5>
-                            <p>Application Jean Michel et Guigui pour aider les gens à vider leurs cache</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <!--PROFIL-->

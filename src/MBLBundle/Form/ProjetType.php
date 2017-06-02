@@ -4,14 +4,17 @@ namespace MBLBundle\Form;
 
 use MBLBundle\Entity\ETQ;
 use MBLBundle\Entity\Matching;
+use MBLBundle\Entity\Metier;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use MBLBundle\Entity\Secteur;
 use MBLBundle\Entity\TypeDeProjet;
 use MBLBundle\MBLBundle;
+use MBLBundle\Repository\SecteurRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -22,49 +25,45 @@ class ProjetType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//        $builder->add('titre')
-//            ->add('description')
-//            ->add('siteInternet')
-//            ->add('ebustaUrl')
-//            ->add('localisation')
-            $builder->add('secteur', EntityType::class,
-                array(
-                    'class' => 'MBLBundle:Secteur',
-                    'choice_label' =>'secteurActivite',
-                    'multiple'=> true,
-                    'expanded'=> false,
+        $builder->add('titre', TextType::class)
+            ->add('description')
+            ->add('siteInternet')
+            ->add('ebustaUrl')
+            ->add('localisation')
 
-                ))
 
-//            ->add('typeDeProjet', EntityType::class, array(
-//                'class' => TypeDeProjet::class, 'choice_label' => 'typeDeProjet',
-//            ))
+            ->add('secteur', EntityType::class, array(
+                'class'         => 'MBLBundle\Entity\Secteur',
+                'choice_label'  => 'secteurActivite',
+                'multiple'      => false,
+                'expanded'      => false))
+            ->add('typeDeProjet', EntityType::class, array(
+                'class'         => 'MBLBundle\Entity\TypeDeProjet',
+                'choice_label'  => 'typeDeProjet',
+                'multiple'      => false,
+                'expanded'      => false))
+//
+        ->add('Création', SubmitType::class);
 
-//            ->add('typeDeProjet', EntityType::class, array(
-//                'class' => TypeDeProjet::class, 'choice_label' => 'typeDeProjet',
-//            ))
-//            ->add('metier', EntityType::class, array(
-//                'class' => ProfilRecherche::class, 'choice_label' => 'metier',
-//            ))
-//            ->add('etq', EntityType::class, array(
-//                'class' => ProfilRecherche::class, 'choice_label' => 'etq',
-//            ))
-//            ->add('competences', EntityType::class, array(
-//                'class' => ProfilRecherche::class, 'choice_label' => 'competences',
-//            ))
-//            ->add('dispo', EntityType::class, array(
-//                'class' => ProfilRecherche::class, 'choice_label' => 'dispo',
-//            ))
-//            ->add('ou', EntityType::class, array(
-//                'class' => ProfilRecherche::class, 'choice_label' => 'ou',
-//            ))
-//            ->add('invest', EntityType::class, array(
-//                'class' => ProfilRecherche::class, 'choice_label' => 'invest',
-//            ))
 
-            ->add('submit', SubmitType::class)
-            ->add('publish', SubmitType::class)
-        ;
+
+
+//                'query_builder' => function(SecteurRepository $secteurRepository){
+//
+//                    return $secteurRepository->getSecteursQueryBuilder();
+//
+//                }));
+
+//            ->add('typeDeProjet', EntityType::class,
+//                array(
+//                    'class' => TypeDeProjetType::class,
+//                    'choice_label' =>'typeDeProjet',
+//                    'multiple'=> false,
+//                    'expanded'=> false
+//
+//                ));
+
+
     }
     
     /**

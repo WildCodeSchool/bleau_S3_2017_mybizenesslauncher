@@ -12,7 +12,6 @@ class Profil extends BaseUser
 
     // Generated code
 
-
     /**
      * @var string
      */
@@ -67,11 +66,6 @@ class Profil extends BaseUser
      * @var \Doctrine\Common\Collections\Collection
      */
     private $competences;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $matching;
 
 
     /**
@@ -346,39 +340,5 @@ class Profil extends BaseUser
     public function getCompetences()
     {
         return $this->competences;
-    }
-
-    /**
-     * Add matching
-     *
-     * @param \MBLBundle\Entity\Matching $matching
-     *
-     * @return Profil
-     */
-    public function addMatching(\MBLBundle\Entity\Matching $matching)
-    {
-        $this->matching[] = $matching;
-
-        return $this;
-    }
-
-    /**
-     * Remove matching
-     *
-     * @param \MBLBundle\Entity\Matching $matching
-     */
-    public function removeMatching(\MBLBundle\Entity\Matching $matching)
-    {
-        $this->matching->removeElement($matching);
-    }
-
-    /**
-     * Get matching
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getMatching()
-    {
-        return $this->matching;
     }
 }

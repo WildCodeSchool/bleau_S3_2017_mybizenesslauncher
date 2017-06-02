@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +14,11 @@ class TypeDeProjetType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('typeDeProjet');
+        $builder->add('typeDeProjet', EntityType::class, array(
+        'class'         => 'MBLBundle\Entity\TypeDeProjet',
+        'choice_label'  => 'typeDeProjet',
+        'multiple'      => false,
+        'expanded'      => false));
     }
     
     /**

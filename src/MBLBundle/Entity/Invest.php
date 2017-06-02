@@ -20,15 +20,22 @@ class Invest
     private $invest;
 
     /**
-     * @var \MBLBundle\Entity\ProfilRecherche
-     */
-    private $profilrecherche;
-
-    /**
      * @var \MBLBundle\Entity\Profil
      */
     private $profil;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profilrecherches;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->profilrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,30 +72,6 @@ class Invest
     }
 
     /**
-     * Set profilrecherche
-     *
-     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherche
-     *
-     * @return Invest
-     */
-    public function setProfilrecherche(\MBLBundle\Entity\ProfilRecherche $profilrecherche = null)
-    {
-        $this->profilrecherche = $profilrecherche;
-
-        return $this;
-    }
-
-    /**
-     * Get profilrecherche
-     *
-     * @return \MBLBundle\Entity\ProfilRecherche
-     */
-    public function getProfilrecherche()
-    {
-        return $this->profilrecherche;
-    }
-
-    /**
      * Set profil
      *
      * @param \MBLBundle\Entity\Profil $profil
@@ -110,5 +93,39 @@ class Invest
     public function getProfil()
     {
         return $this->profil;
+    }
+
+    /**
+     * Add profilrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
+     *
+     * @return Invest
+     */
+    public function addProfilrecherch(\MBLBundle\Entity\ProfilRecherche $profilrecherch)
+    {
+        $this->profilrecherches[] = $profilrecherch;
+
+        return $this;
+    }
+
+    /**
+     * Remove profilrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
+     */
+    public function removeProfilrecherch(\MBLBundle\Entity\ProfilRecherche $profilrecherch)
+    {
+        $this->profilrecherches->removeElement($profilrecherch);
+    }
+
+    /**
+     * Get profilrecherches
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfilrecherches()
+    {
+        return $this->profilrecherches;
     }
 }

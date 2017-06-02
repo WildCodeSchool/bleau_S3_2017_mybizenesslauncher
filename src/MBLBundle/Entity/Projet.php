@@ -8,7 +8,6 @@ namespace MBLBundle\Entity;
 class Projet
 {
 
- 
 
     /**
      * @var integer
@@ -61,17 +60,11 @@ class Projet
     private $profilsrecherches;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $matchings;
-
-    /**
      * Constructor
      */
     public function __construct()
     {
         $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->matchings = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -308,39 +301,5 @@ class Projet
     public function getProfilsrecherches()
     {
         return $this->profilsrecherches;
-    }
-
-    /**
-     * Add matching
-     *
-     * @param \MBLBundle\Entity\Matching $matching
-     *
-     * @return Projet
-     */
-    public function addMatching(\MBLBundle\Entity\Matching $matching)
-    {
-        $this->matchings[] = $matching;
-
-        return $this;
-    }
-
-    /**
-     * Remove matching
-     *
-     * @param \MBLBundle\Entity\Matching $matching
-     */
-    public function removeMatching(\MBLBundle\Entity\Matching $matching)
-    {
-        $this->matchings->removeElement($matching);
-    }
-
-    /**
-     * Get matchings
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getMatchings()
-    {
-        return $this->matchings;
     }
 }
