@@ -8,6 +8,5 @@ namespace MBLBundle\Entity;
 class Projet
 {
 
- 
 
 }

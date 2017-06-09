@@ -33,21 +33,14 @@ MBLBundle\Entity\Projet:
         secteur:
             targetEntity: MBLBundle\Entity\Secteur
             inversedBy: projets
+            cascade: ["persist"]
 
         typeDeProjet:
             targetEntity: MBLBundle\Entity\TypeDeProjet
             inversedBy: projets
-
-
-
-
-
-
+            cascade: ["persist"]
     manyToMany:
         profilsrecherches:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             inversedBy: projets
-
-        matchings:
-            targetEntity: MBLBundle\Entity\Matching
-            mappedBy: profils
+            cascade: ["persist"]

@@ -14,13 +14,11 @@ MBLBundle\Entity\Metier:
             length: 255
     lifecycleCallbacks: {  }
 
-
-    oneToOne:
-        profilrecherche:
-            targetEntity: MBLBundle\Entity\ProfilRecherche
-            mappedBy: metier
-
     oneToMany:
         profils:
             targetEntity: MBLBundle\Entity\Profil
+            mappedBy: metier
+
+        profilrecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: metier

@@ -15,13 +15,13 @@ MBLBundle\Entity\ETQ:
     lifecycleCallbacks: {  }
 
 
-    oneToOne:
-        profilrecherche:
-            targetEntity: MBLBundle\Entity\ProfilRecherche
-            mappedBy: etq
 
 
     oneToMany:
         profils:
             targetEntity: MBLBundle\Entity\Profil
+            mappedBy: etq
+
+        profilrecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: etq

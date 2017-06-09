@@ -1,18 +1,6 @@
-mbl_homepage:
-    path:     /
-    defaults: { _controller: MBLBundle:User:index }
-
-mbl_addProjet:
-    path:     /ajout-projet
-    defaults: { _controller: MBLBundle:Default:addProjet }
-
-mbl_addProfil:
-    path:     /ajout-profil
-    defaults: { _controller: MBLBundle:Default:addProfil }
-
 userHomepage:
     path: /userHomepage
-    defaults: { _controller: MBLBundle:Default:userHomepage }
+    defaults: { _controller: MBLBundle:User:index }
 
 admin:
     resource: "@MBLBundle/Resources/config/routing_admin.yml"

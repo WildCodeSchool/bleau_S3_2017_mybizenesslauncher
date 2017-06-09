@@ -16,13 +16,11 @@ MBLBundle\Entity\Ou:
 
 
 
-    oneToOne:
-        profilrecherche:
-            targetEntity: MBLBundle\Entity\ProfilRecherche
-            mappedBy: ou
-
-
     oneToMany:
         profils:
             targetEntity: MBLBundle\Entity\Profil
+            mappedBy: ou
+
+        profilrecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: ou

@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class Metier
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,29 @@ class Metier
      */
     private $metier;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profilrecherches;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profilrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -50,47 +69,6 @@ class Metier
     public function getMetier()
     {
         return $this->metier;
-    }
-    /**
-     * @var \MBLBundle\Entity\ProfilRecherche
-     */
-    private $profilrecherche;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profils;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set profilrecherche
-     *
-     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherche
-     *
-     * @return Metier
-     */
-    public function setProfilrecherche(\MBLBundle\Entity\ProfilRecherche $profilrecherche = null)
-    {
-        $this->profilrecherche = $profilrecherche;
-
-        return $this;
-    }
-
-    /**
-     * Get profilrecherche
-     *
-     * @return \MBLBundle\Entity\ProfilRecherche
-     */
-    public function getProfilrecherche()
-    {
-        return $this->profilrecherche;
     }
 
     /**
@@ -125,5 +103,39 @@ class Metier
     public function getProfils()
     {
         return $this->profils;
+    }
+
+    /**
+     * Add profilrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
+     *
+     * @return Metier
+     */
+    public function addProfilrecherch(\MBLBundle\Entity\ProfilRecherche $profilrecherch)
+    {
+        $this->profilrecherches[] = $profilrecherch;
+
+        return $this;
+    }
+
+    /**
+     * Remove profilrecherch
+     *
+     * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
+     */
+    public function removeProfilrecherch(\MBLBundle\Entity\ProfilRecherche $profilrecherch)
+    {
+        $this->profilrecherches->removeElement($profilrecherch);
+    }
+
+    /**
+     * Get profilrecherches
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfilrecherches()
+    {
+        return $this->profilrecherches;
     }
 }

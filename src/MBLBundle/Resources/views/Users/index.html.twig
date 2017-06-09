@@ -7,50 +7,168 @@
 {% endblock %}
 {% block body %}
 
-    <div>
-        <div class="row">
-            <div class="col s12 bandeau_homepage ">
-                <div class="col s4 ">
-                    <h2>Pour les porteurs de projet<br/></h2>
-                    <p>Tu peux créer ton projet, le décrire et détailler les
-                        profi ls de cofondateurs et associés que tu cherches.
-                        Ils auront alors accès à la description du projet et
-                        pourront te contacter.<br/></p>
-                    <h2>Pour ceux qui cherchent un projet à intégrer<br/></h2>
-                    <p>Tu es un véritable startupper en herbe, tu as des
-                        compétences à mettre au profi t d’un projet existant,
-                        parcours les projets pour trouver celui que tu pourrais
-                        aider à porter au sommet!</p>
-                </div>
-                <div class="col s2 offset-s1">
-                    <div class="row Outils">
-                        <div class="col s12">
-                            <a class="waves-effect waves-red btn btn_bandeau_homepage" href="#">Outils pour se lancer</a>
-                        </div>
-                        <div class="col s12">
-                            <p>Trouve sur MyStartupTools.com<br/>tous les outils pour t’aider à lancer ton activité.</p>
-                        </div>
+<!--Bandeau de la homepage -->
+    <div class="row">
+        <div class="col s12 bandeau_homepage ">
+            <div class="col s4 presentation ">
+                <h2>Pour les porteurs de projet<br/></h2>
+                <p>Tu peux créer ton projet, le décrire et détailler les
+                    profi ls de cofondateurs et associés que tu cherches.
+                    Ils auront alors accès à la description du projet et
+                    pourront te contacter.<br/></p>
+                <h2>Pour ceux qui cherchent un projet à intégrer<br/></h2>
+                <p>Tu es un véritable startupper en herbe, tu as des
+                    compétences à mettre au profi t d’un projet existant,
+                    parcours les projets pour trouver celui que tu pourrais
+                    aider à porter au sommet!</p>
+            </div>
+            <div class="col s2 offset-s1">
+                <div class="row Outils">
+                    <div class="col s12">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">Outils pour se lancer</a>
+                    </div>
+                    <div class="col s12">
+                        <p>Trouve sur MyStartupTools.com<br/>tous les outils pour t’aider à lancer ton activité.</p>
                     </div>
                 </div>
-                <div class="col s4 offset-s1">
-                    <div class="row Finance">
-                        <div class="col s6 btn_eBusta">
-                            <a class="waves-effect waves-red btn btn_bandeau_homepage" href="#">Finance ton projet</a>
+            </div>
+            <div class="col s4 offset-s1">
+                <div class="row Finance">
+                    <div class="col s6 btn_eBusta">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" href="#">Finance ton projet</a>
+                    </div>
+                    <div class="col s6">
+                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p>Avec ses enveloppes publiques, E-busta.com vous
+                            propose de réaliser des campagnes de Crowdfunding
+                            de don en contrepartie pour vous aider à fi nancer
+                            votre projet. Seule une commission de 4% du montant
+                            collecté sera appliquée, faisant de E-busta le site de
+                            Crowdfunding le moins cher du marché.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Section projet & profil -->
+    <div class="row box_projet_profil">
+        <!--PROJET-->
+        <div class="col s5 offset-s1 projet">
+                <h3>Vous cherchez un associé</h3>
+            <div class="row bouton_projet">
+                <div class="col s5 offset-s1 btn_showProjet">
+                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Parcourir les projets</a>
+                </div>
+                <div class="col s5 offset-s1 btn_createProjet">
+                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Dépose ton projet</a>
+                </div>
+            </div>
+            <div class="row">
+                {% for pro in projet %}
+                    <div class="col col s5 offset-s1 vignette_projet z-depth-5">
+                        <div class="row vignette">
+                            <div class="col s12">
+                                <h4>Projet : {{ pro.titre }}</h4>
+                            </div>
+                            <div class="col s8 offset-s2 photo_profil">
+                                <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                            </div>
                         </div>
-                        <div class="col s6">
-                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                        <div class="row info_projet">
+                            <div class="col s12">
+                                <h5>Profils recherchés</h5>
+                                {% for profil in pro.profilsrecherches %}
+                                <p>{{ profil.metier.metier}}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="col s12">
+                                <h5>Localisation</h5>
+                                <p>{{ pro.localisation }}</p>
+                            </div>
+                            <div class="col s12">
+                                <h5>Description</h5>
+                                <p>{{ pro.description }}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
+                {% endfor %}
+            </div>
+        </div>
+        <!--PROFIL-->
+        <div class="col s5 profil">
+            <h3>Vous cherchez un projet où vous investir</h3>
+            <div class="row bouton_projet">
+                <div class="col s5 offset-s1 btn_showProfil">
+                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Parcourir les profils</a>
+                </div>
+                <div class="col s5 offset-s1 btn_createProfil">
+                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Dépose ton profil</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col s5 offset-s1 vignette_profil z-depth-5">
+                    <div class="row vignette">
                         <div class="col s12">
-                            <p>Avec ses enveloppes publiques, E-busta.com vous
-                                propose de réaliser des campagnes de Crowdfunding
-                                de don en contrepartie pour vous aider à fi nancer
-                                votre projet. Seule une commission de 4% du montant
-                                collecté sera appliquée, faisant de E-busta le site de
-                                Crowdfunding le moins cher du marché.</p>
+                            <h4>Jean Michel</h4>
+                        </div>
+                        <div class="col s8 offset-s2 photo_profil">
+                            <img src="{{ asset('bundles/mbl/img/kyan.png') }}">
                         </div>
                     </div>
+                    <div class="row info_profil">
+                        <div class="col s12">
+                            <h5>Profil</h5>
+                            <p>Developpeur</p>
+                        </div>
+                        <div class="col s12">
+                            <h5>Compétences</h5>
+                            <p>Jongleur, buveur de bière</p>
+                        </div>
+                        <div class="col s12">
+                            <h5>Localisation</h5>
+                            <p>Fontainebleau, France</p>
+                        </div>
+                        <div class="col s12">
+                            <h5>Description</h5>
+                            <p>Je suis un animateur, un developpeur, une bête à poil, my name is Guigui</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s2"></div>
+                <div class="col col s5 offset-s1 vignette_profil z-depth-5">
+                    <div class="row vignette">
+                        <div class="col s12">
+                            <h4>Jean Michel</h4>
+                        </div>
+                        <div class="col s8 offset-s2 photo_profil">
+                            <img src="{{ asset('bundles/mbl/img/kyan.png') }}">
+                        </div>
+                    </div>
+                    <div class="row info_profil">
+                        <div class="col s12">
+                            <h5>Profil</h5>
+                            <p>Developpeur</p>
+                        </div>
+                        <div class="col s12">
+                            <h5>Compétences</h5>
+                            <p>Jongleur, buveur de bière</p>
+                        </div>
+                        <div class="col s12">
+                            <h5>Localisation</h5>
+                            <p>Fontainebleau, France</p>
+                        </div>
+                        <div class="col s12">
+                            <h5>Description</h5>
+                            <p>Je suis un animateur, un developpeur, une bête à poil, my name is Guigui</p>
+                        </div>
+                    </div>
+
+            <!--Correctif à effectuer : Centrer les titres des PROFIL et des PROJET // Rendre les vignettes de tailles fixe ou limiter le nombre de caractère par box -->
+
                 </div>
             </div>
         </div>
