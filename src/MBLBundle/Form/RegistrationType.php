@@ -35,7 +35,7 @@ class RegistrationType extends AbstractType
                                   'multiple'=> false,
                                   'expanded'=> false,
                                   'required' => false,
-                                  'placeholder'=> 'Quel est votre profil?'
+                                  'placeholder'=> ' Quel est votre profil?'
 
                               ))
                 ->add('etq', EntityType::class,
@@ -45,7 +45,7 @@ class RegistrationType extends AbstractType
                               'multiple'=> false,
                               'expanded'=> false,
                               'required' => false,
-                              'placeholder'=> 'Disponible en tant que'
+                              'placeholder'=> ' Disponible en tant que'
 
                           ))
                 ->add('ou', EntityType::class,
@@ -55,7 +55,7 @@ class RegistrationType extends AbstractType
                               'multiple'=> false,
                               'expanded'=> false,
                               'required' => false,
-                              'placeholder'=> 'Où ça ?'
+                              'placeholder'=> ' Où ça ?'
 
 
                           ))
@@ -66,7 +66,7 @@ class RegistrationType extends AbstractType
                               'multiple'=> false,
                               'expanded'=> false,
                               'required' => false,
-                              'placeholder'=> 'Investissement possible'
+                              'placeholder'=> ' Investissement possible'
 
                           ))
 
@@ -77,7 +77,7 @@ class RegistrationType extends AbstractType
                               'multiple'=> false,
                               'expanded'=> false,
                               'required' => false,
-                              'placeholder'=> 'Votre disponibilité'
+                              'placeholder'=> ' Votre disponibilité'
 
                           ))
                 ->add('competences', EntityType::class,

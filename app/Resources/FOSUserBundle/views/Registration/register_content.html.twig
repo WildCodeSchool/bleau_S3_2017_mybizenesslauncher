@@ -6,30 +6,30 @@
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
             <h1 class="black-text center">Enregistrez-vous</h1>
-            <div class="col s6 left-align">
+            <div class="col s6 center">
 
 
                 {{ form_label(form.nom, 'Nom *') }}
-                {{ form_widget(form.nom) }}
+                {{ form_widget(form.nom, {'attr' : {'placeholder' : ' Nom'}}) }}
                 {{ form_errors(form.nom) }}
 
                 {{ form_label(form.prenom, 'Prénom *') }}
-                {{ form_widget(form.prenom) }}
+                {{ form_widget(form.prenom, {'attr' : {'placeholder' : ' Prénom'}}) }}
                 {{ form_errors(form.prenom) }}
 
                 {{ form_label(form.email,'Votre E-mail *') }}
-                {{ form_widget(form.email) }}
+                {{ form_widget(form.email, {'attr' : {'placeholder' : ' E-mail'}}) }}
                 {{ form_errors(form.email) }}
 
             </div>
-            <div class="col s6 left-align">
+            <div class="col s6 center">
 
                 {{ form_label(form.plainPassword.first, 'Mot de passe *') }}
-                {{ form_widget(form.plainPassword.first) }}
+                {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : ' Mot de passe'}}) }}
                 {{ form_errors(form.plainPassword.first) }}
 
                 {{ form_label(form.plainPassword.second, 'Confirmer votre mot de passe *') }}
-                {{ form_widget(form.plainPassword.second) }}
+                {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : ' Confirmez votre mot de passe'}}) }}
                 {{ form_errors(form.plainPassword.second) }}
 
             </div>
@@ -42,31 +42,31 @@
     <div class="row card-panel">
             <h1 class="black-text center">Ajoutez une description plus comlête</h1>
 
-            <div class="col s6 left-align">
+            <div class="col s6 center">
 
                 {{ form_label(form.description, 'Une description de vous :') }}
-                {{ form_widget(form.description) }}
+                {{ form_widget(form.description, {'attr' : {'placeholder' : ' Une déscription'}}) }}
                 {{ form_errors(form.description) }}
 
                 {{ form_label(form.linkedin, 'Votre compte linked-in :') }}
-                {{ form_widget(form.linkedin) }}
+                {{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}
                 {{ form_errors(form.linkedin) }}
 
                 {{ form_label(form.localisation, 'Localisation :') }}
-                {{ form_widget(form.localisation) }}
+                {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
                 {{ form_errors(form.localisation) }}
 
                 {{ form_label(form.metier, 'Quel est votre profil :') }}
                 {{ form_widget(form.metier, {'attr' : {'class' : 'blue lighten-4'}}) }}
                 {{ form_errors(form.metier) }}
             </div>
-            <div class="col s6 left-align">
+            <div class="col s6 center">
 
                 {{ form_label(form.etq, 'Disponible en tant que') }}
                 {{ form_widget(form.etq, {'attr' : {'class' : 'blue lighten-4'}}) }}
                 {{ form_errors(form.etq) }}
 
-                <div class="text-blue">
+                <div class=" center">
                 {{ form_label(form.competences, 'Compétences :') }}
                 {{ form_widget(form.competences, {'attr' : {'class' : 'blue lighten-4'}}) }}
                 {{ form_errors(form.competences) }}
@@ -74,7 +74,7 @@
                 {{ form_label(form.dispo, 'Disponibilité :') }}
                 {{ form_widget(form.dispo, {'attr' : {'class' : 'blue lighten-4'}}) }}
                 {{ form_errors(form.dispo) }}
-<div class="text-blue">
+<div class=" center">
                 {{ form_label(form.ou, 'Où ça ? :') }}
                 {{ form_widget(form.ou, {'attr' : {'class' : 'blue lighten-4'}}) }}
                 {{ form_errors(form.ou) }}
