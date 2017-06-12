@@ -10,6 +10,8 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <!-- CSS Global -->
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/main.css') }}" />
+    {% block stylesheets %}
+    {% endblock %}
 </head>
 <body>
 <div>
@@ -19,7 +21,7 @@
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
         </a>
     {% else %}
-        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        <a href="{{ path('fos_user_security_login') }}">connexion</a>
     {% endif %}
 </div>
 
