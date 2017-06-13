@@ -69,8 +69,7 @@ class ProfilRechercheType extends AbstractType
                     'multiple'=> true,
                     'expanded'=> false
 
-                ))
-            ->add('ajouter', SubmitType::class);
+                ));
     }
     
     /**

@@ -6,9 +6,12 @@ use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 
 class UserController extends Controller
@@ -60,12 +63,13 @@ class UserController extends Controller
         $projet = new Projet();
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
         $form->handleRequest($request);
+        $profil = $this->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $projet->setDateCreation(new \DateTime());
-//          $profil -> addprojet
-//          $projet -> addprofil
+            $projet->addprofil($this->getUser());
+            $profil->addprojet($projet);
             $em->persist($projet);
             $em->flush();
             $id = $projet->getId();
@@ -87,6 +91,9 @@ class UserController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
+        if (!isset($id)){
+            $id = $request->request->get("id");
+        }
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
         $profil_Recheche_exist = $projet->getProfilsrecherches() ;
 
@@ -97,19 +104,23 @@ class UserController extends Controller
         $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
         $form_pro->handleRequest($request);
 
-        if ($form_pro->isSubmitted() && $form_pro->isValid()) {
+        if ($request->isXmlHttpRequest()) {
 
             $em = $this->getDoctrine()->getManager();
 
             $projet->addProfilsrecherch($projet_profil);
             $projet_profil->addProjet($projet);
             $em->persist($projet_profil);
-
             $em->flush();
 
-            return $this->redirectToRoute('createProfilRechercheProjet', array(
-                'id' =>$id
+            $content = $this->renderView('@MBL/Users/profilsRechercheTemplate.html.twig', array(
+                'profil'=>$projet_profil
             ));
+
+            $response = new JsonResponse($content);
+
+            return $response;
+
         }
 
         return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
@@ -131,6 +142,16 @@ class UserController extends Controller
 
     }
 
+    public function showMyProjectAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $projects = $em->getRepository('MBLBundle:Projet')->findMyProject(40);
+
+        return $this->render('@MBL/Users/showMyProject.html.twig', array(
+            'projects' => $projects
+        ));
+    }
+
     public function createProfilAction(Request $request)
     {
 
@@ -138,7 +159,6 @@ class UserController extends Controller
 
         $profil = $em->getRepository('MBLBundle:Profil')->findOneById($this->getUser()->getId());
 
-dump($profil);die();
         $form = $this->createForm('MBLBundle\Form\ProfilType', $profil);
         $form->handleRequest($request);
 
@@ -153,5 +173,4 @@ dump($profil);die();
             array('form' => $form->createView(),
             ));
     }
-
 }

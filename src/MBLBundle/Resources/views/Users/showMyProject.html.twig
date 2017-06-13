@@ -1,18 +1,19 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Parcourir les projets</h2> {% endblock %}
+
+{% block titreH2 %} <h2>Parcourir vos projets</h2> {% endblock %}
 {% block body %}
-<div class="showProjet">
+    <div class="showMyProjet">
         <div class="box_projet">
 
             <div class="row">
 
-                {% for pro in projects %}
+                {% for projets in projects %}
                     <div class="col l2 m3 s4 vignette_projet">
                         <div class="content z-depth-5">
                             <div class="row vignette">
                                 <div class="col s12">
-                                    <h4>Projet : {{ pro.titre }}</h4>
+                                    <h4>Projet : {{ projets.titre }}</h4>
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
                                     <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
@@ -21,17 +22,17 @@
                             <div class="row info_projet">
                                 <div class="col s12">
                                     <h5>Profils recherchés</h5>
-                                    {% for profil in pro.profilsrecherches %}
+                                    {% for profil in projets.profilsrecherches %}
                                         <p>{{ profil.metier.metier}}</p>
                                     {% endfor %}
                                 </div>
                                 <div class="col s12">
                                     <h5>Localisation</h5>
-                                    <p>{{ pro.localisation }}</p>
+                                    <p>{{ projets.localisation }}</p>
                                 </div>
                                 <div class="col s12">
                                     <h5>Description</h5>
-                                    <p>{{ pro.description }}</p>
+                                    <p>{{ projets.description }}</p>
                                 </div>
                             </div>
                         </div>

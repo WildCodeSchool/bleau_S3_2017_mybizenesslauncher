@@ -44,3 +44,8 @@ MBLBundle\Entity\Projet:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             inversedBy: projets
             cascade: ["persist"]
+
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: projets
+            cascade: ["persist"]
