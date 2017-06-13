@@ -1,18 +1,56 @@
 {# src/MBLBundle/Resources/views/Users/addProjet.html.twig #}
 
 {% extends 'MBLBundle::layout.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/formCreate.css') }}" />
+{% endblock %}
 
 {% block titreH2 %}<h2>Nouveau Projet</h2>{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row">
+<div class="container col s6">
     {{ form_start(form) }}
 
-
-    {{ form_end(form) }}
+    <div class="titre_row center-align">
+        {{ form_label(form.titre) }}
+        {{ form_errors(form.titre) }}
+        {{ form_widget(form.titre, {'attr': {'placeholder': '  Titre'}}) }}
+    </div>
+    <div class="description_row center-align">
+        {{ form_label(form.description) }}
+        {{ form_errors(form.description) }}
+        {{ form_widget(form.description, {'attr': {'placeholder': '  Description'}}) }}
+    </div>
+    <div class="siteInternet_row center-align">
+        {{ form_label(form.siteInternet) }}
+        {{ form_errors(form.siteInternet) }}
+        {{ form_widget(form.siteInternet, {'attr': {'placeholder': '  url:'}}) }}
+    </div>
+    <div class="ebustaUrl_row center-align">
+        {{ form_label(form.ebustaUrl) }}
+        {{ form_errors(form.ebustaUrl) }}
+        {{ form_widget(form.ebustaUrl, {'attr': {'placeholder': '  url:'}}) }}
+    </div>
+    <div class="typeDeProjet_row center-align">
+        {{ form_label(form.typeDeProjet) }}
+        {{ form_errors(form.typeDeProjet) }}
+        {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
+    </div>
+    <div class="secteur center-align">
+        {{ form_label(form.secteur) }}
+        {{ form_errors(form.secteur) }}
+        {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
+    </div>
+    <div class="localisation center-align">
+        {{ form_label(form.localisation) }}
+        {{ form_errors(form.localisation) }}
+        {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
+    </div>
+    <div>
+        <input class="btn" type="submit" value="Création"/>
     </div>
 
+    {{ form_end(form) }}
 </div>
 
 {% endblock %}
