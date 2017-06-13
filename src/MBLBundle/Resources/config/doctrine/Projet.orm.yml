@@ -48,3 +48,4 @@ MBLBundle\Entity\Projet:
         profils:
             targetEntity: MBLBundle\Entity\Profil
             mappedBy: projets
+            cascade: ["persist"]

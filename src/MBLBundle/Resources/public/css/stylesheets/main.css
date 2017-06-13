@@ -334,3 +334,36 @@ input[type=search], textarea.materialize-textarea {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
+
+/* line 5, ../sass/formCreatePro.scss */
+#formCreatePro label.required:after {
+  content: "*";
+}
+/* line 8, ../sass/formCreatePro.scss */
+#formCreatePro label {
+  color: dimgrey;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+/* line 14, ../sass/formCreatePro.scss */
+#formCreatePro p {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+}
+/* line 19, ../sass/formCreatePro.scss */
+#formCreatePro .container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 24, ../sass/formCreatePro.scss */
+#formCreatePro .btn {
+  margin-bottom: 20px;
+}
+/* line 29, ../sass/formCreatePro.scss */
+#formCreatePro input:not([type]), #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
+#formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
+#formCreatePro input[type=search], #formCreatePro textarea.materialize-textarea {
+  border-bottom: none;
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+}

@@ -57,6 +57,7 @@ MBLBundle\Entity\Profil:
         projets:
             targetEntity: MBLBundle\Entity\Projet
             inversedBy: profils
+            cascade: ["persist"]
 
     oneToOne:
         invest:

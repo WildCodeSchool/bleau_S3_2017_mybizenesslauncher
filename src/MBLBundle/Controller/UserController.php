@@ -50,12 +50,13 @@ class UserController extends Controller
         $projet = new Projet();
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
         $form->handleRequest($request);
+        $profil = $this->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $projet->setDateCreation(new \DateTime());
-//          $profil -> addprojet
-//          $projet -> addprofil
+            $projet->addprofil($this->getUser());
+            $profil->addprojet($projet);
             $em->persist($projet);
             $em->flush();
             $id = $projet->getId();
