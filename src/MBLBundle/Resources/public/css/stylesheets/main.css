@@ -48,9 +48,10 @@ h3 {
 /* line 50, ../sass/_global.scss */
 h2 {
   color: white;
+  text-align: center;
 }
 
-/* line 54, ../sass/_global.scss */
+/* line 55, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
@@ -307,6 +308,38 @@ h1 {
 /* line 25, ../sass/registration.scss */
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url],
 input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+input[type=search], textarea.materialize-textarea {
+  border-bottom: none;
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+}
+
+/* line 4, ../sass/formCreate.scss */
+label.required:after {
+  content: "*";
+}
+
+/* line 7, ../sass/formCreate.scss */
+label {
+  color: dimgrey;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* line 13, ../sass/formCreate.scss */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 18, ../sass/formCreate.scss */
+.btn {
+  margin-bottom: 20px;
+}
+
+/* line 23, ../sass/formCreate.scss */
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
+input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
 input[type=search], textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
