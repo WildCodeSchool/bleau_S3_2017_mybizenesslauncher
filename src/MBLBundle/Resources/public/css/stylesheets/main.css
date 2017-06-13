@@ -284,6 +284,36 @@ Layout.html.twig
   margin-left: 59px;
 }
 
+/*
+registration
+*/
+/* line 5, ../sass/registration.scss */
+.register_must {
+  /*background-color: $Colorblue !important;*/
+}
+
+/* line 12, ../sass/registration.scss */
+label {
+  color: dimgrey;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+/* line 17, ../sass/registration.scss */
+h1 {
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+/* line 25, ../sass/registration.scss */
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+input[type=search], textarea.materialize-textarea {
+  border-bottom: none;
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+}
+
 /* line 4, ../sass/formCreate.scss */
 label.required:after {
   content: "*";
