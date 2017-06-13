@@ -29,22 +29,8 @@ class UserController extends Controller
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function editProfilAction(Request $request)
     {
-//        $deleteForm = $this->createDeleteForm();
         $profil=$this->getUser();
         $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil);
         $editForm->handleRequest($request);
@@ -52,67 +38,22 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('editProfil', array('id' => $profil->getId()));
+            return $this->redirectToRoute('showProfil');
         }
 
         return $this->render('@MBL/Users/editProfil.html.twig', array(
             'profilType' => $profil,
             'edit_form' => $editForm->createView(),
-//            'delete_form'=>$deleteForm->createView()
         ));
-
     }
-
-    public function deleteAction(Request $request, Profil $profil)
-    {
-        $form = $this->createDeleteForm($profil);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($profil);
-            $em->flush($profil);
-        }
-
-        return $this->redirectToRoute('showProfil');
-    }
-
-    public function createDeleteForm()
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('deleteProfil', array('id' => $profil->getId())))
-            ->setMethod('DELETE')
-            ->getForm();
-    }
-
 
     public function showProfilAction()
-    {
-        $deleteForm = $this->createDeleteForm();
-
+    {//
+        $profil=$this->getUser();
         return $this->render('@MBL/Users/showProfil.html.twig', array(
-            'profilType'=>$profil,
-            'delete_form'=>$deleteForm->createView()
+            'profilType'=>$profil,//
         ));
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function createProjectAction(Request $request)
     {

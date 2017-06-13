@@ -1,8 +1,8 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block body %}
+{% block titreH2 %} <h2>Mon profil public</h2> {% endblock %}
 
-<h1>Je suis la page Show Profil!!</h1>
+{% block body %}
 
 <table>
     <tbody>
@@ -16,51 +16,78 @@
         </tr>
         <tr>
             <th>Description: </th>
-            <td>{{ profilType.description }}</td>
+            {% if profilType.description is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.description }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>LinkedIn: </th>
-            <td>{{ profilType.linkedIn }}</td>
+            {% if profilType.linkedIn is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.linkedIn }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>Localisation: </th>
-            <td>{{ profilType.localisation }}</td>
+            {% if profilType.localisation is same as(null) %}
+                <td><p>renseignez votre localisation</p></td>
+            {% else %}
+                <td>{{ profilType.localisation }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>Investissement: </th>
-            <td>{{ profilType.invest }}</td>
+            {% if profilType.invest is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.invest.invest }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>En tant que: </th>
-            <td>{{ profilType.etq }}</td>
+            {% if profilType.etq is same as(null) %}
+                <td><p>renseignez votre status</p></td>
+            {% else %}
+                <td>{{ profilType.etq.etq }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>Disponibilité: </th>
-            <td>{{ profilType.dispo }}</td>
+            {% if profilType.dispo is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.dispo.dispo }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>Où: </th>
-            <td>{{ profilType.ou }}</td>
+            {% if profilType.ou is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.ou.Ou }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>Métiers: </th>
-            <td>{{ profilType.metier }}</td>
+            {% if profilType.metier is same as(null) %}
+                <td><p>précisez votre métier</p></td>
+            {% else %}
+                <td>{{ profilType.metier.metier }}</td>
+            {% endif %}
         </tr>
         <tr>
             <th>Compétences: </th>
-            <td>{{ profilType.competences }}</td>
+            {% if profilType.competences is empty %}
+                <td><p>renseignez vos compétences</p></td>
+            {% else %}
+                {% for competences in profilType.competences %}  <td>{{ competences.competences }}</td> {% endfor %}
+            {% endif %}
         </tr>
     </tbody>
 </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('editProfil', { 'id': profilType.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <a href="{{ path('editProfil', { 'id': profilType.id }) }}">Modifier mon profil</a>
 {% endblock %}

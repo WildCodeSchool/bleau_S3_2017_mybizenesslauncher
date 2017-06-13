@@ -1,5 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
+
 {% block titreH2 %} <h2>Modifier votre profil</h2> {% endblock %}
 
 
@@ -10,15 +11,16 @@
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('showProfil') }}">Voir mon profil public</a>
-        </li>
-        <li>
-            {#{{ form_start(delete_form) }}#}
-            {#<input type="submit" value="Delete">#}
-            {#{{ form_end(delete_form) }}#}
-        </li>
-    </ul>
+      <a href="{{ path('showProfil') }}">Voir mon profil public</a>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
 
 {% endblock %}
