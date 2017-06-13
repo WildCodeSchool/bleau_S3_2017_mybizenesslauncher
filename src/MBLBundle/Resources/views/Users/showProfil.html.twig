@@ -1,2 +1,66 @@
 {% extends '@MBL/layout.html.twig' %}
 
+{% block body %}
+
+<h1>Je suis la page Show Profil!!</h1>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Nom: </th>
+            <td>{{ profilType.nom }}</td>
+        </tr>
+        <tr>
+            <th>Prénom: </th>
+            <td>{{ profilType.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Description: </th>
+            <td>{{ profilType.description }}</td>
+        </tr>
+        <tr>
+            <th>LinkedIn: </th>
+            <td>{{ profilType.linkedIn }}</td>
+        </tr>
+        <tr>
+            <th>Localisation: </th>
+            <td>{{ profilType.localisation }}</td>
+        </tr>
+        <tr>
+            <th>Investissement: </th>
+            <td>{{ profilType.invest }}</td>
+        </tr>
+        <tr>
+            <th>En tant que: </th>
+            <td>{{ profilType.etq }}</td>
+        </tr>
+        <tr>
+            <th>Disponibilité: </th>
+            <td>{{ profilType.dispo }}</td>
+        </tr>
+        <tr>
+            <th>Où: </th>
+            <td>{{ profilType.ou }}</td>
+        </tr>
+        <tr>
+            <th>Métiers: </th>
+            <td>{{ profilType.metier }}</td>
+        </tr>
+        <tr>
+            <th>Compétences: </th>
+            <td>{{ profilType.competences }}</td>
+        </tr>
+    </tbody>
+</table>
+
+    <ul>
+        <li>
+            <a href="{{ path('editProfil', { 'id': profilType.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

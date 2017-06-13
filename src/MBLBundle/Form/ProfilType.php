@@ -17,14 +17,13 @@ class ProfilType extends AbstractType
             ->add('prenom')
             ->add('description')
             ->add('linkedIn')
-            ->add('localisation')
-            ->add('invest')
-            ->add('etq')
-            ->add('dispo')
-            ->add('ou')
-            ->add('metier')
-            ->add('competences')
-            ->add('matchings');
+            ->add('localisation');
+//            ->add('invest')
+//            ->add('etq')
+//            ->add('dispo')
+//            ->add('ou')
+//            ->add('metier')
+//            ->add('competences');
     }
     
     /**

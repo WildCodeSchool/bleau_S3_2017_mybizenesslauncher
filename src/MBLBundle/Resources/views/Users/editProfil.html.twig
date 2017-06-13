@@ -1,8 +1,24 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Création de profil</h2> {% endblock %}
+{% block titreH2 %} <h2>Modifier votre profil</h2> {% endblock %}
 
 
 {% block body %}
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('showProfil') }}">Voir mon profil public</a>
+        </li>
+        <li>
+            {#{{ form_start(delete_form) }}#}
+            {#<input type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+        </li>
+    </ul>
 
 {% endblock %}
