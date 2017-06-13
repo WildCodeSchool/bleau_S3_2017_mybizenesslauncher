@@ -1,24 +1,58 @@
-
 {% extends 'MBLBundle::layout.html.twig' %}
 
-{% block titreH2 %}<h2>Nouveau Projet</h2>{% endblock %}
+{% block titreH2 %}<h2>Nouveau Profil recherché</h2>{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div id="formCreatePro" class="container">
 
         <div class="row">
+
             <div class="col s6 center">
 
-                Titre : {{ projet.titre }} <br>
-                Description : {{ projet.description }} <br>
-                Site Internet : {{ projet.siteInternet }} <br>
-                E-busta Url : {{ projet.ebustaUrl }} <br>
-                Localisation : {{ projet.localisation }} <br>
-                Secteur : {{ projet.secteur.secteurActivite}} <br>
-                Type de projet : {{projet.typeDeProjet.typeDeProjet }}<br>
+                <p>Titre : {{ projet.titre }} </p> <br>
+                <p> Description : {{ projet.description }} </p> <br>
+                <p> Site Internet : {{ projet.siteInternet }} </p> <br>
+                <p> E-busta Url : {{ projet.ebustaUrl }}  </p><br>
+                <p> Localisation : {{ projet.localisation }}  </p><br>
+                <p> Secteur : {{ projet.secteur.secteurActivite}} </p> <br>
+                <p> Type de projet : {{projet.typeDeProjet.typeDeProjet }} </p> <br>
             </div>
             <div class="col s6">
                 {{ form_start(form_pro) }}
+
+                <div class="titre_row center-align">
+                    {{ form_label(form_pro.metier, 'Profil recherché ') }}
+                    {{ form_errors(form_pro.metier) }}
+                    {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
+                </div>
+                <div class="description_row center-align">
+                    {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
+                    {{ form_errors(form_pro.etq) }}
+                    {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
+                </div>
+                <div class="secteur center-align">
+                    {{ form_label(form_pro.competences, 'Compétences ') }}
+                    {{ form_errors(form_pro.competences) }}
+                    {{ form_widget(form_pro.competences, {'attr': {'class': 'blue lighten-4'}}) }}
+                </div>
+                <div class="typeDeProjet_row center-align">
+                    {{ form_label(form_pro.dispo, 'Disponibilité ') }}
+                    {{ form_errors(form_pro.dispo) }}
+                    {{ form_widget(form_pro.dispo, {'attr': {'class': 'blue lighten-4','placeholder': ' disponibilité'}}) }}
+                </div>
+                <div class="siteInternet_row center-align">
+                    {{ form_label(form_pro.ou, 'Où ca ? ') }}
+                    {{ form_errors(form_pro.ou) }}
+                    {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
+                </div>
+                <div class="ebustaUrl_row center-align">
+                    {{ form_label(form_pro.invest, 'Investissement ') }}
+                    {{ form_errors(form_pro.invest) }}
+                    {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
+                </div>
+                <div class="bouton">
+                    <input class="btn" type="submit">
+                </div>
                 {{ form_end(form_pro) }}
             </div>
 
