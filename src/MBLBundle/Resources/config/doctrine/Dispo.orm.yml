@@ -15,12 +15,11 @@ MBLBundle\Entity\Dispo:
     lifecycleCallbacks: {  }
 
 
-    oneToOne:
-        profilrecherche:
-            targetEntity: MBLBundle\Entity\ProfilRecherche
-            mappedBy: dispo
-
     oneToMany:
         profils:
             targetEntity: MBLBundle\Entity\Profil
+            mappedBy: dispo
+
+        profilrecherches:
+            targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: dispo

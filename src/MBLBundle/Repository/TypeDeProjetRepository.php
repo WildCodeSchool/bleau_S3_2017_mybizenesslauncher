@@ -10,4 +10,5 @@ namespace MBLBundle\Repository;
  */
 class TypeDeProjetRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

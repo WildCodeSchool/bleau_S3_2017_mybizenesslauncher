@@ -14,29 +14,30 @@ MBLBundle\Entity\ProfilRecherche:
         projets:
             targetEntity: MBLBundle\Entity\Projet
             mappedBy: profilsrecherches
+            cascade: ["persist"]
 
         competences:
             targetEntity: MBLBundle\Entity\Competences
             inversedBy: profilsrecherches
 
 
-    oneToOne:
+    manyToOne:
         etq:
             targetEntity: MBLBundle\Entity\ETQ
-            inversedBy: profilrecherche
+            inversedBy: profilrecherches
 
         ou:
             targetEntity: MBLBundle\Entity\Ou
-            inversedBy: profilrecherche
+            inversedBy: profilrecherches
 
         invest:
             targetEntity: MBLBundle\Entity\Invest
-            inversedBy: profilrecherche
+            inversedBy: profilrecherches
 
         dispo:
             targetEntity: MBLBundle\Entity\Dispo
-            inversedBy: profilrecherche
+            inversedBy: profilrecherches
 
         metier:
             targetEntity: MBLBundle\Entity\Metier
-            inversedBy: profilrecherche
+            inversedBy: profilrecherches

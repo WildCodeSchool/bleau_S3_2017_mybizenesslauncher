@@ -10,4 +10,15 @@ namespace MBLBundle\Repository;
  */
 class SecteurRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getSecteursQueryBuilder()
+
+    {
+
+        return $this ->createQueryBuilder('s')
+            ->select('s.secteurActivite')
+            ->getQuery()
+            ->getResult()
+            ;
+
+    }
 }

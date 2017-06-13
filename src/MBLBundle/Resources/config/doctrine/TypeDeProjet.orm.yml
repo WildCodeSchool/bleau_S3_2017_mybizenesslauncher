@@ -12,10 +12,11 @@ MBLBundle\Entity\TypeDeProjet:
         typeDeProjet:
             type: string
             length: 255
-            column: TypeDeProjet
+
     lifecycleCallbacks: {  }
 
     oneToMany:
         projets:
             targetEntity: MBLBundle\Entity\Projet
             mappedBy: typeDeProjet
+            cascade: ["persist"]

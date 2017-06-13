@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class Fichier
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,21 @@ class Fichier
      */
     private $photo;
 
+    /**
+     * @var \MBLBundle\Entity\Projet
+     */
+    private $projet;
+
+    /**
+     * @var \MBLBundle\Entity\Profil
+     */
+    private $profil;
+
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -51,16 +62,6 @@ class Fichier
     {
         return $this->photo;
     }
-    /**
-     * @var \MBLBundle\Entity\Projet
-     */
-    private $projet;
-
-    /**
-     * @var \MBLBundle\Entity\Profil
-     */
-    private $profil;
-
 
     /**
      * Set projet

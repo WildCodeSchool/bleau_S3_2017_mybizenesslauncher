@@ -18,7 +18,7 @@
                 <div class="nav-wrapper header">
                     <a href="{{ path('mbl_homepage') }}" class="color">MyBizenessLauncher.com</a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="color" href="#">Parcourir les projets</a></li>
+                        <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
                         <li><a class="color" href="#">Parcourir les profils</a></li>
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
@@ -31,7 +31,7 @@
                 <div class="nav-wrapper header">
                     <a href="#" class="color">MyBizenessLauncher.com</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a class="color" href="">Parcourir les projets</a></li>
+                        <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
                         <li><a class="color" href="">Parcourir les profils</a></li>
                         <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
                     </ul>
@@ -47,7 +47,7 @@
 
 {% block bandeau %}
 
-    <div class=" bandeau">
+    <div class="bandeau">
         <div class="col s12">
             {% block titreH2 %} <h2>Ecrivez votre titre!</h2> {% endblock %}
         </div>

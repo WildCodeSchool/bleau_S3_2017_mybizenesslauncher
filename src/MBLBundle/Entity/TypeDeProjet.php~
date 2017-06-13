@@ -7,8 +7,9 @@ namespace MBLBundle\Entity;
  */
 class TypeDeProjet
 {
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +18,23 @@ class TypeDeProjet
      */
     private $typeDeProjet;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $projets;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->projets = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -50,18 +63,6 @@ class TypeDeProjet
     public function getTypeDeProjet()
     {
         return $this->typeDeProjet;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $projets;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->projets = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

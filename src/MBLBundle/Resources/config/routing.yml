@@ -1,5 +1,5 @@
-mbl_homepage:
-    path:     /
+userHomepage:
+    path: /userHomepage
     defaults: { _controller: MBLBundle:User:index }
 
 admin:
@@ -9,3 +9,4 @@ admin:
 user:
     resource: "@MBLBundle/Resources/config/routing_user.yml"
     prefix:   /
+

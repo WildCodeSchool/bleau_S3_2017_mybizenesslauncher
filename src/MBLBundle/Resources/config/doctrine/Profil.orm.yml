@@ -55,10 +55,6 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Competences
             inversedBy: profils
 
-        matching:
-            targetEntity: MBLBundle\Entity\Matching
-            mappedBy: projets
-
     oneToOne:
         invest:
             targetEntity: MBLBundle\Entity\Invest
