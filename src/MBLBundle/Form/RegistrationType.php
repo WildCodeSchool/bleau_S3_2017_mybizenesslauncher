@@ -34,7 +34,8 @@ class RegistrationType extends AbstractType
                                   'choice_label' =>'metier',
                                   'multiple'=> false,
                                   'expanded'=> false,
-                                  'required' => false
+                                  'required' => false,
+                                  'placeholder'=> ' Quel est votre profil?'
 
                               ))
                 ->add('etq', EntityType::class,
@@ -43,7 +44,8 @@ class RegistrationType extends AbstractType
                               'choice_label' =>'etq',
                               'multiple'=> false,
                               'expanded'=> false,
-                              'required' => false
+                              'required' => false,
+                              'placeholder'=> ' Disponible en tant que'
 
                           ))
                 ->add('ou', EntityType::class,
@@ -52,7 +54,8 @@ class RegistrationType extends AbstractType
                               'choice_label' =>'ou',
                               'multiple'=> false,
                               'expanded'=> false,
-                              'required' => false
+                              'required' => false,
+                              'placeholder'=> ' Où ça ?'
 
 
                           ))
@@ -62,7 +65,8 @@ class RegistrationType extends AbstractType
                               'choice_label' =>'invest',
                               'multiple'=> false,
                               'expanded'=> false,
-                              'required' => false
+                              'required' => false,
+                              'placeholder'=> ' Investissement possible'
 
                           ))
 
@@ -72,7 +76,8 @@ class RegistrationType extends AbstractType
                               'choice_label' =>'dispo',
                               'multiple'=> false,
                               'expanded'=> false,
-                              'required' => false
+                              'required' => false,
+                              'placeholder'=> ' Votre disponibilité'
 
                           ))
                 ->add('competences', EntityType::class,
