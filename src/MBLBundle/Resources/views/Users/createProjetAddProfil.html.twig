@@ -19,6 +19,7 @@
             </div>
             <div class="col s6">
                 {{ form_start(form_pro) }}
+                <input type="hidden" name="id" value="{{ projet.id }}">
                 {{ form_end(form_pro) }}
             </div>
 
@@ -27,22 +28,9 @@
 
 
 
-        <div class="row">
-        {% for profil in profil_Recheche_exist %}
+        <div class="row profil_recherche">
 
-                <div class="col s4">
-                    Disponibilité : {{ profil.dispo.dispo }} <br>
-                    ETQ : {{ profil.ETQ.etq }} <br>
-                    Ou : {{ profil.ou.ou }} <br>
-                    Investissement : {{ profil.invest.invest }} <br>
-                    Metier : {{ profil.metier.metier }} <br>
-                    {% for comp in profil.competences %}
-                        Compétences : {{ comp.competences }} <br>
-                    {% endfor %}
-                </div>
-
-        {% endfor %}
-    </div>
+        </div>
 
     </div>
 
@@ -52,6 +40,25 @@
     <script>
         $(document).ready(function() {
             $('select').material_select();
-        });
+            $('form[name="mblbundle_profilrecherche"]').submit(function(e){
+               e.preventDefault();
+               var data = $(this).serialize();
+               var form = $(this);
+               $.ajax({
+                   method: 'post',
+                   url: '{{ path('createProfilRechercheProjet') }}',
+                   data: data,
+
+                   success: function(response){
+
+                       $('.profil_recherche').append(response);
+                       $('.testtt').hide().fadeIn(2000);
+
+                       form.trigger('reset');
+                   }
+               })
+            });
+
+            });
     </script>
 {% endblock %}

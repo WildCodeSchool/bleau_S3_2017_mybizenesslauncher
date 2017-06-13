@@ -79,6 +79,8 @@ fos_user:
         sender_name: flo
 
     registration:
+        form:
+            type: MBLBundle\Form\RegistrationType
         confirmation:
             enabled: true
             template:   '@FOSUser/Registration/email.txt.twig'

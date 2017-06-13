@@ -300,6 +300,48 @@ class Projet
     {
         return $this->profilsrecherches;
     }
+<<<<<<< HEAD
 
 
+=======
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+
+    /**
+     * Add profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     *
+     * @return Projet
+     */
+    public function addProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils[] = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Remove profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     */
+    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils->removeElement($profil);
+    }
+
+    /**
+     * Get profils
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfils()
+    {
+        return $this->profils;
+    }
+>>>>>>> dev
 }

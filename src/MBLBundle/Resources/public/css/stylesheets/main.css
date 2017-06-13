@@ -58,85 +58,78 @@ body {
 
 /* 2. INDEX */
 /* line 3, ../sass/_index.scss */
-.bandeau_homepage {
+#index .bandeau_homepage {
   width: 100%;
   margin: 0;
   background: #98d4e1;
   color: white;
-  padding-top: 2000px;
 }
-/* line 9, ../sass/_index.scss */
-.bandeau_homepage h2 {
+/* line 8, ../sass/_index.scss */
+#index .bandeau_homepage h2 {
   font-size: 1.5em;
 }
-
-/* line 15, ../sass/_index.scss */
-.btn_bandeau_homepage {
+/* line 14, ../sass/_index.scss */
+#index .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 19, ../sass/_index.scss */
-.btn_bandeau_homepage:hover {
+/* line 18, ../sass/_index.scss */
+#index .btn_bandeau_homepage:hover {
   background-color: white;
 }
-/* line 22, ../sass/_index.scss */
-.btn_bandeau_homepage:focus {
+/* line 21, ../sass/_index.scss */
+#index .btn_bandeau_homepage:focus {
   background-color: white;
 }
-
-/* line 26, ../sass/_index.scss */
-.Outils {
+/* line 25, ../sass/_index.scss */
+#index .Outils {
   padding-top: 70px;
 }
-
-/* line 29, ../sass/_index.scss */
-.btn_eBusta {
+/* line 28, ../sass/_index.scss */
+#index .btn_eBusta {
   margin-top: 40px;
 }
-
-/* line 32, ../sass/_index.scss */
-.Finance {
+/* line 31, ../sass/_index.scss */
+#index .Finance {
   margin-top: 30px;
 }
-
-/* line 36, ../sass/_index.scss */
-.box_projet_profil * {
+/* line 35, ../sass/_index.scss */
+#index .box_projet_profil * {
   text-align: center;
 }
-/* line 39, ../sass/_index.scss */
-.box_projet_profil * .vignette_projet {
+/* line 38, ../sass/_index.scss */
+#index .box_projet_profil * .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
+  margin-bottom: 10px;
+  height: 650px;
 }
-/* line 43, ../sass/_index.scss */
-.box_projet_profil * .vignette_profil {
+/* line 44, ../sass/_index.scss */
+#index .box_projet_profil * .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
+  margin-bottom: 10px;
+  height: 650px;
 }
-/* line 47, ../sass/_index.scss */
-.box_projet_profil * .info_projet, .box_projet_profil * .info_profil {
+/* line 51, ../sass/_index.scss */
+#index .box_projet_profil * .info_projet, #index .box_projet_profil * .info_profil {
   border-radius: 8px;
 }
-/* line 50, ../sass/_index.scss */
-.box_projet_profil * .vignette {
+/* line 54, ../sass/_index.scss */
+#index .box_projet_profil * .vignette {
   border-radius: 8px;
 }
-/* line 53, ../sass/_index.scss */
-.box_projet_profil * .photo_profil {
+/* line 57, ../sass/_index.scss */
+#index .box_projet_profil * .photo_profil {
   border-radius: 8px;
   padding: 10px;
 }
-
-/* line 58, ../sass/_index.scss */
-.photo_profil, .info_projet, .info_profil {
+/* line 62, ../sass/_index.scss */
+#index .photo_profil, #index .info_projet, #index .info_profil {
   background: white;
   margin-bottom: 10px;
-}
-
-/* line 62, ../sass/_index.scss */
-.projet {
-  margin-left: 59px;
+  height: 60%;
 }
 
 /*
@@ -202,112 +195,138 @@ Layout.html.twig
   background-color: #98d4e1;
 }
 
-/* line 3, ../sass/showProject.scss */
-.bandeau_homepage {
-  width: 100%;
-  margin: 0;
-  background: #98d4e1;
-  color: white;
-  padding-top: 2000px;
+/* line 2, ../sass/_showProject.scss */
+.showProjet {
+  height: 100%;
 }
-/* line 9, ../sass/showProject.scss */
-.bandeau_homepage h2 {
-  font-size: 1.5em;
-}
-
-/* line 15, ../sass/showProject.scss */
-.btn_bandeau_homepage {
-  background-color: white;
-  color: #98d4e1;
-  box-shadow: 2px 2px 3px grey;
-}
-/* line 19, ../sass/showProject.scss */
-.btn_bandeau_homepage:hover {
-  background-color: white;
-}
-/* line 22, ../sass/showProject.scss */
-.btn_bandeau_homepage:focus {
-  background-color: white;
-}
-
-/* line 26, ../sass/showProject.scss */
-.Outils {
-  padding-top: 70px;
-}
-
-/* line 29, ../sass/showProject.scss */
-.btn_eBusta {
-  margin-top: 40px;
-}
-
-/* line 32, ../sass/showProject.scss */
-.Finance {
-  margin-top: 30px;
-}
-
-/* line 36, ../sass/showProject.scss */
-.box_projet_profil * {
+/* line 4, ../sass/_showProject.scss */
+.showProjet .box_projet * {
   text-align: center;
+  height: 100%;
 }
-/* line 39, ../sass/showProject.scss */
-.box_projet_profil * .vignette_projet {
+/* line 7, ../sass/_showProject.scss */
+.showProjet .box_projet * .vignette_projet {
+  padding: 2%;
+  height: 100%;
+}
+/* line 11, ../sass/_showProject.scss */
+.showProjet .box_projet * .vignette_projet .content {
   background-color: #4b494b;
   border-radius: 8px;
 }
-/* line 43, ../sass/showProject.scss */
-.box_projet_profil * .vignette_profil {
-  background-color: #98d4e1;
+/* line 16, ../sass/_showProject.scss */
+.showProjet .box_projet * .info_projet {
+  border-radius: 8px;
+  margin: 15px;
+}
+/* line 20, ../sass/_showProject.scss */
+.showProjet .box_projet * .vignette {
   border-radius: 8px;
 }
-/* line 47, ../sass/showProject.scss */
-.box_projet_profil * .info_projet, .box_projet_profil * .info_profil {
-  border-radius: 8px;
-}
-/* line 50, ../sass/showProject.scss */
-.box_projet_profil * .vignette {
-  border-radius: 8px;
-}
-/* line 53, ../sass/showProject.scss */
-.box_projet_profil * .photo_profil {
+/* line 23, ../sass/_showProject.scss */
+.showProjet .box_projet * .photo_profil {
   border-radius: 8px;
   padding: 10px;
 }
-
-/* line 58, ../sass/showProject.scss */
-.photo_profil, .info_projet, .info_profil {
+/* line 27, ../sass/_showProject.scss */
+.showProjet .box_projet * .photo_profil, .showProjet .box_projet * .info_projet, .showProjet .box_projet * .info_profil {
   background: white;
-  margin-bottom: 10px;
+  height: 60%;
 }
 
-/* line 62, ../sass/showProject.scss */
-.projet {
-  margin-left: 59px;
+/* line 3, ../sass/_showMyProject.scss */
+.showMyProjet {
+  height: 100%;
+}
+/* line 5, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * {
+  text-align: center;
+  height: 100%;
+}
+/* line 8, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * .vignette_projet {
+  padding: 2%;
+  height: 100%;
+}
+/* line 12, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * .vignette_projet .content {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 17, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * .info_projet {
+  border-radius: 8px;
+  margin: 15px;
+}
+/* line 21, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * .vignette {
+  border-radius: 8px;
+}
+/* line 24, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * .photo_profil {
+  border-radius: 8px;
+  padding: 10px;
+}
+/* line 28, ../sass/_showMyProject.scss */
+.showMyProjet .box_projet * .photo_profil, .showMyProjet .box_projet * .info_projet, .showMyProjet .box_projet * .info_profil {
+  background: white;
+  height: 60%;
 }
 
-/* line 4, ../sass/formCreate.scss */
+/*
+registration
+*/
+/* line 5, ../sass/_registration.scss */
+.register_must {
+  /*background-color: $Colorblue !important;*/
+}
+
+/* line 12, ../sass/_registration.scss */
+label {
+  color: dimgrey;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+/* line 17, ../sass/_registration.scss */
+h1 {
+  font-weight: bold;
+  font-size: 1.7em;
+}
+
+/* line 25, ../sass/_registration.scss */
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+input[type=search], textarea.materialize-textarea {
+  border-bottom: none;
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+}
+
+/* line 4, ../sass/_formCreate.scss */
 label.required:after {
   content: "*";
 }
 
-/* line 7, ../sass/formCreate.scss */
+/* line 7, ../sass/_formCreate.scss */
 label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
 
-/* line 13, ../sass/formCreate.scss */
+/* line 13, ../sass/_formCreate.scss */
 .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* line 18, ../sass/formCreate.scss */
+/* line 18, ../sass/_formCreate.scss */
 .btn {
   margin-bottom: 20px;
 }
 
-/* line 23, ../sass/formCreate.scss */
+/* line 23, ../sass/_formCreate.scss */
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
 input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
 input[type=search], textarea.materialize-textarea {

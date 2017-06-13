@@ -1,0 +1,33 @@
+@import "global";
+/*
+registration
+*/
+.register_must
+{
+
+/*background-color: $Colorblue !important;*/
+  //color: $Colorblue !important;
+
+}
+label {
+color: dimgrey;
+font-weight:bold;
+font-size: 1.3em;
+}
+h1
+{
+
+font-weight:bold;
+font-size: 1.7em;
+}
+//Remove the Materialize
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+input[type=search], textarea.materialize-textarea {
+
+border-bottom: none;
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+
+}
