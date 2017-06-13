@@ -47,9 +47,10 @@ h3 {
 /* line 50, ../sass/_global.scss */
 h2 {
   color: white;
+  text-align: center;
 }
 
-/* line 54, ../sass/_global.scss */
+/* line 55, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
