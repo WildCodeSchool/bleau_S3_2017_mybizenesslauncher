@@ -7,8 +7,6 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
-
-
     /**
      * @var integer
      */
@@ -302,4 +300,6 @@ class Projet
     {
         return $this->profilsrecherches;
     }
+
+
 }

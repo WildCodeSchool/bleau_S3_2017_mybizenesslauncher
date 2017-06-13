@@ -18,6 +18,14 @@ createProjet:
     path: /createProject
     defaults: { _controller: MBLBundle:User:createProject }
 
+listProjetsProfil:
+    path: /mesProjets
+    defaults: { _controller: MBLBundle:User:showProjetsProfil }
+
+editProjet:
+    path: /editProject
+    defaults: { _controller: MBLBundle:User:editProject }
+
 createProfilRechercheProjet:
     path: /createProfilRechercheProject/{id}
     defaults:
