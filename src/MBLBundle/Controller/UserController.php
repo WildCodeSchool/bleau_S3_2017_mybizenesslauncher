@@ -132,4 +132,14 @@ class UserController extends Controller
         ));
 
     }
+
+    public function showMyProjectAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $projects = $em->getRepository('MBLBundle:Projet')->findMyProject(40);
+
+        return $this->render('@MBL/Users/showMyProject.html.twig', array(
+            'projects' => $projects
+        ));
+    }
 }

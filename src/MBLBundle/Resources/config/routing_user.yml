@@ -28,5 +28,9 @@ showProject:
     path: /showProject
     defaults: { _controller: MBLBundle:User:showProject }
 
+showMyProject:
+    path: /showMyProject
+    defaults: { _controller: MBLBundle:User:showMyProject }
+
 
 
