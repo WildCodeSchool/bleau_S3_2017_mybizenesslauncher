@@ -1,0 +1,10 @@
+    <div class="col s4 testtt">
+        Disponibilité : {{ profil.dispo.dispo }} <br>
+        ETQ : {{ profil.ETQ.etq }} <br>
+        Ou : {{ profil.ou.ou }} <br>
+        Investissement : {{ profil.invest.invest }} <br>
+        Metier : {{ profil.metier.metier }} <br>
+        {% for comp in profil.competences %}
+            Compétences : {{ comp.competences }} <br>
+        {% endfor %}
+    </div>

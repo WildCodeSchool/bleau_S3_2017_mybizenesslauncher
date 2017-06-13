@@ -15,7 +15,9 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProjetType extends AbstractType
@@ -25,25 +27,38 @@ class ProjetType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre', TextType::class)
-            ->add('description')
-            ->add('siteInternet')
-            ->add('ebustaUrl')
-            ->add('localisation')
-
-
-            ->add('secteur', EntityType::class, array(
-                'class'         => 'MBLBundle\Entity\Secteur',
-                'choice_label'  => 'secteurActivite',
-                'multiple'      => false,
-                'expanded'      => false))
+        $builder->add('titre', TextType::class, array(
+                'required' => true
+            ))
+            ->add('description', TextType::class, array(
+                'required' => true
+            ))
+            ->add('siteInternet', UrlType::class, array(
+                'required' => false
+            ))
+            ->add('ebustaUrl', UrlType::class, array(
+                'required' => false
+            ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
                 'choice_label'  => 'typeDeProjet',
                 'multiple'      => false,
-                'expanded'      => false))
-//
-        ->add('Création', SubmitType::class);
+                'expanded'      => false,
+                'required'      => true,
+                'placeholder'   => '  Choisissez'
+            ))
+            ->add('secteur', EntityType::class, array(
+                'class'         => 'MBLBundle\Entity\Secteur',
+                'choice_label'  => 'secteurActivite',
+                'multiple'      => false,
+                'expanded'      => false,
+                'required'      => true,
+                'placeholder'   => '  Choisissez'
+            ))
+            ->add('localisation', TextType::class, array(
+                'required' => true
+            ));
+
 
 
 
