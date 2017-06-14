@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Controller;
 
+use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -30,19 +31,32 @@ class UserController extends Controller
         return $this->render('@MBL/Users/homepageProfil.html.twig');
 
     }
-    public function editProfilAction()
-    {
-        return $this->render('@MBL/Users/editProfil.html.twig');
 
+    public function editProfilAction(Request $request)
+    {
+        $profil=$this->getUser();
+        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('showProfil');
+        }
+
+        return $this->render('@MBL/Users/editProfil.html.twig', array(
+            'profilType' => $profil,
+            'edit_form' => $editForm->createView(),
+        ));
     }
+
     public function showProfilAction()
-    {
-        return $this->render('@MBL/Users/showProfil.html.twig');
-
+    {//
+        $profil=$this->getUser();
+        return $this->render('@MBL/Users/showProfil.html.twig', array(
+            'profilType'=>$profil,//
+        ));
     }
-
-
-
 
     public function createProjectAction(Request $request)
     {

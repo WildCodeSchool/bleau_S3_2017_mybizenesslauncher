@@ -1,2 +1,93 @@
 {% extends '@MBL/layout.html.twig' %}
 
+{% block titreH2 %} <h2>Mon profil public</h2> {% endblock %}
+
+{% block body %}
+
+<table>
+    <tbody>
+        <tr>
+            <th>Nom: </th>
+            <td>{{ profilType.nom }}</td>
+        </tr>
+        <tr>
+            <th>Prénom: </th>
+            <td>{{ profilType.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Description: </th>
+            {% if profilType.description is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.description }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>LinkedIn: </th>
+            {% if profilType.linkedIn is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.linkedIn }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Localisation: </th>
+            {% if profilType.localisation is same as(null) %}
+                <td><p>renseignez votre localisation</p></td>
+            {% else %}
+                <td>{{ profilType.localisation }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Investissement: </th>
+            {% if profilType.invest is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.invest.invest }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>En tant que: </th>
+            {% if profilType.etq is same as(null) %}
+                <td><p>renseignez votre status</p></td>
+            {% else %}
+                <td>{{ profilType.etq.etq }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Disponibilité: </th>
+            {% if profilType.dispo is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.dispo.dispo }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Où: </th>
+            {% if profilType.ou is same as(null) %}
+                <td><p>non renseigné</p></td>
+            {% else %}
+                <td>{{ profilType.ou.Ou }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Métiers: </th>
+            {% if profilType.metier is same as(null) %}
+                <td><p>précisez votre métier</p></td>
+            {% else %}
+                <td>{{ profilType.metier.metier }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Compétences: </th>
+            {% if profilType.competences is empty %}
+                <td><p>renseignez vos compétences</p></td>
+            {% else %}
+                {% for competences in profilType.competences %}  <td>{{ competences.competences }}</td> {% endfor %}
+            {% endif %}
+        </tr>
+    </tbody>
+</table>
+
+            <a href="{{ path('editProfil', { 'id': profilType.id }) }}">Modifier mon profil</a>
+{% endblock %}
