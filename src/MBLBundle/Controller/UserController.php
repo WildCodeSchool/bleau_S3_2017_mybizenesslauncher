@@ -11,11 +11,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
-
 
 
 class UserController extends Controller
@@ -78,9 +73,6 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $projet->setDateCreation(new \DateTime());
-//          $profil -> addprojet
-//          $projet -> addprofil
-            $em->persist($projet);
             $em->flush();
 // Annonce de la réussite de l'actualisation
             $this->addFlash('success', 'Projet actualisé !');
@@ -100,7 +92,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $profil = $this->getUser();
 
-        $projects = $em->getRepository('MBLBundle:Projet')->FindBy($Profil);
+        $projects = $em->getRepository('MBLBundle:Projet')->FindBy($profil);
         dump($projects);die();
         return $this->render('@MBL/Users/listProjetsProfil.html.twig', array(
             'projects'=> $projects,

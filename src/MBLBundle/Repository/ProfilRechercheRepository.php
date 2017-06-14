@@ -25,13 +25,3 @@ class ProfilRechercheRepository extends \Doctrine\ORM\EntityRepository
     }
 
 }
-
-
-$query = $em->createQuery(
-    'SELECT p
-    FROM AppBundle:Product p
-    WHERE p.price > :price
-    ORDER BY p.price ASC'
-)->setParameter('price', 19.99);
-
-$products = $query->getResult();
