@@ -81,35 +81,44 @@ class UserController extends Controller
             ));
     }
 
-    public function editProjectAction (Request $request, Projet $projet)
+    /**
+     * Displays a form to edit an existing project entity linked to a member profile.
+     *
+     */
+    public function editProjectAction (Request $request, $id)
     {
+        $deleteForm = $this->createDeleteForm($projet);
+        $em = $this->getDoctrine()->getManager();
+      $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
+//      dump($projet);die();
         $form = $this->createForm(ProjetType::class, $projet);
-//        $form->handleRequest($request);
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $projet->setDateCreation(new \DateTime());
             $em->flush();
 // Annonce de la réussite de l'actualisation
-            $this->addFlash('success', 'Projet actualisé !');
+//            $this->addFlash('success', 'Projet actualisé !');
             $id = $projet->getId();
-            return $this->redirectToRoute('editProjet', array(
-                'id' =>$id
-            ));
+            return $this->redirectToRoute('listProjetsProfil', array(
+                'id' =>$projet->getId()));
         }
         return $this->render('@MBL/Users/editProject.html.twig',
             array(
+                'projet' => $projet,
                 'form' => $form->createView(),
+                'deleteForm' => $deleteForm->createView(),
             ));
     }
 
     public function showProjetsProfilAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $profil = $this->getUser();
+        $profil = $this->getUser()->getId();
 
-        $projects = $em->getRepository('MBLBundle:Projet')->FindBy($profil);
-        dump($projects);die();
+        $projects = $em->getRepository('MBLBundle:Projet')->findAllMyProjects($profil);
+//        dump($projects);die();
         return $this->render('@MBL/Users/listProjetsProfil.html.twig', array(
             'projects'=> $projects,
         ));

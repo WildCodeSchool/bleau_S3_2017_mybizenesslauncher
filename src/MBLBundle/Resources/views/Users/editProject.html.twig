@@ -1,11 +1,8 @@
 {# src/MBLBundle/Resources/views/Users/editProject.html.twig #}
 
 {% extends 'MBLBundle::layout.html.twig' %}
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/formCreate.css') }}" />
-{% endblock %}
 
-{% block titreH2 %}<h2>Actualiser Projet</h2>{% endblock %}
+{% block titreH2 %}<h2>Actualiser le projet</h2>{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -48,7 +45,7 @@
                     {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
                 </div>
                 <div>
-                    <input class="btn" type="submit" value="Création"/>
+                    <input class="btn" type="submit" value="Editer"/>
                 </div>
 
                 {{ form_end(form) }}
