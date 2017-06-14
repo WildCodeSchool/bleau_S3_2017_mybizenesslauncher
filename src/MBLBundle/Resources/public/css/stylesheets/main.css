@@ -350,20 +350,43 @@ input[type=search], textarea.materialize-textarea {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 19, ../sass/formCreatePro.scss */
-#formCreatePro .container {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-/* line 24, ../sass/formCreatePro.scss */
-#formCreatePro .btn {
-  margin-bottom: 20px;
-}
-/* line 29, ../sass/formCreatePro.scss */
+/* line 20, ../sass/formCreatePro.scss */
 #formCreatePro input:not([type]), #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
 #formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
 #formCreatePro input[type=search], #formCreatePro textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+
+/* line 4, ../sass/_editProfil.scss */
+.editprofil .divform {
+  text-align: center;
+}
+/* line 8, ../sass/_editProfil.scss */
+.editprofil .divform input[type=text]:focus {
+  border-bottom: 2px solid #98d4e1;
+  box-shadow: 0 1px 0 0 #98d4e1;
+}
+/* line 12, ../sass/_editProfil.scss */
+.editprofil .divform span {
+  color: #98d4e1;
+}
+/* line 16, ../sass/_editProfil.scss */
+.editprofil textarea {
+  border-radius: 8px;
+}
+/* line 19, ../sass/_editProfil.scss */
+.editprofil .sltbox input {
+  border: 2px solid lightgray;
+  background-color: #98d4e1;
+}
+/* line 23, ../sass/_editProfil.scss */
+.editprofil .sltbox span {
+  z-index: 1;
+  font-size: 1.5em;
+}
+/* line 27, ../sass/_editProfil.scss */
+.editprofil .btnright a {
+  float: right;
 }
