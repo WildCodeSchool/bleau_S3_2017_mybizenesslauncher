@@ -28,6 +28,7 @@ class UserController extends Controller
 
     public function homepageProfilAction()
     {
+
         return $this->render('@MBL/Users/homepageProfil.html.twig');
 
     }
@@ -126,7 +127,7 @@ class UserController extends Controller
         return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
             array('form_pro' => $form_pro->createView(),
                 'projet' => $projet,
-'profil_Recheche_exist' => $profil_Recheche_exist,
+                'profil_Recheche_exist' => $profil_Recheche_exist,
 
             ));
     }
@@ -145,7 +146,8 @@ class UserController extends Controller
     public function showMyProjectAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository('MBLBundle:Projet')->findMyProject(40);
+        $id = $this->getUser()->getId();
+        $projects = $em->getRepository('MBLBundle:Projet')->findMyProject($id);
 
         return $this->render('@MBL/Users/showMyProject.html.twig', array(
             'projects' => $projects
