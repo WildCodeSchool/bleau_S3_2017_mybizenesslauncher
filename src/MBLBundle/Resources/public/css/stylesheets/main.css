@@ -132,6 +132,7 @@ body {
   height: 60%;
 }
 
+/* 3. LAYOUT */
 /*
 Layout.html.twig
 */
@@ -335,35 +336,65 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 10px;
 }
 
-/* line 5, ../sass/formCreatePro.scss */
+/* line 4, ../sass/_formCreatePro.scss */
+#formCreatePro .box_projet {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 8, ../sass/_formCreatePro.scss */
+#formCreatePro .vignette_profil {
+  padding: 2%;
+  height: 100%;
+}
+/* line 12, ../sass/_formCreatePro.scss */
+#formCreatePro .content {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 16, ../sass/_formCreatePro.scss */
+#formCreatePro .info_projet * {
+  text-align: center;
+}
+/* line 19, ../sass/_formCreatePro.scss */
+#formCreatePro .photo_profil, #formCreatePro .info_projet {
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+  margin-bottom: 10px;
+}
+/* line 26, ../sass/_formCreatePro.scss */
+#formCreatePro h4 {
+  text-align: center;
+  color: white;
+}
+/* line 30, ../sass/_formCreatePro.scss */
 #formCreatePro label.required:after {
   content: "*";
 }
-/* line 8, ../sass/formCreatePro.scss */
+/* line 33, ../sass/_formCreatePro.scss */
 #formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 14, ../sass/formCreatePro.scss */
-#formCreatePro p {
-  border: 1.5px solid lightgray;
-  border-radius: 10px;
-}
-/* line 19, ../sass/formCreatePro.scss */
+/* line 39, ../sass/_formCreatePro.scss */
 #formCreatePro .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 24, ../sass/formCreatePro.scss */
+/* line 44, ../sass/_formCreatePro.scss */
 #formCreatePro .btn {
   margin-bottom: 20px;
 }
-/* line 29, ../sass/formCreatePro.scss */
+/* line 49, ../sass/_formCreatePro.scss */
 #formCreatePro input:not([type]), #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
 #formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
 #formCreatePro input[type=search], #formCreatePro textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+/* line 56, ../sass/_formCreatePro.scss */
+#formCreatePro .box_profil_rech {
+  text-align: center;
 }

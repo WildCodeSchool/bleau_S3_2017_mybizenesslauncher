@@ -1,7 +1,32 @@
 @import "global";
 #formCreatePro
 {
+  .box_projet {
+    background-color: $ColorDarkGrey;
+    border-radius: $BorderRadius;
+  }
+    .vignette_profil {
+    padding: 2%;
+    height: 100%;
+    }
+    .content {
+    background-color: $ColorDarkGrey;
+    border-radius: $BorderRadius;
+    }
+  .info_projet * {
+    text-align: center;
+  }
+  .photo_profil, .info_projet {
+    border-radius: $BorderRadius;
+    padding: 10px;
+    background: $ColorWhite;
+    margin-bottom: 10px;
+  }
 
+  h4 {
+    text-align: center;
+    color: white;
+  }
   label.required:after {
     content: "*";
   }
@@ -9,11 +34,6 @@
     color: dimgrey;
     font-weight: bold;
     font-size: 1.5em;
-  }
-
-  p{
-    border: 1.5px solid lightgray;
-    border-radius: 10px;
   }
 
   .container {
@@ -33,6 +53,10 @@
     border: 1.5px solid lightgray;
     border-radius: 10px;
   }
+  .box_profil_rech {
+    text-align: center;
+  }
+
 }
 
 
