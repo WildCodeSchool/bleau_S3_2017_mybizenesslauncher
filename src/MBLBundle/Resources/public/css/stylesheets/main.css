@@ -381,7 +381,6 @@ input[type=search], textarea.materialize-textarea {
   font-weight: bold;
   font-size: 1.5em;
 }
-
 /* line 40, ../sass/_formCreatePro.scss */
 #formCreatePro p .container {
   margin-top: 20px;
@@ -395,7 +394,6 @@ input[type=search], textarea.materialize-textarea {
 #formCreatePro p input:not([type]), #formCreatePro p input[type=text], #formCreatePro p input[type=password], #formCreatePro p input[type=email], #formCreatePro p input[type=url], #formCreatePro p input[type=time],
 #formCreatePro p input[type=date], #formCreatePro p input[type=datetime], #formCreatePro p input[type=datetime-local], #formCreatePro p input[type=tel], #formCreatePro p input[type=number],
 #formCreatePro p input[type=search], #formCreatePro p textarea.materialize-textarea {
-
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
@@ -460,4 +458,43 @@ input[type=search], textarea.materialize-textarea {
 .showprofil .imgpro img {
   width: auto;
   object-fit: cover;
+}
+
+/* line 2, ../sass/_showAllProfils.scss */
+.showAllProfils {
+  height: 100%;
+}
+/* line 4, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * {
+  text-align: center;
+  height: 100%;
+}
+/* line 7, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .vignette_projet {
+  padding: 2%;
+  height: 100%;
+}
+/* line 11, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .vignette_projet .content {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 16, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .info_projet {
+  border-radius: 8px;
+  margin: 15px;
+}
+/* line 20, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .vignette {
+  border-radius: 8px;
+}
+/* line 23, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .photo_profil {
+  border-radius: 8px;
+  padding: 10px;
+}
+/* line 27, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .photo_profil, .showAllProfils .box_projet * .info_projet, .showAllProfils .box_projet * .info_profil {
+  background: white;
+  height: 60%;
 }
