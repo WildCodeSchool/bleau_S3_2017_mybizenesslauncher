@@ -304,33 +304,37 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 10px;
 }
 
-/* line 4, ../sass/_formCreate.scss */
-label.required:after {
+/* line 5, ../sass/_formCreate.scss */
+#createProjet label.required:after {
   content: "*";
 }
-
-/* line 7, ../sass/_formCreate.scss */
-label {
+/* line 8, ../sass/_formCreate.scss */
+#createProjet label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-
-/* line 13, ../sass/_formCreate.scss */
-.container {
+/* line 14, ../sass/_formCreate.scss */
+#createProjet .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
-/* line 18, ../sass/_formCreate.scss */
-.btn {
+/* line 19, ../sass/_formCreate.scss */
+#createProjet .btn {
   margin-bottom: 20px;
 }
-
 /* line 23, ../sass/_formCreate.scss */
-input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
-input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-input[type=search], textarea.materialize-textarea {
+#createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
+  border-radius: 10px;
+}
+/* line 28, ../sass/_formCreate.scss */
+#createProjet .select-wrapper {
+  border-radius: 10px;
+}
+/* line 35, ../sass/_formCreate.scss */
+#createProjet input:not([type]), #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
+#createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
+#createProjet input[type=search], #createProjet textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
@@ -377,6 +381,7 @@ input[type=search], textarea.materialize-textarea {
   font-weight: bold;
   font-size: 1.5em;
 }
+
 /* line 40, ../sass/_formCreatePro.scss */
 #formCreatePro p .container {
   margin-top: 20px;
@@ -390,6 +395,7 @@ input[type=search], textarea.materialize-textarea {
 #formCreatePro p input:not([type]), #formCreatePro p input[type=text], #formCreatePro p input[type=password], #formCreatePro p input[type=email], #formCreatePro p input[type=url], #formCreatePro p input[type=time],
 #formCreatePro p input[type=date], #formCreatePro p input[type=datetime], #formCreatePro p input[type=datetime-local], #formCreatePro p input[type=tel], #formCreatePro p input[type=number],
 #formCreatePro p input[type=search], #formCreatePro p textarea.materialize-textarea {
+
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
