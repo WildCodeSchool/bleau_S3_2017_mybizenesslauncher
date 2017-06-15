@@ -1,10 +1,40 @@
-    <div class="col s4 testtt">
-        Disponibilité : {{ profil.dispo.dispo }} <br>
-        ETQ : {{ profil.ETQ.etq }} <br>
-        Ou : {{ profil.ou.ou }} <br>
-        Investissement : {{ profil.invest.invest }} <br>
-        Metier : {{ profil.metier.metier }} <br>
-        {% for comp in profil.competences %}
-            Compétences : {{ comp.competences }} <br>
-        {% endfor %}
+<div class="col s3 vignette_profil ">
+    <div class="content z-depth-5">
+        <div class="row vignette ">
+            <div class="col s12">
+                <h4>Profil Recherché</h4>
+            </div>
+            <div class="col s8 offset-s2 photo_profil">
+                <img src="{{ asset('bundles/mbl/img/kyan.png') }}">
+            </div>
+        </div>
+        <div class="row info_profil">
+            <div class="col s12">
+                <h5>Profil</h5>
+                <p>{{ profil.metier.metier }}</p>
+            </div>
+            <div class="col s12">
+                <h5>Disponibilité</h5>
+                <p>{{ profil.dispo.dispo }}</p>
+            </div>
+            <div class="col s12">
+                <h5>En tant que</h5>
+                <p>{{ profil.ETQ.etq }}</p>
+            </div>
+            <div class="col s12">
+                <h5>Localisation</h5>
+                <p>{{ profil.ou.ou }}</p>
+            </div>
+            <div class="col s12">
+                <h5>Investissement</h5>
+                <p>{{ profil.invest.invest }}</p>
+            </div>
+            <div class="col s12">
+                <h5>Compétences</h5>
+                {% for comp in profil.competences %}
+                    <p>{{ comp.competences }}</p>
+                {% endfor %}
+            </div>
+        </div>
     </div>
+</div>

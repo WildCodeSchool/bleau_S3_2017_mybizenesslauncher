@@ -10,6 +10,13 @@ class Profil extends BaseUser
 {
     protected $id;
 
+    public function setEmail($email)
+    {
+        $email =is_null($email) ? '' : $email;
+        parent::setEmail($email);
+        $this->setUsername($email);
+        return $this;
+    }
     // Generated code
 
     /**
@@ -340,5 +347,44 @@ class Profil extends BaseUser
     public function getCompetences()
     {
         return $this->competences;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $projets;
+
+
+    /**
+     * Add projet
+     *
+     * @param \MBLBundle\Entity\Projet $projet
+     *
+     * @return Profil
+     */
+    public function addProjet(\MBLBundle\Entity\Projet $projet)
+    {
+        $this->projets[] = $projet;
+
+        return $this;
+    }
+
+    /**
+     * Remove projet
+     *
+     * @param \MBLBundle\Entity\Projet $projet
+     */
+    public function removeProjet(\MBLBundle\Entity\Projet $projet)
+    {
+        $this->projets->removeElement($projet);
+    }
+
+    /**
+     * Get projets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProjets()
+    {
+        return $this->projets;
     }
 }

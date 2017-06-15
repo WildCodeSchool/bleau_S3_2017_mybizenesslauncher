@@ -17,6 +17,7 @@ class Profil extends BaseUser
         $this->setUsername($email);
         return $this;
     }
+
     // Generated code
 
     /**
@@ -387,4 +388,5 @@ class Profil extends BaseUser
     {
         return $this->projets;
     }
+
 }
