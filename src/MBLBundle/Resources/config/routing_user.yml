@@ -10,10 +10,10 @@ editProfil:
     path: /editProfil
     defaults: { _controller: MBLBundle:User:editProfil }
 
-deleteProfil:
-    path: /delete
-    defaults: { _controller: "MBLBundle:User:delete"}
-    methods:  DELETE
+#deleteProfil:
+#    path: /delete
+#    defaults: { _controller: "MBLBundle:User:delete"}
+#    methods:  DELETE
 
 showProfil:
     path: /showProfil
@@ -26,10 +26,6 @@ createProfil:
 createProjet:
     path: /createProject
     defaults: { _controller: MBLBundle:User:createProject }
-
-listProjetsProfil:
-    path: /mesProjets
-    defaults: { _controller: MBLBundle:User:showProjetsProfil }
 
 editProjet:
     path: /editProject/{id}
