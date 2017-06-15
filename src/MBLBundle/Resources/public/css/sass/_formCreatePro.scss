@@ -1,0 +1,68 @@
+@import "global";
+#formCreatePro
+{
+  .box_projet {
+    background-color: $ColorDarkGrey;
+    border-radius: $BorderRadius;
+  }
+    .vignette_profil {
+    padding: 2%;
+    height: 100%;
+    }
+    .content {
+    background-color: $ColorDarkGrey;
+    border-radius: $BorderRadius;
+    }
+  .info_projet * {
+    text-align: center;
+  }
+  .photo_profil, .info_projet {
+    border-radius: $BorderRadius;
+    padding: 10px;
+    background: $ColorWhite;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    text-align: center;
+    color: white;
+  }
+  label.required:after {
+    content: "*";
+  }
+  label {
+    color: dimgrey;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  p {
+    .container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      margin-bottom: 20px;
+    }
+
+    // Remove the Materialize border-bottom,
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
+    input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+    input[type=search], textarea.materialize-textarea {
+      border-bottom: none;
+      border: 1.5px solid lightgray;
+      border-radius: 10px;
+    }
+    .box_profil_rech {
+      text-align: center;
+    }
+
+  }
+}
+
+
+
+
+
+
