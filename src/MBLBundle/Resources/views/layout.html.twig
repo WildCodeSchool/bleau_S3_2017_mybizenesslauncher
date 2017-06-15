@@ -6,7 +6,7 @@
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content header">
-                <li><a class="color" href="#">Bonjour  {{app.user.username}}</a></li>
+                <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
                 <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
                 <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
