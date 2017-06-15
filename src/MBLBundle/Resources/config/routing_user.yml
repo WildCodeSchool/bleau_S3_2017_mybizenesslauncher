@@ -53,6 +53,18 @@ showMyProject:
 deleteMyProject:
     path: /deleteMyProject
     defaults: { _controller: MBLBundle:User:deleteMyProject }
+    methods: [GET, DELETE]
+
+
+# Cette route doit rester la dernière
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: MBLBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
+
+
 
 
 

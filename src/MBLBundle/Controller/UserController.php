@@ -102,7 +102,7 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-//        $deleteForm = $this->createDeleteForm($projet);
+        $deleteForm = $this->createDeleteForm($projet);
 //      dump($projet);die();
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
@@ -119,7 +119,7 @@ class UserController extends Controller
             array(
                 'projet' => $projet,
                 'form' => $form->createView(),
-//                'deleteForm' => $deleteForm->createView(),
+                'deleteForm' => $deleteForm->createView(),
             ));
     }
 
@@ -222,34 +222,24 @@ class UserController extends Controller
             ));
     }
 
-    /**
-     * Deletes a (my)project entity.
-     *
-     */
     public function deleteMyProjectAction(Request $request, Projet $projet)
     {
-        $em = $this->getDoctrine()->getManager();
-        $projet = $em->getRepository('MBLBundle:Projet')->find($id);
+        $form = $this->createDeleteForm($projet);
+        $form->handleRequest($request);
 
-        if (null === $projet) {
-            throw new NotFoundHttpException("Le projet d'id " . $id . " n'existe pas.");
-        }
-
-        // Création d'un formulaire vide, qui ne contiendra que le champ CSRF
-        // => protège la suppression de projet contre cette faille
-        $form = $this->get('form.factory')->create();
-
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             $em->remove($projet);
             $em->flush();
-
-            $request->getSession()->getFlashBag()->add('info', "Le projet a bien été supprimé.");
-            return $this->redirectToRoute('showMyProject');
         }
+//        return $this->redirectToRoute('showMyProject');
+    }
 
-        return $this->render('MBLBundle:Users:deleteMyProject.html.twig', array(
-            'projet' => $projet,
-            'form' => $form->createView(),
-        ));
+    private function createDeleteForm(Projet $projet)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('deleteMyProject', array('id' => $projet->getId())))
+            ->getForm()
+            ;
     }
 }
