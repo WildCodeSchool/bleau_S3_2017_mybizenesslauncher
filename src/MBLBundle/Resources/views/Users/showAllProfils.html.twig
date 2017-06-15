@@ -1,0 +1,45 @@
+{% extends '@MBL/layout.html.twig' %}
+
+{% block titreH2 %} <h2>Parcourir les profils</h2> {% endblock %}
+{% block body %}
+<div class="showAllProfils">
+        <div class="box_projet">
+
+            <div class="row">
+
+                {% for pro in profils %}
+                    <div class="col l2 m3 s4 vignette_projet">
+                        <div class="content z-depth-5">
+                            <div class="row vignette">
+                                <div class="col s12">
+                                    <h4>Nom et prénom : {{ pro.nom }}{{ pro.prenom }}</h4>
+                                </div>
+                                <div class="col s8 offset-s2 photo_profil">
+                                    <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                </div>
+                            </div>
+                            <div class="row info_projet">
+                                <div class="col s12">
+                                    <h5>Profil</h5>
+
+                                        <p>{{ pro.metier.metier}}</p>
+
+                                </div>
+                                <div class="col s12">
+                                    <h5>Localisation</h5>
+                                    <p>{{ pro.localisation }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h5>Description</h5>
+                                    <p>{{ pro.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

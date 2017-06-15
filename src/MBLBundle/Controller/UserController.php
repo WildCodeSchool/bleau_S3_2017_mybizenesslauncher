@@ -18,10 +18,13 @@ class UserController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $projet = $em->getRepository('MBLBundle:Projet')->findLast4();
+        $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
+        $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
+
 
         return $this->render('@MBL/Users/index.html.twig',
-            array('projet' => $projet,
+            array('projet' => $projets,
+                'profils' =>$profils
             ));
     }
 
@@ -53,6 +56,16 @@ class UserController extends Controller
         $profil=$this->getUser();
         return $this->render('@MBL/Users/showProfil.html.twig', array(
             'profilType'=>$profil,//
+        ));
+    }
+    public function showAllProfilsAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $profils = $em->getRepository('MBLBundle:Profil')->findAll();
+
+        return $this->render('@MBL/Users/showAllProfils.html.twig', array(
+            'profils'=>$profils,//
         ));
     }
 
