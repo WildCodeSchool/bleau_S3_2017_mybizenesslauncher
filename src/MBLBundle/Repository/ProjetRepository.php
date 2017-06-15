@@ -10,7 +10,7 @@ namespace MBLBundle\Repository;
  */
 class ProjetRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findLast4()
+    public function findLastProjets4()
     {
         return $this ->createQueryBuilder('p')
             ->select('p')
