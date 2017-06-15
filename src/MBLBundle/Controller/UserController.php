@@ -58,6 +58,16 @@ class UserController extends Controller
             'profilType'=>$profil,//
         ));
     }
+    public function showAllProfilsAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $profils = $em->getRepository('MBLBundle:Profil')->findAll();
+
+        return $this->render('@MBL/Users/showAllProfils.html.twig', array(
+            'profils'=>$profils,//
+        ));
+    }
 
     public function createProjectAction(Request $request)
     {
