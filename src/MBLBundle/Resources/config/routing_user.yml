@@ -45,5 +45,9 @@ showMyProject:
     path: /showMyProject
     defaults: { _controller: MBLBundle:User:showMyProject }
 
+deleteMyProject:
+    path: /deleteMyProject
+    defaults: { _controller: MBLBundle:User:deleteMyProject }
+
 
 

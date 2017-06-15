@@ -1,0 +1,32 @@
+{% extends 'MBLBundle::layout.html.twig' %}
+
+{% block title %}
+    Supprimer un projet - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h2>Supprimer un projet</h2>
+    <p>Êtes-vous certain de vouloir supprimer le projet "{{ projet.titre }}" ?</p>
+
+    {# id du projet dans la route de l'action du formulaire #}
+
+    <form action="{{ path('deleteMyProject', {'id': projet.id}) }}" method="post">
+
+        <a href="{{ path('showMyProject', {'id': projet.id}) }}" class="btn btn-default">
+
+            <i class="glyphicon glyphicon-chevron-left"></i>
+
+            Retour à mes projets
+
+        </a>
+
+        {# bouton de soumission #}
+
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+
+        {# Cela va générer le champ CSRF #}
+
+        {{ form_rest(form) }}
+
+    </form>
+{% endblock %}
