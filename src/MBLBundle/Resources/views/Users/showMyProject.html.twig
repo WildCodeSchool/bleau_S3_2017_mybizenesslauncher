@@ -36,7 +36,14 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row btnlink">
+                            <div class="col s3 offset-s3">
+                                <a class="waves-effect waves-light btn" href="{{ path('editProjet', {'id' : projets.id})}}">Editer</a>
+                            </div>
+                            <div class="col s3">
+                                {#<a class="waves-effect waves-light btn" href="{{ path('')}}">Supprimer</a>#}
+                            </div>
+                        </div>
                     </div>
 
                 {% endfor %}
