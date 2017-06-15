@@ -6,7 +6,7 @@
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content header">
-                <li><a class="color" href="#">Bonjour  {{app.user.username}}</a></li>
+                <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
                 <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
                 <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
@@ -17,7 +17,7 @@
                     <a href="{{ path('mbl_homepage') }}" class="color">MyBizenessLauncher.com</a>
                     <ul class="right hide-on-med-and-down">
                         <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                        <li><a class="color" href="#">Parcourir les profils</a></li>
+                        <li><a class="color" href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
                     </ul>

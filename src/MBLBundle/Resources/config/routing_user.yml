@@ -19,6 +19,11 @@ showProfil:
     path: /showProfil
     defaults: { _controller: MBLBundle:User:showProfil }
 
+showAllProfils:
+    path: /showAllProfils
+    defaults: { _controller: MBLBundle:User:showAllProfils }
+
+
 createProfil:
     path: /createProfil
     defaults: { _controller: MBLBundle:User:createProfil }
