@@ -7,8 +7,7 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
-
-
+    
     /**
      * @var integer
      */
@@ -60,11 +59,17 @@ class Projet
     private $profilsrecherches;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -302,11 +307,6 @@ class Projet
     {
         return $this->profilsrecherches;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profils;
-
 
     /**
      * Add profil

@@ -10,7 +10,7 @@ namespace MBLBundle\Repository;
  */
 class ProfilRechercheRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function myFindProject($projectId)
+    public function myFindProject($profilId)
     {
         $qb = $this->createQueryBuilder('p');
 

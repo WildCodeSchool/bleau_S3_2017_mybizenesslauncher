@@ -132,6 +132,7 @@ body {
   height: 60%;
 }
 
+/* 3. LAYOUT */
 /*
 Layout.html.twig
 */
@@ -303,67 +304,140 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 10px;
 }
 
-/* line 4, ../sass/_formCreate.scss */
-label.required:after {
+/* line 5, ../sass/_formCreate.scss */
+#createProjet label.required:after {
   content: "*";
 }
-
-/* line 7, ../sass/_formCreate.scss */
-label {
+/* line 8, ../sass/_formCreate.scss */
+#createProjet label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-
-/* line 13, ../sass/_formCreate.scss */
-.container {
+/* line 14, ../sass/_formCreate.scss */
+#createProjet .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
-/* line 18, ../sass/_formCreate.scss */
-.btn {
+/* line 19, ../sass/_formCreate.scss */
+#createProjet .btn {
   margin-bottom: 20px;
 }
-
 /* line 23, ../sass/_formCreate.scss */
-input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
-input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-input[type=search], textarea.materialize-textarea {
+#createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
+  border-radius: 10px;
+}
+/* line 28, ../sass/_formCreate.scss */
+#createProjet .select-wrapper {
+  border-radius: 10px;
+}
+/* line 35, ../sass/_formCreate.scss */
+#createProjet input:not([type]), #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
+#createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
+#createProjet input[type=search], #createProjet textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
 
-/* line 5, ../sass/formCreatePro.scss */
+/* line 4, ../sass/_formCreatePro.scss */
+#formCreatePro .box_projet {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 8, ../sass/_formCreatePro.scss */
+#formCreatePro .vignette_profil {
+  padding: 2%;
+  height: 100%;
+}
+/* line 12, ../sass/_formCreatePro.scss */
+#formCreatePro .content {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 16, ../sass/_formCreatePro.scss */
+#formCreatePro .info_projet * {
+  text-align: center;
+}
+/* line 19, ../sass/_formCreatePro.scss */
+#formCreatePro .photo_profil, #formCreatePro .info_projet {
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+  margin-bottom: 10px;
+}
+/* line 26, ../sass/_formCreatePro.scss */
+#formCreatePro h4 {
+  text-align: center;
+  color: white;
+}
+/* line 30, ../sass/_formCreatePro.scss */
 #formCreatePro label.required:after {
   content: "*";
 }
-/* line 8, ../sass/formCreatePro.scss */
+/* line 33, ../sass/_formCreatePro.scss */
 #formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 14, ../sass/formCreatePro.scss */
-#formCreatePro p {
-  border: 1.5px solid lightgray;
-  border-radius: 10px;
-}
-/* line 19, ../sass/formCreatePro.scss */
-#formCreatePro .container {
+/* line 40, ../sass/_formCreatePro.scss */
+#formCreatePro p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 24, ../sass/formCreatePro.scss */
-#formCreatePro .btn {
+/* line 45, ../sass/_formCreatePro.scss */
+#formCreatePro p .btn {
   margin-bottom: 20px;
 }
-/* line 29, ../sass/formCreatePro.scss */
-#formCreatePro input:not([type]), #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
-#formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
-#formCreatePro input[type=search], #formCreatePro textarea.materialize-textarea {
+/* line 50, ../sass/_formCreatePro.scss */
+#formCreatePro p input:not([type]), #formCreatePro p input[type=text], #formCreatePro p input[type=password], #formCreatePro p input[type=email], #formCreatePro p input[type=url], #formCreatePro p input[type=time],
+#formCreatePro p input[type=date], #formCreatePro p input[type=datetime], #formCreatePro p input[type=datetime-local], #formCreatePro p input[type=tel], #formCreatePro p input[type=number],
+#formCreatePro p input[type=search], #formCreatePro p textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+/* line 57, ../sass/_formCreatePro.scss */
+#formCreatePro p .box_profil_rech {
+  text-align: center;
+}
+
+/* line 2, ../sass/_showAllProfils.scss */
+.showAllProfils {
+  height: 100%;
+}
+/* line 4, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * {
+  text-align: center;
+  height: 100%;
+}
+/* line 7, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .vignette_projet {
+  padding: 2%;
+  height: 100%;
+}
+/* line 11, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .vignette_projet .content {
+  background-color: #4b494b;
+  border-radius: 8px;
+}
+/* line 16, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .info_projet {
+  border-radius: 8px;
+  margin: 15px;
+}
+/* line 20, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .vignette {
+  border-radius: 8px;
+}
+/* line 23, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .photo_profil {
+  border-radius: 8px;
+  padding: 10px;
+}
+/* line 27, ../sass/_showAllProfils.scss */
+.showAllProfils .box_projet * .photo_profil, .showAllProfils .box_projet * .info_projet, .showAllProfils .box_projet * .info_profil {
+  background: white;
+  height: 60%;
 }

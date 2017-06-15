@@ -14,6 +14,7 @@ use MBLBundle\Repository\SecteurRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -30,7 +31,7 @@ class ProjetType extends AbstractType
         $builder->add('titre', TextType::class, array(
                 'required' => true
             ))
-            ->add('description', TextType::class, array(
+            ->add('description', TextareaType::class, array(
                 'required' => true
             ))
             ->add('siteInternet', UrlType::class, array(
@@ -55,7 +56,7 @@ class ProjetType extends AbstractType
                 'required'      => true,
                 'placeholder'   => '  Choisissez'
             ))
-            ->add('localisation', TextType::class, array(
+            ->add('localisation', TextareaType::class, array(
                 'required' => true
             ));
 

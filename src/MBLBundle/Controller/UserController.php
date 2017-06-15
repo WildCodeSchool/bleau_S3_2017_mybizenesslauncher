@@ -2,15 +2,15 @@
 
 namespace MBLBundle\Controller;
 
+use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
+use MBLBundle\Form\ProjetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
+
+
 
 
 class UserController extends Controller
@@ -18,31 +18,56 @@ class UserController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $projet = $em->getRepository('MBLBundle:Projet')->findLast4();
+        $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
+        $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
+
 
         return $this->render('@MBL/Users/index.html.twig',
-            array('projet' => $projet,
+            array('projet' => $projets,
+                'profils' =>$profils
             ));
     }
 
     public function homepageProfilAction()
     {
         return $this->render('@MBL/Users/homepageProfil.html.twig');
-
     }
-    public function editProfilAction()
+
+    public function editProfilAction(Request $request)
     {
-        return $this->render('@MBL/Users/editProfil.html.twig');
+        $profil=$this->getUser();
+        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil);
+        $editForm->handleRequest($request);
 
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('showProfil');
+        }
+
+        return $this->render('@MBL/Users/editProfil.html.twig', array(
+            'profilType' => $profil,
+            'edit_form' => $editForm->createView(),
+        ));
     }
+
     public function showProfilAction()
     {
-        return $this->render('@MBL/Users/showProfil.html.twig');
-
+        $profil=$this->getUser();
+        return $this->render('@MBL/Users/showProfil.html.twig', array(
+            'profilType'=>$profil,//
+        ));
     }
+    public function showAllProfilsAction()
+    {
 
+        $em = $this->getDoctrine()->getManager();
+        $profils = $em->getRepository('MBLBundle:Profil')->findAll();
 
-
+        return $this->render('@MBL/Users/showAllProfils.html.twig', array(
+            'profils'=>$profils,//
+        ));
+    }
 
     public function createProjectAction(Request $request)
     {
@@ -63,16 +88,44 @@ class UserController extends Controller
                 'id' =>$id
             ));
         }
-
-
         return $this->render('@MBL/Users/createProjet.html.twig',
             array(
                 'form' => $form->createView(),
-                
-
-
             ));
     }
+
+    /**
+     * Displays a form to edit an existing project entity linked to a member profile.
+     *
+     */
+    public function editProjectAction (Request $request, $id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+      $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
+//        $deleteForm = $this->createDeleteForm($projet);
+//      dump($projet);die();
+        $form = $this->createForm(ProjetType::class, $projet);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $projet->setDateCreation(new \DateTime());
+            $em->flush();
+// Annonce de la réussite de l'actualisation
+//            $this->addFlash('success', 'Projet actualisé !');
+            $id = $projet->getId();
+            return $this->redirectToRoute('showMyProject', array(
+                'id' =>$projet->getId()));
+        }
+        return $this->render('@MBL/Users/editProject.html.twig',
+            array(
+                'projet' => $projet,
+                'form' => $form->createView(),
+//                'deleteForm' => $deleteForm->createView(),
+            ));
+    }
+
     public function createProfilRechercheProjectAction(Request $request, $id)
     {
 
@@ -112,31 +165,43 @@ class UserController extends Controller
         return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
             array('form_pro' => $form_pro->createView(),
                 'projet' => $projet,
-'profil_Recheche_exist' => $profil_Recheche_exist,
+                'profil_Recheche_exist' => $profil_Recheche_exist,
 
             ));
     }
+
     public function showProjectAction()
     {
-
         $em = $this->getDoctrine()->getManager();
         $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc();
 
         return $this->render('@MBL/Users/showProject.html.twig', array(
             'projects'=> $projects,
         ));
-
     }
 
     public function showMyProjectAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository('MBLBundle:Projet')->findMyProject(40);
+        $id = $this->getUser()->getId();
+        $projects = $em->getRepository('MBLBundle:Projet')->findAllMyProjects($id);
 
         return $this->render('@MBL/Users/showMyProject.html.twig', array(
             'projects' => $projects
         ));
     }
+
+//    public function showProjetsProfilAction(Request $request)
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//        $profil = $this->getUser()->getId();
+//
+//        $projects = $em->getRepository('MBLBundle:Projet')->findAllMyProjects($profil);
+////        dump($projects);die();
+//        return $this->render('@MBL/Users/listProjetsProfil.html.twig', array(
+//            'projects'=> $projects,
+//        ));
+//    }
 
     public function createProfilAction(Request $request)
     {
@@ -158,5 +223,13 @@ class UserController extends Controller
         return $this->render('MBLBundle:Users:addProfil.html.twig',
             array('form' => $form->createView(),
             ));
+    }
+    private function createDeleteForm(Chapters $chapter)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('chapters_delete', array('id' => $chapter->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
     }
 }
