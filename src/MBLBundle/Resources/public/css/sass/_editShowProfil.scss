@@ -40,21 +40,22 @@
         padding-right: 5%;
         border-radius: $BorderRadius;
     }
+    h4{
+        
+    }
     .imgpro{
         text-align: center;
         background-color: white;
         margin:0;
-        padding:0;
-        margin-top: 3%;
+        padding:0; margin-top: 3%;
         border-radius: $BorderRadius;
-        height: 100px;
+
 
         //margin-left: 20%;
         //margin-right: 20%;
     }
     .imgpro img {
-       width:auto;
-       object-fit: cover;
+       width:60%;
 
     }
 

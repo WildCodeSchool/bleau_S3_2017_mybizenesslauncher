@@ -444,7 +444,7 @@ input[type=search], textarea.materialize-textarea {
   padding-right: 5%;
   border-radius: 8px;
 }
-/* line 43, ../sass/_editShowProfil.scss */
+/* line 46, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -452,12 +452,10 @@ input[type=search], textarea.materialize-textarea {
   padding: 0;
   margin-top: 3%;
   border-radius: 8px;
-  height: 100px;
 }
-/* line 55, ../sass/_editShowProfil.scss */
+/* line 57, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
-  width: auto;
-  object-fit: cover;
+  width: 60%;
 }
 
 /* line 2, ../sass/_showAllProfils.scss */
