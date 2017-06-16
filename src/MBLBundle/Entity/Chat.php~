@@ -80,50 +80,5 @@ class Chat
     {
         return $this->datecreation;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profils;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add profil
-     *
-     * @param \MBLBundle\Entity\Profil $profil
-     *
-     * @return Chat
-     */
-    public function addProfil(\MBLBundle\Entity\Profil $profil)
-    {
-        $this->profils[] = $profil;
-
-        return $this;
-    }
-
-    /**
-     * Remove profil
-     *
-     * @param \MBLBundle\Entity\Profil $profil
-     */
-    public function removeProfil(\MBLBundle\Entity\Profil $profil)
-    {
-        $this->profils->removeElement($profil);
-    }
-
-    /**
-     * Get profils
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProfils()
-    {
-        return $this->profils;
-    }
 }
+

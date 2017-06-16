@@ -61,6 +61,9 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Projet
             inversedBy: profils
             cascade: ["persist"]
+        texts:
+            targetEntity: MBLBundle\Entity\Chat
+            mappedBy: profils
 
     oneToOne:
         invest:

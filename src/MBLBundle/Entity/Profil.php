@@ -389,4 +389,72 @@ class Profil extends BaseUser
         return $this->projets;
     }
 
+    /**
+     * @var boolean
+     */
+    private $Reachable;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $texts;
+
+
+    /**
+     * Set reachable
+     *
+     * @param boolean $reachable
+     *
+     * @return Profil
+     */
+    public function setReachable($reachable)
+    {
+        $this->Reachable = $reachable;
+
+        return $this;
+    }
+
+    /**
+     * Get reachable
+     *
+     * @return boolean
+     */
+    public function getReachable()
+    {
+        return $this->Reachable;
+    }
+
+    /**
+     * Add text
+     *
+     * @param \MBLBundle\Entity\Chat $text
+     *
+     * @return Profil
+     */
+    public function addText(\MBLBundle\Entity\Chat $text)
+    {
+        $this->texts[] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Remove text
+     *
+     * @param \MBLBundle\Entity\Chat $text
+     */
+    public function removeText(\MBLBundle\Entity\Chat $text)
+    {
+        $this->texts->removeElement($text);
+    }
+
+    /**
+     * Get texts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTexts()
+    {
+        return $this->texts;
+    }
 }
