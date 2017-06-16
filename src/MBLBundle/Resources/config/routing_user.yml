@@ -61,6 +61,10 @@ remove_trailing_slash:
         url: .*/$
     methods: [GET]
 
+chatIndex:
+    path: /chatIndex
+    defaults: { _controller: MBLBundle:User:chatIndex}
+
 
 
 

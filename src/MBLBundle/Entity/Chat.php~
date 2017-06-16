@@ -15,12 +15,7 @@ class Chat
     /**
      * @var string
      */
-    private $text;
-
-    /**
-     * @var \DateTime
-     */
-    private $datecreation;
+    private $name;
 
 
     /**
@@ -34,51 +29,27 @@ class Chat
     }
 
     /**
-     * Set text
+     * Set name
      *
-     * @param string $text
+     * @param string $name
      *
      * @return Chat
      */
-    public function setText($text)
+    public function setName($name)
     {
-        $this->text = $text;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get text
+     * Get name
      *
      * @return string
      */
-    public function getText()
+    public function getName()
     {
-        return $this->text;
-    }
-
-    /**
-     * Set datecreation
-     *
-     * @param \DateTime $datecreation
-     *
-     * @return Chat
-     */
-    public function setDatecreation($datecreation)
-    {
-        $this->datecreation = $datecreation;
-
-        return $this;
-    }
-
-    /**
-     * Get datecreation
-     *
-     * @return \DateTime
-     */
-    public function getDatecreation()
-    {
-        return $this->datecreation;
+        return $this->name;
     }
 }
 

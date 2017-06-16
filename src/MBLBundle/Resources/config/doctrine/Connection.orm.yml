@@ -1,0 +1,20 @@
+MBLBundle\Entity\Connection:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ConnectionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        connecté:
+            type: boolean
+            nullable: true
+        dateCréation:
+            type: datetime
+
+    lifecycleCallbacks: {  }
+
+

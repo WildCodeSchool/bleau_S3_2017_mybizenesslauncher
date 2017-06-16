@@ -9,13 +9,13 @@ MBLBundle\Entity\Chat:
             generator:
                 strategy: AUTO
     fields:
-        text:
-            type: text
-        datecreation:
-            type: datetime
+        name:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks: {  }
 
     manyToMany:
-        profils:
-            targetEntity: MBLBundle\Entity\Profil
-            inversedBy: texts
+        msgs:
+            targetEntity: MBLBundle\Entity\Text
+            inversedBy: chats

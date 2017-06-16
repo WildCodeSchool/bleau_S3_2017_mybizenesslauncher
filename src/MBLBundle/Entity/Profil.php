@@ -427,11 +427,11 @@ class Profil extends BaseUser
     /**
      * Add text
      *
-     * @param \MBLBundle\Entity\Chat $text
+     * @param \MBLBundle\Entity\Text $text
      *
      * @return Profil
      */
-    public function addText(\MBLBundle\Entity\Chat $text)
+    public function addText(\MBLBundle\Entity\Text $text)
     {
         $this->texts[] = $text;
 
@@ -441,9 +441,9 @@ class Profil extends BaseUser
     /**
      * Remove text
      *
-     * @param \MBLBundle\Entity\Chat $text
+     * @param \MBLBundle\Entity\Text $text
      */
-    public function removeText(\MBLBundle\Entity\Chat $text)
+    public function removeText(\MBLBundle\Entity\Text $text)
     {
         $this->texts->removeElement($text);
     }
@@ -456,5 +456,44 @@ class Profil extends BaseUser
     public function getTexts()
     {
         return $this->texts;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $msgs;
+
+
+    /**
+     * Add msg
+     *
+     * @param \MBLBundle\Entity\Chat $msg
+     *
+     * @return Profil
+     */
+    public function addMsg(\MBLBundle\Entity\Chat $msg)
+    {
+        $this->msgs[] = $msg;
+
+        return $this;
+    }
+
+    /**
+     * Remove msg
+     *
+     * @param \MBLBundle\Entity\Chat $msg
+     */
+    public function removeMsg(\MBLBundle\Entity\Chat $msg)
+    {
+        $this->msgs->removeElement($msg);
+    }
+
+    /**
+     * Get msgs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMsgs()
+    {
+        return $this->msgs;
     }
 }

@@ -15,12 +15,7 @@ class Chat
     /**
      * @var string
      */
-    private $text;
-
-    /**
-     * @var \DateTime
-     */
-    private $datecreation;
+    private $name;
 
 
     /**
@@ -34,96 +29,72 @@ class Chat
     }
 
     /**
-     * Set text
+     * Set name
      *
-     * @param string $text
+     * @param string $name
      *
      * @return Chat
      */
-    public function setText($text)
+    public function setName($name)
     {
-        $this->text = $text;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get text
+     * Get name
      *
      * @return string
      */
-    public function getText()
+    public function getName()
     {
-        return $this->text;
-    }
-
-    /**
-     * Set datecreation
-     *
-     * @param \DateTime $datecreation
-     *
-     * @return Chat
-     */
-    public function setDatecreation($datecreation)
-    {
-        $this->datecreation = $datecreation;
-
-        return $this;
-    }
-
-    /**
-     * Get datecreation
-     *
-     * @return \DateTime
-     */
-    public function getDatecreation()
-    {
-        return $this->datecreation;
+        return $this->name;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $profils;
+    private $msgs;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->msgs = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add profil
+     * Add msg
      *
-     * @param \MBLBundle\Entity\Profil $profil
+     * @param \MBLBundle\Entity\Text $msg
      *
      * @return Chat
      */
-    public function addProfil(\MBLBundle\Entity\Profil $profil)
+    public function addMsg(\MBLBundle\Entity\Text $msg)
     {
-        $this->profils[] = $profil;
+        $this->msgs[] = $msg;
 
         return $this;
     }
 
     /**
-     * Remove profil
+     * Remove msg
      *
-     * @param \MBLBundle\Entity\Profil $profil
+     * @param \MBLBundle\Entity\Text $msg
      */
-    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    public function removeMsg(\MBLBundle\Entity\Text $msg)
     {
-        $this->profils->removeElement($profil);
+        $this->msgs->removeElement($msg);
     }
 
     /**
-     * Get profils
+     * Get msgs
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getProfils()
+    public function getMsgs()
     {
-        return $this->profils;
+        return $this->msgs;
     }
 }
