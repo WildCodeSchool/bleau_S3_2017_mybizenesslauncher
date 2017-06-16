@@ -504,3 +504,95 @@ input[type=search], textarea.materialize-textarea {
   background: white;
   height: 60%;
 }
+
+/*
+chat.html.twig
+*/
+/* line 6, ../sass/_chat.scss */
+#chat body {
+  overflow: hidden;
+}
+/* line 10, ../sass/_chat.scss */
+#chat h1 {
+  position: absolute;
+  top: 0;
+  line-height: 10vh;
+  text-align: center;
+  height: 10vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+  color: #333;
+}
+/* line 23, ../sass/_chat.scss */
+#chat #users {
+  width: 20%;
+  position: absolute;
+  left: 0;
+  top: 10vh;
+  margin: 0;
+  padding: 0;
+  height: 90vh;
+  background: #99CDD8;
+}
+/* line 34, ../sass/_chat.scss */
+#chat #new-text {
+  height: 70vh;
+  width: 80%;
+  position: absolute;
+  left: 20%;
+  margin: 0;
+  padding: 0;
+  top: 10vh;
+  overflow-y: scroll;
+}
+/* line 45, ../sass/_chat.scss */
+#chat #textarea {
+  position: absolute;
+  height: 20vh;
+  width: 80%;
+  bottom: 0px;
+  left: 20%;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+}
+/* line 56, ../sass/_chat.scss */
+#chat #pseudo {
+  display: block;
+  margin-left: 10%;
+}
+/* line 61, ../sass/_chat.scss */
+#chat textarea {
+  height: 10vh;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 68, ../sass/_chat.scss */
+#chat #submit {
+  display: block;
+  margin: 0 auto;
+  bottom: 2.5vh;
+  background: #0088CC;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+/* line 81, ../sass/_chat.scss */
+#chat .group-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #c8c8c8;
+}
+/* line 87, ../sass/_chat.scss */
+#chat p, #chat i {
+  color: #333;
+  margin: 0;
+  width: 100%;
+  word-break: break-all;
+}

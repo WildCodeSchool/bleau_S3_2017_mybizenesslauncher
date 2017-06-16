@@ -1,0 +1,94 @@
+@import 'global';
+/*
+chat.html.twig
+*/
+#chat {
+  body {
+    overflow: hidden;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
+    line-height: 10vh;
+    text-align: center;
+    height: 10vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+    color: #333;
+  }
+
+  #users {
+    width: 20%;
+    position: absolute;
+    left: 0;
+    top: 10vh;
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    background: #99CDD8;
+  }
+
+  #new-text {
+    height: 70vh;
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    margin: 0;
+    padding: 0;
+    top: 10vh;
+    overflow-y: scroll;
+  }
+
+  #textarea {
+    position: absolute;
+    height: 20vh;
+    width: 80%;
+    bottom: 0px;
+    left: 20%;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+  }
+
+  #pseudo {
+    display: block;
+    margin-left: 10%;
+  }
+
+  textarea {
+    height: 10vh;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #submit {
+    display: block;
+    margin: 0 auto;
+    bottom: 2.5vh;
+    background: #0088CC;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .group-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #c8c8c8;
+  }
+
+  p, i {
+    color: #333;
+    margin: 0;
+    width: 100%;
+    word-break: break-all;
+  }
+}
+
