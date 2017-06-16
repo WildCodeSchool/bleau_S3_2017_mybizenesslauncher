@@ -4,7 +4,11 @@
 {% block titreH2 %} <h2>Parcourir vos projets</h2> {% endblock %}
 {% block body %}
     <div class="showMyProjet">
+       {% if app.session.flashbag.has('notice') %}
+        {{ app.session.flashbag.get('notice') }}
+           {% endif %}
         <div class="box_projet">
+
 
             <div class="row">
 
@@ -37,11 +41,11 @@
                             </div>
                         </div>
                         <div class="row btnlink">
-                            <div class="col s3 offset-s3">
+                            <div class="col s2 offset-s3">
                                 <a class="waves-effect waves-light btn" href="{{ path('editProjet', {'id' : projets.id})}}">Editer</a>
                             </div>
-                            <div class="col s3">
-                                {#<a class="waves-effect waves-light btn" href="{{ path('')}}">Supprimer</a>#}
+                            <div class="col s2 offset-s3">
+                                <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">Supprimer</a>
                             </div>
                         </div>
                     </div>
