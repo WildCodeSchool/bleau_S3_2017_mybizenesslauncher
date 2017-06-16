@@ -9,8 +9,8 @@ MBLBundle\Entity\Text:
             generator:
                 strategy: AUTO
     fields:
-        text:
-            type: msg
+        msg:
+            type: string
         datecreation:
             type: datetime
     lifecycleCallbacks: {  }

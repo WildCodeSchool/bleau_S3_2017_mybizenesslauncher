@@ -7,16 +7,16 @@ namespace MBLBundle\Entity;
  */
 class Text
 {
-    
+   
     /**
      * @var integer
      */
     private $id;
 
     /**
-     * @var msg
+     * @var string
      */
-    private $text;
+    private $msg;
 
     /**
      * @var \DateTime
@@ -29,11 +29,17 @@ class Text
     private $profils;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $chats;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->chats = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -47,27 +53,27 @@ class Text
     }
 
     /**
-     * Set text
+     * Set msg
      *
-     * @param \msg $text
+     * @param string $msg
      *
      * @return Text
      */
-    public function setText(\msg $text)
+    public function setMsg($msg)
     {
-        $this->text = $text;
+        $this->msg = $msg;
 
         return $this;
     }
 
     /**
-     * Get text
+     * Get msg
      *
-     * @return \msg
+     * @return string
      */
-    public function getText()
+    public function getMsg()
     {
-        return $this->text;
+        return $this->msg;
     }
 
     /**
@@ -127,11 +133,6 @@ class Text
     {
         return $this->profils;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $chats;
-
 
     /**
      * Add chat
