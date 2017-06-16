@@ -170,13 +170,45 @@ class UserController extends Controller
             ));
     }
 
-    public function showProjectAction()
+    public function showProjectAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc();
+
+        $form_secteur = $this->createForm('MBLBundle\Form\ProjetRechercheType');
+
+        //Récupération des ID de secteur et TYpe de projet depuis Parcourir les projets
+
+        $idSec = $request->request->get('mblbundle_projet')['secteur'];
+        $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
+
+        // Ajout des filtres
+
+        // Si les deux filtres sont selectionné on utilise la méthode écrite dans répositoryProjet
+        if (is_numeric($idSec) && is_numeric($idTyp))
+        {
+            $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypEtSec($idSec, $idTyp);
+        }
+        //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
+        elseif (is_numeric($idSec) || is_numeric($idTyp))
+        {
+            if(is_numeric($idSec))
+            {
+                $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteur($idSec);
+            }
+            else
+            {
+                $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjet($idTyp);
+            }
+        }
+        //Sinon on récupérera tous les projets
+        else
+        {
+            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc();
+        }
 
         return $this->render('@MBL/Users/showProject.html.twig', array(
             'projects'=> $projects,
+            'form_secteur' =>$form_secteur->createView()
         ));
     }
 

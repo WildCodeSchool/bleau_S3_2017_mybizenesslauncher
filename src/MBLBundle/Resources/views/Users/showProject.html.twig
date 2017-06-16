@@ -2,6 +2,23 @@
 
 {% block titreH2 %} <h2>Parcourir les projets</h2> {% endblock %}
 {% block body %}
+<div class="row">
+    {{ form_start(form_secteur) }}
+
+    <div class="col s6">
+        {{ form_label(form_secteur.secteur) }}
+        {{ form_row(form_secteur.secteur) }}
+        {{ form_errors(form_secteur.secteur) }}
+    </div>
+    <div class="col s6">
+        {{ form_label(form_secteur.typeDeProjet) }}
+        {{ form_row(form_secteur.typeDeProjet) }}
+        {{ form_errors(form_secteur.typeDeProjet) }}
+    </div>
+    <input class="btn" name="chercher" type="submit">
+    {{ form_end(form_secteur) }}
+</div>
+
 <div class="showProjet">
         <div class="box_projet">
 
@@ -31,6 +48,9 @@
                                 </div>
                                 <div class="col s12">
                                     <h5>Description</h5>
+
+                                    <p>{{ pro.typeDeProjet.typeDeProjet }}</p>
+                                    <p>{{ pro.secteur.secteurActivite}}</p>
                                     <p>{{ pro.description }}</p>
                                 </div>
                             </div>
@@ -42,4 +62,13 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
 {% endblock %}
