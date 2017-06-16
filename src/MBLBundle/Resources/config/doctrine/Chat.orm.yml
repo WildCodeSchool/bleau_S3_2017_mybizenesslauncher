@@ -1,0 +1,16 @@
+MBLBundle\Entity\Chat:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ChatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: text
+        datecreation:
+            type: datetime
+    lifecycleCallbacks: {  }

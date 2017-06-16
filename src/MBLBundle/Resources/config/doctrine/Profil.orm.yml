@@ -27,6 +27,9 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
+        Reachable:
+            type: boolean
+            nullable: true
     lifecycleCallbacks: {  }
 
 
