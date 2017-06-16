@@ -4,7 +4,11 @@
 {% block titreH2 %} <h2>Parcourir vos projets</h2> {% endblock %}
 {% block body %}
     <div class="showMyProjet">
+       {% if app.session.flashbag.has('notice') %}
+        {{ app.session.flashbag.get('notice') }}
+           {% endif %}
         <div class="box_projet">
+
 
             <div class="row">
 

@@ -9,6 +9,7 @@ use MBLBundle\Form\ProjetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
@@ -19,7 +20,6 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
         $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
-
 
         return $this->render('@MBL/Users/index.html.twig',
             array('projet' => $projets,
@@ -95,7 +95,9 @@ class UserController extends Controller
 
     /**
      * Displays a form to edit an existing project entity linked to a member profile.
-     *
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function editProjectAction(Request $request, $id)
     {
@@ -103,7 +105,6 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
         $deleteForm = $this->createDeleteForm($projet);
-//      dump($projet);die();
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
 
@@ -188,58 +189,24 @@ class UserController extends Controller
         ));
     }
 
-//    public function showProjetsProfilAction(Request $request)
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//        $profil = $this->getUser()->getId();
-//
-//        $projects = $em->getRepository('MBLBundle:Projet')->findAllMyProjects($profil);
-////        dump($projects);die();
-//        return $this->render('@MBL/Users/listProjetsProfil.html.twig', array(
-//            'projects'=> $projects,
-//        ));
-//    }
-
-    public function createProfilAction(Request $request)
+    /**
+     * @param Projet|null $projet
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteMyProjectAction(Projet $projet = null, $id)
     {
-
-        $em = $this->getDoctrine()->getManager();
-
-        $profil = $em->getRepository('MBLBundle:Profil')->findOneById($this->getUser()->getId());
-
-        $form = $this->createForm('MBLBundle\Form\ProfilType', $profil);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $getDoctrine()->$getManager();
-            $em->persist($profil);
-            $em->flush();
-
-            return $this->redirectToRoute('/');
-        }
-        return $this->render('MBLBundle:Users:addProfil.html.twig',
-            array('form' => $form->createView(),
-            ));
-    }
-
-    public function deleteMyProjectAction(Request $request, Projet $projet)
-    {
-        $form = $this->createDeleteForm($projet);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($projet != null) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($projet);
             $em->flush();
+//            $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
+            return $this->redirectToRoute('showMyProject');
         }
-//        return $this->redirectToRoute('showMyProject');
+        else {
+//            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
+            return $this->redirectToRoute('showMyProject');
+        }
     }
 
-    private function createDeleteForm(Projet $projet)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('deleteMyProject', array('id' => $projet->getId())))
-            ->getForm()
-            ;
-    }
 }

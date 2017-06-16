@@ -7,7 +7,6 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
-    
     /**
      * @var integer
      */
@@ -342,24 +341,4 @@ class Projet
         return $this->profils;
     }
 
-//    /**
-//     * Get projet
-//     *
-//     * @return \MBLBundle\Entity\Projet $projets
-//     */
-//    public function getProjet()
-//    {
-//        return $this->projets;
-//    }
-//
-//    /**
-//     *
-//     * Remove projet
-//     *
-//     * @param \MBLBundle\Entity\Projet $projets
-//     */
-//    public function removeProjet(\MBLBundle\Entity\Projet $projet)
-//    {
-//        $this->projets->removeElement($projet);
-//    }
 }

@@ -23,7 +23,6 @@ showAllProfils:
     path: /showAllProfils
     defaults: { _controller: MBLBundle:User:showAllProfils }
 
-
 createProfil:
     path: /createProfil
     defaults: { _controller: MBLBundle:User:createProfil }
@@ -51,10 +50,8 @@ showMyProject:
     defaults: { _controller: MBLBundle:User:showMyProject }
 
 deleteMyProject:
-    path: /deleteMyProject
+    path: /deleteMyProject/{id}
     defaults: { _controller: MBLBundle:User:deleteMyProject }
-    methods: [GET, DELETE]
-
 
 # Cette route doit rester la dernière
 remove_trailing_slash:
