@@ -13,7 +13,7 @@ class MetierType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('metier')->add('profilrecherche');
+        $builder->add('metier');
     }
     
     /**

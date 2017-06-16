@@ -201,35 +201,43 @@ Layout.html.twig
   height: 100%;
 }
 /* line 4, ../sass/_showProject.scss */
+.showProjet input:not([type]), .showProjet input[type=text], .showProjet input[type=password], .showProjet input[type=email], .showProjet input[type=url], .showProjet input[type=time],
+.showProjet input[type=date], .showProjet input[type=datetime], .showProjet input[type=datetime-local], .showProjet input[type=tel], .showProjet input[type=number],
+.showProjet input[type=search], .showProjet textarea.materialize-textarea {
+  border-bottom: none;
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+}
+/* line 11, ../sass/_showProject.scss */
 .showProjet .box_projet * {
   text-align: center;
   height: 100%;
 }
-/* line 7, ../sass/_showProject.scss */
+/* line 14, ../sass/_showProject.scss */
 .showProjet .box_projet * .vignette_projet {
   padding: 2%;
   height: 100%;
 }
-/* line 11, ../sass/_showProject.scss */
+/* line 18, ../sass/_showProject.scss */
 .showProjet .box_projet * .vignette_projet .content {
   background-color: #4b494b;
   border-radius: 8px;
 }
-/* line 16, ../sass/_showProject.scss */
+/* line 23, ../sass/_showProject.scss */
 .showProjet .box_projet * .info_projet {
   border-radius: 8px;
   margin: 15px;
 }
-/* line 20, ../sass/_showProject.scss */
+/* line 27, ../sass/_showProject.scss */
 .showProjet .box_projet * .vignette {
   border-radius: 8px;
 }
-/* line 23, ../sass/_showProject.scss */
+/* line 30, ../sass/_showProject.scss */
 .showProjet .box_projet * .photo_profil {
   border-radius: 8px;
   padding: 10px;
 }
-/* line 27, ../sass/_showProject.scss */
+/* line 34, ../sass/_showProject.scss */
 .showProjet .box_projet * .photo_profil, .showProjet .box_projet * .info_projet, .showProjet .box_projet * .info_profil {
   background: white;
   height: 60%;
