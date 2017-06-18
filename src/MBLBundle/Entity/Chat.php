@@ -7,8 +7,10 @@ namespace MBLBundle\Entity;
  */
 class Chat
 {
+   
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -17,11 +19,34 @@ class Chat
      */
     private $name;
 
+    /**
+     * @var \DateTime
+     */
+    private $dateCreation;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $msgs;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->msgs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -51,17 +76,29 @@ class Chat
     {
         return $this->name;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $msgs;
 
     /**
-     * Constructor
+     * Set dateCreation
+     *
+     * @param \DateTime $dateCreation
+     *
+     * @return Chat
      */
-    public function __construct()
+    public function setDateCreation($dateCreation)
     {
-        $this->msgs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreation
+     *
+     * @return \DateTime
+     */
+    public function getDateCreation()
+    {
+        return $this->dateCreation;
     }
 
     /**
@@ -96,5 +133,39 @@ class Chat
     public function getMsgs()
     {
         return $this->msgs;
+    }
+
+    /**
+     * Add profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     *
+     * @return Chat
+     */
+    public function addProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils[] = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Remove profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     */
+    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils->removeElement($profil);
+    }
+
+    /**
+     * Get profils
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfils()
+    {
+        return $this->profils;
     }
 }

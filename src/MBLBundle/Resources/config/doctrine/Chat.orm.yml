@@ -13,9 +13,18 @@ MBLBundle\Entity\Chat:
             type: string
             length: 255
             nullable: true
+        dateCreation:
+            type: date
+
     lifecycleCallbacks: {  }
 
     manyToMany:
         msgs:
             targetEntity: MBLBundle\Entity\Text
             inversedBy: chats
+
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: chats
+
+

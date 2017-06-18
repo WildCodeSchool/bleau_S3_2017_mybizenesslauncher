@@ -51,6 +51,8 @@ MBLBundle\Entity\Profil:
             inversedBy: profils
 
 
+
+
     oneToMany:
         texts:
             targetEntity: MBLBundle\Entity\Text
@@ -64,6 +66,9 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Projet
             inversedBy: profils
             cascade: ["persist"]
+        chats:
+            targetEntity: MBLBundle\Entity\Chat
+            inversedBy: profils
 
 
     oneToOne:

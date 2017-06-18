@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Controller;
 
+use MBLBundle\Entity\Chat;
 use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
@@ -272,6 +273,27 @@ class UserController extends Controller
         return $this->render('@MBL/Users/Chat.html.twig', array(
             'texts' => $texts,
             'form' => $form_text->createView()
+        ));
+
+    }
+    public function chatConnectAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $chat = new Chat();
+
+
+            $chat->setProfil1($this->getUser()->getId());
+            $chat->setProfil2($id);
+
+            $em->persist($chat);
+            $em->flush();
+
+
+
+
+        return $this->render('@MBL/Users/Connection.html.twig', array(
+            'texts' => $texts,
+
         ));
 
     }

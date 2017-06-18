@@ -65,6 +65,10 @@ chatIndex:
     path: /chatIndex
     defaults: { _controller: MBLBundle:User:chatIndex}
 
+chatConnect:
+    path: /chatConnect/{id}
+    defaults: { _controller: MBLBundle:User:chatConnect}
+
 
 
 
