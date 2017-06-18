@@ -46,9 +46,19 @@ class Profil extends BaseUser
     private $localisation;
 
     /**
+     * @var boolean
+     */
+    private $Reachable;
+
+    /**
      * @var \MBLBundle\Entity\Invest
      */
     private $invest;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $texts;
 
     /**
      * @var \MBLBundle\Entity\ETQ
@@ -74,6 +84,11 @@ class Profil extends BaseUser
      * @var \Doctrine\Common\Collections\Collection
      */
     private $competences;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $projets;
 
 
     /**
@@ -197,6 +212,30 @@ class Profil extends BaseUser
     }
 
     /**
+     * Set reachable
+     *
+     * @param boolean $reachable
+     *
+     * @return Profil
+     */
+    public function setReachable($reachable)
+    {
+        $this->Reachable = $reachable;
+
+        return $this;
+    }
+
+    /**
+     * Get reachable
+     *
+     * @return boolean
+     */
+    public function getReachable()
+    {
+        return $this->Reachable;
+    }
+
+    /**
      * Set invest
      *
      * @param \MBLBundle\Entity\Invest $invest
@@ -218,6 +257,40 @@ class Profil extends BaseUser
     public function getInvest()
     {
         return $this->invest;
+    }
+
+    /**
+     * Add text
+     *
+     * @param \MBLBundle\Entity\Text $text
+     *
+     * @return Profil
+     */
+    public function addText(\MBLBundle\Entity\Text $text)
+    {
+        $this->texts[] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Remove text
+     *
+     * @param \MBLBundle\Entity\Text $text
+     */
+    public function removeText(\MBLBundle\Entity\Text $text)
+    {
+        $this->texts->removeElement($text);
+    }
+
+    /**
+     * Get texts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTexts()
+    {
+        return $this->texts;
     }
 
     /**
@@ -349,11 +422,6 @@ class Profil extends BaseUser
     {
         return $this->competences;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $projets;
-
 
     /**
      * Add projet
@@ -387,113 +455,5 @@ class Profil extends BaseUser
     public function getProjets()
     {
         return $this->projets;
-    }
-
-    /**
-     * @var boolean
-     */
-    private $Reachable;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $texts;
-
-
-    /**
-     * Set reachable
-     *
-     * @param boolean $reachable
-     *
-     * @return Profil
-     */
-    public function setReachable($reachable)
-    {
-        $this->Reachable = $reachable;
-
-        return $this;
-    }
-
-    /**
-     * Get reachable
-     *
-     * @return boolean
-     */
-    public function getReachable()
-    {
-        return $this->Reachable;
-    }
-
-    /**
-     * Add text
-     *
-     * @param \MBLBundle\Entity\Text $text
-     *
-     * @return Profil
-     */
-    public function addText(\MBLBundle\Entity\Text $text)
-    {
-        $this->texts[] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Remove text
-     *
-     * @param \MBLBundle\Entity\Text $text
-     */
-    public function removeText(\MBLBundle\Entity\Text $text)
-    {
-        $this->texts->removeElement($text);
-    }
-
-    /**
-     * Get texts
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTexts()
-    {
-        return $this->texts;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $msgs;
-
-
-    /**
-     * Add msg
-     *
-     * @param \MBLBundle\Entity\Chat $msg
-     *
-     * @return Profil
-     */
-    public function addMsg(\MBLBundle\Entity\Chat $msg)
-    {
-        $this->msgs[] = $msg;
-
-        return $this;
-    }
-
-    /**
-     * Remove msg
-     *
-     * @param \MBLBundle\Entity\Chat $msg
-     */
-    public function removeMsg(\MBLBundle\Entity\Chat $msg)
-    {
-        $this->msgs->removeElement($msg);
-    }
-
-    /**
-     * Get msgs
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getMsgs()
-    {
-        return $this->msgs;
     }
 }

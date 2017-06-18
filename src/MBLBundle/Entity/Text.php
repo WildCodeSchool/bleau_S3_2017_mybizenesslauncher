@@ -7,7 +7,7 @@ namespace MBLBundle\Entity;
  */
 class Text
 {
-   
+
     /**
      * @var integer
      */
@@ -24,9 +24,9 @@ class Text
     private $datecreation;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \MBLBundle\Entity\Profil
      */
-    private $profils;
+    private $profil;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -38,8 +38,8 @@ class Text
      */
     public function __construct()
     {
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
         $this->chats = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->datecreation = new \datetime();
     }
 
     /**
@@ -101,37 +101,27 @@ class Text
     }
 
     /**
-     * Add profil
+     * Set profil
      *
      * @param \MBLBundle\Entity\Profil $profil
      *
      * @return Text
      */
-    public function addProfil(\MBLBundle\Entity\Profil $profil)
+    public function setProfil(\MBLBundle\Entity\Profil $profil = null)
     {
-        $this->profils[] = $profil;
+        $this->profil = $profil;
 
         return $this;
     }
 
     /**
-     * Remove profil
+     * Get profil
      *
-     * @param \MBLBundle\Entity\Profil $profil
+     * @return \MBLBundle\Entity\Profil
      */
-    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    public function getProfil()
     {
-        $this->profils->removeElement($profil);
-    }
-
-    /**
-     * Get profils
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProfils()
-    {
-        return $this->profils;
+        return $this->profil;
     }
 
     /**

@@ -1,114 +1,68 @@
 {% extends "@MBL/layout.html.twig" %}
 
 {% block body %}
-    <div id="chat">
-        <div id="container">
+    <div class="container">
+        <div class="row">
             <h1> Vous pouvez discutez plus facilement ici </h1>
             <div id="users">
             </div>
             <div id="new-text">
-                {% for message in messages %}
+                {% for message in texts %}
                     <div class="group-text">
                         <input type="hidden" value="{{ message.id }}"/>
-                        <b><i> {{ message.author }} </i></b>
-                        <span> à {{ message.date|date('H:i:s') }}</span>
-                        <p> {{ message.text }} </p>
+                        <b><i> {{ message.profil.prenom }} </i></b>
+                        <span> à {{ message.dateCreation|date('H:i:s') }}</span>
+                        <p> {{ message.msg }} </p>
                     </div>
                 {% endfor %}
             </div>
+            <div id="textAdded">
+
+            </div>
             <div id="textarea">
-                <form>
-                    <input type="text" id ="pseudo" name="author" placeholder="Pseudo" required/>
-                    <textarea name="text" placeholder="Message" required></textarea>
-                    <button class="btn btn-large btn-primary" id="submit" type="submit">Valider</button>
-                </form>
+                {{ form_start(form) }}
+
+                <input id="envoi" class="btn" type="submit" name="creation" value="Création">
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
 {% endblock %}
-{% block javascript %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% block javascripts %}
+   {{ parent() }}
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
+            $('form[name="mblbundle_text"]').submit(function (e) {
 
-            $('form').submit(function(e){
-                e.preventDefault();
-                var $form = $(this).serialize();
-                $('textarea').val('');
-                $('#submit').prop('disabled', true);
+                e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+                // on sécurise les données
+                var message = $(this).serialize();
+
+                var remiseA = $(this);
+
                 $.ajax({
-                    async: true,
-                    method: "post",
-                    url: "{{ path('blog_chat_add_text') }}",
-                    data: $form,
-                    success: function(response){
-                        $('#submit').prop('disabled', false);
+
+                    method: 'post',
+                    url:'{{ path('chatIndex') }}',
+                    data: message,
+
+
+                    success: function (response) {
+
+                        alert('text ajouté');
+
+                            var li = $(document.createElement('li'));
+                            li.attr('class', 'plop');
+
+                            li.text(response);
+                            $('#textAdded').append(li).hide().slideDown(200);
+                            remiseA.trigger('reset');
                     }
-                });
-            });
+                    })
 
-            var newText = document.getElementById('new-text');
-            var groupTextStart = document.getElementsByClassName('group-text');
-            var groupTextLength = groupTextStart.length;
-            if(groupTextLength !==0){
-                newText.scrollTop = groupTextStart[groupTextLength-1].offsetTop;
-                var id = groupTextStart[groupTextLength-1].childNodes[1].getAttribute('value');
-                var $lastId = id;
-            }
-            else{
-                var $lastId = 0;
-            }
+                })
 
-            function load() {
-                setTimeout(function () {
-                    $.ajax({
-                        async: true,
-                        method: "post",
-                        url: "{{ path('blog_chat_ajax_refresh') }}",
-                        data: {id: $lastId},
-                        success: function (response) {
-                            if (response.length !== 0) {
-                                $lastId = response[response.length - 1].id;
-                                for (i = 0; i < response.length; i++) {
+        })
 
-                                    var date = "" + new Date(response[i].date['timestamp'] * 1000) + "";
-                                    date = date.substr(16, 8);
-
-                                    var iElt = document.createElement('i');
-                                    iElt.textContent = response[i].author;
-
-                                    var bElt = document.createElement('b');
-
-                                    var spanElt = document.createElement('span');
-                                    spanElt.textContent = " à " + date + "";
-
-                                    var pElt = document.createElement('p');
-                                    pElt.textContent = response[i].text;
-
-                                    var divElt = document.createElement('div');
-
-                                    divElt.setAttribute('class', 'group-text');
-                                    bElt.appendChild(iElt);
-                                    divElt.appendChild(bElt);
-                                    divElt.appendChild(spanElt);
-                                    divElt.appendChild(pElt);
-                                    newText.appendChild(divElt);
-                                }
-                                setTimeout(function(){
-
-                                    var groupTextElt = document.getElementsByClassName('group-text');
-
-                                    var lastChildElt = groupTextElt[groupTextElt.length-1];
-                                    newText.scrollTop = lastChildElt.offsetTop;
-
-                                }, 200);
-                            }
-                        }
-                    });
-                    load();
-                }, 3000);
-            }
-            load();
-        });
     </script>
 {% endblock %}

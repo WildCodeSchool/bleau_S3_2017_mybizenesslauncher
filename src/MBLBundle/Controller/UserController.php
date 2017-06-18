@@ -5,6 +5,7 @@ namespace MBLBundle\Controller;
 use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
+use MBLBundle\Entity\Text;
 use MBLBundle\Form\ProjetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -246,8 +247,32 @@ class UserController extends Controller
 
     }
 
-    public function chatIndexAction()
+    public function chatIndexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $text = new Text();
+
+        $texts = $em->getRepository('MBLBundle:Text')->findAll();
+        $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
+        $form_text->handleRequest($request);
+
+          if ($request->isXmlHttpRequest()){
+
+              $text->setProfil($this->getUser());
+              $em->persist($text);
+              $em->flush();
+
+
+              $tt = $text->getMsg();
+              $response = new Response($tt);
+
+              return $response;
+          }
+
+        return $this->render('@MBL/Users/Chat.html.twig', array(
+            'texts' => $texts,
+            'form' => $form_text->createView()
+        ));
 
     }
 

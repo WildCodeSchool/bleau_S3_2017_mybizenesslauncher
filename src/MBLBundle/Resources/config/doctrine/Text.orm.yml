@@ -15,11 +15,14 @@ MBLBundle\Entity\Text:
             type: datetime
     lifecycleCallbacks: {  }
 
-    manyToMany:
-        profils:
-            targetEntity: MBLBundle\Entity\Profil
-            inversedBy: msgs
 
+
+    manyToOne:
+        profil:
+            targetEntity: MBLBundle\Entity\Profil
+            inversedBy: texts
+
+    manyToMany:
         chats:
             targetEntity: MBLBundle\Entity\Chat
             mappedBy: msgs
