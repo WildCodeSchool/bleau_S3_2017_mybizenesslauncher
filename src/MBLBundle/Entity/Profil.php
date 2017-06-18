@@ -46,19 +46,9 @@ class Profil extends BaseUser
     private $localisation;
 
     /**
-     * @var boolean
-     */
-    private $Reachable;
-
-    /**
      * @var \MBLBundle\Entity\Invest
      */
     private $invest;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $texts;
 
     /**
      * @var \MBLBundle\Entity\ETQ
@@ -217,30 +207,6 @@ class Profil extends BaseUser
     }
 
     /**
-     * Set reachable
-     *
-     * @param boolean $reachable
-     *
-     * @return Profil
-     */
-    public function setReachable($reachable)
-    {
-        $this->Reachable = $reachable;
-
-        return $this;
-    }
-
-    /**
-     * Get reachable
-     *
-     * @return boolean
-     */
-    public function getReachable()
-    {
-        return $this->Reachable;
-    }
-
-    /**
      * Set invest
      *
      * @param \MBLBundle\Entity\Invest $invest
@@ -262,40 +228,6 @@ class Profil extends BaseUser
     public function getInvest()
     {
         return $this->invest;
-    }
-
-    /**
-     * Add text
-     *
-     * @param \MBLBundle\Entity\Text $text
-     *
-     * @return Profil
-     */
-    public function addText(\MBLBundle\Entity\Text $text)
-    {
-        $this->texts[] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Remove text
-     *
-     * @param \MBLBundle\Entity\Text $text
-     */
-    public function removeText(\MBLBundle\Entity\Text $text)
-    {
-        $this->texts->removeElement($text);
-    }
-
-    /**
-     * Get texts
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTexts()
-    {
-        return $this->texts;
     }
 
     /**

@@ -248,19 +248,26 @@ class UserController extends Controller
 
     }
 
-    public function chatIndexAction(Request $request)
+    public function chatIndexAction(Request $request, $chatId)
     {
+
         $em = $this->getDoctrine()->getManager();
         $text = new Text();
 
-        $texts = $em->getRepository('MBLBundle:Text')->findAll();
+        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+
         $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
         $form_text->handleRequest($request);
 
           if ($request->isXmlHttpRequest()){
 
-              $text->setProfil($this->getUser());
+
+
+              $chat->addMsg($text);
+              $text->addChat($chat);
+              $text->setProfil($this->getUser()->getPrenom());
               $em->persist($text);
+              $em->persist($chat);
               $em->flush();
 
 
@@ -271,31 +278,43 @@ class UserController extends Controller
           }
 
         return $this->render('@MBL/Users/Chat.html.twig', array(
-            'texts' => $texts,
+            'chat' => $chat,
             'form' => $form_text->createView()
         ));
 
     }
+
     public function chatConnectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $chat = new Chat();
+        $currentUser = $this->getUser();
+        $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
 
-
-            $chat->setProfil1($this->getUser()->getId());
-            $chat->setProfil2($id);
-
+            $chat->addProfil($connectedUser);
+            $chat->addProfil($currentUser);
+            $connectedUser->addChat($chat);
+            $currentUser->addChat($chat);
             $em->persist($chat);
             $em->flush();
 
 
 
+        return $this->redirectToRoute('connect');
 
-        return $this->render('@MBL/Users/Connection.html.twig', array(
-            'texts' => $texts,
-
-        ));
 
     }
 
+    public function connectAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $currentUser = $this->getUser();
+
+        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+
+        return $this->render('@MBL/Users/connection.html.twig', array(
+            'chats' => $chats,
+
+        ));
+    }
 }

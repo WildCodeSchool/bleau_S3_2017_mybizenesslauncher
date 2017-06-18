@@ -27,9 +27,7 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
-        Reachable:
-            type: boolean
-            nullable: true
+
     lifecycleCallbacks: {  }
 
 
@@ -52,12 +50,6 @@ MBLBundle\Entity\Profil:
 
 
 
-
-    oneToMany:
-        texts:
-            targetEntity: MBLBundle\Entity\Text
-            mappedBy: profil
-
     manyToMany:
         competences:
             targetEntity: MBLBundle\Entity\Competences
@@ -69,6 +61,7 @@ MBLBundle\Entity\Profil:
         chats:
             targetEntity: MBLBundle\Entity\Chat
             inversedBy: profils
+            cascade: ["persist"]
 
 
     oneToOne:

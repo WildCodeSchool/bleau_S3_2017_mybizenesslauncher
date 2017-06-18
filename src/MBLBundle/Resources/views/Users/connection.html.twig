@@ -1,0 +1,18 @@
+{% extends "@MBL/layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        {{ dump(chats) }}
+        <div class="row">
+            <h1> Voici votre Tchat</h1>
+            <div class="col s12">
+                {% for chat in chats %}
+                    {% for profil in chat.profils %}
+                          <h1>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }} </h1>
+                    {% endfor %}
+                    <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

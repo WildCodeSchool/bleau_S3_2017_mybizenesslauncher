@@ -24,11 +24,6 @@ class Text
     private $datecreation;
 
     /**
-     * @var \MBLBundle\Entity\Profil
-     */
-    private $profil;
-
-    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $chats;
@@ -39,7 +34,7 @@ class Text
     public function __construct()
     {
         $this->chats = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->datecreation = new \datetime();
+        $this->datecreation = new \DateTime();
     }
 
     /**
@@ -101,30 +96,6 @@ class Text
     }
 
     /**
-     * Set profil
-     *
-     * @param \MBLBundle\Entity\Profil $profil
-     *
-     * @return Text
-     */
-    public function setProfil(\MBLBundle\Entity\Profil $profil = null)
-    {
-        $this->profil = $profil;
-
-        return $this;
-    }
-
-    /**
-     * Get profil
-     *
-     * @return \MBLBundle\Entity\Profil
-     */
-    public function getProfil()
-    {
-        return $this->profil;
-    }
-
-    /**
      * Add chat
      *
      * @param \MBLBundle\Entity\Chat $chat
@@ -156,5 +127,34 @@ class Text
     public function getChats()
     {
         return $this->chats;
+    }
+    /**
+     * @var string
+     */
+    private $profil;
+
+
+    /**
+     * Set profil
+     *
+     * @param string $profil
+     *
+     * @return Text
+     */
+    public function setProfil($profil)
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get profil
+     *
+     * @return string
+     */
+    public function getProfil()
+    {
+        return $this->profil;
     }
 }

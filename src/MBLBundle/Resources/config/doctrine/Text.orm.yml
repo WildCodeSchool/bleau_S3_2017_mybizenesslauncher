@@ -13,16 +13,13 @@ MBLBundle\Entity\Text:
             type: string
         datecreation:
             type: datetime
+        profil:
+            type: string
     lifecycleCallbacks: {  }
 
-
-
-    manyToOne:
-        profil:
-            targetEntity: MBLBundle\Entity\Profil
-            inversedBy: texts
 
     manyToMany:
         chats:
             targetEntity: MBLBundle\Entity\Chat
             mappedBy: msgs
+            cascade: ["persist"]

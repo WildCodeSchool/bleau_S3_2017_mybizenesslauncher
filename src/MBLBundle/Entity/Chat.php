@@ -41,6 +41,7 @@ class Chat
     {
         $this->msgs = new \Doctrine\Common\Collections\ArrayCollection();
         $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateCreation = new \DateTime();
     }
 
     /**

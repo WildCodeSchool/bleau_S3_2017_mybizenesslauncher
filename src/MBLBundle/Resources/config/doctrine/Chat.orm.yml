@@ -22,9 +22,11 @@ MBLBundle\Entity\Chat:
         msgs:
             targetEntity: MBLBundle\Entity\Text
             inversedBy: chats
+            cascade: ["persist"]
 
         profils:
             targetEntity: MBLBundle\Entity\Profil
             mappedBy: chats
+            cascade: ["persist"]
 
 

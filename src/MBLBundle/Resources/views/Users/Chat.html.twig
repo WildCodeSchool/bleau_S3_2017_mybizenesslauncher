@@ -7,12 +7,13 @@
             <div id="users">
             </div>
             <div id="new-text">
-                {% for message in texts %}
+
+                {% for text in chat.msgs %}
                     <div class="group-text">
-                        <input type="hidden" value="{{ message.id }}"/>
-                        <b><i> {{ message.profil.prenom }} </i></b>
-                        <span> à {{ message.dateCreation|date('H:i:s') }}</span>
-                        <p> {{ message.msg }} </p>
+                        <input type="hidden" value="{{ text.id }}"/>
+                        <b><i> {{ text.profil }} </i></b>
+                        <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+                        <p> {{ text.msg }} </p>
                     </div>
                 {% endfor %}
             </div>
@@ -20,7 +21,7 @@
 
             </div>
             <div id="textarea">
-                {{ form_start(form) }}
+                {{ form_start(form, {'action': path('chatIndex', {'chatId' : chat.id}), 'method': 'GET'}) }}
 
                 <input id="envoi" class="btn" type="submit" name="creation" value="Création">
                 {{ form_end(form) }}
@@ -43,7 +44,7 @@
                 $.ajax({
 
                     method: 'post',
-                    url:'{{ path('chatIndex') }}',
+                    url:'{{ path('chatIndex', {'chatId' : chat.id}) }}',
                     data: message,
 
 
