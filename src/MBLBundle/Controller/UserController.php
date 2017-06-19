@@ -302,13 +302,10 @@ class UserController extends Controller
 //        dump($chatexist);die();
         if(!empty($chatexist))
         {
-
             $this->get('session')->getFlashBag()->add('error', 'Vous etes déjà connecté avec cette personne');
             return $this->redirectToRoute('showAllProfils');
-
         }
-
-
+        
         $chat = new Chat();
         $chat->addProfil($connectedUser);
         $chat->addProfil($currentUser);
@@ -318,8 +315,6 @@ class UserController extends Controller
         $chat->setConnectionbyid(0);
         $em->persist($chat);
         $em->flush();
-
-
 
         return $this->redirectToRoute('connect');
 
@@ -332,9 +327,9 @@ class UserController extends Controller
 
         if(is_numeric($chatId))
         {
-
+            $connectId =$this->getUser()->getId();
             $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
-            $chat->setConnectionbyid($chatId);
+            $chat->setConnectionbyid($connectId);
             $em->persist($chat);
             $em->flush();
         }
