@@ -427,7 +427,7 @@ input[type=search], textarea.materialize-textarea {
 }
 /* line 23, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
-  z-index: 1;
+  z-index: 2;
   font-size: 1.5em;
   color: black;
 }
@@ -436,15 +436,29 @@ input[type=search], textarea.materialize-textarea {
   float: right;
 }
 
-/* line 36, ../sass/_editShowProfil.scss */
-.showprofil .cartepro {
+/* line 34, ../sass/_editShowProfil.scss */
+.showprofil {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+/* line 40, ../sass/_editShowProfil.scss */
+.showprofil h4, .showprofil h5, .showprofil p {
+  text-align: center;
+  word-wrap: break-word;
+}
+/* line 44, ../sass/_editShowProfil.scss */
+.showprofil .cartepro, .showprofil .cartepro2 {
   border: 1px solid red;
   background-color: #98d4e1;
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 8px;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-/* line 46, ../sass/_editShowProfil.scss */
+/* line 55, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -453,9 +467,15 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 57, ../sass/_editShowProfil.scss */
+/* line 62, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+/* line 67, ../sass/_editShowProfil.scss */
+.showprofil .modpro {
+  text-align: center;
 }
 
 /* line 2, ../sass/_showAllProfils.scss */
