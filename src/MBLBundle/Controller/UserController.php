@@ -252,16 +252,17 @@ class UserController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
+
+        $currentUser = $this->getUser();
         $text = new Text();
 
         $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
         $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
         $form_text->handleRequest($request);
 
-          if ($request->isXmlHttpRequest()){
-
-
+           if ($request->isXmlHttpRequest()){
 
               $chat->addMsg($text);
               $text->addChat($chat);
@@ -270,15 +271,19 @@ class UserController extends Controller
               $em->persist($chat);
               $em->flush();
 
+              $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
+                  'text' => $text
+              ));
 
-              $tt = $text->getMsg();
-              $response = new Response($tt);
+
+              $response = new JsonResponse($content);
 
               return $response;
           }
 
         return $this->render('@MBL/Users/Chat.html.twig', array(
             'chat' => $chat,
+            'chats'=> $chats,
             'form' => $form_text->createView()
         ));
 
@@ -287,16 +292,31 @@ class UserController extends Controller
     public function chatConnectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-        $chat = new Chat();
+
         $currentUser = $this->getUser();
         $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
 
-            $chat->addProfil($connectedUser);
-            $chat->addProfil($currentUser);
-            $connectedUser->addChat($chat);
-            $currentUser->addChat($chat);
-            $em->persist($chat);
-            $em->flush();
+
+//        Verifier qu'une connection n'existe pas déjà entre les deux utilisateurs
+
+        $chatexist = $em->getRepository('MBLBundle:Chat')->myFindChatExist($currentUser, $connectedUser);
+//        dump($chatexist);die();
+        if(!empty($chatexist))
+        {
+
+            $this->get('session')->getFlashBag()->add('error', 'Vous etes déjà connecté avec cette personne');
+            return $this->redirectToRoute('showAllProfils');
+
+        }
+
+
+        $chat = new Chat();
+        $chat->addProfil($connectedUser);
+        $chat->addProfil($currentUser);
+        $connectedUser->addChat($chat);
+        $currentUser->addChat($chat);
+        $em->persist($chat);
+        $em->flush();
 
 
 

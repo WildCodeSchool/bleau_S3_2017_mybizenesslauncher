@@ -1,13 +1,50 @@
 {% extends "@MBL/layout.html.twig" %}
 
-{% block body %}
-    <div class="container">
-        <div class="row">
-            <h1> Vous pouvez discutez plus facilement ici </h1>
-            <div id="users">
-            </div>
-            <div id="new-text">
+{%  block stylesheets %}
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock %}
+{% block titreH2 %}<h2>Chat avec{#la personne avec qui vous voulez parler#}
+    {% for profil in chat.profils %}
+        {% if profil == app.user %}
+        {% else %}
+          {{ profil.nom }} {{ profil.prenom }}</p>
+        {% endif %}
+    {% endfor %}
+</h2>{% endblock %}
+
+{% block body %}
+    <div class="container" id="chat">
+        <div class="row">
+            <div class="col s4" id="chat_box">
+                {% for chat in chats %}
+                    <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
+                    <div class="col s4">
+                        {#Nom du profil avec qui l'on veut discuter#}
+                        {% for profil in chat.profils %}
+                            {% if profil == app.user %}
+                            {% else %}
+                                {{ profil.nom }}<br>
+                                {{ profil.prenom }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col s6">
+                        {#Dernier message avec ce profil#}
+                        {% set chatmsg = chat.msgs|last %}
+                        <p>{{ chatmsg.msg}}</p>
+                    </div>
+                    <div class="col s2">
+                            {#Dernier message avec ce profil#}
+                           <i class="material-icons">chat</i>
+                    </div>
+                    </a>
+
+                {% endfor %}
+            </div>
+            <div class="col s7 offset-s1 " id="chat_text">
+
+                {#Les textes déjà existant#}
                 {% for text in chat.msgs %}
                     <div class="group-text">
                         <input type="hidden" value="{{ text.id }}"/>
@@ -16,21 +53,30 @@
                         <p> {{ text.msg }} </p>
                     </div>
                 {% endfor %}
-            </div>
-            <div id="textAdded">
+                {#//Les textes qui seront ajouté en js#}
+                <div id="textAdded">
 
-            </div>
-            <div id="textarea">
-                {{ form_start(form, {'action': path('chatIndex', {'chatId' : chat.id}), 'method': 'GET'}) }}
 
-                <input id="envoi" class="btn" type="submit" name="creation" value="Création">
-                {{ form_end(form) }}
+                </div>
+                <div id="textarea" class="row">
+                    {#Formulaire#}
+                    {{ form_start(form, {'action': path('chatIndex', {'chatId' : chat.id}), 'method': 'GET'}) }}
+                    <div class="col s9">
+                        <p>{{ form_widget(form.msg) }}</p>
+                    </div>
+
+                    <div class="col s3">
+                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Création"></p>
+
+                    </div>
+                    {{ form_end(form) }}
+                </div>
             </div>
         </div>
     </div>
 {% endblock %}
 {% block javascripts %}
-   {{ parent() }}
+    {{ parent() }}
     <script>
         $(document).ready(function () {
             $('form[name="mblbundle_text"]').submit(function (e) {
@@ -49,19 +95,12 @@
 
 
                     success: function (response) {
-
-                        alert('text ajouté');
-
-                            var li = $(document.createElement('li'));
-                            li.attr('class', 'plop');
-
-                            li.text(response);
-                            $('#textAdded').append(li).hide().slideDown(200);
-                            remiseA.trigger('reset');
+                        $('#textAdded').append(response).hide().slideDown(200);
+                        remiseA.trigger('reset');
                     }
-                    })
-
                 })
+
+            })
 
         })
 

@@ -1,17 +1,32 @@
 {% extends "@MBL/layout.html.twig" %}
 
+{% block titreH2 %}<h2>Conncetion Chat</h2>{% endblock %}
+
 {% block body %}
     <div class="container">
-        {{ dump(chats) }}
         <div class="row">
-            <h1> Voici votre Tchat</h1>
             <div class="col s12">
+
                 {% for chat in chats %}
+
+                    <div class="col s3">
+                    {#Nom du profil avec qui l'on veut discuter#}
                     {% for profil in chat.profils %}
-                          <h1>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }} </h1>
+                        {% if profil == app.user %}
+                        {% else %}
+                            <p>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }}</p>
+                        {% endif %}
                     {% endfor %}
+                    </div>
+                    <div class="col s7">
+                    {#Dernier message avec ce profil#}
+                    {% set chatmsg = chat.msgs|last %}
+                        <p>{{ chatmsg.msg}}</p>
+                    </div>
+                    <div class="col s2">
                     <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
-                {% endfor %}
+                    </div>
+                        {% endfor %}
             </div>
         </div>
     </div>

@@ -18,6 +18,11 @@ class Chat
      * @var string
      */
     private $name;
+    
+    /**
+     * @var boolean
+     */
+    private $connection;
 
     /**
      * @var \DateTime
@@ -168,5 +173,31 @@ class Chat
     public function getProfils()
     {
         return $this->profils;
+    }
+
+
+
+    /**
+     * Set connection
+     *
+     * @param boolean $connection
+     *
+     * @return Chat
+     */
+    public function setConnection($connection)
+    {
+        $this->connection = $connection;
+
+        return $this;
+    }
+
+    /**
+     * Get connection
+     *
+     * @return boolean
+     */
+    public function getConnection()
+    {
+        return $this->connection;
     }
 }

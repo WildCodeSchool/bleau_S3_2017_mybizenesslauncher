@@ -4,7 +4,11 @@
 {% block body %}
 <div class="showAllProfils">
         <div class="box_projet">
+            {% for flashMessage in app.session.flashbag.get('error') %}
 
+                {{ flashMessage }}
+
+            {% endfor %}
             <div class="row">
 
                 {% for pro in profils %}
