@@ -44,8 +44,9 @@ createProfilRechercheProjet:
         id: null
 
 deleteProfilRerchercheProjet:
-    path: /deleteProfil/{id}
+    path: /deleteProfil
     defaults: { _controller: MBLBundle:User:deleteProfilR}
+
 
 showProject:
     path: /showProject

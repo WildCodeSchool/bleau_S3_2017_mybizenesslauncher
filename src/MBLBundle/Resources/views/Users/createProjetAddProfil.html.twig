@@ -5,8 +5,8 @@
 {% block body %}
 <div id="formCreatePro">
     <div class="container">
-
         <div class="row">
+
 
             {#<div class="col s4 center">
                 <div class="col s9 offset-s1 box_projet z-depth-5   ">
@@ -127,7 +127,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn deleteProfilR">DELETE</button>
+                            <button class="btn deleteProfilR" id="{{ profil.id }}">DELETE</button>
                         </div>
                     {% endfor %}
                 </div>
@@ -160,13 +160,14 @@
             });
             $('.deleteProfilR').click(function(e){
                 e.preventDefault();
-                var data = $(this).serialize();
+                var id = $(this).attr('id');
+                var content = $(this).parent();
                 $.ajax({
                     method: 'post',
-                    url: '{{ path('deleteProfilRerchercheProjet', {'id' : 163}) }}',
-                    data: data,
+                    url: '{{ path('deleteProfilRerchercheProjet') }}',
+                    data: {'id' : id},
                     success: function(){
-                        $('.vignette_profil').fadeOut(2000);
+                        $(content).fadeOut(2000);
 
                     }
 

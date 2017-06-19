@@ -172,20 +172,18 @@ class UserController extends Controller
      * @param ProfilRecherche $profilRecherche
      * @return mixed
      */
-    public function deleteProfilRAction(ProfilRecherche $profilRecherche = null)
+    public function deleteProfilRAction(Request $request)
     {
-        if ($profilRecherche != null) {
             $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $profilRecherche = $em->getRepository('MBLBundle:ProfilRecherche')->findOneById($id);
             $em->remove($profilRecherche);
             $content = new JsonResponse($profilRecherche);
             $em->flush();
 
             return $content;
-        }
-        else {
-//            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
-            return ('erreuur');
-        }
+
+
     }
 
     public function showProjectAction(Request $request)
