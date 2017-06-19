@@ -88,7 +88,7 @@
             </div>
                 <div class="row profil_recherche">
                     {% for profil in profil_Recheche_exist %}
-                        <div class="col s2 vignette_profil ">
+                        <div class="col s3 vignette_profil ">
                             <div class="content z-depth-5">
                                 <div class="row vignette ">
                                     <div class="col s12">
@@ -127,7 +127,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn deleteProfilR" id="{{ profil.id }}">DELETE</button>
+                            <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
                         </div>
                     {% endfor %}
                 </div>
@@ -158,7 +158,7 @@
                    }
                });
             });
-            $('.deleteProfilR').click(function(e){
+            $('.profil_recherche').on('click','.deleteProfilR', function(e){
                 e.preventDefault();
                 var id = $(this).attr('id');
                 var content = $(this).parent();
