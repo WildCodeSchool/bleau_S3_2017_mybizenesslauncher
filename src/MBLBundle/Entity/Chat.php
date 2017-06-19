@@ -8,7 +8,6 @@ namespace MBLBundle\Entity;
 class Chat
 {
    
-
     /**
      * @var integer
      */
@@ -18,16 +17,21 @@ class Chat
      * @var string
      */
     private $name;
-    
-    /**
-     * @var boolean
-     */
-    private $connection;
 
     /**
      * @var \DateTime
      */
     private $dateCreation;
+
+    /**
+     * @var integer
+     */
+    private $connectionbyidcreator;
+
+    /**
+     * @var integer
+     */
+    private $connectionbyid;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -108,6 +112,54 @@ class Chat
     }
 
     /**
+     * Set connectionbyidcreator
+     *
+     * @param integer $connectionbyidcreator
+     *
+     * @return Chat
+     */
+    public function setConnectionbyidcreator($connectionbyidcreator)
+    {
+        $this->connectionbyidcreator = $connectionbyidcreator;
+
+        return $this;
+    }
+
+    /**
+     * Get connectionbyidcreator
+     *
+     * @return integer
+     */
+    public function getConnectionbyidcreator()
+    {
+        return $this->connectionbyidcreator;
+    }
+
+    /**
+     * Set connectionbyid
+     *
+     * @param integer $connectionbyid
+     *
+     * @return Chat
+     */
+    public function setConnectionbyid($connectionbyid)
+    {
+        $this->connectionbyid = $connectionbyid;
+
+        return $this;
+    }
+
+    /**
+     * Get connectionbyid
+     *
+     * @return integer
+     */
+    public function getConnectionbyid()
+    {
+        return $this->connectionbyid;
+    }
+
+    /**
      * Add msg
      *
      * @param \MBLBundle\Entity\Text $msg
@@ -173,31 +225,5 @@ class Chat
     public function getProfils()
     {
         return $this->profils;
-    }
-
-
-
-    /**
-     * Set connection
-     *
-     * @param boolean $connection
-     *
-     * @return Chat
-     */
-    public function setConnection($connection)
-    {
-        $this->connection = $connection;
-
-        return $this;
-    }
-
-    /**
-     * Get connection
-     *
-     * @return boolean
-     */
-    public function getConnection()
-    {
-        return $this->connection;
     }
 }

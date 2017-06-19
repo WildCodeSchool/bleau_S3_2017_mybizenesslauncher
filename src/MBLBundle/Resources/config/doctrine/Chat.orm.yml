@@ -15,8 +15,11 @@ MBLBundle\Entity\Chat:
             nullable: true
         dateCreation:
             type: date
-        connection:
-            type: boolean
+        connectionbyidcreator:
+            type: integer
+            nullable: true
+        connectionbyid:
+            type: integer
             nullable: true
 
     lifecycleCallbacks: {  }

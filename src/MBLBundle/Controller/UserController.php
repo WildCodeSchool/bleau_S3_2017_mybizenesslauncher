@@ -296,7 +296,6 @@ class UserController extends Controller
         $currentUser = $this->getUser();
         $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
 
-
 //        Verifier qu'une connection n'existe pas déjà entre les deux utilisateurs
 
         $chatexist = $em->getRepository('MBLBundle:Chat')->myFindChatExist($currentUser, $connectedUser);
@@ -315,6 +314,8 @@ class UserController extends Controller
         $chat->addProfil($currentUser);
         $connectedUser->addChat($chat);
         $currentUser->addChat($chat);
+        $chat->setConnectionbyidcreator($currentUser->getId());
+        $chat->setConnectionbyid(0);
         $em->persist($chat);
         $em->flush();
 
@@ -325,9 +326,18 @@ class UserController extends Controller
 
     }
 
-    public function connectAction()
+    public function connectAction($chatId)
     {
         $em = $this->getDoctrine()->getManager();
+
+        if(is_numeric($chatId))
+        {
+
+            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+            $chat->setConnectionbyid($chatId);
+            $em->persist($chat);
+            $em->flush();
+        }
         $currentUser = $this->getUser();
 
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);

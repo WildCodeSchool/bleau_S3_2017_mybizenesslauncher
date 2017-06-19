@@ -37,7 +37,10 @@
                                     <h5>Description</h5>
                                     <p>{{ pro.description }}</p>
                                 </div>
+                                {% if app.user.id == pro.id %}
+                                    {% else %}
                                 <a href="{{ path('chatConnect', {'id': pro.id}) }}">connectez-vous</a>
+                                        {% endif %}
                             </div>
                         </div>
                     </div>

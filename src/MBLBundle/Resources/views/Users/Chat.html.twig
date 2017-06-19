@@ -31,8 +31,10 @@
                     </div>
                     <div class="col s6">
                         {#Dernier message avec ce profil#}
-                        {% set chatmsg = chat.msgs|last %}
-                        <p>{{ chatmsg.msg}}</p>
+                        {% if chat.msgs is not empty%}
+                            {% set chatmsg = chat.msgs|last %}
+                            <p>{{ chatmsg.msg}}</p>
+                        {% endif %}
                     </div>
                     <div class="col s2">
                             {#Dernier message avec ce profil#}

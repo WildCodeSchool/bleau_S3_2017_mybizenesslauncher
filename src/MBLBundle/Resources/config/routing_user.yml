@@ -68,8 +68,10 @@ chatConnect:
     defaults: { _controller: MBLBundle:User:chatConnect}
 
 connect:
-    path: /connect
-    defaults: { _controller: MBLBundle:User:connect}
+    path: /connect/{chatId}
+    defaults:
+        _controller: MBLBundle:User:connect
+        chatId: null
 
 
 

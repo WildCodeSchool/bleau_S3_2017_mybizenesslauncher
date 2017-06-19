@@ -8,25 +8,68 @@
             <div class="col s12">
 
                 {% for chat in chats %}
+                    {#Verifier que si le createur de la connection ne puisse pas accepter à la place de la personne visée#}
+                    {% if chat.connectionbyidcreator == app.user.id %}
 
-                    <div class="col s3">
-                    {#Nom du profil avec qui l'on veut discuter#}
-                    {% for profil in chat.profils %}
-                        {% if profil == app.user %}
-                        {% else %}
-                            <p>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }}</p>
+                        {% if chat.connectionbyid > 0 %}
+                            <div class="col s3">
+                                {#Nom du profil avec qui l'on veut discuter#}
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        <p>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="col s7">
+                                {#Dernier message avec ce profil#}
+                                {% if chat.msgs is not empty%}
+                                    {% set chatmsg = chat.msgs|last %}
+                                    <p>{{ chatmsg.msg}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col s2">
+                                <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                            </div>
+
+
                         {% endif %}
-                    {% endfor %}
-                    </div>
-                    <div class="col s7">
-                    {#Dernier message avec ce profil#}
-                    {% set chatmsg = chat.msgs|last %}
-                        <p>{{ chatmsg.msg}}</p>
-                    </div>
-                    <div class="col s2">
-                    <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
-                    </div>
-                        {% endfor %}
+                    {% else %}
+                        {% if chat.connectionbyid > 0 %}
+                            <div class="col s3">
+                                {#Nom du profil avec qui l'on veut discuter#}
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        <p>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="col s7">
+                                {#Dernier message avec ce profil#}
+                                {% if chat.msgs is not empty%}
+                                    {% set chatmsg = chat.msgs|last %}
+                                    <p>{{ chatmsg.msg}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col s2">
+                                <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                            </div>
+                        {% else %}
+                            {#Nom du profil avec qui l'on peut accepter de discuter#}
+                            {% for profil in chat.profils %}
+                                {% if profil == app.user %}
+                                {% else %}
+                                    <p>Nom : {{ profil.nom }} Prenom : {{ profil.prenom }}</p>
+
+                                    <a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a>
+                                {% endif %}
+                            {% endfor %}
+
+                        {% endif %}
+                    {% endif %}
+
+                {% endfor %}
             </div>
         </div>
     </div>
