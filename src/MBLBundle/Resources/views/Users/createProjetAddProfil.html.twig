@@ -4,50 +4,10 @@
 
 {% block body %}
 <div id="formCreatePro">
-    <div class="container">
+    <div class="container container_body">
         <div class="row">
-
-
-            {#<div class="col s4 center">
-                <div class="col s9 offset-s1 box_projet z-depth-5   ">
-                    <div class="col s12">
-                        <h4>Projet   {{ projet.titre }} </h4>
-                    </div>
-                    <div class="col s8 offset-s2 photo_profil">
-                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                    </div>
-                    <div class="col s12 info_projet">
-                        <div class="col s12">
-                            <h5>Description  </h5>
-                            <p>{{ projet.description }} </p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Site Internet  </h5>
-                            <p> {{ projet.siteInternet }} </p>
-                        </div>
-                        <div class="col s12">
-                            <h5>E-busta Url  </h5>
-                            <p> {{ projet.ebustaUrl }} </p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Localisation   </h5>
-                            <p>{{ projet.localisation }}</p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Secteur  </h5>
-                            <p>{{ projet.secteur.secteurActivite}} </p>
-                        </div>
-                        <div class="col s12">
-                            <h5>Type de projet  </h5>
-                            <p>{{projet.typeDeProjet.typeDeProjet }} </p>
-                        </div>
-                    </div>
-                </div>
-            </div>#}
             <div class="col s6">
                 {{ form_start(form_pro) }}
-
-
                 <div class="center-align">
                     {{ form_label(form_pro.metier, 'Profil recherché ') }}
                     {{ form_errors(form_pro.metier) }}
@@ -127,7 +87,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
+                            <div class="col s8 offset-s2">
+                                <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -161,7 +123,7 @@
             $('.profil_recherche').on('click','.deleteProfilR', function(e){
                 e.preventDefault();
                 var id = $(this).attr('id');
-                var content = $(this).parent();
+                var content = $(this).parent().parent();
                 $.ajax({
                     method: 'post',
                     url: '{{ path('deleteProfilRerchercheProjet') }}',
