@@ -35,11 +35,17 @@ editProjet:
     path: /editProject/{id}
     defaults: { _controller: MBLBundle:User:editProject }
 
+
+#Création, édition, delete PROFIL RECHERCHER
 createProfilRechercheProjet:
     path: /createProfilRechercheProject/{id}
     defaults:
         _controller: MBLBundle:User:createProfilRechercheProject
         id: null
+
+deleteProfilRerchercheProjet:
+    path: /deleteProfil/{id}
+    defaults: { _controller: MBLBundle:User:deleteProfilR}
 
 showProject:
     path: /showProject

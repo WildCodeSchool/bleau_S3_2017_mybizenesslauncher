@@ -168,6 +168,26 @@ class UserController extends Controller
             ));
     }
 
+    /**
+     * @param ProfilRecherche $profilRecherche
+     * @return mixed
+     */
+    public function deleteProfilRAction(ProfilRecherche $profilRecherche = null)
+    {
+        if ($profilRecherche != null) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($profilRecherche);
+            $content = new JsonResponse($profilRecherche);
+            $em->flush();
+
+            return $content;
+        }
+        else {
+//            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
+            return ('erreuur');
+        }
+    }
+
     public function showProjectAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -245,5 +265,9 @@ class UserController extends Controller
         }
 
     }
+
+
+
+
 
 }
