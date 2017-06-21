@@ -9,73 +9,78 @@
         <div class="row">
             <div class="col s12">
                 {{ form_start(edit_form) }}
+                <div class="col s6">
+                    <div class="col s12 divform">
+                        {{ form_label(edit_form.nom) }}
+                        {{ form_errors(edit_form.nom) }}
+                        {{ form_widget(edit_form.nom, {'attr': {'placeholder': '  Nom'}}) }}
+                    </div>
 
-                <div class="col s12 divform">
-                    {{ form_label(edit_form.nom) }}
-                    {{ form_errors(edit_form.nom) }}
-                    {{ form_widget(edit_form.nom, {'attr': {'placeholder': '  Nom'}}) }}
+                    <div class="col s12 divform">
+                        {{ form_label(edit_form.prenom) }}
+                        {{ form_errors(edit_form.prenom) }}
+                        {{ form_widget(edit_form.prenom, {'attr': {'placeholder': ' Prénom '}}) }}
+                    </div>
+
+                    <div class="col s12 divform">
+                        {{ form_label(edit_form.description) }}
+                        {{ form_errors(edit_form.description) }}
+                        {{ form_widget(edit_form.description, {'attr': {'rows' : 1000}}) }}
+                    </div>
+
+                    <div class="col s12 divform">
+                        {{ form_label(edit_form.linkedIn) }}
+                        {{ form_errors(edit_form.linkedIn) }}
+                        {{ form_widget(edit_form.linkedIn, {'attr': {'placeholder': ' LinkedIn '}}) }}
+                    </div>
+
+                    <div class="col s12 divform">
+                        {{ form_label(edit_form.localisation) }}
+                        {{ form_errors(edit_form.localisation) }}
+                        {{ form_widget(edit_form.localisation, {'attr': {'placeholder': ' Localisation '}}) }}
+                    </div>
+
+
                 </div>
 
-                <div class="col s12 divform">
-                    {{ form_label(edit_form.prenom) }}
-                    {{ form_errors(edit_form.prenom) }}
-                    {{ form_widget(edit_form.prenom, {'attr': {'placeholder': ' Prénom '}}) }}
-                </div>
 
-                <div class="col s12 divform">
-                    {{ form_label(edit_form.description) }}
-                    {{ form_errors(edit_form.description) }}
-                    {{ form_widget(edit_form.description, {'attr': {'placeholder': ' Description '}}) }}
-                </div>
+                <div class="col s6">
+                    <div class="col s12 divform sltbox">
+                        {{ form_label(edit_form.metier) }}
+                        {{ form_errors(edit_form.metier) }}
+                        {{ form_widget(edit_form.metier, {'attr': {'placeholder': ' Métiers '}}) }}
+                    </div>
 
-                <div class="col s12 divform">
-                    {{ form_label(edit_form.linkedIn) }}
-                    {{ form_errors(edit_form.linkedIn) }}
-                    {{ form_widget(edit_form.linkedIn, {'attr': {'placeholder': ' LinkedIn '}}) }}
-                </div>
+                    <div class="col s12 divform sltbox">
+                        {{ form_label(edit_form.etq) }}
+                        {{ form_errors(edit_form.etq) }}
+                        {{ form_widget(edit_form.etq, {'attr': {'placeholder': ' En tant que '}}) }}
+                    </div>
 
-                <div class="col s12 divform">
-                    {{ form_label(edit_form.localisation) }}
-                    {{ form_errors(edit_form.localisation) }}
-                    {{ form_widget(edit_form.localisation, {'attr': {'placeholder': ' Localisation '}}) }}
-                </div>
+                    <div class="col s12 divform sltbox">
+                        {{ form_label(edit_form.ou) }}
+                        {{ form_errors(edit_form.ou) }}
+                        {{ form_widget(edit_form.ou, {'attr': {'placeholder': ' Ou '}}) }}
+                    </div>
 
-                <div class="col s12 divform sltbox">
-                    {{ form_label(edit_form.metier) }}
-                    {{ form_errors(edit_form.metier) }}
-                    {{ form_widget(edit_form.metier, {'attr': {'placeholder': ' Métiers '}}) }}
-                </div>
+                    <div class="col s12 divform sltbox">
+                        {{ form_label(edit_form.invest) }}
+                        {{ form_errors(edit_form.invest) }}
+                        {{ form_widget(edit_form.invest, {'attr': {'placeholder': ' Investissement '}}) }}
+                    </div>
 
-                <div class="col s12 divform sltbox">
-                    {{ form_label(edit_form.etq) }}
-                    {{ form_errors(edit_form.etq) }}
-                    {{ form_widget(edit_form.etq, {'attr': {'placeholder': ' En tant que '}}) }}
-                </div>
+                    <div class="col s12 divform sltbox">
+                        {{ form_label(edit_form.dispo) }}
+                        {{ form_errors(edit_form.dispo) }}
+                        {{ form_widget(edit_form.dispo, {'attr': {'placeholder': ' Disponibilité '}}) }}
+                    </div>
 
-                <div class="col s12 divform sltbox">
-                    {{ form_label(edit_form.ou) }}
-                    {{ form_errors(edit_form.ou) }}
-                    {{ form_widget(edit_form.ou, {'attr': {'placeholder': ' Ou '}}) }}
+                    <div class="col s12 divform sltbox">
+                        {{ form_label(edit_form.competences) }}
+                        {{ form_errors(edit_form.competences) }}
+                        {{ form_widget(edit_form.competences, {'attr': {'placeholder': ' Compétences '}}) }}
+                    </div>
                 </div>
-
-                <div class="col s12 divform sltbox">
-                    {{ form_label(edit_form.invest) }}
-                    {{ form_errors(edit_form.invest) }}
-                    {{ form_widget(edit_form.invest, {'attr': {'placeholder': ' Investissement '}}) }}
-                </div>
-
-                <div class="col s12 divform sltbox">
-                    {{ form_label(edit_form.dispo) }}
-                    {{ form_errors(edit_form.dispo) }}
-                    {{ form_widget(edit_form.dispo, {'attr': {'placeholder': ' Disponibilité '}}) }}
-                </div>
-
-                <div class="col s12 divform sltbox">
-                    {{ form_label(edit_form.competences) }}
-                    {{ form_errors(edit_form.competences) }}
-                    {{ form_widget(edit_form.competences, {'attr': {'placeholder': ' Compétences '}}) }}
-                </div>
-
                 <div class="col s12 divform">
                     <div class="col s6 btnleft">
                         <input class="btn" type="submit" value="Enregistrez"/>

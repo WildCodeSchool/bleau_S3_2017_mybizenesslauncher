@@ -32,7 +32,8 @@ class ProjetType extends AbstractType
                 'required' => true
             ))
             ->add('description', TextareaType::class, array(
-                'required' => true
+                'required' => true,
+                'attr' => array('rows' => '1000','cols' => '1000')
             ))
             ->add('siteInternet', UrlType::class, array(
                 'required' => false

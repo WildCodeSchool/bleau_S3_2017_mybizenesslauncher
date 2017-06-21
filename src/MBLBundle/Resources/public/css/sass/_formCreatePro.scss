@@ -1,26 +1,33 @@
 @import "global";
 #formCreatePro
 {
-  .box_projet {
-    background-color: $ColorDarkGrey;
-    border-radius: $BorderRadius;
-  }
+    .container_body {
+      margin-top: 50px;
+    }
     .vignette_profil {
     padding: 2%;
-    height: 100%;
+    border-radius: $BorderRadius;
+    margin-bottom: 10px;
     }
     .content {
     background-color: $ColorDarkGrey;
     border-radius: $BorderRadius;
+      padding-bottom: 5px;
+
     }
-  .info_projet * {
+  .info_profil * {
     text-align: center;
   }
-  .photo_profil, .info_projet {
-    border-radius: $BorderRadius;
-    padding: 10px;
-    background: $ColorWhite;
-    margin-bottom: 10px;
+    .photo_profil, .info_profil {
+      border-radius: $BorderRadius;
+      background: $ColorWhite;
+      padding: 5px;
+    }
+  .info_profil{
+    margin: 10px;
+  }
+  .deleteProfilR {
+    margin: 10px;
   }
 
   h4 {
