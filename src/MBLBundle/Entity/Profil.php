@@ -75,6 +75,16 @@ class Profil extends BaseUser
      */
     private $competences;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $projets;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $chats;
+
 
     /**
      * Set nom
@@ -349,11 +359,6 @@ class Profil extends BaseUser
     {
         return $this->competences;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $projets;
-
 
     /**
      * Add projet
@@ -389,4 +394,37 @@ class Profil extends BaseUser
         return $this->projets;
     }
 
+    /**
+     * Add chat
+     *
+     * @param \MBLBundle\Entity\Chat $chat
+     *
+     * @return Profil
+     */
+    public function addChat(\MBLBundle\Entity\Chat $chat)
+    {
+        $this->chats[] = $chat;
+
+        return $this;
+    }
+
+    /**
+     * Remove chat
+     *
+     * @param \MBLBundle\Entity\Chat $chat
+     */
+    public function removeChat(\MBLBundle\Entity\Chat $chat)
+    {
+        $this->chats->removeElement($chat);
+    }
+
+    /**
+     * Get chats
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getChats()
+    {
+        return $this->chats;
+    }
 }
