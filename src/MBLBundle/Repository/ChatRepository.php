@@ -25,17 +25,19 @@ class ChatRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this ->createQueryBuilder('c')
             ->select('c')
-            ->join('c.profils', 'pro')
-            ->join('c.profils', 'proco')
 
-            ->where('pro = :profilone')
-            ->andWhere('proco = :profiltwo')
+            ->where(':profiltwo MEMBER OF c.profils')
+            ->andWhere(':profilone MEMBER OF c.profils')
+//            ->join('c.profils', 'proco')
+//
+//            ->where('pro = :profilone')
+//            ->andWhere('proco = :profiltwo')
 //            ->where($qb->expr()->orX(
 //        $qb->expr()->in('pro', $currentUser),
 //        $qb->expr()->in('pro', $connectedUser)
             ->setParameters(array(
                 'profiltwo' => $connectedUser,
-                'profilone'=> $currentUser
+                'profilone' => $currentUser
             ))
 
             ->getQuery()
