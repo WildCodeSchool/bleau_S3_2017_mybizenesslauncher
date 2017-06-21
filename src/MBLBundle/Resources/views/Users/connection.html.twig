@@ -1,0 +1,85 @@
+{% extends "@MBL/layout.html.twig" %}
+
+{% block titreH2 %}<h2>Conncetion Chat</h2>{% endblock %}
+
+{% block body %}
+    <div class="container" id="chat_connection">
+        <div class="row">
+
+
+            {% for chat in chats %}
+                <div class="col s12 connected">
+                    {#Verifier que si le createur de la connection ne puisse pas accepter à la place de la personne visée#}
+                    {% if chat.connectionbyidcreator == app.user.id %}
+
+                        {% if chat.connectionbyid > 0 %}
+                            <div class="col s3 Nom_prenom">
+                                {#Nom du profil avec qui l'on veut discuter#}
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        <p>Nom : {{ profil.nom }}</br>
+                                            Prenom : {{ profil.prenom }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="col s7">
+                                {#Dernier message avec ce profil#}
+                                {% if chat.msgs is not empty%}
+                                    {% set chatmsg = chat.msgs|last %}
+                                    <p class="center">{{ chatmsg.msg}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col s2">
+                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                </p>
+                            </div>
+
+
+                        {% endif %}
+                    {% else %}
+                        {% if chat.connectionbyid > 0 %}
+
+                            <div class="col s3 Nom_prenom">
+                                {#Nom du profil avec qui l'on veut discuter#}
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        <p>Nom : {{ profil.nom }} </br>
+                                            Prenom : {{ profil.prenom }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="col s7">
+                                {#Dernier message avec ce profil#}
+                                {% if chat.msgs is not empty%}
+                                    {% set chatmsg = chat.msgs|last %}
+                                    <p>{{ chatmsg.msg}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col s2">
+                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                </p> </div>
+
+                        {% else %}
+                            <div class="col s12 Nom_prenom">
+                                {#Nom du profil avec qui l'on peut accepter de discuter#}
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        <p>Nom : {{ profil.nom }} </br>
+                                            Prenom : {{ profil.prenom }}</p>
+
+                                        <a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -23,10 +23,6 @@ showAllProfils:
     path: /showAllProfils
     defaults: { _controller: MBLBundle:User:showAllProfils }
 
-createProfil:
-    path: /createProfil
-    defaults: { _controller: MBLBundle:User:createProfil }
-
 createProjet:
     path: /createProject
     defaults: { _controller: MBLBundle:User:createProject }
@@ -53,14 +49,31 @@ deleteMyProject:
     path: /deleteMyProject/{id}
     defaults: { _controller: MBLBundle:User:deleteMyProject }
 
-# Cette route doit rester la dernière
-remove_trailing_slash:
-    path: /{url}
-    defaults: { _controller: MBLBundle:Redirecting:removeTrailingSlash }
-    requirements:
-        url: .*/$
-    methods: [GET]
 
+
+chatIndex:
+    path: /chatIndex/{chatId}
+    defaults:
+        _controller: MBLBundle:User:chatIndex
+        chatId: null
+
+chatConnect:
+    path: /chatConnect/{id}
+    defaults: { _controller: MBLBundle:User:chatConnect}
+
+connect:
+    path: /connect/{chatId}
+    defaults:
+        _controller: MBLBundle:User:connect
+        chatId: null
+
+# Cette route doit rester la dernière
+#remove_trailing_slash:
+#    path: /{url}
+#    defaults: { _controller: MBLBundle:Redirecting:removeTrailingSlash }
+#    requirements:
+#        url: .*/$
+#    methods: [GET]
 
 
 

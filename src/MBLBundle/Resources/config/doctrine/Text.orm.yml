@@ -1,0 +1,25 @@
+MBLBundle\Entity\Text:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ChatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        msg:
+            type: string
+        datecreation:
+            type: datetime
+        profil:
+            type: string
+    lifecycleCallbacks: {  }
+
+
+    manyToMany:
+        chats:
+            targetEntity: MBLBundle\Entity\Chat
+            mappedBy: msgs
+            cascade: ["persist"]

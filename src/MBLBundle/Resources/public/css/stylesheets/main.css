@@ -504,3 +504,59 @@ input[type=search], textarea.materialize-textarea {
   background: white;
   height: 60%;
 }
+
+/*
+chat.html.twig
+*/
+/* line 5, ../sass/_chat.scss */
+#chat {
+  margin-top: 50px;
+}
+/* line 8, ../sass/_chat.scss */
+#chat .chat_box {
+  border: 2px solid #98d4e1;
+  border-radius: 10px;
+  color: black;
+  height: 80px;
+  margin-top: 5px;
+}
+/* line 17, ../sass/_chat.scss */
+#chat .chat_box:hover {
+  background-color: #98d4e1;
+}
+/* line 27, ../sass/_chat.scss */
+#chat #chat_text {
+  border: 2px solid #98d4e1;
+  border-radius: 10px;
+}
+/* line 57, ../sass/_chat.scss */
+#chat .group-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #98d4e1;
+}
+
+/*
+chat.html.twig
+*/
+/* line 5, ../sass/_chatConnection.scss */
+#chat_connection {
+  margin-top: 50px;
+}
+/* line 8, ../sass/_chatConnection.scss */
+#chat_connection .connected {
+  margin-top: 15px;
+  color: black;
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+}
+/* line 16, ../sass/_chatConnection.scss */
+#chat_connection .Nom_prenom p {
+  size: 5em;
+}
+/* line 45, ../sass/_chatConnection.scss */
+#chat_connection .group-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #c8c8c8;
+}
