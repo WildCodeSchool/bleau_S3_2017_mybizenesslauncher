@@ -7,6 +7,15 @@ namespace MBLBundle\Entity;
  */
 class Chat
 {
+
+    public function __construct()
+    {
+        $this->msgs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateCreation = new \DateTime();
+    }
+
+    //generated code
    
     /**
      * @var integer
@@ -46,12 +55,7 @@ class Chat
     /**
      * Constructor
      */
-    public function __construct()
-    {
-        $this->msgs = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->dateCreation = new \DateTime();
-    }
+
 
     /**
      * Get id

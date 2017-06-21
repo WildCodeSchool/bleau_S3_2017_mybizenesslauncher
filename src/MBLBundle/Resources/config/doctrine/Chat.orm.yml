@@ -35,4 +35,12 @@ MBLBundle\Entity\Chat:
             mappedBy: chats
             cascade: ["persist"]
 
+#    oneToOne:
+#        userCreator:
+#            targetEntity: MBLBundle\Entity\Profil
+#        userCall:
+#            targetEntity: MBLBundle\Entity\Profil
+#
+
+
 

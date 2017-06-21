@@ -262,13 +262,11 @@ class UserController extends Controller
         $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
         $form_text->handleRequest($request);
 
-           if ($request->isXmlHttpRequest()){
-
+           if ($form_text->isSubmitted()){
               $chat->addMsg($text);
               $text->addChat($chat);
               $text->setProfil($this->getUser()->getPrenom());
               $em->persist($text);
-              $em->persist($chat);
               $em->flush();
 
               $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
@@ -330,7 +328,7 @@ class UserController extends Controller
             $connectId =$this->getUser()->getId();
             $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
             $chat->setConnectionbyid($connectId);
-            $em->persist($chat);
+
             $em->flush();
         }
         $currentUser = $this->getUser();

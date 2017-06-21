@@ -2,34 +2,22 @@
 /*
 chat.html.twig
 */
-#chat {
+#chat_connection {
   margin-top: 50px;
 
-  .chat_box {
-
-    border: 2px solid $Colorblue;
-    border-radius: 10px;
-    color: black;
-    height: 80px;
-    margin-top: 5px;
-
-  }
-  .chat_box:hover
+  .connected
   {
-    background-color: $Colorblue;
-  }
-  //#chat_box a {
-  //  border: 1px solid #c8c8c8;
-  //  border-radius: 10px;
-  //  color: black;
-  //}
+    margin-top: 15px;
+    color: black;
+    border: 1px solid #c8c8c8;
+    border-radius: 10px;
 
-    #chat_text
-    {
-      //color: $Colorblue;
-      border: 2px solid $Colorblue;
-      border-radius: 10px;
-    }
+  }
+  .Nom_prenom p
+  {
+
+    size: 1em;
+  }
 
   //#new-text {
   //  height: 70vh;
@@ -57,7 +45,8 @@ chat.html.twig
   .group-text {
     margin-top: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid $Colorblue;
+    border-bottom: 1px solid #c8c8c8;
+
   }
   //
   //p, i {
