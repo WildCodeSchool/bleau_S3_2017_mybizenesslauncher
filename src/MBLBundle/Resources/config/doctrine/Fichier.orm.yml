@@ -12,12 +12,24 @@ MBLBundle\Entity\Fichier:
         photo:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
+
+        alt:
+            type: string
+            length: 255
+
+    lifecycleCallbacks:
+
+        #for create
+        prePersist: [ preUpload ]
+        postPersist: [ upload ]
+
+        #for edit
+        preUpdate: [ preUpload ]
+        postUpdate: [ upload ]
+
+        #for remove
+        preRemove: [ preRemove ]
+        postRemove: [ remove ]
 
 
-    manyToOne:
-        projet:
-            targetEntity: MBLBundle\Entity\Projet
 
-        profil:
-            targetEntity: MBLBundle\Entity\Profil

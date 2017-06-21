@@ -27,6 +27,8 @@ MBLBundle\Entity\Projet:
             length: 255
         dateCreation:
             type: datetime
+
+
     lifecycleCallbacks: {  }
 
     manyToOne:
@@ -34,6 +36,10 @@ MBLBundle\Entity\Projet:
             targetEntity: MBLBundle\Entity\Secteur
             inversedBy: projets
             cascade: ["persist"]
+
+        fichier:
+            targetEntity: MBLBundle\Entity\Fichier
+            cascade: ['all']
 
         typeDeProjet:
             targetEntity: MBLBundle\Entity\TypeDeProjet

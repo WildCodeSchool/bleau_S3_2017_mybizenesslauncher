@@ -69,3 +69,6 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Invest
             inversedBy: profil
 
+        fichier:
+            targetEntity: MBLBundle\Entity\Fichier
+            cascade: ['all']

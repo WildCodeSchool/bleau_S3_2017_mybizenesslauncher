@@ -25,8 +25,7 @@ class ProfilType extends AbstractType
     {
         $builder->add('nom', TextType::class, array('required' => true))
             ->add('prenom', TextType::class, array('required' => true))
-            ->add('description', TextareaType::class, array(
-                'attr' => array('rows' => '1000','cols' => '1000')))
+            ->add('description', TextareaType::class)
             ->add('linkedIn')
             ->add('localisation')
             ->add('metier', EntityType::class,
@@ -81,7 +80,9 @@ class ProfilType extends AbstractType
                     'multiple'=> true,
                     'expanded'=> false,
                     'required' => false
-                ));
+                ))
+            ->add('fichier', FichierType::class)
+        ;
     }
     
     /**
@@ -101,6 +102,5 @@ class ProfilType extends AbstractType
     {
         return 'mblbundle_profil';
     }
-
 
 }
