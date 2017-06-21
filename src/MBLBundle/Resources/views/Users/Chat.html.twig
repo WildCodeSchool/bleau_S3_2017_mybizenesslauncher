@@ -50,7 +50,7 @@
             <div class="col s7 offset-s1 " id="chat_text">
 
                 {#Les textes déjà existant#}
-                {% for text in chat.msgs %}
+                {% for text in chat.msgs|slice(0, 10) %}
                     <div class="group-text">
                         <input type="hidden" value="{{ text.id }}"/>
                         <b><i> {{ text.profil }} </i></b>

@@ -361,7 +361,6 @@ class UserController extends Controller
             $connectId =$this->getUser()->getId();
             $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
             $chat->setConnectionbyid($connectId);
-
             $em->flush();
         }
         $currentUser = $this->getUser();
