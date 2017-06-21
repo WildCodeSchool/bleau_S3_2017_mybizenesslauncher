@@ -3,6 +3,7 @@
 namespace MBLBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -24,7 +25,8 @@ class ProfilType extends AbstractType
     {
         $builder->add('nom', TextType::class, array('required' => true))
             ->add('prenom', TextType::class, array('required' => true))
-            ->add('description')
+            ->add('description', TextareaType::class, array(
+                'attr' => array('rows' => '1000','cols' => '1000')))
             ->add('linkedIn')
             ->add('localisation')
             ->add('metier', EntityType::class,

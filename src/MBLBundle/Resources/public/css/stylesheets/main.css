@@ -435,24 +435,26 @@ input[type=search], textarea.materialize-textarea {
 /* line 16, ../sass/_editShowProfil.scss */
 .editprofil textarea {
   border-radius: 8px;
+  width: 600px;
+  height: 165px;
 }
-/* line 19, ../sass/_editShowProfil.scss */
+/* line 21, ../sass/_editShowProfil.scss */
 .editprofil .sltbox input {
   border: 2px solid lightgray;
   background-color: #98d4e1;
 }
-/* line 23, ../sass/_editShowProfil.scss */
+/* line 25, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
   z-index: 1;
   font-size: 1.5em;
   color: black;
 }
-/* line 28, ../sass/_editShowProfil.scss */
+/* line 30, ../sass/_editShowProfil.scss */
 .editprofil .btnright a {
   float: right;
 }
 
-/* line 36, ../sass/_editShowProfil.scss */
+/* line 38, ../sass/_editShowProfil.scss */
 .showprofil .cartepro {
   border: 1px solid red;
   background-color: #98d4e1;
@@ -460,7 +462,7 @@ input[type=search], textarea.materialize-textarea {
   padding-right: 5%;
   border-radius: 8px;
 }
-/* line 46, ../sass/_editShowProfil.scss */
+/* line 48, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -469,7 +471,7 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 57, ../sass/_editShowProfil.scss */
+/* line 59, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
 }
