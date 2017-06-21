@@ -128,4 +128,33 @@ class Text
     {
         return $this->chats;
     }
+    /**
+     * @var string
+     */
+    private $profil;
+
+
+    /**
+     * Set profil
+     *
+     * @param string $profil
+     *
+     * @return Text
+     */
+    public function setProfil($profil)
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get profil
+     *
+     * @return string
+     */
+    public function getProfil()
+    {
+        return $this->profil;
+    }
 }
