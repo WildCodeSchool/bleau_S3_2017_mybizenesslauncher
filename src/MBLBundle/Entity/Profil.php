@@ -427,4 +427,33 @@ class Profil extends BaseUser
     {
         return $this->chats;
     }
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
+
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Profil
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
+    }
 }

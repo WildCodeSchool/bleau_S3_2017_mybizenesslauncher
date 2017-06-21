@@ -243,8 +243,6 @@ class UserController extends Controller
         ));
     }
 
-
-
     /**
      * @param Projet|null $projet
      * @param $id

@@ -2,11 +2,122 @@
 
 namespace MBLBundle\Entity;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 /**
  * Fichier
  */
 class Fichier
 {
+    /**
+     * @var UploadedFile $file
+     */
+    private $file;
+
+    /**
+     * Attribut permettant de stocker le nom de mon fichier en preRemove
+     * @var string $tempName
+     */
+    private $tempName;
+
+    /**
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+
+        if ($this->photo != null){
+            // On stock le nom de l'image à supprimer
+            $this->tempName = $this->photo;
+
+            // On réinitialise les champs de notre objet
+            $this->photo = null;
+            $this->alt= null;
+        }
+    }
+
+    /**
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function preUpload()
+    {
+
+        if (null === $this->file) {
+            return;
+        }
+
+        $this->photo = uniqid() . '.' . $this->file->guessExtension();
+
+        $alt= $this->file->getClientOriginalName();
+        $ext = $this->file->guessExtension();
+
+        $this->alt=str_replace('.'. $ext, '', $alt);
+
+    }
+
+    /**
+     * @ORM\PostPersist
+     * @ORM\PostUpdate
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+
+        if ($this->tempName != null){
+            $oldfile= $this->getUploadDir() . $this->tempName;
+
+            if (file_exists($oldfile)){
+                unlink($oldfile);
+            }
+        }
+
+        $this->file->move($this->getUploadDir(), $this->photo);
+
+
+    }
+
+    /**
+     * @ORM\PreRemove
+     */
+    public function preRemove()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function remove()
+    {
+        $fileToRemove = $this->getUploadDir() . $this->photo;
+        if (file_exists($fileToRemove))
+        {
+            unlink($fileToRemove);
+        }
+    }
+
+    public function getUploadDir(){
+
+        return __DIR__ . '/../../../web/uploads/images/';
+    }
+
+
+
+
+
+// GENERATED CODE
 
     /**
      * @var integer
@@ -19,14 +130,9 @@ class Fichier
     private $photo;
 
     /**
-     * @var \MBLBundle\Entity\Projet
+     * @var string
      */
-    private $projet;
-
-    /**
-     * @var \MBLBundle\Entity\Profil
-     */
-    private $profil;
+    private $alt;
 
 
     /**
@@ -64,50 +170,28 @@ class Fichier
     }
 
     /**
-     * Set projet
+     * Set alt
      *
-     * @param \MBLBundle\Entity\Projet $projet
+     * @param string $alt
      *
      * @return Fichier
      */
-    public function setProjet(\MBLBundle\Entity\Projet $projet = null)
+    public function setAlt($alt)
     {
-        $this->projet = $projet;
+        $this->alt = $alt;
 
         return $this;
     }
 
     /**
-     * Get projet
+     * Get alt
      *
-     * @return \MBLBundle\Entity\Projet
+     * @return string
      */
-    public function getProjet()
+    public function getAlt()
     {
-        return $this->projet;
+        return $this->alt;
     }
 
-    /**
-     * Set profil
-     *
-     * @param \MBLBundle\Entity\Profil $profil
-     *
-     * @return Fichier
-     */
-    public function setProfil(\MBLBundle\Entity\Profil $profil = null)
-    {
-        $this->profil = $profil;
 
-        return $this;
-    }
-
-    /**
-     * Get profil
-     *
-     * @return \MBLBundle\Entity\Profil
-     */
-    public function getProfil()
-    {
-        return $this->profil;
-    }
 }
