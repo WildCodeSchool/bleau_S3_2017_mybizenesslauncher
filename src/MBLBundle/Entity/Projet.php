@@ -341,4 +341,33 @@ class Projet
         return $this->profils;
     }
 
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
+
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Projet
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
+    }
 }

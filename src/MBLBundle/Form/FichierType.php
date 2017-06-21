@@ -3,6 +3,7 @@
 namespace MBLBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,9 @@ class FichierType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('photo')->add('projet')->add('profil');
+        $builder
+            ->add('file', FileType::class)
+        ;
     }
     
     /**

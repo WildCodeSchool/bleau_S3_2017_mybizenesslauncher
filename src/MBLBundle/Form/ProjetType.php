@@ -2,23 +2,12 @@
 
 namespace MBLBundle\Form;
 
-use MBLBundle\Entity\ETQ;
-use MBLBundle\Entity\Matching;
-use MBLBundle\Entity\Metier;
-use MBLBundle\Entity\ProfilRecherche;
-use MBLBundle\Entity\Projet;
-use MBLBundle\Entity\Secteur;
-use MBLBundle\Entity\TypeDeProjet;
-use MBLBundle\MBLBundle;
-use MBLBundle\Repository\SecteurRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProjetType extends AbstractType
@@ -59,7 +48,9 @@ class ProjetType extends AbstractType
             ))
             ->add('localisation', TextareaType::class, array(
                 'required' => true
-            ));
+            ))
+            ->add('fichier', FichierType::class)
+        ;
 
 
 
