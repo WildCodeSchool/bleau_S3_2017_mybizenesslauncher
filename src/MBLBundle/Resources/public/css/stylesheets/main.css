@@ -349,56 +349,64 @@ input[type=search], textarea.materialize-textarea {
 }
 
 /* line 4, ../sass/_formCreatePro.scss */
-#formCreatePro .box_projet {
-  background-color: #4b494b;
-  border-radius: 8px;
+#formCreatePro .container_body {
+  margin-top: 50px;
 }
-/* line 8, ../sass/_formCreatePro.scss */
+/* line 7, ../sass/_formCreatePro.scss */
 #formCreatePro .vignette_profil {
   padding: 2%;
-  height: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 /* line 12, ../sass/_formCreatePro.scss */
 #formCreatePro .content {
   background-color: #4b494b;
   border-radius: 8px;
+  padding-bottom: 5px;
 }
-/* line 16, ../sass/_formCreatePro.scss */
-#formCreatePro .info_projet * {
+/* line 18, ../sass/_formCreatePro.scss */
+#formCreatePro .info_profil * {
   text-align: center;
 }
-/* line 19, ../sass/_formCreatePro.scss */
-#formCreatePro .photo_profil, #formCreatePro .info_projet {
+/* line 21, ../sass/_formCreatePro.scss */
+#formCreatePro .photo_profil, #formCreatePro .info_profil {
   border-radius: 8px;
-  padding: 10px;
   background: white;
-  margin-bottom: 10px;
+  padding: 5px;
 }
 /* line 26, ../sass/_formCreatePro.scss */
+#formCreatePro .info_profil {
+  margin: 10px;
+}
+/* line 29, ../sass/_formCreatePro.scss */
+#formCreatePro .deleteProfilR {
+  margin: 10px;
+}
+/* line 33, ../sass/_formCreatePro.scss */
 #formCreatePro h4 {
   text-align: center;
   color: white;
 }
-/* line 30, ../sass/_formCreatePro.scss */
+/* line 37, ../sass/_formCreatePro.scss */
 #formCreatePro label.required:after {
   content: "*";
 }
-/* line 33, ../sass/_formCreatePro.scss */
+/* line 40, ../sass/_formCreatePro.scss */
 #formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 40, ../sass/_formCreatePro.scss */
+/* line 47, ../sass/_formCreatePro.scss */
 #formCreatePro p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 45, ../sass/_formCreatePro.scss */
+/* line 52, ../sass/_formCreatePro.scss */
 #formCreatePro p .btn {
   margin-bottom: 20px;
 }
-/* line 50, ../sass/_formCreatePro.scss */
+/* line 57, ../sass/_formCreatePro.scss */
 #formCreatePro p input:not([type]), #formCreatePro p input[type=text], #formCreatePro p input[type=password], #formCreatePro p input[type=email], #formCreatePro p input[type=url], #formCreatePro p input[type=time],
 #formCreatePro p input[type=date], #formCreatePro p input[type=datetime], #formCreatePro p input[type=datetime-local], #formCreatePro p input[type=tel], #formCreatePro p input[type=number],
 #formCreatePro p input[type=search], #formCreatePro p textarea.materialize-textarea {
@@ -406,7 +414,7 @@ input[type=search], textarea.materialize-textarea {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 57, ../sass/_formCreatePro.scss */
+/* line 64, ../sass/_formCreatePro.scss */
 #formCreatePro p .box_profil_rech {
   text-align: center;
 }
@@ -427,23 +435,24 @@ input[type=search], textarea.materialize-textarea {
 /* line 16, ../sass/_editShowProfil.scss */
 .editprofil textarea {
   border-radius: 8px;
+  width: 600px;
+  height: 165px;
 }
-/* line 19, ../sass/_editShowProfil.scss */
+/* line 21, ../sass/_editShowProfil.scss */
 .editprofil .sltbox input {
   border: 2px solid lightgray;
   background-color: #98d4e1;
 }
-/* line 23, ../sass/_editShowProfil.scss */
+/* line 25, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
   z-index: 2;
   font-size: 1.5em;
   color: black;
 }
-/* line 28, ../sass/_editShowProfil.scss */
+/* line 30, ../sass/_editShowProfil.scss */
 .editprofil .btnright a {
   float: right;
 }
-
 /* line 34, ../sass/_editShowProfil.scss */
 .showprofil {
   margin: 0;
@@ -455,8 +464,9 @@ input[type=search], textarea.materialize-textarea {
   text-align: center;
   word-wrap: break-word;
 }
-/* line 44, ../sass/_editShowProfil.scss */
-.showprofil .cartepro, .showprofil .cartepro2 {
+/* line 38, ../sass/_editShowProfil.scss */
+.showprofil .cartepro {
+
   border: 1px solid red;
   background-color: #98d4e1;
   padding-left: 5%;
@@ -466,7 +476,8 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-/* line 55, ../sass/_editShowProfil.scss */
+/* line 48, ../sass/_editShowProfil.scss */
+
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -475,7 +486,9 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 62, ../sass/_editShowProfil.scss */
+
+/* line 59, ../sass/_editShowProfil.scss */
+
 .showprofil .imgpro img {
   width: 60%;
   margin-top: 5%;
@@ -523,4 +536,60 @@ input[type=search], textarea.materialize-textarea {
 .showAllProfils .box_projet * .photo_profil, .showAllProfils .box_projet * .info_projet, .showAllProfils .box_projet * .info_profil {
   background: white;
   height: 60%;
+}
+
+/*
+chat.html.twig
+*/
+/* line 5, ../sass/_chat.scss */
+#chat {
+  margin-top: 50px;
+}
+/* line 8, ../sass/_chat.scss */
+#chat .chat_box {
+  border: 2px solid #98d4e1;
+  border-radius: 10px;
+  color: black;
+  height: 80px;
+  margin-top: 5px;
+}
+/* line 17, ../sass/_chat.scss */
+#chat .chat_box:hover {
+  background-color: #98d4e1;
+}
+/* line 27, ../sass/_chat.scss */
+#chat #chat_text {
+  border: 2px solid #98d4e1;
+  border-radius: 10px;
+}
+/* line 57, ../sass/_chat.scss */
+#chat .group-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #98d4e1;
+}
+
+/*
+chat.html.twig
+*/
+/* line 5, ../sass/_chatConnection.scss */
+#chat_connection {
+  margin-top: 50px;
+}
+/* line 8, ../sass/_chatConnection.scss */
+#chat_connection .connected {
+  margin-top: 15px;
+  color: black;
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+}
+/* line 16, ../sass/_chatConnection.scss */
+#chat_connection .Nom_prenom p {
+  size: 5em;
+}
+/* line 45, ../sass/_chatConnection.scss */
+#chat_connection .group-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #c8c8c8;
 }

@@ -2,9 +2,11 @@
 
 namespace MBLBundle\Controller;
 
+use MBLBundle\Entity\Chat;
 use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
+use MBLBundle\Entity\Text;
 use MBLBundle\Form\ProjetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -168,6 +170,24 @@ class UserController extends Controller
             ));
     }
 
+    /**
+     * @param ProfilRecherche $profilRecherche
+     * @return mixed
+     */
+    public function deleteProfilRAction(Request $request)
+    {
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $profilRecherche = $em->getRepository('MBLBundle:ProfilRecherche')->findOneById($id);
+            $em->remove($profilRecherche);
+            $content = new JsonResponse($profilRecherche);
+            $em->flush();
+
+            return $content;
+
+
+    }
+
     public function showProjectAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -246,4 +266,96 @@ class UserController extends Controller
 
     }
 
+    public function chatIndexAction(Request $request, $chatId)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $currentUser = $this->getUser();
+        $text = new Text();
+
+        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+
+        $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
+        $form_text->handleRequest($request);
+
+           if ($form_text->isSubmitted()){
+              $chat->addMsg($text);
+              $text->addChat($chat);
+              $text->setProfil($this->getUser()->getPrenom());
+              $em->persist($text);
+              $em->flush();
+
+              $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
+                  'text' => $text
+              ));
+
+
+              $response = new JsonResponse($content);
+
+              return $response;
+          }
+
+        return $this->render('@MBL/Users/Chat.html.twig', array(
+            'chat' => $chat,
+            'chats'=> $chats,
+            'form' => $form_text->createView()
+        ));
+
+    }
+
+    public function chatConnectAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $currentUser = $this->getUser();
+        $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
+
+//        Verifier qu'une connection n'existe pas déjà entre les deux utilisateurs
+
+        $chatexist = $em->getRepository('MBLBundle:Chat')->myFindChatExist($currentUser, $connectedUser);
+//        dump($chatexist);die();
+        if(!empty($chatexist))
+        {
+            $this->get('session')->getFlashBag()->add('error', 'Vous etes déjà connecté avec cette personne');
+            return $this->redirectToRoute('showAllProfils');
+        }
+        
+        $chat = new Chat();
+        $chat->addProfil($connectedUser);
+        $chat->addProfil($currentUser);
+        $connectedUser->addChat($chat);
+        $currentUser->addChat($chat);
+        $chat->setConnectionbyidcreator($currentUser->getId());
+        $chat->setConnectionbyid(0);
+        $em->persist($chat);
+        $em->flush();
+
+        return $this->redirectToRoute('connect');
+
+
+    }
+
+    public function connectAction($chatId)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        if(is_numeric($chatId))
+        {
+            $connectId =$this->getUser()->getId();
+            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+            $chat->setConnectionbyid($connectId);
+
+            $em->flush();
+        }
+        $currentUser = $this->getUser();
+
+        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+
+        return $this->render('@MBL/Users/connection.html.twig', array(
+            'chats' => $chats,
+
+        ));
+    }
 }

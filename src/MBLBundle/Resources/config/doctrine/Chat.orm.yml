@@ -1,0 +1,46 @@
+MBLBundle\Entity\Chat:
+    type: entity
+    table: null
+    repositoryClass: MBLBundle\Repository\ChatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: true
+        dateCreation:
+            type: date
+        connectionbyidcreator:
+            type: integer
+            nullable: true
+        connectionbyid:
+            type: integer
+            nullable: true
+
+    lifecycleCallbacks: {  }
+
+    manyToMany:
+        msgs:
+            targetEntity: MBLBundle\Entity\Text
+            inversedBy: chats
+            cascade: ["persist"]
+
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: chats
+            cascade: ["persist"]
+
+#    oneToOne:
+#        userCreator:
+#            targetEntity: MBLBundle\Entity\Profil
+#        userCall:
+#            targetEntity: MBLBundle\Entity\Profil
+#
+
+
+

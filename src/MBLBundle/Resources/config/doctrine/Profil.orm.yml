@@ -27,6 +27,7 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
+
     lifecycleCallbacks: {  }
 
 
@@ -49,7 +50,6 @@ MBLBundle\Entity\Profil:
 
 
 
-
     manyToMany:
         competences:
             targetEntity: MBLBundle\Entity\Competences
@@ -58,6 +58,11 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Projet
             inversedBy: profils
             cascade: ["persist"]
+        chats:
+            targetEntity: MBLBundle\Entity\Chat
+            inversedBy: profils
+            cascade: ["persist"]
+
 
     oneToOne:
         invest:

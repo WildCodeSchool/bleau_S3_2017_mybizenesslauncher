@@ -1,0 +1,11 @@
+<?php
+
+namespace MBLBundle\Entity;
+
+/**
+ * Chat
+ */
+class Chat
+{
+   
+}

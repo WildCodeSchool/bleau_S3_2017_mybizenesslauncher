@@ -1,0 +1,70 @@
+@import 'global';
+/*
+chat.html.twig
+*/
+#chat {
+  margin-top: 50px;
+
+  .chat_box {
+
+    border: 2px solid $Colorblue;
+    border-radius: 10px;
+    color: black;
+    height: 80px;
+    margin-top: 5px;
+
+  }
+  .chat_box:hover
+  {
+    background-color: $Colorblue;
+  }
+  //#chat_box a {
+  //  border: 1px solid #c8c8c8;
+  //  border-radius: 10px;
+  //  color: black;
+  //}
+
+    #chat_text
+    {
+      //color: $Colorblue;
+      border: 2px solid $Colorblue;
+      border-radius: 10px;
+    }
+
+  //#new-text {
+  //  height: 70vh;
+  //  width: 80%;
+  //  position: absolute;
+  //  left: 20%;
+  //  margin: 0;
+  //  padding: 0;
+  //  top: 10vh;
+  //  overflow-y: scroll;
+  //}
+
+  //#textarea {
+  //  position: absolute;
+  //  height: 20vh;
+  //  width: 80%;
+  //  bottom: 0px;
+  //  left: 20%;
+  //  margin: 0;
+  //  padding: 0;
+  //  background: #f8f8f8;
+  //}
+  //
+
+  .group-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $Colorblue;
+  }
+  //
+  //p, i {
+  //  color: #333;
+  //  margin: 0;
+  //  width: 100%;
+  //  word-break: break-all;
+  //}
+}
+

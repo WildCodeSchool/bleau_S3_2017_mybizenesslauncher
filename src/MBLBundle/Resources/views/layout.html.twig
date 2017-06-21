@@ -9,6 +9,11 @@
                 <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
                 <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
+                <li><a class="color" href="{{ path('editProfil') }}">Gérer mon profil</a></li>
+                <li><a class="color" href="{{ path('showProfil') }}">Voir mon profil</a></li>
+                <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
+                <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
+                <li><a class="color" href="#">Mes discussions</a></li>
                 <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
 
             </ul>
@@ -19,7 +24,7 @@
                         <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
                         <li><a class="color" href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
                         <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
+                        <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="right">Mon compte</i></a></li>
                     </ul>
                 </div>
             </nav>
