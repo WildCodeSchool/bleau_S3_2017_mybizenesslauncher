@@ -170,6 +170,24 @@ class UserController extends Controller
             ));
     }
 
+    /**
+     * @param ProfilRecherche $profilRecherche
+     * @return mixed
+     */
+    public function deleteProfilRAction(Request $request)
+    {
+            $em = $this->getDoctrine()->getManager();
+            $id = $request->request->get('id');
+            $profilRecherche = $em->getRepository('MBLBundle:ProfilRecherche')->findOneById($id);
+            $em->remove($profilRecherche);
+            $content = new JsonResponse($profilRecherche);
+            $em->flush();
+
+            return $content;
+
+
+    }
+
     public function showProjectAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
