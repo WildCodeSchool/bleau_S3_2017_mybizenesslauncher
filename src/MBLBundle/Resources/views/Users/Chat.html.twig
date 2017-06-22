@@ -14,16 +14,21 @@
     </h2>{% endblock %}
 
 {% block body %}
-    <div class="container" id="chat">
+    <div class="container-fluid" id="chat">
         <div class="row">
             <div class="col s4">
                 <div class="row">
                     {% for chat in chats %}
                         {% if chat.connectionbyid > 0 %}
-                            <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
-                                <div class="chat_box">
 
-                                    <div class="col s4 Nom_prenom">
+                                <div class="chat_box">
+                                    <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}">
+                                    <div class="col s1 delete">
+                                         <p><i class="material-icons">delete</i></p>
+                                    </div>
+                                    </a>
+                                    <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
+                                    <div class="col s3 Nom_prenom">
                                         {#Nom du profil avec qui l'on veut discuter#}
                                         {% for profil in chat.profils %}
                                             {% if profil == app.user %}
@@ -33,20 +38,20 @@
                                             {% endif %}
                                         {% endfor %}
                                     </div>
-                                    <div class="col s6">
+                                    <div class="col s6 Nom_prenom">
                                         {#Dernier message avec ce profil#}
                                         {% if chat.msgs is not empty%}
                                             {% set chatmsg = chat.msgs|last %}
                                             <p>  {{ chatmsg.msg|slice(0,20) ~ '...' }}</p>
                                         {% endif %}
                                     </div>
-                                    <div class="col s2 chat_box_icon">
+                                    <div class="col s2 Nom_prenom chat_box_icon">
                                         {#Dernier message avec ce profil#}
                                         <p> <i class="material-icons">chat</i></p>
                                     </div>
-
+                                    </a>
                                 </div>
-                            </a>
+
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -128,7 +133,9 @@
 
             })
 
-        })
+        });
+
+        
 
     </script>
 {% endblock %}

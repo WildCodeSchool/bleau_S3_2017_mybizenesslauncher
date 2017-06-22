@@ -16,7 +16,14 @@
                         <div class="col s12 connected">
                             <div class="col s2 image">
                                 {#Nom du profil avec qui l'on veut discuter#}
-                                <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle responsive-img">
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        {% if profil.fichier is null %}
+                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="col s3 Nom_prenom">
                                 {#Nom du profil avec qui l'on veut discuter#}
@@ -48,7 +55,14 @@
                         <div class="col s12 connected">
                             <div class="col s2 image">
                                 {#Nom du profil avec qui l'on veut discuter#}
-                                <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle responsive-img">
+                                {% for profil in chat.profils %}
+                                    {% if profil == app.user %}
+                                    {% else %}
+                                        {% if profil.fichier is null %}
+                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="col s3 Nom_prenom">
                                 {#Nom du profil avec qui l'on veut discuter#}
@@ -84,8 +98,9 @@
                                 <div class="col s12 connected">
                                     <div class="col s2 image">
                                         {#Nom du profil avec qui l'on veut discuter#}
-                                        {% if profil. %}
-                                        <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                        {% if profil.fichier is null %}
+                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                        {% endif %}
                                     </div>
                                     <div class="col s3 Nom_prenom">
                                         <p>Nom : {{ profil.nom }} </br>

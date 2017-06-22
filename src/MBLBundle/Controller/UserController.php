@@ -373,4 +373,22 @@ class UserController extends Controller
 
         ));
     }
+    public function chatDisconnectAction($chatId)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+        $em->remove($chat);
+        $em->flush();
+
+        $currentUser = $this->getUser();
+        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
+        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+
+        return $this->render('@MBL/Users/connection.html.twig', array(
+            'chats' => $chats,
+
+        ));
+    }
 }

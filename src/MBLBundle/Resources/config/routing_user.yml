@@ -74,6 +74,10 @@ connect:
         _controller: MBLBundle:User:connect
         chatId: null
 
+chatDisconnect:
+    path: /chatDisconnect/{chatId}
+    defaults: { _controller: MBLBundle:User:chatDisconnect}
+
 # Cette route doit rester la dernière
 #remove_trailing_slash:
 #    path: /{url}
