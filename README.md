@@ -33,3 +33,11 @@ puis taper cette commande à la suite dans votre terminal:
 
 étape 3 vérifier que votre base de donnée est bien chargée!
 
+
+
+
+
+à NE PAS OUBLIER POUR LA MISE EN PRODUCTION DU SITE
+
+la fonctionnalité de traduction du site est chargée dans le cache de l'application,
+il faut impérativement vider le cache de production manuellement lors de la mise en service du site pour que cette dernière fonctionne!

@@ -57,6 +57,23 @@ deleteMyProject:
     defaults: { _controller: MBLBundle:User:deleteMyProject }
 
 
+testTraduction:
+    path: /test/{name}
+    defaults: { _controller: MBLBundle:User:traduction }
+
+
+
+
+
+# Cette route doit rester la dernière
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: MBLBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
+
+
 
 chatIndex:
     path: /chatIndex/{chatId}
