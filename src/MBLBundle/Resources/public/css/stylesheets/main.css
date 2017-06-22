@@ -526,20 +526,39 @@ chat.html.twig
 #chat .chat_box {
   border: 2px solid #98d4e1;
   border-radius: 10px;
-  color: black;
+  color: #4b494b;
   height: 80px;
   margin-top: 5px;
-}
-/* line 17, ../sass/_chat.scss */
-#chat .chat_box:hover {
   background-color: #98d4e1;
 }
-/* line 27, ../sass/_chat.scss */
+/* line 18, ../sass/_chat.scss */
+#chat .chat_box:hover {
+  background-color: #f0f0f0;
+}
+/* line 28, ../sass/_chat.scss */
 #chat #chat_text {
+  color: #4b494b;
+  margin-top: 5px;
   border: 2px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 57, ../sass/_chat.scss */
+/* line 36, ../sass/_chat.scss */
+#chat .Nom_prenom p {
+  color: #4b494b;
+  font-size: 1.1em;
+}
+/* line 42, ../sass/_chat.scss */
+#chat .color-text {
+  border: 1px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+}
+/* line 49, ../sass/_chat.scss */
+#chat .color-text-user {
+  border: 1px solid #98d4e1;
+  border-radius: 10px;
+}
+/* line 78, ../sass/_chat.scss */
 #chat .group-text {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -562,9 +581,15 @@ chat.html.twig
 }
 /* line 16, ../sass/_chatConnection.scss */
 #chat_connection .Nom_prenom p {
-  size: 5em;
+  margin-left: 50px;
+  color: #4b494b;
+  font-size: 1.2em;
 }
-/* line 45, ../sass/_chatConnection.scss */
+/* line 22, ../sass/_chatConnection.scss */
+#chat_connection .image img {
+  height: 80px;
+}
+/* line 51, ../sass/_chatConnection.scss */
 #chat_connection .group-text {
   margin-top: 10px;
   margin-bottom: 10px;

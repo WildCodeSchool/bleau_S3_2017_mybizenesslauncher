@@ -106,7 +106,7 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-        $deleteForm = $this->createDeleteForm($projet);
+
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
 
@@ -121,8 +121,8 @@ class UserController extends Controller
         return $this->render('@MBL/Users/editProject.html.twig',
             array(
                 'projet' => $projet,
-                'form' => $form->createView(),
-                'deleteForm' => $deleteForm->createView(),
+                'form' => $form->createView()
+
             ));
     }
 
@@ -274,6 +274,11 @@ class UserController extends Controller
         $text = new Text();
         // Le chat correspondant à la discussion selectionnée
         $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+
+        $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($chatId);
+
+//        dump($text);die();
+
         //l'ensemble des chats pour lesquelles l'utilisateur peut discuter
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
@@ -293,15 +298,13 @@ class UserController extends Controller
               $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
                   'text' => $text
               ));
-
-
               $response = new JsonResponse($content);
-
               return $response;
           }
 
         return $this->render('@MBL/Users/Chat.html.twig', array(
             'chat' => $chat,
+            'texts' => $text_content,
             'chats'=> $chats,
             'form' => $form_text->createView()
         ));

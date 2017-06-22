@@ -1,7 +1,7 @@
 MBLBundle\Entity\Text:
     type: entity
     table: null
-    repositoryClass: MBLBundle\Repository\ChatRepository
+    repositoryClass: MBLBundle\Repository\TextRepository
     id:
         id:
             type: integer
