@@ -36,7 +36,8 @@ class ProjetType extends AbstractType
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => '  Choisissez',
+                'choice_translation_domain' => true
             ))
             ->add('secteur', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\Secteur',

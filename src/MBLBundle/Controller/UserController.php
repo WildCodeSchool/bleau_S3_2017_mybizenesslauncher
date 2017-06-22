@@ -359,6 +359,6 @@ class UserController extends Controller
 
     public function  traductionAction(){
 
-        return $this->render('@MBL/Users/index.html.twig');
+        return $this->render('@MBL/Users/index.html.twig', '@MBLBundle/Resources/views/layout.html.twig');
     }
 }

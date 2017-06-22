@@ -6,25 +6,25 @@
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content header">
-                <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
+                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
-                <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
-                <li><a class="color" href="{{ path('editProfil') }}">Gérer mon profil</a></li>
-                <li><a class="color" href="{{ path('showProfil') }}">Voir mon profil</a></li>
-                <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
-                <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                <li><a class="color" href="#">Mes discussions</a></li>
-                <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+                <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
+                <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
+                <li><a class="color" href="{{ path('showProfil') }}">{{ 'Voir mon profil'|trans }}</a></li>
+                <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
+                <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Voir mes projets'|trans }}</a></li>
+                <li><a class="color" href="#">{{ 'Mes discussions'|trans }}</a></li>
+                <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
 
             </ul>
             <nav>
                 <div class="nav-wrapper header">
                     <a href="{{ path('mbl_homepage') }}" class="color">MyBizenessLauncher.com</a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                        <li><a class="color" href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
+                        <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
+                        <li><a class="color" href="{{path('showAllProfils')}}">{{ 'Parcourir les profils'|trans }}</a></li>
                         <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="right">Mon compte</i></a></li>
+                        <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="right">{{ 'Mon compte'|trans }}</i></a></li>
                     </ul>
                 </div>
             </nav>
@@ -34,9 +34,9 @@
                 <div class="nav-wrapper header">
                     <a href="#" class="color">MyBizenessLauncher.com</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                        <li><a class="color" href="">Parcourir les profils</a></li>
-                        <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                        <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
+                        <li><a class="color" href="">{{ 'Parcourir les profils'|trans }}</a></li>
+                        <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans ({}, 'FOSUserBundle') }}</a></li>    {#TODO: vérifier si la traduction de "connexion" se fait correctement quand la locale est set en Italien#}
                     </ul>
                 </div>
             </nav>
@@ -62,19 +62,19 @@
         <div class="container">
             <div class="row">
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Liens utiles</h5>
+                    <h5 class="white-text">{{ 'Liens utiles'|trans }}</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">A propos</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Mention légales</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Presse</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Les projets</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Les profils</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Conseils</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{'A propos'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Mention légales'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Presse'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Contact'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Les projets'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Les profils'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Conseils'|trans }}</a></li>
                     </ul>
                 </div>
                 <div class="col l6 s12">
-                    <h5 class="white-text">Suivez MyBizenessLauncher.com</h5>
+                    <h5 class="white-text">{{ 'Suivez'|trans }} MyBizenessLauncher.com</h5>
                     <p class="grey-text text-lighten-4"><Facebook></Facebook></p>
                 </div>
                 <div class="choiceLanguage">
@@ -87,7 +87,7 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2017 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <a class="grey-text text-lighten-4 right" href="#">{{ 'More Links'|trans }}</a>
             </div>
         </div>
     </footer>

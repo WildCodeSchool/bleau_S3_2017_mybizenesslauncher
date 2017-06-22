@@ -1,3 +1,5 @@
+
+############# INDEX PAGE ####################################
 'Pour les porteurs de projet': 'Per i leader di progetto'
 index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
 'Pour ceux qui cherchent un projet à intégrer': 'Per chi cerca un progetto di integrazione'
@@ -17,29 +19,37 @@ Description: Descrizione
 'Dépose ton profil': 'Rimozione del profilo'
 Profil: Profili
 'Parcourir les profils': 'Percorrere progetti'
+
+############### LAYOUT #######################################
 Bonjour: Buongiorno
-'Mon compte': 'Il mio conto'
-'Gérer mon profil': 'Gestire il mio profilo'
-'Voir mon profil': 'Visualizza il mio profilo'
-'Créer un projet': 'Crea progetto'
-'Voir mes projets': 'Vedere i miei progetti'
-'Mes discussions': 'Mie discussioni'
+'Mon compte': Il mio conto
+'Gérer mon profil': Gestire il mio profilo
+'Voir mon profil': Visualizza il mio profilo
+'Créer un projet': Crea progetto
+'Voir mes projets': Vedere i miei progetti
+'Mes discussions': Mie discussioni
 'Log out': Esci
-'Liens utiles': 'Link utili'
-'A propos': 'A proposito'
-'Mention légales': 'Avviso legale'
+'Liens utiles': Link utili
+'A propos': A proposito
+'Mention légales': Avviso legale
 Presse: Stampa
 Contact: Contatto
 'Les projets': Progetti
 'Les profils': Profili
 Conseils: Consiglio
 Suivez: Seguire
-'More Links': 'Altri link'
-'Chat avec': 'discutere con'
+'More Links': Altri link
+
+############## CHAT #######################################
+'Chat avec': discutere con
 Création: Creazione
-'Connection Chat': 'Collegamento  Chat'
+
+############ CONNECTION #####################################
+'Connection Chat': Collegamento  Chat
 'Nom:': Nome
 'Prenom:': Conome
 Discuter: Discutere
-'Accepter de discuter': 'Accetto di discutere'
-'Nouveau Projet': 'Nuovo Progetto'
+'Accepter de discuter': Accetto di discutere
+
+############# CREATE PROJECT ##################################
+'Nouveau Projet': Nuovo Progetto

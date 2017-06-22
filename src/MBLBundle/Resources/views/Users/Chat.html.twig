@@ -4,11 +4,11 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
-{% block titreH2 %}<h2>Chat avec{#la personne avec qui vous voulez parler#}
+{% block titreH2 %}<h2>{{ 'Chat avec'|trans }} {# la personne avec qui vous voulez parler #}
     {% for profil in chat.profils %}
         {% if profil == app.user %}
         {% else %}
-            {{ profil.nom }} {{ profil.prenom }}</p>
+            <p>{{ profil.nom }} {{ profil.prenom }}</p>
         {% endif %}
     {% endfor %}
     </h2>{% endblock %}
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col s2 chat_box_icon">
                                     {#Dernier message avec ce profil#}
-                                    <p> <i class="material-icons">chat</i></p>
+                                    <p><i class="material-icons">chat</i></p>
                                 </div>
                             </a>
                         </div>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="col s4">
-                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Création"></p>
+                        <p><input id="envoi" class="btn" type="submit" name="creation" value="{{ 'Création'|trans }}"></p>
 
                     </div>
                     {{ form_end(form) }}

@@ -1,6 +1,6 @@
 {% extends "@MBL/layout.html.twig" %}
 
-{% block titreH2 %}<h2>Conncetion Chat</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ 'Connection Chat'|trans }}</h2>{% endblock %}
 
 {% block body %}
     <div class="container" id="chat_connection">
@@ -18,8 +18,8 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>Nom : {{ profil.nom }}</br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        <p>{{ 'Nom: '|trans}} {{ profil.nom }}<br />
+                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -29,9 +29,9 @@
                                     {% set chatmsg = chat.msgs|last %}
                                     <p class="center">{{ chatmsg.msg}}</p>
                                 {% endif %}
-                            </div>
+                            </div>                                  {#TODO: vérifier que les traductions des values dans les href soient prises en compte#}
                             <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Discuter'|trans }}"></a>
                                 </p>
                             </div>
 
@@ -45,8 +45,8 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>Nom : {{ profil.nom }} </br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        <p>{{ 'Nom: '|trans}} {{ profil.nom }} <br />
+                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -58,7 +58,7 @@
                                 {% endif %}
                             </div>
                             <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Discuter'|trans }}"></a>
                                 </p> </div>
 
                         {% else %}
@@ -67,10 +67,10 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>Nom : {{ profil.nom }} </br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        <p>{{ 'Nom: '|trans}} {{ profil.nom }} <br />
+                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
 
-                                        <a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a>
+                                        <a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a>
                                     {% endif %}
                                 {% endfor %}
                             </div>

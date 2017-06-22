@@ -15,3 +15,5 @@
 /vendor/
 /web/bundles/
 .sass-cache
+/src/MBLBundle/Resources/translations/svgTrad.txt
+!/src/MBLBundle/Resources/translations/svgTrad.txt
