@@ -347,6 +347,19 @@ input[type=search], textarea.materialize-textarea {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
+/* line 43, ../sass/_formCreate.scss */
+#createProjet .hiddenPreview {
+  display: none;
+}
+/* line 46, ../sass/_formCreate.scss */
+#createProjet textarea#mblbundle_projet_description {
+  height: 10em;
+}
+/* line 49, ../sass/_formCreate.scss */
+#createProjet .submitProjet {
+  margin: auto;
+  display: block;
+}
 
 /* line 4, ../sass/_formCreatePro.scss */
 #formCreatePro .container_body {
@@ -435,26 +448,25 @@ input[type=search], textarea.materialize-textarea {
 /* line 16, ../sass/_editShowProfil.scss */
 .editprofil textarea {
   border-radius: 8px;
-  width: 600px;
-  height: 165px;
+  height: 10rem;
 }
-/* line 21, ../sass/_editShowProfil.scss */
+/* line 20, ../sass/_editShowProfil.scss */
 .editprofil .sltbox input {
   border: 2px solid lightgray;
   background-color: #98d4e1;
 }
-/* line 25, ../sass/_editShowProfil.scss */
+/* line 24, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
   z-index: 1;
   font-size: 1.5em;
   color: black;
 }
-/* line 30, ../sass/_editShowProfil.scss */
+/* line 29, ../sass/_editShowProfil.scss */
 .editprofil .btnright a {
   float: right;
 }
 
-/* line 38, ../sass/_editShowProfil.scss */
+/* line 37, ../sass/_editShowProfil.scss */
 .showprofil .cartepro {
   border: 1px solid red;
   background-color: #98d4e1;
@@ -462,7 +474,7 @@ input[type=search], textarea.materialize-textarea {
   padding-right: 5%;
   border-radius: 8px;
 }
-/* line 48, ../sass/_editShowProfil.scss */
+/* line 47, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -471,7 +483,7 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 59, ../sass/_editShowProfil.scss */
+/* line 58, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
 }
@@ -562,7 +574,7 @@ chat.html.twig
 }
 /* line 16, ../sass/_chatConnection.scss */
 #chat_connection .Nom_prenom p {
-  size: 5em;
+  size: 1em;
 }
 /* line 45, ../sass/_chatConnection.scss */
 #chat_connection .group-text {

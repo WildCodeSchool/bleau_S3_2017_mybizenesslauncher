@@ -106,7 +106,6 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-        $deleteForm = $this->createDeleteForm($projet);
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
 
@@ -122,7 +121,6 @@ class UserController extends Controller
             array(
                 'projet' => $projet,
                 'form' => $form->createView(),
-                'deleteForm' => $deleteForm->createView(),
             ));
     }
 
@@ -248,7 +246,7 @@ class UserController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteMyProjectAction(Projet $projet = null, $id)
+    public function     deleteMyProjectAction(Projet $projet = null, $id)
     {
         if ($projet != null) {
             $em = $this->getDoctrine()->getManager();

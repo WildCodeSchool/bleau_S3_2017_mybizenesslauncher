@@ -49,29 +49,10 @@ class ProjetType extends AbstractType
             ->add('localisation', TextareaType::class, array(
                 'required' => true
             ))
-            ->add('fichier', FichierType::class)
+            ->add('fichier', FichierType::class, array(
+                'label' => "Photo"
+            ))
         ;
-
-
-
-
-
-//                'query_builder' => function(SecteurRepository $secteurRepository){
-//
-//                    return $secteurRepository->getSecteursQueryBuilder();
-//
-//                }));
-
-//            ->add('typeDeProjet', EntityType::class,
-//                array(
-//                    'class' => TypeDeProjetType::class,
-//                    'choice_label' =>'typeDeProjet',
-//                    'multiple'=> false,
-//                    'expanded'=> false
-//
-//                ));
-
-
     }
     
     /**

@@ -39,6 +39,17 @@
     border: 1.5px solid lightgray;
     border-radius: 10px;
   }
+
+  .hiddenPreview {
+    display: none ;
+  }
+  textarea#mblbundle_projet_description{
+    height: 10em;
+  }
+  .submitProjet {
+    margin: auto;
+    display: block;
+  }
 }
 
 
