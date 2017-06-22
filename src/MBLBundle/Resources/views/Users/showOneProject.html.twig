@@ -1,0 +1,82 @@
+{% extends '@MBL/layout.html.twig' %}
+
+{% block titreH2 %} <h2>{{ projet.titre }}</h2> {% endblock %}
+
+{% block body %}
+    <div class="container showOneProjet">
+    <div class="row">
+
+        <div class="col s6 cartepro">
+            <div class="row">
+                <div class="col s12 dateCreation">
+                    <h6 id="dateCreation">Projet créé le {{ projet.dateCreation|date('d-m-Y') }}</h6>
+                </div>
+                {#<div class="col s12 imgpro">#}
+                    {#<img src="{{ asset('web/uploads/images/'~fichier.fichier) }}" class="responsive-img" alt="image"/>#}
+                {#</div>#}
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <h5>Description</h5>
+                    {% if projet.description is same as(null) %}
+                        <p>Non renseignée</p>
+                    {% else %}
+                        <p>{{ projet.description }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="col s12 ">
+                    <h5>Site Internet</h5>
+                    {% if projet.siteInternet is same as(null) %}
+                        <p>Non renseigné</p>
+                    {% else %}
+                        <p>{{ projet.siteInternet }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="col s12 ">
+                    <h5>Enveloppe eBusta</h5>
+                    {% if projet.ebustaUrl is same as(null) %}
+                        <p>Non renseignée</p>
+                    {% else %}
+                        <p>{{ projet.ebustaUrl }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="col s12 ">
+                    <h5>Type de projet</h5>
+                    {% if projet.typeDeProjet is same as(null) %}
+                        <p>Non renseigné</p>
+                    {% else %}
+                        <p>{{ projet.typeDeProjet.typeDeProjet }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="col s12 ">
+                    <h5>Secteur</h5>
+                    {% if projet.secteur is same as(null) %}
+                        <p>Non renseigné</p>
+                    {% else %}
+                        <p>{{ projet.secteur.secteurActivite }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="col s12 ">
+                    <h5>Localisation</h5>
+                    {% if projet.localisation is same as(null) %}
+                        <p>Non renseignée</p>
+                    {% else %}
+                        <p>{{ projet.localisation }}</p>
+                    {% endif %}
+                </div>
+                {{ dump(projet.fichier) }}
+
+            </div>
+        </div>
+        <div class="col s12 divform ">
+            <a class="btn" href="{{ path('editProjet', {'id': projet.id }) }}">Modifier mon projet</a>
+        </div>
+    </div>
+
+{% endblock %}
