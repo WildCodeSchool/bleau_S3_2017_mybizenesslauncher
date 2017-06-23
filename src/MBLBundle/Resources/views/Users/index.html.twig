@@ -74,7 +74,14 @@
                                 <h4>Projet : {{ pro.titre }}</h4>
                             </div>
                             <div class="col s8 offset-s2 photo_profil">
-                                <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                {% if pro.fichier is null %}
+                                    <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                {% else %}
+                                    <img class="responsive-img" src="{{ asset('bundles/mbl/img/' ~ pro.fichier.photo ) }}">
+                                {% endif %}
+                       
+
+
                             </div>
                         </div>
                         <div class="row info_projet">
