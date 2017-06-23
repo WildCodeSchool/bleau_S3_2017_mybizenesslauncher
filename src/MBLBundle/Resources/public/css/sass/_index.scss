@@ -54,9 +54,14 @@
     .vignette {
       border-radius: $BorderRadius;
     }
-    .photo_profil {
+    .photo_profil{
       border-radius: $BorderRadius;
       padding: 10px;
+
+    }
+    .photo_profil img
+    {
+      height: 100px;
     }
   }
   .photo_profil, .info_projet, .info_profil {

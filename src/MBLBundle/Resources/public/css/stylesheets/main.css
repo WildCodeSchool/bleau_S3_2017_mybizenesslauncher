@@ -126,6 +126,10 @@ body {
   padding: 10px;
 }
 /* line 62, ../sass/_index.scss */
+#index .box_projet_profil * .photo_profil img {
+  height: 100px;
+}
+/* line 67, ../sass/_index.scss */
 #index .photo_profil, #index .info_projet, #index .info_profil {
   background: white;
   margin-bottom: 10px;
