@@ -91,9 +91,20 @@
                         </div>
                         <div class="row info_projet">
                             <div class="col s12">
+                                <h6>Type de projet</h6>
+                                {% for comp in pro.typeDeProjet %}
+                                    {{ comp.typeDeProjet}}
+                                {% endfor %}
+                            </div>
+                            <div class="col s12">
                                 <h6>Profils recherchés</h6>
                                 {% for profil in pro.profilsrecherches %}
-                                <p>{{ profil.metier.metier}}</p>
+                                    {% if profil.metier.metier|length > 10 %}
+                                        <p> {{ profil.metier.metier }} ,
+                                    {% else  %}
+                                       {{ profil.metier.metier }}</p>
+                                    {% endif %}
+
                                 {% endfor %}
                             </div>
                             <div class="col s12">
@@ -146,6 +157,12 @@
                                 {% if pro.metier == null  %}
                                {{ pro.metier }}
                                 {% endif %}
+                            </div>
+                            <div class="col s12">
+                                <h6>Compétences</h6>
+                                {% for comp in pro.competences %}
+                                {{ comp.competences}}
+                                {% endfor %}
                             </div>
                             <div class="col s12">
                                 <h6>Localisation</h6>

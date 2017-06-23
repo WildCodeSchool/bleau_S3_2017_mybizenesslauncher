@@ -4,7 +4,7 @@ Variable globale
 
 CONSTANTE
 */
-/* line 12, ../sass/_global.scss */
+/* line 13, ../sass/_global.scss */
 img {
   width: 100%;
 }
@@ -12,7 +12,7 @@ img {
 /*
 Font
 */
-/* line 20, ../sass/_global.scss */
+/* line 21, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -22,13 +22,13 @@ Variable globale
 
 BALISE
 */
-/* line 30, ../sass/_global.scss */
+/* line 31, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 35, ../sass/_global.scss */
+/* line 36, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,13 +45,13 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 50, ../sass/_global.scss */
+/* line 51, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 55, ../sass/_global.scss */
+/* line 56, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
@@ -128,17 +128,16 @@ body {
 #index .box_projet_profil * .photo_profil img {
   height: 7em;
 }
-/* line 67, ../sass/_index.scss */
-#index .photo_profil, #index .info_projet, #index .info_profil {
+/* line 66, ../sass/_index.scss */
+#index .box_projet_profil * .photo_profil, #index .box_projet_profil * .info_projet, #index .box_projet_profil * .info_profil {
   background: white;
-  margin-bottom: 10px;
 }
-/* line 73, ../sass/_index.scss */
-#index .info_projet {
-  height: 14em;
+/* line 72, ../sass/_index.scss */
+#index .box_projet_profil * .info_projet {
+  height: 16em;
 }
-/* line 77, ../sass/_index.scss */
-#index h6 {
+/* line 76, ../sass/_index.scss */
+#index .box_projet_profil * h6 {
   font-weight: bold;
 }
 
