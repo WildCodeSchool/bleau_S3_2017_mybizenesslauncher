@@ -20,7 +20,7 @@
                                     <h4>{{ projets.titre }}</h4>
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
-                                    <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                    <img src="{{ asset('uploads/images/' ~ projets.fichier.photo) }}">
                                 </div>
                             </div>
                             <div class="row info_projet">
@@ -49,10 +49,10 @@
 
                         </div>
                         <div class="row btnlink">
-                            <div class="col s2 offset-s3">
+                            <div class="col s12">
                                 <a class="waves-effect waves-light btn" href="{{ path('editProjet', {'id' : projets.id})}}">Editer</a>
                             </div>
-                            <div class="col s2 offset-s3">
+                            <div class="col s12">
                                 <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">Supprimer</a>
                             </div>
                         </div>

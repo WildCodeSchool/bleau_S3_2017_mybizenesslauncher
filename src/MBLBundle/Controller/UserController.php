@@ -110,7 +110,6 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
 
@@ -125,7 +124,8 @@ class UserController extends Controller
         return $this->render('@MBL/Users/editProject.html.twig',
             array(
                 'projet' => $projet,
-                'form' => $form->createView()
+
+                'form' => $form->createView(),
 
             ));
     }
@@ -270,7 +270,7 @@ class UserController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteMyProjectAction(Projet $projet = null, $id)
+    public function     deleteMyProjectAction(Projet $projet = null, $id)
     {
         if ($projet != null) {
             $em = $this->getDoctrine()->getManager();
