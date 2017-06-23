@@ -6,8 +6,7 @@
     content: "*";
   }
   label {
-    color: dimgrey;
-    font-weight: bold;
+    color: $ColorDarkGrey;
     font-size: 1.5em;
   }
 
@@ -20,10 +19,6 @@
     margin-bottom: 20px;
   }
 
-  #mblbundle_projet_description, #mblbundle_projet_localisation
-  {
-    border-radius: 10px;
-  }
 
   .select-wrapper {
     border-radius: 10px;
@@ -34,10 +29,15 @@
   // Remove the Materialize border-bottom,
   input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
   input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-  input[type=search], textarea.materialize-textarea  {
-    border-bottom: none;
+  input[type=search], #mblbundle_projet_description, #mblbundle_projet_localisation  {
     border: 1.5px solid lightgray;
     border-radius: 10px;
+  }
+
+  input:focus, #mblbundle_projet_description:focus, #mblbundle_projet_localisation:focus  {
+    border: 1.5px solid $Colorblue;
+    border-radius: 10px;
+    outline: none;
   }
 
   .hiddenPreview {
@@ -49,6 +49,7 @@
   .submitProjet {
     margin: auto;
     display: block;
+    margin-bottom: 10px;
   }
 }
 

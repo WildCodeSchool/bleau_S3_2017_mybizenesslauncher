@@ -4,6 +4,7 @@ namespace MBLBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -46,12 +47,10 @@ class ProjetType extends AbstractType
                 'required'      => true,
                 'placeholder'   => '  Choisissez'
             ))
-            ->add('localisation', TextareaType::class, array(
+            ->add('localisation', CountryType::class, array(
                 'required' => true
             ))
-            ->add('fichier', FichierType::class, array(
-                'label' => "Photo"
-            ))
+            ->add('fichier', FichierType::class)
         ;
     }
     

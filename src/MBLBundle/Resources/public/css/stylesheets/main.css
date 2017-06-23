@@ -281,6 +281,10 @@ Layout.html.twig
   background: white;
   height: 60%;
 }
+/* line 34, ../sass/_showMyProject.scss */
+.showMyProjet .btn {
+  margin: 5px;
+}
 
 /*
 registration
@@ -318,34 +322,34 @@ input[type=search], textarea.materialize-textarea {
 }
 /* line 8, ../sass/_formCreate.scss */
 #createProjet label {
-  color: dimgrey;
-  font-weight: bold;
+  color: #4b494b;
   font-size: 1.5em;
 }
-/* line 14, ../sass/_formCreate.scss */
+/* line 13, ../sass/_formCreate.scss */
 #createProjet .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 19, ../sass/_formCreate.scss */
+/* line 18, ../sass/_formCreate.scss */
 #createProjet .btn {
   margin-bottom: 20px;
 }
 /* line 23, ../sass/_formCreate.scss */
-#createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
-  border-radius: 10px;
-}
-/* line 28, ../sass/_formCreate.scss */
 #createProjet .select-wrapper {
   border-radius: 10px;
 }
-/* line 35, ../sass/_formCreate.scss */
+/* line 30, ../sass/_formCreate.scss */
 #createProjet input:not([type]), #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
 #createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
-#createProjet input[type=search], #createProjet textarea.materialize-textarea {
-  border-bottom: none;
+#createProjet input[type=search], #createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+/* line 37, ../sass/_formCreate.scss */
+#createProjet input:focus, #createProjet #mblbundle_projet_description:focus, #createProjet #mblbundle_projet_localisation:focus {
+  border: 1.5px solid #98d4e1;
+  border-radius: 10px;
+  outline: none;
 }
 /* line 43, ../sass/_formCreate.scss */
 #createProjet .hiddenPreview {
@@ -359,6 +363,7 @@ input[type=search], textarea.materialize-textarea {
 #createProjet .submitProjet {
   margin: auto;
   display: block;
+  margin-bottom: 10px;
 }
 
 /* line 4, ../sass/_formCreatePro.scss */

@@ -51,11 +51,18 @@
                         {{ form_errors(form.localisation) }}
                         {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
                     </div>
-                    <div class="file center-align">
-                        {{ form_label(form.fichier) }}
-                        {{ form_errors(form.fichier) }}
-                        {{ form_widget(form.fichier) }}
-                        <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                    <div class="row">
+                        <div class="file center-align">
+                            <div class="col s6">
+
+                                {{ form_errors(form.fichier) }}
+                                {{ form_widget(form.fichier) }}
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
