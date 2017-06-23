@@ -17,7 +17,7 @@
                         <div class="content z-depth-5">
                             <div class="row vignette">
                                 <div class="col s12">
-                                    <h4>Projet : {{ projets.titre }}</h4>
+                                    <h4>{{ projets.titre }}</h4>
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
                                     <img src="{{ asset('uploads/images/' ~ projets.fichier.photo) }}">
@@ -39,6 +39,14 @@
                                     <p>{{ projets.description }}</p>
                                 </div>
                             </div>
+
+                            {#Bouton pour voir 1 projet#}
+                            <div class="row btnlink">
+                                <div class="col s2 offset-s3">
+                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : projets.id})}}">Voir</a>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="row btnlink">
                             <div class="col s12">

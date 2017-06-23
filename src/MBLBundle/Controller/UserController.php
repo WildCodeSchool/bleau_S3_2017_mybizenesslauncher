@@ -3,12 +3,16 @@
 namespace MBLBundle\Controller;
 
 use MBLBundle\Entity\Chat;
+use MBLBundle\Entity\Fichier;
 use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use MBLBundle\Entity\Text;
+use MBLBundle\Form\FichierType;
 use MBLBundle\Form\ProjetType;
+use MBLBundle\MBLBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -120,7 +124,9 @@ class UserController extends Controller
         return $this->render('@MBL/Users/editProject.html.twig',
             array(
                 'projet' => $projet,
+
                 'form' => $form->createView(),
+
             ));
     }
 
@@ -182,8 +188,6 @@ class UserController extends Controller
             $em->flush();
 
             return $content;
-
-
     }
 
     public function showProjectAction(Request $request)
@@ -242,6 +246,26 @@ class UserController extends Controller
     }
 
     /**
+     * Displays an existing project entity linked to a member profile
+     *
+     * @param $id
+     * @param Profil $profil
+     * @return Response
+     */
+    public function showOneProjectAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
+//        $profil = $em->getRepository('MBLBundle:Profil')->findOneByProjets($projet);
+//        dump($projets);die();
+        return $this->render('@MBL/Users/showOneProject.html.twig', array(
+            'projet' => $projet,
+//            'fichier' => $fichier,
+        ));
+    }
+
+    /**
      * @param Projet|null $projet
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
@@ -259,26 +283,35 @@ class UserController extends Controller
 //            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
             return $this->redirectToRoute('showMyProject');
         }
-
     }
-
+//Dans la section Chat lorsque l'on ajoute un msg
     public function chatIndexAction(Request $request, $chatId)
     {
 
         $em = $this->getDoctrine()->getManager();
 
         $currentUser = $this->getUser();
+        //Nouveau text
         $text = new Text();
-
+        // Le chat correspondant à la discussion selectionnée
         $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+
+        $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($chatId);
+
+//        dump($text);die();
+
+        //l'ensemble des chats pour lesquelles l'utilisateur peut discuter
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
         $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
         $form_text->handleRequest($request);
 
-           if ($form_text->isSubmitted()){
+           if ($request->isXmlHttpRequest()){
+
+               //on ajoute le text au chat et le chat au text
               $chat->addMsg($text);
               $text->addChat($chat);
+              //on set au champs profil le prenom
               $text->setProfil($this->getUser()->getPrenom());
               $em->persist($text);
               $em->flush();
@@ -286,21 +319,19 @@ class UserController extends Controller
               $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
                   'text' => $text
               ));
-
-
               $response = new JsonResponse($content);
-
               return $response;
           }
 
         return $this->render('@MBL/Users/Chat.html.twig', array(
             'chat' => $chat,
+            'texts' => $text_content,
             'chats'=> $chats,
             'form' => $form_text->createView()
         ));
 
     }
-
+//Dans la section connection des chats
     public function chatConnectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -314,44 +345,68 @@ class UserController extends Controller
 //        dump($chatexist);die();
         if(!empty($chatexist))
         {
+            // Si oui il existe déjà on envoi un message à l'utilisateur qu'il ne peut se connecter
             $this->get('session')->getFlashBag()->add('error', 'Vous etes déjà connecté avec cette personne');
             return $this->redirectToRoute('showAllProfils');
         }
-        
+        // Sinon on ajoute un objet chat
         $chat = new Chat();
+
+        //On lui donne ajoute le profil de l'utilisateur ayant créé la demande de connection
         $chat->addProfil($connectedUser);
+        //Et également celui avec qui l'on veut se connecter
         $chat->addProfil($currentUser);
+        //Pareil pour le chat
         $connectedUser->addChat($chat);
         $currentUser->addChat($chat);
+        //On ajoute au champs connection du créateur en lui donnant l'id du créateur
         $chat->setConnectionbyidcreator($currentUser->getId());
+        //Et on set à 0 celui avec qui on veut se connecter, le chat n'est donc pas encore utilisable
+        //Celui avec qui l'on veut se connecter va maintenant avoir la possibiliter d'accepter sur son mur de connection
         $chat->setConnectionbyid(0);
         $em->persist($chat);
         $em->flush();
 
         return $this->redirectToRoute('connect');
-
-
     }
 
     public function connectAction($chatId)
     {
         $em = $this->getDoctrine()->getManager();
 
+        // on fait la vérification de savoir si il y a un chat selectionné
         if(is_numeric($chatId))
         {
+            //si oui on set le chat pour qu'il soit opérationnel
             $connectId =$this->getUser()->getId();
             $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
             $chat->setConnectionbyid($connectId);
-
             $em->flush();
         }
         $currentUser = $this->getUser();
-
+        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
 
+        ));
+    }
+    public function chatDisconnectAction($chatId)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+        $em->remove($chat);
+        $em->flush();
+
+        $currentUser = $this->getUser();
+        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
+        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+
+        return $this->render('@MBL/Users/connection.html.twig', array(
+            'chats' => $chats,
         ));
     }
 }

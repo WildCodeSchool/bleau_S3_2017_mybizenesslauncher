@@ -28,10 +28,15 @@
                         <div class="content z-depth-5">
                             <div class="row vignette">
                                 <div class="col s12">
-                                    <h4>Projet : {{ pro.titre }}</h4>
+                                    <h4>{{ pro.titre }}</h4>
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
                                     <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                </div>
+                            </div>
+                            <div class="row btnlink">
+                                <div class="col s2 offset-s3">
+                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">Voir</a>
                                 </div>
                             </div>
                             <div class="row info_projet">
@@ -48,13 +53,16 @@
                                 <div class="col s12">
                                     <h5>Description</h5>
 
-                                    <p>{{ pro.typeDeProjet.typeDeProjet }}</p>
-                                    <p>{{ pro.secteur.secteurActivite}}</p>
-                                    <p>{{ pro.description }}</p>
+                                    {#<p>{{ pro.typeDeProjet.typeDeProjet }}</p>#}
+                                    {#<p>{{ pro.secteur.secteurActivite}}</p>#}
+                                    {#<p>{{ pro.description }}</p>#}
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
+
 
                 {% endfor %}
 
