@@ -9,7 +9,9 @@
         <div class="col s6 cartepro">
             <div class="row">
                 <div class="col s12 dateCreation">
-                    <h6 id="dateCreation">Projet créé le {{ projet.dateCreation|date('d-m-Y') }}</h6>
+                    <h6 id="dateCreation">Projet créé le {{ projet.dateCreation|date('d-m-Y') }}
+                        {#par {{ projet.profil.prenom }} {{ projet.profil.nom }}#}
+                    </h6>
                 </div>
                 {#<div class="col s12 imgpro">#}
                     {#<img src="{{ asset('web/uploads/images/'~fichier.fichier) }}" class="responsive-img" alt="image"/>#}

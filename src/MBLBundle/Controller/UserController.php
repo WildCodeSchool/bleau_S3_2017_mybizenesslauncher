@@ -247,14 +247,18 @@ class UserController extends Controller
 
     /**
      * Displays an existing project entity linked to a member profile
+     *
      * @param $id
+     * @param Profil $profil
      * @return Response
      */
     public function showOneProjectAction($id)
     {
+
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-
+//        $profil = $em->getRepository('MBLBundle:Profil')->findOneByProjets($projet);
+//        dump($projets);die();
         return $this->render('@MBL/Users/showOneProject.html.twig', array(
             'projet' => $projet,
 //            'fichier' => $fichier,
