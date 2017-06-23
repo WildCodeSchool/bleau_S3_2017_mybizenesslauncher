@@ -15,8 +15,14 @@ chat.html.twig
   }
   .Nom_prenom p
   {
+    margin-left: 50px;
+    color: $ColorDarkGrey;
+    font-size: 1.2em;
+  }
+  .image img
+  {
+    height: 80px;
 
-    size: 1em;
   }
 
   //#new-text {

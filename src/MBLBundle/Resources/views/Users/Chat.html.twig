@@ -14,55 +14,61 @@
     </h2>{% endblock %}
 
 {% block body %}
-    <div class="container" id="chat">
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Voulez-vous vraiment supprimer cette personne?</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="chat">
         <div class="row">
             <div class="col s4">
                 <div class="row">
                     {% for chat in chats %}
-                        <div class="chat_box">
-                            <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
-                                <div class="col s4">
-                                    {#Nom du profil avec qui l'on veut discuter#}
-                                    {% for profil in chat.profils %}
-                                        {% if profil == app.user %}
-                                        {% else %}
-                                            <p>{{ profil.nom }}<br>
-                                                {{ profil.prenom }}</p>
+                        {% if chat.connectionbyid > 0 %}
+
+                                <div class="chat_box">
+                                    <a href="#modal1">
+                                    <div class="col s1 delete">
+                                         <p><i class="material-icons">delete</i></p>
+                                    </div>
+                                    </a>
+                                    <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
+                                    <div class="col s3 Nom_prenom">
+                                        {#Nom du profil avec qui l'on veut discuter#}
+                                        {% for profil in chat.profils %}
+                                            {% if profil == app.user %}
+                                            {% else %}
+                                                <p>{{ profil.nom }}<br>
+                                                    {{ profil.prenom }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col s6 Nom_prenom">
+                                        {#Dernier message avec ce profil#}
+                                        {% if chat.msgs is not empty%}
+                                            {% set chatmsg = chat.msgs|last %}
+                                            <p>  {{ chatmsg.msg|slice(0,20) ~ '...' }}</p>
                                         {% endif %}
-                                    {% endfor %}
+                                    </div>
+                                    <div class="col s2 Nom_prenom chat_box_icon">
+                                        {#Dernier message avec ce profil#}
+                                        <p> <i class="material-icons">chat</i></p>
+                                    </div>
+                                    </a>
                                 </div>
-                                <div class="col s6">
-                                    {#Dernier message avec ce profil#}
-                                    {% if chat.msgs is not empty%}
-                                        {% set chatmsg = chat.msgs|last %}
-                                        <p>{{ chatmsg.msg}}</p>
-                                    {% endif %}
-                                </div>
-                                <div class="col s2 chat_box_icon">
-                                    {#Dernier message avec ce profil#}
-                                    <p> <i class="material-icons">chat</i></p>
-                                </div>
-                            </a>
-                        </div>
+
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
+
             <div class="col s7 offset-s1 " id="chat_text">
-
-                {#Les textes déjà existant#}
-                {% for text in chat.msgs %}
-                    <div class="group-text">
-                        <input type="hidden" value="{{ text.id }}"/>
-                        <b><i> {{ text.profil }} </i></b>
-                        <span> à {{ text.dateCreation|date('H:i:s') }}</span>
-                        <p> {{ text.msg }} </p>
-                    </div>
-                {% endfor %}
-                {#//Les textes qui seront ajouté en js#}
-                <div id="textAdded">
-
-
-                </div>
                 <div id="textarea" class="row">
                     {#Formulaire#}
                     {{ form_start(form, {'action': path('chatIndex', {'chatId' : chat.id}), 'method': 'GET'}) }}
@@ -71,11 +77,42 @@
                     </div>
 
                     <div class="col s4">
-                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Création"></p>
+                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Envoyer"></p>
 
                     </div>
                     {{ form_end(form) }}
                 </div>
+                <div id="textAdded">
+
+
+                </div>
+                {#Les textes déjà existant#}
+                {% for text in texts %}
+                    {% if text.profil == app.user.prenom  %}
+                        <div class="group-text color-text-user">
+                            <input type="hidden" value="{{ text.id }}"/>
+                            <div class="center">
+                                <b><i> {{ text.profil }} </i></b>
+                                <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+                            </div>
+
+                            <p> {{ text.msg }} </p>
+                        </div>
+                    {% else %}
+                        <div class="group-text color-text">
+                            <input type="hidden" value="{{ text.id }}"/>
+                            <div class="center">
+                                <b><i> {{ text.profil }} </i></b>
+                                <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+                            </div>
+
+                            <p> {{ text.msg }} </p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {#//Les textes qui seront ajouté en js#}
+
+
             </div>
         </div>
     </div>
@@ -84,6 +121,10 @@
     {{ parent() }}
     <script>
         $(document).ready(function () {
+
+                // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+
             $('form[name="mblbundle_text"]').submit(function (e) {
 
                 e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
@@ -107,7 +148,9 @@
 
             })
 
-        })
+        });
+
+
 
     </script>
 {% endblock %}
