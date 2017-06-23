@@ -71,7 +71,11 @@
                     <div class="col s5 offset-s1 vignette_projet  z-depth-5">
                         <div class="row vignette ">
                             <div class="col s12">
-                                <h4>Projet : {{ pro.titre }}</h4>
+                                {% if pro.titre|length > 10 %}
+                                    <h4>{{ pro.titre|slice(0,10) ~ '...'  }}</h4>
+                                {% else  %}
+                                    <h4>{{ pro.titre }}</h4>
+                                {% endif %}
                             </div>
                             <div class="col s8 offset-s2 photo_profil">
 
@@ -87,17 +91,17 @@
                         </div>
                         <div class="row info_projet">
                             <div class="col s12">
-                                <h5>Profils recherchés</h5>
+                                <h6>Profils recherchés</h6>
                                 {% for profil in pro.profilsrecherches %}
                                 <p>{{ profil.metier.metier}}</p>
                                 {% endfor %}
                             </div>
                             <div class="col s12">
-                                <h5>Localisation</h5>
+                                <h6>Localisation</h6>
                                 <p>{{ pro.localisation }}</p>
                             </div>
                             <div class="col s12">
-                                <h5>Description</h5>
+                                <h6>Description</h6>
                                 <p>{{ pro.description }}</p>
                             </div>
                         </div>
@@ -122,7 +126,11 @@
                     <div class="col s5 offset-s1 vignette_projet  z-depth-5">
                         <div class="row vignette ">
                             <div class="col s12">
-                                <h4>Projet : {{ pro.nom }} {{ pro.prenom }}</h4>
+                                {% if pro.nom|length > 10 %}
+                                <h4>{{ pro.nom|slice(0,10) ~ '...'  }}</h4>
+                                {% else  %}
+                                    <h4>{{ pro.nom }}</h4>
+                                {% endif %}
                             </div>
                             <div class="col s8 offset-s2 photo_profil">
                                 {% if pro.fichier is null %}
@@ -134,17 +142,17 @@
                         </div>
                         <div class="row info_projet">
                             <div class="col s12">
-                                <h5>Profil</h5>
+                                <h6>Profil</h6>
                                 {% if pro.metier == null  %}
                                {{ pro.metier }}
                                 {% endif %}
                             </div>
                             <div class="col s12">
-                                <h5>Localisation</h5>
+                                <h6>Localisation</h6>
                                 <p>{{ pro.localisation }}</p>
                             </div>
                             <div class="col s12">
-                                <h5>Description</h5>
+                                <h6>Description</h6>
                                 <p>{{ pro.description }}</p>
                             </div>
                         </div>

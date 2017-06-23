@@ -103,14 +103,14 @@ body {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
-  height: 650px;
+  height: 30em;
 }
 /* line 44, ../sass/_index.scss */
 #index .box_projet_profil * .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
   margin-bottom: 10px;
-  height: 650px;
+  height: 30em;
 }
 /* line 51, ../sass/_index.scss */
 #index .box_projet_profil * .info_projet, #index .box_projet_profil * .info_profil {
@@ -123,17 +123,23 @@ body {
 /* line 57, ../sass/_index.scss */
 #index .box_projet_profil * .photo_profil {
   border-radius: 8px;
-  padding: 10px;
 }
 /* line 62, ../sass/_index.scss */
 #index .box_projet_profil * .photo_profil img {
-  height: 100px;
+  height: 7em;
 }
 /* line 67, ../sass/_index.scss */
 #index .photo_profil, #index .info_projet, #index .info_profil {
   background: white;
   margin-bottom: 10px;
-  height: 60%;
+}
+/* line 73, ../sass/_index.scss */
+#index .info_projet {
+  height: 14em;
+}
+/* line 77, ../sass/_index.scss */
+#index h6 {
+  font-weight: bold;
 }
 
 /* 3. LAYOUT */

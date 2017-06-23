@@ -39,13 +39,13 @@
       background-color: $ColorDarkGrey;
       border-radius: $BorderRadius;
       margin-bottom: 10px;
-      height: 650px;
+      height: 30em;
     }
     .vignette_profil {
       background-color: $Colorblue;
       border-radius: $BorderRadius;
       margin-bottom: 10px;
-      height: 650px;
+      height: 30em;
 
     }
     .info_projet, .info_profil {
@@ -56,19 +56,27 @@
     }
     .photo_profil{
       border-radius: $BorderRadius;
-      padding: 10px;
+
 
     }
     .photo_profil img
     {
-      height: 100px;
+      height: 7em;
     }
   }
   .photo_profil, .info_projet, .info_profil {
     background: $ColorWhite;
     margin-bottom: 10px;
-    height: 60%;
 
+
+  }
+  .info_projet
+  {
+    height: 14em;
+  }
+  h6
+  {
+    font-weight: bold;
   }
 }
 
