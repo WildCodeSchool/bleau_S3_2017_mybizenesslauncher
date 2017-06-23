@@ -31,7 +31,6 @@ editProjet:
     path: /editProject/{id}
     defaults: { _controller: MBLBundle:User:editProject }
 
-
 #Création, édition, delete PROFIL RECHERCHER
 createProfilRechercheProjet:
     path: /createProfilRechercheProject/{id}
@@ -43,10 +42,13 @@ deleteProfilRerchercheProjet:
     path: /deleteProfil
     defaults: { _controller: MBLBundle:User:deleteProfilR}
 
-
 showProject:
     path: /showProject
     defaults: { _controller: MBLBundle:User:showProject }
+
+showOneProject:
+    path: /showOneProject/{id}
+    defaults: { _controller: MBLBundle:User:showOneProject }
 
 showMyProject:
     path: /showMyProject
@@ -55,8 +57,6 @@ showMyProject:
 deleteMyProject:
     path: /deleteMyProject/{id}
     defaults: { _controller: MBLBundle:User:deleteMyProject }
-
-
 
 chatIndex:
     path: /chatIndex/{chatId}
