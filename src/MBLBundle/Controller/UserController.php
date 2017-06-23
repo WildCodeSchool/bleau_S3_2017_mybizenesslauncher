@@ -3,12 +3,16 @@
 namespace MBLBundle\Controller;
 
 use MBLBundle\Entity\Chat;
+use MBLBundle\Entity\Fichier;
 use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use MBLBundle\Entity\Text;
+use MBLBundle\Form\FichierType;
 use MBLBundle\Form\ProjetType;
+use MBLBundle\MBLBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -106,7 +110,6 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
 
@@ -121,7 +124,8 @@ class UserController extends Controller
         return $this->render('@MBL/Users/editProject.html.twig',
             array(
                 'projet' => $projet,
-                'form' => $form->createView()
+
+                'form' => $form->createView(),
 
             ));
     }
@@ -184,8 +188,6 @@ class UserController extends Controller
             $em->flush();
 
             return $content;
-
-
     }
 
     public function showProjectAction(Request $request)
@@ -244,11 +246,31 @@ class UserController extends Controller
     }
 
     /**
+     * Displays an existing project entity linked to a member profile
+     *
+     * @param $id
+     * @param Profil $profil
+     * @return Response
+     */
+    public function showOneProjectAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
+//        $profil = $em->getRepository('MBLBundle:Profil')->findOneByProjets($projet);
+//        dump($projets);die();
+        return $this->render('@MBL/Users/showOneProject.html.twig', array(
+            'projet' => $projet,
+//            'fichier' => $fichier,
+        ));
+    }
+
+    /**
      * @param Projet|null $projet
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteMyProjectAction(Projet $projet = null, $id)
+    public function     deleteMyProjectAction(Projet $projet = null, $id)
     {
         if ($projet != null) {
             $em = $this->getDoctrine()->getManager();
@@ -261,7 +283,6 @@ class UserController extends Controller
 //            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
             return $this->redirectToRoute('showMyProject');
         }
-
     }
 //Dans la section Chat lorsque l'on ajoute un msg
     public function chatIndexAction(Request $request, $chatId)
@@ -347,8 +368,6 @@ class UserController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('connect');
-
-
     }
 
     public function connectAction($chatId)
@@ -388,7 +407,6 @@ class UserController extends Controller
 
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
-
         ));
     }
 }
