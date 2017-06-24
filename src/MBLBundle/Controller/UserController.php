@@ -285,7 +285,7 @@ class UserController extends Controller
         }
     }
 //Dans la section Chat lorsque l'on ajoute un msg
-    public function chatIndexAction(Request $request, $chatId)
+    public function chatIndexAction(Request $request, $id)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -294,9 +294,9 @@ class UserController extends Controller
         //Nouveau text
         $text = new Text();
         // Le chat correspondant à la discussion selectionnée
-        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($id);
 
-        $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($chatId);
+        $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($id);
 
 //        dump($text);die();
 
@@ -370,17 +370,18 @@ class UserController extends Controller
         return $this->redirectToRoute('connect');
     }
 
-    public function connectAction($chatId)
+    public function connectAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
         // on fait la vérification de savoir si il y a un chat selectionné
-        if(is_numeric($chatId))
+        if(is_numeric($id))
         {
             //si oui on set le chat pour qu'il soit opérationnel
             $connectId =$this->getUser()->getId();
-            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($id);
             $chat->setConnectionbyid($connectId);
+
             $em->flush();
         }
         $currentUser = $this->getUser();
@@ -392,12 +393,10 @@ class UserController extends Controller
 
         ));
     }
-    public function chatDisconnectAction($chatId)
+    public function chatDisconnectAction(Chat $chat)
     {
         $em = $this->getDoctrine()->getManager();
 
-
-        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
         $em->remove($chat);
         $em->flush();
 

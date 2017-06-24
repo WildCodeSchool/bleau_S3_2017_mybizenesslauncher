@@ -43,7 +43,7 @@
                                 {% endif %}
                             </div>
                             <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
                                 </p>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                 {% endif %}
                             </div>
                             <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
                                 </p> </div>
                         </div>
                     {% else %}
@@ -107,7 +107,7 @@
                                             Prenom : {{ profil.prenom }}</p>
                                     </div>
                                     <div class="col s7">
-                                        <p class="right"><a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a> </p>
+                                        <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a> </p>
                                     </div>
                                 </div>
                             {% endif %}

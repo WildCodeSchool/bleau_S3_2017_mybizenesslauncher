@@ -35,11 +35,11 @@
                                                 <h4>Voulez-vous vraiment supprimer cette personne?</h4>
                                             </div>
                                             <div class="modal-footer">
-                                                <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
+                                                <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
+                                    <a href="{{ path('chatIndex', {'id' : chat.id}) }}">
                                     <div class="col s3 Nom_prenom">
                                         {#Nom du profil avec qui l'on veut discuter#}
                                         {% for profil in chat.profils %}
@@ -72,7 +72,7 @@
             <div class="col s7 offset-s1 " id="chat_text">
                 <div id="textarea" class="row">
                     {#Formulaire#}
-                    {{ form_start(form, {'action': path('chatIndex', {'chatId' : chat.id}), 'method': 'GET'}) }}
+                    {{ form_start(form, {'action': path('chatIndex', {'id' : chat.id}), 'method': 'GET'}) }}
                     <div class="col s8">
                         <p>{{ form_widget(form.msg) }}</p>
                     </div>
@@ -137,7 +137,7 @@
                 $.ajax({
 
                     method: 'post',
-                    url:'{{ path('chatIndex', {'chatId' : chat.id}) }}',
+                    url:'{{ path('chatIndex', {'id' : chat.id}) }}',
                     data: message,
 
 
