@@ -15,15 +15,7 @@
 
 {% block body %}
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Voulez-vous vraiment supprimer cette personne?</h4>
-        </div>
-        <div class="modal-footer">
-            <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
-        </div>
-    </div>
+
 
     <div class="container-fluid" id="chat">
         <div class="row">
@@ -37,6 +29,15 @@
                                     <div class="col s1 delete">
                                          <p><i class="material-icons">delete</i></p>
                                     </div>
+                                        <!-- Modal Structure -->
+                                        <div id="modal1" class="modal">
+                                            <div class="modal-content">
+                                                <h4>Voulez-vous vraiment supprimer cette personne?</h4>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
+                                            </div>
+                                        </div>
                                     </a>
                                     <a href="{{ path('chatIndex', {'chatId' : chat.id}) }}">
                                     <div class="col s3 Nom_prenom">
