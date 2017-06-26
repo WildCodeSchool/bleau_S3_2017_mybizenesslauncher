@@ -18,7 +18,7 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Voulez-vous vraiment supprimer cette personne?</h4>
+            <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
         </div>
         <div class="modal-footer">
             <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>

@@ -2,7 +2,7 @@
 
 {% extends 'MBLBundle::layout.html.twig' %}
 
-{% block titreH2 %}<h2>Actualiser le projet</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ 'Actualiser le projet'|trans }}</h2>{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -59,7 +59,7 @@
                 
                 
                 <div>
-                    <input class="btn" type="submit" value="Editer"/>
+                    <input class="btn" type="submit" value="{{ 'Editer'|trans }}"/>
                 </div>
 
                 {{ form_end(form) }}

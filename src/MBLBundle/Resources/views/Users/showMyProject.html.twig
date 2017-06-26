@@ -1,7 +1,7 @@
 {% extends '@MBL/layout.html.twig' %}
 
 
-{% block titreH2 %} <h2>Parcourir vos projets</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Parcourir vos projets'|trans }}</h2> {% endblock %}
 {% block body %}
     <div class="showMyProjet">
        {% if app.session.flashbag.has('notice') %}
@@ -25,35 +25,35 @@
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h5>Profils recherchés</h5>
+                                    <h5>{{ 'Profils recherchés'|trans }}</h5>
                                     {% for profil in projets.profilsrecherches %}
                                         <p>{{ profil.metier.metier}}</p>
                                     {% endfor %}
                                 </div>
                                 <div class="col s12">
-                                    <h5>Localisation</h5>
+                                    <h5>{{ 'Localisation'|trans }}</h5>
                                     <p>{{ projets.localisation }}</p>
                                 </div>
                                 <div class="col s12">
-                                    <h5>Description</h5>
+                                    <h5>{{ 'Description'|trans }}</h5>
                                     <p>{{ projets.description }}</p>
                                 </div>
                             </div>
 
-                            {#Bouton pour voir 1 projet#}
+                            {# Bouton pour voir 1 projet #}
                             <div class="row btnlink">
                                 <div class="col s2 offset-s3">
-                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : projets.id})}}">Voir</a>
+                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : projets.id})}}">{{ 'Voir'|trans }}</a>
                                 </div>
                             </div>
 
                         </div>
                         <div class="row btnlink">
                             <div class="col s12">
-                                <a class="waves-effect waves-light btn" href="{{ path('editProjet', {'id' : projets.id})}}">Editer</a>
+                                <a class="waves-effect waves-light btn" href="{{ path('editProjet', {'id' : projets.id})}}">{{ 'Editer'|trans }}</a>
                             </div>
                             <div class="col s12">
-                                <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">Supprimer</a>
+                                <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">{{ 'Supprimer'|trans }}</a>
                             </div>
                         </div>
                     </div>

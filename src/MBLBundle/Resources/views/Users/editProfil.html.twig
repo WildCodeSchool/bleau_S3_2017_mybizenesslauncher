@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Modifier votre profil</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Modifier mon profil'|trans }}</h2> {% endblock %}
 
 
 {% block body %}
@@ -39,8 +39,6 @@
                         {{ form_errors(edit_form.localisation) }}
                         {{ form_widget(edit_form.localisation, {'attr': {'placeholder': ' Localisation '}}) }}
                     </div>
-
-
                 </div>
 
 
@@ -86,7 +84,7 @@
                         <input class="btn" type="submit" value="Enregistrez"/>
                     </div>
                     <div class="col s6 btnright">
-                        <a class="btn" href="{{ path('showProfil') }}">Voir mon profil public</a>
+                        <a class="btn" href="{{ path('showProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
                     </div>
                 </div>
 

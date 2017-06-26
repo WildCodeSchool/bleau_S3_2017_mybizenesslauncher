@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Parcourir les projets</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Parcourir les projets'|trans }}</h2> {% endblock %}
 {% block body %}
 
 
@@ -36,22 +36,22 @@
                             </div>
                             <div class="row btnlink">
                                 <div class="col s2 offset-s3">
-                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">Voir</a>
+                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">{{ 'Voir'|trans }}</a>
                                 </div>
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h5>Profils recherchés</h5>
+                                    <h5>{{ 'Profils recherchés'|trans }}</h5>
                                     {% for profil in pro.profilsrecherches %}
                                         <p>{{ profil.metier.metier}}</p>
                                     {% endfor %}
                                 </div>
                                 <div class="col s12">
-                                    <h5>Localisation</h5>
+                                    <h5>{{ 'Localisation'|trans }}</h5>
                                     <p>{{ pro.localisation }}</p>
                                 </div>
                                 <div class="col s12">
-                                    <h5>Description</h5>
+                                    <h5>{{ 'Description'|trans }}</h5>
 
                                     {#<p>{{ pro.typeDeProjet.typeDeProjet }}</p>#}
                                     {#<p>{{ pro.secteur.secteurActivite}}</p>#}

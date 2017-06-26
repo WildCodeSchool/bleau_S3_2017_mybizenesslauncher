@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Mon profil public</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Mon profil public'|trans }}</h2> {% endblock %}
 
 {% block body %}
 <div class="container showprofil">
@@ -19,9 +19,9 @@
 
             <div class="row">
                 <div class="col s12">
-                    <h5>Description:</h5>
+                    <h5>{{ 'Description:'|trans }}</h5>
                     {% if profilType.description is same as(null) %}
-                        <p>Non renseigné</p>
+                        <p>{{ 'Non renseignée'|trans }}</p>
                     {% else %}
                         <p>{{ profilType.description }}</p>
                     {% endif %}
@@ -35,70 +35,70 @@
                     <div class="col s6 ">
                         <h5>LinkedIn:</h5>
                         {% if profilType.linkedIn is same as(null) %}
-                            <p>Non renseigné</p>
+                            <p>{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.linkedIn }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>Localisation:</h5>
+                        <h5>{{ 'Localisation:'|trans }}</h5>
                         {% if profilType.localisation is same as(null) %}
-                            <p>renseignez votre localisation</p>
+                            <p>{{ 'renseignez votre localisation'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.localisation }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>Investissement:</h5>
+                        <h5>{{ 'Investissement:'|trans }}</h5>
                         {% if profilType.invest is same as(null) %}
-                            <p>Non renseigné</p>
+                            <p>{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.invest.invest }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>En tant que:</h5>
+                        <h5>{{ 'En tant que:'|trans }}</h5>
                         {% if profilType.etq is same as(null) %}
-                            <p>renseignez votre status</p>
+                            <p>{{ 'renseignez votre status'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.etq.etq }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>Disponibilité:</h5>
+                        <h5>{{ 'Disponibilité:'|trans }}</h5>
                         {% if profilType.dispo is same as(null) %}
-                            <p>Non renseigné</p>
+                            <p>{{ 'Non renseignée'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.dispo.dispo }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>Où:</h5>
+                        <h5>{{ 'Où:'|trans }}</h5>
                         {% if profilType.ou is same as(null) %}
-                            <p>Non renseigné</p>
+                            <p>{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.ou.Ou }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>Métiers:</h5>
+                        <h5>{{ 'Métiers:'|trans }}</h5>
                         {% if profilType.metier is same as(null) %}
-                            <p>précisez votre métier</p>
+                            <p>{{ 'précisez votre métier'|trans }}</p>
                         {% else %}
                             <p>{{ profilType.metier.metier }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6 ">
-                        <h5>Compétences:</h5>
+                        <h5>{{ 'Compétences:'|trans }}</h5>
                         {% if profilType.competences is empty %}
-                            <p>renseignez vos compétences</p>
+                            <p>{{ 'renseignez vos compétences'|trans }}</p>
                         {% else %}
                             <p>{% for competences in profilType.competences %} {{ competences.competences }} {% endfor %}</p>
                         {% endif %}
@@ -108,7 +108,7 @@
         </div>
     </div>
         <div class="col s12 modpro ">
-            <a class="btn" href="{{ path('editProfil', { 'id': profilType.id }) }}">Modifier mon profil</a>
+            <a class="btn" href="{{ path('editProfil', { 'id': profilType.id }) }}">{{ 'Modifier mon profil'|trans }}</a>
         </div>
 
 </div>

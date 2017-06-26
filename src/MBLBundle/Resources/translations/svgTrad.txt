@@ -43,13 +43,92 @@ Suivez: Seguire
 ############## CHAT #######################################
 'Chat avec': discutere con
 Création: Creazione
+Envoyer: Mandare
+'Mise en Relation': 'Collegamento'
+'Voulez-vous vraiment supprimer cette personne?': Vuoi veramente cancellare questa persona?
+
 
 ############ CONNECTION #####################################
-'Connection Chat': Collegamento  Chat
 'Nom:': Nome
 'Prenom:': Conome
 Discuter: Discutere
 'Accepter de discuter': Accetto di discutere
+'Mise en Relation': 'Collegamento'
+
 
 ############# CREATE PROJECT ##################################
 'Nouveau Projet': Nuovo Progetto
+
+{#TODO: Formulaire en double italien bdd it à faire #}
+
+############# CREATE PROJECT ADD PROFIL ##################################
+'Nouveau Profil recherché': Nuovo profilo ricercato
+'Profil Recherché': Profilo desiderato
+Disponibilité: Disponibilità
+'En tant que': 'Come'
+Investissement: Investimento
+Compétences: Competenze
+Supprimer: Rimuovere
+
+{# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
+
+############# EDIT PROFIL ##################################
+
+'Modifier mon profil': Modifica Profilo
+'Voir mon profil public': Visualizza il mio profilo pubblico
+
+{# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
+
+############# EDIT PROJET ##################################
+'Actualiser le projet': Refresh Progetto
+Editer: Modifica
+{# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
+
+############# HOMEPAGE PROFIL ##################################
+'Gérer mes projets':Gestisci i tuoi progetti
+{# doublons déjà traduit don't panic #}
+
+############### PROFILS RECHERCHES TEMPLATE #######################################
+{# all doublons #}
+
+############# SHOW ALL PROFILS ##################################
+'Nom et prénom :': 'Cognome e nome: '
+{# + doublons #}
+
+############# SHOW MY PROJECT ##################################
+'Parcourir vos projets': Sfoglia i vostri progetti
+Voir: Vedere
+{# + doublons #}
+
+############# SHOW ONE PROJECT ##################################
+'Projet créé le': 'Progetto creato il'
+'Non renseignée': 'imprecisato'
+'Site Internet': 'Sito web'
+'Non renseigné': 'Sconosciuto'
+Enveloppe: Busta
+'Type de projet': Tipo di progetto
+Secteur: Settore
+'Modifier mon projet': 'Modifica il mio progetto'
+{# + doublons #}
+
+############# SHOW PROFILS ##################################
+'Mon profil public': 'Il mio profilo pubblico'
+'Description:': 'Descrizione:'
+'Localisation:': 'Posizione:'
+'renseignez votre localisation': 'Specifica la tua posizione'
+'Investissement:': 'Investimento:'
+'En tant que:': 'Come:'
+'renseignez votre status': 'Specificare il proprio stato'
+'Disponibilité:': 'Disponibilità:'
+'Où:': 'Dove:'
+'Métiers:': 'Affari:'
+'précisez votre métier': 'Specificare vostri commerci'
+'Compétences:': 'Competenze:'
+'renseignez vos compétences': 'Specificare le tue abilità'
+{# + doublons #}
+
+############# SHOW PROJET ##################################
+{# all doublons #}
+
+
+

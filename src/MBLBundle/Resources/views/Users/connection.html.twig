@@ -1,6 +1,5 @@
 {% extends "@MBL/layout.html.twig" %}
 
-{% block titreH2 %}<h2>{{ 'Connection Chat'|trans }}</h2>{% endblock %}
 
 {% block titreH2 %}<h2>{{ 'Mise en Relation'|trans }}</h2>{% endblock %}
 
@@ -118,11 +117,11 @@
                                         {% endif %}
                                     </div>
                                     <div class="col s3 Nom_prenom">
-                                        <p>Nom : {{ profil.nom }} </br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        <p>{{ 'Nom: '|trans}}{{ profil.nom }} <br />
+                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
                                     </div>
                                     <div class="col s7">
-                                        <p class="right"><a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a> </p>
+                                        <p class="right"><a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>
                                     </div>
                                 </div>
                             {% endif %}

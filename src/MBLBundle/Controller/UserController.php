@@ -375,10 +375,9 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // on fait la vérification de savoir si il y a un chat selectionné
-        if(is_numeric($chatId))
-        {
+        if (is_numeric($chatId)) {
             //si oui on set le chat pour qu'il soit opérationnel
-            $connectId =$this->getUser()->getId();
+            $connectId = $this->getUser()->getId();
             $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
             $chat->setConnectionbyid($connectId);
             $em->flush();
@@ -392,12 +391,11 @@ class UserController extends Controller
 
         ));
     }
-<<<<<<< HEAD
-
-    public function  traductionAction(){
-
+    public function  traductionAction()
+    {
         return $this->render('@MBL/Users/index.html.twig', '@MBLBundle/Resources/views/layout.html.twig');
-=======
+    }
+
     public function chatDisconnectAction($chatId)
     {
         $em = $this->getDoctrine()->getManager();
@@ -414,6 +412,5 @@ class UserController extends Controller
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
         ));
->>>>>>> f56815578e4900e4ec71a85c114cd7d1c66916f8
     }
 }
