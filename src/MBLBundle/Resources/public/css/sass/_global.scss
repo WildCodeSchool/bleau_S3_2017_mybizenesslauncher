@@ -9,7 +9,6 @@ $ColorDarkGrey: #4b494b;
 $ColorWhite : white;
 $BoxShadow: 2px 2px 3px grey;
 $BorderRadius : 8px;
-$HeightVignette: 30em;
 
 
 
@@ -64,7 +63,12 @@ a { color: inherit; }
   background-color: $ColorDarkGrey;
   border-radius: $BorderRadius;
   margin-bottom: 10px;
-  height: $HeightVignette;
+  height: 30em;
+  border: 2px solid $Colorgrey;
+
+  max-width: 300px;
+
+
 }
 .vignette_projet:hover {
  background-color: $Colorgrey;
@@ -82,6 +86,8 @@ a { color: inherit; }
 }
 .photo_profil img {
   height: 7em;
+  max-width: 120px;
+  max-height: 100px;
 }
 .photo_profil, .info_projet, .info_profil {
   background: $ColorWhite;

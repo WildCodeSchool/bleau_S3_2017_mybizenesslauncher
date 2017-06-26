@@ -4,185 +4,185 @@
 {% endblock %}
 {% block body %}
 
-<!--Bandeau de la homepage -->
-<div id="index">
-    <div class="row">
-        <div class="col l12 bandeau_homepage ">
-            <div class="col s12 m4 presentation ">
-                <h2>Pour les porteurs de projet<br/></h2>
-                <p>Tu peux créer ton projet, le décrire et détailler les
-                    profils de cofondateurs et associés que tu cherches.
-                    Ils auront alors accès à la description du projet et
-                    pourront te contacter.<br/></p>
-                <h2>Pour ceux qui cherchent un projet à intégrer<br/></h2>
-                <p>Tu es un véritable startupper en herbe, tu as des
-                    compétences à mettre au profit d’un projet existant,
-                    parcours les projets pour trouver celui que tu pourrais
-                    aider à porter au sommet !</p>
-            </div>
-            <div class="col s12 m2 offset-m1">
-                <div class="row Outils">
-                    <div class="col s12">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">Outils pour se lancer</a>
-                    </div>
-                    <div class="col s12">
-                        <p>Trouve sur MyStartupTools.com<br/>tous les outils pour t’aider à lancer ton activité.</p>
+    <!--Bandeau de la homepage -->
+    <div id="index">
+        <div class="row">
+            <div class="col l12 bandeau_homepage ">
+                <div class="col s12 m4 presentation ">
+                    <h2>Pour les porteurs de projet<br/></h2>
+                    <p>Tu peux créer ton projet, le décrire et détailler les
+                        profils de cofondateurs et associés que tu cherches.
+                        Ils auront alors accès à la description du projet et
+                        pourront te contacter.<br/></p>
+                    <h2>Pour ceux qui cherchent un projet à intégrer<br/></h2>
+                    <p>Tu es un véritable startupper en herbe, tu as des
+                        compétences à mettre au profit d’un projet existant,
+                        parcours les projets pour trouver celui que tu pourrais
+                        aider à porter au sommet !</p>
+                </div>
+                <div class="col s12 m2 offset-m1">
+                    <div class="row Outils">
+                        <div class="col s12">
+                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">Outils pour se lancer</a>
+                        </div>
+                        <div class="col s12">
+                            <p>Trouve sur MyStartupTools.com<br/>tous les outils pour t’aider à lancer ton activité.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col s12 m4 offset-m1">
-                <div class="row Finance">
-                    <div class="col s6 btn_eBusta">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" target="blanck" href="https://www.e-busta.com/">Finance ton projet</a>
+                <div class="col s12 m4 offset-m1">
+                    <div class="row Finance">
+                        <div class="col s6 btn_eBusta">
+                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" target="blanck" href="https://www.e-busta.com/">Finance ton projet</a>
+                        </div>
+                        <div class="col s6">
+                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                        </div>
                     </div>
-                    <div class="col s6">
-                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <p>Avec ses enveloppes publiques, E-busta.com vous
-                            propose de réaliser des campagnes de Crowdfunding
-                            de don en contrepartie pour vous aider à financer
-                            votre projet. Seule une commission de 4% du montant
-                            collecté sera appliquée, faisant de E-busta le site de
-                            Crowdfunding le moins cher du marché.</p>
+                    <div class="row">
+                        <div class="col s12">
+                            <p>Avec ses enveloppes publiques, E-busta.com vous
+                                propose de réaliser des campagnes de Crowdfunding
+                                de don en contrepartie pour vous aider à financer
+                                votre projet. Seule une commission de 4% du montant
+                                collecté sera appliquée, faisant de E-busta le site de
+                                Crowdfunding le moins cher du marché.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-<!--Section projet & profil -->
-    <div class="row box_projet_profil">
-        <!--PROJET-->
-        <div class="col s12 l5 offset-l1 projet ">
+        <!--Section projet & profil -->
+        <div class="row box_projet_profil">
+            <!--PROJET-->
+            <div class="col s12 l5 offset-l1 projet ">
                 <h3>Vous cherchez un associé</h3>
-            <div class="row bouton_projet valign-wrapper">
-                <div class="col s5 btn_showProjet ">
-                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('showProject') }}">Parcourir les projets</a>
-                </div>
-                <div class="col s5 btn_createProjet">
-                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('createProjet') }}">Dépose ton projet</a>
-                </div>
-            </div>
-            <div class="row ">
-                {% for pro in projet %}
-                <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                    <div class="col s5 offset-s1 vignette_projet  z-depth-5">
-                        <div class="row vignette ">
-                            <div class="col s12">
-
-                                {% if pro.titre|length > 10 %}
-                                    <h4>{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
-                                {% else  %}
-                                    <h4>{{ pro.titre }}</h4>
-                                {% endif %}
-
-                            </div>
-                            <div class="col s8 offset-s2 photo_profil">
-
-                                {% if pro.fichier is null %}
-                                    <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                                {% else %}
-                                    <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
-                                {% endif %}
-
-
-
-                            </div>
-                        </div>
-                        <div class="row info_projet">
-                            <div class="col s12">
-                                <h6>Type de projet</h6>
-                                {% for comp in pro.typeDeProjet %}
-                                    {{ comp.typeDeProjet}}
-                                {% endfor %}
-                            </div>
-                            <div class="col s12">
-                                <h6>Profils recherchés</h6>
-                                {% for profil in pro.profilsrecherches %}
-                                    {% if profil.metier.metier|length > 10 %}
-                                        <p> {{ profil.metier.metier }} ,
-                                    {% else  %}
-                                       {{ profil.metier.metier }}</p>
-                                    {% endif %}
-
-                                {% endfor %}
-                            </div>
-                            <div class="col s12">
-                                <h6>Localisation</h6>
-                                <p>{{ pro.localisation }}</p>
-                            </div>
-                            <div class="col s12">
-                                <h6>Description</h6>
-                                <p>{{ pro.description }}</p>
-                            </div>
-                        </div>
+                <div class="row bouton_projet valign-wrapper">
+                    <div class="col s5 btn_showProjet ">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('showProject') }}">Parcourir les projets</a>
                     </div>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-
-        <!--PROFIL-->
-        <div class="col s12 l5 profil  ">
-            <h3>Vous cherchez un projet où vous investir</h3>
-            <div class="row bouton_projet valign-wrapper">
-                <div class="col s5 btn_showProfil">
-                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Parcourir les profils</a>
-                </div>
-                <div class="col s5 btn_createProfil">
-                    <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Dépose ton profil</a>
-                </div>
-            </div>
-            <div class="row ">
-                {% for pro in profils %}
-                    <a href="{{ path('showProfil', {'id': pro.id}) }}">
-                    <div class="col s5 offset-s1 vignette_projet  z-depth-5">
-                        <div class="row vignette ">
-                            <div class="col s12">
-                                {% if pro.nom|length > 10 %}
-                                <h4>{{ pro.nom|slice(0,8) ~ '...'  }}</h4>
-                                {% else  %}
-                                    <h4>{{ pro.nom }}</h4>
-                                {% endif %}
-                            </div>
-                            <div class="col s8 offset-s2 photo_profil">
-                                {% if pro.fichier is null %}
-                                    <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                                {% else %}
-                                    <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="row info_projet">
-                            <div class="col s12">
-                                <h6>Profil</h6>
-                                {% if pro.metier == null  %}
-                               {{ pro.metier }}
-                                {% endif %}
-                            </div>
-                            <div class="col s12">
-                                <h6>Compétences</h6>
-                                {% for comp in pro.competences %}
-                                {{ comp.competences}}
-                                {% endfor %}
-                            </div>
-                            <div class="col s12">
-                                <h6>Localisation</h6>
-                                <p>{{ pro.localisation }}</p>
-                            </div>
-                            <div class="col s12">
-                                <h6>Description</h6>
-                                <p>{{ pro.description }}</p>
-                            </div>
-                        </div>
+                    <div class="col s5 btn_createProjet">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('createProjet') }}">Dépose ton projet</a>
                     </div>
-                    </a>
-                {% endfor %}
+                </div>
+                <div class="row ">
+                    {% for pro in projet %}
+                        <a href="{{ path('showOneProject', {'id': pro.id}) }}">
+                            <div class="col s5 offset-s1 vignette_projet  z-depth-5">
+                                <div class="row vignette ">
+                                    <div class="col s12">
+
+                                        {% if pro.titre|length > 10 %}
+                                            <h4>{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
+                                        {% else  %}
+                                            <h4>{{ pro.titre }}</h4>
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="col s8 offset-s2 photo_profil">
+
+                                        {% if pro.fichier is null %}
+                                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                        {% else %}
+                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                        {% endif %}
+
+
+
+                                    </div>
+                                </div>
+                                <div class="row info_projet">
+                                    <div class="col s12">
+                                        <h6>Type de projet</h6>
+                                        {% for comp in pro.typeDeProjet %}
+                                            {{ comp.typeDeProjet}}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Profils recherchés</h6>
+                                        {% for profil in pro.profilsrecherches %}
+                                            {% if profil.metier.metier|length > 10 %}
+                                                <p> {{ profil.metier.metier }} ,
+                                            {% else  %}
+                                                {{ profil.metier.metier }}</p>
+                                            {% endif %}
+
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Localisation</h6>
+                                        <p>{{ pro.localisation }}</p>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Description</h6>
+                                        <p>{{ pro.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!--PROFIL-->
+            <div class="col s12 l5 profil  ">
+                <h3>Vous cherchez un projet où vous investir</h3>
+                <div class="row bouton_projet valign-wrapper">
+                    <div class="col s5 btn_showProfil">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Parcourir les profils</a>
+                    </div>
+                    <div class="col s5 btn_createProfil">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">Dépose ton profil</a>
+                    </div>
+                </div>
+                <div class="row ">
+                    {% for pro in profils %}
+                        <a href="{{ path('showProfil', {'id': pro.id}) }}">
+                            <div class="col s5 offset-s1 vignette_projet  z-depth-5">
+                                <div class="row vignette ">
+                                    <div class="col s12">
+                                        {% if pro.nom|length > 10 %}
+                                            <h4>{{ pro.nom|slice(0,8) ~ '...'  }}</h4>
+                                        {% else  %}
+                                            <h4>{{ pro.nom }}</h4>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col s8 offset-s2 photo_profil">
+                                        {% if pro.fichier is null %}
+                                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                        {% else %}
+                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="row info_projet">
+                                    <div class="col s12">
+                                        <h6>Profil</h6>
+                                        {% if pro.metier == null  %}
+                                            {{ pro.metier }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Compétences</h6>
+                                        {% for comp in pro.competences %}
+                                            {{ comp.competences}}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Localisation</h6>
+                                        <p>{{ pro.localisation }}</p>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Description</h6>
+                                        <p>{{ pro.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
