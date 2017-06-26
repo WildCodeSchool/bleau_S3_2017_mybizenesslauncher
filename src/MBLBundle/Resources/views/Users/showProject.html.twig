@@ -4,21 +4,21 @@
 {% block body %}
 
 
-<div class="showProjet">
-    <div class="row">
-        {{ form_start(form_secteur) }}
+    <div class="showProjet">
+        <div class="row">
+            {{ form_start(form_secteur) }}
 
-        <div class="col s6">
-            {{ form_row(form_secteur.secteur) }}
-            {{ form_errors(form_secteur.secteur) }}
+            <div class="col s6">
+                {{ form_row(form_secteur.secteur) }}
+                {{ form_errors(form_secteur.secteur) }}
+            </div>
+            <div class="col s6">
+                {{ form_row(form_secteur.typeDeProjet) }}
+                {{ form_errors(form_secteur.typeDeProjet) }}
+            </div>
+            <input class="btn" name="chercher" type="submit">
+            {{ form_end(form_secteur) }}
         </div>
-        <div class="col s6">
-            {{ form_row(form_secteur.typeDeProjet) }}
-            {{ form_errors(form_secteur.typeDeProjet) }}
-        </div>
-        <input class="btn" name="chercher" type="submit">
-        {{ form_end(form_secteur) }}
-    </div>
         <div class="box_projet">
 
             <div class="row">
@@ -26,6 +26,7 @@
 
 
                 {% for pro in projects %}
+                <a href="{{ path('showOneProject', {'id': pro.id}) }}">
                     <div class="col s6 m3 l2 vignette_projet  z-depth-5">
                         <div class="row vignette ">
                             <div class="col s12">
@@ -49,6 +50,9 @@
 
                             </div>
                         </div>
+                        {#<div class="row btnlink">#}
+                                {#<a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">Voir</a>#}
+                        {#</div>#}
                         <div class="row info_projet">
                             <div class="col s12">
                                 <h6>Type de projet</h6>
@@ -77,6 +81,11 @@
                             </div>
                         </div>
                     </div>
+
+
+
+</a>
+
                 {% endfor %}
 
             </div>
@@ -84,11 +93,11 @@
     </div>
 {% endblock %}
 {% block javascripts %}
-{{ parent() }}
-<script>
-    $(document).ready(function() {
-        $('select').material_select();
-    });
-</script>
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
 
 {% endblock %}

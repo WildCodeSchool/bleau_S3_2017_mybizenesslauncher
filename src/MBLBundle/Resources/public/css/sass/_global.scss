@@ -10,9 +10,7 @@ $ColorWhite : white;
 $BoxShadow: 2px 2px 3px grey;
 $BorderRadius : 8px;
 $HeightVignette: 30em;
-img {
-  width: 100%;
-}
+
 
 
 /*
@@ -59,6 +57,7 @@ body{
 }
 
 
+a { color: inherit; }
 //Vignettes
 
 .vignette_projet {
@@ -67,7 +66,9 @@ body{
   margin-bottom: 10px;
   height: $HeightVignette;
 }
-
+.vignette_projet:hover {
+ background-color: $Colorgrey;
+}
 .info_projet {
   border-radius: $BorderRadius;
   overflow: scroll;

@@ -4,15 +4,10 @@ Variable globale
 
 CONSTANTE
 */
-/* line 13, ../sass/_global.scss */
-img {
-  width: 100%;
-}
-
 /*
 Font
 */
-/* line 22, ../sass/_global.scss */
+/* line 20, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -22,13 +17,13 @@ Variable globale
 
 BALISE
 */
-/* line 32, ../sass/_global.scss */
+/* line 30, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 37, ../sass/_global.scss */
+/* line 35, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,18 +40,23 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 52, ../sass/_global.scss */
+/* line 50, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 57, ../sass/_global.scss */
+/* line 55, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 64, ../sass/_global.scss */
+/* line 60, ../sass/_global.scss */
+a {
+  color: inherit;
+}
+
+/* line 63, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -64,38 +64,43 @@ body {
   height: 30em;
 }
 
-/* line 71, ../sass/_global.scss */
+/* line 69, ../sass/_global.scss */
+.vignette_projet:hover {
+  background-color: #f0f0f0;
+}
+
+/* line 72, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
-/* line 75, ../sass/_global.scss */
+/* line 76, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
 }
 
-/* line 78, ../sass/_global.scss */
+/* line 79, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 82, ../sass/_global.scss */
+/* line 83, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
 }
 
-/* line 85, ../sass/_global.scss */
+/* line 86, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-/* line 90, ../sass/_global.scss */
+/* line 91, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-/* line 93, ../sass/_global.scss */
+/* line 94, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
