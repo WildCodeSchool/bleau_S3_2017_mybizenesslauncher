@@ -18,13 +18,13 @@
         </ul>
         <nav>
 
-            <div class="nav-wrapper header ">
+            <div class="nav-wrapper header">
                 <a href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                    <li><a href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
-                    <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
+                    <li><a class="color"  href="{{ path('showProject') }}">Parcourir les projets</a></li>
+                    <li><a class="color"  href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
+                    <li><a class="color dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">Mon Compte</i></a></li>
 
 
 
@@ -47,8 +47,8 @@
 
         <nav>
             <div class="nav-wrapper header">
-                <a href="#" class="color">MyBizenessLauncher.com</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <a href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
+                <ul id="nav-mobile" class="right">
                     <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
                     <li><a class="color" href="">Parcourir les profils</a></li>
                     <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
