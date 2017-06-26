@@ -281,6 +281,10 @@ Layout.html.twig
   background: white;
   height: 60%;
 }
+/* line 34, ../sass/_showMyProject.scss */
+.showMyProjet .btn {
+  margin: 5px;
+}
 
 /*
 registration
@@ -318,34 +322,48 @@ input[type=search], textarea.materialize-textarea {
 }
 /* line 8, ../sass/_formCreate.scss */
 #createProjet label {
-  color: dimgrey;
-  font-weight: bold;
+  color: #4b494b;
   font-size: 1.5em;
 }
-/* line 14, ../sass/_formCreate.scss */
+/* line 13, ../sass/_formCreate.scss */
 #createProjet .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 19, ../sass/_formCreate.scss */
+/* line 18, ../sass/_formCreate.scss */
 #createProjet .btn {
   margin-bottom: 20px;
 }
 /* line 23, ../sass/_formCreate.scss */
-#createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
-  border-radius: 10px;
-}
-/* line 28, ../sass/_formCreate.scss */
 #createProjet .select-wrapper {
   border-radius: 10px;
 }
-/* line 35, ../sass/_formCreate.scss */
+/* line 30, ../sass/_formCreate.scss */
 #createProjet input:not([type]), #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
 #createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
-#createProjet input[type=search], #createProjet textarea.materialize-textarea {
-  border-bottom: none;
+#createProjet input[type=search], #createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+/* line 37, ../sass/_formCreate.scss */
+#createProjet input:focus, #createProjet #mblbundle_projet_description:focus, #createProjet #mblbundle_projet_localisation:focus {
+  border: 1.5px solid #98d4e1;
+  border-radius: 10px;
+  outline: none;
+}
+/* line 43, ../sass/_formCreate.scss */
+#createProjet .hiddenPreview {
+  display: none;
+}
+/* line 46, ../sass/_formCreate.scss */
+#createProjet textarea#mblbundle_projet_description {
+  height: 10em;
+}
+/* line 49, ../sass/_formCreate.scss */
+#createProjet .submitProjet {
+  margin: auto;
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* line 4, ../sass/_formCreatePro.scss */
@@ -435,21 +453,20 @@ input[type=search], textarea.materialize-textarea {
 /* line 16, ../sass/_editShowProfil.scss */
 .editprofil textarea {
   border-radius: 8px;
-  width: 600px;
-  height: 165px;
+  height: 10rem;
 }
-/* line 21, ../sass/_editShowProfil.scss */
+/* line 20, ../sass/_editShowProfil.scss */
 .editprofil .sltbox input {
   border: 2px solid lightgray;
   background-color: #98d4e1;
 }
-/* line 25, ../sass/_editShowProfil.scss */
+/* line 24, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
   z-index: 2;
   font-size: 1.5em;
   color: black;
 }
-/* line 30, ../sass/_editShowProfil.scss */
+/* line 29, ../sass/_editShowProfil.scss */
 .editprofil .btnright a {
   float: right;
 }
@@ -464,7 +481,7 @@ input[type=search], textarea.materialize-textarea {
   text-align: center;
   word-wrap: break-word;
 }
-/* line 38, ../sass/_editShowProfil.scss */
+/* line 37, ../sass/_editShowProfil.scss */
 .showprofil .cartepro {
 
   border: 1px solid red;
@@ -476,8 +493,7 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-/* line 48, ../sass/_editShowProfil.scss */
-
+/* line 47, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -486,9 +502,7 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-
-/* line 59, ../sass/_editShowProfil.scss */
-
+/* line 58, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
   margin-top: 5%;
@@ -549,20 +563,39 @@ chat.html.twig
 #chat .chat_box {
   border: 2px solid #98d4e1;
   border-radius: 10px;
-  color: black;
+  color: #4b494b;
   height: 80px;
   margin-top: 5px;
-}
-/* line 17, ../sass/_chat.scss */
-#chat .chat_box:hover {
   background-color: #98d4e1;
 }
-/* line 27, ../sass/_chat.scss */
+/* line 18, ../sass/_chat.scss */
+#chat .chat_box:hover {
+  background-color: #f0f0f0;
+}
+/* line 28, ../sass/_chat.scss */
 #chat #chat_text {
+  color: #4b494b;
+  margin-top: 5px;
   border: 2px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 57, ../sass/_chat.scss */
+/* line 36, ../sass/_chat.scss */
+#chat .Nom_prenom p {
+  color: #4b494b;
+  font-size: 1.1em;
+}
+/* line 42, ../sass/_chat.scss */
+#chat .color-text {
+  border: 1px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+}
+/* line 49, ../sass/_chat.scss */
+#chat .color-text-user {
+  border: 1px solid #98d4e1;
+  border-radius: 10px;
+}
+/* line 78, ../sass/_chat.scss */
 #chat .group-text {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -585,9 +618,18 @@ chat.html.twig
 }
 /* line 16, ../sass/_chatConnection.scss */
 #chat_connection .Nom_prenom p {
-  size: 5em;
+
+  size: 1em;
+  margin-left: 50px;
+  color: #4b494b;
+  font-size: 1.2em;
 }
-/* line 45, ../sass/_chatConnection.scss */
+/* line 22, ../sass/_chatConnection.scss */
+#chat_connection .image img {
+  height: 80px;
+
+}
+/* line 51, ../sass/_chatConnection.scss */
 #chat_connection .group-text {
   margin-top: 10px;
   margin-bottom: 10px;

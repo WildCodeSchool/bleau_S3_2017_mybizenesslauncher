@@ -31,7 +31,6 @@ editProjet:
     path: /editProject/{id}
     defaults: { _controller: MBLBundle:User:editProject }
 
-
 #Création, édition, delete PROFIL RECHERCHER
 createProfilRechercheProjet:
     path: /createProfilRechercheProject/{id}
@@ -43,10 +42,13 @@ deleteProfilRerchercheProjet:
     path: /deleteProfil
     defaults: { _controller: MBLBundle:User:deleteProfilR}
 
-
 showProject:
     path: /showProject
     defaults: { _controller: MBLBundle:User:showProject }
+
+showOneProject:
+    path: /showOneProject/{id}
+    defaults: { _controller: MBLBundle:User:showOneProject }
 
 showMyProject:
     path: /showMyProject
@@ -73,8 +75,6 @@ remove_trailing_slash:
         url: .*/$
     methods: [GET]
 
-
-
 chatIndex:
     path: /chatIndex/{chatId}
     defaults:
@@ -90,6 +90,10 @@ connect:
     defaults:
         _controller: MBLBundle:User:connect
         chatId: null
+
+chatDisconnect:
+    path: /chatDisconnect/{chatId}
+    defaults: { _controller: MBLBundle:User:chatDisconnect}
 
 # Cette route doit rester la dernière
 #remove_trailing_slash:

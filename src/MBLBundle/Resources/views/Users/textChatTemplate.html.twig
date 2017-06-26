@@ -1,6 +1,21 @@
-<div class="group-text">
-    <input type="hidden" value="{{ text.id }}"/>
-    <b><i> {{ text.profil }} </i></b>
-    <span> à {{ text.dateCreation|date('H:i:s') }}</span>
-    <p> {{ text.msg }} </p>
-</div>
+{% if text.profil == app.user.prenom  %}
+    <div class="group-text color-text-user">
+        <input type="hidden" value="{{ text.id }}"/>
+        <div class="center">
+            <b><i> {{ text.profil }} </i></b>
+            <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+        </div>
+
+        <p> {{ text.msg }} </p>
+    </div>
+{% else %}
+    <div class="group-text color-text">
+        <input type="hidden" value="{{ text.id }}"/>
+        <div class="center">
+            <b><i> {{ text.profil }} </i></b>
+            <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+        </div>
+
+        <p> {{ text.msg }} </p>
+    </div>
+{% endif %}

@@ -69,6 +69,7 @@ class Projet
     {
         $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
         $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**

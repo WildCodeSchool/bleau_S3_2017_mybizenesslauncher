@@ -44,4 +44,16 @@ class ChatRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
     }
 
+    public function myfindOneById($chatId)
+    {
+        return $this ->createQueryBuilder('c')
+            ->select('c')
+
+
+            ->where('c.id = :ChatId')
+            ->setParameter('ChatId', $chatId)
+            ->getQuery()
+            ->getResult();
+    }
+
 }
