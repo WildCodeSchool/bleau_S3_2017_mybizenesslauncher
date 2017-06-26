@@ -1,33 +1,9 @@
 @import "global";
 .showAllProfils {
-  height: 100%;
+
   .box_projet * {
     text-align: center;
-    height: 100%;
-    .vignette_projet {
-      padding: 2%;
-      height: 100%;
 
-      .content {
-        background-color: $ColorDarkGrey;
-        border-radius: $BorderRadius;
-      }
-    }
-    .info_projet {
-      border-radius: $BorderRadius;
-      margin: 15px;
-    }
-    .vignette {
-      border-radius: $BorderRadius;
-    }
-    .photo_profil {
-      border-radius: $BorderRadius;
-      padding: 10px;
-    }
-    .photo_profil, .info_projet, .info_profil {
-      background: $ColorWhite;
-      height: 60%;
 
-    }
   }
 }
