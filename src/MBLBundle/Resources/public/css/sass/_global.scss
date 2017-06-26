@@ -14,6 +14,7 @@ img {
   width: 100%;
 }
 
+
 /*
 Font
 */
@@ -57,6 +58,41 @@ body{
   background-color: $Colorgrey;
 }
 
+
+//Vignettes
+
+.vignette_projet {
+  background-color: $ColorDarkGrey;
+  border-radius: $BorderRadius;
+  margin-bottom: 10px;
+  height: $HeightVignette;
+}
+
+.info_projet {
+  border-radius: $BorderRadius;
+  overflow: scroll;
+}
+.vignette {
+  border-radius: $BorderRadius;
+}
+.photo_profil {
+  border-radius: $BorderRadius;
+
+}
+.photo_profil img {
+  height: 7em;
+}
+.photo_profil, .info_projet, .info_profil {
+  background: $ColorWhite;
+  //margin-bottom: 10px;
+
+}
+.info_projet {
+  height: 16em;
+}
+h6 {
+  font-weight: bold;
+}
 
 
 
