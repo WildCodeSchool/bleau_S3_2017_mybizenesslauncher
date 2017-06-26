@@ -41,15 +41,10 @@
       margin-bottom: 10px;
       height: $HeightVignette;
     }
-    .vignette_profil {
-      background-color: $Colorblue;
-      border-radius: $BorderRadius;
-      margin-bottom: 10px;
-      height: $HeightVignette;
 
-    }
-    .info_projet, .info_profil {
+    .info_projet {
       border-radius: $BorderRadius;
+      overflow: scroll;
     }
     .vignette {
       border-radius: $BorderRadius;
