@@ -144,12 +144,12 @@ Layout.html.twig
   background-color: #f0f0f0;
 }
 
-/* line 9, ../sass/_layout.scss */
+/* line 10, ../sass/_layout.scss */
 .footer {
   background-color: #4b494b;
 }
 
-/* line 13, ../sass/_layout.scss */
+/* line 14, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -158,12 +158,12 @@ Layout.html.twig
   padding-top: 5px;
 }
 
-/* line 25, ../sass/_layout.scss */
+/* line 26, ../sass/_layout.scss */
 .color {
   color: #98d4e1;
 }
 
-/* line 29, ../sass/_layout.scss */
+/* line 30, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
 }
