@@ -1,196 +1,203 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>{{ projet.titre }}</h2> {% endblock %}
+{% block titreH2 %}<h2>{{ projet.titre }}</h2>{% endblock %}
 
 {% block body %}
-<div class="container showOneProjet">
-<div class="row">
 
-<div class="col s12 m6 l6 cartepro">
-    <div class="row">
-        <div class="col s12 dateCreation">
-            <h6 id="dateCreation">
-                <p>
-                    Projet créé le {{ projet.dateCreation|date('d-m-Y') }} par
-                    {#{% for who in profil %}#}
-                        {#{{ who.prenom }} {{ who.nom }}#}
-                    {#{% endfor %}#}
-                </p>
-            </h6>
-        </div>
-        {#<div class="col s12 imgpro">#}
-        {#<img src="{{ asset('web/uploads/images/'~fichier.fichier) }}" class="responsive-img" alt="image"/>#}
-        {#</div>#}
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <h5>Description</h5>
-            {% if projet.description is same as(null) %}
-                <p>Non renseignée</p>
-            {% else %}
-                <p>{{ projet.description }}</p>
-            {% endif %}
-        </div>
-
-        <div class="col s12 ">
-            <h5>Site Internet</h5>
-            {% if projet.siteInternet is same as(null) %}
-                <p>Non renseigné</p>
-            {% else %}
-                <p>{{ projet.siteInternet }}</p>
-            {% endif %}
-        </div>
-
-        <div class="col s12 ">
-            <h5>Enveloppe eBusta</h5>
-            {% if projet.ebustaUrl is same as(null) %}
-                <p>Non renseignée</p>
-            {% else %}
-                <p>{{ projet.ebustaUrl }}</p>
-            {% endif %}
-        </div>
-
-        <div class="col s12 ">
-            <h5>Type de projet</h5>
-            {% if projet.typeDeProjet is same as(null) %}
-                <p>Non renseigné</p>
-            {% else %}
-                <p>{{ projet.typeDeProjet.typeDeProjet }}</p>
-            {% endif %}
-        </div>
-
-        <div class="col s12 ">
-            <h5>Secteur</h5>
-            {% if projet.secteur is same as(null) %}
-                <p>Non renseigné</p>
-            {% else %}
-                <p>{{ projet.secteur.secteurActivite }}</p>
-            {% endif %}
-        </div>
-
-        <div class="col s12 ">
-            <h5>Localisation</h5>
-            {% if projet.localisation is same as(null) %}
-                <p>Non renseignée</p>
-            {% else %}
-                <p>{{ projet.localisation }}</p>
-            {% endif %}
-        </div>
-        {#{{ dump(projet.fichier) }}#}
-    </div>
-</div>
-<div class="col s12 divform ">
-    <a class="btn" href="{{ path('editProjet', {'id': projet.id }) }}">Editer</a>
-</div>
-
-// Vignette profil du créateur du projet
-<div class="row showprofil">
-    {% for profil in profils %}
-    <div class="col s12 m6 l6 cartepro">
-        <div class="row">
-            <div class="col s12 m6 l6 title ">
-                <h4 id="titre">
-
-                        {{ profil.prenom }} {{ profil.nom }}
-
-                </h4>
-            </div>
-            <div class="col s12 m6 l6 imgpro">
-                <img src="{{ asset('bundles/mbl/img/kyan.png') }}" alt="photo de profil"/>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col s12 m6 l6 ">
-                <h5>Description:</h5>
-                {% if profil.description is same as(null) %}
-                    <p>Non renseigné</p>
-                {% else %}
-                    <p>{{ profil.description }}</p>
-                {% endif %}
-            </div>
-
-            <div class="col s12 m6 l6">
-                <h5>LinkedIn:</h5>
-                {% if profil.linkedIn is same as(null) %}
-                    <p>Non renseigné</p>
-                {% else %}
-                    <p>{{ profil.linkedIn }}</p>
-                {% endif %}
-            </div>
-
-            <div class="col s12 m6 l6">
-                <h5>Localisation:</h5>
-                {% if profil.localisation is same as(null) %}
-                    <p>renseignez votre localisation</p>
-                {% else %}
-                    <p>{{ profil.localisation }}</p>
-                {% endif %}
-            </div>
-
-            <div class="col s12 m6 l6">
-                <h5>Investissement:</h5>
-                {% if profil.invest is same as(null) %}
-                    <p>Non renseigné</p>
-                {% else %}
-                    <p>{{ profil.invest.invest }}</p>
-                {% endif %}
-            </div>
-
-            <div class="col s12 m6 l6">
-                <h5>En tant que:</h5>
-                {% if profil.etq is same as(null) %}
-                    <p>renseignez votre status</p>
-                {% else %}
-                    <p>{{ profil.etq.etq }}</p>
-                {% endif %}
-            </div>
-
-            <div class="col s12 m6 l6">
-                <h5>Disponibilité:</h5>
-                {% if profil.dispo is same as(null) %}
-                    <p>Non renseigné</p>
-                {% else %}
-                    <p>
-                        {{ profil.dispo.dispo }}
+    <div class="container">
+        <div id="oneProject">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <p class="creeLePar">
+                        Projet créé le {{ projet.dateCreation|date('d-m-Y') }} par
+                        {% for profil in profils %}
+                            {{ profil.prenom }} {{ profil.nom }}
+                        {% endfor %}
                     </p>
-                {% endif %}
+                </div>
             </div>
+            {#Caroussel#}
+
+            {#<div class="col s12 imgpro">#}
+            {#<img src="{{ asset('web/uploads/images/'~fichier.fichier) }}" class="responsive-img" alt="image"/>#}
+            {#</div>#}
+
+            <div class="row">
+                <div class="row">
+                <div class="col s12 m6 l6">
+                    <div class="presProjet">
+                        <div class="col s6 l3">
+                            <h5>Secteur</h5>
+                            {% if projet.secteur is same as(null) %}
+                                <p>Non renseigné</p>
+                            {% else %}
+                                <p>{{ projet.secteur.secteurActivite }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s6 l3">
+                            <h5>Type de projet</h5>
+                            {% if projet.typeDeProjet is same as(null) %}
+                                <p>Non renseigné</p>
+                            {% else %}
+                                <p>{{ projet.typeDeProjet.typeDeProjet }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s12 l6">
+                            <h5>Description</h5>
+                            {% if projet.description is same as(null) %}
+                                <p>Non renseignée</p>
+                            {% else %}
+                                <p>{{ projet.description }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s6 l3">
+                            <h5>Site Internet</h5>
+                            {% if projet.siteInternet is same as(null) %}
+                                <p>Non renseigné</p>
+                            {% else %}
+                                <p>{{ projet.siteInternet }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s6 l3">
+                            <h5>Enveloppe eBusta</h5>
+                            {% if projet.ebustaUrl is same as(null) %}
+                                <p>Non renseignée</p>
+                            {% else %}
+                                <p>{{ projet.ebustaUrl }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s12 l6">
+                            <h5>Localisation</h5>
+                            {% if projet.localisation is same as(null) %}
+                                <p>Non renseignée</p>
+                            {% else %}
+                                <p>{{ projet.localisation }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+
+
+            {#<div class="col s12 divform ">#}
+            {#<a class="btn" href="{{ path('editProjet', {'id': projet.id }) }}">Editer</a>#}
+            {#</div>#}
+
+            {#Vignette profil du créateur du projet#}
 
             <div class="col s12 m6 l6">
-                <h5>Où:</h5>
-                {% if profil.ou is same as(null) %}
-                    <p>Non renseigné</p>
-                {% else %}
-                    <p>{{ profil.ou.Ou }}</p>
-                {% endif %}
+                <div class="showprofil">
+                    {% for profil in profils %}
+                    <div class="cartepro">
+
+                            <div class="col s12 m12 titre">
+                                <h4 id="titre" class="center">{{ profil.prenom }} {{ profil.nom }}</h4>
+                                <p class="center darkgrey-text">(porteur du projet)</p>
+                            </div>
+                            <div class="col s12 m12 imgpro">
+                                <img src="{{ asset('bundles/mbl/img/kyan.png') }}" alt="photo de profil"/>
+                            </div>
+
+                        <div class="row">
+                            <div class="col s6 m6 l6">
+                                <h5 class="center">Métiers</h5>
+                                {% if profil.metier is same as(null) %}
+                                    <p class="center grey-text">Non renseigné</p>
+                                {% else %}
+                                    <p>{{ profil.metier.metier }}</p>
+                                {% endif %}
+                            </div>
+
+                            <div class="col s6 m6 l6">
+                                <h5 class="center">Compétences</h5>
+                                {% if profil.competences is empty %}
+                                    <p class="center grey-text">renseignez vos compétences</p>
+                                {% else %}
+                                    <p>{% for competences in profil.competences %} {{ competences.competences }} {% endfor %}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+
+
+                            <div class="col s12 m12 l12">
+                                <h5 class="center">Description</h5>
+                                {% if profil.description is same as(null) %}
+                                    <p class="center grey-text">Non renseigné</p>
+                                {% else %}
+                                    <p>{{ profil.description }}</p>
+                                {% endif %}
+                            </div>
+                        <div class="row">
+                        <div class="col s12 m6 l6">
+                            <h5 class="center">Investissement</h5>
+                            {% if profil.invest is same as(null) %}
+                                <p class="center grey-text">Non renseigné</p>
+                            {% else %}
+                                <p>{{ profil.invest.invest }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s12 m6 l6">
+                            <h5 class="center">Statut</h5>
+                            {% if profil.etq is same as(null) %}
+                                <p class="center grey-text">renseignez votre status</p>
+                            {% else %}
+                                <p>{{ profil.etq.etq }}</p>
+                            {% endif %}
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6 l6">
+                                <h5 class="center">Disponibilité</h5>
+                                {% if profil.dispo is same as(null) %}
+                                    <p class="center grey-text">Non renseigné</p>
+                                {% else %}
+                                    <p>
+                                        {{ profil.dispo.dispo }}
+                                    </p>
+                                {% endif %}
+                            </div>
+
+                            <div class="col s12 m6 l6">
+                                <h5 class="center">Mobilité</h5>
+                                {% if profil.ou is same as(null) %}
+                                    <p class="center grey-text">Non renseigné</p>
+                                {% else %}
+                                    <p>{{ profil.ou.Ou }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                            <div class="col s12 m12 l12">
+                                <h5 class="center">Domicile</h5>
+                                {% if profil.localisation is same as(null) %}
+                                    <p class="center grey-text">renseignez votre localisation</p>
+                                {% else %}
+                                    <p>{{ profil.localisation }}</p>
+                                {% endif %}
+                            </div>
+
+                            <div class="col s12 m12 l12">
+                                <h5 class="center">LinkedIn</h5>
+                                {% if profil.linkedIn is same as(null) %}
+                                    <p class="center grey-text">Non renseigné</p>
+                                {% else %}
+                                    <p>{{ profil.linkedIn }}</p>
+                                {% endif %}
+                            </div>
+                        <div class="col s12 m5 l5 divform center">
+                            <a class="btn" href="{{ path('editProfil', { 'id': profil.id }) }}">Editer</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
 
-            <div class="col s12 m6 l6">
-                <h5>Métiers:</h5>
-                {% if profil.metier is same as(null) %}
-                    <p>précisez votre métier</p>
-                {% else %}
-                    <p>{{ profil.metier.metier }}</p>
-                {% endif %}
-            </div>
-
-            <div class="col s12 m6 l6">
-                <h5>Compétences:</h5>
-                {% if profil.competences is empty %}
-                    <p>renseignez vos compétences</p>
-                {% else %}
-                    <p>{% for competences in profil.competences %} {{ competences.competences }} {% endfor %}</p>
-                {% endif %}
-            </div>
-        </div>
-
-        <div class="col s12 m6 l6 divform ">
-
-            <a class="btn" href="{{ path('editProfil', { 'id': profil.id }) }}">Modifier mon profil</a>
-        </div>    {% endfor %}
     </div>
-</div>
-</div>
+
 {% endblock %}
