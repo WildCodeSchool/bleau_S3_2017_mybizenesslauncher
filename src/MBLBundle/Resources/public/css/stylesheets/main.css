@@ -233,45 +233,7 @@ Layout.html.twig
   text-align: center;
 }
 
-/* line 3, ../sass/_showMyProject.scss */
-.showMyProjet {
-  height: 100%;
-}
-/* line 5, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * {
-  text-align: center;
-  height: 100%;
-}
-/* line 8, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * .vignette_projet {
-  padding: 2%;
-  height: 30em;
-}
-/* line 12, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * .vignette_projet .content {
-  background-color: #4b494b;
-  border-radius: 8px;
-}
-/* line 17, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * .info_projet {
-  border-radius: 8px;
-  margin: 15px;
-}
-/* line 21, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * .vignette {
-  border-radius: 8px;
-}
-/* line 24, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * .photo_profil {
-  border-radius: 8px;
-  padding: 10px;
-}
-/* line 28, ../sass/_showMyProject.scss */
-.showMyProjet .box_projet * .photo_profil, .showMyProjet .box_projet * .info_projet, .showMyProjet .box_projet * .info_profil {
-  background: white;
-  height: 60%;
-}
-/* line 34, ../sass/_showMyProject.scss */
+/* line 7, ../sass/_showMyProject.scss */
 .showMyProjet .btn {
   margin: 5px;
 }
