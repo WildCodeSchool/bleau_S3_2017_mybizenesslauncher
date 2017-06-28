@@ -53,19 +53,39 @@
       margin-bottom: 20px;
     }
 
-    // Remove the Materialize border-bottom,
-    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
-    input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-    input[type=search], textarea.materialize-textarea {
-      border-bottom: none;
-      border: 1.5px solid lightgray;
-      border-radius: 10px;
-    }
+
     .box_profil_rech {
       text-align: center;
     }
+  }
+
+  input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
+  input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+  input[type=search] {
+    border: 1.5px solid lightgray;
+    border-radius: 10px;
+  }
+
+  input:focus {
+    border: 1.5px solid $Colorblue;
+    border-radius: 10px;
+    outline: none;
+  }
+  input{
+    background-color: $Colorblue;
+  }
+
+
+  ul li span {
+    color : $ColorDarkGrey;
+  }
+  [type="checkbox"]:checked+label:before {
+
+    border-right: 2px solid $ColorDarkGrey;
+    border-bottom: 2px solid $ColorDarkGrey;
 
   }
+
 }
 
 
