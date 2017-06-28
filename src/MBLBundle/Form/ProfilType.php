@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -75,7 +76,13 @@ class ProfilType extends AbstractType
                 ))
             ->add('competences', EntityType::class,
                 array(
-                    'class' => Competences::class,
+                    'class' => Competences::class,/*
+                    'query_builder'=> function(EntityRepository $er) use($options){
+                        return $er->createQueryBuilder('c')
+                            ->select('c.competences')
+                            ->where('c.langue :locale')
+                            ->setParameter('locale', $options['locale']);
+                    },*/
                     'choice_label' =>'competences',
                     'multiple'=> true,
                     'expanded'=> false,
@@ -91,7 +98,8 @@ class ProfilType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Profil'
+            'data_class' => 'MBLBundle\Entity\Profil',
+            'locale'=>null
         ));
     }
 

@@ -21,15 +21,19 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $locale= $request->getLocale();
+
         $em = $this->getDoctrine()->getManager();
         $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
+
         $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
 
         return $this->render('@MBL/Users/index.html.twig',
             array('projet' => $projets,
-                'profils' =>$profils
+                'profils' =>$profils,
+                'locale'=>$locale
             ));
     }
 
@@ -40,8 +44,10 @@ class UserController extends Controller
 
     public function editProfilAction(Request $request)
     {
+        var_dump($request); die();
+        $locale= $request->getLocale();
         $profil = $this->getUser();
-        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil);
+        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil, array('locale'=>$locale));
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

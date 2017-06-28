@@ -17,6 +17,7 @@ class Chat
 
     //generated code
    
+
     /**
      * @var integer
      */
@@ -25,22 +26,42 @@ class Chat
     /**
      * @var string
      */
-    private $name;
+    private $name_fr;
+
+    /**
+     * @var string
+     */
+    private $name_it;
 
     /**
      * @var \DateTime
      */
-    private $dateCreation;
+    private $dateCreation_fr;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateCreation_it;
 
     /**
      * @var integer
      */
-    private $connectionbyidcreator;
+    private $connectionbyidcreator_fr;
 
     /**
      * @var integer
      */
-    private $connectionbyid;
+    private $connectionbyidcreator_it;
+
+    /**
+     * @var integer
+     */
+    private $connectionbyid_fr;
+
+    /**
+     * @var integer
+     */
+    private $connectionbyid_it;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -51,10 +72,6 @@ class Chat
      * @var \Doctrine\Common\Collections\Collection
      */
     private $profils;
-
-    /**
-     * Constructor
-     */
 
 
     /**
@@ -68,99 +85,195 @@ class Chat
     }
 
     /**
-     * Set name
+     * Set nameFr
      *
-     * @param string $name
+     * @param string $nameFr
      *
      * @return Chat
      */
-    public function setName($name)
+    public function setNameFr($nameFr)
     {
-        $this->name = $name;
+        $this->name_fr = $nameFr;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get nameFr
      *
      * @return string
      */
-    public function getName()
+    public function getNameFr()
     {
-        return $this->name;
+        return $this->name_fr;
     }
 
     /**
-     * Set dateCreation
+     * Set nameIt
      *
-     * @param \DateTime $dateCreation
+     * @param string $nameIt
      *
      * @return Chat
      */
-    public function setDateCreation($dateCreation)
+    public function setNameIt($nameIt)
     {
-        $this->dateCreation = $dateCreation;
+        $this->name_it = $nameIt;
 
         return $this;
     }
 
     /**
-     * Get dateCreation
+     * Get nameIt
+     *
+     * @return string
+     */
+    public function getNameIt()
+    {
+        return $this->name_it;
+    }
+
+    /**
+     * Set dateCreationFr
+     *
+     * @param \DateTime $dateCreationFr
+     *
+     * @return Chat
+     */
+    public function setDateCreationFr($dateCreationFr)
+    {
+        $this->dateCreation_fr = $dateCreationFr;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreationFr
      *
      * @return \DateTime
      */
-    public function getDateCreation()
+    public function getDateCreationFr()
     {
-        return $this->dateCreation;
+        return $this->dateCreation_fr;
     }
 
     /**
-     * Set connectionbyidcreator
+     * Set dateCreationIt
      *
-     * @param integer $connectionbyidcreator
+     * @param \DateTime $dateCreationIt
      *
      * @return Chat
      */
-    public function setConnectionbyidcreator($connectionbyidcreator)
+    public function setDateCreationIt($dateCreationIt)
     {
-        $this->connectionbyidcreator = $connectionbyidcreator;
+        $this->dateCreation_it = $dateCreationIt;
 
         return $this;
     }
 
     /**
-     * Get connectionbyidcreator
+     * Get dateCreationIt
      *
-     * @return integer
+     * @return \DateTime
      */
-    public function getConnectionbyidcreator()
+    public function getDateCreationIt()
     {
-        return $this->connectionbyidcreator;
+        return $this->dateCreation_it;
     }
 
     /**
-     * Set connectionbyid
+     * Set connectionbyidcreatorFr
      *
-     * @param integer $connectionbyid
+     * @param integer $connectionbyidcreatorFr
      *
      * @return Chat
      */
-    public function setConnectionbyid($connectionbyid)
+    public function setConnectionbyidcreatorFr($connectionbyidcreatorFr)
     {
-        $this->connectionbyid = $connectionbyid;
+        $this->connectionbyidcreator_fr = $connectionbyidcreatorFr;
 
         return $this;
     }
 
     /**
-     * Get connectionbyid
+     * Get connectionbyidcreatorFr
      *
      * @return integer
      */
-    public function getConnectionbyid()
+    public function getConnectionbyidcreatorFr()
     {
-        return $this->connectionbyid;
+        return $this->connectionbyidcreator_fr;
+    }
+
+    /**
+     * Set connectionbyidcreatorIt
+     *
+     * @param integer $connectionbyidcreatorIt
+     *
+     * @return Chat
+     */
+    public function setConnectionbyidcreatorIt($connectionbyidcreatorIt)
+    {
+        $this->connectionbyidcreator_it = $connectionbyidcreatorIt;
+
+        return $this;
+    }
+
+    /**
+     * Get connectionbyidcreatorIt
+     *
+     * @return integer
+     */
+    public function getConnectionbyidcreatorIt()
+    {
+        return $this->connectionbyidcreator_it;
+    }
+
+    /**
+     * Set connectionbyidFr
+     *
+     * @param integer $connectionbyidFr
+     *
+     * @return Chat
+     */
+    public function setConnectionbyidFr($connectionbyidFr)
+    {
+        $this->connectionbyid_fr = $connectionbyidFr;
+
+        return $this;
+    }
+
+    /**
+     * Get connectionbyidFr
+     *
+     * @return integer
+     */
+    public function getConnectionbyidFr()
+    {
+        return $this->connectionbyid_fr;
+    }
+
+    /**
+     * Set connectionbyidIt
+     *
+     * @param integer $connectionbyidIt
+     *
+     * @return Chat
+     */
+    public function setConnectionbyidIt($connectionbyidIt)
+    {
+        $this->connectionbyid_it = $connectionbyidIt;
+
+        return $this;
+    }
+
+    /**
+     * Get connectionbyidIt
+     *
+     * @return integer
+     */
+    public function getConnectionbyidIt()
+    {
+        return $this->connectionbyid_it;
     }
 
     /**

@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Text
 {
 
+
     /**
      * @var integer
      */
@@ -16,12 +17,32 @@ class Text
     /**
      * @var string
      */
-    private $msg;
+    private $msg_fr;
+
+    /**
+     * @var string
+     */
+    private $msg_it;
 
     /**
      * @var \DateTime
      */
-    private $datecreation;
+    private $datecreation_fr;
+
+    /**
+     * @var \DateTime
+     */
+    private $datecreation_it;
+
+    /**
+     * @var string
+     */
+    private $profil_fr;
+
+    /**
+     * @var string
+     */
+    private $profil_it;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -34,7 +55,6 @@ class Text
     public function __construct()
     {
         $this->chats = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->datecreation = new \DateTime();
     }
 
     /**
@@ -48,51 +68,147 @@ class Text
     }
 
     /**
-     * Set msg
+     * Set msgFr
      *
-     * @param string $msg
+     * @param string $msgFr
      *
      * @return Text
      */
-    public function setMsg($msg)
+    public function setMsgFr($msgFr)
     {
-        $this->msg = $msg;
+        $this->msg_fr = $msgFr;
 
         return $this;
     }
 
     /**
-     * Get msg
+     * Get msgFr
      *
      * @return string
      */
-    public function getMsg()
+    public function getMsgFr()
     {
-        return $this->msg;
+        return $this->msg_fr;
     }
 
     /**
-     * Set datecreation
+     * Set msgIt
      *
-     * @param \DateTime $datecreation
+     * @param string $msgIt
      *
      * @return Text
      */
-    public function setDatecreation($datecreation)
+    public function setMsgIt($msgIt)
     {
-        $this->datecreation = $datecreation;
+        $this->msg_it = $msgIt;
 
         return $this;
     }
 
     /**
-     * Get datecreation
+     * Get msgIt
+     *
+     * @return string
+     */
+    public function getMsgIt()
+    {
+        return $this->msg_it;
+    }
+
+    /**
+     * Set datecreationFr
+     *
+     * @param \DateTime $datecreationFr
+     *
+     * @return Text
+     */
+    public function setDatecreationFr($datecreationFr)
+    {
+        $this->datecreation_fr = $datecreationFr;
+
+        return $this;
+    }
+
+    /**
+     * Get datecreationFr
      *
      * @return \DateTime
      */
-    public function getDatecreation()
+    public function getDatecreationFr()
     {
-        return $this->datecreation;
+        return $this->datecreation_fr;
+    }
+
+    /**
+     * Set datecreationIt
+     *
+     * @param \DateTime $datecreationIt
+     *
+     * @return Text
+     */
+    public function setDatecreationIt($datecreationIt)
+    {
+        $this->datecreation_it = $datecreationIt;
+
+        return $this;
+    }
+
+    /**
+     * Get datecreationIt
+     *
+     * @return \DateTime
+     */
+    public function getDatecreationIt()
+    {
+        return $this->datecreation_it;
+    }
+
+    /**
+     * Set profilFr
+     *
+     * @param string $profilFr
+     *
+     * @return Text
+     */
+    public function setProfilFr($profilFr)
+    {
+        $this->profil_fr = $profilFr;
+
+        return $this;
+    }
+
+    /**
+     * Get profilFr
+     *
+     * @return string
+     */
+    public function getProfilFr()
+    {
+        return $this->profil_fr;
+    }
+
+    /**
+     * Set profilIt
+     *
+     * @param string $profilIt
+     *
+     * @return Text
+     */
+    public function setProfilIt($profilIt)
+    {
+        $this->profil_it = $profilIt;
+
+        return $this;
+    }
+
+    /**
+     * Get profilIt
+     *
+     * @return string
+     */
+    public function getProfilIt()
+    {
+        return $this->profil_it;
     }
 
     /**
@@ -127,34 +243,5 @@ class Text
     public function getChats()
     {
         return $this->chats;
-    }
-    /**
-     * @var string
-     */
-    private $profil;
-
-
-    /**
-     * Set profil
-     *
-     * @param string $profil
-     *
-     * @return Text
-     */
-    public function setProfil($profil)
-    {
-        $this->profil = $profil;
-
-        return $this;
-    }
-
-    /**
-     * Get profil
-     *
-     * @return string
-     */
-    public function getProfil()
-    {
-        return $this->profil;
     }
 }

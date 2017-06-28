@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Dispo
 {
 
+
     /**
      * @var integer
      */
@@ -16,7 +17,12 @@ class Dispo
     /**
      * @var string
      */
-    private $dispo;
+    private $dispo_fr;
+
+    /**
+     * @var string
+     */
+    private $dispo_it;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -48,27 +54,51 @@ class Dispo
     }
 
     /**
-     * Set dispo
+     * Set dispoFr
      *
-     * @param string $dispo
+     * @param string $dispoFr
      *
      * @return Dispo
      */
-    public function setDispo($dispo)
+    public function setDispoFr($dispoFr)
     {
-        $this->dispo = $dispo;
+        $this->dispo_fr = $dispoFr;
 
         return $this;
     }
 
     /**
-     * Get dispo
+     * Get dispoFr
      *
      * @return string
      */
-    public function getDispo()
+    public function getDispoFr()
     {
-        return $this->dispo;
+        return $this->dispo_fr;
+    }
+
+    /**
+     * Set dispoIt
+     *
+     * @param string $dispoIt
+     *
+     * @return Dispo
+     */
+    public function setDispoIt($dispoIt)
+    {
+        $this->dispo_it = $dispoIt;
+
+        return $this;
+    }
+
+    /**
+     * Get dispoIt
+     *
+     * @return string
+     */
+    public function getDispoIt()
+    {
+        return $this->dispo_it;
     }
 
     /**

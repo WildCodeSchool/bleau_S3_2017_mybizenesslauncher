@@ -9,19 +9,18 @@ namespace MBLBundle\Repository;
  * repository methods below.
  */
 class ProfilRechercheRepository extends \Doctrine\ORM\EntityRepository
-{
-    public function myFindProject($profilId)
-    {
-        $qb = $this->createQueryBuilder('p');
-
-//        SELECT * FROM `projet_profil_recherche`
-// JOIN profil_recherche where profil_recherche.id =
-// projet_profil_recherche.profil_recherche_id and projet_profil_recherche.projet_id = 9
-        $qb->select('p')
-            ->where('p.projets = :projets')
-            ->setParameter('projets', $projectId);
-
-        return $qb->getQuery()->getResult();
-    }
-
+{/*
+//    public function myFindProject($profilId)
+//    {
+//        $qb = $this->createQueryBuilder('p');
+//
+////        SELECT * FROM `projet_profil_recherche`
+//// JOIN profil_recherche where profil_recherche.id =
+//// projet_profil_recherche.profil_recherche_id and projet_profil_recherche.projet_id = 9
+//        $qb->select('p')
+//            ->where('p.projets = :projets')
+//            ->setParameter('projets', $projectId);
+//
+//        return $qb->getQuery()->getResult();
+//    }*/
 }

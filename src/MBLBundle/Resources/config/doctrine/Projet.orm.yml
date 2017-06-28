@@ -9,24 +9,40 @@ MBLBundle\Entity\Projet:
             generator:
                 strategy: AUTO
     fields:
-        titre:
+        titreFr:
             type: string
             length: 255
-        description:
+        titreIt:
+            type: string
+            length: 255
+        description_fr:
             type: text
-        siteInternet:
+        description_it:
+            type: text
+        siteInternet_fr:
+            type: string
+            length: 255
+        siteInternet_it:
             type: string
             length: 255
             nullable: true
-        ebustaUrl:
+        ebustaUrl_fr:
             type: string
             length: 255
             nullable: true
-        localisation:
+        ebustaUrl_it:
+            type: string
+            length: 255
+            nullable: true
+        localisation_fr:
+            type: string
+            length: 255
+        localisation_it:
             type: string
             length: 255
         dateCreation:
             type: datetime
+
 
 
     lifecycleCallbacks: {  }

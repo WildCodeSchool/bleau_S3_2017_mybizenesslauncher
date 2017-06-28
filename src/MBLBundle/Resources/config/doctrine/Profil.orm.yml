@@ -8,25 +8,45 @@ MBLBundle\Entity\Profil:
             generator:
                 strategy: AUTO
     fields:
-        nom:
+        nom_fr:
             type: string
             length: 255
             nullable: true
-        prenom:
+        nom_it:
             type: string
             length: 255
             nullable: true
-        description:
+        prenom_fr:
+            type: string
+            length: 255
+            nullable: true
+        prenom_it:
+            type: string
+            length: 255
+            nullable: true
+        description_fr:
             type: text
             nullable: true
-        linkedIn:
+        description_it:
+            type: text
+            nullable: true
+        linkedIn_fr:
             type: string
             length: 255
             nullable: true
-        localisation:
+        linkedIn_it:
             type: string
             length: 255
             nullable: true
+        localisation_fr:
+            type: string
+            length: 255
+            nullable: true
+        localisation_it:
+            type: string
+            length: 255
+            nullable: true
+
 
     lifecycleCallbacks: {  }
 

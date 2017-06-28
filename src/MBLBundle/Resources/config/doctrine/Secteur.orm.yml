@@ -9,9 +9,13 @@ MBLBundle\Entity\Secteur:
             generator:
                 strategy: AUTO
     fields:
-        secteurActivite:
+        secteurActivite_fr:
             type: string
             length: 255
+        secteurActivite_it:
+            type: string
+            length: 255
+
     lifecycleCallbacks: {  }
 
     oneToMany:

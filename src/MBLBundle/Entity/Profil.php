@@ -20,35 +20,67 @@ class Profil extends BaseUser
 
     // Generated code
 
-    /**
-     * @var string
-     */
-    private $nom;
+
 
     /**
      * @var string
      */
-    private $prenom;
+    private $nom_fr;
 
     /**
      * @var string
      */
-    private $description;
+    private $nom_it;
 
     /**
      * @var string
      */
-    private $linkedIn;
+    private $prenom_fr;
 
     /**
      * @var string
      */
-    private $localisation;
+    private $prenom_it;
+
+    /**
+     * @var string
+     */
+    private $description_fr;
+
+    /**
+     * @var string
+     */
+    private $description_it;
+
+    /**
+     * @var string
+     */
+    private $linkedIn_fr;
+
+    /**
+     * @var string
+     */
+    private $linkedIn_it;
+
+    /**
+     * @var string
+     */
+    private $localisation_fr;
+
+    /**
+     * @var string
+     */
+    private $localisation_it;
 
     /**
      * @var \MBLBundle\Entity\Invest
      */
     private $invest;
+
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
 
     /**
      * @var \MBLBundle\Entity\ETQ
@@ -87,123 +119,243 @@ class Profil extends BaseUser
 
 
     /**
-     * Set nom
+     * Set nomFr
      *
-     * @param string $nom
+     * @param string $nomFr
      *
      * @return Profil
      */
-    public function setNom($nom)
+    public function setNomFr($nomFr)
     {
-        $this->nom = $nom;
+        $this->nom_fr = $nomFr;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get nomFr
      *
      * @return string
      */
-    public function getNom()
+    public function getNomFr()
     {
-        return $this->nom;
+        return $this->nom_fr;
     }
 
     /**
-     * Set prenom
+     * Set nomIt
      *
-     * @param string $prenom
+     * @param string $nomIt
      *
      * @return Profil
      */
-    public function setPrenom($prenom)
+    public function setNomIt($nomIt)
     {
-        $this->prenom = $prenom;
+        $this->nom_it = $nomIt;
 
         return $this;
     }
 
     /**
-     * Get prenom
+     * Get nomIt
      *
      * @return string
      */
-    public function getPrenom()
+    public function getNomIt()
     {
-        return $this->prenom;
+        return $this->nom_it;
     }
 
     /**
-     * Set description
+     * Set prenomFr
      *
-     * @param string $description
+     * @param string $prenomFr
      *
      * @return Profil
      */
-    public function setDescription($description)
+    public function setPrenomFr($prenomFr)
     {
-        $this->description = $description;
+        $this->prenom_fr = $prenomFr;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get prenomFr
      *
      * @return string
      */
-    public function getDescription()
+    public function getPrenomFr()
     {
-        return $this->description;
+        return $this->prenom_fr;
     }
 
     /**
-     * Set linkedIn
+     * Set prenomIt
      *
-     * @param string $linkedIn
+     * @param string $prenomIt
      *
      * @return Profil
      */
-    public function setLinkedIn($linkedIn)
+    public function setPrenomIt($prenomIt)
     {
-        $this->linkedIn = $linkedIn;
+        $this->prenom_it = $prenomIt;
 
         return $this;
     }
 
     /**
-     * Get linkedIn
+     * Get prenomIt
      *
      * @return string
      */
-    public function getLinkedIn()
+    public function getPrenomIt()
     {
-        return $this->linkedIn;
+        return $this->prenom_it;
     }
 
     /**
-     * Set localisation
+     * Set descriptionFr
      *
-     * @param string $localisation
+     * @param string $descriptionFr
      *
      * @return Profil
      */
-    public function setLocalisation($localisation)
+    public function setDescriptionFr($descriptionFr)
     {
-        $this->localisation = $localisation;
+        $this->description_fr = $descriptionFr;
 
         return $this;
     }
 
     /**
-     * Get localisation
+     * Get descriptionFr
      *
      * @return string
      */
-    public function getLocalisation()
+    public function getDescriptionFr()
     {
-        return $this->localisation;
+        return $this->description_fr;
+    }
+
+    /**
+     * Set descriptionIt
+     *
+     * @param string $descriptionIt
+     *
+     * @return Profil
+     */
+    public function setDescriptionIt($descriptionIt)
+    {
+        $this->description_it = $descriptionIt;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptionIt
+     *
+     * @return string
+     */
+    public function getDescriptionIt()
+    {
+        return $this->description_it;
+    }
+
+    /**
+     * Set linkedInFr
+     *
+     * @param string $linkedInFr
+     *
+     * @return Profil
+     */
+    public function setLinkedInFr($linkedInFr)
+    {
+        $this->linkedIn_fr = $linkedInFr;
+
+        return $this;
+    }
+
+    /**
+     * Get linkedInFr
+     *
+     * @return string
+     */
+    public function getLinkedInFr()
+    {
+        return $this->linkedIn_fr;
+    }
+
+    /**
+     * Set linkedInIt
+     *
+     * @param string $linkedInIt
+     *
+     * @return Profil
+     */
+    public function setLinkedInIt($linkedInIt)
+    {
+        $this->linkedIn_it = $linkedInIt;
+
+        return $this;
+    }
+
+    /**
+     * Get linkedInIt
+     *
+     * @return string
+     */
+    public function getLinkedInIt()
+    {
+        return $this->linkedIn_it;
+    }
+
+    /**
+     * Set localisationFr
+     *
+     * @param string $localisationFr
+     *
+     * @return Profil
+     */
+    public function setLocalisationFr($localisationFr)
+    {
+        $this->localisation_fr = $localisationFr;
+
+        return $this;
+    }
+
+    /**
+     * Get localisationFr
+     *
+     * @return string
+     */
+    public function getLocalisationFr()
+    {
+        return $this->localisation_fr;
+    }
+
+    /**
+     * Set localisationIt
+     *
+     * @param string $localisationIt
+     *
+     * @return Profil
+     */
+    public function setLocalisationIt($localisationIt)
+    {
+        $this->localisation_it = $localisationIt;
+
+        return $this;
+    }
+
+    /**
+     * Get localisationIt
+     *
+     * @return string
+     */
+    public function getLocalisationIt()
+    {
+        return $this->localisation_it;
     }
 
     /**
@@ -228,6 +380,30 @@ class Profil extends BaseUser
     public function getInvest()
     {
         return $this->invest;
+    }
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Profil
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
     }
 
     /**
@@ -426,34 +602,5 @@ class Profil extends BaseUser
     public function getChats()
     {
         return $this->chats;
-    }
-    /**
-     * @var \MBLBundle\Entity\Fichier
-     */
-    private $fichier;
-
-
-    /**
-     * Set fichier
-     *
-     * @param \MBLBundle\Entity\Fichier $fichier
-     *
-     * @return Profil
-     */
-    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
-    {
-        $this->fichier = $fichier;
-
-        return $this;
-    }
-
-    /**
-     * Get fichier
-     *
-     * @return \MBLBundle\Entity\Fichier
-     */
-    public function getFichier()
-    {
-        return $this->fichier;
     }
 }

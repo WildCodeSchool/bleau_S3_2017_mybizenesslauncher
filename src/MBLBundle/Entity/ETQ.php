@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class ETQ
 {
 
+
     /**
      * @var integer
      */
@@ -16,7 +17,12 @@ class ETQ
     /**
      * @var string
      */
-    private $etq;
+    private $etq_fr;
+
+    /**
+     * @var string
+     */
+    private $etq_it;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -48,27 +54,51 @@ class ETQ
     }
 
     /**
-     * Set etq
+     * Set etqFr
      *
-     * @param string $etq
+     * @param string $etqFr
      *
      * @return ETQ
      */
-    public function setEtq($etq)
+    public function setEtqFr($etqFr)
     {
-        $this->etq = $etq;
+        $this->etq_fr = $etqFr;
 
         return $this;
     }
 
     /**
-     * Get etq
+     * Get etqFr
      *
      * @return string
      */
-    public function getEtq()
+    public function getEtqFr()
     {
-        return $this->etq;
+        return $this->etq_fr;
+    }
+
+    /**
+     * Set etqIt
+     *
+     * @param string $etqIt
+     *
+     * @return ETQ
+     */
+    public function setEtqIt($etqIt)
+    {
+        $this->etq_it = $etqIt;
+
+        return $this;
+    }
+
+    /**
+     * Get etqIt
+     *
+     * @return string
+     */
+    public function getEtqIt()
+    {
+        return $this->etq_it;
     }
 
     /**

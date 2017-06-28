@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Ou
 {
 
+
     /**
      * @var integer
      */
@@ -16,7 +17,12 @@ class Ou
     /**
      * @var string
      */
-    private $ou;
+    private $ou_fr;
+
+    /**
+     * @var string
+     */
+    private $ou_it;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -48,27 +54,51 @@ class Ou
     }
 
     /**
-     * Set ou
+     * Set ouFr
      *
-     * @param string $ou
+     * @param string $ouFr
      *
      * @return Ou
      */
-    public function setOu($ou)
+    public function setOuFr($ouFr)
     {
-        $this->ou = $ou;
+        $this->ou_fr = $ouFr;
 
         return $this;
     }
 
     /**
-     * Get ou
+     * Get ouFr
      *
      * @return string
      */
-    public function getOu()
+    public function getOuFr()
     {
-        return $this->ou;
+        return $this->ou_fr;
+    }
+
+    /**
+     * Set ouIt
+     *
+     * @param string $ouIt
+     *
+     * @return Ou
+     */
+    public function setOuIt($ouIt)
+    {
+        $this->ou_it = $ouIt;
+
+        return $this;
+    }
+
+    /**
+     * Get ouIt
+     *
+     * @return string
+     */
+    public function getOuIt()
+    {
+        return $this->ou_it;
     }
 
     /**

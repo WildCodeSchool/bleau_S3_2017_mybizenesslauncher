@@ -7,6 +7,9 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
+
+
+
     /**
      * @var integer
      */
@@ -15,27 +18,52 @@ class Projet
     /**
      * @var string
      */
-    private $titre;
+    private $titreFr;
 
     /**
      * @var string
      */
-    private $description;
+    private $titreIt;
 
     /**
      * @var string
      */
-    private $siteInternet;
+    private $description_fr;
 
     /**
      * @var string
      */
-    private $ebustaUrl;
+    private $description_it;
 
     /**
      * @var string
      */
-    private $localisation;
+    private $siteInternet_fr;
+
+    /**
+     * @var string
+     */
+    private $siteInternet_it;
+
+    /**
+     * @var string
+     */
+    private $ebustaUrl_fr;
+
+    /**
+     * @var string
+     */
+    private $ebustaUrl_it;
+
+    /**
+     * @var string
+     */
+    private $localisation_fr;
+
+    /**
+     * @var string
+     */
+    private $localisation_it;
 
     /**
      * @var \DateTime
@@ -46,6 +74,11 @@ class Projet
      * @var \MBLBundle\Entity\Secteur
      */
     private $secteur;
+
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
 
     /**
      * @var \MBLBundle\Entity\TypeDeProjet
@@ -69,7 +102,6 @@ class Projet
     {
         $this->profilsrecherches = new \Doctrine\Common\Collections\ArrayCollection();
         $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
-
     }
 
     /**
@@ -83,123 +115,243 @@ class Projet
     }
 
     /**
-     * Set titre
+     * Set titreFr
      *
-     * @param string $titre
+     * @param string $titreFr
      *
      * @return Projet
      */
-    public function setTitre($titre)
+    public function setTitreFr($titreFr)
     {
-        $this->titre = $titre;
+        $this->titreFr = $titreFr;
 
         return $this;
     }
 
     /**
-     * Get titre
+     * Get titreFr
      *
      * @return string
      */
-    public function getTitre()
+    public function getTitreFr()
     {
-        return $this->titre;
+        return $this->titreFr;
     }
 
     /**
-     * Set description
+     * Set titreIt
      *
-     * @param string $description
+     * @param string $titreIt
      *
      * @return Projet
      */
-    public function setDescription($description)
+    public function setTitreIt($titreIt)
     {
-        $this->description = $description;
+        $this->titreIt = $titreIt;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get titreIt
      *
      * @return string
      */
-    public function getDescription()
+    public function getTitreIt()
     {
-        return $this->description;
+        return $this->titreIt;
     }
 
     /**
-     * Set siteInternet
+     * Set descriptionFr
      *
-     * @param string $siteInternet
+     * @param string $descriptionFr
      *
      * @return Projet
      */
-    public function setSiteInternet($siteInternet)
+    public function setDescriptionFr($descriptionFr)
     {
-        $this->siteInternet = $siteInternet;
+        $this->description_fr = $descriptionFr;
 
         return $this;
     }
 
     /**
-     * Get siteInternet
+     * Get descriptionFr
      *
      * @return string
      */
-    public function getSiteInternet()
+    public function getDescriptionFr()
     {
-        return $this->siteInternet;
+        return $this->description_fr;
     }
 
     /**
-     * Set ebustaUrl
+     * Set descriptionIt
      *
-     * @param string $ebustaUrl
+     * @param string $descriptionIt
      *
      * @return Projet
      */
-    public function setEbustaUrl($ebustaUrl)
+    public function setDescriptionIt($descriptionIt)
     {
-        $this->ebustaUrl = $ebustaUrl;
+        $this->description_it = $descriptionIt;
 
         return $this;
     }
 
     /**
-     * Get ebustaUrl
+     * Get descriptionIt
      *
      * @return string
      */
-    public function getEbustaUrl()
+    public function getDescriptionIt()
     {
-        return $this->ebustaUrl;
+        return $this->description_it;
     }
 
     /**
-     * Set localisation
+     * Set siteInternetFr
      *
-     * @param string $localisation
+     * @param string $siteInternetFr
      *
      * @return Projet
      */
-    public function setLocalisation($localisation)
+    public function setSiteInternetFr($siteInternetFr)
     {
-        $this->localisation = $localisation;
+        $this->siteInternet_fr = $siteInternetFr;
 
         return $this;
     }
 
     /**
-     * Get localisation
+     * Get siteInternetFr
      *
      * @return string
      */
-    public function getLocalisation()
+    public function getSiteInternetFr()
     {
-        return $this->localisation;
+        return $this->siteInternet_fr;
+    }
+
+    /**
+     * Set siteInternetIt
+     *
+     * @param string $siteInternetIt
+     *
+     * @return Projet
+     */
+    public function setSiteInternetIt($siteInternetIt)
+    {
+        $this->siteInternet_it = $siteInternetIt;
+
+        return $this;
+    }
+
+    /**
+     * Get siteInternetIt
+     *
+     * @return string
+     */
+    public function getSiteInternetIt()
+    {
+        return $this->siteInternet_it;
+    }
+
+    /**
+     * Set ebustaUrlFr
+     *
+     * @param string $ebustaUrlFr
+     *
+     * @return Projet
+     */
+    public function setEbustaUrlFr($ebustaUrlFr)
+    {
+        $this->ebustaUrl_fr = $ebustaUrlFr;
+
+        return $this;
+    }
+
+    /**
+     * Get ebustaUrlFr
+     *
+     * @return string
+     */
+    public function getEbustaUrlFr()
+    {
+        return $this->ebustaUrl_fr;
+    }
+
+    /**
+     * Set ebustaUrlIt
+     *
+     * @param string $ebustaUrlIt
+     *
+     * @return Projet
+     */
+    public function setEbustaUrlIt($ebustaUrlIt)
+    {
+        $this->ebustaUrl_it = $ebustaUrlIt;
+
+        return $this;
+    }
+
+    /**
+     * Get ebustaUrlIt
+     *
+     * @return string
+     */
+    public function getEbustaUrlIt()
+    {
+        return $this->ebustaUrl_it;
+    }
+
+    /**
+     * Set localisationFr
+     *
+     * @param string $localisationFr
+     *
+     * @return Projet
+     */
+    public function setLocalisationFr($localisationFr)
+    {
+        $this->localisation_fr = $localisationFr;
+
+        return $this;
+    }
+
+    /**
+     * Get localisationFr
+     *
+     * @return string
+     */
+    public function getLocalisationFr()
+    {
+        return $this->localisation_fr;
+    }
+
+    /**
+     * Set localisationIt
+     *
+     * @param string $localisationIt
+     *
+     * @return Projet
+     */
+    public function setLocalisationIt($localisationIt)
+    {
+        $this->localisation_it = $localisationIt;
+
+        return $this;
+    }
+
+    /**
+     * Get localisationIt
+     *
+     * @return string
+     */
+    public function getLocalisationIt()
+    {
+        return $this->localisation_it;
     }
 
     /**
@@ -248,6 +400,30 @@ class Projet
     public function getSecteur()
     {
         return $this->secteur;
+    }
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Projet
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
     }
 
     /**
@@ -340,35 +516,5 @@ class Projet
     public function getProfils()
     {
         return $this->profils;
-    }
-
-    /**
-     * @var \MBLBundle\Entity\Fichier
-     */
-    private $fichier;
-
-
-    /**
-     * Set fichier
-     *
-     * @param \MBLBundle\Entity\Fichier $fichier
-     *
-     * @return Projet
-     */
-    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
-    {
-        $this->fichier = $fichier;
-
-        return $this;
-    }
-
-    /**
-     * Get fichier
-     *
-     * @return \MBLBundle\Entity\Fichier
-     */
-    public function getFichier()
-    {
-        return $this->fichier;
     }
 }

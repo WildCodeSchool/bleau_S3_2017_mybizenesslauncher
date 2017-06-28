@@ -9,9 +9,13 @@ MBLBundle\Entity\TypeDeProjet:
             generator:
                 strategy: AUTO
     fields:
-        typeDeProjet:
+        typeDeProjet_fr:
             type: string
             length: 255
+        typeDeProjet_it:
+            type: string
+            length: 255
+
 
     lifecycleCallbacks: {  }
 

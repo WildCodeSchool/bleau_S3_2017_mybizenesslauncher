@@ -17,7 +17,12 @@ class Invest
     /**
      * @var string
      */
-    private $invest;
+    private $invest_fr;
+
+    /**
+     * @var string
+     */
+    private $invest_it;
 
     /**
      * @var \MBLBundle\Entity\Profil
@@ -48,27 +53,51 @@ class Invest
     }
 
     /**
-     * Set invest
+     * Set investFr
      *
-     * @param string $invest
+     * @param string $investFr
      *
      * @return Invest
      */
-    public function setInvest($invest)
+    public function setInvestFr($investFr)
     {
-        $this->invest = $invest;
+        $this->invest_fr = $investFr;
 
         return $this;
     }
 
     /**
-     * Get invest
+     * Get investFr
      *
      * @return string
      */
-    public function getInvest()
+    public function getInvestFr()
     {
-        return $this->invest;
+        return $this->invest_fr;
+    }
+
+    /**
+     * Set investIt
+     *
+     * @param string $investIt
+     *
+     * @return Invest
+     */
+    public function setInvestIt($investIt)
+    {
+        $this->invest_it = $investIt;
+
+        return $this;
+    }
+
+    /**
+     * Get investIt
+     *
+     * @return string
+     */
+    public function getInvestIt()
+    {
+        return $this->invest_it;
     }
 
     /**

@@ -76,6 +76,8 @@ Supprimer: Rimuovere
 
 'Modifier mon profil': Modifica Profilo
 'Voir mon profil public': Visualizza il mio profilo pubblico
+Enregistrez: Salvare
+
 
 {# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
 
