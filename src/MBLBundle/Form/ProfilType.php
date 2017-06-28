@@ -28,7 +28,7 @@ class ProfilType extends AbstractType
             ->add('prenom', TextType::class, array('required' => true))
             ->add('description', TextareaType::class)
             ->add('linkedIn', UrlType::class, array(
-                'default_protocol' => 'http'
+                'required' => false
             ))
             ->add('localisation')
             ->add('metier', EntityType::class,
@@ -84,7 +84,9 @@ class ProfilType extends AbstractType
                     'expanded'=> false,
                     'required' => false
                 ))
-            ->add('fichier', FichierType::class)
+            ->add('fichier', FichierType::class, array(
+                'required' => false
+            ))
         ;
     }
     

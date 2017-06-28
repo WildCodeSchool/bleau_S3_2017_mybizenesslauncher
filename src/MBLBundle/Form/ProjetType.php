@@ -30,7 +30,6 @@ class ProjetType extends AbstractType
             ))
             ->add('ebustaUrl', UrlType::class, array(
                 'required' => false,
-                'default_protocol' => 'http'
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
