@@ -27,7 +27,7 @@ class RegistrationType extends AbstractType
                 ->add('prenom')
                 ->remove('username')
                 ->add('description')
-                ->add('linkedin')
+                ->add('linkedin', UrlType::class)
                 ->add('localisation')
                 ->add('metier', EntityType::class,
                               array(

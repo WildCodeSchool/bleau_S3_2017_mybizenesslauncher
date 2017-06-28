@@ -1,8 +1,8 @@
 @import "global";
 
 #oneProject {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 
   .presProjet {
     padding: 0;
@@ -13,14 +13,15 @@
     font-style: italic;
   }
   a.site {
-color: darkcyan;
+    color: darkcyan;
   }
   a.site:hover{
     color: darkslategray;
     text-decoration: underline;
-
   }
-
+  //.linkedIn {
+  //  align-items: center;
+  //}
   .cartepro {
     border: none;
     background-color: $Colorblue;

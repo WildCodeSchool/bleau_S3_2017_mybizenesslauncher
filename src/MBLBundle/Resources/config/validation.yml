@@ -1,12 +1,12 @@
-# src/MBLBundle/Resources/config/validation.yml
-MBLBundle\Entity\Projet:
-    properties:
-        bioUrl:
-            - Url: { protocols: [http, https] }
-                message: L'URL "{{ value }}" n'est pas une URL valide; veuillez respecter la forme http://www.site.com
-
-MBLBundle\Entity\Profil:
-    properties:
-        bioUrl:
-            - Url: { protocols: [http, https] }
-                message: L'URL "{{ value }}" n'est pas une URL valide; veuillez respecter la forme http://www.site.com
+## src/MBLBundle/Resources/config/validation.yml
+#MBLBundle\Entity\Projet:
+#    properties:
+#        bioUrl:
+#            - Url: ~
+#
+#
+#MBLBundle\Entity\Profil:
+#    properties:
+#        bioUrl:
+#            - Url: ~
+#
