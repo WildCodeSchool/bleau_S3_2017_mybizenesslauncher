@@ -15,6 +15,8 @@
 /vendor/
 /web/bundles/
 .sass-cache
+<<<<<<< HEAD
 !/web/bundles/mbl/img/linkedIn.png
 /web/uploads/
 !/web/bundles/
+
