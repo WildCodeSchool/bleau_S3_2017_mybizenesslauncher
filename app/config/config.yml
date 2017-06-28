@@ -83,7 +83,7 @@ fos_user:
         form:
             type: MBLBundle\Form\RegistrationType
         confirmation:
-            enabled: true
+            enabled: false
             template:   '@FOSUser/Registration/email.txt.twig'
 
     resetting:
