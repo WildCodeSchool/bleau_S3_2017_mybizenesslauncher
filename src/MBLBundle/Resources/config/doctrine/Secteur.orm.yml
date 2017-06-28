@@ -9,10 +9,10 @@ MBLBundle\Entity\Secteur:
             generator:
                 strategy: AUTO
     fields:
-        secteurActivite_fr:
+        secteurActiviteFr:
             type: string
             length: 255
-        secteurActivite_it:
+        secteurActiviteIt:
             type: string
             length: 255
 

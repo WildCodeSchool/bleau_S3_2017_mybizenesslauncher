@@ -2,7 +2,8 @@
 
 {% block titreH2 %} <h2>{{ 'Parcourir les profils'|trans }}</h2> {% endblock %}
 {% block body %}
-<div class="showAllProfils">
+    <div class="showAllProfils">
+    <div class="container-fluid">
         <div class="box_projet">
             {% for flashMessage in app.session.flashbag.get('error') %}
 
@@ -12,39 +13,68 @@
             <div class="row">
 
                 {% for pro in profils %}
-                    <div class="col l2 m3 s4 vignette_projet">
-                        <div class="content z-depth-5">
-                            <div class="row vignette">
+                    <a href="{{ path('showProfil', {'id': pro.id}) }}">
+                        <div class="col l2 m3 s6 vignette_projet  z-depth-5">
+                            <div class="row vignette ">
                                 <div class="col s12">
+<<<<<<< HEAD
                                     <h4>{{ 'Nom et prénom :'|trans }} {{ pro.nom }}{{ pro.prenom }}</h4>
+=======
+                                    {% if pro.nom|length > 10 %}
+                                        <h4>{{ pro.nom|slice(0,8) ~ '...'  }}</h4>
+                                    {% else  %}
+                                        <h4>{{ pro.nom }}</h4>
+                                    {% endif %}
+>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
-                                    <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                    {% if pro.fichier is null %}
+                                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                    {% else %}
+                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h5>Profil</h5>
-                                    {% if pro.metier.metier is defined %}
-                                        <p>{{ pro.metier.metier}}</p>
-                                        {% endif %}
-
+                                    <h6>Profil</h6>
+                                    {% if pro.metier == null  %}
+                                        {{ pro.metier }}
+                                    {% endif %}
                                 </div>
                                 <div class="col s12">
+                                    <h6>Compétences</h6>
+                                    {% for comp in pro.competences %}
+                                        {{ comp.competences}}
+                                    {% endfor %}
+                                </div>
+                                <div class="col s12">
+<<<<<<< HEAD
                                     <h5>{{ 'Localisation'|trans }}</h5>
                                     <p>{{ pro.localisation }}</p>
                                 </div>
                                 <div class="col s12">
                                     <h5>{{ 'Description'|trans }}</h5>
+=======
+                                    <h6>Localisation</h6>
+                                    <p>{{ pro.localisation }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Description</h6>
+>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                                     <p>{{ pro.description }}</p>
                                 </div>
                                 {% if app.user.id == pro.id %}
-                                    {% else %}
-                                <a href="{{ path('chatConnect', {'id': pro.id}) }}">connectez-vous</a>
-                                        {% endif %}
+                                {% else %}
+                                    <div class="col s12">
+                                        <a href="{{ path('chatConnect', {'id': pro.id}) }}">connectez-vous</a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
-                    </div>
+
+
+                    </a>
 
                 {% endfor %}
 

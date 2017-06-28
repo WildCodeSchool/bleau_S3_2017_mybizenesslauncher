@@ -19,6 +19,17 @@ chat.html.twig
   {
     background-color: $Colorgrey;
   }
+  .chat_box_user {
+
+    border: 2px solid $Colorblue;
+    border-radius: 10px;
+    color: $Colorgrey;
+    height: 80px;
+    margin-top: 5px;
+    background-color: $Colorblue;
+
+  }
+
   //#chat_box a {
   //  border: 1px solid #c8c8c8;
   //  border-radius: 10px;

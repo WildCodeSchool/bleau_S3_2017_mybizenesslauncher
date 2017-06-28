@@ -17,12 +17,12 @@ class Dispo
     /**
      * @var string
      */
-    private $dispo_fr;
+    private $dispoFr;
 
     /**
      * @var string
      */
-    private $dispo_it;
+    private $dispoIt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -62,7 +62,7 @@ class Dispo
      */
     public function setDispoFr($dispoFr)
     {
-        $this->dispo_fr = $dispoFr;
+        $this->dispoFr = $dispoFr;
 
         return $this;
     }
@@ -74,7 +74,7 @@ class Dispo
      */
     public function getDispoFr()
     {
-        return $this->dispo_fr;
+        return $this->dispoFr;
     }
 
     /**
@@ -86,7 +86,7 @@ class Dispo
      */
     public function setDispoIt($dispoIt)
     {
-        $this->dispo_it = $dispoIt;
+        $this->dispoIt = $dispoIt;
 
         return $this;
     }
@@ -98,7 +98,7 @@ class Dispo
      */
     public function getDispoIt()
     {
-        return $this->dispo_it;
+        return $this->dispoIt;
     }
 
     /**

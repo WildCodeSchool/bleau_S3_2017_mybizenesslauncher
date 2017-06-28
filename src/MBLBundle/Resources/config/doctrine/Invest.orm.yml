@@ -9,10 +9,10 @@ MBLBundle\Entity\Invest:
             generator:
                 strategy: AUTO
     fields:
-        invest_fr:
+        investFr:
             type: string
             length: 255
-        invest_it:
+        investIt:
             type: string
             length: 255
     lifecycleCallbacks: {  }

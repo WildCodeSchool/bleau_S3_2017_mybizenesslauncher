@@ -4,15 +4,10 @@ Variable globale
 
 CONSTANTE
 */
-/* line 12, ../sass/_global.scss */
-img {
-  width: 100%;
-}
-
 /*
 Font
 */
-/* line 20, ../sass/_global.scss */
+/* line 19, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -22,13 +17,13 @@ Variable globale
 
 BALISE
 */
-/* line 30, ../sass/_global.scss */
+/* line 29, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 35, ../sass/_global.scss */
+/* line 34, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,15 +40,73 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 50, ../sass/_global.scss */
+/* line 49, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 55, ../sass/_global.scss */
+/* line 54, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
+}
+
+/* line 59, ../sass/_global.scss */
+a {
+  color: inherit;
+}
+
+/* line 62, ../sass/_global.scss */
+.vignette_projet {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid #f0f0f0;
+  max-width: 300px;
+}
+
+/* line 73, ../sass/_global.scss */
+.vignette_projet:hover {
+  background-color: #f0f0f0;
+}
+
+/* line 76, ../sass/_global.scss */
+.info_projet {
+  border-radius: 8px;
+  overflow: scroll;
+}
+
+/* line 80, ../sass/_global.scss */
+.vignette {
+  border-radius: 8px;
+}
+
+/* line 83, ../sass/_global.scss */
+.photo_profil {
+  border-radius: 8px;
+}
+
+/* line 87, ../sass/_global.scss */
+.photo_profil img {
+  height: 7em;
+  max-width: 120px;
+  max-height: 100px;
+}
+
+/* line 92, ../sass/_global.scss */
+.photo_profil, .info_projet, .info_profil {
+  background: white;
+}
+
+/* line 97, ../sass/_global.scss */
+.info_projet {
+  height: 16em;
+}
+
+/* line 100, ../sass/_global.scss */
+h6 {
+  font-weight: bold;
 }
 
 /* 2. INDEX */
@@ -98,39 +151,6 @@ body {
 #index .box_projet_profil * {
   text-align: center;
 }
-/* line 38, ../sass/_index.scss */
-#index .box_projet_profil * .vignette_projet {
-  background-color: #4b494b;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  height: 650px;
-}
-/* line 44, ../sass/_index.scss */
-#index .box_projet_profil * .vignette_profil {
-  background-color: #98d4e1;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  height: 650px;
-}
-/* line 51, ../sass/_index.scss */
-#index .box_projet_profil * .info_projet, #index .box_projet_profil * .info_profil {
-  border-radius: 8px;
-}
-/* line 54, ../sass/_index.scss */
-#index .box_projet_profil * .vignette {
-  border-radius: 8px;
-}
-/* line 57, ../sass/_index.scss */
-#index .box_projet_profil * .photo_profil {
-  border-radius: 8px;
-  padding: 10px;
-}
-/* line 62, ../sass/_index.scss */
-#index .photo_profil, #index .info_projet, #index .info_profil {
-  background: white;
-  margin-bottom: 10px;
-  height: 60%;
-}
 
 /* 3. LAYOUT */
 /*
@@ -141,12 +161,12 @@ Layout.html.twig
   background-color: #f0f0f0;
 }
 
-/* line 9, ../sass/_layout.scss */
+/* line 10, ../sass/_layout.scss */
 .footer {
   background-color: #4b494b;
 }
 
-/* line 13, ../sass/_layout.scss */
+/* line 14, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -155,12 +175,12 @@ Layout.html.twig
   padding-top: 5px;
 }
 
-/* line 25, ../sass/_layout.scss */
+/* line 26, ../sass/_layout.scss */
 .color {
   color: #98d4e1;
 }
 
-/* line 29, ../sass/_layout.scss */
+/* line 30, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
 }
@@ -211,36 +231,6 @@ Layout.html.twig
 /* line 11, ../sass/_showProject.scss */
 .showProjet .box_projet * {
   text-align: center;
-  height: 100%;
-}
-/* line 14, ../sass/_showProject.scss */
-.showProjet .box_projet * .vignette_projet {
-  padding: 2%;
-  height: 100%;
-}
-/* line 18, ../sass/_showProject.scss */
-.showProjet .box_projet * .vignette_projet .content {
-  background-color: #4b494b;
-  border-radius: 8px;
-}
-/* line 23, ../sass/_showProject.scss */
-.showProjet .box_projet * .info_projet {
-  border-radius: 8px;
-  margin: 15px;
-}
-/* line 27, ../sass/_showProject.scss */
-.showProjet .box_projet * .vignette {
-  border-radius: 8px;
-}
-/* line 30, ../sass/_showProject.scss */
-.showProjet .box_projet * .photo_profil {
-  border-radius: 8px;
-  padding: 10px;
-}
-/* line 34, ../sass/_showProject.scss */
-.showProjet .box_projet * .photo_profil, .showProjet .box_projet * .info_projet, .showProjet .box_projet * .info_profil {
-  background: white;
-  height: 60%;
 }
 
 /* line 3, ../sass/_showMyProject.scss */
@@ -255,7 +245,7 @@ Layout.html.twig
 /* line 8, ../sass/_showMyProject.scss */
 .showMyProjet .box_projet * .vignette_projet {
   padding: 2%;
-  height: 100%;
+  height: 30em;
 }
 /* line 12, ../sass/_showMyProject.scss */
 .showMyProjet .box_projet * .vignette_projet .content {
@@ -513,43 +503,9 @@ input[type=search], textarea.materialize-textarea {
   text-align: center;
 }
 
-/* line 2, ../sass/_showAllProfils.scss */
-.showAllProfils {
-  height: 100%;
-}
 /* line 4, ../sass/_showAllProfils.scss */
 .showAllProfils .box_projet * {
   text-align: center;
-  height: 100%;
-}
-/* line 7, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * .vignette_projet {
-  padding: 2%;
-  height: 100%;
-}
-/* line 11, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * .vignette_projet .content {
-  background-color: #4b494b;
-  border-radius: 8px;
-}
-/* line 16, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * .info_projet {
-  border-radius: 8px;
-  margin: 15px;
-}
-/* line 20, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * .vignette {
-  border-radius: 8px;
-}
-/* line 23, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * .photo_profil {
-  border-radius: 8px;
-  padding: 10px;
-}
-/* line 27, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * .photo_profil, .showAllProfils .box_projet * .info_projet, .showAllProfils .box_projet * .info_profil {
-  background: white;
-  height: 60%;
 }
 
 /*
@@ -572,30 +528,39 @@ chat.html.twig
 #chat .chat_box:hover {
   background-color: #f0f0f0;
 }
-/* line 28, ../sass/_chat.scss */
+/* line 22, ../sass/_chat.scss */
+#chat .chat_box_user {
+  border: 2px solid #98d4e1;
+  border-radius: 10px;
+  color: #f0f0f0;
+  height: 80px;
+  margin-top: 5px;
+  background-color: #98d4e1;
+}
+/* line 39, ../sass/_chat.scss */
 #chat #chat_text {
   color: #4b494b;
   margin-top: 5px;
   border: 2px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 36, ../sass/_chat.scss */
+/* line 47, ../sass/_chat.scss */
 #chat .Nom_prenom p {
   color: #4b494b;
   font-size: 1.1em;
 }
-/* line 42, ../sass/_chat.scss */
+/* line 53, ../sass/_chat.scss */
 #chat .color-text {
   border: 1px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 49, ../sass/_chat.scss */
+/* line 60, ../sass/_chat.scss */
 #chat .color-text-user {
   border: 1px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 78, ../sass/_chat.scss */
+/* line 89, ../sass/_chat.scss */
 #chat .group-text {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -618,8 +583,6 @@ chat.html.twig
 }
 /* line 16, ../sass/_chatConnection.scss */
 #chat_connection .Nom_prenom p {
-
-  size: 1em;
   margin-left: 50px;
   color: #4b494b;
   font-size: 1.2em;
@@ -627,7 +590,6 @@ chat.html.twig
 /* line 22, ../sass/_chatConnection.scss */
 #chat_connection .image img {
   height: 80px;
-
 }
 /* line 51, ../sass/_chatConnection.scss */
 #chat_connection .group-text {

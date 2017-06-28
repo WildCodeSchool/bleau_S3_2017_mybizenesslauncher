@@ -9,10 +9,10 @@ MBLBundle\Entity\ETQ:
             generator:
                 strategy: AUTO
     fields:
-        etq_fr:
+        etqFr:
             type: string
             length: 255
-        etq_it:
+        etqIt:
             type: string
             length: 255
     lifecycleCallbacks: {  }

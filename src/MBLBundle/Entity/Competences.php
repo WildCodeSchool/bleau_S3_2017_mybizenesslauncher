@@ -17,12 +17,12 @@ class Competences
     /**
      * @var string
      */
-    private $competences_fr;
+    private $competencesFr;
 
     /**
      * @var string
      */
-    private $competences_it;
+    private $competencesIt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -62,7 +62,7 @@ class Competences
      */
     public function setCompetencesFr($competencesFr)
     {
-        $this->competences_fr = $competencesFr;
+        $this->competencesFr = $competencesFr;
 
         return $this;
     }
@@ -74,7 +74,7 @@ class Competences
      */
     public function getCompetencesFr()
     {
-        return $this->competences_fr;
+        return $this->competencesFr;
     }
 
     /**
@@ -86,7 +86,7 @@ class Competences
      */
     public function setCompetencesIt($competencesIt)
     {
-        $this->competences_it = $competencesIt;
+        $this->competencesIt = $competencesIt;
 
         return $this;
     }
@@ -98,7 +98,7 @@ class Competences
      */
     public function getCompetencesIt()
     {
-        return $this->competences_it;
+        return $this->competencesIt;
     }
 
     /**

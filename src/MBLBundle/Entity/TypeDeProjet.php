@@ -8,7 +8,6 @@ namespace MBLBundle\Entity;
 class TypeDeProjet
 {
 
-
     /**
      * @var integer
      */
@@ -17,12 +16,12 @@ class TypeDeProjet
     /**
      * @var string
      */
-    private $typeDeProjet_fr;
+    private $typeDeProjetFr;
 
     /**
      * @var string
      */
-    private $typeDeProjet_it;
+    private $typeDeProjetIt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -56,7 +55,7 @@ class TypeDeProjet
      */
     public function setTypeDeProjetFr($typeDeProjetFr)
     {
-        $this->typeDeProjet_fr = $typeDeProjetFr;
+        $this->typeDeProjetFr = $typeDeProjetFr;
 
         return $this;
     }
@@ -68,7 +67,7 @@ class TypeDeProjet
      */
     public function getTypeDeProjetFr()
     {
-        return $this->typeDeProjet_fr;
+        return $this->typeDeProjetFr;
     }
 
     /**
@@ -80,7 +79,7 @@ class TypeDeProjet
      */
     public function setTypeDeProjetIt($typeDeProjetIt)
     {
-        $this->typeDeProjet_it = $typeDeProjetIt;
+        $this->typeDeProjetIt = $typeDeProjetIt;
 
         return $this;
     }
@@ -92,7 +91,7 @@ class TypeDeProjet
      */
     public function getTypeDeProjetIt()
     {
-        return $this->typeDeProjet_it;
+        return $this->typeDeProjetIt;
     }
 
     /**

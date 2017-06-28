@@ -9,10 +9,10 @@ MBLBundle\Entity\TypeDeProjet:
             generator:
                 strategy: AUTO
     fields:
-        typeDeProjet_fr:
+        typeDeProjetFr:
             type: string
             length: 255
-        typeDeProjet_it:
+        typeDeProjetIt:
             type: string
             length: 255
 

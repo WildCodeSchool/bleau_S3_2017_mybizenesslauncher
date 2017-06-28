@@ -3,6 +3,7 @@
 {% block title %} MyBizenessLauncher {% endblock %}
 {% block header %}
 
+
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content header">
@@ -42,8 +43,6 @@
                 </div>
             </nav>
         {% endif %}
-
-
 
 {% endblock %}
 
@@ -92,4 +91,16 @@
             </div>
         </div>
     </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+
+            $(".dropdown-button").dropdown();
+        })
+
+    </script>
 {% endblock %}

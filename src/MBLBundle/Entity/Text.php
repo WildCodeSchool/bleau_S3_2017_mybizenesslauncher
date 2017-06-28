@@ -8,7 +8,6 @@ namespace MBLBundle\Entity;
 class Text
 {
 
-
     /**
      * @var integer
      */
@@ -17,32 +16,32 @@ class Text
     /**
      * @var string
      */
-    private $msg_fr;
+    private $msgFr;
 
     /**
      * @var string
      */
-    private $msg_it;
+    private $msgIt;
 
     /**
      * @var \DateTime
      */
-    private $datecreation_fr;
+    private $datecreationFr;
 
     /**
      * @var \DateTime
      */
-    private $datecreation_it;
+    private $datecreationIt;
 
     /**
      * @var string
      */
-    private $profil_fr;
+    private $profilFr;
 
     /**
      * @var string
      */
-    private $profil_it;
+    private $profilIt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -76,7 +75,7 @@ class Text
      */
     public function setMsgFr($msgFr)
     {
-        $this->msg_fr = $msgFr;
+        $this->msgFr = $msgFr;
 
         return $this;
     }
@@ -88,7 +87,7 @@ class Text
      */
     public function getMsgFr()
     {
-        return $this->msg_fr;
+        return $this->msgFr;
     }
 
     /**
@@ -100,7 +99,7 @@ class Text
      */
     public function setMsgIt($msgIt)
     {
-        $this->msg_it = $msgIt;
+        $this->msgIt = $msgIt;
 
         return $this;
     }
@@ -112,7 +111,7 @@ class Text
      */
     public function getMsgIt()
     {
-        return $this->msg_it;
+        return $this->msgIt;
     }
 
     /**
@@ -124,7 +123,7 @@ class Text
      */
     public function setDatecreationFr($datecreationFr)
     {
-        $this->datecreation_fr = $datecreationFr;
+        $this->datecreationFr = $datecreationFr;
 
         return $this;
     }
@@ -136,7 +135,7 @@ class Text
      */
     public function getDatecreationFr()
     {
-        return $this->datecreation_fr;
+        return $this->datecreationFr;
     }
 
     /**
@@ -148,7 +147,7 @@ class Text
      */
     public function setDatecreationIt($datecreationIt)
     {
-        $this->datecreation_it = $datecreationIt;
+        $this->datecreationIt = $datecreationIt;
 
         return $this;
     }
@@ -160,7 +159,7 @@ class Text
      */
     public function getDatecreationIt()
     {
-        return $this->datecreation_it;
+        return $this->datecreationIt;
     }
 
     /**
@@ -172,7 +171,7 @@ class Text
      */
     public function setProfilFr($profilFr)
     {
-        $this->profil_fr = $profilFr;
+        $this->profilFr = $profilFr;
 
         return $this;
     }
@@ -184,7 +183,7 @@ class Text
      */
     public function getProfilFr()
     {
-        return $this->profil_fr;
+        return $this->profilFr;
     }
 
     /**
@@ -196,7 +195,7 @@ class Text
      */
     public function setProfilIt($profilIt)
     {
-        $this->profil_it = $profilIt;
+        $this->profilIt = $profilIt;
 
         return $this;
     }
@@ -208,7 +207,7 @@ class Text
      */
     public function getProfilIt()
     {
-        return $this->profil_it;
+        return $this->profilIt;
     }
 
     /**

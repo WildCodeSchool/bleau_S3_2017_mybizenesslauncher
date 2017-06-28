@@ -9,10 +9,10 @@ MBLBundle\Entity\Competences:
             generator:
                 strategy: AUTO
     fields:
-        competences_fr:
+        competencesFr:
             type: string
             length: 255
-        competences_it:
+        competencesIt:
             type: string
             length: 255
     lifecycleCallbacks: {  }

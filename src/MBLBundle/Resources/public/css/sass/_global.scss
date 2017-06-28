@@ -9,9 +9,8 @@ $ColorDarkGrey: #4b494b;
 $ColorWhite : white;
 $BoxShadow: 2px 2px 3px grey;
 $BorderRadius : 8px;
-img {
-  width: 100%;
-}
+
+
 
 /*
 Font
@@ -56,6 +55,51 @@ body{
   background-color: $Colorgrey;
 }
 
+
+a { color: inherit; }
+//Vignettes
+
+.vignette_projet {
+  background-color: $ColorDarkGrey;
+  border-radius: $BorderRadius;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid $Colorgrey;
+
+  max-width: 300px;
+
+
+}
+.vignette_projet:hover {
+ background-color: $Colorgrey;
+}
+.info_projet {
+  border-radius: $BorderRadius;
+  overflow: scroll;
+}
+.vignette {
+  border-radius: $BorderRadius;
+}
+.photo_profil {
+  border-radius: $BorderRadius;
+
+}
+.photo_profil img {
+  height: 7em;
+  max-width: 120px;
+  max-height: 100px;
+}
+.photo_profil, .info_projet, .info_profil {
+  background: $ColorWhite;
+  //margin-bottom: 10px;
+
+}
+.info_projet {
+  height: 16em;
+}
+h6 {
+  font-weight: bold;
+}
 
 
 

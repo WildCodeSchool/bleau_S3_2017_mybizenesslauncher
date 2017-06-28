@@ -8,8 +8,6 @@ namespace MBLBundle\Entity;
 class Projet
 {
 
-
-
     /**
      * @var integer
      */
@@ -28,42 +26,42 @@ class Projet
     /**
      * @var string
      */
-    private $description_fr;
+    private $descriptionFr;
 
     /**
      * @var string
      */
-    private $description_it;
+    private $descriptionIt;
 
     /**
      * @var string
      */
-    private $siteInternet_fr;
+    private $siteInternetFr;
 
     /**
      * @var string
      */
-    private $siteInternet_it;
+    private $siteInternetIt;
 
     /**
      * @var string
      */
-    private $ebustaUrl_fr;
+    private $ebustaUrlFr;
 
     /**
      * @var string
      */
-    private $ebustaUrl_it;
+    private $ebustaUrlIt;
 
     /**
      * @var string
      */
-    private $localisation_fr;
+    private $localisationFr;
 
     /**
      * @var string
      */
-    private $localisation_it;
+    private $localisationIt;
 
     /**
      * @var \DateTime
@@ -171,7 +169,7 @@ class Projet
      */
     public function setDescriptionFr($descriptionFr)
     {
-        $this->description_fr = $descriptionFr;
+        $this->descriptionFr = $descriptionFr;
 
         return $this;
     }
@@ -183,7 +181,7 @@ class Projet
      */
     public function getDescriptionFr()
     {
-        return $this->description_fr;
+        return $this->descriptionFr;
     }
 
     /**
@@ -195,7 +193,7 @@ class Projet
      */
     public function setDescriptionIt($descriptionIt)
     {
-        $this->description_it = $descriptionIt;
+        $this->descriptionIt = $descriptionIt;
 
         return $this;
     }
@@ -207,7 +205,7 @@ class Projet
      */
     public function getDescriptionIt()
     {
-        return $this->description_it;
+        return $this->descriptionIt;
     }
 
     /**
@@ -219,7 +217,7 @@ class Projet
      */
     public function setSiteInternetFr($siteInternetFr)
     {
-        $this->siteInternet_fr = $siteInternetFr;
+        $this->siteInternetFr = $siteInternetFr;
 
         return $this;
     }
@@ -231,7 +229,7 @@ class Projet
      */
     public function getSiteInternetFr()
     {
-        return $this->siteInternet_fr;
+        return $this->siteInternetFr;
     }
 
     /**
@@ -243,7 +241,7 @@ class Projet
      */
     public function setSiteInternetIt($siteInternetIt)
     {
-        $this->siteInternet_it = $siteInternetIt;
+        $this->siteInternetIt = $siteInternetIt;
 
         return $this;
     }
@@ -255,7 +253,7 @@ class Projet
      */
     public function getSiteInternetIt()
     {
-        return $this->siteInternet_it;
+        return $this->siteInternetIt;
     }
 
     /**
@@ -267,7 +265,7 @@ class Projet
      */
     public function setEbustaUrlFr($ebustaUrlFr)
     {
-        $this->ebustaUrl_fr = $ebustaUrlFr;
+        $this->ebustaUrlFr = $ebustaUrlFr;
 
         return $this;
     }
@@ -279,7 +277,7 @@ class Projet
      */
     public function getEbustaUrlFr()
     {
-        return $this->ebustaUrl_fr;
+        return $this->ebustaUrlFr;
     }
 
     /**
@@ -291,7 +289,7 @@ class Projet
      */
     public function setEbustaUrlIt($ebustaUrlIt)
     {
-        $this->ebustaUrl_it = $ebustaUrlIt;
+        $this->ebustaUrlIt = $ebustaUrlIt;
 
         return $this;
     }
@@ -303,7 +301,7 @@ class Projet
      */
     public function getEbustaUrlIt()
     {
-        return $this->ebustaUrl_it;
+        return $this->ebustaUrlIt;
     }
 
     /**
@@ -315,7 +313,7 @@ class Projet
      */
     public function setLocalisationFr($localisationFr)
     {
-        $this->localisation_fr = $localisationFr;
+        $this->localisationFr = $localisationFr;
 
         return $this;
     }
@@ -327,7 +325,7 @@ class Projet
      */
     public function getLocalisationFr()
     {
-        return $this->localisation_fr;
+        return $this->localisationFr;
     }
 
     /**
@@ -339,7 +337,7 @@ class Projet
      */
     public function setLocalisationIt($localisationIt)
     {
-        $this->localisation_it = $localisationIt;
+        $this->localisationIt = $localisationIt;
 
         return $this;
     }
@@ -351,7 +349,7 @@ class Projet
      */
     public function getLocalisationIt()
     {
-        return $this->localisation_it;
+        return $this->localisationIt;
     }
 
     /**

@@ -25,52 +25,52 @@ class Profil extends BaseUser
     /**
      * @var string
      */
-    private $nom_fr;
+    private $nomFr;
 
     /**
      * @var string
      */
-    private $nom_it;
+    private $nomIt;
 
     /**
      * @var string
      */
-    private $prenom_fr;
+    private $prenomFr;
 
     /**
      * @var string
      */
-    private $prenom_it;
+    private $prenomIt;
 
     /**
      * @var string
      */
-    private $description_fr;
+    private $descriptionFr;
 
     /**
      * @var string
      */
-    private $description_it;
+    private $descriptionIt;
 
     /**
      * @var string
      */
-    private $linkedIn_fr;
+    private $linkedInFr;
 
     /**
      * @var string
      */
-    private $linkedIn_it;
+    private $linkedInIt;
 
     /**
      * @var string
      */
-    private $localisation_fr;
+    private $localisationFr;
 
     /**
      * @var string
      */
-    private $localisation_it;
+    private $localisationIt;
 
     /**
      * @var \MBLBundle\Entity\Invest
@@ -127,7 +127,7 @@ class Profil extends BaseUser
      */
     public function setNomFr($nomFr)
     {
-        $this->nom_fr = $nomFr;
+        $this->nomFr = $nomFr;
 
         return $this;
     }
@@ -139,7 +139,7 @@ class Profil extends BaseUser
      */
     public function getNomFr()
     {
-        return $this->nom_fr;
+        return $this->nomFr;
     }
 
     /**
@@ -151,7 +151,7 @@ class Profil extends BaseUser
      */
     public function setNomIt($nomIt)
     {
-        $this->nom_it = $nomIt;
+        $this->nomIt = $nomIt;
 
         return $this;
     }
@@ -163,7 +163,7 @@ class Profil extends BaseUser
      */
     public function getNomIt()
     {
-        return $this->nom_it;
+        return $this->nomIt;
     }
 
     /**
@@ -175,7 +175,7 @@ class Profil extends BaseUser
      */
     public function setPrenomFr($prenomFr)
     {
-        $this->prenom_fr = $prenomFr;
+        $this->prenomFr = $prenomFr;
 
         return $this;
     }
@@ -187,7 +187,7 @@ class Profil extends BaseUser
      */
     public function getPrenomFr()
     {
-        return $this->prenom_fr;
+        return $this->prenomFr;
     }
 
     /**
@@ -199,7 +199,7 @@ class Profil extends BaseUser
      */
     public function setPrenomIt($prenomIt)
     {
-        $this->prenom_it = $prenomIt;
+        $this->prenomIt = $prenomIt;
 
         return $this;
     }
@@ -211,7 +211,7 @@ class Profil extends BaseUser
      */
     public function getPrenomIt()
     {
-        return $this->prenom_it;
+        return $this->prenomIt;
     }
 
     /**
@@ -223,7 +223,7 @@ class Profil extends BaseUser
      */
     public function setDescriptionFr($descriptionFr)
     {
-        $this->description_fr = $descriptionFr;
+        $this->descriptionFr = $descriptionFr;
 
         return $this;
     }
@@ -235,7 +235,7 @@ class Profil extends BaseUser
      */
     public function getDescriptionFr()
     {
-        return $this->description_fr;
+        return $this->descriptionFr;
     }
 
     /**
@@ -247,7 +247,7 @@ class Profil extends BaseUser
      */
     public function setDescriptionIt($descriptionIt)
     {
-        $this->description_it = $descriptionIt;
+        $this->descriptionIt = $descriptionIt;
 
         return $this;
     }
@@ -259,7 +259,7 @@ class Profil extends BaseUser
      */
     public function getDescriptionIt()
     {
-        return $this->description_it;
+        return $this->descriptionIt;
     }
 
     /**
@@ -271,7 +271,7 @@ class Profil extends BaseUser
      */
     public function setLinkedInFr($linkedInFr)
     {
-        $this->linkedIn_fr = $linkedInFr;
+        $this->linkedInFr = $linkedInFr;
 
         return $this;
     }
@@ -283,7 +283,7 @@ class Profil extends BaseUser
      */
     public function getLinkedInFr()
     {
-        return $this->linkedIn_fr;
+        return $this->linkedInFr;
     }
 
     /**
@@ -295,7 +295,7 @@ class Profil extends BaseUser
      */
     public function setLinkedInIt($linkedInIt)
     {
-        $this->linkedIn_it = $linkedInIt;
+        $this->linkedInIt = $linkedInIt;
 
         return $this;
     }
@@ -307,7 +307,7 @@ class Profil extends BaseUser
      */
     public function getLinkedInIt()
     {
-        return $this->linkedIn_it;
+        return $this->linkedInIt;
     }
 
     /**
@@ -319,7 +319,7 @@ class Profil extends BaseUser
      */
     public function setLocalisationFr($localisationFr)
     {
-        $this->localisation_fr = $localisationFr;
+        $this->localisationFr = $localisationFr;
 
         return $this;
     }
@@ -331,7 +331,7 @@ class Profil extends BaseUser
      */
     public function getLocalisationFr()
     {
-        return $this->localisation_fr;
+        return $this->localisationFr;
     }
 
     /**
@@ -343,7 +343,7 @@ class Profil extends BaseUser
      */
     public function setLocalisationIt($localisationIt)
     {
-        $this->localisation_it = $localisationIt;
+        $this->localisationIt = $localisationIt;
 
         return $this;
     }
@@ -355,7 +355,7 @@ class Profil extends BaseUser
      */
     public function getLocalisationIt()
     {
-        return $this->localisation_it;
+        return $this->localisationIt;
     }
 
     /**

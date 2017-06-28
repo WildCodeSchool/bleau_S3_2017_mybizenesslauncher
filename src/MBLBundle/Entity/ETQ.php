@@ -17,12 +17,12 @@ class ETQ
     /**
      * @var string
      */
-    private $etq_fr;
+    private $etqFr;
 
     /**
      * @var string
      */
-    private $etq_it;
+    private $etqIt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -62,7 +62,7 @@ class ETQ
      */
     public function setEtqFr($etqFr)
     {
-        $this->etq_fr = $etqFr;
+        $this->etqFr = $etqFr;
 
         return $this;
     }
@@ -74,7 +74,7 @@ class ETQ
      */
     public function getEtqFr()
     {
-        return $this->etq_fr;
+        return $this->etqFr;
     }
 
     /**
@@ -86,7 +86,7 @@ class ETQ
      */
     public function setEtqIt($etqIt)
     {
-        $this->etq_it = $etqIt;
+        $this->etqIt = $etqIt;
 
         return $this;
     }
@@ -98,7 +98,7 @@ class ETQ
      */
     public function getEtqIt()
     {
-        return $this->etq_it;
+        return $this->etqIt;
     }
 
     /**

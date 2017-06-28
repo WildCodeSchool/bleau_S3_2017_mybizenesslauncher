@@ -26,7 +26,7 @@ class UserController extends Controller
         $locale= $request->getLocale();
 
         $em = $this->getDoctrine()->getManager();
-        $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
+        $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4($locale);
 
         $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
 
@@ -291,7 +291,7 @@ class UserController extends Controller
         }
     }
 //Dans la section Chat lorsque l'on ajoute un msg
-    public function chatIndexAction(Request $request, $chatId)
+    public function chatIndexAction(Request $request, $id)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -300,9 +300,9 @@ class UserController extends Controller
         //Nouveau text
         $text = new Text();
         // Le chat correspondant à la discussion selectionnée
-        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($id);
 
-        $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($chatId);
+        $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($id);
 
 //        dump($text);die();
 
@@ -376,47 +376,58 @@ class UserController extends Controller
         return $this->redirectToRoute('connect');
     }
 
-    public function connectAction($chatId)
+    public function connectAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        // on fait la vérification de savoir si il y a un chat selectionné
-        if (is_numeric($chatId)) {
-            //si oui on set le chat pour qu'il soit opérationnel
-            $connectId = $this->getUser()->getId();
-            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
-            $chat->setConnectionbyid($connectId);
-            $em->flush();
-        }
-        $currentUser = $this->getUser();
-        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
-        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
-
-        return $this->render('@MBL/Users/connection.html.twig', array(
-            'chats' => $chats,
-
-        ));
-    }
-    public function  traductionAction()
-    {
-        return $this->render('@MBL/Users/index.html.twig', '@MBLBundle/Resources/views/layout.html.twig');
-    }
-
-    public function chatDisconnectAction($chatId)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-
-        $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
-        $em->remove($chat);
-        $em->flush();
-
-        $currentUser = $this->getUser();
-        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
-        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
-
-        return $this->render('@MBL/Users/connection.html.twig', array(
-            'chats' => $chats,
-        ));
-    }
+//        $em = $this->getDoctrine()->getManager();
+//
+//        // on fait la vérification de savoir si il y a un chat selectionné
+//<<<<<<< HEAD
+//        if (is_numeric($chatId)) {
+//            //si oui on set le chat pour qu'il soit opérationnel
+//            $connectId = $this->getUser()->getId();
+//            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($chatId);
+//=======
+//        if(is_numeric($id))
+//        {
+//            //si oui on set le chat pour qu'il soit opérationnel
+//            $connectId =$this->getUser()->getId();
+//            $chat = $em->getRepository('MBLBundle:Chat')->findOneById($id);
+//>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
+//            $chat->setConnectionbyid($connectId);
+//
+//            $em->flush();
+//        }
+//        $currentUser = $this->getUser();
+//        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
+//        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+//
+//        return $this->render('@MBL/Users/connection.html.twig', array(
+//            'chats' => $chats,
+//
+//        ));
+//    }
+//<<<<<<< HEAD
+//    public function  traductionAction()
+//    {
+//        return $this->render('@MBL/Users/index.html.twig', '@MBLBundle/Resources/views/layout.html.twig');
+//    }
+//
+//    public function chatDisconnectAction($chatId)
+//=======
+//    public function chatDisconnectAction(Chat $chat)
+//>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//
+//        $em->remove($chat);
+//        $em->flush();
+//
+//        $currentUser = $this->getUser();
+//        //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
+//        $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
+//
+//        return $this->render('@MBL/Users/connection.html.twig', array(
+//            'chats' => $chats,
+//        ));
+   }
 }

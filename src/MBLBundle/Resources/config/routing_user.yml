@@ -76,24 +76,28 @@ remove_trailing_slash:
     methods: [GET]
 
 chatIndex:
-    path: /chatIndex/{chatId}
+    path: /chatIndex/{id}
     defaults:
         _controller: MBLBundle:User:chatIndex
-        chatId: null
+        id: null
+
 
 chatConnect:
     path: /chatConnect/{id}
     defaults: { _controller: MBLBundle:User:chatConnect}
+    methods: GET
 
 connect:
-    path: /connect/{chatId}
+    path: /connect/{id}
     defaults:
         _controller: MBLBundle:User:connect
-        chatId: null
+        id: null
+
 
 chatDisconnect:
-    path: /chatDisconnect/{chatId}
+    path: /chatDisconnect/{id}
     defaults: { _controller: MBLBundle:User:chatDisconnect}
+    methods: GET
 
 # Cette route doit rester la dernière
 #remove_trailing_slash:

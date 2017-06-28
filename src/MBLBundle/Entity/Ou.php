@@ -17,12 +17,12 @@ class Ou
     /**
      * @var string
      */
-    private $ou_fr;
+    private $ouFr;
 
     /**
      * @var string
      */
-    private $ou_it;
+    private $ouIt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -62,7 +62,7 @@ class Ou
      */
     public function setOuFr($ouFr)
     {
-        $this->ou_fr = $ouFr;
+        $this->ouFr = $ouFr;
 
         return $this;
     }
@@ -74,7 +74,7 @@ class Ou
      */
     public function getOuFr()
     {
-        return $this->ou_fr;
+        return $this->ouFr;
     }
 
     /**
@@ -86,7 +86,7 @@ class Ou
      */
     public function setOuIt($ouIt)
     {
-        $this->ou_it = $ouIt;
+        $this->ouIt = $ouIt;
 
         return $this;
     }
@@ -98,7 +98,7 @@ class Ou
      */
     public function getOuIt()
     {
-        return $this->ou_it;
+        return $this->ouIt;
     }
 
     /**

@@ -44,7 +44,11 @@
                                 {% endif %}
                             </div>                                  {#TODO: vérifier que les traductions des values dans les href soient prises en compte#}
                             <div class="col s2">
+<<<<<<< HEAD
                                 <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Discuter'|trans }}"></a>
+=======
+                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                                 </p>
                             </div>
                         </div>
@@ -84,8 +88,13 @@
                                 {% endif %}
                             </div>
                             <div class="col s2">
+<<<<<<< HEAD
                                 <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Discuter'|trans }}"></a></p>
                             </div>
+=======
+                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                </p> </div>
+>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                         </div>
 
                     {% else %}
@@ -121,7 +130,11 @@
                                             {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
                                     </div>
                                     <div class="col s7">
+<<<<<<< HEAD
                                         <p class="right"><a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>
+=======
+                                        <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a> </p>
+>>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                                     </div>
                                 </div>
                             {% endif %}

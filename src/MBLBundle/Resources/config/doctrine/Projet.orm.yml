@@ -15,29 +15,29 @@ MBLBundle\Entity\Projet:
         titreIt:
             type: string
             length: 255
-        description_fr:
+        descriptionFr:
             type: text
-        description_it:
+        descriptionIt:
             type: text
-        siteInternet_fr:
+        siteInternetFr:
             type: string
             length: 255
-        siteInternet_it:
-            type: string
-            length: 255
-            nullable: true
-        ebustaUrl_fr:
+        siteInternetIt:
             type: string
             length: 255
             nullable: true
-        ebustaUrl_it:
+        ebustaUrlFr:
             type: string
             length: 255
             nullable: true
-        localisation_fr:
+        ebustaUrlIt:
             type: string
             length: 255
-        localisation_it:
+            nullable: true
+        localisationFr:
+            type: string
+            length: 255
+        localisationIt:
             type: string
             length: 255
         dateCreation:
