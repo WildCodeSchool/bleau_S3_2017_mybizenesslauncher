@@ -126,33 +126,33 @@ h6 {
 #index .bandeau_homepage h2 {
   font-size: 1.5em;
 }
-/* line 15, ../sass/_index.scss */
+/* line 14, ../sass/_index.scss */
 #index .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 19, ../sass/_index.scss */
+/* line 18, ../sass/_index.scss */
 #index .btn_bandeau_homepage:hover {
   background-color: white;
 }
-/* line 22, ../sass/_index.scss */
+/* line 21, ../sass/_index.scss */
 #index .btn_bandeau_homepage:focus {
   background-color: white;
 }
-/* line 26, ../sass/_index.scss */
+/* line 25, ../sass/_index.scss */
 #index .Outils {
   padding-top: 70px;
 }
-/* line 29, ../sass/_index.scss */
+/* line 28, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
-/* line 32, ../sass/_index.scss */
+/* line 31, ../sass/_index.scss */
 #index .Finance {
   margin-top: 30px;
 }
-/* line 36, ../sass/_index.scss */
+/* line 35, ../sass/_index.scss */
 #index .box_projet_profil * {
   text-align: center;
 }
@@ -588,8 +588,31 @@ chat.html.twig
   padding: 0;
   margin: 0;
 }
-/* line 8, ../sass/_showOneProject.scss */
+/* line 7, ../sass/_showOneProject.scss */
+#oneProject .presProjet {
+  padding: 0;
+  margin: 0;
+}
+/* line 11, ../sass/_showOneProject.scss */
 #oneProject .creeLePar {
   color: grey;
   font-style: italic;
+}
+/* line 15, ../sass/_showOneProject.scss */
+#oneProject a.site {
+  color: darkcyan;
+}
+/* line 18, ../sass/_showOneProject.scss */
+#oneProject a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 24, ../sass/_showOneProject.scss */
+#oneProject .cartepro {
+  border: none;
+  background-color: #98d4e1;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 20px;
+  border-radius: 8px;
 }
