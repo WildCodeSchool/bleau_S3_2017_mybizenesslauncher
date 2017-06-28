@@ -3,95 +3,93 @@
 {% block titreH2 %}<h2>Nouveau Profil recherché</h2>{% endblock %}
 
 {% block body %}
-<div id="formCreatePro">
-    <div class="container container_body">
-        <div class="row">
-            <div class="col s6">
-                {{ form_start(form_pro) }}
-                <div class="center-align">
-                    {{ form_label(form_pro.metier, 'Profil recherché ') }}
-                    {{ form_errors(form_pro.metier) }}
-                    {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
-                </div>
-                <div class="center-align">
-                    {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
-                    {{ form_errors(form_pro.etq) }}
-                    {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
-                </div>
-                <div class="center-align">
-                    {{ form_label(form_pro.competences, 'Compétences ') }}
-                    {{ form_errors(form_pro.competences) }}
-                    {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
-                </div>
-                <div class="center-align">
-                    {{ form_label(form_pro.dispo, 'Disponibilité ') }}
-                    {{ form_errors(form_pro.dispo) }}
-                    {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' disponibilité'}}) }}
-                </div>
-                <div class="center-align">
-                    {{ form_label(form_pro.ou, 'Où ca ? ') }}
-                    {{ form_errors(form_pro.ou) }}
-                    {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
-                </div>
-                <div class="center-align">
-                    {{ form_label(form_pro.invest, 'Investissement ') }}
-                    {{ form_errors(form_pro.invest) }}
-                    {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
-                </div>
-                <div class="bouton">
-                    <input class="btn" type="submit">
-                </div>
+    <div id="formCreatePro">
+        <div class="container container_body">
+            <div class="row">
+                <div class="col s12 l5">
+                    {{ form_start(form_pro) }}
+                    <div class="center-align">
+                        {{ form_label(form_pro.metier, 'Profil recherché ') }}
+                        {{ form_errors(form_pro.metier) }}
+                        {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
+                    </div>
+                    <div class="center-align">
+                        {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
+                        {{ form_errors(form_pro.etq) }}
+                        {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
+                    </div>
+                    <div class="center-align">
+                        {{ form_label(form_pro.competences, 'Compétences ') }}
+                        {{ form_errors(form_pro.competences) }}
+                        {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
+                    </div>
+                    <div class="center-align">
+                        {{ form_label(form_pro.dispo, 'Disponibilité ') }}
+                        {{ form_errors(form_pro.dispo) }}
+                        {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' disponibilité'}}) }}
+                    </div>
+                    <div class="center-align">
+                        {{ form_label(form_pro.ou, 'Où ca ? ') }}
+                        {{ form_errors(form_pro.ou) }}
+                        {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
+                    </div>
+                    <div class="center-align">
+                        {{ form_label(form_pro.invest, 'Investissement ') }}
+                        {{ form_errors(form_pro.invest) }}
+                        {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
+                    </div>
+                    <div class="bouton">
+                        <input class="btn" type="submit">
+                    </div>
 
-                <input type="hidden" name="id" value="{{ projet.id }}">
+                    <input type="hidden" name="id" value="{{ projet.id }}">
 
-                {{ form_end(form_pro) }}
-            </div>
-                <div class="row profil_recherche">
+                    {{ form_end(form_pro) }}
+                </div>
+                <div class="col s12 l6 offset-l1">
+
                     {% for profil in profil_Recheche_exist %}
-                        <div class="col s3 vignette_profil ">
-                            <div class="content z-depth-5">
-                                <div class="row vignette ">
-                                    <div class="col s12">
-                                        <h4>Profil Recherché</h4>
-                                    </div>
-                                    <div class="col s8 offset-s2 photo_profil">
-                                        <img src="{{ asset('bundles/mbl/img/kyan.png') }}">
-                                    </div>
-                                </div>
-                                <div class="row info_profil">
-                                    <div class="col s12">
-                                        <h5>Profil</h5>
-                                        <p>{{ profil.metier.metier }}</p>
-                                    </div>
-                                    <div class="col s12">
-                                        <h5>Disponibilité</h5>
-                                        <p>{{ profil.dispo.dispo }}</p>
-                                    </div>
-                                    <div class="col s12">
-                                        <h5>En tant que</h5>
-                                        <p>{{ profil.ETQ.etq }}</p>
-                                    </div>
-                                    <div class="col s12">
-                                        <h5>Localisation</h5>
-                                        <p>{{ profil.ou.ou }}</p>
-                                    </div>
-                                    <div class="col s12">
-                                        <h5>Investissement</h5>
-                                        <p>{{ profil.invest.invest }}</p>
-                                    </div>
-                                    <div class="col s12">
-                                        <h5>Compétences</h5>
-                                        {% for comp in profil.competences %}
-                                            <p>{{ comp.competences }}</p>
-                                        {% endfor %}
-                                    </div>
+
+                        <div class="col s6 vignette_projet_profilAdd z-depth-5">
+                            <div class="row type_metier">
+                                <div class="color col s12">
+                                    <h5 class="center">Profil Recherché</h5>
+                                    <p class="center">{{ profil.metier.metier }}</p>
                                 </div>
                             </div>
-                            <div class="col s8 offset-s2">
+
+                            <div class="row info_projet_profilAdd">
+
+                                <div class="col s12">
+                                    <h6>Disponibilité</h6>
+                                    <p>{{ profil.dispo.dispo }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h6>En tant que</h6>
+                                    <p>{{ profil.ETQ.etq }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Localisation</h6>
+                                    <p>{{ profil.ou.ou }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Investissement</h6>
+                                    <p>{{ profil.invest.invest }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Compétences</h6>
+                                    {% for comp in profil.competences %}
+                                        <p>{{ comp.competences }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="col s12">
                                 <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
                             </div>
                         </div>
                     {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -103,22 +101,22 @@
         $(document).ready(function() {
             $('select').material_select();
             $('form[name="mblbundle_profilrecherche"]').submit(function(e){
-               e.preventDefault();
-               var data = $(this).serialize();
-               var form = $(this);
-               $.ajax({
-                   method: 'post',
-                   url: '{{ path('createProfilRechercheProjet') }}',
-                   data: data,
+                e.preventDefault();
+                var data = $(this).serialize();
+                var form = $(this);
+                $.ajax({
+                    method: 'post',
+                    url: '{{ path('createProfilRechercheProjet') }}',
+                    data: data,
 
-                   success: function(response){
+                    success: function(response){
 
-                       $('.profil_recherche').append(response);
-                       $('.vignette_profil:last-child').hide().fadeIn(2000);
+                        $('.profil_recherche').append(response);
+                        $('.vignette_profil:last-child').hide().fadeIn(2000);
 
-                       form.trigger('reset');
-                   }
-               });
+                        form.trigger('reset');
+                    }
+                });
             });
             $('.profil_recherche').on('click','.deleteProfilR', function(e){
                 e.preventDefault();
@@ -133,13 +131,13 @@
 
                     }
 
-            });
+                });
 
 
             })
             // jQuery pour rendre non selectionnable le 'placeholder', a décommenter une fois les fixtures faite
             /*$('ul li:first-child ').addClass('disabled');
-            $('ul li:first-child span').css('color', 'lightgrey');*/
+             $('ul li:first-child span').css('color', 'lightgrey');*/
 
         });
     </script>
