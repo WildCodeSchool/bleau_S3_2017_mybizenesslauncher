@@ -56,11 +56,19 @@ class UserController extends Controller
         ));
     }
 
-    public function showProfilAction()
+    public function showProfilAction(Profil $profil)
+    {
+
+        return $this->render('@MBL/Users/showProfil.html.twig', array(
+            'profil' => $profil,
+        ));
+    }
+    public function showMyProfilAction()
     {
         $profil = $this->getUser();
-        return $this->render('@MBL/Users/showProfil.html.twig', array(
-            'profilType' => $profil,
+//        dump($profil);die();
+        return $this->render('@MBL/Users/showMyProfil.html.twig', array(
+            'profil' => $profil,
         ));
     }
     public function showAllProfilsAction()

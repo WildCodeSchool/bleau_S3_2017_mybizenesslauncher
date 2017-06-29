@@ -253,6 +253,10 @@ Layout.html.twig
   text-align: center;
 }
 
+/* line 3, ../sass/_showMyProject.scss */
+#showMyProjet {
+  margin-top: 50px;
+}
 /* line 5, ../sass/_showMyProject.scss */
 #showMyProjet .vignette_Myprojet {
   background-color: #4b494b;
@@ -639,4 +643,52 @@ chat.html.twig
   margin: 5px;
   background-color: white;
   height: 18em;
+}
+
+/* line 3, ../sass/_showMyProfil.scss */
+#oneProfil {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showMyProfil.scss */
+#oneProfil .showProfil {
+  border: 2px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+}
+/* line 12, ../sass/_showMyProfil.scss */
+#oneProfil a.site {
+  color: darkcyan;
+}
+/* line 15, ../sass/_showMyProfil.scss */
+#oneProfil a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 19, ../sass/_showMyProfil.scss */
+#oneProfil .linkedIn {
+  align-items: center;
+}
+
+/* line 3, ../sass/_showOneProfil.scss */
+#myProfil {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showOneProfil.scss */
+#myProfil .showProfil {
+  border: 2px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+}
+/* line 12, ../sass/_showOneProfil.scss */
+#myProfil a.site {
+  color: darkcyan;
+}
+/* line 15, ../sass/_showOneProfil.scss */
+#myProfil a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 19, ../sass/_showOneProfil.scss */
+#myProfil .linkedIn {
+  align-items: center;
 }
