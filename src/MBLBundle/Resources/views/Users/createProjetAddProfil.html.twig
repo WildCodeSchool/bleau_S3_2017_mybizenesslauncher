@@ -49,46 +49,46 @@
                 <div class="col s12 l6 offset-l1">
 
                     {% for profil in profil_Recheche_exist %}
-<div class="profil_recherche">
-                        <div class="col s6 vignette_projet_profilAdd z-depth-5">
-                            <div class="row type_metier">
-                                <div class="color col s12">
-                                    <h5 class="center">Profil Recherché</h5>
-                                    <p class="center">{{ profil.metier.metier }}</p>
+                        <div class="profil_recherche">
+                            <div class="col s6 vignette_projet_profilAdd z-depth-5">
+                                <div class="row type_metier">
+                                    <div class="color col s12">
+                                        <h5 class="center">Profil Recherché</h5>
+                                        <p class="center">{{ profil.metier.metier }}</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row info_projet_profilAdd">
+                                <div class="row info_projet_profilAdd">
+
+                                    <div class="col s12">
+                                        <h6>Disponibilité</h6>
+                                        <p>{{ profil.dispo.dispo }}</p>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>En tant que</h6>
+                                        <p>{{ profil.ETQ.etq }}</p>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Localisation</h6>
+                                        <p>{{ profil.ou.ou }}</p>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Investissement</h6>
+                                        <p>{{ profil.invest.invest }}</p>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Compétences</h6>
+                                        {% for comp in profil.competences %}
+                                            <p>{{ comp.competences }}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
 
                                 <div class="col s12">
-                                    <h6>Disponibilité</h6>
-                                    <p>{{ profil.dispo.dispo }}</p>
+                                    <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
                                 </div>
-                                <div class="col s12">
-                                    <h6>En tant que</h6>
-                                    <p>{{ profil.ETQ.etq }}</p>
-                                </div>
-                                <div class="col s12">
-                                    <h6>Localisation</h6>
-                                    <p>{{ profil.ou.ou }}</p>
-                                </div>
-                                <div class="col s12">
-                                    <h6>Investissement</h6>
-                                    <p>{{ profil.invest.invest }}</p>
-                                </div>
-                                <div class="col s12">
-                                    <h6>Compétences</h6>
-                                    {% for comp in profil.competences %}
-                                        <p>{{ comp.competences }}</p>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-                            <div class="col s12">
-                                <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
                             </div>
                         </div>
-</div>
                     {% endfor %}
 
                 </div>

@@ -614,3 +614,29 @@ chat.html.twig
   padding-bottom: 20px;
   border-radius: 8px;
 }
+
+/* line 2, ../sass/_editProject.scss */
+#editProject {
+  margin-top: 50px;
+}
+/* line 4, ../sass/_editProject.scss */
+#editProject .vignette_projet_profilAdd {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid #f0f0f0;
+  max-width: 300px;
+}
+/* line 15, ../sass/_editProject.scss */
+#editProject .vignette_projet_profilAdd:hover {
+  background-color: #f0f0f0;
+}
+/* line 19, ../sass/_editProject.scss */
+#editProject .info_projet_profilAdd {
+  border-radius: 8px;
+  overflow: scroll;
+  margin: 5px;
+  background-color: white;
+  height: 18em;
+}
