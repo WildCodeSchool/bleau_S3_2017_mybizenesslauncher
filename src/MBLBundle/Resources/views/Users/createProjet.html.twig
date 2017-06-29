@@ -8,6 +8,10 @@
 {% block titreH2 %}<h2>{{ 'Nouveau Projet'|trans }}</h2>{% endblock %}
 
 {% block body %}
+
+    {% set locale  = app.request.locale %}
+    {% set titre = 'titre' ~ locale %}
+
 <div id="createProjet" class="container">
     <div class="row">
         <div class="col s12 m12">
@@ -15,9 +19,9 @@
             <div class="row">
                 <div class="col s6">
                     <div class="titre_row center-align">
-                        {{ form_label(form.titre) }}
-                        {{ form_errors(form.titre) }}
-                        {{ form_widget(form.titre, {'attr': {'placeholder': '  Titre'}}) }}
+                        {{ form_label(form, titre) }}
+                        {{ form_errors(form, titre) }}
+                        {{ form_widget(form, titre, {'attr': {'placeholder': '  titre:'}}) }}
                     </div>
                     <div class="description_row center-align">
                         {{ form_label(form.description) }}

@@ -2,13 +2,17 @@
 
 namespace MBLBundle\Form;
 
+use MBLBundle\Repository\SecteurRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProjetType extends AbstractType
@@ -18,22 +22,22 @@ class ProjetType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre', TextType::class, array(
+        $builder->add('titre'.$options["locale"], TextType::class, array(
                 'required' => true
             ))
-            ->add('description', TextareaType::class, array(
+            ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true,
                 'attr' => array('rows' => '1000','cols' => '1000')
             ))
-            ->add('siteInternet', UrlType::class, array(
+            ->add('siteInternet'.$options["locale"], UrlType::class, array(
                 'required' => false
             ))
-            ->add('ebustaUrl', UrlType::class, array(
+            ->add('ebustaUrl'.$options["locale"], UrlType::class, array(
                 'required' => false
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
-                'choice_label'  => 'typeDeProjet',
+                'choice_label'  => 'typeDeProjet'.$options["locale"],
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
@@ -42,26 +46,28 @@ class ProjetType extends AbstractType
             ))
             ->add('secteur', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\Secteur',
-                'choice_label'  => 'secteurActivite',
+                'choice_label' => 'secteurActivite'. $options["locale"],
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
                 'placeholder'   => '  Choisissez'
             ))
-            ->add('localisation', CountryType::class, array(
+            ->add('localisation'.$options["locale"], CountryType::class, array(
                 'required' => true
             ))
             ->add('fichier', FichierType::class)
         ;
     }
-    
+
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Projet'
+            'data_class' => 'MBLBundle\Entity\Projet',
+            'locale' => null
 
         ));
     }

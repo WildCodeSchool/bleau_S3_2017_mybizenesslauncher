@@ -28,7 +28,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4($locale);
 
-        $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
+        $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4($locale);
 
         return $this->render('@MBL/Users/index.html.twig',
             array('projet' => $projets,
@@ -44,7 +44,6 @@ class UserController extends Controller
 
     public function editProfilAction(Request $request)
     {
-        var_dump($request); die();
         $locale= $request->getLocale();
         $profil = $this->getUser();
         $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil, array('locale'=>$locale));
@@ -82,8 +81,10 @@ class UserController extends Controller
 
     public function createProjectAction(Request $request)
     {
+        $locale= $request->getLocale();
+
         $projet = new Projet();
-        $form = $this->createForm('MBLBundle\Form\ProjetType', $projet);
+        $form = $this->createForm('MBLBundle\Form\ProjetType', $projet, array('locale' => $locale));
         $form->handleRequest($request);
         $profil = $this->getUser();
 
@@ -376,8 +377,8 @@ class UserController extends Controller
         return $this->redirectToRoute('connect');
     }
 
-    public function connectAction($id)
-    {
+//    public function connectAction($id)
+//    {
 //        $em = $this->getDoctrine()->getManager();
 //
 //        // on fait la vérification de savoir si il y a un chat selectionné
@@ -429,5 +430,5 @@ class UserController extends Controller
 //        return $this->render('@MBL/Users/connection.html.twig', array(
 //            'chats' => $chats,
 //        ));
-   }
+//   }
 }

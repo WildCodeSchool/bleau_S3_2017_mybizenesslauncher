@@ -9,6 +9,7 @@ class Dispo
 {
 
 
+
     /**
      * @var integer
      */
@@ -17,12 +18,12 @@ class Dispo
     /**
      * @var string
      */
-    private $dispoFr;
+    private $dispofr;
 
     /**
      * @var string
      */
-    private $dispoIt;
+    private $dispoit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -54,51 +55,51 @@ class Dispo
     }
 
     /**
-     * Set dispoFr
+     * Set dispofr
      *
-     * @param string $dispoFr
+     * @param string $dispofr
      *
      * @return Dispo
      */
-    public function setDispoFr($dispoFr)
+    public function setDispofr($dispofr)
     {
-        $this->dispoFr = $dispoFr;
+        $this->dispofr = $dispofr;
 
         return $this;
     }
 
     /**
-     * Get dispoFr
+     * Get dispofr
      *
      * @return string
      */
-    public function getDispoFr()
+    public function getDispofr()
     {
-        return $this->dispoFr;
+        return $this->dispofr;
     }
 
     /**
-     * Set dispoIt
+     * Set dispoit
      *
-     * @param string $dispoIt
+     * @param string $dispoit
      *
      * @return Dispo
      */
-    public function setDispoIt($dispoIt)
+    public function setDispoit($dispoit)
     {
-        $this->dispoIt = $dispoIt;
+        $this->dispoit = $dispoit;
 
         return $this;
     }
 
     /**
-     * Get dispoIt
+     * Get dispoit
      *
      * @return string
      */
-    public function getDispoIt()
+    public function getDispoit()
     {
-        return $this->dispoIt;
+        return $this->dispoit;
     }
 
     /**

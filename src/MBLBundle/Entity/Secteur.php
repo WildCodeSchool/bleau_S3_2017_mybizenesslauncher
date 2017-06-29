@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Secteur
 {
 
+
     /**
      * @var integer
      */
@@ -16,12 +17,12 @@ class Secteur
     /**
      * @var string
      */
-    private $secteurActiviteFr;
+    private $secteurActivitefr;
 
     /**
      * @var string
      */
-    private $secteurActiviteIt;
+    private $secteurActiviteit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -47,51 +48,51 @@ class Secteur
     }
 
     /**
-     * Set secteurActiviteFr
+     * Set secteurActivitefr
      *
-     * @param string $secteurActiviteFr
+     * @param string $secteurActivitefr
      *
      * @return Secteur
      */
-    public function setSecteurActiviteFr($secteurActiviteFr)
+    public function setSecteurActivitefr($secteurActivitefr)
     {
-        $this->secteurActiviteFr = $secteurActiviteFr;
+        $this->secteurActivitefr = $secteurActivitefr;
 
         return $this;
     }
 
     /**
-     * Get secteurActiviteFr
+     * Get secteurActivitefr
      *
      * @return string
      */
-    public function getSecteurActiviteFr()
+    public function getSecteurActivitefr()
     {
-        return $this->secteurActiviteFr;
+        return $this->secteurActivitefr;
     }
 
     /**
-     * Set secteurActiviteIt
+     * Set secteurActiviteit
      *
-     * @param string $secteurActiviteIt
+     * @param string $secteurActiviteit
      *
      * @return Secteur
      */
-    public function setSecteurActiviteIt($secteurActiviteIt)
+    public function setSecteurActiviteit($secteurActiviteit)
     {
-        $this->secteurActiviteIt = $secteurActiviteIt;
+        $this->secteurActiviteit = $secteurActiviteit;
 
         return $this;
     }
 
     /**
-     * Get secteurActiviteIt
+     * Get secteurActiviteit
      *
      * @return string
      */
-    public function getSecteurActiviteIt()
+    public function getSecteurActiviteit()
     {
-        return $this->secteurActiviteIt;
+        return $this->secteurActiviteit;
     }
 
     /**

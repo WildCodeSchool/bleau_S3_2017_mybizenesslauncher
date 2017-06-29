@@ -17,16 +17,27 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
     public function findLastProjets4($locale)
     {
         $qb = $this->createQueryBuilder('p');
-        $qb->select('p.description_' . $locale . ' as description'
-
-        )
-            ->join('p.profilsrecherches', 'r')
+        $qb->select('p.description' . $locale . ' as description','p.id as id','p.titre' .$locale. ' as titre','p.localisation'.$locale.' as localiprojet');
+            /*->join('p.profilsrecherches', 'r')
             ->join('r.metier', 'm')
-            ->addSelect('m.metier_'. $locale .' as metier')
-            ->orderBy('p.dateCreation', 'DESC')
-            ->setMaxResults(4);
+            ->addSelect('m.metier' . $locale . ' as metier');*/
 
-        return $qb->getQuery()->getResult();
+
+        $projets = $qb->getQuery()->getResult();
+
+
+        foreach ($projets as $key => $projet)
+        {
+            $qb = $this->createQueryBuilder('p');
+            $qb->join('p.profilsrecherches', 'r')
+                ->join('r.metier', 'm')
+                ->select('m.metier' . $locale . ' as metier');
+            $projets[$key]['metier'] = $qb->getQuery()->getResult();
+        }
+
+    /*dump($projets); die();*/
+
+        return $projets;
 
     }
 

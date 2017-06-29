@@ -15,18 +15,26 @@ use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\Secteur;
 use MBLBundle\Entity\TypeDeProjet;
 
-/*class LoadProfilData extends AbstractFixture implements OrderedFixtureInterface
+class LoadFirstData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $userAdmin = new Profil();
-        $userAdmin->setUsername('admin');
-        $userAdmin->setPassword('test');
+        $UserAdmin = new Profil();
+        $UserAdmin->setUsername("superadmin");
+        $UserAdmin->setEmail("superadmin@gmail.com");
+        $UserAdmin->setPlainPassword("root");
+        $UserAdmin->setSuperAdmin(true);
+        $UserAdmin->setEnabled(true);
+        $manager->persist($UserAdmin);
 
-        $manager->persist($userAdmin);
         $manager->flush();
     }
-}*/
+
+    public function getOrder()
+    {
+        return 9;
+    }
+}
 
 class LoadMetiersData extends AbstractFixture implements OrderedFixtureInterface
 {
@@ -231,7 +239,7 @@ class LoadInvestissementData extends AbstractFixture implements OrderedFixtureIn
     {
         $invests = array(
             array('1'=>'Non', '2'=>'Non'),
-            array('1'=>'moins de 1000', '2'=>'inferiore a 1000'),
+            array('1'=>'moin de 1000', '2'=>'inferiore a 1000'),
             array('1'=>'1000-5000', '2'=>'1000-5000'),
             array('1'=>'5000-10000', '2'=>'5000-10000'),
             array('1'=>'10000-20000', '2'=>'10000-20000'),

@@ -8,8 +8,6 @@ namespace MBLBundle\Entity;
 class Metier
 {
 
-
-
     /**
      * @var integer
      */
@@ -18,12 +16,12 @@ class Metier
     /**
      * @var string
      */
-    private $metierFr;
+    private $metierfr;
 
     /**
      * @var string
      */
-    private $metierIt;
+    private $metierit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -55,51 +53,51 @@ class Metier
     }
 
     /**
-     * Set metierFr
+     * Set metierfr
      *
-     * @param string $metierFr
+     * @param string $metierfr
      *
      * @return Metier
      */
-    public function setMetierFr($metierFr)
+    public function setMetierfr($metierfr)
     {
-        $this->metierFr = $metierFr;
+        $this->metierfr = $metierfr;
 
         return $this;
     }
 
     /**
-     * Get metierFr
+     * Get metierfr
      *
      * @return string
      */
-    public function getMetierFr()
+    public function getMetierfr()
     {
-        return $this->metierFr;
+        return $this->metierfr;
     }
 
     /**
-     * Set metierIt
+     * Set metierit
      *
-     * @param string $metierIt
+     * @param string $metierit
      *
      * @return Metier
      */
-    public function setMetierIt($metierIt)
+    public function setMetierit($metierit)
     {
-        $this->metierIt = $metierIt;
+        $this->metierit = $metierit;
 
         return $this;
     }
 
     /**
-     * Get metierIt
+     * Get metierit
      *
      * @return string
      */
-    public function getMetierIt()
+    public function getMetierit()
     {
-        return $this->metierIt;
+        return $this->metierit;
     }
 
     /**

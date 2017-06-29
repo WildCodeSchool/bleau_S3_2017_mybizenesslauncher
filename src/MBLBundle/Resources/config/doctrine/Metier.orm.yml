@@ -9,10 +9,10 @@ MBLBundle\Entity\Metier:
             generator:
                 strategy: AUTO
     fields:
-        metierFr:
+        metierfr:
             type: string
             length: 255
-        metierIt:
+        metierit:
             type: string
             length: 255
     lifecycleCallbacks: {  }

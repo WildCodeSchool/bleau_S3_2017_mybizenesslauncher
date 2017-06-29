@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Text
 {
 
+
     /**
      * @var integer
      */
@@ -16,7 +17,7 @@ class Text
     /**
      * @var string
      */
-    private $msgFr;
+    private $msgfr;
 
     /**
      * @var string
@@ -26,22 +27,22 @@ class Text
     /**
      * @var \DateTime
      */
-    private $datecreationFr;
+    private $datecreationfr;
 
     /**
      * @var \DateTime
      */
-    private $datecreationIt;
+    private $datecreationit;
 
     /**
      * @var string
      */
-    private $profilFr;
+    private $profilfr;
 
     /**
      * @var string
      */
-    private $profilIt;
+    private $profilit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -67,27 +68,27 @@ class Text
     }
 
     /**
-     * Set msgFr
+     * Set msgfr
      *
-     * @param string $msgFr
+     * @param string $msgfr
      *
      * @return Text
      */
-    public function setMsgFr($msgFr)
+    public function setMsgfr($msgfr)
     {
-        $this->msgFr = $msgFr;
+        $this->msgfr = $msgfr;
 
         return $this;
     }
 
     /**
-     * Get msgFr
+     * Get msgfr
      *
      * @return string
      */
-    public function getMsgFr()
+    public function getMsgfr()
     {
-        return $this->msgFr;
+        return $this->msgfr;
     }
 
     /**
@@ -115,99 +116,99 @@ class Text
     }
 
     /**
-     * Set datecreationFr
+     * Set datecreationfr
      *
-     * @param \DateTime $datecreationFr
+     * @param \DateTime $datecreationfr
      *
      * @return Text
      */
-    public function setDatecreationFr($datecreationFr)
+    public function setDatecreationfr($datecreationfr)
     {
-        $this->datecreationFr = $datecreationFr;
+        $this->datecreationfr = $datecreationfr;
 
         return $this;
     }
 
     /**
-     * Get datecreationFr
+     * Get datecreationfr
      *
      * @return \DateTime
      */
-    public function getDatecreationFr()
+    public function getDatecreationfr()
     {
-        return $this->datecreationFr;
+        return $this->datecreationfr;
     }
 
     /**
-     * Set datecreationIt
+     * Set datecreationit
      *
-     * @param \DateTime $datecreationIt
+     * @param \DateTime $datecreationit
      *
      * @return Text
      */
-    public function setDatecreationIt($datecreationIt)
+    public function setDatecreationit($datecreationit)
     {
-        $this->datecreationIt = $datecreationIt;
+        $this->datecreationit = $datecreationit;
 
         return $this;
     }
 
     /**
-     * Get datecreationIt
+     * Get datecreationit
      *
      * @return \DateTime
      */
-    public function getDatecreationIt()
+    public function getDatecreationit()
     {
-        return $this->datecreationIt;
+        return $this->datecreationit;
     }
 
     /**
-     * Set profilFr
+     * Set profilfr
      *
-     * @param string $profilFr
+     * @param string $profilfr
      *
      * @return Text
      */
-    public function setProfilFr($profilFr)
+    public function setProfilfr($profilfr)
     {
-        $this->profilFr = $profilFr;
+        $this->profilfr = $profilfr;
 
         return $this;
     }
 
     /**
-     * Get profilFr
+     * Get profilfr
      *
      * @return string
      */
-    public function getProfilFr()
+    public function getProfilfr()
     {
-        return $this->profilFr;
+        return $this->profilfr;
     }
 
     /**
-     * Set profilIt
+     * Set profilit
      *
-     * @param string $profilIt
+     * @param string $profilit
      *
      * @return Text
      */
-    public function setProfilIt($profilIt)
+    public function setProfilit($profilit)
     {
-        $this->profilIt = $profilIt;
+        $this->profilit = $profilit;
 
         return $this;
     }
 
     /**
-     * Get profilIt
+     * Get profilit
      *
      * @return string
      */
-    public function getProfilIt()
+    public function getProfilit()
     {
-        return $this->profilIt;
+        return $this->profilit;
     }
 
     /**

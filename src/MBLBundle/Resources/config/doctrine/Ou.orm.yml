@@ -9,10 +9,10 @@ MBLBundle\Entity\Ou:
             generator:
                 strategy: AUTO
     fields:
-        ouFr:
+        oufr:
             type: string
             length: 255
-        ouIt:
+        ouit:
             type: string
             length: 255
     lifecycleCallbacks: {  }

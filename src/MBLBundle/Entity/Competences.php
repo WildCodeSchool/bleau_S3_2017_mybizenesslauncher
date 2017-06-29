@@ -9,6 +9,7 @@ class Competences
 {
 
 
+
     /**
      * @var integer
      */
@@ -17,12 +18,12 @@ class Competences
     /**
      * @var string
      */
-    private $competencesFr;
+    private $competencesfr;
 
     /**
      * @var string
      */
-    private $competencesIt;
+    private $competencesit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -54,51 +55,51 @@ class Competences
     }
 
     /**
-     * Set competencesFr
+     * Set competencesfr
      *
-     * @param string $competencesFr
+     * @param string $competencesfr
      *
      * @return Competences
      */
-    public function setCompetencesFr($competencesFr)
+    public function setCompetencesfr($competencesfr)
     {
-        $this->competencesFr = $competencesFr;
+        $this->competencesfr = $competencesfr;
 
         return $this;
     }
 
     /**
-     * Get competencesFr
+     * Get competencesfr
      *
      * @return string
      */
-    public function getCompetencesFr()
+    public function getCompetencesfr()
     {
-        return $this->competencesFr;
+        return $this->competencesfr;
     }
 
     /**
-     * Set competencesIt
+     * Set competencesit
      *
-     * @param string $competencesIt
+     * @param string $competencesit
      *
      * @return Competences
      */
-    public function setCompetencesIt($competencesIt)
+    public function setCompetencesit($competencesit)
     {
-        $this->competencesIt = $competencesIt;
+        $this->competencesit = $competencesit;
 
         return $this;
     }
 
     /**
-     * Get competencesIt
+     * Get competencesit
      *
      * @return string
      */
-    public function getCompetencesIt()
+    public function getCompetencesit()
     {
-        return $this->competencesIt;
+        return $this->competencesit;
     }
 
     /**

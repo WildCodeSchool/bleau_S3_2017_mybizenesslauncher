@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class TypeDeProjet
 {
 
+
     /**
      * @var integer
      */
@@ -16,12 +17,12 @@ class TypeDeProjet
     /**
      * @var string
      */
-    private $typeDeProjetFr;
+    private $typeDeProjetfr;
 
     /**
      * @var string
      */
-    private $typeDeProjetIt;
+    private $typeDeProjetit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -47,51 +48,51 @@ class TypeDeProjet
     }
 
     /**
-     * Set typeDeProjetFr
+     * Set typeDeProjetfr
      *
-     * @param string $typeDeProjetFr
+     * @param string $typeDeProjetfr
      *
      * @return TypeDeProjet
      */
-    public function setTypeDeProjetFr($typeDeProjetFr)
+    public function setTypeDeProjetfr($typeDeProjetfr)
     {
-        $this->typeDeProjetFr = $typeDeProjetFr;
+        $this->typeDeProjetfr = $typeDeProjetfr;
 
         return $this;
     }
 
     /**
-     * Get typeDeProjetFr
+     * Get typeDeProjetfr
      *
      * @return string
      */
-    public function getTypeDeProjetFr()
+    public function getTypeDeProjetfr()
     {
-        return $this->typeDeProjetFr;
+        return $this->typeDeProjetfr;
     }
 
     /**
-     * Set typeDeProjetIt
+     * Set typeDeProjetit
      *
-     * @param string $typeDeProjetIt
+     * @param string $typeDeProjetit
      *
      * @return TypeDeProjet
      */
-    public function setTypeDeProjetIt($typeDeProjetIt)
+    public function setTypeDeProjetit($typeDeProjetit)
     {
-        $this->typeDeProjetIt = $typeDeProjetIt;
+        $this->typeDeProjetit = $typeDeProjetit;
 
         return $this;
     }
 
     /**
-     * Get typeDeProjetIt
+     * Get typeDeProjetit
      *
      * @return string
      */
-    public function getTypeDeProjetIt()
+    public function getTypeDeProjetit()
     {
-        return $this->typeDeProjetIt;
+        return $this->typeDeProjetit;
     }
 
     /**

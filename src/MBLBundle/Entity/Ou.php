@@ -9,6 +9,7 @@ class Ou
 {
 
 
+
     /**
      * @var integer
      */
@@ -17,12 +18,12 @@ class Ou
     /**
      * @var string
      */
-    private $ouFr;
+    private $oufr;
 
     /**
      * @var string
      */
-    private $ouIt;
+    private $ouit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -54,51 +55,51 @@ class Ou
     }
 
     /**
-     * Set ouFr
+     * Set oufr
      *
-     * @param string $ouFr
+     * @param string $oufr
      *
      * @return Ou
      */
-    public function setOuFr($ouFr)
+    public function setOufr($oufr)
     {
-        $this->ouFr = $ouFr;
+        $this->oufr = $oufr;
 
         return $this;
     }
 
     /**
-     * Get ouFr
+     * Get oufr
      *
      * @return string
      */
-    public function getOuFr()
+    public function getOufr()
     {
-        return $this->ouFr;
+        return $this->oufr;
     }
 
     /**
-     * Set ouIt
+     * Set ouit
      *
-     * @param string $ouIt
+     * @param string $ouit
      *
      * @return Ou
      */
-    public function setOuIt($ouIt)
+    public function setOuit($ouit)
     {
-        $this->ouIt = $ouIt;
+        $this->ouit = $ouit;
 
         return $this;
     }
 
     /**
-     * Get ouIt
+     * Get ouit
      *
      * @return string
      */
-    public function getOuIt()
+    public function getOuit()
     {
-        return $this->ouIt;
+        return $this->ouit;
     }
 
     /**

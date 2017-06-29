@@ -9,6 +9,7 @@ class Chat
 {
 
 
+
     /**
      * @var integer
      */
@@ -17,12 +18,12 @@ class Chat
     /**
      * @var string
      */
-    private $nameFr;
+    private $namefr;
 
     /**
      * @var string
      */
-    private $nameIt;
+    private $nameit;
 
     /**
      * @var \DateTime
@@ -32,22 +33,22 @@ class Chat
     /**
      * @var integer
      */
-    private $connectionbyidcreatorFr;
+    private $connectionbyidcreatorfr;
 
     /**
      * @var integer
      */
-    private $connectionbyidcreatorIt;
+    private $connectionbyidcreatorit;
 
     /**
      * @var integer
      */
-    private $connectionbyidFr;
+    private $connectionbyidfr;
 
     /**
      * @var integer
      */
-    private $connectionbyidIt;
+    private $connectionbyidit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -79,51 +80,51 @@ class Chat
     }
 
     /**
-     * Set nameFr
+     * Set namefr
      *
-     * @param string $nameFr
+     * @param string $namefr
      *
      * @return Chat
      */
-    public function setNameFr($nameFr)
+    public function setNamefr($namefr)
     {
-        $this->nameFr = $nameFr;
+        $this->namefr = $namefr;
 
         return $this;
     }
 
     /**
-     * Get nameFr
+     * Get namefr
      *
      * @return string
      */
-    public function getNameFr()
+    public function getNamefr()
     {
-        return $this->nameFr;
+        return $this->namefr;
     }
 
     /**
-     * Set nameIt
+     * Set nameit
      *
-     * @param string $nameIt
+     * @param string $nameit
      *
      * @return Chat
      */
-    public function setNameIt($nameIt)
+    public function setNameit($nameit)
     {
-        $this->nameIt = $nameIt;
+        $this->nameit = $nameit;
 
         return $this;
     }
 
     /**
-     * Get nameIt
+     * Get nameit
      *
      * @return string
      */
-    public function getNameIt()
+    public function getNameit()
     {
-        return $this->nameIt;
+        return $this->nameit;
     }
 
     /**
@@ -151,99 +152,99 @@ class Chat
     }
 
     /**
-     * Set connectionbyidcreatorFr
+     * Set connectionbyidcreatorfr
      *
-     * @param integer $connectionbyidcreatorFr
+     * @param integer $connectionbyidcreatorfr
      *
      * @return Chat
      */
-    public function setConnectionbyidcreatorFr($connectionbyidcreatorFr)
+    public function setConnectionbyidcreatorfr($connectionbyidcreatorfr)
     {
-        $this->connectionbyidcreatorFr = $connectionbyidcreatorFr;
+        $this->connectionbyidcreatorfr = $connectionbyidcreatorfr;
 
         return $this;
     }
 
     /**
-     * Get connectionbyidcreatorFr
+     * Get connectionbyidcreatorfr
      *
      * @return integer
      */
-    public function getConnectionbyidcreatorFr()
+    public function getConnectionbyidcreatorfr()
     {
-        return $this->connectionbyidcreatorFr;
+        return $this->connectionbyidcreatorfr;
     }
 
     /**
-     * Set connectionbyidcreatorIt
+     * Set connectionbyidcreatorit
      *
-     * @param integer $connectionbyidcreatorIt
+     * @param integer $connectionbyidcreatorit
      *
      * @return Chat
      */
-    public function setConnectionbyidcreatorIt($connectionbyidcreatorIt)
+    public function setConnectionbyidcreatorit($connectionbyidcreatorit)
     {
-        $this->connectionbyidcreatorIt = $connectionbyidcreatorIt;
+        $this->connectionbyidcreatorit = $connectionbyidcreatorit;
 
         return $this;
     }
 
     /**
-     * Get connectionbyidcreatorIt
+     * Get connectionbyidcreatorit
      *
      * @return integer
      */
-    public function getConnectionbyidcreatorIt()
+    public function getConnectionbyidcreatorit()
     {
-        return $this->connectionbyidcreatorIt;
+        return $this->connectionbyidcreatorit;
     }
 
     /**
-     * Set connectionbyidFr
+     * Set connectionbyidfr
      *
-     * @param integer $connectionbyidFr
+     * @param integer $connectionbyidfr
      *
      * @return Chat
      */
-    public function setConnectionbyidFr($connectionbyidFr)
+    public function setConnectionbyidfr($connectionbyidfr)
     {
-        $this->connectionbyidFr = $connectionbyidFr;
+        $this->connectionbyidfr = $connectionbyidfr;
 
         return $this;
     }
 
     /**
-     * Get connectionbyidFr
+     * Get connectionbyidfr
      *
      * @return integer
      */
-    public function getConnectionbyidFr()
+    public function getConnectionbyidfr()
     {
-        return $this->connectionbyidFr;
+        return $this->connectionbyidfr;
     }
 
     /**
-     * Set connectionbyidIt
+     * Set connectionbyidit
      *
-     * @param integer $connectionbyidIt
+     * @param integer $connectionbyidit
      *
      * @return Chat
      */
-    public function setConnectionbyidIt($connectionbyidIt)
+    public function setConnectionbyidit($connectionbyidit)
     {
-        $this->connectionbyidIt = $connectionbyidIt;
+        $this->connectionbyidit = $connectionbyidit;
 
         return $this;
     }
 
     /**
-     * Get connectionbyidIt
+     * Get connectionbyidit
      *
      * @return integer
      */
-    public function getConnectionbyidIt()
+    public function getConnectionbyidit()
     {
-        return $this->connectionbyidIt;
+        return $this->connectionbyidit;
     }
 
     /**
