@@ -5,6 +5,7 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
+<<<<<<< HEAD
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
             <li class="divider"></li>
@@ -17,7 +18,21 @@
             <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
         </ul>
         <nav>
+=======
+>>>>>>> 68290fdb296813bca56c70f314100264155d8930
 
+        <nav>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#">Bonjour  {{app.user.prenom}}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
+                <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
+                <li><a href="{{ path('showProfil') }}">Voir mon profil</a></li>
+                <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
+                <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
+                <li><a href="{{ path('connect') }}">Mes discussions</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+            </ul>
             <div class="nav-wrapper header">
                 <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="color material-icons">menu</i></a>
@@ -30,7 +45,7 @@
 
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
+                    <li><a class="color" href="#">Bonjour  {{app.user.prenom}}</a></li>
                     <li class="divider"></li>
                     <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
                     <li><a class="color" href="{{ path('editProfil') }}">Gérer mon profil</a></li>
