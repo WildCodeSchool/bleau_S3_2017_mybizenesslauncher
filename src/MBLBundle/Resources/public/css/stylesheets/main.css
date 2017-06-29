@@ -109,54 +109,34 @@ a {
   hyphens: auto;
 }
 
-<<<<<<< HEAD
-/* line 91, ../sass/_global.scss */
-=======
-/* line 98, ../sass/_global.scss */
->>>>>>> dev
+/* line 105, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-<<<<<<< HEAD
-/* line 95, ../sass/_global.scss */
-=======
-/* line 102, ../sass/_global.scss */
->>>>>>> dev
+/* line 109, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
-<<<<<<< HEAD
-/* line 100, ../sass/_global.scss */
-=======
-/* line 107, ../sass/_global.scss */
->>>>>>> dev
+/* line 114, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-<<<<<<< HEAD
-/* line 105, ../sass/_global.scss */
-=======
-/* line 112, ../sass/_global.scss */
->>>>>>> dev
+/* line 119, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-<<<<<<< HEAD
-/* line 109, ../sass/_global.scss */
-=======
-/* line 116, ../sass/_global.scss */
->>>>>>> dev
+/* line 123, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 120, ../sass/_global.scss */
+/* line 127, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
@@ -245,7 +225,6 @@ Layout.html.twig
   color: White;
 }
 
-
 /* line 35, ../sass/_layout.scss */
 .darkerBiz {
   font-size: 1.3em;
@@ -263,12 +242,8 @@ Layout.html.twig
   width: 180px;
   margin: 10px;
 }
-
-/* line 3, ../sass/_userHomepage.scss */
-.UHP {
-
-/* line 34, ../sass/_layout.scss */
-.dropdown-content li > a {
+/* line 49, ../sass/_layout.scss */
+.logoEb .dropdown-content li > a {
   color: #4b494b;
 }
 
@@ -723,7 +698,7 @@ chat.html.twig
   padding-bottom: 20px;
   border-radius: 8px;
 }
-/* line 33, ../sass/_showOneProject.scss */
+/* line 31, ../sass/_showOneProject.scss */
 #oneProject .imgPhoto img {
   height: 17em;
 }

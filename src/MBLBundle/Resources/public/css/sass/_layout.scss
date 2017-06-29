@@ -45,7 +45,8 @@ Layout.html.twig
 .logoEb {
   width: 180px;
   margin: 10px;
-}
-.dropdown-content li>a {
-  color : $ColorDarkGrey;
+
+  .dropdown-content li > a {
+    color: $ColorDarkGrey;
+  }
 }
