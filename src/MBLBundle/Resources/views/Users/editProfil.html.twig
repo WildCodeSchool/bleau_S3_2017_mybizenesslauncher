@@ -81,6 +81,20 @@
                         {{ form_widget(edit_form.competences, {'attr': {'placeholder': ' Compétences '}}) }}
                     </div>
                 </div>
+                <div class="col s12 divFichier">
+                    <div class="row">
+                        <div class="file center-align">
+                            <div class="col s3">
+                                {{ form_errors(edit_form.fichier) }}
+                                {{ form_widget(edit_form.fichier) }}
+                            </div>
+                        </div>
+                        <div class="col s3">
+                            <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                        </div>
+                    </div>
+
+                </div>
                 <div class="col s12 divform">
                     <div class="col s6 btnleft">
                         <input class="btn" type="submit" value="Enregistrez"/>
@@ -89,6 +103,7 @@
                         <a class="btn" href="{{ path('showProfil') }}">Voir mon profil public</a>
                     </div>
                 </div>
+
 
                 {{ form_end(edit_form) }}
             </div>
@@ -102,6 +117,28 @@
         $(document).ready(function() {
             $('select').material_select();
         });
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#mblbundle_profil_fichier_file").change(function(){
+            readURL(this);
+        });
+        $('.file').on('click', '#mblbundle_profil_fichier_file', (function(){
+            $('#preview').removeClass('hiddenPreview')
+            $('#preview').slideDown(20000);
+
+            }));
+
     </script>
 
 {% endblock %}

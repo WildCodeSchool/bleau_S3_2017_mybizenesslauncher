@@ -114,6 +114,11 @@ h6 {
   font-weight: bold;
 }
 
+/* line 104, ../sass/_global.scss */
+.select-dropdown {
+  border-radius: 10px;
+}
+
 /* 2. INDEX */
 /* line 3, ../sass/_index.scss */
 #index .bandeau_homepage {
@@ -188,6 +193,11 @@ Layout.html.twig
 /* line 30, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
+}
+
+/* line 34, ../sass/_layout.scss */
+.dropdown-content li > a {
+  color: #4b494b;
 }
 
 /* line 3, ../sass/_userHomepage.scss */
@@ -301,26 +311,32 @@ input[type=search], textarea.materialize-textarea {
 #createProjet input[type=search], #createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
   border: 1.5px solid lightgray;
   border-radius: 10px;
+  outline: none;
 }
-/* line 34, ../sass/_formCreate.scss */
+/* line 35, ../sass/_formCreate.scss */
 #createProjet input:focus, #createProjet #mblbundle_projet_description:focus, #createProjet #mblbundle_projet_localisation:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
+  box-shadow: none;
 }
-/* line 40, ../sass/_formCreate.scss */
+/* line 42, ../sass/_formCreate.scss */
 #createProjet .hiddenPreview {
   display: none;
 }
-/* line 43, ../sass/_formCreate.scss */
+/* line 45, ../sass/_formCreate.scss */
 #createProjet textarea#mblbundle_projet_description {
   height: 10em;
 }
-/* line 46, ../sass/_formCreate.scss */
+/* line 48, ../sass/_formCreate.scss */
 #createProjet .submitProjet {
   margin: auto;
   display: block;
   margin-bottom: 10px;
+}
+/* line 53, ../sass/_formCreate.scss */
+#createProjet img {
+  width: 100%;
 }
 
 /* line 4, ../sass/_formCreatePro.scss */
@@ -417,36 +433,57 @@ input[type=search], textarea.materialize-textarea {
   text-align: center;
 }
 /* line 8, ../sass/_editShowProfil.scss */
-.editprofil .divform input[type=text]:focus {
-  border-bottom: 2px solid #98d4e1;
-  box-shadow: 0 1px 0 0 #98d4e1;
+.editprofil .divform ul li span {
+  color: #4b494b;
 }
-/* line 12, ../sass/_editShowProfil.scss */
-.editprofil .divform span {
-  color: #98d4e1;
+/* line 11, ../sass/_editShowProfil.scss */
+.editprofil .divform [type="checkbox"]:checked + label:before {
+  border-right: 2px solid #4b494b;
+  border-bottom: 2px solid #4b494b;
 }
-/* line 16, ../sass/_editShowProfil.scss */
+/* line 18, ../sass/_editShowProfil.scss */
 .editprofil textarea {
   border-radius: 8px;
   height: 10rem;
 }
-/* line 20, ../sass/_editShowProfil.scss */
+/* line 22, ../sass/_editShowProfil.scss */
 .editprofil .sltbox input {
   border: 2px solid lightgray;
   background-color: #98d4e1;
 }
-/* line 24, ../sass/_editShowProfil.scss */
+/* line 26, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
   z-index: 1;
-  font-size: 1.5em;
   color: black;
 }
-/* line 29, ../sass/_editShowProfil.scss */
+/* line 30, ../sass/_editShowProfil.scss */
 .editprofil .btnright a {
   float: right;
 }
+/* line 33, ../sass/_editShowProfil.scss */
+.editprofil .hiddenPreview {
+  display: none;
+}
+/* line 36, ../sass/_editShowProfil.scss */
+.editprofil img {
+  width: 100%;
+}
+/* line 39, ../sass/_editShowProfil.scss */
+.editprofil input:not([type]), .editprofil input[type=text], .editprofil input[type=password], .editprofil input[type=email], .editprofil input[type=url], .editprofil input[type=time],
+.editprofil input[type=date], .editprofil input[type=datetime], .editprofil input[type=datetime-local], .editprofil input[type=tel], .editprofil input[type=number],
+.editprofil input[type=search], .editprofil #mblbundle_profil_description {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+/* line 47, ../sass/_editShowProfil.scss */
+.editprofil input:focus, .editprofil #mblbundle_profil_description:focus {
+  border: 1.5px solid #98d4e1;
+  border-radius: 10px;
+  box-shadow: none;
+}
 
-/* line 37, ../sass/_editShowProfil.scss */
+/* line 58, ../sass/_editShowProfil.scss */
 .showprofil .cartepro {
   border: 1px solid red;
   background-color: #98d4e1;
@@ -454,7 +491,7 @@ input[type=search], textarea.materialize-textarea {
   padding-right: 5%;
   border-radius: 8px;
 }
-/* line 47, ../sass/_editShowProfil.scss */
+/* line 68, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -463,7 +500,7 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 58, ../sass/_editShowProfil.scss */
+/* line 79, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
 }
