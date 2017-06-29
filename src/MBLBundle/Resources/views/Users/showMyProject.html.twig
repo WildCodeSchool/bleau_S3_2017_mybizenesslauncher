@@ -3,7 +3,7 @@
 
 {% block titreH2 %} <h2>Parcourir vos projets</h2> {% endblock %}
 {% block body %}
-    <div class="showMyProjet">
+    <div id="showMyProjet">
        {% if app.session.flashbag.has('notice') %}
         {{ app.session.flashbag.get('notice') }}
            {% endif %}
@@ -14,7 +14,7 @@
 
                 {% for pro in projects %}
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s6 m3 l2 vignette_projet  z-depth-5">
+                        <div class="col s6 m3 l2 vignette_Myprojet  z-depth-5">
                             <div class="row vignette ">
                                 <div class="col s12">
 
@@ -37,9 +37,6 @@
 
                                 </div>
                             </div>
-                            {#<div class="row btnlink">#}
-                            {#<a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">Voir</a>#}
-                            {#</div>#}
                             <div class="row info_projet">
                                 <div class="col s12">
                                     <h6>Type de projet</h6>
@@ -66,6 +63,10 @@
                                     <h6>Description</h6>
                                     <p>{{ pro.description }}</p>
                                 </div>
+                            </div>
+
+                            <div class="col s12 divform ">
+                            <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">Editer</a>
                             </div>
                         </div>
 

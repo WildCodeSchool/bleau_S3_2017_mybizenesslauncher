@@ -253,8 +253,21 @@ Layout.html.twig
   text-align: center;
 }
 
-/* line 7, ../sass/_showMyProject.scss */
-.showMyProjet .btn {
+/* line 5, ../sass/_showMyProject.scss */
+#showMyProjet .vignette_Myprojet {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 35em;
+  border: 2px solid #98d4e1;
+  max-width: 300px;
+}
+/* line 17, ../sass/_showMyProject.scss */
+#showMyProjet .vignette_Myprojet:hover {
+  background-color: #98d4e1;
+}
+/* line 21, ../sass/_showMyProject.scss */
+#showMyProjet .btn {
   margin: 5px;
 }
 
