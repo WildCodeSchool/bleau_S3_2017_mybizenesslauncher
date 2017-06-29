@@ -49,7 +49,7 @@
                 <div class="col s12 l6 offset-l1">
 
                     {% for profil in profil_Recheche_exist %}
-
+<div class="profil_recherche">
                         <div class="col s6 vignette_projet_profilAdd z-depth-5">
                             <div class="row type_metier">
                                 <div class="color col s12">
@@ -88,6 +88,7 @@
                                 <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
                             </div>
                         </div>
+</div>
                     {% endfor %}
 
                 </div>
@@ -112,7 +113,7 @@
                     success: function(response){
 
                         $('.profil_recherche').append(response);
-                        $('.vignette_profil:last-child').hide().fadeIn(2000);
+                        $('.vignette_projet_profilAdd:last-child').hide().fadeIn(2000);
 
                         form.trigger('reset');
                     }

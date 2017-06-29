@@ -62,49 +62,64 @@ a {
   border-radius: 8px;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #98d4e1;
   max-width: 300px;
 }
 
 /* line 73, ../sass/_global.scss */
 .vignette_projet:hover {
-  background-color: #f0f0f0;
+  background-color: #98d4e1;
 }
 
 /* line 76, ../sass/_global.scss */
+.vignette_profil {
+  background-color: #98d4e1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid #98d4e1;
+  max-width: 300px;
+}
+
+/* line 87, ../sass/_global.scss */
+.vignette_profil:hover {
+  background-color: #4b494b;
+}
+
+/* line 90, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
-/* line 80, ../sass/_global.scss */
+/* line 94, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
 }
 
-/* line 83, ../sass/_global.scss */
+/* line 97, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 87, ../sass/_global.scss */
+/* line 101, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
-/* line 92, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-/* line 97, ../sass/_global.scss */
+/* line 111, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-/* line 100, ../sass/_global.scss */
+/* line 114, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
@@ -449,8 +464,12 @@ input[type=search], textarea.materialize-textarea {
   width: 60%;
 }
 
-/* line 4, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * {
+/* line 2, ../sass/_showAllProfils.scss */
+#showAllProfils {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showAllProfils.scss */
+#showAllProfils .box_projet * {
   text-align: center;
 }
 
