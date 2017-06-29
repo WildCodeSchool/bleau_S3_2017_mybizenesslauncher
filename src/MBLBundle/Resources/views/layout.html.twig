@@ -19,15 +19,12 @@
         <nav>
 
             <div class="nav-wrapper header">
-                <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}">MyBizenessLauncher.com</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="color material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="color"  href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                    <li><a class="color"  href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
+                    <li><a class="color darkerTop"  href="{{ path('showProject') }}">Parcourir les projets</a></li>
+                    <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
                     <li><a class="color dropdown-button" href="#!" data-activates="dropdown1"><i class="right">Mon Compte</i></a></li>
-
-
-
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
@@ -44,7 +41,6 @@
 
         </nav>
     {% else %}
-
         <nav>
             <div class="nav-wrapper header">
                 <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
@@ -55,16 +51,10 @@
                 </ul>
             </div>
         </nav>
-
-
     {% endif %}
-
-
-
 {% endblock %}
 
 {% block bandeau %}
-
     <div class="bandeau">
         <div class="col s12">
             {% block titreH2 %} <h2>Ecrivez votre titre!</h2> {% endblock %}

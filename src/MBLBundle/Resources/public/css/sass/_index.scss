@@ -15,15 +15,24 @@
     background-color: $ColorWhite;
     color: $Colorblue;
     box-shadow: $BoxShadow;
+
     &:hover {
-      background-color: $ColorWhite;
+      background-color: $Colorgrey;
+      color: #6f9ea8;
     }
     &:focus {
-      background-color: $ColorWhite;
+      background-color: $Colorgrey;
     }
   }
   .Outils {
     padding-top: 70px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
   .btn_eBusta {
     margin-top: 40px;
@@ -34,9 +43,9 @@
 
   .box_projet_profil * {
     text-align: center;
-
     
   }
+
 }
 
 

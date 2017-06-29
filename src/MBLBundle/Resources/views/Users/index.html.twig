@@ -7,8 +7,8 @@
     <!--Bandeau de la homepage -->
     <div id="index">
         <div class="row">
-            <div class="col l12 bandeau_homepage ">
-                <div class="col s12 m4 presentation ">
+            <div class="col s12 bandeau_homepage ">
+                <div class="col s12 m6 l4 presentation ">
                     <h2>Pour les porteurs de projet<br/></h2>
                     <p>Tu peux créer ton projet, le décrire et détailler les
                         profils de cofondateurs et associés que tu cherches.
@@ -20,27 +20,28 @@
                         parcours les projets pour trouver celui que tu pourrais
                         aider à porter au sommet !</p>
                 </div>
-                <div class="col s12 m2 offset-m1">
+                <div class="col s12 m3 l4 offset-m1">
                     <div class="row Outils">
                         <div class="col s12">
-                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">Outils pour se lancer</a>
+                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils darken" href="#">
+                                Outils pour se lancer</a>
                         </div>
                         <div class="col s12">
                             <p>Trouve sur MyStartupTools.com<br/>tous les outils pour t’aider à lancer ton activité.</p>
                         </div>
+
                     </div>
                 </div>
-                <div class="col s12 m4 offset-m1">
-                    <div class="row Finance">
-                        <div class="col s6 btn_eBusta">
-                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" target="blanck" href="https://www.e-busta.com/">Finance ton projet</a>
+                <div class="col s12 m3 l4 offset-m1 Finance">
+
+                        <div class="col s12 m6 btn_eBusta">
+                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance darken" target="blanck"
+                               href="https://www.e-busta.com/">Finance ton projet</a>
                         </div>
-                        <div class="col s6">
-                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                        </div>
+                    <div class="col s12 m12 l6">
+                        <img class="responsive-img logoEb" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                     </div>
-                    <div class="row">
-                        <div class="col s12">
+                        <div class="col s12 m12">
                             <p>Avec ses enveloppes publiques, E-busta.com vous
                                 propose de réaliser des campagnes de Crowdfunding
                                 de don en contrepartie pour vous aider à financer
@@ -48,7 +49,8 @@
                                 collecté sera appliquée, faisant de E-busta le site de
                                 Crowdfunding le moins cher du marché.</p>
                         </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -56,20 +58,22 @@
         <!--Section projet & profil -->
         <div class="row box_projet_profil">
             <!--PROJET-->
-            <div class="col s12 l5 offset-l1 projet ">
+            <div class="col s12 l5 offset-l1 projet">
                 <h3>Vous cherchez un associé</h3>
                 <div class="row bouton_projet valign-wrapper">
-                    <div class="col s5 btn_showProjet ">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('showProject') }}">Parcourir les projets</a>
+                    <div class="col s5 btn_showProjet">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage" href="{{ path('showProject') }}">
+                            Parcourir les projets</a>
                     </div>
                     <div class="col s5 btn_createProjet">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('createProjet') }}">Dépose ton projet</a>
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage" href="{{ path('createProjet') }}">
+                            Dépose ton projet</a>
                     </div>
                 </div>
                 <div class="row ">
                     {% for pro in projet %}
                         <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                            <div class="col s5 offset-s1 vignette_projet  z-depth-5">
+                            <div class="col s5 offset-s1 vignette_projet z-depth-5">
                                 <div class="row vignette ">
                                     <div class="col s12">
 
@@ -83,9 +87,11 @@
                                     <div class="col s8 offset-s2 photo_profil">
 
                                         {% if pro.fichier is null %}
-                                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                            <img class="responsive-img"
+                                                 src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img class="responsive-img"
+                                                 src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
 
 
@@ -152,7 +158,8 @@
                                         {% if pro.fichier is null %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img class="responsive-img"
+                                                 src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
