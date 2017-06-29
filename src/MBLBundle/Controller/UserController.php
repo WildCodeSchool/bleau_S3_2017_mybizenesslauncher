@@ -60,7 +60,7 @@ class UserController extends Controller
     {
         $profil = $this->getUser();
         return $this->render('@MBL/Users/showProfil.html.twig', array(
-            'profilType' => $profil,//
+            'profilType' => $profil,
         ));
     }
     public function showAllProfilsAction()
@@ -257,11 +257,12 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-//        $profil = $em->getRepository('MBLBundle:Profil')->findOneByProjets($projet);
-//        dump($projets);die();
+
+        $profils = $projet->getProfils(); //TODO attention lorsque l'on aura lié plusieurs projets et utilisateurs
+
         return $this->render('@MBL/Users/showOneProject.html.twig', array(
             'projet' => $projet,
-//            'fichier' => $fichier,
+            'profils' => $profils,
         ));
     }
 
@@ -270,7 +271,7 @@ class UserController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function     deleteMyProjectAction(Projet $projet = null, $id)
+    public function deleteMyProjectAction(Projet $projet = null, $id)
     {
         if ($projet != null) {
             $em = $this->getDoctrine()->getManager();
