@@ -1,4 +1,8 @@
 @import "global";
+#homepage
+{
+
+
 
 .UHP{
   width:100%;
@@ -16,6 +20,7 @@
 
 .btn {
   background-color: $Colorblue;
+  width: 300px;
   &:hover
   {
     background-color: $Colorblue;
@@ -24,6 +29,7 @@
   &:focus{
     background-color: $Colorblue;
   }
+}
 }
 
 //.btn:hover{

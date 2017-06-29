@@ -5,19 +5,18 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-
         <nav>
-            <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#">Bonjour  {{app.user.prenom}}</a></li>
-                <li class="divider"></li>
-                <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
-                <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
-                <li><a href="{{ path('showProfil') }}">Voir mon profil</a></li>
-                <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
-                <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                <li><a href="{{ path('connect') }}">Mes discussions</a></li>
-                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
-            </ul>
+             <ul id="dropdown1" class="dropdown-content">
+            <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
+            <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
+            <li><a href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
+            <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
+            <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
+            <li><a href="{{ path('connect') }}">Mes discussions</a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+        </ul>
             <div class="nav-wrapper header">
                 <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="color material-icons">menu</i></a>
@@ -34,7 +33,7 @@
                     <li class="divider"></li>
                     <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
                     <li><a class="color" href="{{ path('editProfil') }}">Gérer mon profil</a></li>
-                    <li><a class="color" href="{{ path('showProfil') }}">Voir mon profil</a></li>
+                    <li><a class="color" href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
                     <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
                     <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
                     <li><a class="color" href="{{ path('connect') }}">Mes discussions</a></li>
@@ -50,7 +49,7 @@
                 <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
                 <ul id="nav-mobile" class="right">
                     <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                    <li><a class="color" href="">Parcourir les profils</a></li>
+                    <li><a class="color" href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
                     <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
                 </ul>
             </div>
@@ -99,7 +98,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2017 Copyright Text
+                © 2017 © E-Busta Srl - All rights reserved - Partita IVA IT 06365730826
                 <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
         </div>

@@ -1,0 +1,36 @@
+
+@import "global";
+#myProfil {
+ margin-top: 50px;
+
+  .showProfil {
+    border: 2px solid $Colorblue;
+    background-color: $Colorblue;
+ border-radius: 10px;
+    margin-bottom: 50px;
+    //font-style: italic;
+  }
+  a.site {
+    color: darkcyan;
+  }
+  a.site:hover{
+    color: darkslategray;
+    text-decoration: underline;
+  }
+  .linkedIn {
+    align-items: center;
+  }
+  .imgPhoto img
+  {
+    //max-height: 300px;
+    //max-width: 250px;
+    height: 17em;
+  }
+  .divform
+  {
+    text-align: center;
+    margin-bottom: 25px;
+
+  }
+
+}
