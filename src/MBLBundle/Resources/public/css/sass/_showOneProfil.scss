@@ -1,6 +1,6 @@
 
 @import "global";
-#myProfil {
+#oneProfil {
   margin-top: 50px;
 
   .showProfil {
@@ -18,6 +18,12 @@
   }
   .linkedIn {
     align-items: center;
+  }
+  .imgPhoto img
+  {
+    //max-height: 300px;
+    //max-width: 250px;
+    height: 17em;
   }
 
 }

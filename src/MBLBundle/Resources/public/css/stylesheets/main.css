@@ -129,7 +129,7 @@ h6 {
   font-weight: bold;
 }
 
-/* line 104, ../sass/_global.scss */
+/* line 120, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
@@ -215,34 +215,32 @@ Layout.html.twig
   color: #4b494b;
 }
 
-/* line 3, ../sass/_userHomepage.scss */
-.UHP {
+/* line 7, ../sass/_userHomepage.scss */
+#homepage .UHP {
   width: 100%;
   padding-top: 100px;
 }
-
-/* line 8, ../sass/_userHomepage.scss */
-.btnlink {
+/* line 12, ../sass/_userHomepage.scss */
+#homepage .btnlink {
   text-align: center;
   height: 100px;
 }
-
-/* line 13, ../sass/_userHomepage.scss */
-.btnlink1 {
+/* line 17, ../sass/_userHomepage.scss */
+#homepage .btnlink1 {
   margin-bottom: 40px;
 }
-
-/* line 17, ../sass/_userHomepage.scss */
-.btn {
+/* line 21, ../sass/_userHomepage.scss */
+#homepage .btn {
   background-color: #98d4e1;
+  width: 300px;
 }
-/* line 19, ../sass/_userHomepage.scss */
-.btn:hover {
+/* line 24, ../sass/_userHomepage.scss */
+#homepage .btn:hover {
   background-color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 24, ../sass/_userHomepage.scss */
-.btn:focus {
+/* line 29, ../sass/_userHomepage.scss */
+#homepage .btn:focus {
   background-color: #98d4e1;
 }
 
@@ -531,6 +529,19 @@ input[type=search], textarea.materialize-textarea {
 #showAllProfils .box_projet * {
   text-align: center;
 }
+/* line 11, ../sass/_showAllProfils.scss */
+#showAllProfils .vignette_profil_all {
+  background-color: #98d4e1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 35em;
+  border: 2px solid #98d4e1;
+  max-width: 300px;
+}
+/* line 22, ../sass/_showAllProfils.scss */
+#showAllProfils .vignette_profil_all:hover {
+  background-color: #4b494b;
+}
 
 /*
 chat.html.twig
@@ -655,6 +666,10 @@ chat.html.twig
   padding-bottom: 20px;
   border-radius: 8px;
 }
+/* line 33, ../sass/_showOneProject.scss */
+#oneProject .imgPhoto img {
+  height: 17em;
+}
 
 /* line 2, ../sass/_editProject.scss */
 #editProject {
@@ -683,49 +698,63 @@ chat.html.twig
 }
 
 /* line 3, ../sass/_showMyProfil.scss */
-#oneProfil {
+#myProfil {
   margin-top: 50px;
 }
 /* line 6, ../sass/_showMyProfil.scss */
+#myProfil .showProfil {
+  border: 2px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+/* line 13, ../sass/_showMyProfil.scss */
+#myProfil a.site {
+  color: darkcyan;
+}
+/* line 16, ../sass/_showMyProfil.scss */
+#myProfil a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 20, ../sass/_showMyProfil.scss */
+#myProfil .linkedIn {
+  align-items: center;
+}
+/* line 23, ../sass/_showMyProfil.scss */
+#myProfil .imgPhoto img {
+  height: 17em;
+}
+/* line 29, ../sass/_showMyProfil.scss */
+#myProfil .divform {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* line 3, ../sass/_showOneProfil.scss */
+#oneProfil {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showOneProfil.scss */
 #oneProfil .showProfil {
   border: 2px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 12, ../sass/_showMyProfil.scss */
+/* line 12, ../sass/_showOneProfil.scss */
 #oneProfil a.site {
   color: darkcyan;
 }
-/* line 15, ../sass/_showMyProfil.scss */
+/* line 15, ../sass/_showOneProfil.scss */
 #oneProfil a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 19, ../sass/_showMyProfil.scss */
+/* line 19, ../sass/_showOneProfil.scss */
 #oneProfil .linkedIn {
   align-items: center;
 }
-
-/* line 3, ../sass/_showOneProfil.scss */
-#myProfil {
-  margin-top: 50px;
-}
-/* line 6, ../sass/_showOneProfil.scss */
-#myProfil .showProfil {
-  border: 2px solid #98d4e1;
-  background-color: #98d4e1;
-  border-radius: 10px;
-}
-/* line 12, ../sass/_showOneProfil.scss */
-#myProfil a.site {
-  color: darkcyan;
-}
-/* line 15, ../sass/_showOneProfil.scss */
-#myProfil a.site:hover {
-  color: darkslategray;
-  text-decoration: underline;
-}
-/* line 19, ../sass/_showOneProfil.scss */
-#myProfil .linkedIn {
-  align-items: center;
+/* line 22, ../sass/_showOneProfil.scss */
+#oneProfil .imgPhoto img {
+  height: 17em;
 }

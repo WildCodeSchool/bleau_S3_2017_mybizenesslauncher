@@ -9,10 +9,10 @@
                 <div class="col s12 m8 offset-l2 l6 offset-l3 showProfil">
                     <div class="col s12 m12 titre">
                         <h4 id="titre" class="center">{{ profil.prenom }} {{ profil.nom }}</h4>
-                        <p class="center darkgrey-text">(porteur du projet)</p>
+
                     </div>
 
-                    <div class="col s12 center">
+                    <div class="col s12 center imgPhoto">
                         {% if profil.fichier is null %}
                             <img class="responsive-img" src="{{ asset('uploads/images/59') }}">
                         {% else %}
@@ -106,7 +106,7 @@
                     </div>
 
                     <div class="col s12 divform ">
-                        <a class="btn" href="{{ path('editProfil', { 'id': profil.id }) }}">Modifier mon profil</a>
+                        <a class="btn grey " href="{{ path('editProfil', { 'id': profil.id }) }}">Modifier mon profil</a>
 
                     </div>
                 </div>

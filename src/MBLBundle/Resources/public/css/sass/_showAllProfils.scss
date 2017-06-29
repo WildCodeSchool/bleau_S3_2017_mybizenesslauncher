@@ -8,4 +8,19 @@
 
 
   }
+  .vignette_profil_all {
+    background-color: $Colorblue;
+    border-radius: $BorderRadius;
+    margin-bottom: 10px;
+    height: 35em;
+    border: 2px solid $Colorblue;
+
+    max-width: 300px;
+
+
+  }
+  .vignette_profil_all:hover {
+    background-color: $ColorDarkGrey;
+  }
+
 }
