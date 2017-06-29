@@ -5,12 +5,14 @@
     .divform{
         text-align: center;
 
-        input[type=text]:focus {
-            border-bottom: 2px solid $Colorblue;
-            box-shadow: 0 1px 0 0 $Colorblue;
+        ul li span {
+            color : $ColorDarkGrey;
         }
-        span{
-            color:$Colorblue;
+        [type="checkbox"]:checked+label:before {
+
+            border-right: 2px solid $ColorDarkGrey;
+            border-bottom: 2px solid $ColorDarkGrey;
+
         }
     }
     textarea{
@@ -23,12 +25,31 @@
     }
     .sltbox span {
          z-index: 1;
-         font-size:1.5em;
         color:black;
     }
     .btnright a{
         float:right;
     }
+    .hiddenPreview {
+        display: none;
+    }
+    img {
+        width: 100%;
+    }
+    input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
+    input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
+    input[type=search], #mblbundle_profil_description {
+        border: 1.5px solid lightgray;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    input:focus, #mblbundle_profil_description:focus  {
+        border: 1.5px solid $Colorblue;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
 }
 // CSS de la page VOIR MON PROFIL PUBLIC
 
@@ -59,5 +80,6 @@
        width:60%;
 
     }
+
 
 }
