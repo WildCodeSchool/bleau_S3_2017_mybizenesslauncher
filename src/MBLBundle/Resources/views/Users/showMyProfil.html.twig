@@ -1,15 +1,15 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Profil</h2> {% endblock %}
+{% block titreH2 %} <h2>Mon profil public</h2> {% endblock %}
 
 {% block body %}
-    <div id="oneProfil">
+    <div id="myProfil">
         <div class="container ">
             <div class="row ">
                 <div class="col s12 m8 offset-l2 l6 offset-l3 showProfil">
                     <div class="col s12 m12 titre">
                         <h4 id="titre" class="center">{{ profil.prenom }} {{ profil.nom }}</h4>
-                        <p class="center darkgrey-text">(porteur du projet)</p>
+
                     </div>
 
                     <div class="col s12 center imgPhoto">
@@ -105,7 +105,10 @@
                         {% endif %}
                     </div>
 
+                    <div class="col s12 divform ">
+                        <a class="btn grey " href="{{ path('editProfil', { 'id': profil.id }) }}">Modifier mon profil</a>
 
+                    </div>
                 </div>
             </div>
         </div>

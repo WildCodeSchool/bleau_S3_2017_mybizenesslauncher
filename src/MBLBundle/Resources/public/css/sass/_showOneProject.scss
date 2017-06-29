@@ -28,4 +28,10 @@
     padding-bottom: 20px;
     border-radius: $BorderRadius;
   }
+    .imgPhoto img
+    {
+      //max-height: 300px;
+      //max-width: 250px;
+      height: 17em;
+    }
 }

@@ -66,13 +66,27 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid $Colorgrey;
+  border: 2px solid $Colorblue;
 
   max-width: 300px;
 
 }
 .vignette_projet:hover {
- background-color: $Colorgrey;
+ background-color: $Colorblue;
+}
+.vignette_profil {
+  background-color: $Colorblue;
+  border-radius: $BorderRadius;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid $Colorblue;
+
+  max-width: 300px;
+
+
+}
+.vignette_profil:hover {
+  background-color: $ColorDarkGrey;
 }
 .info_projet {
   border-radius: $BorderRadius;
@@ -110,7 +124,9 @@ h6 {
   font-weight: bold;
 }
 
-
+.select-dropdown {
+  border-radius: 10px;
+}
 
 
 

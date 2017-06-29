@@ -46,3 +46,6 @@ Layout.html.twig
   width: 180px;
   margin: 10px;
 }
+.dropdown-content li>a {
+  color : $ColorDarkGrey;
+}
