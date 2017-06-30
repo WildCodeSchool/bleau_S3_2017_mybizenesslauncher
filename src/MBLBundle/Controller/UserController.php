@@ -61,11 +61,19 @@ class UserController extends Controller
         ));
     }
 
-    public function showProfilAction()
+    public function showProfilAction(Profil $profil)
+    {
+
+        return $this->render('@MBL/Users/showProfil.html.twig', array(
+            'profil' => $profil,
+        ));
+    }
+    public function showMyProfilAction()
     {
         $profil = $this->getUser();
-        return $this->render('@MBL/Users/showProfil.html.twig', array(
-            'profilType' => $profil,//
+//        dump($profil);die();
+        return $this->render('@MBL/Users/showMyProfil.html.twig', array(
+            'profil' => $profil,
         ));
     }
     public function showAllProfilsAction()
@@ -119,6 +127,7 @@ class UserController extends Controller
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
         $form = $this->createForm(ProjetType::class, $projet);
         $form->handleRequest($request);
+        $profil_Recheche_exist = $projet->getProfilsrecherches();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -131,7 +140,7 @@ class UserController extends Controller
         return $this->render('@MBL/Users/editProject.html.twig',
             array(
                 'projet' => $projet,
-
+                'profil_exist' => $profil_Recheche_exist,
                 'form' => $form->createView(),
 
             ));
@@ -187,14 +196,14 @@ class UserController extends Controller
      */
     public function deleteProfilRAction(Request $request)
     {
-            $em = $this->getDoctrine()->getManager();
-            $id = $request->request->get('id');
-            $profilRecherche = $em->getRepository('MBLBundle:ProfilRecherche')->findOneById($id);
-            $em->remove($profilRecherche);
-            $content = new JsonResponse($profilRecherche);
-            $em->flush();
+        $em = $this->getDoctrine()->getManager();
+        $id = $request->request->get('id');
+        $profilRecherche = $em->getRepository('MBLBundle:ProfilRecherche')->findOneById($id);
+        $em->remove($profilRecherche);
+        $content = new JsonResponse($profilRecherche);
+        $em->flush();
 
-            return $content;
+        return $content;
     }
 
     public function showProjectAction(Request $request)
@@ -264,11 +273,12 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-//        $profil = $em->getRepository('MBLBundle:Profil')->findOneByProjets($projet);
-//        dump($projets);die();
+
+        $profils = $projet->getProfils(); //TODO attention lorsque l'on aura lié plusieurs projets et utilisateurs
+
         return $this->render('@MBL/Users/showOneProject.html.twig', array(
             'projet' => $projet,
-//            'fichier' => $fichier,
+            'profils' => $profils,
         ));
     }
 
@@ -277,7 +287,7 @@ class UserController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function     deleteMyProjectAction(Projet $projet = null, $id)
+    public function deleteMyProjectAction(Projet $projet = null, $id)
     {
         if ($projet != null) {
             $em = $this->getDoctrine()->getManager();
@@ -313,22 +323,22 @@ class UserController extends Controller
         $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
         $form_text->handleRequest($request);
 
-           if ($request->isXmlHttpRequest()){
+        if ($request->isXmlHttpRequest()){
 
-               //on ajoute le text au chat et le chat au text
-              $chat->addMsg($text);
-              $text->addChat($chat);
-              //on set au champs profil le prenom
-              $text->setProfil($this->getUser()->getPrenom());
-              $em->persist($text);
-              $em->flush();
+            //on ajoute le text au chat et le chat au text
+            $chat->addMsg($text);
+            $text->addChat($chat);
+            //on set au champs profil le prenom
+            $text->setProfil($this->getUser()->getPrenom());
+            $em->persist($text);
+            $em->flush();
 
-              $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
-                  'text' => $text
-              ));
-              $response = new JsonResponse($content);
-              return $response;
-          }
+            $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
+                'text' => $text
+            ));
+            $response = new JsonResponse($content);
+            return $response;
+        }
 
         return $this->render('@MBL/Users/Chat.html.twig', array(
             'chat' => $chat,

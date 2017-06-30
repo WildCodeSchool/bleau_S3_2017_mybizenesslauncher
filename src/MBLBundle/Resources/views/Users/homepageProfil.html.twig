@@ -3,14 +3,18 @@
 
 
 {% block body %}
-
+<div id="homepage">
 <div class="UHP">
     <div class="row btnlink">
         <div class="col s3 offset-s3">
             <a class="waves-effect waves-light btn" href="{{ path('editProfil')}}">{{ 'Gérer mon profil'|trans }}</a>
         </div>
         <div class="col s3">
+<<<<<<< HEAD
             <a class="waves-effect waves-light btn" href="{{ path('showProfil')}}">{{ 'Voir mon profil public'|trans }}</a>
+=======
+            <a class="waves-effect waves-light btn" href="{{ path('showMyProfil')}}">Voir mon profil public</a>
+>>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
         </div>
      </div>
 
@@ -28,6 +32,7 @@
             <a class="waves-effect waves-light btn" href="{{ path('connect')}}">{{ 'Mes discussions'|trans }}</a>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}

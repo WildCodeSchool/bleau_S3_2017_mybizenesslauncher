@@ -29,11 +29,19 @@ class ProjetType extends AbstractType
                 'required' => true,
                 'attr' => array('rows' => '1000','cols' => '1000')
             ))
+<<<<<<< HEAD
             ->add('siteInternet'.$options["locale"], UrlType::class, array(
                 'required' => false
             ))
             ->add('ebustaUrl'.$options["locale"], UrlType::class, array(
                 'required' => false
+=======
+            ->add('siteInternet', UrlType::class, array(
+                'required' => false,
+            ))
+            ->add('ebustaUrl', UrlType::class, array(
+                'required' => false,
+>>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',

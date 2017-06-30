@@ -3,61 +3,69 @@
 
 {% block titreH2 %} <h2>{{ 'Parcourir vos projets'|trans }}</h2> {% endblock %}
 {% block body %}
-    <div class="showMyProjet">
-       {% if app.session.flashbag.has('notice') %}
-        {{ app.session.flashbag.get('notice') }}
-           {% endif %}
+    <div id="showMyProjet">
+        {% if app.session.flashbag.has('notice') %}
+            {{ app.session.flashbag.get('notice') }}
+        {% endif %}
         <div class="box_projet">
-
-
             <div class="row">
 
-                {% for projets in projects %}
-                    <div class="col l2 m3 s4 vignette_projet">
-                        <div class="content z-depth-5">
-                            <div class="row vignette">
+                {% for pro in projects %}
+                    <a href="{{ path('showOneProject', {'id': pro.id}) }}">
+                        <div class="col s6 m3 l2 vignette_Myprojet  z-depth-5">
+                            <div class="row vignette ">
                                 <div class="col s12">
-                                    <h4>{{ projets.titre }}</h4>
+
+                                    {% if pro.titre|length > 10 %}
+                                        <h4>{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
+                                    {% else  %}
+                                        <h4>{{ pro.titre }}</h4>
+                                    {% endif %}
+
                                 </div>
-                                {#<div class="col s8 offset-s2 photo_profil">#}
-                                    {#<img src="{{ asset('uploads/images/' ~ projets.fichier.photo) }}">#}
-                                {#</div>#}
+                                <div class="col s8 offset-s2 photo_profil">
+
+                                    {% if pro.fichier is null %}
+                                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                    {% else %}
+                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                    {% endif %}
+                                </div>
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h5>{{ 'Profils recherchés'|trans }}</h5>
-                                    {% for profil in projets.profilsrecherches %}
-                                        <p>{{ profil.metier.metier}}</p>
+                                    <h6>{{ 'Type de projet'|trans }}</h6>
+                                    {% for comp in pro.typeDeProjet %}
+                                        {{ comp.typeDeProjet}}
                                     {% endfor %}
                                 </div>
                                 <div class="col s12">
-                                    <h5>{{ 'Localisation'|trans }}</h5>
-                                    <p>{{ projets.localisation }}</p>
+                                    <h6>{{ 'Profils recherchés'|trans }}</h6>
+                                    {% for profil in pro.profilsrecherches %}
+                                        {% if profil.metier.metier|length > 10 %}
+                                            <p> {{ profil.metier.metier }} ,
+                                        {% else  %}
+                                            {{ profil.metier.metier }}</p>
+                                        {% endif %}
+
+                                    {% endfor %}
                                 </div>
                                 <div class="col s12">
-                                    <h5>{{ 'Description'|trans }}</h5>
-                                    <p>{{ projets.description }}</p>
+                                    <h6>{{ 'Localisation'|trans }}</h6>
+                                    <p>{{ pro.localisation }}</p>
+                                </div>
+                                <div class="col s12">
+                                    <h6>{{ 'Description'|trans }}</h6>
+                                    <p>{{ pro.description }}</p>
                                 </div>
                             </div>
 
-                            {# Bouton pour voir 1 projet #}
-                            <div class="row btnlink">
-                                <div class="col s2 offset-s3">
-                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : projets.id})}}">{{ 'Voir'|trans }}</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row btnlink">
-                            <div class="col s12">
-                                <a class="waves-effect waves-light btn" href="{{ path('editProjet', {'id' : projets.id})}}">{{ 'Editer'|trans }}</a>
-                            </div>
-                            <div class="col s12">
+                            <div class="col s12 divform ">
+                                <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">Editer</a>
                                 <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">{{ 'Supprimer'|trans }}</a>
                             </div>
                         </div>
-                    </div>
-
+                    </a>
                 {% endfor %}
 
             </div>

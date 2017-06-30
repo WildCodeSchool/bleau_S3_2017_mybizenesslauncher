@@ -16,8 +16,12 @@ editProfil:
 #    methods:  DELETE
 
 showProfil:
-    path: /showProfil
+    path: /showProfil/{id}
     defaults: { _controller: MBLBundle:User:showProfil }
+
+showMyProfil:
+    path: /showMyProfil
+    defaults: { _controller: MBLBundle:User:showMyProfil }
 
 showAllProfils:
     path: /showAllProfils
@@ -106,6 +110,7 @@ chatDisconnect:
 #    requirements:
 #        url: .*/$
 #    methods: [GET]
+
 
 
 

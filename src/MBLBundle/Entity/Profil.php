@@ -8,7 +8,15 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class Profil extends BaseUser
 {
+    /**
+     * @var
+     */
     protected $id;
+
+//    /**
+//     * @var
+//     */
+//    protected $bioUrl;
 
     public function setEmail($email)
     {

@@ -25,7 +25,7 @@
                     <div class="col s12 divform">
                         {{ form_label(edit_form.description) }}
                         {{ form_errors(edit_form.description) }}
-                        {{ form_widget(edit_form.description, {'attr': {'rows' : 1000}}) }}
+                        {{ form_widget(edit_form.description)}}
                     </div>
 
                     <div class="col s12 divform">
@@ -79,14 +79,33 @@
                         {{ form_widget(edit_form.competences, {'attr': {'placeholder': ' Compétences '}}) }}
                     </div>
                 </div>
+                <div class="col s12 divFichier">
+                    <div class="row">
+                        <div class="file center-align">
+                            <div class="col s3">
+                                {{ form_errors(edit_form.fichier) }}
+                                {{ form_widget(edit_form.fichier) }}
+                            </div>
+                        </div>
+                        <div class="col s3">
+                            <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                        </div>
+                    </div>
+
+                </div>
                 <div class="col s12 divform">
                     <div class="col s6 btnleft">
                         <input class="btn" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
+<<<<<<< HEAD
                         <a class="btn" href="{{ path('showProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
+=======
+                        <a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>
+>>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
                     </div>
                 </div>
+
 
                 {{ form_end(edit_form) }}
             </div>
@@ -100,6 +119,28 @@
         $(document).ready(function() {
             $('select').material_select();
         });
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#mblbundle_profil_fichier_file").change(function(){
+            readURL(this);
+        });
+        $('.file').on('click', '#mblbundle_profil_fichier_file', (function(){
+            $('#preview').removeClass('hiddenPreview')
+            $('#preview').slideDown(20000);
+
+            }));
+
     </script>
 
 {% endblock %}

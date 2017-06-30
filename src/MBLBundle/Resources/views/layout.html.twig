@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} MyBizenessLauncher {% endblock %}
+{% block title %} Innova'Up {% endblock %}
 {% block header %}
 
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             <ul id="dropdown1" class="dropdown-content header">
                 <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
@@ -19,7 +19,7 @@
             </ul>
             <nav>
                 <div class="nav-wrapper header">
-                    <a href="{{ path('mbl_homepage') }}" class="color">MyBizenessLauncher.com</a>
+                    <a href="{{ path('mbl_homepage') }}" class="color">Innova'Up.com</a>
                     <ul class="right hide-on-med-and-down">
                         <li></li>
                         <li></li>
@@ -34,7 +34,7 @@
 
             <nav>
                 <div class="nav-wrapper header">
-                    <a href="#" class="color">MyBizenessLauncher.com</a>
+                    <a href="#" class="color">Innova'Up.com</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
                         <li><a class="color" href="">{{ 'Parcourir les profils'|trans }}</a></li>
@@ -74,11 +74,11 @@
                     </ul>
                 </div>
                 <div class="col l6 s12">
-                    <h5 class="white-text">{{ 'Suivez'|trans }} MyBizenessLauncher.com</h5>
+
+                    <h5 class="white-text">{{ 'Suivez'|trans }} Innova'Up.com</h5>
                     <p class="grey-text text-lighten-4"><Facebook></Facebook></p>
                 </div>
                 <div class="choiceLanguage">
-
 
                 </div>
 
@@ -86,8 +86,9 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2017 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#">{{ 'More Links'|trans }}</a>
+
+                © 2017 © E-Busta Srl - All rights reserved - Partita IVA IT 06365730826
+                <a class="grey-text text-lighten-4 right" href="#!">{{ 'More Links'|trans }}</a>
             </div>
         </div>
     </footer>

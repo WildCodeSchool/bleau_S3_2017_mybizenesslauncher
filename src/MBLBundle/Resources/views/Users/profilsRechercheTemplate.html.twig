@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     <div class="col s3 vignette_profil ">
         <div class="content z-depth-5">
             <div class="row vignette ">
@@ -22,15 +23,15 @@
                     <p>{{ profil.ETQ.etq }}</p>
                 </div>
                 <div class="col s12">
-                    <h5>{{ 'Localisation'|trans }}</h5>
+                    <h5></h5>
                     <p>{{ profil.ou.ou }}</p>
                 </div>
                 <div class="col s12">
-                    <h5>{{ 'Investissement'|trans }}</h5>
+                    <h5></h5>
                     <p>{{ profil.invest.invest }}</p>
                 </div>
                 <div class="col s12">
-                    <h5>{{ 'Compétences'|trans }}</h5>
+                    <h5></h5>
                     {% for comp in profil.competences %}
                         <p>{{ comp.competences }}</p>
                     {% endfor %}
@@ -38,6 +39,44 @@
             </div>
         </div>
         <div class="col s8 offset-s2">
-            <button class="btn deleteProfilR" id="{{ profil.id }}">{{ 'Supprimer'|trans }}</button>
+            <button class="btn deleteProfilR" id="{{ profil.id }}"></button>
+
+<div class="col s12 m6 l6 vignette_projet_profilAdd z-depth-5">
+    <div class="row type_metier">
+        <div class="color col s12">
+            <h5 class="center">Profil Recherché</h5>
+
         </div>
     </div>
+
+    <div class="row info_projet_profilAdd">
+
+        <div class="col s12">
+            <h6>Disponibilité</h6>
+            <p>{{ profil.dispo.dispo }}</p>
+        </div>
+        <div class="col s12">
+            <h6>En tant que</h6>
+            <p>{{ profil.ETQ.etq }}</p>
+        </div>
+        <div class="col s12">
+            <h6>Localisation</h6>
+            <p>{{ profil.ou.ou }}</p>
+>>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
+        </div>
+        <div class="col s12">
+            <h6>{{ 'Investissement'|trans }}</h6>
+            <p>{{ profil.invest.invest }}</p>
+        </div>
+        <div class="col s12">
+            <h6>{{ 'Compétences'|trans }}</h6>
+            {% for comp in profil.competences %}
+                <p>{{ comp.competences }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col s12">
+        <button class="btn deleteProfilR" id="{{ profil.id }}">{{ 'Supprimer'|trans }}</button>
+    </div>
+</div>

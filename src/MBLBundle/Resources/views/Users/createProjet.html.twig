@@ -1,9 +1,6 @@
 {# src/MBLBundle/Resources/views/Users/addProjet.html.twig #}
 
 {% extends 'MBLBundle::layout.html.twig' %}
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/mbl/css/stylesheets/formCreate.css') }}" />
-{% endblock %}
 
 {% block titreH2 %}<h2>{{ 'Nouveau Projet'|trans }}</h2>{% endblock %}
 
@@ -63,7 +60,7 @@
                                 {{ form_widget(form.fichier) }}
                             </div>
                         </div>
-                        <div class="col s4">
+                        <div class="col s6">
                             <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
                         </div>
                     </div>
