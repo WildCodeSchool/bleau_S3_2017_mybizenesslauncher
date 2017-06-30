@@ -55,7 +55,7 @@ Layout.html.twig
   }
 
 }
-#Connexion {
+#Connexion, #register {
   margin-top: 25px;
 }
 .remember {
@@ -66,4 +66,13 @@ Layout.html.twig
   border-right: 2px solid $ColorDarkGrey;
   border-bottom: 2px solid $ColorDarkGrey;
 
+}
+.submitRegister {
+  margin-top: 55px;
+}
+.moreRegisterHidden {
+  display: none;
+}
+.moreRegister {
+  margin-top: 25px;
 }

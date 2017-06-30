@@ -13,11 +13,19 @@
                 {% endif %}
                 <div class="row">
                     <div class="col s6 offset-s3 ">
-                        <label for="username">E-mail</label>
+                        <div class="row">
+                            <div class="col s12 center">
+                                <label for="username">E-mail</label>
+                            </div>
+                        </div>
                         <input class="white" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
                     </div>
                     <div class="col s6 offset-s3 ">
-                        <label   for="password">{{ 'security.login.password'|trans }}</label>
+                        <div class="row">
+                            <div class="col s12 center">
+                                <label   for="password">{{ 'security.login.password'|trans }}</label>
+                            </div>
+                        </div>
                         <input type="password" id="password" name="_password" required="required" />
                     </div>
                     <div class="col s6 offset-s3 center">

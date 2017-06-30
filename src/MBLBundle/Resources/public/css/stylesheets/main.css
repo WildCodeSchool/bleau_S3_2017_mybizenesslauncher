@@ -219,7 +219,7 @@ Layout.html.twig
 }
 
 /* line 58, ../sass/_layout.scss */
-#Connexion {
+#Connexion, #register {
   margin-top: 25px;
 }
 
@@ -232,6 +232,21 @@ Layout.html.twig
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
+}
+
+/* line 70, ../sass/_layout.scss */
+.submitRegister {
+  margin-top: 55px;
+}
+
+/* line 73, ../sass/_layout.scss */
+.moreRegisterHidden {
+  display: none;
+}
+
+/* line 76, ../sass/_layout.scss */
+.moreRegister {
+  margin-top: 25px;
 }
 
 /* line 3, ../sass/_userHomepage.scss */
