@@ -56,6 +56,10 @@
             {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
             {{ form_errors(form.localisation) }}
 
+            {{ form_label(form.ville, 'Ville :') }}
+            {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+            {{ form_errors(form.ville) }}
+
             {{ form_label(form.metier, 'Quel est votre profil :') }}
             {{ form_widget(form.metier, {'attr' : {'class' : 'blue lighten-4'}}) }}
             {{ form_errors(form.metier) }}

@@ -464,4 +464,33 @@ class Profil extends BaseUser
     {
         return $this->fichier;
     }
+    /**
+     * @var string
+     */
+    private $ville;
+
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Profil
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
 }

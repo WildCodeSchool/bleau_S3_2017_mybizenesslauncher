@@ -49,6 +49,10 @@
                         {{ form_label(form.localisation) }}
                         {{ form_errors(form.localisation) }}
                         {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
+
+                        {{ form_label(form.ville, 'Ville :') }}
+                        {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                        {{ form_errors(form.ville) }}
                     </div>
                     <div class="row">
                         <div class="col s3">

@@ -131,7 +131,11 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>Localisation</h6>
-                                        <p>{{ pro.localisation }}</p>
+
+                                        {% if pro.localisation is not null %}
+                                            <p>{{ pro.localisation }}</p>
+                                        {% else %}
+                                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -198,7 +202,10 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>Localisation</h6>
-                                        <p>{{ pro.localisation }}</p>
+                                        {% if pro.localisation and pro.ville is defined %}
+                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
+                                            {% else %}
+                                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
