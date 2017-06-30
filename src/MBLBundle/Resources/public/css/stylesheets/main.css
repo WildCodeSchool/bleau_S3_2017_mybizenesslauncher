@@ -249,6 +249,33 @@ Layout.html.twig
   margin-top: 25px;
 }
 
+/* line 79, ../sass/_layout.scss */
+textarea#fos_user_registration_form_description {
+  height: 10em;
+}
+
+/* line 83, ../sass/_layout.scss */
+#fos_user_registration_form_description {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* line 88, ../sass/_layout.scss */
+input {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* line 93, ../sass/_layout.scss */
+input:focus, #fos_user_registration_form_description:focus {
+  border: 1.5px solid #98d4e1;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
 /* line 3, ../sass/_userHomepage.scss */
 .UHP {
   width: 100%;

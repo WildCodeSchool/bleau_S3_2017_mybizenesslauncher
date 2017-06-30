@@ -18,7 +18,7 @@
                                 <label for="username">E-mail</label>
                             </div>
                         </div>
-                        <input class="white" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                        <input  type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="exemple@gmail.com" />
                     </div>
                     <div class="col s6 offset-s3 ">
                         <div class="row">
@@ -26,7 +26,7 @@
                                 <label   for="password">{{ 'security.login.password'|trans }}</label>
                             </div>
                         </div>
-                        <input type="password" id="password" name="_password" required="required" />
+                        <input type="password"  id="password" name="_password" required="required" placeholder="************" />
                     </div>
                     <div class="col s6 offset-s3 center">
                         <input class="btn" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />

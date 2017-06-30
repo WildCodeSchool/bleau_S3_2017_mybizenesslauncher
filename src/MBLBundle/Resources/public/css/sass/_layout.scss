@@ -76,3 +76,23 @@ Layout.html.twig
 .moreRegister {
   margin-top: 25px;
 }
+textarea#fos_user_registration_form_description {
+  height: 10em;
+
+}
+#fos_user_registration_form_description  {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+input {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+input:focus, #fos_user_registration_form_description:focus  {
+  border: 1.5px solid $Colorblue;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
