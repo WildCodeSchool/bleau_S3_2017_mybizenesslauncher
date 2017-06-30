@@ -75,6 +75,7 @@
                         <a href="{{ path('newProfilRechercheProjet', {'id' : projet.id}) }}"><button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
                         </a>
                     </div>
+                    <div class="profil_recherche">
                     {% for profil in profil_exist %}
 
 
@@ -146,15 +147,18 @@
 
 
                             </div>
-                            <div class="col s12 center deltetebtn">
-                                <a href="{{ path('deleteProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
-                                 </div>
+
+                            <div class="col s12 center">
+                                <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
+                            </div>
                             <div class="col s12 center editbtn">
                             <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
                         </div>
+
                         </div>
 
                     {% endfor %}
+                    </div>
 
                 </div>
             </div>
@@ -167,6 +171,25 @@
     <script>
         $(document).ready(function() {
             $('select').material_select();
+
+            $('.profil_recherche').on('click','.deleteProfilR', function(e){
+                e.preventDefault();
+                var id = $(this).attr('id');
+                var content = $(this).parent().parent();
+                $.ajax({
+                    method: 'post',
+                    url: '{{ path('deleteProfilRerchercheProjet') }}',
+                    data: {'id' : id},
+                    success: function(){
+                        $(content).fadeOut(2000);
+
+                    }
+
+                });
+
+
+            });
+
         });
     </script>
 {% endblock %}

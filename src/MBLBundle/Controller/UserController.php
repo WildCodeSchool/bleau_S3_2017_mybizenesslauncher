@@ -248,9 +248,9 @@ class UserController extends Controller
 //        dump($profilRecherche);die();
         $projet = $profilRecherche->getProjets()[0];
         $em->remove($profilRecherche);
-//        $content = new JsonResponse($profilRecherche);
+        $content = new JsonResponse($profilRecherche);
         $em->flush();
-        return $this->redirectToRoute('editProjet', array('id'=>$projet->getId()));
+        return $content;
     }
     /**
      * @param ProfilRecherche $profilRecherche

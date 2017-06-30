@@ -55,44 +55,6 @@
         <script>
             $(document).ready(function() {
                 $('select').material_select();
-                {#$('form[name="mblbundle_profilrecherche"]').submit(function(e){#}
-                    {#e.preventDefault();#}
-                    {#var data = $(this).serialize();#}
-                    {#var form = $(this);#}
-                    {#$.ajax({#}
-                        {#method: 'post',#}
-                        {#url: '{{ path('createProfilRechercheProjet') }}',#}
-                        {#data: data,#}
-
-                        {#success: function(response){#}
-
-                            {#$('.profil_recherche').append(response);#}
-                            {#$('.vignette_projet_profilAdd:last-child').hide().fadeIn(2000);#}
-
-                            {#form.trigger('reset');#}
-                        {#}#}
-                    {#});#}
-                {#});#}
-                {#$('.profil_recherche').on('click','.deleteProfilR', function(e){#}
-                    {#e.preventDefault();#}
-                    {#var id = $(this).attr('id');#}
-                    {#var content = $(this).parent().parent();#}
-                    {#$.ajax({#}
-                        {#method: 'post',#}
-                        {#url: '{{ path('deleteProfilRerchercheProjet') }}',#}
-                        {#data: {'id' : id},#}
-                        {#success: function(){#}
-                            {#$(content).fadeOut(2000);#}
-
-                        {#}#}
-
-                    {#});#}
-
-
-                {#})#}
-                {#// jQuery pour rendre non selectionnable le 'placeholder', a décommenter une fois les fixtures faite#}
-                {#/*$('ul li:first-child ').addClass('disabled');#}
-                 {#$('ul li:first-child span').css('color', 'lightgrey');*/#}
 
             });
         </script>

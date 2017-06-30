@@ -278,9 +278,9 @@ Layout.html.twig
 #showMyProjet .vignette_Myprojet:hover {
   background-color: #98d4e1;
 }
-/* line 21, ../sass/_showMyProject.scss */
-#showMyProjet .btn {
-  margin: 5px;
+/* line 24, ../sass/_showMyProject.scss */
+#showMyProjet .divform {
+  max-width: 130px;
 }
 
 /*
