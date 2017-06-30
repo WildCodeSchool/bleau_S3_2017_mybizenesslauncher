@@ -34,3 +34,36 @@ Layout.html.twig
 .dropdown-content li>a {
   color : $ColorDarkGrey;
 }
+.modal {
+  .tabs {
+    margin : 0;
+    padding: 0;
+    background-color: $Colorblue;
+  }
+    .tab a {
+    color : grey;
+
+    }
+    .tab a:hover{
+      color: $ColorDarkGrey;
+    }
+    .tab a.active {
+      color: $ColorDarkGrey;
+    }
+  .tabs .indicator {
+    background-color : $ColorDarkGrey;
+  }
+
+}
+#Connexion {
+  margin-top: 25px;
+}
+.remember {
+  margin-top: 10px;
+}
+[type="checkbox"]:checked+label:before {
+
+  border-right: 2px solid $ColorDarkGrey;
+  border-bottom: 2px solid $ColorDarkGrey;
+
+}
