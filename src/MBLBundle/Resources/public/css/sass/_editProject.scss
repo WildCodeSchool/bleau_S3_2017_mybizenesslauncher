@@ -1,16 +1,25 @@
 @import "global";
 #editProject{
+
   margin-top: 50px;
+  .bouttonAjout
+  {
+    margin-bottom: 50px;
+  }
+  .modif
+  {
+    margin-bottom: 50px;
+  }
+  .editbtn{
+    margin-top: 10px;
+  }
   .vignette_projet_profilAdd {
     background-color: $ColorDarkGrey;
     border-radius: $BorderRadius;
     margin-bottom: 10px;
-    height: 30em;
+    height: 33em;
     border: 2px solid $Colorgrey;
-
     max-width: 300px;
-
-
   }
   .vignette_projet_profilAdd:hover {
     background-color: $Colorgrey;
@@ -22,11 +31,6 @@
     margin: 5px;
     background-color: white;
     height: 18em;
-
-    .type_metier
-    {
-      //text: center;
-      //color: ;
-    }
+    
   }
 }

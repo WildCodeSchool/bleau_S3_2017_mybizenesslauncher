@@ -675,20 +675,32 @@ chat.html.twig
 #editProject {
   margin-top: 50px;
 }
-/* line 4, ../sass/_editProject.scss */
+/* line 5, ../sass/_editProject.scss */
+#editProject .bouttonAjout {
+  margin-bottom: 50px;
+}
+/* line 9, ../sass/_editProject.scss */
+#editProject .modif {
+  margin-bottom: 50px;
+}
+/* line 13, ../sass/_editProject.scss */
+#editProject .editbtn {
+  margin-top: 10px;
+}
+/* line 16, ../sass/_editProject.scss */
 #editProject .vignette_projet_profilAdd {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
-  height: 30em;
+  height: 33em;
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 15, ../sass/_editProject.scss */
+/* line 24, ../sass/_editProject.scss */
 #editProject .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 19, ../sass/_editProject.scss */
+/* line 28, ../sass/_editProject.scss */
 #editProject .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
