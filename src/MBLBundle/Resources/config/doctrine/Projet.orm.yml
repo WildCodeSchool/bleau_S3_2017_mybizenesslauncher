@@ -12,16 +12,21 @@ MBLBundle\Entity\Projet:
         titrefr:
             type: string
             length: 255
+            nullable: true
         titreit:
             type: string
             length: 255
+            nullable: true
         descriptionfr:
             type: text
+            nullable: true
         descriptionit:
             type: text
+            nullable: true
         siteInternetfr:
             type: string
             length: 255
+            nullable: true
         siteInternetit:
             type: string
             length: 255
@@ -37,9 +42,11 @@ MBLBundle\Entity\Projet:
         localisationfr:
             type: string
             length: 255
+            nullable: true
         localisationit:
             type: string
             length: 255
+            nullable: true
         dateCreation:
             type: datetime
 
