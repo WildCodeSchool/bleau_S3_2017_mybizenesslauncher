@@ -50,10 +50,24 @@
                 <ul id="nav-mobile" class="right">
                     <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
                     <li><a class="color" href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
-                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                    <li><a class="color" href=#modal1>Connexion</a>
                 </ul>
             </div>
         </nav>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="row">
+                <div class="col s12 tabs">
+                    <ul class="tabs">
+                        <li class="tab col s6 active"><a href="#Connexion">Connexion</a></li>
+                        <li class="tab col s6"><a href="#Register">S'inscrire</a></li>
+                    </ul>
+                </div>
+                <div id="Connexion" class="col s12">{{ render(controller('FOSUserBundle:Security:login')) }}</div>
+                <div id="Register" class="col s12">{{ render(controller('FOSUserBundle:Registration:register')) }}</div>
+            </div>
+        </div>
 
 
     {% endif %}
@@ -112,7 +126,16 @@
         $(".button-collapse").sideNav();
 
             $(".dropdown-button").dropdown();
-        })
+
+        $('.modal').modal();
+        /*$('ul.tabs').tabs();
+        $('ul.tabs').tabs('select_tab', 'tab_id');
+        $('.tabs').tabs({ 'swipeable': true });*/
+        $('.registerPlus').click(function(){
+            $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+        });
+
+        });
 
     </script>
 {% endblock %}
