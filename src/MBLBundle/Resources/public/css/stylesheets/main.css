@@ -7,7 +7,12 @@ CONSTANTE
 /*
 Font
 */
-/* line 19, ../sass/_global.scss */
+/* line 17, ../sass/_global.scss */
+html {
+  font-family: font36450 !IMPORTANT;
+}
+
+/* line 21, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -17,13 +22,13 @@ Variable globale
 
 BALISE
 */
-/* line 29, ../sass/_global.scss */
+/* line 31, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 34, ../sass/_global.scss */
+/* line 36, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -40,76 +45,91 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 49, ../sass/_global.scss */
+/* line 51, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 54, ../sass/_global.scss */
+/* line 56, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 59, ../sass/_global.scss */
+/* line 61, ../sass/_global.scss */
 a {
   color: inherit;
 }
 
-/* line 62, ../sass/_global.scss */
+/* line 64, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #98d4e1;
   max-width: 300px;
 }
 
-/* line 73, ../sass/_global.scss */
+/* line 74, ../sass/_global.scss */
 .vignette_projet:hover {
-  background-color: #f0f0f0;
+  background-color: #98d4e1;
 }
 
-/* line 76, ../sass/_global.scss */
+/* line 77, ../sass/_global.scss */
+.vignette_profil {
+  background-color: #98d4e1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid #98d4e1;
+  max-width: 300px;
+}
+
+/* line 88, ../sass/_global.scss */
+.vignette_profil:hover {
+  background-color: #4b494b;
+}
+
+/* line 91, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
-/* line 80, ../sass/_global.scss */
+/* line 95, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
 }
 
-/* line 83, ../sass/_global.scss */
+/* line 98, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 87, ../sass/_global.scss */
+/* line 102, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
-/* line 92, ../sass/_global.scss */
+/* line 107, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-/* line 97, ../sass/_global.scss */
+/* line 112, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-/* line 100, ../sass/_global.scss */
+/* line 116, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 104, ../sass/_global.scss */
+/* line 120, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
@@ -122,7 +142,7 @@ h6 {
   background: #98d4e1;
   color: white;
 }
-/* line 8, ../sass/_index.scss */
+/* line 9, ../sass/_index.scss */
 #index .bandeau_homepage h2 {
   font-size: 1.5em;
 }
@@ -171,7 +191,7 @@ Layout.html.twig
   background-color: #4b494b;
 }
 
-/* line 14, ../sass/_layout.scss */
+/* line 15, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -276,34 +296,32 @@ input:focus, #fos_user_registration_form_description:focus {
   box-shadow: none;
 }
 
-/* line 3, ../sass/_userHomepage.scss */
-.UHP {
+/* line 7, ../sass/_userHomepage.scss */
+#homepage .UHP {
   width: 100%;
   padding-top: 100px;
 }
-
-/* line 8, ../sass/_userHomepage.scss */
-.btnlink {
+/* line 12, ../sass/_userHomepage.scss */
+#homepage .btnlink {
   text-align: center;
   height: 100px;
 }
-
-/* line 13, ../sass/_userHomepage.scss */
-.btnlink1 {
+/* line 17, ../sass/_userHomepage.scss */
+#homepage .btnlink1 {
   margin-bottom: 40px;
 }
-
-/* line 17, ../sass/_userHomepage.scss */
-.btn {
+/* line 21, ../sass/_userHomepage.scss */
+#homepage .btn {
   background-color: #98d4e1;
+  width: 300px;
 }
-/* line 19, ../sass/_userHomepage.scss */
-.btn:hover {
+/* line 24, ../sass/_userHomepage.scss */
+#homepage .btn:hover {
   background-color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 24, ../sass/_userHomepage.scss */
-.btn:focus {
+/* line 29, ../sass/_userHomepage.scss */
+#homepage .btn:focus {
   background-color: #98d4e1;
 }
 
@@ -324,9 +342,26 @@ input:focus, #fos_user_registration_form_description:focus {
   text-align: center;
 }
 
-/* line 7, ../sass/_showMyProject.scss */
-.showMyProjet .btn {
-  margin: 5px;
+/* line 3, ../sass/_showMyProject.scss */
+#showMyProjet {
+  margin-top: 50px;
+}
+/* line 5, ../sass/_showMyProject.scss */
+#showMyProjet .vignette_Myprojet {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 35em;
+  border: 2px solid #98d4e1;
+  max-width: 300px;
+}
+/* line 17, ../sass/_showMyProject.scss */
+#showMyProjet .vignette_Myprojet:hover {
+  background-color: #98d4e1;
+}
+/* line 24, ../sass/_showMyProject.scss */
+#showMyProjet .divform {
+  max-width: 130px;
 }
 
 /*
@@ -419,90 +454,76 @@ input[type=search], textarea.materialize-textarea {
   color: #4b494b;
 }
 
-/* line 4, ../sass/_formCreatePro.scss */
-#formCreatePro .container_body {
+/* line 2, ../sass/_formCreatePro.scss */
+#formCreatePro {
   margin-top: 50px;
 }
-/* line 7, ../sass/_formCreatePro.scss */
-#formCreatePro .vignette_profil {
-  padding: 2%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-/* line 12, ../sass/_formCreatePro.scss */
-#formCreatePro .content {
+/* line 6, ../sass/_formCreatePro.scss */
+#formCreatePro .vignette_projet_profilAdd {
   background-color: #4b494b;
   border-radius: 8px;
-  padding-bottom: 5px;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid #f0f0f0;
+  max-width: 300px;
 }
-/* line 18, ../sass/_formCreatePro.scss */
-#formCreatePro .info_profil * {
-  text-align: center;
+/* line 17, ../sass/_formCreatePro.scss */
+#formCreatePro .vignette_projet_profilAdd:hover {
+  background-color: #f0f0f0;
 }
 /* line 21, ../sass/_formCreatePro.scss */
-#formCreatePro .photo_profil, #formCreatePro .info_profil {
+#formCreatePro .info_projet_profilAdd {
   border-radius: 8px;
-  background: white;
-  padding: 5px;
+  overflow: scroll;
+  margin: 5px;
+  background-color: white;
+  height: 18em;
 }
-/* line 26, ../sass/_formCreatePro.scss */
-#formCreatePro .info_profil {
-  margin: 10px;
-}
-/* line 29, ../sass/_formCreatePro.scss */
+/* line 36, ../sass/_formCreatePro.scss */
 #formCreatePro .deleteProfilR {
   margin: 10px;
 }
-/* line 33, ../sass/_formCreatePro.scss */
-#formCreatePro h4 {
-  text-align: center;
-  color: white;
-}
-/* line 37, ../sass/_formCreatePro.scss */
+/* line 44, ../sass/_formCreatePro.scss */
 #formCreatePro label.required:after {
   content: "*";
 }
-/* line 40, ../sass/_formCreatePro.scss */
+/* line 47, ../sass/_formCreatePro.scss */
 #formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 47, ../sass/_formCreatePro.scss */
+/* line 54, ../sass/_formCreatePro.scss */
 #formCreatePro p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 52, ../sass/_formCreatePro.scss */
+/* line 59, ../sass/_formCreatePro.scss */
 #formCreatePro p .btn {
   margin-bottom: 20px;
 }
-/* line 57, ../sass/_formCreatePro.scss */
-#formCreatePro p .box_profil_rech {
-  text-align: center;
-}
-/* line 62, ../sass/_formCreatePro.scss */
+/* line 69, ../sass/_formCreatePro.scss */
 #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
 #formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
 #formCreatePro input[type=search] {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 69, ../sass/_formCreatePro.scss */
+/* line 76, ../sass/_formCreatePro.scss */
 #formCreatePro input:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
 }
-/* line 74, ../sass/_formCreatePro.scss */
+/* line 81, ../sass/_formCreatePro.scss */
 #formCreatePro input {
   background-color: #98d4e1;
 }
-/* line 79, ../sass/_formCreatePro.scss */
+/* line 86, ../sass/_formCreatePro.scss */
 #formCreatePro ul li span {
   color: #4b494b;
 }
-/* line 82, ../sass/_formCreatePro.scss */
+/* line 89, ../sass/_formCreatePro.scss */
 #formCreatePro [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
@@ -585,9 +606,26 @@ input[type=search], textarea.materialize-textarea {
   width: 60%;
 }
 
-/* line 4, ../sass/_showAllProfils.scss */
-.showAllProfils .box_projet * {
+/* line 2, ../sass/_showAllProfils.scss */
+#showAllProfils {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showAllProfils.scss */
+#showAllProfils .box_projet * {
   text-align: center;
+}
+/* line 11, ../sass/_showAllProfils.scss */
+#showAllProfils .vignette_profil_all {
+  background-color: #98d4e1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 35em;
+  border: 2px solid #98d4e1;
+  max-width: 300px;
+}
+/* line 22, ../sass/_showAllProfils.scss */
+#showAllProfils .vignette_profil_all:hover {
+  background-color: #4b494b;
 }
 
 /*
@@ -678,4 +716,142 @@ chat.html.twig
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #c8c8c8;
+}
+
+/* line 3, ../sass/_showOneProject.scss */
+#oneProject {
+  padding: 0;
+  margin: 0;
+}
+/* line 7, ../sass/_showOneProject.scss */
+#oneProject .presProjet {
+  padding: 0;
+  margin: 0;
+}
+/* line 11, ../sass/_showOneProject.scss */
+#oneProject .creeLePar {
+  color: grey;
+  font-style: italic;
+}
+/* line 15, ../sass/_showOneProject.scss */
+#oneProject a.site {
+  color: darkcyan;
+}
+/* line 18, ../sass/_showOneProject.scss */
+#oneProject a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 25, ../sass/_showOneProject.scss */
+#oneProject .cartepro {
+  border: none;
+  background-color: #98d4e1;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 20px;
+  border-radius: 8px;
+}
+/* line 33, ../sass/_showOneProject.scss */
+#oneProject .imgPhoto img {
+  height: 17em;
+}
+
+/* line 2, ../sass/_editProject.scss */
+#editProject {
+  margin-top: 50px;
+}
+/* line 5, ../sass/_editProject.scss */
+#editProject .bouttonAjout {
+  margin-bottom: 50px;
+}
+/* line 9, ../sass/_editProject.scss */
+#editProject .modif {
+  margin-bottom: 50px;
+}
+/* line 13, ../sass/_editProject.scss */
+#editProject .editbtn {
+  margin-top: 10px;
+}
+/* line 16, ../sass/_editProject.scss */
+#editProject .vignette_projet_profilAdd {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 33em;
+  border: 2px solid #f0f0f0;
+  max-width: 300px;
+}
+/* line 24, ../sass/_editProject.scss */
+#editProject .vignette_projet_profilAdd:hover {
+  background-color: #f0f0f0;
+}
+/* line 28, ../sass/_editProject.scss */
+#editProject .info_projet_profilAdd {
+  border-radius: 8px;
+  overflow: scroll;
+  margin: 5px;
+  background-color: white;
+  height: 18em;
+}
+
+/* line 3, ../sass/_showMyProfil.scss */
+#myProfil {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showMyProfil.scss */
+#myProfil .showProfil {
+  border: 2px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+/* line 13, ../sass/_showMyProfil.scss */
+#myProfil a.site {
+  color: darkcyan;
+}
+/* line 16, ../sass/_showMyProfil.scss */
+#myProfil a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 20, ../sass/_showMyProfil.scss */
+#myProfil .linkedIn {
+  align-items: center;
+}
+/* line 23, ../sass/_showMyProfil.scss */
+#myProfil .imgPhoto img {
+  height: 17em;
+}
+/* line 29, ../sass/_showMyProfil.scss */
+#myProfil .divform {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* line 3, ../sass/_showOneProfil.scss */
+#oneProfil {
+  margin-top: 50px;
+}
+/* line 6, ../sass/_showOneProfil.scss */
+#oneProfil .showProfil {
+  border: 2px solid #98d4e1;
+  background-color: #98d4e1;
+  border-radius: 10px;
+}
+/* line 12, ../sass/_showOneProfil.scss */
+#oneProfil a.site {
+  color: darkcyan;
+}
+/* line 15, ../sass/_showOneProfil.scss */
+#oneProfil a.site:hover {
+  color: darkslategray;
+  text-decoration: underline;
+}
+/* line 19, ../sass/_showOneProfil.scss */
+#oneProfil .linkedIn {
+  align-items: center;
+}
+/* line 22, ../sass/_showOneProfil.scss */
+#oneProfil .imgPhoto img {
+  height: 17em;
 }

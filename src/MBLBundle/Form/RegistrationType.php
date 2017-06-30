@@ -9,6 +9,7 @@ namespace MBLBundle\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use MBLBundle\Entity\Competences;
 use MBLBundle\Entity\Dispo;
@@ -26,7 +27,7 @@ class RegistrationType extends AbstractType
                 ->add('prenom')
                 ->remove('username')
                 ->add('description')
-                ->add('linkedin')
+                ->add('linkedin', UrlType::class)
                 ->add('localisation')
                 ->add('metier', EntityType::class,
                               array(

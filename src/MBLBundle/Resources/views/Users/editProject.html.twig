@@ -5,64 +5,162 @@
 {% block titreH2 %}<h2>Actualiser le projet</h2>{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12">
-                {{ form_start(form) }}
-                <div class="titre_row center-align">
-                    {{ form_label(form.titre) }}
-                    {{ form_errors(form.titre) }}
-                    {{ form_widget(form.titre, {'attr': {'placeholder': '  Titre'}}) }}
-                </div>
-                <div class="description_row center-align">
-                    {{ form_label(form.description) }}
-                    {{ form_errors(form.description) }}
-                    {{ form_widget(form.description, {'attr': {'placeholder': '  Description'}}) }}
-                </div>
-                <div class="siteInternet_row center-align">
-                    {{ form_label(form.siteInternet) }}
-                    {{ form_errors(form.siteInternet) }}
-                    {{ form_widget(form.siteInternet, {'attr': {'placeholder': '  url:'}}) }}
-                </div>
-                <div class="ebustaUrl_row center-align">
-                    {{ form_label(form.ebustaUrl) }}
-                    {{ form_errors(form.ebustaUrl) }}
-                    {{ form_widget(form.ebustaUrl, {'attr': {'placeholder': '  url:'}}) }}
-                </div>
-                <div class="typeDeProjet_row center-align">
-                    {{ form_label(form.typeDeProjet) }}
-                    {{ form_errors(form.typeDeProjet) }}
-                    {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
-                </div>
-                <div class="secteur center-align">
-                    {{ form_label(form.secteur) }}
-                    {{ form_errors(form.secteur) }}
-                    {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
-                </div>
-                <div class="localisation center-align">
-                    {{ form_label(form.localisation) }}
-                    {{ form_errors(form.localisation) }}
-                    {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
-                </div>
-                <div class="row">
-                    <div class="col s3">
-                        <div class="file center-align">
-                            {{ form_label(form.fichier) }}
-                            {{ form_errors(form.fichier) }}
-                            {{ form_widget(form.fichier) }}
+    <div id="editProject">
+        <div class="container">
+            <div class="row">
+
+                <div class="col s12 m6 l5">
+                    <div class="col s12 center modif">
+                        <button class="btn" id="{{ projet.id }}">Editez votre projet</button>
+
+                    </div>
+                    {{ form_start(form) }}
+                    <div class="titre_row center-align">
+                        {{ form_label(form.titre) }}
+                        {{ form_errors(form.titre) }}
+                        {{ form_widget(form.titre, {'attr': {'placeholder': '  Titre'}}) }}
+                    </div>
+                    <div class="description_row center-align">
+                        {{ form_label(form.description) }}
+                        {{ form_errors(form.description) }}
+                        {{ form_widget(form.description, {'attr': {'placeholder': '  Description'}}) }}
+                    </div>
+                    <div class="siteInternet_row center-align">
+                        {{ form_label(form.siteInternet) }}
+                        {{ form_errors(form.siteInternet) }}
+                        {{ form_widget(form.siteInternet, {'attr': {'placeholder': '  url:'}}) }}
+                    </div>
+                    <div class="ebustaUrl_row center-align">
+                        {{ form_label(form.ebustaUrl) }}
+                        {{ form_errors(form.ebustaUrl) }}
+                        {{ form_widget(form.ebustaUrl, {'attr': {'placeholder': '  url:'}}) }}
+                    </div>
+                    <div class="typeDeProjet_row center-align">
+                        {{ form_label(form.typeDeProjet) }}
+                        {{ form_errors(form.typeDeProjet) }}
+                        {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
+                    </div>
+                    <div class="secteur center-align">
+                        {{ form_label(form.secteur) }}
+                        {{ form_errors(form.secteur) }}
+                        {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
+                    </div>
+                    <div class="localisation center-align">
+                        {{ form_label(form.localisation) }}
+                        {{ form_errors(form.localisation) }}
+                        {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
+                    </div>
+                    <div class="row">
+                        <div class="col s3">
+                            <div class="file center-align">
+                                {{ form_label(form.fichier) }}
+                                {{ form_errors(form.fichier) }}
+                                {{ form_widget(form.fichier) }}
+                            </div>
+                        </div>
+                        <div class="col s2">
+                            <img src="{{ asset('uploads/images/'~ projet.fichier.photo) }}">
                         </div>
                     </div>
-                    <div class="col s2">
-                        <img src="{{ asset('uploads/images/'~ projet.fichier.photo) }}">
-                    </div>
-                </div>
-                
-                
-                <div>
-                    <input class="btn" type="submit" value="Editer"/>
-                </div>
 
-                {{ form_end(form) }}
+
+                    <div>
+                        <input class="btn" type="submit" value="Editer"/>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+                <div class="col s12 m6 l6 offset-l1">
+                    <div class="col s12 center bouttonAjout">
+                        <a href="{{ path('newProfilRechercheProjet', {'id' : projet.id}) }}"><button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
+                        </a>
+                    </div>
+                    <div class="profil_recherche">
+                    {% for profil in profil_exist %}
+
+
+                        <div class="col s6 vignette_projet_profilAdd z-depth-5">
+                            <div class="row type_metier">
+                                <div class="color col s12">
+                                    <h5 class="center">Profil Recherché</h5>
+                                    {% if profil.metier.metier is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{profil.metier.metier }} </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row info_projet_profilAdd">
+
+                                <div class="col s12">
+                                    <h6>Disponibilité</h6>
+                                    {% if profil.dispo.dispo is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.dispo.dispo }} </p>
+                                    {% endif %}
+                                    <div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>En tant que</h6>
+                                    {% if profil.etq.etq is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.etq.etq }} </p>
+                                    {% endif %}
+                                    <div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Localisation</h6>
+                                    {% if profil.ou.ou is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.ou.ou }}</p>
+                                    {% endif %}
+                                    <div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Investissement</h6>
+                                    {% if profil.invest.invest is empty %}
+                                    <p class="center grey-text">renseigner</p>
+                                {% else %}
+                                    <p>{{ profil.invest.invest }}</p>
+                                    {% endif %}<div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>Compétences</h6>
+                                    {% for comp in profil.competences %}
+                                        {% if comp.competences is empty %}
+                                            <p class="center grey-text">renseigner</p>
+                                        {% else %}
+                                            {% if loop.last %}
+                                                {{ comp.competences}}
+                                            {% else %}
+                                                {{ comp.competences}},
+                                            {% endif %}
+                                        {% endif %}
+
+
+                                    {% endfor %}
+                                </div>
+
+
+                            </div>
+
+                            <div class="col s12 center">
+                                <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
+                            </div>
+                            <div class="col s12 center editbtn">
+                            <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
+                        </div>
+
+                        </div>
+
+                    {% endfor %}
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -73,6 +171,25 @@
     <script>
         $(document).ready(function() {
             $('select').material_select();
+
+            $('.profil_recherche').on('click','.deleteProfilR', function(e){
+                e.preventDefault();
+                var id = $(this).attr('id');
+                var content = $(this).parent().parent();
+                $.ajax({
+                    method: 'post',
+                    url: '{{ path('deleteProfilRerchercheProjet') }}',
+                    data: {'id' : id},
+                    success: function(){
+                        $(content).fadeOut(2000);
+
+                    }
+
+                });
+
+
+            });
+
         });
     </script>
 {% endblock %}

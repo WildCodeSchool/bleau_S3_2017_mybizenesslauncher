@@ -25,7 +25,7 @@
                     <div class="col s12 divform">
                         {{ form_label(edit_form.description) }}
                         {{ form_errors(edit_form.description) }}
-                        {{ form_widget(edit_form.description, {'attr': {'rows' : 1000}}) }}
+                        {{ form_widget(edit_form.description)}}
                     </div>
 
                     <div class="col s12 divform">
@@ -100,7 +100,7 @@
                         <input class="btn" type="submit" value="Enregistrez"/>
                     </div>
                     <div class="col s6 btnright">
-                        <a class="btn" href="{{ path('showProfil') }}">Voir mon profil public</a>
+                        <a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>
                     </div>
                 </div>
 

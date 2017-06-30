@@ -16,8 +16,12 @@ editProfil:
 #    methods:  DELETE
 
 showProfil:
-    path: /showProfil
+    path: /showProfil/{id}
     defaults: { _controller: MBLBundle:User:showProfil }
+
+showMyProfil:
+    path: /showMyProfil
+    defaults: { _controller: MBLBundle:User:showMyProfil }
 
 showAllProfils:
     path: /showAllProfils
@@ -37,6 +41,24 @@ createProfilRechercheProjet:
     defaults:
         _controller: MBLBundle:User:createProfilRechercheProject
         id: null
+
+newProfilRechercheProjet:
+    path: /newProfilRechercheProject/{id}
+    defaults:
+        _controller: MBLBundle:User:newProfilRechercheProject
+        id: null
+
+editProfilRechercheProjet:
+    path: /editProfilRechercheProject/{id}
+    defaults:
+        _controller: MBLBundle:User:editProfilRechercheProject
+        id: null
+
+deleteProfilRechercheProjet:
+    path: /deleteProfilRecherche/{id}
+    defaults:
+        _controller: MBLBundle:User:deleteProfilRecherche
+
 
 deleteProfilRerchercheProjet:
     path: /deleteProfil
@@ -89,6 +111,7 @@ chatDisconnect:
 #    requirements:
 #        url: .*/$
 #    methods: [GET]
+
 
 
 

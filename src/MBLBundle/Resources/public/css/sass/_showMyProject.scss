@@ -1,11 +1,31 @@
 
 @import "global";
-.showMyProjet {
+#showMyProjet {
+margin-top: 50px;
+.vignette_Myprojet
+{
+  background-color: $ColorDarkGrey;
+  border-radius: $BorderRadius;
+  margin-bottom: 10px;
+  height: 35em;
+  border: 2px solid $Colorblue;
 
+  max-width: 300px;
 
+}
+
+  .vignette_Myprojet:hover {
+    background-color: $Colorblue;
+  }
 
   .btn {
-    margin: 5px;
+
+  }
+  .divform{
+    max-width: 130px ;
+    //word-wrap: ;
+
+
   }
 }
 
