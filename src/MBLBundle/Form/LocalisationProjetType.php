@@ -12,43 +12,14 @@ use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProjetType extends AbstractType
+class LocalisationProjetType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre', TextType::class, array(
-                'required' => true
-            ))
-            ->add('description', TextareaType::class, array(
-                'required' => true,
-                'attr' => array('rows' => '1000','cols' => '1000')
-            ))
-            ->add('siteInternet', UrlType::class, array(
-                'required' => false,
-            ))
-            ->add('ebustaUrl', UrlType::class, array(
-                'required' => false,
-            ))
-            ->add('typeDeProjet', EntityType::class, array(
-                'class'         => 'MBLBundle\Entity\TypeDeProjet',
-                'choice_label'  => 'typeDeProjet',
-                'multiple'      => false,
-                'expanded'      => false,
-                'required'      => true,
-                'placeholder'   => '  Choisissez'
-            ))
-            ->add('secteur', EntityType::class, array(
-                'class'         => 'MBLBundle\Entity\Secteur',
-                'choice_label'  => 'secteurActivite',
-                'multiple'      => false,
-                'expanded'      => false,
-                'required'      => true,
-                'placeholder'   => '  Choisissez'
-            ))
-            ->add('localisation', ChoiceType::class, array(
+        $builder->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -97,16 +68,11 @@ class ProjetType extends AbstractType
                     ),
                     'Autre'   => 'autre',
 
-
-                ),
-                'required'      => false,
-                'placeholder'   => '  Choisissez'
-            ))
-            ->add('ville')
-            ->add('fichier', FichierType::class)
-        ;
+                ),  'required'      => false,
+            'placeholder'   => '  Choisissez'
+            ));
     }
-    
+
     /**
      * {@inheritdoc}
      */

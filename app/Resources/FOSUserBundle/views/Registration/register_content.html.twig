@@ -1,81 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
-{#<<<<<<< HEAD#}
-{#<div class="container">#}
-    {#<div class="row card-panel register_must">#}
 
-
-        {#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
-
-        {#<h1 class="black-text center">Enregistrez-vous</h1>#}
-        {#<div class="col s6 center">#}
-
-
-            {#{{ form_label(form.nom, 'Nom *') }}#}
-            {#{{ form_widget(form.nom, {'attr' : {'placeholder' : ' Nom'}}) }}#}
-            {#{{ form_errors(form.nom) }}#}
-
-            {#{{ form_label(form.prenom, 'Prénom *') }}#}
-            {#{{ form_widget(form.prenom, {'attr' : {'placeholder' : ' Prénom'}}) }}#}
-            {#{{ form_errors(form.prenom) }}#}
-
-            {#{{ form_label(form.email,'Votre E-mail *') }}#}
-            {#{{ form_widget(form.email, {'attr' : {'placeholder' : ' E-mail'}}) }}#}
-            {#{{ form_errors(form.email) }}#}
-
-        {#</div>#}
-        {#<div class="col s6 center">#}
-
-            {#{{ form_label(form.plainPassword.first, 'Mot de passe *') }}#}
-            {#{{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : ' Mot de passe'}}) }}#}
-            {#{{ form_errors(form.plainPassword.first) }}#}
-
-            {#{{ form_label(form.plainPassword.second, 'Confirmer votre mot de passe *') }}#}
-            {#{{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : ' Confirmez votre mot de passe'}}) }}#}
-            {#{{ form_errors(form.plainPassword.second) }}#}
-
-        {#</div>#}
-
-        {#<div class="col s12 center">#}
-            {#<input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />#}
-        {#</div>#}
-
-    {#</div>#}
-    {#<div class="row card-panel">#}
-        {#<h1 class="black-text center">Ajoutez une description plus complête</h1>#}
-
-        {#<div class="col s6 center">#}
-
-            {#{{ form_label(form.description, 'Description :') }}#}
-            {#{{ form_widget(form.description, {'attr' : {'placeholder' : ' Description'}}) }}#}
-            {#{{ form_errors(form.description) }}#}
-
-            {#{{ form_label(form.linkedin, 'Votre compte linked-in :') }}#}
-            {#{{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}#}
-            {#{{ form_errors(form.linkedin) }}#}
-
-            {#{{ form_label(form.localisation, 'Localisation :') }}#}
-            {#{{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}#}
-            {#{{ form_errors(form.localisation) }}#}
-
-            {#{{ form_label(form.ville, 'Ville :') }}#}
-            {#{{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}#}
-            {#{{ form_errors(form.ville) }}#}
-
-            {#{{ form_label(form.metier, 'Quel est votre profil :') }}#}
-            {#{{ form_widget(form.metier, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-            {#{{ form_errors(form.metier) }}#}
-        {#</div>#}
-        {#<div class="col s6 center">#}
-
-            {#{{ form_label(form.etq, 'Disponible en tant que') }}#}
-            {#{{ form_widget(form.etq, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-            {#{{ form_errors(form.etq) }}#}
-
-            {#<div class=" center">#}
-                {#{{ form_label(form.competences, 'Compétences :') }}#}
-                {#{{ form_widget(form.competences, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-                {#{{ form_errors(form.competences) }}#}
-{#=======#}
 <div id="register">
     <div class="container">
         <div class="row">
@@ -157,15 +81,18 @@
                                         <div class="col s12 center">
                                             {{ form_label(form.linkedin, 'Votre compte linked-in :') }}
                                         </div>
-                                            {{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}
-                                            {{ form_errors(form.linkedin) }}
+                                        {{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}
+                                        {{ form_errors(form.linkedin) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             {{ form_label(form.localisation, 'Localisation :') }}
                                         </div>
-                                            {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
-                                            {{ form_errors(form.localisation) }}
+                                        {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
+                                        {{ form_errors(form.localisation) }}
+                                        {{ form_label(form.ville, 'Ville :') }}
+                                        {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                                        {{ form_errors(form.ville) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
@@ -216,13 +143,12 @@
                             </div>
                         </div>
 
-                        </div>
-                        {{ form_end(form) }}
                     </div>
+                    {{ form_end(form) }}
                 </div>
->>>>>>> f0f1b6b7c093d5f2063aed772d7044a0fd3360f8
             </div>
         </div>
     </div>
+</div>
 </div>
 
