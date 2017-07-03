@@ -15,7 +15,6 @@ Font
 */
 //FONT Helvetica: https://www.fontify.me/webfont/36450/helvetica-normal
 html {
-  font-family: font36450 !IMPORTANT;
 }
 
 * {
@@ -120,7 +119,9 @@ h6 {
 .select-dropdown {
   border-radius: 10px;
 }
-
+.dropdown-content li>a, .dropdown-content li>span {
+  color: $ColorDarkGrey;
+}
 
 
 

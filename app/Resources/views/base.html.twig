@@ -32,6 +32,12 @@
                     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                     crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $('ul li:first-child ').addClass('disabled');
+                    $('ul li:first-child span').css('color', 'lightgrey');
+                });
+            </script>
         {% endblock %}
     </body>
 </html>
