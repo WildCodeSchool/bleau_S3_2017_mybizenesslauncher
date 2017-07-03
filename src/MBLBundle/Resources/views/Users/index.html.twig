@@ -184,8 +184,12 @@
                                 <div class="row info_projet">
                                     <div class="col s12">
                                         <h6>Profil</h6>
-                                        {% if pro.metier == null  %}
-                                            {{ pro.metier }}
+
+                                        {% if pro.metier.metier is defined  %}
+                                            {{ pro.metier.metier }}
+                                        {% else %}
+
+
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>

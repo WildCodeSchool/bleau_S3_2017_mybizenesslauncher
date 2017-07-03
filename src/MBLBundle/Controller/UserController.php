@@ -80,14 +80,27 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $idloc = $request->request->get('mblbundle_profil')['localisation'];
+        $idmetier = $request->request->get('mblbundle_profil')['metier'];
 
-        if (is_null($idloc))
+        if (!empty($idloc) && !empty($idmetier))
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->findAll();
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc);
+        }
+        elseif(!empty($idloc) || !empty($idmetier))
+        {
+            if (!empty($idloc))
+            {
+                $profils = $em->getRepository('MBLBundle:Profil')->findByLocalisation($idloc);
+            }
+            else
+            {
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier);
+            }
+
         }
         else
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->findByLocalisation($idloc);
+            $profils = $em->getRepository('MBLBundle:Profil')->findAll();
         }
 
 

@@ -17,6 +17,10 @@
                         {{ form_row(form_localisation.localisation) }}
                         {{ form_errors(form_localisation.localisation) }}
                     </div>
+                    <div class="col s3 m6 l6">
+                        {{ form_row(form_localisation.metier) }}
+                        {{ form_errors(form_localisation.metier) }}
+                    </div>
                     <input class="btn" name="Recherchez" type="submit">
                     {{ form_end(form_localisation) }}
                 </div>
@@ -45,8 +49,11 @@
                                 <div class="row info_projet">
                                     <div class="col s12">
                                         <h6>Profil</h6>
-                                        {% if pro.metier == null  %}
-                                            {{ pro.metier }}
+
+                                        {% if pro.metier.metier is defined  %}
+                                            {{ pro.metier.metier }}
+                                            {% else %}
+
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>

@@ -25,7 +25,16 @@ class LocalisationProfilType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('localisation', ChoiceType::class, array(
+        $builder->add('metier', EntityType::class,
+            array(
+                'class' => Metier::class,
+                'choice_label' =>'metier',
+                'multiple'=> false,
+                'expanded'=> false,
+                'required' => false,
+                'placeholder'=> ' Quel est votre profil?'
+            ))
+            ->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
