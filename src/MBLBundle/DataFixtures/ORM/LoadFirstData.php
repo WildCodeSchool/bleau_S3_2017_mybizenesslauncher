@@ -75,7 +75,7 @@ class LoadCompetencesData extends AbstractFixture implements OrderedFixtureInter
     public function load(ObjectManager $manager) {
 
         $competences = array(
-            array('1'=>'renseignez vos compétences','2'=>''),
+            array('1'=>'Renseignez vos compétences','2'=>''),
             array('1'=>'3D Graphic Design','2'=>'3D Graphic Design'),
             array('1'=>'Comptabilité','2'=>'Contabilità'),
             array('1'=>'Adobe Suite','2'=>'Adobe Suite'),

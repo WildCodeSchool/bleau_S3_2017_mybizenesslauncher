@@ -2,17 +2,14 @@
 
 namespace MBLBundle\Form;
 
-use MBLBundle\Repository\SecteurRepository;
+use MBLBundle\Entity\Projet;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ProjetType extends AbstractType
@@ -29,19 +26,11 @@ class ProjetType extends AbstractType
                 'required' => true,
                 'attr' => array('rows' => '1000','cols' => '1000')
             ))
-<<<<<<< HEAD
             ->add('siteInternet'.$options["locale"], UrlType::class, array(
                 'required' => false
             ))
             ->add('ebustaUrl'.$options["locale"], UrlType::class, array(
                 'required' => false
-=======
-            ->add('siteInternet', UrlType::class, array(
-                'required' => false,
-            ))
-            ->add('ebustaUrl', UrlType::class, array(
-                'required' => false,
->>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
@@ -63,7 +52,9 @@ class ProjetType extends AbstractType
             ->add('localisation'.$options["locale"], CountryType::class, array(
                 'required' => true
             ))
-            ->add('fichier', FichierType::class)
+            ->add('fichier', FichierType::class
+            )
+
         ;
     }
 
@@ -74,7 +65,7 @@ class ProjetType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Projet',
+            'data_class' => Projet::class,
             'locale' => null
 
         ));

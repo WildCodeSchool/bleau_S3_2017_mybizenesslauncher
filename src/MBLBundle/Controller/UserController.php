@@ -89,7 +89,7 @@ class UserController extends Controller
 
     public function createProjectAction(Request $request)
     {
-        $locale= $request->getLocale();
+        $locale = $request->getLocale();
 
         $projet = new Projet();
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet, array('locale' => $locale));
@@ -111,21 +111,21 @@ class UserController extends Controller
         return $this->render('@MBL/Users/createProjet.html.twig',
             array(
                 'form' => $form->createView(),
+	            'locale' => $locale
             ));
     }
 
     /**
      * Displays a form to edit an existing project entity linked to a member profile.
      * @param Request $request
-     * @param $id
+     * @param Projet $projet
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function editProjectAction(Request $request, $id)
+    public function editProjectAction(Request $request, Projet $projet)
     {
+	    $locale = $request->getLocale();
 
-        $em = $this->getDoctrine()->getManager();
-        $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-        $form = $this->createForm(ProjetType::class, $projet);
+        $form = $this->createForm(ProjetType::class, $projet, array('locale' => $locale));
         $form->handleRequest($request);
         $profil_Recheche_exist = $projet->getProfilsrecherches();
 
@@ -135,14 +135,16 @@ class UserController extends Controller
             $em->flush();
             $id = $projet->getId();
             return $this->redirectToRoute('showMyProject', array(
-                'id' => $projet->getId()));
+                'id' => $id
+            ));
         }
-        return $this->render('@MBL/Users/editProject.html.twig',
+        return $this->render('@MBL/Users/createProjet.html.twig',
             array(
                 'projet' => $projet,
                 'profil_exist' => $profil_Recheche_exist,
-                'form' => $form->createView(),
+				'locale' => $locale,
 
+                'form' => $form->createView(),
             ));
     }
 

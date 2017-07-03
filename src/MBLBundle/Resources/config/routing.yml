@@ -8,15 +8,5 @@ admin:
 
 user:
     resource: "@MBLBundle/Resources/config/routing_user.yml"
-    prefix:   /{_locale}
-    requirements:
-        _locale: fr|it
-   #        _locale: fr|it
+    prefix:   /
 
-
-
-#
-#    {_locale}
-#    requirements:
-#        _locale: fr
-##        _locale: fr|it

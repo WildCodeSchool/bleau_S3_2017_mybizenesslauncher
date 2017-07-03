@@ -495,4 +495,33 @@ class Profil extends BaseUser
     {
         return $this->chats;
     }
+    /**
+     * @var string
+     */
+    private $lng;
+
+
+    /**
+     * Set lng
+     *
+     * @param string $lng
+     *
+     * @return Profil
+     */
+    public function setLng($lng)
+    {
+        $this->lng = $lng;
+
+        return $this;
+    }
+
+    /**
+     * Get lng
+     *
+     * @return string
+     */
+    public function getLng()
+    {
+        return $this->lng;
+    }
 }

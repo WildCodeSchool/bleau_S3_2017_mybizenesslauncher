@@ -16,7 +16,7 @@ class FichierType extends AbstractType
     {
         $builder
             ->add('file', FileType::class, array(
-                'label' => "Photo",
+                /*'label' => "Photo",*/
                 'attr' => array(
                     "id" =>"imgInp"
                 )
@@ -30,7 +30,8 @@ class FichierType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Fichier'
+            'data_class' => 'MBLBundle\Entity\Fichier',
+            'locale' => null
         ));
     }
 

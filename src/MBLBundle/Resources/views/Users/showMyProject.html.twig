@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="col s12 divform ">
-                                <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">Editer</a>
+                                <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">{{ 'Editer'|trans }}</a>
                                 <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">{{ 'Supprimer'|trans }}</a>
                             </div>
                         </div>

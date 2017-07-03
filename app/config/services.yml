@@ -9,6 +9,7 @@ parameters:
 services:
     app.form.registration:
         class: MBLBundle\Form\RegistrationType
+        arguments: ['%locale%']
         tags:
             - { name: form.type, alias: app_user_registration }
 

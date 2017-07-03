@@ -31,6 +31,9 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
+        lng:
+            type: string
+            length: 3
 
 
     lifecycleCallbacks: {  }

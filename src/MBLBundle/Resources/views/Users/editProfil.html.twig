@@ -98,15 +98,10 @@
                         <input class="btn" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
-<<<<<<< HEAD
                         <a class="btn" href="{{ path('showProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
-=======
-                        <a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>
->>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
+                        {#<a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>#}
                     </div>
                 </div>
-
-
                 {{ form_end(edit_form) }}
             </div>
         </div>
@@ -139,7 +134,7 @@
             $('#preview').removeClass('hiddenPreview')
             $('#preview').slideDown(20000);
 
-            }));
+        }));
 
     </script>
 
