@@ -15,6 +15,9 @@ MBLBundle\Entity\Text:
             type: datetime
         profil:
             type: string
+        seen:
+            type: integer
+            nullable: true
     lifecycleCallbacks: {  }
 
 

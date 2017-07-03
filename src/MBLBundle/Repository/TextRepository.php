@@ -25,4 +25,33 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
             ;
 
     }
+    public function myFindOneByChatIdViewer($texts_chat, $currentUser)
+    {
+        return $this ->createQueryBuilder('t')
+            ->select('t')
+            ->orderBy('t.datecreation', 'DESC')
+            ->setMaxResults(10)
+            ->join('t.chats', 'chat')
+            ->where('chat.id = :chatId')
+            ->setParameter('chatId', $texts_chat)
+            ->andWhere('t.profil != :user')
+            ->setParameter('user', $currentUser)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function myFindCountViews($currentUserId)
+    {
+        return $this ->createQueryBuilder('t')
+            ->select('count(t)')
+            ->join('t.chats', 'chat')
+            ->join('chat.profils', 'pro')
+            ->where('pro.id = :proId')
+            ->setParameter('proId', $currentUserId)
+            ->andWhere('t.seen = :un')
+            ->setParameter('un', 0)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

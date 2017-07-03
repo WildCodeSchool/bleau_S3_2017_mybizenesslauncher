@@ -24,12 +24,21 @@ class UserController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $countViews =0;
+        if(!is_null($this->getUser()))
+        {
+            $currentId = $this->getUser()->getId();
+            $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentId);
+        }
+
         $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
         $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
 
+
         return $this->render('@MBL/Users/index.html.twig',
             array('projet' => $projets,
-                'profils' =>$profils
+                'profils' =>$profils,
+                'cViews' => $countViews
             ));
     }
 
@@ -427,6 +436,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $currentUser = $this->getUser();
+        $currentUserPrenom = $currentUser->getPrenom();
         //Nouveau text
         $text = new Text();
         // Le chat correspondant à la discussion selectionnée
@@ -434,8 +444,24 @@ class UserController extends Controller
 
         $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($id);
 
-//        dump($text);die();
+        $msgs = $em->getRepository('MBLBundle:Text')->myFindOneByChatIdViewer($id, $currentUserPrenom);
 
+        if(!empty($msgs))
+        {
+            foreach ( $msgs as $item) {
+                if ($item->getSeen() == 1)
+                {
+
+                }
+                else
+                {
+                    $item->setSeen(1);
+                    $em->persist($item);
+                    $em->flush();
+                }
+
+            }
+        }
         //l'ensemble des chats pour lesquelles l'utilisateur peut discuter
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
