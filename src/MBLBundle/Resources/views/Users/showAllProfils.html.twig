@@ -11,6 +11,16 @@
 
                 {% endfor %}
                 <div class="row">
+                    {{ form_start(form_localisation) }}
+
+                    <div class="col s3 m6 l6">
+                        {{ form_row(form_localisation.localisation) }}
+                        {{ form_errors(form_localisation.localisation) }}
+                    </div>
+                    <input class="btn" name="Recherchez" type="submit">
+                    {{ form_end(form_localisation) }}
+                </div>
+                <div class="row">
 
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
@@ -54,7 +64,7 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>Localisation</h6>
-                                        <p>{{ pro.localisation }}</p>
+                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -79,4 +89,13 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+
 {% endblock %}

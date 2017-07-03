@@ -18,20 +18,14 @@ use MBLBundle\Entity\Metier;
 use MBLBundle\Entity\Ou;
 
 
-class ProfilType extends AbstractType
+class LocalisationProfilType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom', TextType::class, array('required' => true))
-            ->add('prenom', TextType::class, array('required' => true))
-            ->add('description', TextareaType::class)
-            ->add('linkedIn', UrlType::class, array(
-                'required' => false
-            ))
-            ->add('localisation', ChoiceType::class, array(
+        $builder->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -80,68 +74,14 @@ class ProfilType extends AbstractType
                     ),
                     'Autre'   => 'autre',
 
-                ),
-                'preferred_choices' => array('Italie', 'arr')))
-            ->add('ville')
-            ->add('metier', EntityType::class,
-                array(
-                    'class' => Metier::class,
-                    'choice_label' =>'metier',
-                    'multiple'=> false,
-                    'expanded'=> false,
-                    'required' => false,
-                    'placeholder'=> ' Quel est votre profil?'
-            ))
-            ->add('etq', EntityType::class,
-                array(
-                    'class' => ETQ::class,
-                    'choice_label' =>'etq',
-                    'multiple'=> false,
-                    'expanded'=> false,
-                    'required' => false,
-                    'placeholder'=> ' Disponible en tant que'
-                ))
-            ->add('ou', EntityType::class,
-                array(
-                    'class' => Ou::class,
-                    'choice_label' =>'ou',
-                    'multiple'=> false,
-                    'expanded'=> false,
-                    'required' => false,
-                    'placeholder'=> ' Où ça ?'
-                ))
-            ->add('invest', EntityType::class,
-                array(
-                    'class' => Invest::class,
-                    'choice_label' =>'invest',
-                    'multiple'=> false,
-                    'expanded'=> false,
-                    'required' => false,
-                    'placeholder'=> ' Investissement possible'
-                ))
-            ->add('dispo', EntityType::class,
-                array(
-                    'class' => Dispo::class,
-                    'choice_label' =>'dispo',
-                    'multiple'=> false,
-                    'expanded'=> false,
-                    'required' => false,
-                    'placeholder'=> ' Votre disponibilité'
-                ))
-            ->add('competences', EntityType::class,
-                array(
-                    'class' => Competences::class,
-                    'choice_label' =>'competences',
-                    'multiple'=> true,
-                    'expanded'=> false,
-                    'required' => false
-                ))
-            ->add('fichier', FichierType::class, array(
-                'required' => false
-            ))
+                ),  'required'      => false,
+            'placeholder'   => '  Choisissez'
+
+               ))
+
         ;
     }
-    
+
     /**
      * {@inheritdoc}
      */
