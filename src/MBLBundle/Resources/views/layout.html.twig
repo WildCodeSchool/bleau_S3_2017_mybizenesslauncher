@@ -5,7 +5,6 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-
             <ul id="dropdown1" class="dropdown-content header">
                 <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
@@ -101,7 +100,16 @@
         $(".button-collapse").sideNav();
 
             $(".dropdown-button").dropdown();
-        })
+
+        $('.modal').modal();
+        /*$('ul.tabs').tabs();
+        $('ul.tabs').tabs('select_tab', 'tab_id');
+        $('.tabs').tabs({ 'swipeable': true });*/
+        $('.registerPlus').click(function(){
+            $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+        });
+
+        });
 
     </script>
 {% endblock %}

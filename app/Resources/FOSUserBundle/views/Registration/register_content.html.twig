@@ -1,4 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
+
 <div class="container">
 
     {{ form(form) }}
@@ -6,94 +7,93 @@
     {#<div class="row card-panel register_must">#}
 
 
-        {#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
+    {#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
 
-        {#<h1 class="black-text center">{{ 'Enregistrez-vous'|trans}}</h1>#}
-        {#<div class="col s6 center">#}
+    {#<h1 class="black-text center">{{ 'Enregistrez-vous'|trans}}</h1>#}
+    {#<div class="col s6 center">#}
 
-            {#<label>{{ 'Nom'|trans }}*</label>#}
-            {#{{ form_widget(form.nom, {'attr' : {'placeholder' : ' Nom'}}) }}#}
-            {#{{ form_errors(form.nom) }}#}
+    {#<label>{{ 'Nom'|trans }}*</label>#}
+    {#{{ form_widget(form.nom, {'attr' : {'placeholder' : ' Nom'}}) }}#}
+    {#{{ form_errors(form.nom) }}#}
 
-            {#<label>{{ 'Prénom'|trans }}*</label>#}
-            {#{{ form_widget(form.prenom, {'attr' : {'placeholder' : ' Prénom'}}) }}#}
-            {#{{ form_errors(form.prenom) }}#}
+    {#<label>{{ 'Prénom'|trans }}*</label>#}
+    {#{{ form_widget(form.prenom, {'attr' : {'placeholder' : ' Prénom'}}) }}#}
+    {#{{ form_errors(form.prenom) }}#}
 
-            {#<label>{{ 'Email'|trans }}*</label>#}
-            {#{{ form_widget(form.email, {'attr' : {'placeholder' : ' E-mail'}}) }}#}
-            {#{{ form_errors(form.email) }}#}
+    {#<label>{{ 'Email'|trans }}*</label>#}
+    {#{{ form_widget(form.email, {'attr' : {'placeholder' : ' E-mail'}}) }}#}
+    {#{{ form_errors(form.email) }}#}
 
-        {#</div>#}
-        {#<div class="col s6 center">#}
+    {#</div>#}
+    {#<div class="col s6 center">#}
 
-            {#<label>{{ 'Mot de passe'|trans }}*</label>#}
-            {#{{ form_label(form.plainPassword.first, 'Mot de passe *') }}#}
-            {#{{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : ' Mot de passe'}}) }}#}
-            {#{{ form_errors(form.plainPassword.first) }}#}
+    {#<label>{{ 'Mot de passe'|trans }}*</label>#}
+    {#{{ form_label(form.plainPassword.first, 'Mot de passe *') }}#}
+    {#{{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : ' Mot de passe'}}) }}#}
+    {#{{ form_errors(form.plainPassword.first) }}#}
 
-            {#<label>{{ 'Confirmer votre mot de passe'|trans }}*</label>#}
-            {#{{ form_label(form.plainPassword.second, 'Confirmer votre mot de passe *') }}#}
-            {#{{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : ' Confirmez votre mot de passe'}}) }}#}
-            {#{{ form_errors(form.plainPassword.second) }}#}
+    {#<label>{{ 'Confirmer votre mot de passe'|trans }}*</label>#}
+    {#{{ form_label(form.plainPassword.second, 'Confirmer votre mot de passe *') }}#}
+    {#{{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : ' Confirmez votre mot de passe'}}) }}#}
+    {#{{ form_errors(form.plainPassword.second) }}#}
 
-        {#</div>#}
+    {#</div>#}
 
-        {#<div class="col s12 center">#}
-            {#<input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />#}
-        {#</div>#}
+    {#<div class="col s12 center">#}
+    {#<input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />#}
+    {#</div>#}
 
     {#</div>#}
     {#<div class="row card-panel">#}
-        {#<h1 class="black-text center">{{ 'Ajoutez une description plus complête'|trans}}</h1>#}
+    {#<h1 class="black-text center">{{ 'Ajoutez une description plus complête'|trans}}</h1>#}
 
-        {#<div class="col s6 center">#}
+    {#<div class="col s6 center">#}
 
-            {#<label>{{ 'Description'|trans }}</label>#}
-            {#{{ form_widget(form.description, {'attr' : {'placeholder' : ' Description'}}) }}#}
-            {#{{ form_errors(form.description) }}#}
+    {#<label>{{ 'Description'|trans }}</label>#}
+    {#{{ form_widget(form.description, {'attr' : {'placeholder' : ' Description'}}) }}#}
+    {#{{ form_errors(form.description) }}#}
 
-            {#<label>{{ 'Votre compte linkedIn'|trans }}</label>#}
-            {#{{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}#}
-            {#{{ form_errors(form.linkedin) }}#}
+    {#<label>{{ 'Votre compte linkedIn'|trans }}</label>#}
+    {#{{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}#}
+    {#{{ form_errors(form.linkedin) }}#}
 
-            {#<label>{{ 'Localisation'|trans }}</label>#}
-            {#{{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}#}
-            {#{{ form_errors(form.localisation) }}#}
+    {#<label>{{ 'Localisation'|trans }}</label>#}
+    {#{{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}#}
+    {#{{ form_errors(form.localisation) }}#}
 
-            {#<label>{{ 'Quel est votre profil'|trans }}</label>#}
-            {#{{ form_widget(form.metier, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-            {#{{ form_errors(form.metier) }}#}
-        {#</div>#}
-        {#<div class="col s6 center">#}
+    {#<label>{{ 'Quel est votre profil'|trans }}</label>#}
+    {#{{ form_widget(form.metier, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
+    {#{{ form_errors(form.metier) }}#}
+    {#</div>#}
+    {#<div class="col s6 center">#}
 
-            {#<label>{{ 'Disponible en tant que'|trans }}</label>#}
-            {#{{ form_widget(form.etq, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-            {#{{ form_errors(form.etq) }}#}
+    {#<label>{{ 'Disponible en tant que'|trans }}</label>#}
+    {#{{ form_widget(form.etq, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
+    {#{{ form_errors(form.etq) }}#}
 
-            {#<div class=" center">#}
-                {#<label>{{ 'Compétences'|trans }}</label>#}
-                {#{{ form_widget(form.competences, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-                {#{{ form_errors(form.competences) }}#}
-            {#</div>#}
-            {#<label>{{ 'Disponibilité'|trans }}</label>#}
-            {#{{ form_widget(form.dispo, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-            {#{{ form_errors(form.dispo) }}#}
-            {#<div class=" center">#}
-                {#<label>{{ 'Où ça ?'|trans }}</label>#}
-                {#{{ form_widget(form.ou, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-                {#{{ form_errors(form.ou) }}#}
-            {#</div>#}
-            {#<label>{{ 'Investissement possible'|trans }}</label>#}
-            {#{{ form_widget(form.invest, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
-            {#{{ form_errors(form.invest) }}#}
-        {#</div>#}
+    {#<div class=" center">#}
+    {#<label>{{ 'Compétences'|trans }}</label>#}
+    {#{{ form_widget(form.competences, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
+    {#{{ form_errors(form.competences) }}#}
+    {#</div>#}
+    {#<label>{{ 'Disponibilité'|trans }}</label>#}
+    {#{{ form_widget(form.dispo, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
+    {#{{ form_errors(form.dispo) }}#}
+    {#<div class=" center">#}
+    {#<label>{{ 'Où ça ?'|trans }}</label>#}
+    {#{{ form_widget(form.ou, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
+    {#{{ form_errors(form.ou) }}#}
+    {#</div>#}
+    {#<label>{{ 'Investissement possible'|trans }}</label>#}
+    {#{{ form_widget(form.invest, {'attr' : {'class' : 'blue lighten-4'}}) }}#}
+    {#{{ form_errors(form.invest) }}#}
+    {#</div>#}
 
-        {#<div class="center">#}
-            {#<input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />#}
-        {#</div>#}
+    {#<div class="center">#}
+    {#<input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />#}
+    {#</div>#}
     {#</div>#}
 
     {#{{ form_end(form) }}#}
 </div>
-
 

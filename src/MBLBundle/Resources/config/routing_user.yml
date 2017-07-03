@@ -42,6 +42,24 @@ createProfilRechercheProjet:
         _controller: MBLBundle:User:createProfilRechercheProject
         id: null
 
+newProfilRechercheProjet:
+    path: /newProfilRechercheProject/{id}
+    defaults:
+        _controller: MBLBundle:User:newProfilRechercheProject
+        id: null
+
+editProfilRechercheProjet:
+    path: /editProfilRechercheProject/{id}
+    defaults:
+        _controller: MBLBundle:User:editProfilRechercheProject
+        id: null
+
+deleteProfilRechercheProjet:
+    path: /deleteProfilRecherche/{id}
+    defaults:
+        _controller: MBLBundle:User:deleteProfilRecherche
+
+
 deleteProfilRerchercheProjet:
     path: /deleteProfil
     defaults: { _controller: MBLBundle:User:deleteProfilR}

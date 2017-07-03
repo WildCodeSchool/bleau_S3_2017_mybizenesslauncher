@@ -23,7 +23,7 @@
                                     {% endif %}
 
                                 </div>
-                                <div class="col s8 offset-s2 photo_profil">
+                                <div class="col s8 offset-s2 center photo_profil">
 
                                     {% if pro.fichier is null %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
@@ -38,25 +38,39 @@
                                     {% for comp in pro.typeDeProjet %}
                                         {{ comp.typeDeProjet}}
                                     {% endfor %}
+                                    <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Profils recherchés'|trans }}</h6>
                                     {% for profil in pro.profilsrecherches %}
                                         {% if profil.metier.metier|length > 10 %}
-                                            <p> {{ profil.metier.metier }} ,
+                                            {% if loop.last %}
+                                                {{ profil.metier.metier|slice(0,8) ~'...' }}
+                                            {% else %}
+                                                {{ profil.metier.metier|slice(0,8) ~'...' }},
+                                            {% endif %}
+
                                         {% else  %}
-                                            {{ profil.metier.metier }}</p>
+                                            {% if loop.last %}
+                                                {{ profil.metier.metier }}
+                                            {% else %}
+                                                {{ profil.metier.metier }},
+                                            {% endif %}
+
                                         {% endif %}
 
                                     {% endfor %}
+                                    <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Localisation'|trans }}</h6>
                                     <p>{{ pro.localisation }}</p>
+                                    <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Description'|trans }}</h6>
                                     <p>{{ pro.description }}</p>
+                                    <div class="divider"></div>
                                 </div>
                             </div>
 

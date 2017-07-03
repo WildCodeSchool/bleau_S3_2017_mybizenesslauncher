@@ -147,6 +147,7 @@ class UserController extends Controller
                 'form' => $form->createView(),
             ));
     }
+// Ajout d'un profil dans la création d'un projet
 
     public function createProfilRechercheProjectAction(Request $request, $id)
     {
@@ -191,7 +192,75 @@ class UserController extends Controller
 
             ));
     }
+    // edit du profil recherché dans le edit project
 
+    public function newProfilRechercheProjectAction(Request $request, Projet $projet)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $profil_Recheche_exist = $projet->getProfilsrecherches();
+
+        $projet_profil = new ProfilRecherche();
+        $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
+        $form_pro->handleRequest($request);
+
+        if ($form_pro->isValid()&&$form_pro->isSubmitted()) {
+
+            $em = $this->getDoctrine()->getManager();
+
+            $projet->addProfilsrecherch($projet_profil);
+            $projet_profil->addProjet($projet);
+            $em->persist($projet_profil);
+            $em->flush();
+
+            return $this->redirectToRoute('editProjet', array('id'=>$projet->getId()));
+        }
+
+        return $this->render('@MBL/Users/editProjetAddProfil.html.twig',
+
+            array('form_pro' => $form_pro->createView(),
+                'projet' => $projet,
+                'profil_Recheche_exist' => $profil_Recheche_exist,
+
+            ));
+    }
+    public function editProfilRechercheProjectAction(Request $request, ProfilRecherche $profilRecherche)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $projet = $profilRecherche->getProjets()[0];
+
+        $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $profilRecherche);
+        $form_pro->handleRequest($request);
+
+        if ($form_pro->isValid()&&$form_pro->isSubmitted()) {
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->flush();
+
+            return $this->redirectToRoute('editProjet', array('id'=>$projet->getId()));
+        }
+
+        return $this->render('@MBL/Users/editProjetAddProfil.html.twig',
+
+            array('form_pro' => $form_pro->createView(),
+                'projet' => $projet,
+
+
+            ));
+    }
+    public function deleteProfilRechercheAction(Request $request, ProfilRecherche $profilRecherche)
+    {
+        $em = $this->getDoctrine()->getManager();
+//        dump($profilRecherche);die();
+        $projet = $profilRecherche->getProjets()[0];
+        $em->remove($profilRecherche);
+        $content = new JsonResponse($profilRecherche);
+        $em->flush();
+        return $content;
+    }
     /**
      * @param ProfilRecherche $profilRecherche
      * @return mixed

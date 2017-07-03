@@ -215,6 +215,87 @@ Layout.html.twig
   color: #4b494b;
 }
 
+/* line 38, ../sass/_layout.scss */
+.modal .tabs {
+  margin: 0;
+  padding: 0;
+  background-color: #98d4e1;
+}
+/* line 43, ../sass/_layout.scss */
+.modal .tab a {
+  color: grey;
+}
+/* line 47, ../sass/_layout.scss */
+.modal .tab a:hover {
+  color: #4b494b;
+}
+/* line 50, ../sass/_layout.scss */
+.modal .tab a.active {
+  color: #4b494b;
+}
+/* line 53, ../sass/_layout.scss */
+.modal .tabs .indicator {
+  background-color: #4b494b;
+}
+
+/* line 58, ../sass/_layout.scss */
+#Connexion, #register {
+  margin-top: 25px;
+}
+
+/* line 61, ../sass/_layout.scss */
+.remember {
+  margin-top: 10px;
+}
+
+/* line 64, ../sass/_layout.scss */
+[type="checkbox"]:checked + label:before {
+  border-right: 2px solid #4b494b;
+  border-bottom: 2px solid #4b494b;
+}
+
+/* line 70, ../sass/_layout.scss */
+.submitRegister {
+  margin-top: 55px;
+}
+
+/* line 73, ../sass/_layout.scss */
+.moreRegisterHidden {
+  display: none;
+}
+
+/* line 76, ../sass/_layout.scss */
+.moreRegister {
+  margin-top: 25px;
+}
+
+/* line 79, ../sass/_layout.scss */
+textarea#fos_user_registration_form_description {
+  height: 10em;
+}
+
+/* line 83, ../sass/_layout.scss */
+#fos_user_registration_form_description {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* line 88, ../sass/_layout.scss */
+input {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* line 93, ../sass/_layout.scss */
+input:focus, #fos_user_registration_form_description:focus {
+  border: 1.5px solid #98d4e1;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
 /* line 7, ../sass/_userHomepage.scss */
 #homepage .UHP {
   width: 100%;
@@ -278,9 +359,9 @@ Layout.html.twig
 #showMyProjet .vignette_Myprojet:hover {
   background-color: #98d4e1;
 }
-/* line 21, ../sass/_showMyProject.scss */
-#showMyProjet .btn {
-  margin: 5px;
+/* line 24, ../sass/_showMyProject.scss */
+#showMyProjet .divform {
+  max-width: 130px;
 }
 
 /*
@@ -367,6 +448,10 @@ input[type=search], textarea.materialize-textarea {
 /* line 53, ../sass/_formCreate.scss */
 #createProjet img {
   width: 100%;
+}
+/* line 56, ../sass/_formCreate.scss */
+#createProjet ul li span {
+  color: #4b494b;
 }
 
 /* line 2, ../sass/_formCreatePro.scss */
@@ -705,20 +790,32 @@ chat.html.twig
 #editProject {
   margin-top: 50px;
 }
-/* line 4, ../sass/_editProject.scss */
+/* line 5, ../sass/_editProject.scss */
+#editProject .bouttonAjout {
+  margin-bottom: 50px;
+}
+/* line 9, ../sass/_editProject.scss */
+#editProject .modif {
+  margin-bottom: 50px;
+}
+/* line 13, ../sass/_editProject.scss */
+#editProject .editbtn {
+  margin-top: 10px;
+}
+/* line 16, ../sass/_editProject.scss */
 #editProject .vignette_projet_profilAdd {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
-  height: 30em;
+  height: 33em;
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 15, ../sass/_editProject.scss */
+/* line 24, ../sass/_editProject.scss */
 #editProject .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 19, ../sass/_editProject.scss */
+/* line 28, ../sass/_editProject.scss */
 #editProject .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
