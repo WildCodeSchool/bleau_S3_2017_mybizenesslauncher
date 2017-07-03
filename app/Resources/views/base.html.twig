@@ -28,16 +28,17 @@
         {% block footer %}{% endblock %}
 
         {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-                    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                    crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
             <script>
                 $(document).ready(function(){
                     $('ul li:first-child ').addClass('disabled');
                     $('ul li:first-child span').css('color', 'lightgrey');
                 });
             </script>
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
         {% endblock %}
     </body>
 </html>
