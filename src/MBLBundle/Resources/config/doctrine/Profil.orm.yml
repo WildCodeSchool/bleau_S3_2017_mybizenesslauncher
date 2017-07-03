@@ -27,7 +27,10 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
-
+        ville:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks: {  }
 
 

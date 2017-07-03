@@ -35,7 +35,11 @@ class ProjetRechercheType extends AbstractType
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'       => false,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => '  Choisissez'   ))
+            ->add('localisation', LocalisationProjetType::class, array(
+                'label' => false
+            ))
+        ;
 
 //            ))
 //            ->add('etq', EntityType::class,
@@ -78,7 +82,7 @@ class ProjetRechercheType extends AbstractType
 //                    'multiple'=> true,
 //                    'expanded'=> false
 //
-                ));
+
     }
 
     /**
