@@ -131,7 +131,11 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>Localisation</h6>
-                                        <p>{{ pro.localisation }}</p>
+
+                                        {% if pro.localisation is not null %}
+                                            <p>{{ pro.localisation }}</p>
+                                        {% else %}
+                                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -180,8 +184,12 @@
                                 <div class="row info_projet">
                                     <div class="col s12">
                                         <h6>Profil</h6>
-                                        {% if pro.metier == null  %}
-                                            {{ pro.metier }}
+
+                                        {% if pro.metier.metier is defined  %}
+                                            {{ pro.metier.metier }}
+                                        {% else %}
+
+
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
@@ -198,7 +206,10 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>Localisation</h6>
-                                        <p>{{ pro.localisation }}</p>
+                                        {% if pro.localisation and pro.ville is defined %}
+                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
+                                            {% else %}
+                                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">

@@ -27,6 +27,10 @@ MBLBundle\Entity\Projet:
             length: 255
         dateCreation:
             type: datetime
+        ville:
+            type: string
+            length: 255
+            nullable: true
 
 
     lifecycleCallbacks: {  }

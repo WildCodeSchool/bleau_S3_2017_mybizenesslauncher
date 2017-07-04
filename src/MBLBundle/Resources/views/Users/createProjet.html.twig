@@ -48,6 +48,11 @@
                             {{ form_errors(form.localisation) }}
                             {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
                         </div>
+                        <div class="ville center-align">
+                            {{ form_label(form.ville, 'Ville :') }}
+                            {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                            {{ form_errors(form.ville) }}
+                        </div>
                         <div class="row">
                             <div class="file center-align">
                                 <div class="col s6">

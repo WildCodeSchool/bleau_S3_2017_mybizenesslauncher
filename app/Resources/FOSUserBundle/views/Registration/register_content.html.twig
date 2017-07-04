@@ -1,4 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
+
 <div id="register">
     <div class="container">
         <div class="row">
@@ -80,15 +81,18 @@
                                         <div class="col s12 center">
                                             {{ form_label(form.linkedin, 'Votre compte linked-in :') }}
                                         </div>
-                                            {{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}
-                                            {{ form_errors(form.linkedin) }}
+                                        {{ form_widget(form.linkedin, {'attr' : {'placeholder' : ' Linked-in'}}) }}
+                                        {{ form_errors(form.linkedin) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             {{ form_label(form.localisation, 'Localisation :') }}
                                         </div>
-                                            {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
-                                            {{ form_errors(form.localisation) }}
+                                        {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
+                                        {{ form_errors(form.localisation) }}
+                                        {{ form_label(form.ville, 'Ville :') }}
+                                        {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                                        {{ form_errors(form.ville) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
@@ -139,12 +143,12 @@
                             </div>
                         </div>
 
-                        </div>
-                        {{ form_end(form) }}
                     </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
