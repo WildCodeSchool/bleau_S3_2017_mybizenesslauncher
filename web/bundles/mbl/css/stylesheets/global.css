@@ -1,0 +1,39 @@
+/*
+Variable globale
+
+CONSTANTE
+*/
+/*
+Variable globale
+
+BALISE
+*/
+/* line 18, ../sass/global.scss */
+h1 {
+  size: 1.5em;
+  color: white;
+}
+
+/*
+  Condition pour color font H2
+@function colorH2($bkgColor) {
+  $colorH2: '';
+
+  @if ($bkgColor == 'bleu') {
+    $colorH2: white;
+  } @else if ($bkgColor == 'gris') {
+    $colorH2: black;
+  }
+  @return $colorH2;
+*/
+/* line 36, ../sass/global.scss */
+h2 {
+  color: white;
+}
+
+
+/* line 25, ../sass/global.scss */
+
+body {
+  background-color: #f0f0f0;
+}
