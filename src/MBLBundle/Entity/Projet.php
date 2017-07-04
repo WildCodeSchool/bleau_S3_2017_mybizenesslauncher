@@ -7,6 +7,7 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
+
     /**
      * @var integer
      */
@@ -66,6 +67,11 @@ class Projet
      * @var \DateTime
      */
     private $dateCreation;
+
+    /**
+     * @var string
+     */
+    private $ville;
 
     /**
      * @var \MBLBundle\Entity\Secteur
@@ -376,6 +382,30 @@ class Projet
     }
 
     /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Projet
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
      * Set secteur
      *
      * @param \MBLBundle\Entity\Secteur $secteur
@@ -514,66 +544,4 @@ class Projet
     {
         return $this->profils;
     }
-<<<<<<< HEAD
-=======
-
-    /**
-     * @var \MBLBundle\Entity\Fichier
-     */
-    private $fichier;
-
-
-    /**
-     * Set fichier
-     *
-     * @param \MBLBundle\Entity\Fichier $fichier
-     *
-     * @return Projet
-     */
-    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
-    {
-        $this->fichier = $fichier;
-
-        return $this;
-    }
-
-    /**
-     * Get fichier
-     *
-     * @return \MBLBundle\Entity\Fichier
-     */
-    public function getFichier()
-    {
-        return $this->fichier;
-    }
-    /**
-     * @var string
-     */
-    private $ville;
-
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return Projet
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
-    }
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
 }

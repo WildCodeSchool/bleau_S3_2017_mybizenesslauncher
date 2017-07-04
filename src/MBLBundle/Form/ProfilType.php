@@ -4,11 +4,8 @@ namespace MBLBundle\Form;
 
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
-<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-=======
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -39,12 +36,8 @@ class ProfilType extends AbstractType
             ->add('linkedIn', UrlType::class, array(
                 'required' => false
             ))
-<<<<<<< HEAD
-            ->add('localisation'.$options["locale"], CountryType::class, array(
-                'required' => true
-            ))
-=======
-            ->add('localisation', ChoiceType::class, array(
+
+            ->add('localisation', CountryType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -92,11 +85,10 @@ class ProfilType extends AbstractType
                         'Veneto' => 'Italie, Veneto'
                     ),
                     'Autre'   => 'autre',
-
                 ),
                 'preferred_choices' => array('Italie', 'arr')))
             ->add('ville')
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
+
             ->add('metier', EntityType::class,
                 array(
                     'class' => Metier::class,
@@ -144,13 +136,7 @@ class ProfilType extends AbstractType
                 ))
             ->add('competences', EntityType::class,
                 array(
-                    'class' => Competences::class,/*
-                    'query_builder'=> function(EntityRepository $er) use($options){
-                        return $er->createQueryBuilder('c')
-                            ->select('c.competences')
-                            ->where('c.langue :locale')
-                            ->setParameter('locale', $options['locale']);
-                    },*/
+                    'class' => Competences::class,
                     'choice_label' =>'competences'.$options["locale"],
                     'multiple'=> true,
                     'expanded'=> false,

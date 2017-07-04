@@ -39,16 +39,12 @@
                         {{ form_errors(edit_form.localisation) }}
                         {{ form_widget(edit_form.localisation, {'attr': {'placeholder': ' Localisation '}}) }}
                     </div>
-<<<<<<< HEAD
-=======
+
                     <div class="ville center-align">
                         {{ form_label(edit_form.ville, 'Ville :') }}
                         {{ form_widget(edit_form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
                         {{ form_errors(edit_form.ville) }}
                     </div>
-
-
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                 </div>
 
 
@@ -98,7 +94,7 @@
                             </div>
                         </div>
                         <div class="col s3">
-                            <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                            <img class="hiddenPreview" id="preview" src="#" alt="{{ 'Votre Photo'|trans }}" />
                         </div>
                     </div>
 
@@ -108,8 +104,7 @@
                         <input class="btn" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
-                        <a class="btn" href="{{ path('showProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
-                        {#<a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>#}
+                        <a class="btn" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
                     </div>
                 </div>
                 {{ form_end(edit_form) }}

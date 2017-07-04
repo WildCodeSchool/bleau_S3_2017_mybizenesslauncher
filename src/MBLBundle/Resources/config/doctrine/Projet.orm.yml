@@ -54,8 +54,6 @@ MBLBundle\Entity\Projet:
             length: 255
             nullable: true
 
-
-
     lifecycleCallbacks: {  }
 
     manyToOne:

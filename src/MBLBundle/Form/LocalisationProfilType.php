@@ -34,7 +34,7 @@ class LocalisationProfilType extends AbstractType
                 'required' => false,
                 'placeholder'=> ' Quel est votre profil?'
             ))
-            ->add('localisation', ChoiceType::class, array(
+            ->add('localisation', LocalisationProjetType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',

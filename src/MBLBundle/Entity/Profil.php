@@ -53,12 +53,7 @@ class Profil extends BaseUser
     /**
      * @var string
      */
-    private $localisationfr;
-
-    /**
-     * @var string
-     */
-    private $localisationit;
+    private $localisation;
 
     /**
      * @var \MBLBundle\Entity\Invest
@@ -203,51 +198,27 @@ class Profil extends BaseUser
     }
 
     /**
-     * Set localisationfr
+     * Set localisation
      *
-     * @param string $localisationfr
+     * @param string $localisation
      *
      * @return Profil
      */
-    public function setLocalisationfr($localisationfr)
+    public function setLocalisation($localisation)
     {
-        $this->localisationfr = $localisationfr;
+        $this->localisation = $localisation;
 
         return $this;
     }
 
     /**
-     * Get localisationfr
+     * Get localisation
      *
      * @return string
      */
-    public function getLocalisationfr()
+    public function getLocalisation()
     {
-        return $this->localisationfr;
-    }
-
-    /**
-     * Set localisationit
-     *
-     * @param string $localisationit
-     *
-     * @return Profil
-     */
-    public function setLocalisationit($localisationit)
-    {
-        $this->localisationit = $localisationit;
-
-        return $this;
-    }
-
-    /**
-     * Get localisationit
-     *
-     * @return string
-     */
-    public function getLocalisationit()
-    {
-        return $this->localisationit;
+        return $this->localisation;
     }
 
     /**
@@ -553,4 +524,5 @@ class Profil extends BaseUser
     {
         return $this->ville;
     }
+
 }

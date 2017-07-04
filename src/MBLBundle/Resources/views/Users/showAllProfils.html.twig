@@ -11,8 +11,6 @@
 
                 {% endfor %}
                 <div class="row">
-<<<<<<< HEAD
-=======
                     {{ form_start(form_localisation) }}
 
                     <div class="col s3 m6 l6">
@@ -26,9 +24,9 @@
                     <input class="btn" name="Recherchez" type="submit">
                     {{ form_end(form_localisation) }}
                 </div>
+
                 <div class="row">
 
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
                             <div class="col l2 m3 s6 vignette_profil_all  z-depth-5">
@@ -50,79 +48,47 @@
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
-<<<<<<< HEAD
                                         <h6>{{ 'Profil'|trans }}</h6>
-                                        {% if pro.metier == null  %}
-                                            {{ pro.metier }}
-=======
-                                        <h6>Profil</h6>
 
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
-                                            {% else %}
-
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
+                                        {% else %}
                                         {% endif %}
+                                        <div class="divider"></div>
                                     </div>
+
                                     <div class="col s12">
                                         <h6>{{ 'Compétences'|trans }}</h6>
                                         {% for comp in pro.competences %}
-                                            {{ comp.competences}}
+                                            {% if loop.last %}
+                                                {{ comp.competences}}
+                                            {% else %}
+                                                {{ comp.competences}},
+                                            {% endif %}
                                         {% endfor %}
+                                        <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
-<<<<<<< HEAD
                                         <h5>{{ 'Localisation'|trans }}</h5>
-                                        <p>{{ pro.localisation }}</p>
-=======
-                                        <h6>Localisation</h6>
                                         <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         <div class="divider"></div>
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                     </div>
+
                                     <div class="col s12">
                                         <h5>{{ 'Description'|trans }}</h5>
                                         <p>{{ pro.description }}</p>
                                     </div>
-                                    <div class="row info_projet">
-                                        <div class="col s12">
-                                            <h6>{{ 'Profil'|trans }}</h6>
-                                            {% if pro.metier == null  %}
-                                                {{ pro.metier }}
-                                            {% endif %}
-                                            <div class="divider"></div>
-                                        </div>
-                                        <div class="col s12">
-                                            <h6>{{ 'Compétences'|trans }}</h6>
-                                            {% for comp in pro.competences %}
-                                                {% if loop.last %}
-                                                    {{ comp.competences}}
-                                                {% else %}
-                                                    {{ comp.competences}},
-                                                {% endif %}
-                                            {% endfor %}
 
-                                            <div class="divider"></div>
-                                        </div>
-                                        <div class="col s12">
-                                            <h6>{{ 'Localisation'|trans }}</h6>
-                                            <p>{{ pro.localisation }}</p>
-                                            <div class="divider"></div>
-                                        </div>
-                                        <div class="col s12">
-                                            <h6>{{ 'Description'|trans }}</h6>
-                                            <p>{{ pro.description }}</p>
-                                        </div>
-                                    </div>
-                                    {% if app.user.id is defined %}
-                                        {% if app.user.id == pro.id %}
-                                        {% else %}
-                                            <div class="col s12">
-                                                <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
-                                            </div>
-                                        {% endif %}
-                                    {% endif %}
                                 </div>
+
+                                {% if app.user.id is defined %}
+                                    {% if app.user.id == pro.id %}
+                                    {% else %}
+                                        <div class="col s12">
+                                            <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
                             </div>
                         </a>
                     {% endfor %}
@@ -131,6 +97,7 @@
         </div>
     </div>
 {% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
     <script>

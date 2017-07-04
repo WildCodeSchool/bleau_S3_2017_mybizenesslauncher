@@ -5,39 +5,39 @@
 {% block body %}
 
 
-<!--Bandeau de la homepage -->
-<div id="index">
-    <div class="row">
-        <div class="col s12 bandeau_homepage ">
-            <div class="col s4 presentation ">
-
-                <h2>{{ 'Pour les porteurs de projet'|trans }}<br/></h2>
-                <p>{{ 'index.description.but'|trans}}<br/></p>
-                <h2>{{ 'Pour ceux qui cherchent un projet à intégrer'|trans }}<br/></h2>
-                <p>{{ 'index.description.howDo'|trans}}</p>
-            </div>
-            <div class="col s2 offset-s1">
-                <div class="row Outils">
-                    <div class="col s12">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">{{ 'Outils pour se lancer'|trans }}</a>
-                    </div>
-                    <div class="col s12">
-                        <p>{{ 'Trouve sur MyStartupTools.com'|trans }}<br/>{{ 'Tous les outils pour t’aider à lancer ton activité'|trans}}</p>
+    <!--Bandeau de la homepage -->
+    <div id="index">
+        <div class="row">
+            <div class="col s12 bandeau_homepage ">
+                <div class="col s12 m4 presentation ">
+                    <h2>{{ 'Pour les porteurs de projet'|trans }}<br/></h2>
+                    <p>{{ 'index.description.but'|trans}}<br/></p>
+                    <h2>{{ 'Pour ceux qui cherchent un projet à intégrer'|trans }}<br/></h2>
+                    <p>{{ 'index.description.howDo'|trans}}</p>
+                </div>
+                <div class="col s12 m2 offset-m1">
+                    <div class="row Outils">
+                        <div class="col s12">
+                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">{{ 'Outils pour se lancer'|trans }}</a>
+                        </div>
+                        <div class="col s12">
+                            <p>{{ 'Trouve sur MyStartupTools.com'|trans }}<br/>{{ 'Tous les outils pour t’aider à lancer ton activité'|trans}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col s4 offset-s1">
-                <div class="row Finance">
-                    <div class="col s6 btn_eBusta">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" target="blanck" href="https://www.e-busta.com/">{{ 'Finance ton projet'|trans}}</a>
+                <div class="col s12 m4 offset-m1">
+                    <div class="row Finance">
+                        <div class="col s6 btn_eBusta">
+                            <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" target="blanck" href="https://www.e-busta.com/">{{ 'Finance ton projet'|trans}}</a>
+                        </div>
+                        <div class="col s6">
+                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                        </div>
                     </div>
-                    <div class="col s6">
-                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <p>{{ 'index.description.ebusta'|trans }}</p>
+                    <div class="row">
+                        <div class="col s12">
+                            <p>{{ 'index.description.ebusta'|trans }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
         <div class="row box_projet_profil">
             <!--PROJET-->
             <div class="col s12 l5 offset-l1 projet ">
-                <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
+                <h3>{{ 'Vous cherchez un projet où vous investir'|trans}}</h3>
 
                 <div class="row bouton_projet valign-wrapper">
                     <div class="col s5 btn_showProjet ">
@@ -64,6 +64,7 @@
                             <div class="col s5 offset-s1 vignette_projet  z-depth-5">
                                 <div class="row vignette ">
                                     <div class="col s12">
+
                                         {% if pro.titre|length > 10 %}
                                             <h4>{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
                                         {% else  %}
@@ -71,76 +72,62 @@
                                         {% endif %}
                                     </div>
                                     <div class="col s8 offset-s2 photo_profil">
-                                        {#{% if pro.fichier is null %}
+                                        {% if pro.fichier is empty %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
-                                        {% endif %}#}
+                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo|first ) }}">
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="row info_projet">
-
                                     <div class="col s12">
                                         <h6>{{ 'Type de projet'|trans }}</h6>
-                                        {#{% for comp in pro.typeDeProjet %}
-                                            {{ comp.typeDeProjet}}
-                                        {% endfor %}#}
+                                        {{ pro.typeDeProjet }}
+                                        <div class="divider"></div>
                                     </div>
+
+                                    <div class="col s12">
+                                        <h6>{{ 'Secteur'|trans }}</h6>
+                                        {{ pro.secteur }}
+                                        <div class="divider"></div>
+                                    </div>
+
+
                                     <div class="col s12">
                                         <h6>{{ 'Profils recherchés'|trans }}</h6>
 
-                                        {#{% for profil in pro.profilsrecherches %}
-                                            {% if pro.metier|length > 10 %}
-                                                <p> {{ profil.metier.metier }} ,
-=======
-                                        <h6>Type de projet</h6>
-
-                                        {{ pro.typeDeProjet.typeDeProjet }}
-                                        <div class="divider"></div>
-                                    </div>
-
-                                    <div class="col s12">
-                                        <h6>Secteur</h6>
-
-                                        {{ pro.secteur.secteurActivite }}
-                                        <div class="divider"></div>
-                                    </div>
-                                    <div class="col s12">
-                                        <h6>Profils recherchés</h6>
-                                        {% for profil in pro.profilsrecherches %}
-                                            {% if profil.metier.metier|length > 10 %}
+                                        {% for profil in pro.metier %}
+                                            {% if profil['metier']|length > 10 %}
                                                 {% if loop.last %}
-                                                    {{ profil.metier.metier|slice(0,8) ~'...' }}
+                                                    {{ profil['metier']|slice(0,8) ~'...' }}
                                                 {% else %}
-                                                    {{ profil.metier.metier|slice(0,8) ~'...' }},
+                                                    {{ profil['metier']|slice(0,8) ~'...' }},
                                                 {% endif %}
-
->>>>>>> 71cc8208413d2ad9803eb251de609991ca2002fe
                                             {% else  %}
                                                 {% if loop.last %}
-                                                    {{ profil.metier.metier }}
+                                                    {{ profil['metier'] }}
                                                 {% else %}
-                                                    {{ profil.metier.metier }},
+                                                    {{ profil['metier'] }},
                                                 {% endif %}
-
                                             {% endif %}
-<<<<<<< HEAD
-                                        {% endfor %}#}
+                                        {% endfor %}
+                                        <div class="divider"></div>
                                     </div>
-                                    <div class="col s12">
-<<<<<<< HEAD
-                                        <h6>{{ 'Localisation'|trans}}</h6>
-                                        <p>{{ pro.localiprojet }}</p>
 
-=======
-                                        <h6>Localisation</h6>
+                                    <div class="col s12">
+                                        <h6>{{ 'Localisation'|trans}}</h6>
 
                                         {% if pro.localisation is not null %}
                                             <p>{{ pro.localisation }}</p>
                                         {% else %}
+                                            {#TODO: compléter avec un else pt être? #}
+                                        {% endif %}
+                                        {% if pro.ville|first is not null %}
+                                            <p>{{ pro.ville|first }}</p>
+                                        {% else %}
+                                            {#TODO: compléter avec un else pt être? #}
                                         {% endif %}
                                         <div class="divider"></div>
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                     </div>
                                     <div class="col s12">
                                         <h6>{{ 'Description'|trans }}</h6>
@@ -156,7 +143,7 @@
 
             <!--PROFIL-->
             <div class="col s12 l5 profil  ">
-                <h3>{{ 'Vous cherchez un projet où vous investir'|trans}}</h3>
+                <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
 
                 <div class="row bouton_projet valign-wrapper">
                     <div class="col s5 btn_showProfil">
@@ -166,7 +153,7 @@
                         <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Dépose ton profil'|trans}}</a>
                     </div>
                 </div>
-                {#<div class="row ">
+                <div class="row ">
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', {'id': pro.id}) }}">
                             <div class="col s5 offset-s1 vignette_profil z-depth-5">
@@ -180,53 +167,41 @@
 
                                     </div>
                                     <div class="col s8 offset-s2 photo_profil">
-                                        {% if pro.fichier is null %}
+                                        {% if pro.fichier is empty %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            {# TODO: à verifier #}
+                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier|first.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
-<<<<<<< HEAD
                                         <h6>{{ 'Profil'|trans}}</h6>
-                                        {% if pro.metier == null  %}
-                                            {{ pro.metier }}
-=======
-                                        <h6>Profil</h6>
-
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
-                                        {% else %}
-
-
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                         {% endif %}
+
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
                                         <h6>{{ 'Compétences'|trans }}</h6>
                                         {% for comp in pro.competences %}
                                             {% if loop.last %}
-                                                {{ comp.competences}}
+                                                {{ comp.competence}}
                                             {% else %}
-                                                {{ comp.competences}},
+                                                {{ comp.competence}},
                                             {% endif %}
                                         {% endfor %}
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
-<<<<<<< HEAD
                                         <h6>{{ 'Localisation'|trans}}</h6>
-                                        <p>{{ pro.localisation }}</p>
-=======
-                                        <h6>Localisation</h6>
                                         {% if pro.localisation and pro.ville is defined %}
-                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
-                                            {% else %}
+                                            <p>{{ pro.localisation }}, {{ pro.ville }}</p>
+                                        {% else %}
                                         {% endif %}
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
+
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -238,9 +213,8 @@
                             </div>
                         </a>
                     {% endfor %}
-                </div>#}
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

@@ -23,26 +23,17 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
-        localisationfr:
-            type: string
-            length: 255
-            nullable: true
-<<<<<<< HEAD
-        localisationit:
+        localisation:
             type: string
             length: 255
             nullable: true
         lng:
             type: string
             length: 3
-
-
-=======
         ville:
             type: string
             length: 255
             nullable: true
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
     lifecycleCallbacks: {  }
 
 

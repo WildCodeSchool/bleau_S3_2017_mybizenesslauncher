@@ -88,15 +88,6 @@ testTraduction:
 
 
 
-
-# Cette route doit rester la dernière
-remove_trailing_slash:
-    path: /{url}
-    defaults: { _controller: MBLBundle:Redirecting:removeTrailingSlash }
-    requirements:
-        url: .*/$
-    methods: [GET]
-
 chatIndex:
     path: /chatIndex/{id}
     defaults:

@@ -75,7 +75,6 @@ class LoadCompetencesData extends AbstractFixture implements OrderedFixtureInter
     public function load(ObjectManager $manager) {
 
         $competences = array(
-<<<<<<< HEAD
             array('1'=>'Renseignez vos compétences','2'=>''),
             array('1'=>'3D Graphic Design','2'=>'3D Graphic Design'),
             array('1'=>'Comptabilité','2'=>'Contabilità'),
@@ -158,90 +157,6 @@ class LoadCompetencesData extends AbstractFixture implements OrderedFixtureInter
             array('1'=>'Développement Web','2'=>'Sviluppatore Web'),
             array('1'=>'WordPress','2'=>'WordPress'),
             array('1'=>'Xpress','2'=>'Xpress')
-=======
-            'Renseignez vos compétences',
-            '3D Graphic Design',
-            'Comptabilité',
-            'Adobe Suite',
-            'Autre',
-            'B2B',
-            'B2C',
-            'Développeur Backend',
-            'Bloggeur',
-            'Business Developpeur',
-            'C',
-
-            'C++',
-            'Community Management',
-            'Négociation de contrat',
-            'CSS',
-            'Customer Relationship Management (CMR)',
-            'Customer Service',
-            'Base de Données',
-            'Développeur',
-            'Digital Marketing',
-            'Droit',
-
-            'Event Management',
-            'Event Planning',
-            'Fashion',
-            'Finance',
-            'Développeur Frontend',
-            'Développeur Fullstack',
-            'Google Analytics',
-            'Graphic Design',
-            'Growth Hacker',
-            'HTML',
-
-            'Ressources Humaines',
-            'Illustrator',
-            'Indesign',
-            'Java',
-            'Javascript',
-            'JQuery',
-            'KPI',
-            'Leadership',
-            'Legal',
-            'Linux',
-
-            'Logo Design',
-            'Management',
-            'Marketing',
-            'Microsoft Excel',
-            'Microsoft Office',
-            'Microsoft PowerPoint',
-            'Microsoft Word',
-            'MySQL',
-            'Negociation',
-            'Node.Js',
-
-            'Office Suite',
-            'Online Marketing',
-            'Photoshop',
-            'PHP',
-            'Achats',
-            'Project Management',
-            'Conférencier',
-            'QuarkXPress',
-            'Recrutement',
-            'Ruby',
-
-            'Ventes',
-            'SEO',
-            'SQL',
-            'Social Media Marketing',
-            'Production',
-            'Travail d\'équipe',
-            'Video',
-            'Video Game',
-            'Video Production',
-            'Visual Basic',
-
-            'Web Design',
-            'Développement Web',
-            'WordPress',
-            'Xpress'
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
         );
 
         foreach ($competences as $competence){

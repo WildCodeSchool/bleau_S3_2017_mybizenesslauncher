@@ -21,8 +21,8 @@ class ProjetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('titre'.$options["locale"], TextType::class, array(
-                'required' => true
-            ))
+            'required' => true
+        ))
             ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true,
                 'attr' => array('rows' => '1000','cols' => '1000')
@@ -50,15 +50,8 @@ class ProjetType extends AbstractType
                 'required'      => true,
                 'placeholder'   => '  Choisissez'
             ))
-<<<<<<< HEAD
-            ->add('localisation'.$options["locale"], CountryType::class, array(
-                'required' => true
-            ))
-            ->add('fichier', FichierType::class
-            )
 
-=======
-            ->add('localisation', ChoiceType::class, array(
+            ->add('localisation'.$options["locale"], CountryType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -106,15 +99,12 @@ class ProjetType extends AbstractType
                         'Veneto' => 'Italie, Veneto'
                     ),
                     'Autre'   => 'autre',
-
-
                 ),
                 'required'      => false,
                 'placeholder'   => '  Choisissez'
             ))
             ->add('ville')
             ->add('fichier', FichierType::class)
->>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
         ;
     }
 
