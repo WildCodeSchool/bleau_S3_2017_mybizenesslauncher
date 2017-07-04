@@ -128,9 +128,19 @@
                                         {% endfor %}#}
                                     </div>
                                     <div class="col s12">
+<<<<<<< HEAD
                                         <h6>{{ 'Localisation'|trans}}</h6>
                                         <p>{{ pro.localiprojet }}</p>
 
+=======
+                                        <h6>Localisation</h6>
+
+                                        {% if pro.localisation is not null %}
+                                            <p>{{ pro.localisation }}</p>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="divider"></div>
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                     </div>
                                     <div class="col s12">
                                         <h6>{{ 'Description'|trans }}</h6>
@@ -179,9 +189,19 @@
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
+<<<<<<< HEAD
                                         <h6>{{ 'Profil'|trans}}</h6>
                                         {% if pro.metier == null  %}
                                             {{ pro.metier }}
+=======
+                                        <h6>Profil</h6>
+
+                                        {% if pro.metier.metier is defined  %}
+                                            {{ pro.metier.metier }}
+                                        {% else %}
+
+
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
@@ -197,8 +217,16 @@
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
+<<<<<<< HEAD
                                         <h6>{{ 'Localisation'|trans}}</h6>
                                         <p>{{ pro.localisation }}</p>
+=======
+                                        <h6>Localisation</h6>
+                                        {% if pro.localisation and pro.ville is defined %}
+                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
+                                            {% else %}
+                                        {% endif %}
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">

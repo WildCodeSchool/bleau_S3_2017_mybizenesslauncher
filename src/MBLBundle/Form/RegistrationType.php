@@ -18,9 +18,13 @@ use MBLBundle\Entity\ETQ;
 use MBLBundle\Entity\Invest;
 use MBLBundle\Entity\Metier;
 use MBLBundle\Entity\Ou;
+<<<<<<< HEAD
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+=======
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
 
 
 class RegistrationType extends AbstractType
@@ -35,6 +39,7 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom')
+<<<<<<< HEAD
             ->add('prenom')
             ->remove('username')
             ->add('description')
@@ -116,6 +121,128 @@ class RegistrationType extends AbstractType
             'data_class' => 'MBLBundle\Entity\Profil'
         ));
     }
+=======
+                ->add('prenom')
+                ->remove('username')
+                ->add('description')
+                ->add('linkedin', UrlType::class)
+                ->add('localisation', ChoiceType::class, array(
+                                                    'choices' => array(
+                                                        'France' => array(
+                                                            'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
+                                                            'Bourgogne-Franche-Comté' => 'France, Bourgogne-Franche-Comté',
+                                                            'Bretagne' => 'France, Bretagne',
+                                                            'Centre-Val de Loire' => 'France, Centre-Val de Loire',
+                                                            'Corse' => 'France, Corse',
+                                                            'Grand Est' => 'France, Grand Est',
+                                                            'Hauts-de-France' => 'France, Hauts-de-France',
+                                                            'Île-de-France' => 'France, Île-de-France',
+                                                            'Normandie' => 'France, Normandie',
+                                                            'Nouvelle-Aquitaine' => 'France, Nouvelle-Aquitaine',
+                                                            'Occitanie' => 'France, Occitanie',
+                                                            'Pays de la Loire' => 'France, Pays de la Loire',
+                                                            'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
+                                                            'Guadeloupe' => 'France, Guadeloupe',
+                                                            'Guyane' => 'France, Guyane',
+                                                            'Martinique' => 'France, Martinique',
+                                                            'Réunion' => 'France, Réunion',
+                                                            'Mayotte' => 'France, Mayotte'
+                                                        ),
+                                                        'Italie' => array(
+
+                                                            'Abruzzo' => 'Italie, Abruzzo',
+                                                            'Alto Adige' => 'Italie, Alto Adige',
+                                                            'Basilicata' => 'Italie, Basilicata',
+                                                            'Calabria' => 'Italie, Calabria',
+                                                            'Campania' => 'Italie, Campania',
+                                                            'Centro' => 'Italie, Centro',
+                                                            'Emilia-Romagna' => 'Italie, Emilia-Romagna',
+                                                            'Friuli-Venezia Giulia' => 'Italie, Friuli-Venezia Giulia',
+                                                            'Lazio' => 'Italie, Lazio',
+                                                            'Liguria' => 'Italie, Liguria',
+                                                            'Lombardia' => 'Italie, Lombardia',
+                                                            'Marche' => 'Italie, Marche',
+                                                            'Molise' => 'Italie, Molise',
+                                                            'Piemonte' => 'Italie, Piemonte',
+                                                            'Puglia' => 'Italie, Puglia',
+                                                            'Sardegna' => 'Italie, Sardegna',
+                                                            'Sicilia' => 'Italie, Sicilia',
+                                                            'Toscana' => 'Italie, Toscana',
+                                                            'Trentino' => 'Italie, Trentino',
+                                                            'Umbria' => 'Italie, Umbria',
+                                                            'Valle d\'Aosta' => 'Italie, Valle d\'Aosta',
+                                                            'Veneto' => 'Italie, Veneto'
+                                                        ),
+                                                        'Autre'   => 'autre',
+
+                                                    ),
+                                                    'preferred_choices' => array('Italie', 'arr')))
+                ->add('ville')
+                ->add('metier', EntityType::class,
+                              array(
+                                  'class' => Metier::class,
+                                  'choice_label' =>'metier',
+                                  'multiple'=> false,
+                                  'expanded'=> false,
+                                  'required' => false,
+                                  'placeholder'=> ' Quel est votre profil?'
+
+                              ))
+                ->add('etq', EntityType::class,
+                          array(
+                              'class' => ETQ::class,
+                              'choice_label' =>'etq',
+                              'multiple'=> false,
+                              'expanded'=> false,
+                              'required' => false,
+                              'placeholder'=> ' Disponible en tant que'
+
+                          ))
+                ->add('ou', EntityType::class,
+                          array(
+                              'class' => Ou::class,
+                              'choice_label' =>'ou',
+                              'multiple'=> false,
+                              'expanded'=> false,
+                              'required' => false,
+                              'placeholder'=> ' Où ça ?'
+
+
+                          ))
+                ->add('invest', EntityType::class,
+                          array(
+                              'class' => Invest::class,
+                              'choice_label' =>'invest',
+                              'multiple'=> false,
+                              'expanded'=> false,
+                              'required' => false,
+                              'placeholder'=> ' Investissement possible'
+
+                          ))
+
+                ->add('dispo', EntityType::class,
+                          array(
+                              'class' => Dispo::class,
+                              'choice_label' =>'dispo',
+                              'multiple'=> false,
+                              'expanded'=> false,
+                              'required' => false,
+                              'placeholder'=> ' Votre disponibilité'
+
+                          ))
+                ->add('competences', EntityType::class,
+                          array(
+                              'class' => Competences::class,
+                              'choice_label' =>'competences',
+                              'multiple'=> true,
+                              'expanded'=> false,
+                              'required' => false
+
+                          ));
+
+
+                                    }
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
 
     public function getParent()
     {

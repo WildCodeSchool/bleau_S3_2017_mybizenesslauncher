@@ -7,12 +7,7 @@ CONSTANTE
 /*
 Font
 */
-/* line 17, ../sass/_global.scss */
-html {
-  font-family: font36450 !IMPORTANT;
-}
-
-/* line 21, ../sass/_global.scss */
+/* line 20, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -22,13 +17,13 @@ Variable globale
 
 BALISE
 */
-/* line 31, ../sass/_global.scss */
+/* line 30, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 36, ../sass/_global.scss */
+/* line 35, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,23 +40,23 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 51, ../sass/_global.scss */
+/* line 50, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 56, ../sass/_global.scss */
+/* line 55, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 61, ../sass/_global.scss */
+/* line 60, ../sass/_global.scss */
 a {
   color: inherit;
 }
 
-/* line 64, ../sass/_global.scss */
+/* line 63, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -71,12 +66,12 @@ a {
   max-width: 300px;
 }
 
-/* line 74, ../sass/_global.scss */
+/* line 73, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 77, ../sass/_global.scss */
+/* line 76, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -86,52 +81,57 @@ a {
   max-width: 300px;
 }
 
-/* line 88, ../sass/_global.scss */
+/* line 87, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 91, ../sass/_global.scss */
+/* line 90, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
-/* line 95, ../sass/_global.scss */
+/* line 94, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
 }
 
-/* line 98, ../sass/_global.scss */
+/* line 97, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 102, ../sass/_global.scss */
+/* line 101, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
-/* line 107, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-/* line 112, ../sass/_global.scss */
+/* line 111, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-/* line 116, ../sass/_global.scss */
+/* line 115, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 120, ../sass/_global.scss */
+/* line 119, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
+}
+
+/* line 122, ../sass/_global.scss */
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #4b494b;
 }
 
 /* 2. INDEX */
@@ -282,18 +282,23 @@ textarea#fos_user_registration_form_description {
 }
 
 /* line 88, ../sass/_layout.scss */
-input {
-  border: 1.5px solid lightgray;
-  border-radius: 10px;
+input, button {
+  border: 1.5px solid lightgray !important;
+  border-radius: 10px !important;
   outline: none;
 }
 
 /* line 93, ../sass/_layout.scss */
-input:focus, #fos_user_registration_form_description:focus {
-  border: 1.5px solid #98d4e1;
+#login .btn, #register .btn {
+  background: #98d4e1 !important;
+}
+
+/* line 97, ../sass/_layout.scss */
+#username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
+  border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* line 7, ../sass/_userHomepage.scss */

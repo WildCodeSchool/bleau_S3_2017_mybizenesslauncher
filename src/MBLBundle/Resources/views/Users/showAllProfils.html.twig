@@ -11,6 +11,24 @@
 
                 {% endfor %}
                 <div class="row">
+<<<<<<< HEAD
+=======
+                    {{ form_start(form_localisation) }}
+
+                    <div class="col s3 m6 l6">
+                        {{ form_row(form_localisation.localisation) }}
+                        {{ form_errors(form_localisation.localisation) }}
+                    </div>
+                    <div class="col s3 m6 l6">
+                        {{ form_row(form_localisation.metier) }}
+                        {{ form_errors(form_localisation.metier) }}
+                    </div>
+                    <input class="btn" name="Recherchez" type="submit">
+                    {{ form_end(form_localisation) }}
+                </div>
+                <div class="row">
+
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
                             <div class="col l2 m3 s6 vignette_profil_all  z-depth-5">
@@ -32,9 +50,18 @@
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
+<<<<<<< HEAD
                                         <h6>{{ 'Profil'|trans }}</h6>
                                         {% if pro.metier == null  %}
                                             {{ pro.metier }}
+=======
+                                        <h6>Profil</h6>
+
+                                        {% if pro.metier.metier is defined  %}
+                                            {{ pro.metier.metier }}
+                                            {% else %}
+
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                         {% endif %}
                                     </div>
                                     <div class="col s12">
@@ -44,8 +71,14 @@
                                         {% endfor %}
                                     </div>
                                     <div class="col s12">
+<<<<<<< HEAD
                                         <h5>{{ 'Localisation'|trans }}</h5>
                                         <p>{{ pro.localisation }}</p>
+=======
+                                        <h6>Localisation</h6>
+                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
+                                        <div class="divider"></div>
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
                                     </div>
                                     <div class="col s12">
                                         <h5>{{ 'Description'|trans }}</h5>
@@ -97,4 +130,13 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+
 {% endblock %}

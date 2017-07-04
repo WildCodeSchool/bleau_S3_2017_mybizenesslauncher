@@ -5,6 +5,7 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
+        <nav>
             <ul id="dropdown1" class="dropdown-content header">
                 <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
@@ -16,32 +17,58 @@
                 <li><a class="color" href="#">{{ 'Mes discussions'|trans }}</a></li>
                 <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
-            <nav>
-                <div class="nav-wrapper header">
-                    <a href="{{ path('mbl_homepage') }}" class="color">Innova'Up.com</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li></li>
-                        <li></li>
-                        <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
-                        <li><a class="color" href="{{path('showAllProfils')}}">{{ 'Parcourir les profils'|trans }}</a></li>
-                        <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="right">{{ 'Mon compte'|trans }}</i></a></li>
-                    </ul>
-                </div>
-            </nav>
-        {% else %}
 
-            <nav>
-                <div class="nav-wrapper header">
-                    <a href="#" class="color">Innova'Up.com</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
-                        <li><a class="color" href="">{{ 'Parcourir les profils'|trans }}</a></li>
-                        <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans ({}, 'FOSUserBundle') }}</a></li>    {#TODO: vérifier si la traduction de "connexion" se fait correctement quand la locale est set en Italien#}
+            <div class="nav-wrapper header">
+                <a href="{{ path('mbl_homepage') }}" class="color">Innova'Up.com</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="color material-icons">{{ 'menu'|trans }}</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
+                    <li><a class="color" href="{{path('showAllProfils')}}">{{ 'Parcourir les profils'|trans }}</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="right">{{ 'Mon compte'|trans }}</i></a></li>
+                </ul>
+
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}</a></li>
+                    <li class="divider"></li>
+                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Voir mes projets'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    {% else %}
+
+        <nav>
+            <div class="nav-wrapper header">
+                <a href="#" class="color">Innova'Up.com</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
+                    <li><a class="color" href="">{{ 'Parcourir les profils'|trans }}</a></li>
+                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans ({}, 'FOSUserBundle') }}</a></li>    {#TODO: vérifier si la traduction de "connexion" se fait correctement quand la locale est set en Italien#}
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="row">
+                <div class="col s12 tabs">
+                    <ul class="tabs">
+                        <li class="tab col s6 active"><a href="#Connexion">{{ 'Connexion'|trans }}</a></li>
+                        <li class="tab col s6"><a href="#Register">{{ 'S\'inscrire'|trans }}</a></li>
                     </ul>
                 </div>
-            </nav>
-        {% endif %}
+                <div id="Connexion" class="col s12">{{ render(controller('FOSUserBundle:Security:login')) }}</div>
+                <div id="Register" class="col s12">{{ render(controller('FOSUserBundle:Registration:register')) }}</div>
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}
 
@@ -77,10 +104,6 @@
                     <h5 class="white-text">{{ 'Suivez'|trans }} Innova'Up.com</h5>
                     <p class="grey-text text-lighten-4"><Facebook></Facebook></p>
                 </div>
-                <div class="choiceLanguage">
-
-                </div>
-
             </div>
         </div>
         <div class="footer-copyright">
@@ -94,22 +117,24 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
-    <script>
-        $( document ).ready(function(){
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>    <script>
+    $( document ).ready(function(){
         $(".button-collapse").sideNav();
 
-            $(".dropdown-button").dropdown();
+        $(".dropdown-button").dropdown();
 
         $('.modal').modal();
         /*$('ul.tabs').tabs();
-        $('ul.tabs').tabs('select_tab', 'tab_id');
-        $('.tabs').tabs({ 'swipeable': true });*/
+         $('ul.tabs').tabs('select_tab', 'tab_id');
+         $('.tabs').tabs({ 'swipeable': true });*/
         $('.registerPlus').click(function(){
             $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
         });
 
-        });
+    });
 
-    </script>
+</script>
 {% endblock %}

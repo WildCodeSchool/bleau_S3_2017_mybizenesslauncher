@@ -7,6 +7,18 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
+<<<<<<< HEAD
+=======
+//    /**
+//     * @var
+//     */
+//    protected $bioUrl;
+
+    /**
+     * @var integer
+     */
+    private $id;
+>>>>>>> 738c4154fb2898c9073acfeac46f05d2b52b04b3
 
 
 <<<<<<< HEAD

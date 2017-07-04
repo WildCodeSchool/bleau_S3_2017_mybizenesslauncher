@@ -85,14 +85,18 @@ textarea#fos_user_registration_form_description {
   border-radius: 10px;
   outline: none;
 }
-input {
-  border: 1.5px solid lightgray;
-  border-radius: 10px;
+input, button {
+  border: 1.5px solid lightgray !important;
+  border-radius: 10px !important;
   outline: none;
 }
-input:focus, #fos_user_registration_form_description:focus  {
-  border: 1.5px solid $Colorblue;
+#login .btn, #register .btn {
+  background: $Colorblue !important;
+
+}
+#username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus  {
+  border: 1.5px solid $Colorblue !important;
   border-radius: 10px;
-  outline: none;
-  box-shadow: none;
+  outline: none !important;
+  box-shadow: none !important;
 }

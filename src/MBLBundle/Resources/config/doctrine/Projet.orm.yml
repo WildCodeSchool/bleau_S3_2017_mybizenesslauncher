@@ -49,6 +49,10 @@ MBLBundle\Entity\Projet:
             nullable: true
         dateCreation:
             type: datetime
+        ville:
+            type: string
+            length: 255
+            nullable: true
 
 
 

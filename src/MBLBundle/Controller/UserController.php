@@ -52,7 +52,7 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('showProfil');
+            return $this->redirectToRoute('showProfil' , array('id' => $profil->getId()));
         }
 
         return $this->render('@MBL/Users/editProfil.html.twig', array(
@@ -76,14 +76,42 @@ class UserController extends Controller
             'profil' => $profil,
         ));
     }
-    public function showAllProfilsAction()
+    public function showAllProfilsAction(Request $request)
     {
 
+
+        $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType');
+
         $em = $this->getDoctrine()->getManager();
-        $profils = $em->getRepository('MBLBundle:Profil')->findAll();
+
+        $idloc = $request->request->get('mblbundle_profil')['localisation'];
+        $idmetier = $request->request->get('mblbundle_profil')['metier'];
+
+        if (!empty($idloc) && !empty($idmetier))
+        {
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc);
+        }
+        elseif(!empty($idloc) || !empty($idmetier))
+        {
+            if (!empty($idloc))
+            {
+                $profils = $em->getRepository('MBLBundle:Profil')->findByLocalisation($idloc);
+            }
+            else
+            {
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier);
+            }
+
+        }
+        else
+        {
+            $profils = $em->getRepository('MBLBundle:Profil')->findAll();
+        }
+
 
         return $this->render('@MBL/Users/showAllProfils.html.twig', array(
-            'profils'=>$profils,//
+            'profils'=>$profils,
+            'form_localisation' => $form_loc->createView()//
         ));
     }
 
@@ -279,23 +307,50 @@ class UserController extends Controller
 
     public function showProjectAction(Request $request)
     {
+//        dump($request); die();
         $em = $this->getDoctrine()->getManager();
 
         $form_secteur = $this->createForm('MBLBundle\Form\ProjetRechercheType');
-
+        $form_localisation = $this->createForm('MBLBundle\Form\LocalisationProjetType');
         //Récupération des ID de secteur et TYpe de projet depuis Parcourir les projets
 
         $idSec = $request->request->get('mblbundle_projet')['secteur'];
         $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
+        $Loc = $request->request->get('mblbundle_projet')['localisation']['localisation'];
+
 
         // Ajout des filtres
 
         // Si les deux filtres sont selectionné on utilise la méthode écrite dans répositoryProjet
-        if (is_numeric($idSec) && is_numeric($idTyp))
+        if (is_numeric($idSec) && is_numeric($idTyp) && !empty($Loc))
+        {
+            $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypSecLoc($idSec, $idTyp, $Loc);
+        }
+
+        elseif (!empty($Loc))
+        {
+            if(is_numeric($idSec) || is_numeric($idTyp))
+            {
+                if(is_numeric($idSec))
+                {
+                    $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteurLoc($idSec, $Loc);
+                }
+                else
+                {
+                    $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjetLoc($idTyp, $Loc);
+                }
+            }
+            elseif (!is_numeric($idSec) && !is_numeric($idTyp) && !empty($Loc))
+            {
+                $projects = $em->getRepository('MBLBundle:Projet')->findByLocalisation($Loc);
+            }
+
+        }
+            //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
+        elseif (is_numeric($idSec) && is_numeric($idTyp))
         {
             $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypEtSec($idSec, $idTyp);
         }
-        //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
         elseif (is_numeric($idSec) || is_numeric($idTyp))
         {
             if(is_numeric($idSec))
@@ -307,6 +362,7 @@ class UserController extends Controller
                 $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjet($idTyp);
             }
         }
+
         //Sinon on récupérera tous les projets
         else
         {
@@ -316,7 +372,8 @@ class UserController extends Controller
         return $this->render('@MBL/Users/showProject.html.twig', array(
 
             'projects'=> $projects,
-            'form_secteur' =>$form_secteur->createView()
+            'form_secteur' =>$form_secteur->createView(),
+            'form_loc' =>$form_localisation->createView()
 
         ));
     }
