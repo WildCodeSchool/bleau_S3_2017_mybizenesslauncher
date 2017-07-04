@@ -36,17 +36,96 @@ Layout.html.twig
   font-size: 1.3em;
   font-weight: bold;
   padding-left: 30px;
-
+  color: #FB5B57;
+  opacity: 0.5;
 }
-.darkerTop:hover, .darkerBiz:hover{
+.lancer {
+  font-size: 1em;
+  font-weight: bold;
+  color: $Colorblue;
+  margin-left: 20px;
+}
+
+.lancer:hover {
+  color: #6f9ea8;
+  font-size: 1.1em;
+}
+
+.darkerBiz:hover {
+  color: #FB5B57;
+  opacity: 0.9;
+}
+.darkerTop:hover {
   color: #6f9ea8;
 }
 
-.logoEb {
-  width: 180px;
-  margin: 10px;
-
-  .dropdown-content li > a {
+.dropdown-content li > a {
     color: $ColorDarkGrey;
   }
+
+a .logoEbMenu  {
+  display: none;
+    @media #{$medium-and-down} {
+     display: inline;
+      max-height: 35px;
+      vertical-align: middle !important;
+      margin-left: 20px;
+     opacity: 0.5;
+  }
 }
+a .logoEbMenu:hover {
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    max-height: 35px;
+    vertical-align: middle !important;
+    margin-left: 20px;
+    opacity: 0.8;
+  }
+}
+.material-icons {
+  display: inline !important;
+  vertical-align: middle !important;
+  margin-left: 20px;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-grey, .md-euro {
+  font-size: 24px;
+  @media #{$medium-and-down} {
+    color: $ColorDarkGrey;
+  }
+  @media #{$large-and-up} {
+    display: none !important;
+  }
+}
+.material-icons.md-grey:hover, .md-euro:hover {
+  color: #6f9ea8;
+}
+
+.dotCom {
+  color: black;
+  opacity: 0.5;
+}
+
+.BB:hover {
+  border-bottom: 2px solid #FB5B57;
+  width: 90%;
+}
+
+
+//ul .hide-on-med-and-down {
+//  @media #{$medium-and-down} {
+//    display: none;
+//  }
+//}
+
+
+
+

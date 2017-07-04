@@ -7,12 +7,12 @@ CONSTANTE
 /*
 Font
 */
-/* line 17, ../sass/_global.scss */
+/* line 21, ../sass/_global.scss */
 html {
   font-family: font36452;
 }
 
-/* line 21, ../sass/_global.scss */
+/* line 25, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -22,13 +22,13 @@ Variable globale
 
 BALISE
 */
-/* line 31, ../sass/_global.scss */
+/* line 35, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 36, ../sass/_global.scss */
+/* line 40, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,23 +45,23 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 51, ../sass/_global.scss */
+/* line 55, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 56, ../sass/_global.scss */
+/* line 60, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 61, ../sass/_global.scss */
+/* line 65, ../sass/_global.scss */
 a {
   color: inherit;
 }
 
-/* line 64, ../sass/_global.scss */
+/* line 68, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -71,12 +71,12 @@ a {
   max-width: 300px;
 }
 
-/* line 74, ../sass/_global.scss */
+/* line 78, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 77, ../sass/_global.scss */
+/* line 81, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -86,18 +86,18 @@ a {
   max-width: 300px;
 }
 
-/* line 88, ../sass/_global.scss */
+/* line 92, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 91, ../sass/_global.scss */
+/* line 95, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
-/* line 95, ../sass/_global.scss */
+/* line 99, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -109,34 +109,34 @@ a {
   hyphens: auto;
 }
 
-/* line 105, ../sass/_global.scss */
+/* line 109, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 109, ../sass/_global.scss */
+/* line 113, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
-/* line 114, ../sass/_global.scss */
+/* line 118, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-/* line 119, ../sass/_global.scss */
+/* line 123, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-/* line 123, ../sass/_global.scss */
+/* line 127, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 127, ../sass/_global.scss */
+/* line 131, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
@@ -149,27 +149,19 @@ h6 {
   background: #98d4e1;
   color: white;
 }
-/* line 9, ../sass/_index.scss */
-#index .bandeau_homepage h2 {
+@media only screen and (max-width: 600px) {
+  /* line 3, ../sass/_index.scss */
+  #index .bandeau_homepage {
+    display: none;
+  }
+}
+/* line 13, ../sass/_index.scss */
+#index h2 {
   font-size: 1.5em;
 }
-/* line 14, ../sass/_index.scss */
-#index .btn_bandeau_homepage {
-  background-color: white;
-  color: #98d4e1;
-  box-shadow: 2px 2px 3px grey;
-}
-/* line 19, ../sass/_index.scss */
-#index .btn_bandeau_homepage:hover {
-  background-color: #f0f0f0;
-  color: #6f9ea8;
-}
-/* line 23, ../sass/_index.scss */
-#index .btn_bandeau_homepage:focus {
-  background-color: #f0f0f0;
-}
-/* line 27, ../sass/_index.scss */
-#index .Outils {
+
+/* line 18, ../sass/_index.scss */
+.Outils {
   padding-top: 70px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -179,17 +171,84 @@ h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* line 37, ../sass/_index.scss */
-#index .btn_eBusta {
-  margin-top: 40px;
-}
-/* line 40, ../sass/_index.scss */
-#index .Finance {
+
+/* line 29, ../sass/_index.scss */
+.Finance {
   margin-top: 30px;
 }
-/* line 44, ../sass/_index.scss */
-#index .box_projet_profil * {
+
+/* line 33, ../sass/_index.scss */
+.box_projet_profil * {
   text-align: center;
+}
+
+/* line 37, ../sass/_index.scss */
+.btn_bandeau_homepage {
+  background-color: white;
+  color: #98d4e1;
+  box-shadow: 2px 2px 3px grey;
+}
+/* line 41, ../sass/_index.scss */
+.btn_bandeau_homepage:hover {
+  background-color: #f0f0f0;
+  color: #6f9ea8;
+}
+/* line 45, ../sass/_index.scss */
+.btn_bandeau_homepage:focus {
+  background-color: #f0f0f0;
+}
+@media only screen and (max-width: 992px) {
+  /* line 37, ../sass/_index.scss */
+  .btn_bandeau_homepage {
+    display: none;
+  }
+}
+
+/* line 52, ../sass/_index.scss */
+.btn_bandeau_homepage_down {
+  background-color: white;
+  color: #98d4e1;
+  box-shadow: 2px 2px 3px grey;
+}
+/* line 56, ../sass/_index.scss */
+.btn_bandeau_homepage_down:hover {
+  background-color: #f0f0f0;
+  color: #6f9ea8;
+}
+/* line 60, ../sass/_index.scss */
+.btn_bandeau_homepage_down:focus {
+  background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 992px) {
+  /* line 65, ../sass/_index.scss */
+  .toHide {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  /* line 70, ../sass/_index.scss */
+  .toShow {
+    display: inline !important;
+  }
+}
+
+/* line 75, ../sass/_index.scss */
+.btn_eBusta {
+  margin-top: 40px;
+}
+
+/* line 78, ../sass/_index.scss */
+.logoEb {
+  max-width: 180px;
+  height: auto;
+}
+@media only screen and (max-width: 992px) {
+  /* line 78, ../sass/_index.scss */
+  .logoEb {
+    display: none;
+  }
 }
 
 /* 3. LAYOUT */
@@ -230,21 +289,117 @@ Layout.html.twig
   font-size: 1.3em;
   font-weight: bold;
   padding-left: 30px;
+  color: #FB5B57;
+  opacity: 0.5;
 }
 
-/* line 41, ../sass/_layout.scss */
-.darkerTop:hover, .darkerBiz:hover {
+/* line 42, ../sass/_layout.scss */
+.lancer {
+  font-size: 1em;
+  font-weight: bold;
+  color: #98d4e1;
+  margin-left: 20px;
+}
+
+/* line 49, ../sass/_layout.scss */
+.lancer:hover {
+  color: #6f9ea8;
+  font-size: 1.1em;
+}
+
+/* line 54, ../sass/_layout.scss */
+.darkerBiz:hover {
+  color: #FB5B57;
+  opacity: 0.9;
+}
+
+/* line 58, ../sass/_layout.scss */
+.darkerTop:hover {
   color: #6f9ea8;
 }
 
-/* line 45, ../sass/_layout.scss */
-.logoEb {
-  width: 180px;
-  margin: 10px;
-}
-/* line 49, ../sass/_layout.scss */
-.logoEb .dropdown-content li > a {
+/* line 62, ../sass/_layout.scss */
+.dropdown-content li > a {
   color: #4b494b;
+}
+
+/* line 66, ../sass/_layout.scss */
+a .logoEbMenu {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  /* line 66, ../sass/_layout.scss */
+  a .logoEbMenu {
+    display: inline;
+    max-height: 35px;
+    vertical-align: middle !important;
+    margin-left: 20px;
+    opacity: 0.5;
+  }
+}
+
+/* line 76, ../sass/_layout.scss */
+a .logoEbMenu:hover {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  /* line 76, ../sass/_layout.scss */
+  a .logoEbMenu:hover {
+    display: inline;
+    max-height: 35px;
+    vertical-align: middle !important;
+    margin-left: 20px;
+    opacity: 0.8;
+  }
+}
+
+/* line 86, ../sass/_layout.scss */
+.material-icons {
+  display: inline !important;
+  vertical-align: middle !important;
+  margin-left: 20px;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* line 99, ../sass/_layout.scss */
+.material-icons.md-grey, .md-euro {
+  font-size: 24px;
+}
+@media only screen and (max-width: 992px) {
+  /* line 99, ../sass/_layout.scss */
+  .material-icons.md-grey, .md-euro {
+    color: #4b494b;
+  }
+}
+@media only screen and (min-width: 993px) {
+  /* line 99, ../sass/_layout.scss */
+  .material-icons.md-grey, .md-euro {
+    display: none !important;
+  }
+}
+
+/* line 108, ../sass/_layout.scss */
+.material-icons.md-grey:hover, .md-euro:hover {
+  color: #6f9ea8;
+}
+
+/* line 112, ../sass/_layout.scss */
+.dotCom {
+  color: black;
+  opacity: 0.5;
+}
+
+/* line 117, ../sass/_layout.scss */
+.BB:hover {
+  border-bottom: 2px solid #FB5B57;
+  width: 90%;
 }
 
 /* line 7, ../sass/_userHomepage.scss */

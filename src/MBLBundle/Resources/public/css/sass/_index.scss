@@ -5,25 +5,16 @@
     margin: 0;
     background: $Colorblue;
     color: $ColorWhite;
+    @media #{$small-and-down} {
+    display: none;}
+    }
 
-     h2 {
+
+    h2 {
       font-size: 1.5em;
     }
   }
 
-  .btn_bandeau_homepage {
-    background-color: $ColorWhite;
-    color: $Colorblue;
-    box-shadow: $BoxShadow;
-
-    &:hover {
-      background-color: $Colorgrey;
-      color: #6f9ea8;
-    }
-    &:focus {
-      background-color: $Colorgrey;
-    }
-  }
   .Outils {
     padding-top: 70px;
     overflow-wrap: break-word;
@@ -34,18 +25,64 @@
     -webkit-hyphens: auto;
     hyphens: auto;
   }
-  .btn_eBusta {
-    margin-top: 40px;
-  }
+
   .Finance {
     margin-top: 30px;
   }
 
   .box_projet_profil * {
     text-align: center;
-    
   }
 
+  .btn_bandeau_homepage {
+    background-color: $ColorWhite;
+    color: $Colorblue;
+    box-shadow: $BoxShadow;
+    &:hover {
+      background-color: $Colorgrey;
+      color: #6f9ea8;
+    }
+    &:focus {
+      background-color: $Colorgrey;
+    }
+    @media #{$medium-and-down} {
+      display:none;
+    }
+  }
+.btn_bandeau_homepage_down {
+  background-color: $ColorWhite;
+  color: $Colorblue;
+  box-shadow: $BoxShadow;
+  &:hover {
+    background-color: $Colorgrey;
+    color: #6f9ea8;
+  }
+  &:focus {
+    background-color: $Colorgrey;
+  }
 }
+
+.toHide {
+  @media #{$medium-and-down} {
+    display: none !important;
+  }
+}
+.toShow {
+  @media #{$medium-and-down} {
+    display: inline !important;
+  }
+}
+  .btn_eBusta {
+    margin-top: 40px;
+  }
+  .logoEb {
+    max-width: 180px;
+    height: auto;
+    @media #{$medium-and-down} {
+      display: none;
+    }
+  }
+
+
 
 
