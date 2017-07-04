@@ -16,7 +16,13 @@
                 {{ form_row(form_secteur.typeDeProjet) }}
                 {{ form_errors(form_secteur.typeDeProjet) }}
             </div>
-            <input class="btn" name="Recherchez" type="submit">
+            <div class="col s6">
+                {{ form_row(form_secteur.localisation) }}
+                {{ form_errors(form_secteur.localisation) }}
+            </div>
+            <div class="col s6">
+            <input class="btn center" name="Rechercher" type="submit">
+            </div>
             {{ form_end(form_secteur) }}
         </div>
         <div class="box_projet">
