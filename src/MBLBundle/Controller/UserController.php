@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
@@ -25,12 +26,35 @@ class UserController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $countViews =0;
+        $countProfils = array();
+        $result=0;
+        $session = new Session();
+
+
+
         if(!is_null($this->getUser()))
         {
             $currentId = $this->getUser()->getId();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentId);
+
+
+        foreach ($countViews as $donnees)
+        {
+            if ($donnees['profil'] !== $this->getUser()->getPrenom())
+            {
+                if ($donnees['tt'] == null)
+                {
+                    $result  += 1;
+                    $countProfils[] = $donnees['profil'];
+                }
+            }
+
+
+        }
+            $session->set('countProfils', $countProfils );
         }
 
+//        dump($countViews);die();
         $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
         $profils = $em->getRepository('MBLBundle:Profil')->findLastProfils4();
 
@@ -38,7 +62,7 @@ class UserController extends Controller
         return $this->render('@MBL/Users/index.html.twig',
             array('projet' => $projets,
                 'profils' =>$profils,
-                'cViews' => $countViews
+                'cViews' => $result
             ));
     }
 
@@ -437,6 +461,8 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $currentUser = $this->getUser();
+        $session = $request->getSession();
+        $session->clear();
         $currentUserPrenom = $currentUser->getPrenom();
         //Nouveau text
         $text = new Text();
@@ -533,7 +559,7 @@ class UserController extends Controller
         return $this->redirectToRoute('connect');
     }
 
-    public function connectAction($id)
+    public function connectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -547,12 +573,17 @@ class UserController extends Controller
 
             $em->flush();
         }
+        $session = $request->getSession();
+
+        $prenom = $session->get('countProfils');
+
         $currentUser = $this->getUser();
         //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
+            'prenomMSG' => $prenom
 
         ));
     }

@@ -41,18 +41,18 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
             ->getResult()
             ;
     }
-    public function myFindCountViews($currentUserId)
+    public function myFindCountViews($currentId)
     {
-        return $this ->createQueryBuilder('t')
-            ->select('count(t)') 
+        $qb = $this->createQueryBuilder('t')
+            ->select('t.seen as tt', 't.profil as profil')
             ->join('t.chats', 'chat')
             ->join('chat.profils', 'pro')
             ->where('pro.id = :proId')
-            ->setParameter('proId', $currentUserId)
-            ->andWhere('t.seen = :un')
-            ->setParameter('un', null)
-            ->getQuery()
-            ->getResult()
-            ;
+            ->setParameter('proId', $currentId)
+
+        ;
+
+
+        return $qb->getQuery()->getResult();
     }
 }
