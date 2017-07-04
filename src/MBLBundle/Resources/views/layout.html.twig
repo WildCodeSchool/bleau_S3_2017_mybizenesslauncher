@@ -6,7 +6,7 @@
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
         <nav xmlns="http://www.w3.org/1999/html">
-             <ul id="dropdown1" class="dropdown-content">
+            <ul id="dropdown1" class="dropdown-content">
                 <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
                 <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
@@ -93,7 +93,7 @@
                             Parcourir les projets</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
                             Parcourir les profils</a></li>
-                    <li><a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                    <li><a class="color" href=#modal1>Connexion</a>
                         </a>
                     </li>
                 </ul>
@@ -115,6 +115,24 @@
                 </ul>
             </div>
         </nav>
+
+        </div>
+        </nav>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="row">
+                <div class="col s12 tabs">
+                    <ul class="tabs">
+                        <li class="tab col s6 active"><a href="#Connexion">Connexion</a></li>
+                        <li class="tab col s6"><a href="#Register">S'inscrire</a></li>
+                    </ul>
+                </div>
+                <div id="Connexion" class="col s12">{{ render(controller('FOSUserBundle:Security:login')) }}</div>
+                <div id="Register" class="col s12">{{ render(controller('FOSUserBundle:Registration:register')) }}</div>
+            </div>
+        </div>
+
     {% endif %}
 {% endblock %}
 
@@ -161,13 +179,24 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
-    <script>
-        $( document ).ready(function(){
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>    <script>
+    $( document ).ready(function(){
         $(".button-collapse").sideNav();
 
-            $(".dropdown-button").dropdown();
-        })
+        $(".dropdown-button").dropdown();
 
-    </script>
+        $('.modal').modal();
+        /*$('ul.tabs').tabs();
+         $('ul.tabs').tabs('select_tab', 'tab_id');
+         $('.tabs').tabs({ 'swipeable': true });*/
+        $('.registerPlus').click(function(){
+            $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+        });
+
+    });
+
+</script>
 {% endblock %}

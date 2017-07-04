@@ -8,7 +8,15 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class Profil extends BaseUser
 {
+    /**
+     * @var
+     */
     protected $id;
+
+//    /**
+//     * @var
+//     */
+//    protected $bioUrl;
 
     public function setEmail($email)
     {
@@ -455,5 +463,34 @@ class Profil extends BaseUser
     public function getFichier()
     {
         return $this->fichier;
+    }
+    /**
+     * @var string
+     */
+    private $ville;
+
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Profil
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
     }
 }

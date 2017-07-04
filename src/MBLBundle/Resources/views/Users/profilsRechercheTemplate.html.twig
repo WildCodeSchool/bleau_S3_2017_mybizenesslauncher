@@ -1,9 +1,13 @@
 
-<div class="col s12 m6 l6 vignette_projet_profilAdd z-depth-5">
+<div class="col s6 vignette_projet_profilAdd z-depth-5">
     <div class="row type_metier">
         <div class="color col s12">
             <h5 class="center">Profil Recherché</h5>
-            <p class="center">{{ profil.metier.metier }}</p>
+            {% if profil.metier.metier is empty %}
+                <p class="center grey-text">renseigner</p>
+            {% else %}
+                <p>{{profil.metier.metier }} </p>
+            {% endif %}
         </div>
     </div>
 
@@ -11,29 +15,58 @@
 
         <div class="col s12">
             <h6>Disponibilité</h6>
-            <p>{{ profil.dispo.dispo }}</p>
+            {% if profil.dispo.dispo is empty %}
+                <p class="center grey-text">renseigner</p>
+            {% else %}
+                <p>{{ profil.dispo.dispo }} </p>
+            {% endif %}
+            <div class="divider"></div>
         </div>
         <div class="col s12">
             <h6>En tant que</h6>
-            <p>{{ profil.ETQ.etq }}</p>
+            {% if profil.etq.etq is empty %}
+                <p class="center grey-text">renseigner</p>
+            {% else %}
+                <p>{{ profil.etq.etq }} </p>
+            {% endif %}
+            <div class="divider"></div>
         </div>
         <div class="col s12">
             <h6>Localisation</h6>
-            <p>{{ profil.ou.ou }}</p>
+            {% if profil.ou.ou is empty %}
+                <p class="center grey-text">renseigner</p>
+            {% else %}
+                <p>{{ profil.ou.ou }}</p>
+            {% endif %}
+            <div class="divider"></div>
         </div>
         <div class="col s12">
             <h6>Investissement</h6>
+            {% if profil.invest.invest is empty %}
+            <p class="center grey-text">renseigner</p>
+        {% else %}
             <p>{{ profil.invest.invest }}</p>
+            {% endif %}<div class="divider"></div>
         </div>
         <div class="col s12">
             <h6>Compétences</h6>
             {% for comp in profil.competences %}
-                <p>{{ comp.competences }}</p>
+                {% if comp.competences is empty %}
+                    <p class="center grey-text">renseigner</p>
+                {% else %}
+                    {% if loop.last %}
+                        {{ comp.competences}}
+                    {% else %}
+                        {{ comp.competences}},
+                    {% endif %}
+                {% endif %}
+
+
             {% endfor %}
         </div>
     </div>
-
     <div class="col s12">
         <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
     </div>
+
 </div>

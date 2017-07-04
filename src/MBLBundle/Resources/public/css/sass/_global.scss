@@ -131,7 +131,9 @@ h6 {
 .select-dropdown {
   border-radius: 10px;
 }
-
+.dropdown-content li>a, .dropdown-content li>span {
+  color: $ColorDarkGrey;
+}
 
 
 
