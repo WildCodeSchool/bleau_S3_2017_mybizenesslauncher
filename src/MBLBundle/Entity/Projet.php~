@@ -376,4 +376,33 @@ class Projet
     {
         return $this->fichier;
     }
+    /**
+     * @var string
+     */
+    private $ville;
+
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Projet
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
 }

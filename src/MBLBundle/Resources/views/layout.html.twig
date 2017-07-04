@@ -1,33 +1,64 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} MyBizenessLauncher {% endblock %}
+{% block title %} Innova'Up {% endblock %}
 {% block header %}
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-        <nav>
-             <ul id="dropdown1" class="dropdown-content">
-            <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
-            <li class="divider"></li>
-            <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
-            <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
-            <li><a href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
-            <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
-            <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-            <li><a href="{{ path('connect') }}">Mes discussions</a></li>
-            <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
-        </ul>
+        <nav xmlns="http://www.w3.org/1999/html">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
+                <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
+                <li><a href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
+                <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
+                <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
+                <li><a href="{{ path('connect') }}">Mes discussions</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+            </ul>
             <div class="nav-wrapper header">
-                <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="color material-icons">menu</i></a>
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}">Innova'Up<span class="dotCom">.com
+                    </span></a>
+                <a class="tooltipped" data-position="bottom" data-delay="50"
+                   data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
+                            propose de réaliser des campagnes de Crowdfunding
+                            de don en contrepartie pour vous aider à financer
+                            votre projet. Seule une commission de 4% du montant
+                            collecté sera appliquée, faisant de E-busta le site de
+                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                    <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                </a>
+                <a class="tooltipped hide-on-large-only lancer" data-position="bottom" data-delay="50"
+                   data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
+
+                <a href="#" data-activates="mobile-demo"
+                   class="button-collapse right"><i class="color material-icons">menu</i>
+                </a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="color"  href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                    <li><a class="color"  href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
-                    <li><a class="color dropdown-button" href="#!" data-activates="dropdown1"><i class="right">Mon Compte</i></a></li>
-
-
-
+                    <li><a class="color darkerTop"  href="{{ path('showProject') }}">
+                            Parcourir les projets</a></li>
+                    <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">
+                            Parcourir les profils</a></li>
+                    <li><a class="color dropdown-button" href="#!" data-activates="dropdown1">
+                            <i class="right">Mon Compte</i></a></li>
                 </ul>
+
+                <ul class="right show-on-medium-and-down hide-on-med-and-up">
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
+                           le décrire et détailler les profils de cofondateurs et associés que tu cherches.
+                           Ils auront alors accès à la description du projet et pourront te contacter."
+                           href="{{ path('showProject') }}">Projets</a></li>
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour ceux qui cherchent un projet à intégrer:
+                           Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
+                           d’un projet existant, parcours les projets pour trouver celui que tu pourrais
+                           aider à porter au sommet !
+                           href="{{path('showAllProfils')}}">Profils</a></li>
+                </ul>
+
                 <ul class="side-nav" id="mobile-demo">
                     <li><a class="color" href="#">Bonjour  {{app.user.prenom}}</a></li>
                     <li class="divider"></li>
@@ -40,19 +71,52 @@
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
                 </ul>
             </div>
-
         </nav>
     {% else %}
-
         <nav>
             <div class="nav-wrapper header">
-                <a class="color" href="{{ path('mbl_homepage') }}" >MyBizenessLauncher.com</a>
-                <ul id="nav-mobile" class="right">
-                    <li><a class="color" href="{{ path('showProject') }}">Parcourir les projets</a></li>
-                    <li><a class="color" href="{{path('showAllProfils')}}">Parcourir les profils</a></li>
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}" >Innova'Up<span class="dotCom">.com</span></a>
+                <a class="tooltipped" data-position="bottom" data-delay="50"
+                   data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
+                            propose de réaliser des campagnes de Crowdfunding
+                            de don en contrepartie pour vous aider à financer
+                            votre projet. Seule une commission de 4% du montant
+                            collecté sera appliquée, faisant de E-busta le site de
+                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                    <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                </a>
+                <a class="tooltipped hide-on-large-only lancer" data-position="bottom" data-delay="50"
+                   data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="color darkerTop" href="{{ path('showProject') }}">
+                            Parcourir les projets</a></li>
+                    <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
+                            Parcourir les profils</a></li>
                     <li><a class="color" href=#modal1>Connexion</a>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="right show-on-medium-and-down hide-on-med-and-up">
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
+                           le décrire et détailler les profils de cofondateurs et associés que tu cherches.
+                           Ils auront alors accès à la description du projet et pourront te contacter."
+                           href="{{ path('showProject') }}">Projets</a></li>
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour ceux qui cherchent un projet à intégrer:
+                           Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
+                           d’un projet existant, parcours les projets pour trouver celui que tu pourrais
+                           aider à porter au sommet !
+                           href="{{path('showAllProfils')}}">Profils</a></li>
+                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
                 </ul>
             </div>
+        </nav>
+
+        </div>
         </nav>
 
         <!-- Modal Structure -->
@@ -69,15 +133,10 @@
             </div>
         </div>
 
-
     {% endif %}
-
-
-
 {% endblock %}
 
 {% block bandeau %}
-
     <div class="bandeau">
         <div class="col s12">
             {% block titreH2 %} <h2>Ecrivez votre titre!</h2> {% endblock %}
@@ -124,20 +183,20 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>    <script>
-        $( document ).ready(function(){
+    $( document ).ready(function(){
         $(".button-collapse").sideNav();
 
-            $(".dropdown-button").dropdown();
+        $(".dropdown-button").dropdown();
 
         $('.modal').modal();
         /*$('ul.tabs').tabs();
-        $('ul.tabs').tabs('select_tab', 'tab_id');
-        $('.tabs').tabs({ 'swipeable': true });*/
+         $('ul.tabs').tabs('select_tab', 'tab_id');
+         $('.tabs').tabs({ 'swipeable': true });*/
         $('.registerPlus').click(function(){
             $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
         });
 
-        });
+    });
 
-    </script>
+</script>
 {% endblock %}
