@@ -25,6 +25,7 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
             ;
 
     }
+
     public function myFindOneByChatIdViewer($texts_chat, $currentUser)
     {
         return $this ->createQueryBuilder('t')
@@ -43,13 +44,13 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
     public function myFindCountViews($currentUserId)
     {
         return $this ->createQueryBuilder('t')
-            ->select('count(t)')
+            ->select('count(t)') 
             ->join('t.chats', 'chat')
             ->join('chat.profils', 'pro')
             ->where('pro.id = :proId')
             ->setParameter('proId', $currentUserId)
             ->andWhere('t.seen = :un')
-            ->setParameter('un', 0)
+            ->setParameter('un', null)
             ->getQuery()
             ->getResult()
             ;

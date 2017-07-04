@@ -282,8 +282,8 @@ class UserController extends Controller
     public function deleteProfilRechercheAction(Request $request, ProfilRecherche $profilRecherche)
     {
         $em = $this->getDoctrine()->getManager();
-//        dump($profilRecherche);die();
-        $projet = $profilRecherche->getProjets()[0];
+////        dump($profilRecherche);die();
+//        $projet = $profilRecherche->getProjets()[0];
         $em->remove($profilRecherche);
         $content = new JsonResponse($profilRecherche);
         $em->flush();
@@ -421,11 +421,12 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($projet);
             $em->flush();
-//            $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
+            $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
             return $this->redirectToRoute('showMyProject');
         }
+
         else {
-//            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
+            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
             return $this->redirectToRoute('showMyProject');
         }
     }

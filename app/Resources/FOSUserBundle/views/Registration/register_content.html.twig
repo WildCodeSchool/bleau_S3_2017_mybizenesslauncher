@@ -88,11 +88,17 @@
                                         <div class="col s12 center">
                                             {{ form_label(form.localisation, 'Localisation :') }}
                                         </div>
-                                        {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
-                                        {{ form_errors(form.localisation) }}
-                                        {{ form_label(form.ville, 'Ville :') }}
-                                        {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
-                                        {{ form_errors(form.ville) }}
+
+                                                {{ form_widget(form.localisation, {'attr' : {'placeholder' : ' Localisation'}}) }}
+                                                {{ form_errors(form.localisation) }}
+
+                                    </div>
+                                    <div class="col s6">
+                                        <div class="col s12 center">
+                                            {{ form_label(form.ville, 'Ville :') }}
+                                            {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                                            {{ form_errors(form.ville) }}
+                                        </div>
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">

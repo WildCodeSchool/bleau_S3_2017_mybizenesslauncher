@@ -7,7 +7,7 @@
             <div class="box_projet">
                 {% for flashMessage in app.session.flashbag.get('error') %}
 
-                    {{ flashMessage }}
+                   <h2>{{ flashMessage }}</h2>
 
                 {% endfor %}
                 <div class="row">
