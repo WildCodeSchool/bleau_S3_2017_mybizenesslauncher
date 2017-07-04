@@ -28,6 +28,13 @@
         {% block footer %}{% endblock %}
 
         {% block javascripts %}
+
+            <script>
+                $(document).ready(function(){
+                    $('ul li:first-child ').addClass('disabled');
+                    $('ul li:first-child span').css('color', 'lightgrey');
+                });
+            </script>
             <script src="https://code.jquery.com/jquery-3.2.1.min.js"
                     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                     crossorigin="anonymous"></script>
