@@ -28,7 +28,7 @@ class RegistrationType extends AbstractType
                 ->add('prenom')
                 ->remove('username')
                 ->add('description')
-                ->add('linkedin', UrlType::class)
+                ->add('linkedin', UrlType::class, array('required' => false))
                 ->add('localisation', ChoiceType::class, array(
                                                     'choices' => array(
                                                         'France' => array(
