@@ -39,11 +39,7 @@ MBLBundle\Entity\Projet:
             type: string
             length: 255
             nullable: true
-        localisationfr:
-            type: string
-            length: 255
-            nullable: true
-        localisationit:
+        localisation:
             type: string
             length: 255
             nullable: true

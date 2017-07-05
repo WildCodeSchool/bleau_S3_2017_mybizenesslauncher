@@ -52,8 +52,8 @@
                         </div>
                         <div class="localisation center-align">
                             <label>{{ 'Localisation'|trans }}</label>
-                            {{ form_errors(attribute(form, 'localisation' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'localisation' ~ locale), {'attr': {'placeholder': '  Localisation:'}}) }}
+                            {{ form_errors(form.localisation ) }}
+                            {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
                         </div>
                         <div class="ville center-align">
                             {{ form_label(form.ville, 'Ville :') }}

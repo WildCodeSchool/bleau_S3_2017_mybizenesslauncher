@@ -118,8 +118,10 @@ class UserController extends Controller
         $locale = $request->getLocale();
 
         $projet = new Projet();
+
         $form = $this->createForm('MBLBundle\Form\ProjetType', $projet, array('locale' => $locale));
         $form->handleRequest($request);
+
         $profil = $this->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -137,7 +139,7 @@ class UserController extends Controller
         return $this->render('@MBL/Users/createProjet.html.twig',
             array(
                 'form' => $form->createView(),
-	            'locale' => $locale
+                'locale' => $locale
             ));
     }
 
@@ -149,7 +151,7 @@ class UserController extends Controller
      */
     public function editProjectAction(Request $request, Projet $projet)
     {
-	    $locale = $request->getLocale();
+        $locale = $request->getLocale();
 
         $form = $this->createForm(ProjetType::class, $projet, array('locale' => $locale));
         $form->handleRequest($request);
@@ -168,7 +170,7 @@ class UserController extends Controller
             array(
                 'projet' => $projet,
                 'profil_exist' => $profil_Recheche_exist,
-				'locale' => $locale,
+                'locale' => $locale,
 
                 'form' => $form->createView(),
             ));
@@ -306,23 +308,27 @@ class UserController extends Controller
     public function showProjectAction(Request $request)
     {
 //        dump($request); die();
+
+        $locale= $request->getLocale();
+
         $em = $this->getDoctrine()->getManager();
 
-        $form_secteur = $this->createForm('MBLBundle\Form\ProjetRechercheType');
-        $form_localisation = $this->createForm('MBLBundle\Form\LocalisationProjetType');
-        //Récupération des ID de secteur et TYpe de projet depuis Parcourir les projets
+        $form_secteur = $this->createForm('MBLBundle\Form\ProjetRechercheType', null, array('locale'=>$locale));
+
+//        Récupération des ID de secteur et TYpe de projet depuis Parcourir les projets
 
         $idSec = $request->request->get('mblbundle_projet')['secteur'];
         $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
         $Loc = $request->request->get('mblbundle_projet')['localisation']['localisation'];
 
 
-        // Ajout des filtres
 
-        // Si les deux filtres sont selectionné on utilise la méthode écrite dans répositoryProjet
+//        // Ajout des filtres
+//
+//        // Si les deux filtres sont selectionné on utilise la méthode écrite dans répositoryProjet
         if (is_numeric($idSec) && is_numeric($idTyp) && !empty($Loc))
         {
-            $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypSecLoc($idSec, $idTyp, $Loc);
+            $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypSecLoc($idSec, $idTyp, $Loc, $locale);
         }
 
         elseif (!empty($Loc))
@@ -331,11 +337,11 @@ class UserController extends Controller
             {
                 if(is_numeric($idSec))
                 {
-                    $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteurLoc($idSec, $Loc);
+                    $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteurLoc($idSec, $Loc, $locale);
                 }
                 else
                 {
-                    $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjetLoc($idTyp, $Loc);
+                    $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjetLoc($idTyp, $Loc, $locale);
                 }
             }
             elseif (!is_numeric($idSec) && !is_numeric($idTyp) && !empty($Loc))
@@ -344,34 +350,38 @@ class UserController extends Controller
             }
 
         }
-            //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
+        //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
         elseif (is_numeric($idSec) && is_numeric($idTyp))
         {
-            $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypEtSec($idSec, $idTyp);
+            $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypEtSec($idSec, $idTyp, $locale);
         }
         elseif (is_numeric($idSec) || is_numeric($idTyp))
         {
             if(is_numeric($idSec))
             {
-                $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteur($idSec);
+//                dump($idSec);die();
+                $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteur($idSec, $locale);
             }
             else
             {
-                $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjet($idTyp);
+
+                $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjet($idTyp, $locale);
             }
         }
 
-        //Sinon on récupérera tous les projets
+//        //Sinon on récupérera tous les projets
         else
         {
-            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc();
+            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale);
+
         }
 
         return $this->render('@MBL/Users/showProject.html.twig', array(
 
             'projects'=> $projects,
             'form_secteur' =>$form_secteur->createView(),
-            'form_loc' =>$form_localisation->createView()
+            'locale' => $locale
+
 
         ));
     }

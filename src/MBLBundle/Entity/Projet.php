@@ -7,7 +7,6 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
-
     /**
      * @var integer
      */
@@ -56,12 +55,7 @@ class Projet
     /**
      * @var string
      */
-    private $localisationfr;
-
-    /**
-     * @var string
-     */
-    private $localisationit;
+    private $localisation;
 
     /**
      * @var \DateTime
@@ -310,51 +304,27 @@ class Projet
     }
 
     /**
-     * Set localisationfr
+     * Set localisation
      *
-     * @param string $localisationfr
+     * @param string $localisation
      *
      * @return Projet
      */
-    public function setLocalisationfr($localisationfr)
+    public function setLocalisation($localisation)
     {
-        $this->localisationfr = $localisationfr;
+        $this->localisation = $localisation;
 
         return $this;
     }
 
     /**
-     * Get localisationfr
+     * Get localisation
      *
      * @return string
      */
-    public function getLocalisationfr()
+    public function getLocalisation()
     {
-        return $this->localisationfr;
-    }
-
-    /**
-     * Set localisationit
-     *
-     * @param string $localisationit
-     *
-     * @return Projet
-     */
-    public function setLocalisationit($localisationit)
-    {
-        $this->localisationit = $localisationit;
-
-        return $this;
-    }
-
-    /**
-     * Get localisationit
-     *
-     * @return string
-     */
-    public function getLocalisationit()
-    {
-        return $this->localisationit;
+        return $this->localisation;
     }
 
     /**

@@ -7,7 +7,6 @@
     <div class="showProjet">
         <div class="row">
             {{ form_start(form_secteur) }}
-
             <div class="col s6">
                 {{ form_row(form_secteur.secteur) }}
                 {{ form_errors(form_secteur.secteur) }}
@@ -21,10 +20,11 @@
                 {{ form_errors(form_secteur.localisation) }}
             </div>
             <div class="col s6">
-            <input class="btn center" name="Rechercher" type="submit">
+                <input class="btn center" name="Rechercher" type="submit">
             </div>
             {{ form_end(form_secteur) }}
         </div>
+
         <div class="box_projet">
             <div class="row">
                 {% for pro in projects %}
@@ -46,7 +46,7 @@
                             <div class="row btnlink">
                                 <div class="col s2 offset-s3">
                                     <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">{{ 'Voir'|trans }}</a>
-                                    {% if pro.fichier is null %}
+                                    {% if pro.fichier is empty %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
                                         <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
@@ -55,33 +55,31 @@
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h5>{{ 'Profils recherchés'|trans }}</h5>
                                     <h6>{{ 'Type de projet'|trans }}</h6>
-
-                                    {{ pro.typeDeProjet.typeDeProjet }}
+                                    {{ pro.typeDeProjet }}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Secteur'|trans }}</h6>
 
-                                    {{ pro.secteur.secteurActivite }}
+                                    {{ pro.secteur }}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Profils recherchés'|trans }}</h6>
-                                    {% for profil in pro.profilsrecherches %}
-                                        {% if profil.metier.metier|length > 10 %}
+                                    {% for profil in pro['metier'] %}
+                                        {% if profil|length > 10 %}
                                             {% if loop.last %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }}
+                                                {{ profil['metier']|slice(0,8) ~'...' }}
                                             {% else %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }},
+                                                {{ profil['metier']|slice(0,8) ~'...' }},
                                             {% endif %}
 
                                         {% else  %}
                                             {% if loop.last %}
-                                                {{ profil.metier.metier }}
+                                                {{ profil['metier'] }}
                                             {% else %}
-                                                {{ profil.metier.metier }},
+                                                {{ profil['metier'] }},
                                             {% endif %}
 
                                         {% endif %}
@@ -91,14 +89,6 @@
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h5>{{ 'Localisation'|trans }}</h5>
-                                    <p>{{ pro.localisation }}</p>
-                                </div>
-                                <div class="col s12">
-                                    <h5>{{ 'Description'|trans }}</h5>
-                                    <p>{{ pro.typeDeProjet.typeDeProjet }}</p>
-                                    <p>{{ pro.secteur.secteurActivite}}</p>
-                                    <p>{{ pro.description }}</p>
                                     <h6>{{ 'Localisation'|trans }}</h6>
                                     <p>{{ pro.localisation }}</p>
                                     <div class="divider"></div>
