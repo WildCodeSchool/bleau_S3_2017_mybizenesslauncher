@@ -88,7 +88,7 @@ class LocalisationProfilType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Profil'
+            'data_class' => null
         ));
     }
 

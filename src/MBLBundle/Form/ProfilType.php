@@ -31,10 +31,7 @@ class ProfilType extends AbstractType
             ->add('linkedIn', UrlType::class, array(
                 'required' => false
             ))
-            ->add('localisation',LocalisationProfilType::class, array(
-                'data_class' => null,
-                'required' => false
-            ))
+            ->add('localisation',LocalisationProfilType::class)
             ->add('ville')
             ->add('metier', EntityType::class,
                 array(
