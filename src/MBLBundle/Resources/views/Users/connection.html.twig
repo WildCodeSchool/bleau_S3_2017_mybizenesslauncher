@@ -17,8 +17,11 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
+
                                         {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                            {% else %}
+                                                <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
@@ -75,7 +78,9 @@
                                     {% if profil == app.user %}
                                     {% else %}
                                         {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                        {% else %}
+                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}

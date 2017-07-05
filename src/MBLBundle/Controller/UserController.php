@@ -74,10 +74,12 @@ class UserController extends Controller
     public function editProfilAction(Request $request)
     {
         $profil = $this->getUser();
+
         $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('showProfil' , array('id' => $profil->getId()));
@@ -108,7 +110,7 @@ class UserController extends Controller
     {
 
 
-        $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType');
+        $form_loc = $this->createForm('MBLBundle\Form\RechercheProfilType');
 
         $em = $this->getDoctrine()->getManager();
 
