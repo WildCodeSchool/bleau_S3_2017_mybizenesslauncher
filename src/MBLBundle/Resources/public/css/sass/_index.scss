@@ -5,10 +5,33 @@
     margin: 0;
     background: $Colorblue;
     color: $ColorWhite;
+    @media #{$small-and-down} {
+    display: none;}
+    }
 
-     h2 {
+
+    h2 {
       font-size: 1.5em;
     }
+  }
+
+  .Outils {
+    padding-top: 70px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .Finance {
+    margin-top: 30px;
+  }
+
+  .box_projet_profil * {
+    text-align: center;
   }
 
   .btn_bandeau_homepage {
@@ -16,27 +39,50 @@
     color: $Colorblue;
     box-shadow: $BoxShadow;
     &:hover {
-      background-color: $ColorWhite;
+      background-color: $Colorgrey;
+      color: #6f9ea8;
     }
     &:focus {
-      background-color: $ColorWhite;
+      background-color: $Colorgrey;
+    }
+    @media #{$medium-and-down} {
+      display:none;
     }
   }
-  .Outils {
-    padding-top: 70px;
+.btn_bandeau_homepage_down {
+  background-color: $ColorWhite;
+  color: $Colorblue;
+  box-shadow: $BoxShadow;
+  &:hover {
+    background-color: $Colorgrey;
+    color: #6f9ea8;
   }
+  &:focus {
+    background-color: $Colorgrey;
+  }
+}
+
+.toHide {
+  @media #{$medium-and-down} {
+    display: none !important;
+  }
+}
+.toShow {
+  @media #{$medium-and-down} {
+    display: inline !important;
+  }
+}
   .btn_eBusta {
     margin-top: 40px;
   }
-  .Finance {
-    margin-top: 30px;
+  .logoEb {
+    max-width: 180px;
+    height: auto;
+    @media #{$medium-and-down} {
+      display: none;
+    }
   }
 
-  .box_projet_profil * {
-    text-align: center;
 
-    
-  }
-}
 
 

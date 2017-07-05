@@ -9,13 +9,18 @@ $ColorDarkGrey: #4b494b;
 $ColorWhite : white;
 $BoxShadow: 2px 2px 3px grey;
 $BorderRadius : 8px;
+$small-and-down: "only screen and (max-width : 600px)";
+$medium-and-down: "only screen and (max-width : 992px)";
+$large-and-up: "only screen and (min-width : 993px)";
+
 
 /*
 Font
 */
-//FONT Helvetica: https://www.fontify.me/webfont/36450/helvetica-normal
+//FONT Helvetica: https://www.fontify.me/webfont/36452/helvetica
 html {
-}
+  font-family: font36452;
+  }
 
 * {
   text-align: justify;
@@ -93,6 +98,13 @@ a { color: inherit; }
 }
 .vignette {
   border-radius: $BorderRadius;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 .photo_profil {
   border-radius: $BorderRadius;

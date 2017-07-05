@@ -116,7 +116,7 @@
                             {% if profil.metier is same as(null) %}
                                 <p class="center grey-text">Non renseigné</p>
                             {% else %}
-                                <p>{{ profil.metier.metier }}</p>
+                                <p class="center">{{ profil.metier.metier }}</p>
                             {% endif %}
                         </div>
 
@@ -125,7 +125,7 @@
                             {% if profil.competences is empty %}
                                 <p class="center grey-text">renseignez vos compétences</p>
                             {% else %}
-                                <p>{% for competences in profil.competences %} {{ competences.competences }} {% endfor %}</p>
+                                <p class="center">{% for competences in profil.competences %} {{ competences.competences }} {% endfor %}</p>
                             {% endif %}
                         </div>
                         {#</div>#}
@@ -135,7 +135,7 @@
                             {% if profil.description is same as(null) %}
                                 <p class="center grey-text">Non renseigné</p>
                             {% else %}
-                                <p>{{ profil.description }}</p>
+                                <p class="center">{{ profil.description }}</p>
                             {% endif %}
                         </div>
                         {#<div class="row">#}
@@ -144,7 +144,7 @@
                             {% if profil.invest is same as(null) %}
                                 <p class="center grey-text">Non renseigné</p>
                             {% else %}
-                                <p>{{ profil.invest.invest }}</p>
+                                <p class="center">{{ profil.invest.invest }}</p>
                             {% endif %}
                         </div>
 
@@ -153,19 +153,16 @@
                             {% if profil.etq is same as(null) %}
                                 <p class="center grey-text">renseignez votre status</p>
                             {% else %}
-                                <p>{{ profil.etq.etq }}</p>
+                                <p class="center">{{ profil.etq.etq }}</p>
                             {% endif %}
                         </div>
-                        {#</div>#}
-                        {#<div class="row">#}
+
                         <div class="col s12 m6">
                             <h6 class="center">Disponibilité</h6>
                             {% if profil.dispo is same as(null) %}
                                 <p class="center grey-text">Non renseigné</p>
                             {% else %}
-                                <p>
-                                    {{ profil.dispo.dispo }}
-                                </p>
+                                <p class="center">{{ profil.dispo.dispo }}</p>
                             {% endif %}
                         </div>
 
@@ -174,7 +171,7 @@
                             {% if profil.ou is same as(null) %}
                                 <p class="center grey-text">Non renseigné</p>
                             {% else %}
-                                <p>{{ profil.ou.Ou }}</p>
+                                <p class="center">{{ profil.ou.Ou }}</p>
                             {% endif %}
                         </div>
                         {#</div>#}
@@ -183,17 +180,16 @@
                             {% if profil.localisation is same as(null) %}
                                 <p class="center grey-text">renseignez votre localisation</p>
                             {% else %}
-                                <p>{{ profil.localisation }}</p>
+                                <p class="center">{{ profil.localisation }}</p>
                             {% endif %}
                         </div>
 
                         <div class="col s12 m6">
-                            {#<h6 class="center">LinkedIn</h6>#}
-                            <img class="center responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
+                            <h6 class="center"><img class="responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}"></h6>
                             {% if profil.linkedIn is same as(null) %}
                                 <p class="center grey-text">Non renseigné</p>
                             {% else %}
-                                <p>{{ profil.linkedIn }}</p>
+                                <p class="center">{{ profil.linkedIn }}</p>
                             {% endif %}
                         </div>
 
