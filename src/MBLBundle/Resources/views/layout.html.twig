@@ -5,7 +5,11 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
+
+
+
         <nav xmlns="http://www.w3.org/1999/html">
+
             <ul id="dropdown1" class="dropdown-content">
                 <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
@@ -14,7 +18,10 @@
                 <li><a href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
                 <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
                 <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                <li><a href="{{ path('connect') }}">Mes discussions</a></li>
+                <li><a href="{{ path('connect') }}">Mes discussions
+                        {{ render(controller('MBLBundle:User:countViews')) }}
+                    </a></li>
+
                 <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
             </ul>
             <div class="nav-wrapper header">
@@ -67,7 +74,7 @@
                     <li><a class="color" href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
                     <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
                     <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                    <li><a class="color" href="{{ path('connect') }}">Mes discussions</a></li>
+                    <li><a class="color" href="{{ path('connect') }}">Mes discussions {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
                 </ul>
             </div>
@@ -94,7 +101,7 @@
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
                             Parcourir les profils</a></li>
                     <li><a class="color" href=#modal1>Connexion</a>
-                        </a>
+
                     </li>
                 </ul>
                 <ul class="right show-on-medium-and-down hide-on-med-and-up">
@@ -116,8 +123,6 @@
             </div>
         </nav>
 
-        </div>
-        </nav>
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -182,21 +187,25 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>    <script>
-    $( document ).ready(function(){
-        $(".button-collapse").sideNav();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js">
 
-        $(".dropdown-button").dropdown();
+    </script>
+    <script>
+        $( document ).ready(function(){
+            $(".button-collapse").sideNav();
 
-        $('.modal').modal();
-        /*$('ul.tabs').tabs();
-         $('ul.tabs').tabs('select_tab', 'tab_id');
-         $('.tabs').tabs({ 'swipeable': true });*/
-        $('.registerPlus').click(function(){
-            $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+            $(".dropdown-button").dropdown();
+
+
+            $('.modal').modal();
+            /*$('ul.tabs').tabs();
+             $('ul.tabs').tabs('select_tab', 'tab_id');
+             $('.tabs').tabs({ 'swipeable': true });*/
+            $('.registerPlus').click(function(){
+                $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+            });
+
         });
 
-    });
-
-</script>
+    </script>
 {% endblock %}

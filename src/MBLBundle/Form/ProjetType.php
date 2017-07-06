@@ -23,8 +23,7 @@ class ProjetType extends AbstractType
                 'required' => true
             ))
             ->add('description', TextareaType::class, array(
-                'required' => true,
-                'attr' => array('rows' => '1000','cols' => '1000')
+                'required' => true
             ))
             ->add('siteInternet', UrlType::class, array(
                 'required' => false,
@@ -97,9 +96,7 @@ class ProjetType extends AbstractType
                     ),
                     'Autre'   => 'autre',
 
-
-                ),
-                'required'      => false,
+                ),  'required'      => false,
                 'placeholder'   => '  Choisissez'
             ))
             ->add('ville')

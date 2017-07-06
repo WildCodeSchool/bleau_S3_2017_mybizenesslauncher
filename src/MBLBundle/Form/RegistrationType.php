@@ -80,6 +80,7 @@ class RegistrationType extends AbstractType
 
                                                     ),
                                                     'preferred_choices' => array('Italie', 'arr')))
+
                 ->add('ville')
                 ->add('metier', EntityType::class,
                               array(

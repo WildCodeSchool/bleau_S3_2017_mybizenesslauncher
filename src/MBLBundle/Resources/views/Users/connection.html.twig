@@ -5,8 +5,6 @@
 {% block body %}
     <div class="container" id="chat_connection">
         <div class="row">
-
-
             {% for chat in chats %}
 
                 {#Verifier que si le createur de la connection ne puisse pas accepter à la place de la personne visée#}
@@ -19,8 +17,11 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
+
                                         {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                            {% else %}
+                                                <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
@@ -30,8 +31,22 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>Nom : {{ profil.nom }}</br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        {% if countV is empty %}
+                                            <p>Nom : {{ profil.nom }} <br/>
+                                                Prenom : {{ profil.prenom }}</p>
+                                        {% else %}
+                                            {% for mss in countV  %}
+                                                {% if profil.prenom == mss['profil'] %}
+                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% else %}
+
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -39,7 +54,11 @@
                                 {#Dernier message avec ce profil#}
                                 {% if chat.msgs is not empty%}
                                     {% set chatmsg = chat.msgs|last %}
-                                    <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                    {% if chatmsg.msg|length > 50 %}
+                                        <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                    {% else %}
+                                        <p>  {{ chatmsg.msg }}</p>
+                                    {% endif %}
                                 {% endif %}
                             </div>
                             <div class="col s2">
@@ -59,18 +78,36 @@
                                     {% if profil == app.user %}
                                     {% else %}
                                         {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                        {% else %}
+                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
                             <div class="col s3 Nom_prenom">
+
                                 {#Nom du profil avec qui l'on veut discuter#}
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>Nom : {{ profil.nom }} </br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        {% if countV is empty %}
+                                            <p>Nom : {{ profil.nom }} <br/>
+                                                Prenom : {{ profil.prenom }}</p>
+                                        {% else %}
+
+                                            {% for mss in countV  %}
+                                                {% if profil.prenom == mss['profil'] %}
+                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% else %}
+
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -78,7 +115,11 @@
                                 {#Dernier message avec ce profil#}
                                 {% if chat.msgs is not empty%}
                                     {% set chatmsg = chat.msgs|last %}
-                                    <p>  {{ chatmsg.msg|slice(0,10) ~ '...' }}</p>
+                                    {% if chatmsg.msg|length > 50 %}
+                                        <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                    {% else %}
+                                        <p>  {{ chatmsg.msg }}</p>
+                                    {% endif %}
 
 
                                 {% endif %}
