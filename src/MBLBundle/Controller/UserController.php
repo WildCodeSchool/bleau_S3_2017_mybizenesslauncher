@@ -37,20 +37,17 @@ class UserController extends Controller
             $currentId = $this->getUser()->getId();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentId);
 
-
-        foreach ($countViews as $donnees)
-        {
-            if ($donnees['profil'] !== $this->getUser()->getPrenom())
+            foreach ($countViews as $donnees)
             {
-                if ($donnees['tt'] == null)
+                if ($donnees['profil'] !== $this->getUser()->getPrenom())
                 {
-                    $result  += 1;
-                    $countProfils[] = $donnees['profil'];
+                    if ($donnees['tt'] == null)
+                    {
+                        $result  += 1;
+                        $countProfils[] = $donnees['profil'];
+                    }
                 }
             }
-
-
-        }
             $session->set('countProfils', $countProfils );
         }
 
@@ -114,22 +111,22 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $idloc = $request->request->get('mblbundle_profil')['localisation'];
+        $idloc = $request->request->get('mblbundle_profil')['localisation']['localisation'];
         $idmetier = $request->request->get('mblbundle_profil')['metier'];
 
-        if (!empty($idloc) && !empty($idmetier))
+        if (!empty($idloc) && is_numeric($idmetier))
         {
             $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc);
         }
-        elseif(!empty($idloc) || !empty($idmetier))
+        elseif(!empty($idloc) || is_numeric($idmetier))
         {
-            if (!empty($idloc))
+            if (is_numeric($idmetier))
             {
-                $profils = $em->getRepository('MBLBundle:Profil')->findByLocalisation($idloc);
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier);
             }
             else
             {
-                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier);
+                $profils = $em->getRepository('MBLBundle:Profil')->findByLocalisation($idloc);
             }
 
         }
@@ -372,7 +369,7 @@ class UserController extends Controller
             }
 
         }
-            //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
+        //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
         elseif (is_numeric($idSec) && is_numeric($idTyp))
         {
             $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypEtSec($idSec, $idTyp);
