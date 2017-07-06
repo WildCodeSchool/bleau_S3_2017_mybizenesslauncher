@@ -9,18 +9,13 @@ MBLBundle\Entity\Text:
             generator:
                 strategy: AUTO
     fields:
-        msgfr:
+        msg:
             type: string
-        msgIt:
-            type: string
-        datecreationfr:
+        datecreation:
             type: datetime
-        datecreationit:
-            type: datetime
-        profilfr:
+        profil:
             type: string
-        profilit:
-            type: string
+
 
     lifecycleCallbacks: {  }
 
