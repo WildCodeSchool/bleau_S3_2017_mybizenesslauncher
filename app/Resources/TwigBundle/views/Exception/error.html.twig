@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+<div class="row">
+    <div class="col s4 offset-s4 center">
+        <p style="font-family: monospace; font-size: 1.5em; margin-top: 100px">Erreur 404, cette page n'existe pas, retournez à l'accueil du site en cliquant sur le bouton suivant
+            si le problème persiste, merci de contacter un administrateur via la rubrique "contact"</p>
+    </div>
+    <div class="col s4 offset-s4 center">
+       <a href="{{ path('userHomepage') }}"> <button class="btn" style="background: black" type="button">Retour</button></a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s4 offset-s4 center">
+        <img style="width: 100%;" src="http://www.gandgg.com/assets/images/error-404.png" class="center">
+    </div>
+</div>
+{% endblock %}
