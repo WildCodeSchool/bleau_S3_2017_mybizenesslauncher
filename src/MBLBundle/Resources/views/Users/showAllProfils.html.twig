@@ -26,7 +26,6 @@
                 </div>
 
                 <div class="row">
-
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
                             <div class="col l2 m3 s6 vignette_profil_all  z-depth-5">
@@ -39,9 +38,11 @@
                                         {% endif %}
                                     </div>
                                     <div class="col s8 offset-s2 photo_profil">
+
                                         {% if pro.fichier is null %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
+
                                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
@@ -61,9 +62,9 @@
                                         <h6>{{ 'Compétences'|trans }}</h6>
                                         {% for comp in pro.competences %}
                                             {% if loop.last %}
-                                                {{ comp.competences}}
+                                                {{ comp.competence}}
                                             {% else %}
-                                                {{ comp.competences}},
+                                                {{ comp.competence}},
                                             {% endif %}
                                         {% endfor %}
                                         <div class="divider"></div>

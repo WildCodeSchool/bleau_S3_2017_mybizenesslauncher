@@ -30,6 +30,7 @@ MBLBundle\Entity\Profil:
         lng:
             type: string
             length: 3
+            nullable: true
         ville:
             type: string
             length: 255

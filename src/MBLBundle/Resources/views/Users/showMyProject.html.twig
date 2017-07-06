@@ -28,7 +28,7 @@
                                     {% if pro.fichier is null %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
-                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                        {#<img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">#}
                                     {% endif %}
                                 </div>
                             </div>
@@ -42,24 +42,25 @@
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Profils recherchés'|trans }}</h6>
-                                    {% for profil in pro.profilsrecherches %}
-                                        {% if profil.metier.metier|length > 10 %}
-                                            {% if loop.last %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }}
-                                            {% else %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }},
-                                            {% endif %}
+                                    {{ dump(pro) }}
+                                    {#{% for profil in metier %}#}
+                                        {#{% if profil.metier.metier|length > 10 %}#}
+                                            {#{% if loop.last %}#}
+                                                {#{{ profil.metier.metier|slice(0,8) ~'...' }}#}
+                                            {#{% else %}#}
+                                                {#{{ profil.metier.metier|slice(0,8) ~'...' }},#}
+                                            {#{% endif %}#}
 
-                                        {% else  %}
-                                            {% if loop.last %}
-                                                {{ profil.metier.metier }}
-                                            {% else %}
-                                                {{ profil.metier.metier }},
-                                            {% endif %}
+                                        {#{% else  %}#}
+                                            {#{% if loop.last %}#}
+                                                {#{{ profil.metier.metier }}#}
+                                            {#{% else %}#}
+                                                {#{{ profil.metier.metier }},#}
+                                            {#{% endif %}#}
 
-                                        {% endif %}
+                                        {#{% endif %}#}
 
-                                    {% endfor %}
+                                    {#{% endfor %}#}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
@@ -76,7 +77,7 @@
 
                             <div class="col s12 divform ">
                                 <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">{{ 'Editer'|trans }}</a>
-                                <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : projets.id })}}">{{ 'Supprimer'|trans }}</a>
+                                <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : pro.id })}}">{{ 'Supprimer'|trans }}</a>
                             </div>
                         </div>
                     </a>

@@ -1,8 +1,15 @@
 {% trans_default_domain 'FOSUserBundle' %}
+<div id="register">
 
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+<div class="center">
+    <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+</div>
 
-    {{ form(form) }}
+{{ form_end(form) }}
 
+</div>
 {#
 
 <div id="register">

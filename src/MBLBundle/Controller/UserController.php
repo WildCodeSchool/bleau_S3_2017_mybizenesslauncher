@@ -60,50 +60,62 @@ class UserController extends Controller
         ));
     }
 
-    public function showProfilAction(Profil $profil)
+    public function showProfilAction(Request $request, Profil $profil)
     {
+        $locale = $request->getLocale();
+        $idProfil = $profil->getId();
+        $em = $this->getDoctrine()->getManager();
+        $pro = $em->getRepository('MBLBundle:Profil')->MyfindProfilById($idProfil, $locale);
+        $result = $pro[0];
 
         return $this->render('@MBL/Users/showProfil.html.twig', array(
-            'profil' => $profil,
+            'profil' => $result,
         ));
     }
-    public function showMyProfilAction()
+    public function showMyProfilAction(Request $request)
     {
         $profil = $this->getUser();
-
+        $locale = $request->getLocale();
+        $idProfil = $profil->getId();
+        $em = $this->getDoctrine()->getManager();
+        $pro = $em->getRepository('MBLBundle:Profil')->MyfindProfilById($idProfil, $locale);
+        $result = $pro[0];
         return $this->render('@MBL/Users/showMyProfil.html.twig', array(
-            'profil' => $profil,
+            'profil' => $result,
         ));
     }
     public function showAllProfilsAction(Request $request)
     {
 
-        $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType');
+        $locale = $request->getLocale();
+
+        $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType',null , array('locale' => $locale));
 
         $em = $this->getDoctrine()->getManager();
 
         $idloc = $request->request->get('mblbundle_profil')['localisation'];
         $idmetier = $request->request->get('mblbundle_profil')['metier'];
 
-        if (!empty($idloc) && !empty($idmetier))
+            if (!empty($idloc) && !empty($idmetier))
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc);
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc, $locale);
+//            dump($profils);die();
         }
         elseif(!empty($idloc) || !empty($idmetier))
         {
             if (!empty($idloc))
             {
-                $profils = $em->getRepository('MBLBundle:Profil')->findByLocalisation($idloc);
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocalisation($idloc, $locale);
             }
             else
             {
-                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier);
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier, $locale);
             }
 
         }
         else
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->findAll();
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
         }
 
 
@@ -181,17 +193,18 @@ class UserController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
+        $locale = $request->getLocale();
         if (!isset($id)) {
             $id = $request->request->get("id");
         }
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-        $profil_Recheche_exist = $projet->getProfilsrecherches();
 
-//        $projet->getProfilRecherche
-//        $profil_Recheche_exist = $em->getRepository('MBLBundle:ProfilRecherche')->myFindProject($projet->getId());
+//        $projetvue = $em->getRepository('MBLBundle:Projet')->myfindOneById($id, $locale);
+        $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProjet($projet, $locale);
+        
 
         $projet_profil = new ProfilRecherche();
-        $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil);
+        $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil, array('locale' => $locale));
         $form_pro->handleRequest($request);
 
         if ($request->isXmlHttpRequest()) {
@@ -216,6 +229,7 @@ class UserController extends Controller
         return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
             array('form_pro' => $form_pro->createView(),
                 'projet' => $projet,
+                'locale' => $locale,
                 'profil_Recheche_exist' => $profil_Recheche_exist,
 
             ));
@@ -386,11 +400,14 @@ class UserController extends Controller
         ));
     }
 
-    public function showMyProjectAction()
+    public function showMyProjectAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $id = $this->getUser()->getId();
-        $projects = $em->getRepository('MBLBundle:Projet')->findAllMyProjects($id);
+        $id = $this->getUser();
+        $locale = $request->getLocale();
+
+
+        $projects = $em->getRepository('MBLBundle:Projet')->myfindAllMyProjects($id, $locale);
 
         return $this->render('@MBL/Users/showMyProject.html.twig', array(
             'projects' => $projects
@@ -404,17 +421,20 @@ class UserController extends Controller
      * @param Profil $profil
      * @return Response
      */
-    public function showOneProjectAction($id)
+    public function showOneProjectAction(Request $request, Projet $projet, $id)
     {
 
         $em = $this->getDoctrine()->getManager();
-        $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
-
+        $locale = $request->getLocale();
+        $projeto = $em->getRepository('MBLBundle:Projet')->myfindOneById($id, $locale);
+        $pro = $projeto[0];
         $profils = $projet->getProfils(); //TODO attention lorsque l'on aura lié plusieurs projets et utilisateurs
-
+        $prof = $profils[0]->getId();
+        $profils = $em->getRepository('MBLBundle:Profil')->myfindProfilById($id, $locale);
+        $profils = $profils[0];
         return $this->render('@MBL/Users/showOneProject.html.twig', array(
-            'projet' => $projet,
-            'profils' => $profils,
+            'projet' => $pro,
+            'profil' => $profils,
         ));
     }
 

@@ -32,9 +32,16 @@
                     <div class="col s6">
                         <h6 class="center">{{ 'Compétences'|trans }}</h6>
                         {% if profil.competences is empty %}
-                            <p class="center grey-text">{{ 'renseignez vos compétences'|trans }}</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{% for competences in profil.competences %} {{ competences.competences }} {% endfor %}</p>
+
+                            {% for comp in profil.competences %}
+                                {% if loop.last %}
+                                    {{ comp.competence}}
+                                {% else %}
+                                    {{ comp.competence}},
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
                     </div>
 
@@ -58,9 +65,9 @@
                     </div>
 
                     <div class="col s12 m6">
-                        <h6 class="center">{{ 'Statut'|trans }}</h6>
+                        <h6 class="center">{{'Statut'|trans }}</h6>
                         {% if profil.etq is same as(null) %}
-                            <p class="center grey-text">{{ 'renseignez votre status'|trans }}</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.etq.etq }}</p>
                         {% endif %}
@@ -71,7 +78,9 @@
                         {% if profil.dispo is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{{ profil.dispo.dispo }}</p>
+                            <p>
+                                {{ profil.dispo.dispo }}
+                            </p>
                         {% endif %}
                     </div>
 
@@ -80,7 +89,7 @@
                         {% if profil.ou is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{{ profil.ou.Ou }}</p>
+                            <p>{{ profil.ou.ou }}</p>
                         {% endif %}
                     </div>
 

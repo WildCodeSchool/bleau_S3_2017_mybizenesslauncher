@@ -37,6 +37,7 @@ class RegistrationType extends AbstractType
     {
         $builder->add('nom')
             ->add('prenom')
+            ->add('lng')
             ->remove('username')
             ->add('description')
             ->add('linkedin', UrlType::class)

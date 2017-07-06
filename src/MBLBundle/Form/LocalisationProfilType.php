@@ -28,13 +28,13 @@ class LocalisationProfilType extends AbstractType
         $builder->add('metier', EntityType::class,
             array(
                 'class' => Metier::class,
-                'choice_label' =>'metier',
+                'choice_label' =>'metier' .$options["locale"],
                 'multiple'=> false,
                 'expanded'=> false,
                 'required' => false,
                 'placeholder'=> ' Quel est votre profil?'
             ))
-            ->add('localisation', LocalisationProjetType::class, array(
+            ->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -97,7 +97,8 @@ class LocalisationProfilType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Profil'
+            'data_class' => 'MBLBundle\Entity\Profil',
+            'locale'=>null
         ));
     }
 
