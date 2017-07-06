@@ -1,0 +1,39 @@
+{% extends '@MBL/layout.html.twig' %}
+
+{% block titreH2 %} <h2>Liens utiles</h2> {% endblock %}
+
+{% block body %}
+<div id="footerLinks">
+
+    <h3 id="apropos">A propos</h3>
+    #legal
+    <h3>Mention légales</h3>
+    #presse
+    <h3>Presse</h3>
+    #contact
+    <h3>Contact</h3>
+    #conseils
+    <h3>Conseils</h3>
+
+{#    Pour ajouter des liens:
+    1- décommenter les 5 lignes à faire apparaître (plus bas):
+        a) sélection des lignes;
+        b) [ctrl]+[/] sur la sélection ("/" : le "divisé" du pavé numérique) ==> [Cmd]+[/] sur MAC
+        (voir https://developer.mozilla.org/fr/docs/Outils/Raccourcis_claviers) ;
+    2- remplacer le dièse dans ' href="#" ' par l'url voulue;
+    3- remplacer 'Titre du lien n°1' par le titre du lien ou autre texte qui pointera sur l'adresse;
+    le texte optionnel inséré entre les balises fermantes </a>...</li> ne sera pas cliquable;
+    4- ajouter autant de liens voulus en dupliquant la ligne encadrée par les balises <li>...</li>
+    5- option: pour augmenter la taille de la police du titre inséré entre les balises <h3>...</h3>,
+    utiliser les balises <h2>...</h2>, ou pour la diminuer, choisir les balises <h4>...</h4>, <h5>...</h5>
+    ou <h6>...</h6>. Pour donner de l'importance au titre (ce qui aura pour effet de le mettre en gras par défaut
+    dans la plupart des navigateurs), utiliser la syntaxe suivante: <h3><strong>Titre</strong></h3>.
+#}
+    #liens
+    <h3>Plus de liens</h3>
+    <ul>
+        <li><a class="black-text text-lighten-1" href="#">Titre du lien n°1</a></li>
+        <li><a class="black-text text-lighten-1" href="https://www.e-busta.com/">e-Busta</a>: un site à visiter.</li>
+    </ul>
+</div>
+{% endblock %}
