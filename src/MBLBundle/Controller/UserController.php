@@ -201,7 +201,7 @@ class UserController extends Controller
 
 //        $projetvue = $em->getRepository('MBLBundle:Projet')->myfindOneById($id, $locale);
         $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProjet($projet, $locale);
-        
+
 
         $projet_profil = new ProfilRecherche();
         $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil, array('locale' => $locale));
