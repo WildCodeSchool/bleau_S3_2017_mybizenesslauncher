@@ -31,18 +31,18 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        {% if prenomMSG is empty %}
-                                            <p>Nom : {{ profil.nom }} </br>
+                                        {% if countV is empty %}
+                                            <p>Nom : {{ profil.nom }} <br/>
                                                 Prenom : {{ profil.prenom }}</p>
                                         {% else %}
-                                            {% for mss in prenomMSG  %}
-                                                {% if profil.prenom == mss %}
-                                                    Vous avez des nouveaux messages avec
-                                                    <p>Nom : {{ profil.nom }} </br>
+                                            {% for mss in countV  %}
+                                                {% if profil.prenom == mss['profil'] %}
+                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
+                                                    <p>Nom : {{ profil.nom }} <br/>
                                                         Prenom : {{ profil.prenom }}</p>
                                                 {% else %}
 
-                                                    <p>Nom : {{ profil.nom }} </br>
+                                                    <p>Nom : {{ profil.nom }} <br/>
                                                         Prenom : {{ profil.prenom }}</p>
                                                 {% endif %}
                                             {% endfor %}
@@ -91,18 +91,19 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        {% if prenomMSG is empty %}
-                                            <p>Nom : {{ profil.nom }} </br>
+                                        {% if countV is empty %}
+                                            <p>Nom : {{ profil.nom }} <br/>
                                                 Prenom : {{ profil.prenom }}</p>
                                         {% else %}
-                                            {% for mss in prenomMSG  %}
-                                                {% if profil.prenom == mss %}
-                                                    Vous avez des nouveaux messages avec
-                                                    <p>Nom : {{ profil.nom }} </br>
+
+                                            {% for mss in countV  %}
+                                                {% if profil.prenom == mss['profil'] %}
+                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
+                                                    <p>Nom : {{ profil.nom }} <br/>
                                                         Prenom : {{ profil.prenom }}</p>
                                                 {% else %}
 
-                                                    <p>Nom : {{ profil.nom }} </br>
+                                                    <p>Nom : {{ profil.nom }} <br/>
                                                         Prenom : {{ profil.prenom }}</p>
                                                 {% endif %}
                                             {% endfor %}

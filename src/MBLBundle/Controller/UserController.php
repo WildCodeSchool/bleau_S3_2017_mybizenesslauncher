@@ -22,6 +22,22 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController extends Controller
 {
+
+    public function countViewsAction()
+    {
+        $content = 0;
+        if(!is_null($this->getUser()))
+        {
+            $em = $this->getDoctrine()->getManager();
+            $current = $this->getUser();
+            $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
+
+            $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
+
+        }
+return new Response($content);
+    }
+
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -32,24 +48,7 @@ class UserController extends Controller
 
 
 
-        if(!is_null($this->getUser()))
-        {
-            $currentId = $this->getUser()->getId();
-            $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentId);
 
-            foreach ($countViews as $donnees)
-            {
-                if ($donnees['profil'] !== $this->getUser()->getPrenom())
-                {
-                    if ($donnees['tt'] == null)
-                    {
-                        $result  += 1;
-                        $countProfils[] = $donnees['profil'];
-                    }
-                }
-            }
-            $session->set('countProfils', $countProfils );
-        }
 
 //        dump($countViews);die();
         $projets = $em->getRepository('MBLBundle:Projet')->findLastProjets4();
@@ -472,6 +471,7 @@ class UserController extends Controller
 
         $msgs = $em->getRepository('MBLBundle:Text')->myFindOneByChatIdViewer($id, $currentUserPrenom);
 
+
         if(!empty($msgs))
         {
             foreach ( $msgs as $item) {
@@ -527,6 +527,9 @@ class UserController extends Controller
         $currentUser = $this->getUser();
         $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
 
+
+
+
 //        Verifier qu'une connection n'existe pas déjà entre les deux utilisateurs
 
         $chatexist = $em->getRepository('MBLBundle:Chat')->myFindChatExist($currentUser, $connectedUser);
@@ -561,7 +564,13 @@ class UserController extends Controller
     public function connectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $currentUser = $this->getUser();
+        $countViews = 0;
 
+        if(!is_null($currentUser))
+        {
+            $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentUser);
+        }
         // on fait la vérification de savoir si il y a un chat selectionné
         if(is_numeric($id))
         {
@@ -572,17 +581,13 @@ class UserController extends Controller
 
             $em->flush();
         }
-        $session = $request->getSession();
 
-        $prenom = $session->get('countProfils');
-
-        $currentUser = $this->getUser();
         //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
 
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
-            'prenomMSG' => $prenom
+            'countV' => $countViews
 
         ));
     }

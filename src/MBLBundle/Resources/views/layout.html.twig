@@ -19,13 +19,8 @@
                 <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
                 <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
                 <li><a href="{{ path('connect') }}">Mes discussions
-                        {% if cViews is not defined %}
-                        {% else %}
-                            {% if cViews == 0 %}
-                            {% else %}
-                                <span class="new badge">{{ cViews }}</span>
-                            {% endif %}
-                        {% endif %}</a></li>
+                        {{ render(controller('MBLBundle:User:countViews')) }}
+                    </a></li>
 
                 <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
             </ul>
@@ -79,7 +74,7 @@
                     <li><a class="color" href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
                     <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
                     <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                    <li><a class="color" href="{{ path('connect') }}">Mes discussions</a></li>
+                    <li><a class="color" href="{{ path('connect') }}">Mes discussions {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
                 </ul>
             </div>

@@ -1,6 +1,7 @@
 <?php
 
 namespace MBLBundle\Repository;
+use MBLBundle\Entity\Profil;
 
 /**
  * SecteurRepository
@@ -41,18 +42,44 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
             ->getResult()
             ;
     }
-    public function myFindCountViews($currentId)
+    public function myFindCountViews(Profil $current)
     {
         $qb = $this->createQueryBuilder('t')
-            ->select('t.seen as tt', 't.profil as profil')
+            ->select('count(t) as nbmsg', 't.profil as profil')
+            ->where('t.profil != :current ')
+            ->andWhere('t.seen is null')
             ->join('t.chats', 'chat')
             ->join('chat.profils', 'pro')
-            ->where('pro.id = :proId')
-            ->setParameter('proId', $currentId)
+            ->andWhere('pro.id = :proId')
+            ->setParameters(array(
+                'proId'=> $current->getId(),
+                'current' => $current->getPrenom()
+                )
+            )
+            ->groupBy('t.profil')
+
+
 
         ;
 
 
         return $qb->getQuery()->getResult();
+    }
+    public function myFindViews(Profil $current)
+    {
+        $qb = $this->createQueryBuilder('t')
+            ->select('count(t) as nbmsg')
+            ->where('t.profil != :current ')
+            ->andWhere('t.seen is null')
+            ->join('t.chats', 'chat')
+            ->join('chat.profils', 'pro')
+            ->andWhere('pro.id = :proId')
+            ->setParameters(array(
+                    'proId'=> $current->getId(),
+                    'current' => $current->getPrenom()
+                )
+            )
+        ;
+        return $qb->getQuery()->getOneOrNullResult();
     }
 }
