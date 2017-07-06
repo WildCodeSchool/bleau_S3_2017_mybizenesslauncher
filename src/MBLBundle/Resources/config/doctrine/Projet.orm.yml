@@ -25,6 +25,7 @@ MBLBundle\Entity\Projet:
         localisation:
             type: string
             length: 255
+            nullable: true
         dateCreation:
             type: datetime
         ville:
