@@ -101,17 +101,36 @@ chatDisconnect:
     defaults: { _controller: MBLBundle:User:chatDisconnect}
     methods: GET
 
-footer:
-    path: /footer/{name}
+#Routing for footer links
+apropos:
+    path: /apropos
     defaults:
         _controller: FrameworkBundle:Template:template
-        template: MBLBundle:Templates:{name}.html.twig
+        template: MBLBundle:Templates:apropos.html.twig
 
+legal:
+    path: /legal
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:legal.html.twig
 
+presse:
+    path: /presse
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:presse.html.twig
 
-#    requirements:
-#        name: apropos|legal|presse|contact|conseils
+contact:
+    path: /contact
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:contact.html.twig
 
+conseils:
+    path: /conseils
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:conseils.html.twig
 
 # Cette route doit rester la dernière
 #remove_trailing_slash:
