@@ -7,8 +7,5 @@ mbl:
 
 fos_user:
     resource: "@MBLBundle/Resources/config/routing/all.xml"
-    prefix: /{_locale}/
-    requirements:
-        _locale: it|fr
 
 #    "@FOSUserBundle/Resources/config/routing/all.xml"
