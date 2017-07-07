@@ -4,30 +4,18 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
-{% block titreH2 %}<h2>{{ 'Chat avec'|trans }} {# la personne avec qui vous voulez parler #}
+{% block titreH2 %}<h2>Chat avec{#la personne avec qui vous voulez parler#}
     {% for profil in chat.profils %}
         {% if profil == app.user %}
         {% else %}
-            <p>{{ profil.nom }} {{ profil.prenom }}</p>
+            {{ profil.nom }} {{ profil.prenom }}</p>
         {% endif %}
     {% endfor %}
     </h2>{% endblock %}
 
 {% block body %}
 
-<<<<<<< HEAD
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
-        </div>
-        <div class="modal-footer">
-            <a href="{{ path('chatDisconnect', {'chatId' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
-        </div>
-    </div>
-=======
 
->>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
 
     <div class="container-fluid" id="chat">
         <div class="row">
@@ -36,22 +24,22 @@
                     {% for chat in chats %}
                         {% if chat.connectionbyid > 0 %}
 
-                                <div class="chat_box">
-                                    <a href="#modal1">
+                            <div class="chat_box">
+                                <a href="#modal1">
                                     <div class="col s1 delete">
-                                         <p><i class="material-icons">delete</i></p>
+                                        <p><i class="material-icons">delete</i></p>
                                     </div>
-                                        <!-- Modal Structure -->
-                                        <div id="modal1" class="modal">
-                                            <div class="modal-content">
-                                                <h4>Voulez-vous vraiment supprimer cette personne?</h4>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
-                                            </div>
+                                    <!-- Modal Structure -->
+                                    <div id="modal1" class="modal">
+                                        <div class="modal-content">
+                                            <h4>Voulez-vous vraiment supprimer cette personne?</h4>
                                         </div>
-                                    </a>
-                                    <a href="{{ path('chatIndex', {'id' : chat.id}) }}">
+                                        <div class="modal-footer">
+                                            <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{{ path('chatIndex', {'id' : chat.id}) }}">
                                     <div class="col s3 Nom_prenom">
                                         {#Nom du profil avec qui l'on veut discuter#}
                                         {% for profil in chat.profils %}
@@ -73,19 +61,9 @@
                                         {#Dernier message avec ce profil#}
                                         <p> <i class="material-icons">chat</i></p>
                                     </div>
-                                    </a>
-                                </div>
-                                <div class="col s6">
-                                    {#Dernier message avec ce profil#}
-                                    {% if chat.msgs is not empty%}
-                                        {% set chatmsg = chat.msgs|last %}
-                                        <p>{{ chatmsg.msg}}</p>
-                                    {% endif %}
-                                </div>
-                                <div class="col s2 chat_box_icon">
-                                    {#Dernier message avec ce profil#}
-                                    <p><i class="material-icons">chat</i></p>
-                                </div>
+                                </a>
+                            </div>
+
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -100,8 +78,7 @@
                     </div>
 
                     <div class="col s4">
-                        <p><input id="envoi" class="btn" type="submit" name="creation" value="{{ 'Création'|trans }}"></p>
-                        <p><input id="envoi" class="btn" type="submit" name="creation" value="{{ 'Envoyer'|trans }}"></p>
+                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Envoyer"></p>
 
                     </div>
                     {{ form_end(form) }}
@@ -145,36 +122,23 @@
     {{ parent() }}
     <script>
         $(document).ready(function () {
-
-                // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
             $('.modal').modal();
-
             $('form[name="mblbundle_text"]').submit(function (e) {
-
                 e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
                 // on sécurise les données
                 var message = $(this).serialize();
-
                 var remiseA = $(this);
-
                 $.ajax({
-
                     method: 'post',
                     url:'{{ path('chatIndex', {'id' : chat.id}) }}',
                     data: message,
-
-
                     success: function (response) {
                         $('#textAdded').append(response).hide().slideDown(200);
                         remiseA.trigger('reset');
                     }
                 })
-
             })
-
         });
-
-
-
     </script>
 {% endblock %}

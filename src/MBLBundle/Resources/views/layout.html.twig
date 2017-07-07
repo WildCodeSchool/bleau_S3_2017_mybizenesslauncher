@@ -14,7 +14,8 @@
                 <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil'|trans }}</a></li>
                 <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
                 <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Voir mes projets'|trans }}</a></li>
-                <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}</a></li>
+                <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
+                        {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
                 <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
 

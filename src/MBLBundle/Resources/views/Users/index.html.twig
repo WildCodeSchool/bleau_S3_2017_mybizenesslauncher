@@ -75,7 +75,8 @@
                                         {% if pro.fichier is empty %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo|first ) }}">
+
+                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -171,7 +172,7 @@
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
                                             {# TODO: à verifier #}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier|first.photo ) }}">
+                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>

@@ -1,13 +1,10 @@
 {% extends "@MBL/layout.html.twig" %}
 
-
-{% block titreH2 %}<h2>{{ 'Mise en Relation'|trans }}</h2>{% endblock %}
+{% block titreH2 %}<h2>Mise en Relation</h2>{% endblock %}
 
 {% block body %}
     <div class="container" id="chat_connection">
         <div class="row">
-
-
             {% for chat in chats %}
 
                 {#Verifier que si le createur de la connection ne puisse pas accepter à la place de la personne visée#}
@@ -20,8 +17,11 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
+
                                         {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                        {% else %}
+                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
@@ -31,8 +31,22 @@
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>{{ 'Nom: '|trans}} {{ profil.nom }}<br />
-                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
+                                        {% if countV is empty %}
+                                            <p>Nom : {{ profil.nom }} <br/>
+                                                Prenom : {{ profil.prenom }}</p>
+                                        {% else %}
+                                            {% for mss in countV  %}
+                                                {% if profil.prenom == mss['profil'] %}
+                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% else %}
+
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -40,20 +54,21 @@
                                 {#Dernier message avec ce profil#}
                                 {% if chat.msgs is not empty%}
                                     {% set chatmsg = chat.msgs|last %}
-                                    <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                    {% if chatmsg.msg|length > 50 %}
+                                        <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                    {% else %}
+                                        <p>  {{ chatmsg.msg }}</p>
+                                    {% endif %}
                                 {% endif %}
-                            </div>                                  {#TODO: vérifier que les traductions des values dans les href soient prises en compte#}
+                            </div>
                             <div class="col s2">
-<<<<<<< HEAD
-                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Discuter'|trans }}"></a>
-=======
                                 <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
->>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                                 </p>
                             </div>
                         </div>
-                    {% endif %}
 
+
+                    {% endif %}
                 {% else %}
                     {% if chat.connectionbyid > 0 %}
                         <div class="col s12 connected">
@@ -63,18 +78,36 @@
                                     {% if profil == app.user %}
                                     {% else %}
                                         {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
+                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                        {% else %}
+                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
                             <div class="col s3 Nom_prenom">
+
                                 {#Nom du profil avec qui l'on veut discuter#}
                                 {% for profil in chat.profils %}
                                     {% if profil == app.user %}
                                     {% else %}
-                                        <p>{{ 'Nom: '|trans}} {{ profil.nom }} <br />
-                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
+                                        {% if countV is empty %}
+                                            <p>Nom : {{ profil.nom }} <br/>
+                                                Prenom : {{ profil.prenom }}</p>
+                                        {% else %}
+
+                                            {% for mss in countV  %}
+                                                {% if profil.prenom == mss['profil'] %}
+                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% else %}
+
+                                                    <p>Nom : {{ profil.nom }} <br/>
+                                                        Prenom : {{ profil.prenom }}</p>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
@@ -82,40 +115,25 @@
                                 {#Dernier message avec ce profil#}
                                 {% if chat.msgs is not empty%}
                                     {% set chatmsg = chat.msgs|last %}
-                                    <p>  {{ chatmsg.msg|slice(0,10) ~ '...' }}</p>
+                                    {% if chatmsg.msg|length > 50 %}
+                                        <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                    {% else %}
+                                        <p>  {{ chatmsg.msg }}</p>
+                                    {% endif %}
 
 
                                 {% endif %}
                             </div>
                             <div class="col s2">
-<<<<<<< HEAD
-                                <p><a href="{{ path('chatIndex', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Discuter'|trans }}"></a></p>
-                            </div>
-=======
                                 <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
                                 </p> </div>
->>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                         </div>
-
                     {% else %}
-                        <div class="col s12 Nom_prenom">
-                            {#Nom du profil avec qui l'on peut accepter de discuter#}
-                            {% for profil in chat.profils %}
-                                {% if profil == app.user %}
-                                {% else %}
-                                    <p>{{ 'Nom: '|trans}} {{ profil.nom }} <br />
-                                        {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
-
-                                    <a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
 
                         {#Nom du profil avec qui l'on peut accepter de discuter#}
                         {% for profil in chat.profils %}
 
                             {% if profil == app.user %}
-
                             {% else %}
 
                                 <div class="col s12 connected">
@@ -126,22 +144,22 @@
                                         {% endif %}
                                     </div>
                                     <div class="col s3 Nom_prenom">
-                                        <p>{{ 'Nom: '|trans}}{{ profil.nom }} <br />
-                                            {{ 'Prenom: '|trans }} {{ profil.prenom }}</p>
+                                        <p>Nom : {{ profil.nom }} </br>
+                                            Prenom : {{ profil.prenom }}</p>
                                     </div>
                                     <div class="col s7">
-<<<<<<< HEAD
-                                        <p class="right"><a href="{{ path('connect', {'chatId' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>
-=======
                                         <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a> </p>
->>>>>>> a34e013b55c3d7ca6644d4567067c127e78ff0e5
                                     </div>
                                 </div>
                             {% endif %}
                         {% endfor %}
+
+
                     {% endif %}
                 {% endif %}
+
             {% endfor %}
+
         </div>
     </div>
 {% endblock %}

@@ -75,7 +75,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
     public function findLastProjets4($locale)
     {
         $qb = $this->createQueryBuilder('p');
-        $qb->select('p.description' . $locale . ' as description','p.id as id','p.titre' .$locale. ' as titre','p.localisation'.$locale.' as localisation')
+        $qb->select('p.description' . $locale . ' as description','p.id as id','p.titre' .$locale. ' as titre',
+            'p.localisation as localisation')
             ->join('p.typeDeProjet', 'tp')
             ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
             ->join('p.secteur', 's')

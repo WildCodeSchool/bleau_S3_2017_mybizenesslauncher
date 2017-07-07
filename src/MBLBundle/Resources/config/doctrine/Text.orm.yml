@@ -11,10 +11,13 @@ MBLBundle\Entity\Text:
     fields:
         msg:
             type: string
-        datecreation:
+        dateCreation:
             type: datetime
         profil:
             type: string
+        seen:
+            type: integer
+            nullable: true
 
 
     lifecycleCallbacks: {  }

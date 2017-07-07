@@ -21,6 +21,19 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController extends Controller
 {
+    public function countViewsAction()
+    {
+        $content = 0;
+        if(!is_null($this->getUser()))
+        {
+            $em = $this->getDoctrine()->getManager();
+            $current = $this->getUser();
+            $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
+            $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
+        }
+        return new Response($content);
+    }
+
     public function indexAction(Request $request)
     {
         $locale= $request->getLocale();
@@ -440,8 +453,9 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
         $pro = $projeto[0];
         $profils = $projet->getProfils(); //TODO attention lorsque l'on aura lié plusieurs projets et utilisateurs
         $prof = $profils[0]->getId();
-        $profils = $em->getRepository('MBLBundle:Profil')->myfindProfilById($id, $locale);
+        $profils = $em->getRepository('MBLBundle:Profil')->myfindProfilById($prof, $locale);
         $profils = $profils[0];
+//        $profils = $profils[0];
         return $this->render('@MBL/Users/showOneProject.html.twig', array(
             'projet' => $pro,
             'profil' => $profils,
@@ -470,26 +484,36 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
 //Dans la section Chat lorsque l'on ajoute un msg
     public function chatIndexAction(Request $request, $id)
     {
-
         $em = $this->getDoctrine()->getManager();
-
         $currentUser = $this->getUser();
+        $session = $request->getSession();
+        $session->clear();
+        $currentUserPrenom = $currentUser->getPrenom();
         //Nouveau text
         $text = new Text();
         // Le chat correspondant à la discussion selectionnée
         $chat = $em->getRepository('MBLBundle:Chat')->findOneById($id);
-
         $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($id);
-
-
+        $msgs = $em->getRepository('MBLBundle:Text')->myFindOneByChatIdViewer($id, $currentUserPrenom);
+        if(!empty($msgs))
+        {
+            foreach ( $msgs as $item) {
+                if ($item->getSeen() == 1)
+                {
+                }
+                else
+                {
+                    $item->setSeen(1);
+                    $em->persist($item);
+                    $em->flush();
+                }
+            }
+        }
         //l'ensemble des chats pour lesquelles l'utilisateur peut discuter
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
-
         $form_text = $this->createForm('MBLBundle\Form\TextType', $text);
         $form_text->handleRequest($request);
-
         if ($request->isXmlHttpRequest()){
-
             //on ajoute le text au chat et le chat au text
             $chat->addMsg($text);
             $text->addChat($chat);
@@ -497,34 +521,28 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
             $text->setProfil($this->getUser()->getPrenom());
             $em->persist($text);
             $em->flush();
-
             $content = $this->renderView('@MBL/Users/textChatTemplate.html.twig', array(
                 'text' => $text
             ));
             $response = new JsonResponse($content);
             return $response;
         }
-
         return $this->render('@MBL/Users/Chat.html.twig', array(
             'chat' => $chat,
             'texts' => $text_content,
             'chats'=> $chats,
             'form' => $form_text->createView()
         ));
-
     }
 //Dans la section connection des chats
     public function chatConnectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
-
         $currentUser = $this->getUser();
         $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
-
 //        Verifier qu'une connection n'existe pas déjà entre les deux utilisateurs
-
         $chatexist = $em->getRepository('MBLBundle:Chat')->myFindChatExist($currentUser, $connectedUser);
-
+//        dump($chatexist);die();
         if(!empty($chatexist))
         {
             // Si oui il existe déjà on envoi un message à l'utilisateur qu'il ne peut se connecter
@@ -533,7 +551,6 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
         }
         // Sinon on ajoute un objet chat
         $chat = new Chat();
-
         //On lui donne ajoute le profil de l'utilisateur ayant créé la demande de connection
         $chat->addProfil($connectedUser);
         //Et également celui avec qui l'on veut se connecter
@@ -548,13 +565,17 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
         $chat->setConnectionbyid(0);
         $em->persist($chat);
         $em->flush();
-
         return $this->redirectToRoute('connect');
     }
-
-    public function connectAction($id)
+    public function connectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $currentUser = $this->getUser();
+        $countViews = 0;
+        if(!is_null($currentUser))
+        {
+            $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentUser);
+        }
         // on fait la vérification de savoir si il y a un chat selectionné
         if(is_numeric($id))
         {
@@ -564,11 +585,11 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
             $chat->setConnectionbyid($connectId);
             $em->flush();
         }
-        $currentUser = $this->getUser();
         //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
+            'countV' => $countViews
         ));
     }
     public function chatDisconnectAction(Chat $chat)

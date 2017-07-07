@@ -97,8 +97,8 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->createQueryBuilder('p');
         $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
-            ->where('p.lng = :locale')
-            ->setParameter('locale', $locale)
+//            ->where('p.lng = :locale')
+//            ->setParameter('locale', $locale)
             ->join('p.metier', 'm')
             ->addSelect('m.metier' . $locale . ' as metier')
             ->setMaxResults(4)

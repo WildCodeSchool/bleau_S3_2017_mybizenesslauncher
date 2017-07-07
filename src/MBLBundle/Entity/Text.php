@@ -22,7 +22,7 @@ class Text
     /**
      * @var \DateTime
      */
-    private $datecreation;
+    private $dateCreation;
 
     /**
      * @var string
@@ -40,6 +40,7 @@ class Text
     public function __construct()
     {
         $this->chats = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->dateCreation = new \DateTime();
     }
 
     /**
@@ -83,9 +84,9 @@ class Text
      *
      * @return Text
      */
-    public function setDatecreation($datecreation)
+    public function setDateCreation($dateCreation)
     {
-        $this->datecreation = $datecreation;
+        $this->dateCreation = $dateCreation;
 
         return $this;
     }
@@ -95,9 +96,9 @@ class Text
      *
      * @return \DateTime
      */
-    public function getDatecreation()
+    public function getDateCreation()
     {
-        return $this->datecreation;
+        return $this->dateCreation;
     }
 
     /**
@@ -156,5 +157,34 @@ class Text
     public function getChats()
     {
         return $this->chats;
+    }
+    /**
+     * @var integer
+     */
+    private $seen;
+
+
+    /**
+     * Set seen
+     *
+     * @param integer $seen
+     *
+     * @return Text
+     */
+    public function setSeen($seen)
+    {
+        $this->seen = $seen;
+
+        return $this;
+    }
+
+    /**
+     * Get seen
+     *
+     * @return integer
+     */
+    public function getSeen()
+    {
+        return $this->seen;
     }
 }

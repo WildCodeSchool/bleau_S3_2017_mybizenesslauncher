@@ -9,26 +9,16 @@ MBLBundle\Entity\Chat:
             generator:
                 strategy: AUTO
     fields:
-        namefr:
-            type: string
-            length: 255
-            nullable: true
-        nameit:
+        name:
             type: string
             length: 255
             nullable: true
         dateCreation:
             type: date
-        connectionbyidcreatorfr:
+        connectionbyidcreator:
             type: integer
             nullable: true
-        connectionbyidcreatorit:
-            type: integer
-            nullable: true
-        connectionbyidfr:
-            type: integer
-            nullable: true
-        connectionbyidit:
+        connectionbyid:
             type: integer
             nullable: true
 
