@@ -28,10 +28,10 @@ class ProjetType extends AbstractType
                 'required' => true
             ))
 
-            ->add('description', TextareaType::class, array(
+            ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true
             ))
-            ->add('siteInternet', UrlType::class, array(
+            ->add('siteInternet'.$options["locale"], UrlType::class, array(
                 'required' => false,
 
             ))
