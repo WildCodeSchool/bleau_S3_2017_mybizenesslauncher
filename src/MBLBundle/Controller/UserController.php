@@ -109,10 +109,9 @@ class UserController extends Controller
         $idloc = $request->request->get('mblbundle_profil')['localisation'];
         $idmetier = $request->request->get('mblbundle_profil')['metier'];
 
-            if (!empty($idloc) && !empty($idmetier))
+        if (!empty($idloc) && !empty($idmetier))
         {
             $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc, $locale);
-//            dump($profils);die();
         }
         elseif(!empty($idloc) || !empty($idmetier))
         {
@@ -124,14 +123,11 @@ class UserController extends Controller
             {
                 $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier, $locale);
             }
-
         }
         else
         {
             $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
         }
-
-
         return $this->render('@MBL/Users/showAllProfils.html.twig', array(
             'profils'=>$profils,
             'form_localisation' => $form_loc->createView()//
@@ -213,7 +209,7 @@ class UserController extends Controller
         }
         $projet = $em->getRepository('MBLBundle:Projet')->findOneById($id);
 //        $projetvue = $em->getRepository('MBLBundle:Projet')->myfindOneById($id, $locale);
-$profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProjet($projet, $locale);
+        $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProjet($projet, $locale);
 
 
         $projet_profil = new ProfilRecherche();
@@ -358,8 +354,6 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
         $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
         $Loc = $request->request->get('mblbundle_projet')['localisation']['localisation'];
 
-
-
 //        // Ajout des filtres
 //
 //        // Si les deux filtres sont selectionné on utilise la méthode écrite dans répositoryProjet
@@ -367,7 +361,6 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
         {
             $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypSecLoc($idSec, $idTyp, $Loc, $locale);
         }
-
         elseif (!empty($Loc))
         {
             if(is_numeric($idSec) || is_numeric($idTyp))
@@ -383,7 +376,7 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
             }
             elseif (!is_numeric($idSec) && !is_numeric($idTyp) && !empty($Loc))
             {
-                $projects = $em->getRepository('MBLBundle:Projet')->findByLocalisation($Loc);
+                $projects = $em->getRepository('MBLBundle:Projet')->myfindByLoc($Loc, $locale);
             }
 
         }
@@ -418,8 +411,6 @@ $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfin
             'projects'=> $projects,
             'form_secteur' =>$form_secteur->createView(),
             'locale' => $locale
-
-
         ));
     }
 

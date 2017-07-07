@@ -5,76 +5,141 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-        <nav>
-            <ul id="dropdown1" class="dropdown-content header">
-                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
+
+
+
+        <nav xmlns="http://www.w3.org/1999/html">
+
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
-                <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
-                <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
-                <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil'|trans }}</a></li>
-                <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
-                <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Voir mes projets'|trans }}</a></li>
-                <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
-                        {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
-                <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
-            </ul>
+                <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
+                <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
+                <li><a href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
+                <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
+                <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
+                <li><a href="{{ path('connect') }}">Mes discussions
+                        {{ render(controller('MBLBundle:User:countViews')) }}
+                    </a></li>
 
+                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+            </ul>
             <div class="nav-wrapper header">
-                <a href="{{ path('mbl_homepage') }}" class="color">Innova'Up.com</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="color material-icons">{{ 'menu'|trans }}</i></a>
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}">Innova'Up<span class="dotCom">.com
+                    </span></a>
+                <a class="tooltipped" data-position="bottom" data-delay="50"
+                   data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
+                            propose de réaliser des campagnes de Crowdfunding
+                            de don en contrepartie pour vous aider à financer
+                            votre projet. Seule une commission de 4% du montant
+                            collecté sera appliquée, faisant de E-busta le site de
+                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                    <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                </a>
+                <a class="tooltipped hide-on-large-only lancer" data-position="bottom" data-delay="50"
+                   data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
+
+                <a href="#" data-activates="mobile-demo"
+                   class="button-collapse right"><i class="color material-icons">menu</i>
+                </a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
-                    <li><a class="color" href="{{path('showAllProfils')}}">{{ 'Parcourir les profils'|trans }}</a></li>
-                    <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-button color" href="#!" data-activates="dropdown1"><i class="right">{{ 'Mon compte'|trans }}</i></a></li>
+                    <li><a class="color darkerTop"  href="{{ path('showProject') }}">
+                            Parcourir les projets</a></li>
+                    <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">
+                            Parcourir les profils</a></li>
+                    <li><a class="color dropdown-button" href="#!" data-activates="dropdown1">
+                            <i class="right">Mon Compte</i></a></li>
                 </ul>
 
+                <ul class="right show-on-medium-and-down hide-on-med-and-up">
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
+                           le décrire et détailler les profils de cofondateurs et associés que tu cherches.
+                           Ils auront alors accès à la description du projet et pourront te contacter."
+                           href="{{ path('showProject') }}">Projets</a></li>
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour ceux qui cherchent un projet à intégrer:
+                           Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
+                           d’un projet existant, parcours les projets pour trouver celui que tu pourrais
+                           aider à porter au sommet !
+                           href="{{path('showAllProfils')}}">Profils</a></li>
+                </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}</a></li>
+                    <li><a class="color" href="#">Bonjour  {{app.user.prenom}}</a></li>
                     <li class="divider"></li>
-                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Voir mes projets'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
+                    <li><a class="color" href="{{ path('editProfil') }}">Gérer mon profil</a></li>
+                    <li><a class="color" href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
+                    <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
+                    <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
+                    <li><a class="color" href="{{ path('connect') }}">Mes discussions {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                    <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
                 </ul>
             </div>
         </nav>
-
     {% else %}
-
         <nav>
             <div class="nav-wrapper header">
-                <a href="#" class="color">Innova'Up.com</a>
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}" >Innova'Up<span class="dotCom">.com</span></a>
+                <a class="tooltipped" data-position="bottom" data-delay="50"
+                   data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
+                            propose de réaliser des campagnes de Crowdfunding
+                            de don en contrepartie pour vous aider à financer
+                            votre projet. Seule une commission de 4% du montant
+                            collecté sera appliquée, faisant de E-busta le site de
+                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                    <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                </a>
+                <a class="tooltipped hide-on-large-only lancer" data-position="bottom" data-delay="50"
+                   data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="color" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans }}</a></li>
-                    <li><a class="color" href="{{ path('showAllProfils') }}">{{ 'Parcourir les profils'|trans }}</a></li>
-                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans ({}, 'FOSUserBundle') }}</a></li>    {#TODO: vérifier si la traduction de "connexion" se fait correctement quand la locale est set en Italien#}
+                    <li><a class="color darkerTop" href="{{ path('showProject') }}">
+                            Parcourir les projets</a></li>
+                    <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
+                            Parcourir les profils</a></li>
+                    <li><a class="color" href=#modal1>Connexion</a>
+                    </li>
+                </ul>
+                <ul class="right show-on-medium-and-down hide-on-med-and-up">
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
+                           le décrire et détailler les profils de cofondateurs et associés que tu cherches.
+                           Ils auront alors accès à la description du projet et pourront te contacter."
+                           href="{{ path('showProject') }}">Projets</a></li>
+                    <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
+                           data-tooltip="Pour ceux qui cherchent un projet à intégrer:
+                           Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
+                           d’un projet existant, parcours les projets pour trouver celui que tu pourrais
+                           aider à porter au sommet !
+                           href="{{path('showAllProfils')}}">Profils</a></li>
+                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
+
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
             <div class="row">
                 <div class="col s12 tabs">
                     <ul class="tabs">
-                        <li class="tab col s6 active"><a href="#Connexion">{{ 'Connexion'|trans }}</a></li>
-                        <li class="tab col s6"><a href="#Register">{{ 'S\'inscrire'|trans }}</a></li>
+                        <li class="tab col s6 active"><a href="#Connexion">Connexion</a></li>
+                        <li class="tab col s6"><a href="#Register">S'inscrire</a></li>
                     </ul>
                 </div>
                 <div id="Connexion" class="col s12">{{ render(controller('FOSUserBundle:Security:login')) }}</div>
                 <div id="Register" class="col s12">{{ render(controller('FOSUserBundle:Registration:register')) }}</div>
             </div>
         </div>
-    {% endif %}
 
+    {% endif %}
 {% endblock %}
 
 {% block bandeau %}
-
     <div class="bandeau">
         <div class="col s12">
             {% block titreH2 %} <h2>Ecrivez votre titre!</h2> {% endblock %}
@@ -89,29 +154,28 @@
         <div class="container">
             <div class="row">
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">{{ 'Liens utiles'|trans }}</h5>
+                    <h5 class="white-text">Liens utiles</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#">{{'A propos'|trans }}</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Mention légales'|trans }}</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Presse'|trans }}</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Contact'|trans }}</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Les projets'|trans }}</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Les profils'|trans }}</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#">{{ 'Conseils'|trans }}</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">A propos</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Mention légales</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Presse</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Les projets</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Les profils</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Conseils</a></li>
                     </ul>
                 </div>
                 <div class="col l6 s12">
-
-                    <h5 class="white-text">{{ 'Suivez'|trans }} Innova'Up.com</h5>
+                    <h5 class="color-blue">Suivez MyBizenessLauncher.com</h5>
                     <p class="grey-text text-lighten-4"><Facebook></Facebook></p>
                 </div>
+
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-
                 © 2017 © E-Busta Srl - All rights reserved - Partita IVA IT 06365730826
-                <a class="grey-text text-lighten-4 right" href="#!">{{ 'More Links'|trans }}</a>
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
         </div>
     </footer>
@@ -121,22 +185,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js">
+    </script>
     <script>
-
         $( document ).ready(function(){
-        $(".button-collapse").sideNav();
-
-        $(".dropdown-button").dropdown();
-
-        $('.modal').modal();
-        /*$('ul.tabs').tabs();
-         $('ul.tabs').tabs('select_tab', 'tab_id');
-         $('.tabs').tabs({ 'swipeable': true });*/
-        $('.registerPlus').click(function(){
-            $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+            $(".button-collapse").sideNav();
+            $(".dropdown-button").dropdown();
+            $('.modal').modal();
+            /*$('ul.tabs').tabs();
+             $('ul.tabs').tabs('select_tab', 'tab_id');
+             $('.tabs').tabs({ 'swipeable': true });*/
+            $('.registerPlus').click(function(){
+                $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+            });
         });
-    });
-
     </script>
 {% endblock %}

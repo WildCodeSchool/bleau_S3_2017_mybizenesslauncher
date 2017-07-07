@@ -205,7 +205,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
         }
         return $projets;
     }
-    public function myfindBySecteur($secteur, $locale)
+    public function myfindBySecteur($idsec, $locale)
     {
         $qb = $this->createQueryBuilder('p');
         $qb->select('p.description' . $locale . ' as description', 'p.id as id', 'p.titre' . $locale . ' as titre', 'p.localisation as localisation')
@@ -214,7 +214,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             ->join('p.secteur', 's')
             ->addSelect('s.secteurActivite' . $locale . ' as secteur')
             ->andWhere('s.id = :secId')
-            ->setParameter('secId', $secteur)
+            ->setParameter('secId', $idsec)
             ->orderBy('p.id', 'DESC');
         $projets = $qb->getQuery()->getResult();
 
@@ -239,6 +239,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             $projets[$key]['fichier'] = $qb->getQuery()->getResult();
         }
     }
+
     public function myfindBySecteurLoc($secteur, $Loc, $locale)
     {
         $qb = $this->createQueryBuilder('p');
@@ -345,6 +346,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             $projets[$key]['fichier'] = $qb->getQuery()->getResult();
         }
     }
+
     public function myfindByTypEtSec($idSec, $idTyp, $locale)
     {
         $qb = $this->createQueryBuilder('p');
@@ -382,6 +384,43 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
         }
         return $projets;
     }
+
+    public function myfindByLoc($Loc, $locale)
+    {
+        $qb = $this->createQueryBuilder('p');
+        $qb->select('p.description' . $locale . ' as description', 'p.id as id', 'p.titre' . $locale . ' as titre', 'p.localisation as localisation')
+            ->join('p.typeDeProjet', 'tp')
+            ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
+            ->join('p.secteur', 's')
+            ->addSelect('s.secteurActivite' . $locale . ' as secteur')
+            ->where('p.localisation = :typId')
+            ->setParameter('typId', $Loc)
+
+            ->orderBy('p.id', 'DESC');
+        $projets = $qb->getQuery()->getResult();
+
+
+        foreach ($projets as $key => $projet) {
+            // Get metier et création d'un sous tableau'
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.profilsrecherches', 'r')
+                ->join('r.metier', 'm')
+                ->select('m.metier' . $locale . ' as metier')
+                ->setParameter('id', $projet['id']);
+            $projets[$key]['metier'] = $qb->getQuery()->getResult();
+
+            // Get fichier si défini et si null
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.fichier', 'f')
+                ->select('f.photo')
+                ->setParameter('id', $projet['id']);
+            $projets[$key]['fichier'] = $qb->getQuery()->getResult();
+        }
+        return $projets;
+    }
+
 
     public function myfindByTypSecloc($idSec, $idTyp, $Loc, $locale)
     {
