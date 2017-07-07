@@ -1,12 +1,12 @@
 ## src/MBLBundle/Resources/config/validation.yml
+
 #MBLBundle\Entity\Projet:
 #    properties:
 #        bioUrl:
-#            - Url: ~
+#            - Url: { protocols: [http, https] }
 #
 #
 #MBLBundle\Entity\Profil:
 #    properties:
 #        bioUrl:
-#            - Url: ~
-#
+#            - Url: { protocols: [http, https] }

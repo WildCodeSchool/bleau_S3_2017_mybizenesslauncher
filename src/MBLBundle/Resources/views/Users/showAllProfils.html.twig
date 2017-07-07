@@ -42,7 +42,8 @@
                                         {% if pro.fichier is null %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
-                                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img class="responsive-img"
+                                                 src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -85,7 +86,8 @@
                                     {% if app.user.id == pro.id %}
                                     {% else %}
                                         <div class="col s12">
-                                            <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">Discuter</a>
+                                            <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">
+                                                Discuter</a>
                                         </div>
                                     {% endif %}
                                 {% endif %}
