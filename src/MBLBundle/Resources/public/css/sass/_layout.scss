@@ -7,9 +7,12 @@ Layout.html.twig
   background-color:$Colorgrey;
 }
 
-.footer
+.page-footer
 {
   background-color:$ColorDarkGrey;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
 }
 
 .bandeau

@@ -213,14 +213,14 @@ class LoadInvestissementData extends AbstractFixture implements OrderedFixtureIn
     {
         $invests = array(
             'Non',
-            'moin de 1000',
+            'Moins de 1000',
             '1000-5000',
             '5000-10000',
             '10000-20000',
             '20000-50000',
             '50000-100000',
             '100000-200000',
-            'plus de 200000'
+            'Plus de 200000'
         );
 
         foreach ($invests as $invest) {
@@ -268,7 +268,7 @@ class LoadTypeDeProjetData extends AbstractFixture implements OrderedFixtureInte
     {
         $typedeprojets = array(
             'Application Mobile',
-            'Jeu Video',
+            'Jeu Vidéo',
             'Logiciel',
             'Site Internet',
             'Commerce',
