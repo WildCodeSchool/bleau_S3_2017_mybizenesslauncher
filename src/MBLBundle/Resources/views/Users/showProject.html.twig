@@ -45,7 +45,6 @@
                             </div>
                             <div class="row btnlink">
                                 <div class="col s2 offset-s3">
-                                    <a class="waves-effect waves-light btn" href="{{ path('showOneProject', {'id' : pro.id})}}">{{ 'Voir'|trans }}</a>
                                     {% if pro.fichier is empty %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}

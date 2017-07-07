@@ -25,7 +25,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
 //            ->setParameter('locale', $locale)
             ->join('p.metier', 'm')
             ->addSelect('m.metier' . $locale . ' as metier')
-            ->orderBy('p.id', 'DESC')
             ->andWhere('p.id = :loca')
             ->setParameter('loca', $idPro)
 

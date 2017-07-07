@@ -42,25 +42,25 @@
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Profils recherchés'|trans }}</h6>
-                                    {{ dump(pro) }}
-                                    {#{% for profil in metier %}#}
-                                        {#{% if profil.metier.metier|length > 10 %}#}
-                                            {#{% if loop.last %}#}
-                                                {#{{ profil.metier.metier|slice(0,8) ~'...' }}#}
-                                            {#{% else %}#}
-                                                {#{{ profil.metier.metier|slice(0,8) ~'...' }},#}
-                                            {#{% endif %}#}
 
-                                        {#{% else  %}#}
-                                            {#{% if loop.last %}#}
-                                                {#{{ profil.metier.metier }}#}
-                                            {#{% else %}#}
-                                                {#{{ profil.metier.metier }},#}
-                                            {#{% endif %}#}
+                                    {% for profil in pro.metier %}
+                                        {% if profil.metier|length > 10 %}
+                                            {% if loop.last %}
+                                                {{ profil.metier|slice(0,8) ~'...' }}
+                                            {% else %}
+                                                {{ profil.metier|slice(0,8) ~'...' }},
+                                            {% endif %}
 
-                                        {#{% endif %}#}
+                                        {% else %}
+                                            {% if loop.last %}
+                                                {{ profil.metier }}
+                                            {% else %}
+                                                {{ profil.metier }},
+                                            {% endif %}
 
-                                    {#{% endfor %}#}
+                                        {% endif %}
+
+                                    {% endfor %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">

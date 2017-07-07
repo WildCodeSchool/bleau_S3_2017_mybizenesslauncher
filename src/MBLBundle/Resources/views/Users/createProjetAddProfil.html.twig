@@ -9,7 +9,7 @@
             <div class="col s12 l5">
                 {{ form_start(form_pro) }}
                 <div class="center-align">
-                    {{ form_label(form_pro.metier, 'Profil recherché ') }}
+                    <h5 class="center">{{ 'Profil Recherché'|trans }}</h5>
                     {{ form_errors(form_pro.metier) }}
                     {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
                 </div>
@@ -24,7 +24,7 @@
                     {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
                 </div>
                 <div class="center-align">
-                    {{ form_label(form_pro.dispo, 'Disponibilité ') }}
+                    <h5>{{ 'Disponibilité'|trans }}</h5>
                     {{ form_errors(form_pro.dispo) }}
                     {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' disponibilité'}}) }}
                 </div>
@@ -55,10 +55,10 @@
                             <div class="row type_metier">
                                 <div class="color col s12">
                                     <h5 class="center">{{ 'Profil Recherché'|trans }}</h5>
-                                    {% if profil.metier.metier is empty %}
-                                        <p class="center grey-text">renseigner</p>
+                                    {% if profil.metier is empty %}
+                                        <p class="center grey-text">{{ 'renseignez votre status'|trans }}</p>
                                     {% else %}
-                                        <p>{{profil.metier.metier }} </p>
+                                        <p>{{profil.metier }} </p>
                                     {% endif %}
                                 </div>
                             </div>
@@ -67,49 +67,50 @@
 
                                 <div class="col s12">
                                     <h6>{{ 'Disponibilité'|trans }}</h6>
-                                    {% if profil.dispo.dispo is empty %}
+                                    {% if profil.dispo is empty %}
                                         <p class="center grey-text">renseigner</p>
                                     {% else %}
-                                        <p>{{ profil.dispo.dispo }} </p>
+                                        <p>{{ profil.dispo }} </p>
                                     {% endif %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'En tant que'|trans }}</h6>
-                                    {% if profil.etq.etq is empty %}
+                                    {% if profil.etq is empty %}
                                         <p class="center grey-text">renseigner</p>
                                     {% else %}
-                                        <p>{{ profil.etq.etq }} </p>
+                                        <p>{{ profil.etq}} </p>
                                     {% endif %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Localisation'|trans }}</h6>
-                                    {% if profil.ou.ou is empty %}
+                                    {% if profil.ou is empty %}
                                         <p class="center grey-text">renseigner</p>
                                     {% else %}
-                                        <p>{{ profil.ou.ou }}</p>
+                                        <p>{{ profil.ou }}</p>
                                     {% endif %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Investissement'|trans }}</h6>
-                                    {% if profil.invest.invest is empty %}
+                                    {% if profil.invest is empty %}
                                     <p class="center grey-text">renseigner</p>
                                 {% else %}
-                                    <p>{{ profil.invest.invest }}</p>
+                                    <p>{{ profil.invest }}</p>
                                     {% endif %}<div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6>{{ 'Compétences'|trans }}</h6>
-                                    {% for comp in profil.competences %}
-                                        {% if comp.competences is empty %}
+
+                                    {% for comp in profil.competence %}
+                                        {% if comp.competence is empty %}
                                             <p class="center grey-text">renseigner</p>
                                         {% else %}
                                             {% if loop.last %}
-                                                {{ comp.competences}}
+                                                {{ comp.competence}}
                                             {% else %}
-                                                {{ comp.competences}},
+                                                {{ comp.competence}},
                                             {% endif %}
                                         {% endif %}
                                     {% endfor %}
