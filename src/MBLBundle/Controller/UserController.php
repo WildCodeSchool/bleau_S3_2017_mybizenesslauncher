@@ -36,25 +36,13 @@ class UserController extends Controller
             $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
 
         }
-return new Response($content);
-    }
-
-    public function indexAction()
-
-    {
-        $content = 0;
-        if(!is_null($this->getUser()))
-        {
-            $em = $this->getDoctrine()->getManager();
-            $current = $this->getUser();
-            $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
-            $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
-        }
         return new Response($content);
     }
 
     public function indexAction(Request $request)
+
     {
+
         $locale= $request->getLocale();
 
         $em = $this->getDoctrine()->getManager();
@@ -78,7 +66,7 @@ return new Response($content);
     {
         $locale= $request->getLocale();
         $profil = $this->getUser();
-        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil, array('locale'=>$locale
+        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil, array('locale'=>$locale));
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

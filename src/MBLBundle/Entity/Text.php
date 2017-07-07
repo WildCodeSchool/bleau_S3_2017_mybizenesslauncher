@@ -158,10 +158,6 @@ class Text
     {
         return $this->chats;
     }
-    /**
-     * @var integer
-     */
-    private $seen;
 
 
     /**
@@ -193,27 +189,4 @@ class Text
     private $seen;
 
 
-    /**
-     * Set seen
-     *
-     * @param integer $seen
-     *
-     * @return Text
-     */
-    public function setSeen($seen)
-    {
-        $this->seen = $seen;
-
-        return $this;
-    }
-
-    /**
-     * Get seen
-     *
-     * @return integer
-     */
-    public function getSeen()
-    {
-        return $this->seen;
-    }
 }
