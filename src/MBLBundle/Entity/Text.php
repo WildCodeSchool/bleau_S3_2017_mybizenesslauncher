@@ -187,4 +187,33 @@ class Text
     {
         return $this->seen;
     }
+    /**
+     * @var integer
+     */
+    private $seen;
+
+
+    /**
+     * Set seen
+     *
+     * @param integer $seen
+     *
+     * @return Text
+     */
+    public function setSeen($seen)
+    {
+        $this->seen = $seen;
+
+        return $this;
+    }
+
+    /**
+     * Get seen
+     *
+     * @return integer
+     */
+    public function getSeen()
+    {
+        return $this->seen;
+    }
 }

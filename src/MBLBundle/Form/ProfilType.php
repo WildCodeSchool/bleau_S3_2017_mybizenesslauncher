@@ -85,8 +85,12 @@ class ProfilType extends AbstractType
                         'Veneto' => 'Italie, Veneto'
                     ),
                     'Autre'   => 'autre',
-                ),
-                'preferred_choices' => array('Italie', 'arr')))
+
+
+                ),  'required'      => false,
+                'placeholder'   => '  Choisissez'
+            ))
+
             ->add('ville')
 
             ->add('metier', EntityType::class,

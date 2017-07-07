@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Form;
 
+use MBLBundle\Entity\Profil;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -25,6 +26,7 @@ class LocalisationProfilType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder->add('metier', EntityType::class,
             array(
                 'class' => Metier::class,
@@ -58,37 +60,34 @@ class LocalisationProfilType extends AbstractType
                     ),
                     'Italie' => array(
 
-                        'Abruzzo' => 'Italie, Abruzzo',
-                        'Alto Adige' => 'Italie, Alto Adige',
-                        'Basilicata' => 'Italie, Basilicata',
-                        'Calabria' => 'Italie, Calabria',
-                        'Campania' => 'Italie, Campania',
-                        'Centro' => 'Italie, Centro',
-                        'Emilia-Romagna' => 'Italie, Emilia-Romagna',
-                        'Friuli-Venezia Giulia' => 'Italie, Friuli-Venezia Giulia',
-                        'Lazio' => 'Italie, Lazio',
-                        'Liguria' => 'Italie, Liguria',
-                        'Lombardia' => 'Italie, Lombardia',
-                        'Marche' => 'Italie, Marche',
-                        'Molise' => 'Italie, Molise',
-                        'Piemonte' => 'Italie, Piemonte',
-                        'Puglia' => 'Italie, Puglia',
-                        'Sardegna' => 'Italie, Sardegna',
-                        'Sicilia' => 'Italie, Sicilia',
-                        'Toscana' => 'Italie, Toscana',
-                        'Trentino' => 'Italie, Trentino',
-                        'Umbria' => 'Italie, Umbria',
-                        'Valle d\'Aosta' => 'Italie, Valle d\'Aosta',
-                        'Veneto' => 'Italie, Veneto'
-                    ),
-                    'Autre'   => 'autre',
+                    'Abruzzo' => 'Italie, Abruzzo',
+                    'Alto Adige' => 'Italie, Alto Adige',
+                    'Basilicata' => 'Italie, Basilicata',
+                    'Calabria' => 'Italie, Calabria',
+                    'Campania' => 'Italie, Campania',
+                    'Centro' => 'Italie, Centro',
+                    'Emilia-Romagna' => 'Italie, Emilia-Romagna',
+                    'Friuli-Venezia Giulia' => 'Italie, Friuli-Venezia Giulia',
+                    'Lazio' => 'Italie, Lazio',
+                    'Liguria' => 'Italie, Liguria',
+                    'Lombardia' => 'Italie, Lombardia',
+                    'Marche' => 'Italie, Marche',
+                    'Molise' => 'Italie, Molise',
+                    'Piemonte' => 'Italie, Piemonte',
+                    'Puglia' => 'Italie, Puglia',
+                    'Sardegna' => 'Italie, Sardegna',
+                    'Sicilia' => 'Italie, Sicilia',
+                    'Toscana' => 'Italie, Toscana',
+                    'Trentino' => 'Italie, Trentino',
+                    'Umbria' => 'Italie, Umbria',
+                    'Valle d\'Aosta' => 'Italie, Valle d\'Aosta',
+                    'Veneto' => 'Italie, Veneto'
+                ),
+                'Autre'   => 'autre',
 
-                ),  'required'      => false,
+            ),  'required'      => false,
             'placeholder'   => '  Choisissez'
-
-               ))
-
-        ;
+        ));
     }
 
     /**

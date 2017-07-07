@@ -19,7 +19,6 @@ MBLBundle\Entity\Text:
             type: integer
             nullable: true
 
-
     lifecycleCallbacks: {  }
 
 

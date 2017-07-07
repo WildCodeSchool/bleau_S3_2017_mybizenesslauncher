@@ -26,11 +26,14 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
             ;
 
     }
+
     public function myFindOneByChatIdViewer($texts_chat, $currentUser)
     {
         return $this ->createQueryBuilder('t')
             ->select('t')
+
             ->orderBy('t.dateCreation', 'DESC')
+
             ->setMaxResults(10)
             ->join('t.chats', 'chat')
             ->where('chat.id = :chatId')
@@ -51,12 +54,14 @@ class TextRepository extends \Doctrine\ORM\EntityRepository
             ->join('chat.profils', 'pro')
             ->andWhere('pro.id = :proId')
             ->setParameters(array(
+
                     'proId'=> $current->getId(),
                     'current' => $current->getPrenom()
                 )
             )
             ->groupBy('t.profil')
         ;
+
         return $qb->getQuery()->getResult();
     }
     public function myFindViews(Profil $current)

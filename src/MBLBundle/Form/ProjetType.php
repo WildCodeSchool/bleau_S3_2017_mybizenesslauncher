@@ -27,8 +27,13 @@ class ProjetType extends AbstractType
             ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true
             ))
-            ->add('siteInternet'.$options["locale"], UrlType::class, array(
-                'required' => false
+
+            ->add('description', TextareaType::class, array(
+                'required' => true
+            ))
+            ->add('siteInternet', UrlType::class, array(
+                'required' => false,
+
             ))
             ->add('ebustaUrl'.$options["locale"], UrlType::class, array(
                 'required' => false

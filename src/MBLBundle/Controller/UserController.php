@@ -16,12 +16,31 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 class UserController extends Controller
 {
+
+
     public function countViewsAction()
+    {
+        $content = 0;
+        if(!is_null($this->getUser()))
+        {
+            $em = $this->getDoctrine()->getManager();
+            $current = $this->getUser();
+            $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
+
+            $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
+
+        }
+return new Response($content);
+    }
+
+    public function indexAction()
+
     {
         $content = 0;
         if(!is_null($this->getUser()))
@@ -47,6 +66,7 @@ class UserController extends Controller
             'profils' =>$profils,
             'locale'=>$locale
         ));
+
     }
 
     public function homepageProfilAction()
@@ -58,10 +78,11 @@ class UserController extends Controller
     {
         $locale= $request->getLocale();
         $profil = $this->getUser();
-        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil, array('locale'=>$locale));
+        $editForm = $this->createForm('MBLBundle\Form\ProfilType', $profil, array('locale'=>$locale
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('showProfil' , array('id' => $profil->getId()));
@@ -102,26 +123,29 @@ class UserController extends Controller
 
         $locale = $request->getLocale();
 
+
         $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType',null , array('locale' => $locale));
 
         $em = $this->getDoctrine()->getManager();
 
-        $idloc = $request->request->get('mblbundle_profil')['localisation'];
+        $idloc = $request->request->get('mblbundle_profil')['localisation']['localisation'];
         $idmetier = $request->request->get('mblbundle_profil')['metier'];
 
-        if (!empty($idloc) && !empty($idmetier))
+        if (!empty($idloc) && is_numeric($idmetier))
         {
             $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc, $locale);
         }
-        elseif(!empty($idloc) || !empty($idmetier))
+        elseif(!empty($idloc) || is_numeric($idmetier))
         {
-            if (!empty($idloc))
+            if (is_numeric($idmetier))
             {
+
                 $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocalisation($idloc, $locale);
             }
             else
             {
                 $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier, $locale);
+
             }
         }
         else
@@ -315,8 +339,8 @@ class UserController extends Controller
     public function deleteProfilRechercheAction(Request $request, ProfilRecherche $profilRecherche)
     {
         $em = $this->getDoctrine()->getManager();
-//        dump($profilRecherche);die();
-        $projet = $profilRecherche->getProjets()[0];
+////        dump($profilRecherche);die();
+//        $projet = $profilRecherche->getProjets()[0];
         $em->remove($profilRecherche);
         $content = new JsonResponse($profilRecherche);
         $em->flush();
@@ -464,11 +488,12 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($projet);
             $em->flush();
-//            $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
+            $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
             return $this->redirectToRoute('showMyProject');
         }
+
         else {
-//            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
+            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
             return $this->redirectToRoute('showMyProject');
         }
     }
@@ -486,11 +511,13 @@ class UserController extends Controller
         $chat = $em->getRepository('MBLBundle:Chat')->findOneById($id);
         $text_content = $em->getRepository('MBLBundle:Text')->myfindOneByChatId($id);
         $msgs = $em->getRepository('MBLBundle:Text')->myFindOneByChatIdViewer($id, $currentUserPrenom);
+
         if(!empty($msgs))
         {
             foreach ( $msgs as $item) {
                 if ($item->getSeen() == 1)
                 {
+
                 }
                 else
                 {
@@ -498,6 +525,7 @@ class UserController extends Controller
                     $em->persist($item);
                     $em->flush();
                 }
+
             }
         }
         //l'ensemble des chats pour lesquelles l'utilisateur peut discuter
@@ -531,6 +559,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $currentUser = $this->getUser();
         $connectedUser = $em->getRepository('MBLBundle:Profil')->findOneById($id);
+
 //        Verifier qu'une connection n'existe pas déjà entre les deux utilisateurs
         $chatexist = $em->getRepository('MBLBundle:Chat')->myFindChatExist($currentUser, $connectedUser);
 //        dump($chatexist);die();
@@ -558,12 +587,13 @@ class UserController extends Controller
         $em->flush();
         return $this->redirectToRoute('connect');
     }
+
     public function connectAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $currentUser = $this->getUser();
         $countViews = 0;
-        if(!is_null($currentUser))
+
         {
             $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentUser);
         }
@@ -576,11 +606,13 @@ class UserController extends Controller
             $chat->setConnectionbyid($connectId);
             $em->flush();
         }
+
         //Envoie de mes chats par rapport aux profils de l'utilisateur qui consulte le site
         $chats = $em->getRepository('MBLBundle:Chat')->myfindByProfil($currentUser);
         return $this->render('@MBL/Users/connection.html.twig', array(
             'chats' => $chats,
             'countV' => $countViews
+
         ));
     }
     public function chatDisconnectAction(Chat $chat)

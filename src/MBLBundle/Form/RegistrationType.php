@@ -36,6 +36,7 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nom')
+
             ->add('prenom')
             ->add('lng')
             ->remove('username')
@@ -166,6 +167,7 @@ class RegistrationType extends AbstractType
             'data_class' => 'MBLBundle\Entity\Profil'
         ));
     }
+
 
     public function getParent()
     {

@@ -65,6 +65,7 @@
                            aider à porter au sommet !
                            href="{{path('showAllProfils')}}">Profils</a></li>
                 </ul>
+
                 <ul class="side-nav" id="mobile-demo">
                     <li><a class="color" href="#">Bonjour  {{app.user.prenom}}</a></li>
                     <li class="divider"></li>
@@ -100,6 +101,7 @@
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
                             Parcourir les profils</a></li>
                     <li><a class="color" href=#modal1>Connexion</a>
+
                     </li>
                 </ul>
                 <ul class="right show-on-medium-and-down hide-on-med-and-up">
@@ -186,11 +188,14 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js">
+
     </script>
     <script>
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
+
             $(".dropdown-button").dropdown();
+
             $('.modal').modal();
             /*$('ul.tabs').tabs();
              $('ul.tabs').tabs('select_tab', 'tab_id');
@@ -199,5 +204,6 @@
                 $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
             });
         });
+
     </script>
 {% endblock %}

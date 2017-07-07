@@ -104,32 +104,47 @@
                                         {{ form_errors(form.linkedin) }}
 
                                     </div>
+
+
                                     <div class="col s6">
+<<<<<<< HEAD
                                         <div class="col s12 center">
                                             <label>{{ 'Localisation'|trans }}</label>
                                         </div>
+=======
+>>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
 
-                                        {{ form_widget(form.localisation, {'attr' : {'class' : 'customRegister ','placeholder' : ' Localisation'}}) }}
+
+                                        {{ form_widget(form.localisation, {'attr' : {'class' : 'center customRegister ','placeholder' : ' Localisation'}}) }}
                                         {{ form_errors(form.localisation) }}
                                     </div>
-
                                     <div class="col s6">
                                         <div class="col s12 center">
+<<<<<<< HEAD
                                             <label>{{ 'Ville'|trans }}</label>
+=======
+                                            {{ form_label(form.metier, 'Quel est votre profil :') }}
+>>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
                                         </div>
-
-                                        {{ form_widget(form.ville, {'attr' : {'class' : 'customRegister ', 'placeholder' : ' Ville'}}) }}
-                                        {{ form_errors(form.ville) }}
-                                    </div>
-
-
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Quel est votre profil'|trans }}</label>
-                                        </div>
-                                        {{ form_widget(form.metier, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
+                                        {{ form_widget(form.metier, {'attr' : {'class' : 'center customRegister lighten-4'}}) }}
                                         {{ form_errors(form.metier) }}
                                     </div>
+                                    <div class="col s6">
+                                        <div class="col s12 center">
+<<<<<<< HEAD
+                                            <label>{{ 'Quel est votre profil'|trans }}</label>
+=======
+                                            {{ form_label(form.ville, 'Ville') }}
+>>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
+                                        </div>
+
+                                        {{ form_widget(form.ville, {'attr' : {'class' : 'center customRegister ', 'placeholder' : ' Ville'}}) }}
+                                        {{ form_errors(form.ville) }}
+
+                                    </div>
+
+
+
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             <label>{{ 'Disponible en tant que'|trans }}</label>
