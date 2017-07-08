@@ -35,6 +35,15 @@ class LocalisationProfilType extends AbstractType
                 'expanded'=> false,
                 'required' => false,
                 'placeholder'=> ' Quel est votre profil?'
+//                if($options["locale"] == 'fr')
+//                {
+//                    'placeholder'=> ' Quel est votre profil?'
+//                }
+//                else
+//                {
+//                    'placeholder'=> ' profili?'
+//                }
+
             ))
             ->add('localisation', ChoiceType::class, array(
                 'choices' => array(

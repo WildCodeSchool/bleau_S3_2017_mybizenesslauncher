@@ -1,86 +1,100 @@
-'Pour les porteurs de projet': 'Per i leader di progetto'
+'Pour les porteurs de projet': 'Pour les porteurs de projet'
 index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
-'Pour ceux qui cherchent un projet à intégrer': 'Per chi cerca un progetto di integrazione'
+'Pour ceux qui cherchent un projet à intégrer': 'Pour ceux qui cherchent un projet à intégrer'
 index.description.howDo: 'Sei un vero erba startupper, si hanno le competenze per ottenere il beneficio di un progetto esistente, i progetti dei corsi per trovare che si potrebbe aiutare a portare il top!'
-'Outils pour se lancer': 'Strumenti per lanciare'
-'Trouve sur MyStartupTools.com': 'Trovato su MyStartupTools.com'
-'Tous les outils pour t’aider à lancer ton activité': 'Tutti gli strumenti per aiutarti a gestire la vostra azienda.'
-'Finance ton projet': 'Finanziare il progetto'
+'Outils pour se lancer': 'Outils pour se lancer'
+'Trouve sur MyStartupTools.com': 'Trouve sur MyStartupTools.com'
+'Tous les outils pour t’aider à lancer ton activité': 'Tous les outils pour t’aider à lancer ton activité.'
+'Finance ton projet': 'Finance ton projet'
 index.description.ebusta: "Con le sue buste pubblici E-busta.com propongono di fare campagne di donazione di crowdfunding in cambio per aiutare a finanziare il progetto. Verrà applicata solo una commissione del 4% della somma raccolta, rendendo sito E-busta crowdfunding mercato più conveniente.\n"
-'Vous cherchez un associé': 'Alla ricerca di un compagno'
-'Parcourir les projets': 'Percorrere progetti'
-'Dépose ton projet': 'Rimozione vostro progetto'
-'Profils recherchés': 'Profili ricercati'
-Localisation: Posizione
-Description: Descrizione
-'Vous cherchez un projet où vous investir': 'Alla ricerca di un progetto in cui si investe'
-'Dépose ton profil': 'Rimozione del profilo'
-Profil: Profili
-'Parcourir les profils': 'Percorrere progetti'
-Bonjour: Buongiorno
-'Mon compte': 'Il mio conto'
-'Gérer mon profil': 'Gestire il mio profilo'
-'Voir mon profil': 'Visualizza il mio profilo'
-'Créer un projet': 'Crea progetto'
-'Voir mes projets': 'Vedere i miei progetti'
-'Mes discussions': 'Mie discussioni'
-'Log out': Esci
-'Liens utiles': 'Link utili'
-'A propos': 'A proposito'
-'Mention légales': 'Avviso legale'
-Presse: Stampa
-Contact: Contatto
-'Les projets': Progetti
-'Les profils': Profili
-Conseils: Consiglio
-Suivez: Seguire
-'More Links': 'Altri link'
-'Chat avec': 'discutere con'
-Création: Creazione
-Envoyer: Mandare
-'Nom:': Nome
-'Prenom:': Conome
-Discuter: Discutere
-'Accepter de discuter': 'Accetto di discutere'
-'Nouveau Projet': 'Nuovo Progetto'
-'Mise en Relation': Collegamento
-'Voulez-vous vraiment supprimer cette personne?': 'Vuoi veramente cancellare questa persona?'
-'Nouveau Profil recherché': 'Nuovo profilo ricercato'
-'Profil Recherché': 'Profilo desiderato'
-Disponibilité: Disponibilità
-'En tant que': Come
-Investissement: Investimento
-Compétences: Competenze
-Supprimer: Rimuovere
-'Modifier mon profil': 'Modifica Profilo'
-'Voir mon profil public': 'Visualizza il mio profilo pubblico'
-'Actualiser le projet': 'Refresh Progetto'
-Editer: Modifica
-'Gérer mes projets': 'Gestisci i tuoi progetti'
-'Nom et prénom :': 'Cognome e nome: '
-'Parcourir vos projets': 'Sfoglia i vostri progetti'
-Voir: Vedere
-'Projet créé le': 'Progetto creato il'
-'Non renseignée': imprecisato
-'Site Internet': 'Sito web'
-'Non renseigné': Sconosciuto
-Enveloppe: Busta
-'Type de projet': 'Tipo di progetto'
-Secteur: Settore
-'Modifier mon projet': 'Modifica il mio progetto'
-'Mon profil public': 'Il mio profilo pubblico'
-'Description:': 'Descrizione:'
-'Localisation:': 'Posizione:'
-'renseignez votre localisation': 'Specifica la tua posizione'
-'Investissement:': 'Investimento:'
-'En tant que:': 'Come:'
-'renseignez votre status': 'Specificare il proprio stato'
-'Disponibilité:': 'Disponibilità:'
-'Où:': 'Dove:'
-'Métiers:': 'Affari:'
-'précisez votre métier': 'Specificare vostri commerci'
-'Compétences:': 'Competenze:'
-'renseignez vos compétences': 'Specificare le tue abilità'
-Enregistrez: Salvare
-Fichier: File
-Connectez-vous: Accesso
+'Vous cherchez un associé': 'Vous cherchez un associé'
+'Parcourir les projets': 'Parcourir les projets'
+'Dépose ton projet': 'Parcourir les projets'
+'Profils recherchés': 'Profils recherchés'
+Localisation: Localisation
+Description: Description
+'Vous cherchez un projet où vous investir': 'Vous cherchez un projet où vous investir'
+'Dépose ton profil': 'Dépose ton profil'
+Profil: Profil
+'Parcourir les profils': 'Parcourir les profils'
+Bonjour: Buonjour
+'Mon compte': 'Mon compte'
+'Gérer mon profil': 'Gérer mon profil'
+'Voir mon profil': 'Voir mon profil'
+'Créer un projet': 'Créer un projet'
+'Voir mes projets': 'Voir mes projets'
+'Mes discussions': 'Mes discussions'
+'Log out': Déconnection
+'Liens utiles': 'Liens utiles'
+'A propos': 'A propos'
+'Mention légales': 'Mention légales'
+Presse: Presse
+Contact: Contact
+'Les projets': Les projets
+'Les profils': Les profils
+Conseils: Conseils
+Suivez: Souivez
+'More Links': 'Plus de lien'
+'Chat avec': 'chat avec'
+Création: Création
+Envoyer: Envoyer
+'Nom:': Nom
+'Prenom:': Prénom
+Discuter: Discuter
+'Accepter de discuter': 'Accepter de discuter'
+'Nouveau Projet': 'Nouveau Projet'
+'Mise en Relation': 'Mise en Relation'
+'Voulez-vous vraiment supprimer cette personne?': 'Voulez-vous vraiment supprimer cette personne?'
+'Nouveau Profil recherché': 'Nouveau Profil recherché'
+'Profil Recherché': 'Profil Recherché'
+Disponibilité: Disponibilité
+'En tant que': 'En tant que'
+Investissement: Investissement
+Compétences: Compétences
+Supprimer: Supprimer
+'Modifier mon profil': 'Modifier mon profil'
+'Voir mon profil public': 'Voir mon profil public'
+'Actualiser le projet': 'Actualiser le projet'
+Editer: Editer
+'Gérer mes projets': 'Gérer mes projets'
+'Nom et prénom :': 'Nom et prénom :'
+'Parcourir vos projets': 'Parcourir vos projets'
+Voir: Voir
+'Projet créé le': 'Projet créé le'
+'Non renseignée': 'Non renseignée'
+'Site Internet': 'Site Internet'
+'Non renseigné': 'Non renseigné'
+Enveloppe: Enveloppe
+'Type de projet': 'Type de projet'
+Secteur: Secteur
+'Modifier mon projet': 'Modifier mon projet'
+'Mon profil public': 'Mon profil public'
+'Description:': 'Description:'
+'Localisation:': 'Localisation:'
+'renseignez votre localisation': 'renseignez votre localisation'
+'Investissement:': 'Investissement'
+'En tant que:': 'En tant que:'
+'renseignez votre status': 'renseignez votre status'
+'Disponibilité:': 'Disponibilité:'
+'Où:': 'Où:'
+'Métiers:': 'Métiers:'
+'précisez votre métier': 'précisez votre métier'
+'Compétences:': 'Compétences:'
+'renseignez vos compétences': 'renseignez vos compétences'
+Enregistrez: Enregistrez
+Fichier: Fichier
+Connectez-vous: Connectez-vous
+Menu: Menu
+Projet: Projet
+inscrivez-vous: inscrivez-vous
+'Votre Photo': 'Votre Photo'
+rechercher: rechercher
+Métiers: Métiers
+Statut: Statut
+Mobilité: Mobilité
+Domicile: Domicile
+Titre: Titre
+'ebusta Url': 'ebusta Url'
+Photo: Photo
+'edit Profil recherché': 'edit Profil recherché'
+'porteur du projet': 'porteur du projet'

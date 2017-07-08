@@ -14,14 +14,15 @@
                     {{ form_start(form_localisation) }}
 
                     <div class="col s3 m6 l6">
-                        {{ form_widget(form_localisation.localisation) }}
+                        {{ form_row(form_localisation.localisation, {'attr': {'placeholder': ' Prénom '}}) }}
                         {{ form_errors(form_localisation.localisation) }}
                     </div>
                     <div class="col s3 m6 l6">
-                        {{ form_row(form_localisation.metier) }}
+
+                        {{ form_row(form_localisation.metier, {'attr': {'placeholder': ' Prénom '}}) }}
                         {{ form_errors(form_localisation.metier) }}
                     </div>
-                    <input class="btn" name="Recherchez" type="submit">
+                    <input class="btn" name="Choisissez" type="submit" value="{{ 'rechercher'|trans }}">
                     {{ form_end(form_localisation) }}
                 </div>
 

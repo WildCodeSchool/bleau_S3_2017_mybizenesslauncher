@@ -22,7 +22,7 @@
                         {{ render(controller('MBLBundle:User:countViews')) }}
                     </a></li>
 
-                <li><a href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
             <div class="nav-wrapper header">
                 <a class="color darkerBiz" href="{{ path('mbl_homepage') }}">Innova'Up<span class="dotCom">.com
@@ -76,7 +76,7 @@
                     <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
                     <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                             {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
-                    <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
+                    <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
                 </ul>
             </div>
         </nav>
