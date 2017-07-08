@@ -11,14 +11,14 @@
         <nav xmlns="http://www.w3.org/1999/html">
 
             <ul id="dropdown1" class="dropdown-content">
-                <li><a class="color" href="#">Bonjour  {{app.user.nom}}</a></li>
+                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
                 <li class="divider"></li>
-                <li><a href="{{ path('homepageProfil') }}">Mon compte</a></li>
-                <li><a href="{{ path('editProfil') }}">Gérer mon profil</a></li>
-                <li><a href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
-                <li><a href="{{ path('createProjet') }}">Créer un projet</a></li>
-                <li><a href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                <li><a href="{{ path('connect') }}">Mes discussions
+                <li><a href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
+                <li><a href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
+                <li><a href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a></li>
+                <li><a href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
+                <li><a href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
+                <li><a href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                         {{ render(controller('MBLBundle:User:countViews')) }}
                     </a></li>
 
@@ -41,15 +41,15 @@
                             tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
 
                 <a href="#" data-activates="mobile-demo"
-                   class="button-collapse right"><i class="color material-icons">menu</i>
+                   class="button-collapse right"><i class="color material-icons">{{ 'Menu'|trans }}</i>
                 </a>
                 <ul class="right hide-on-med-and-down">
                     <li><a class="color darkerTop"  href="{{ path('showProject') }}">
-                            Parcourir les projets</a></li>
+                            {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">
-                            Parcourir les profils</a></li>
+                            {{ 'Parcourir les profils'|trans }}</a></li>
                     <li><a class="color dropdown-button" href="#!" data-activates="dropdown1">
-                            <i class="right">Mon Compte</i></a></li>
+                            <i class="right">{{ 'Mon compte'|trans }}</i></a></li>
                 </ul>
 
                 <ul class="right show-on-medium-and-down hide-on-med-and-up">
@@ -57,24 +57,25 @@
                            data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
                            le décrire et détailler les profils de cofondateurs et associés que tu cherches.
                            Ils auront alors accès à la description du projet et pourront te contacter."
-                           href="{{ path('showProject') }}">Projets</a></li>
+                           href="{{ path('showProject') }}">{{ 'Projet'|trans }}</a></li>
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
                            data-tooltip="Pour ceux qui cherchent un projet à intégrer:
                            Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
                            d’un projet existant, parcours les projets pour trouver celui que tu pourrais
                            aider à porter au sommet !
-                           href="{{path('showAllProfils')}}">Profils</a></li>
+                           href="{{path('showAllProfils')}}">{{ 'Profil'|trans }}</a></li>
                 </ul>
 
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a class="color" href="#">Bonjour  {{app.user.prenom}}</a></li>
+                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}</a></li>
                     <li class="divider"></li>
-                    <li><a class="color" href="{{ path('homepageProfil') }}">Mon compte</a></li>
-                    <li><a class="color" href="{{ path('editProfil') }}">Gérer mon profil</a></li>
-                    <li><a class="color" href="{{ path('showMyProfil') }}">Voir mon profil</a></li>
-                    <li><a class="color" href="{{ path('createProjet') }}">Créer un projet</a></li>
-                    <li><a class="color" href="{{ path('showMyProject') }}">Voir mes projets</a></li>
-                    <li><a class="color" href="{{ path('connect') }}">Mes discussions {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
+                    <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
+                            {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">Log out</a></li>
                 </ul>
             </div>
@@ -97,10 +98,10 @@
                             tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="color darkerTop" href="{{ path('showProject') }}">
-                            Parcourir les projets</a></li>
+                            {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
-                            Parcourir les profils</a></li>
-                    <li><a class="color" href=#modal1>Connexion</a>
+                            {{ 'Parcourir les profils'|trans }}</a></li>
+                    <li><a class="color" href=#modal1>{{ 'Connectez-vous'|trans }}</a>
 
                     </li>
                 </ul>
@@ -109,13 +110,13 @@
                            data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
                            le décrire et détailler les profils de cofondateurs et associés que tu cherches.
                            Ils auront alors accès à la description du projet et pourront te contacter."
-                           href="{{ path('showProject') }}">Projets</a></li>
+                           href="{{ path('showProject') }}">{{ 'Projet'|trans }}</a></li>
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
                            data-tooltip="Pour ceux qui cherchent un projet à intégrer:
                            Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
                            d’un projet existant, parcours les projets pour trouver celui que tu pourrais
                            aider à porter au sommet !
-                           href="{{path('showAllProfils')}}">Profils</a></li>
+                           href="{{path('showAllProfils')}}">{{ 'Profil'|trans }}</a></li>
                     <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
                         </a>
                     </li>
@@ -129,8 +130,8 @@
             <div class="row">
                 <div class="col s12 tabs">
                     <ul class="tabs">
-                        <li class="tab col s6 active"><a href="#Connexion">Connexion</a></li>
-                        <li class="tab col s6"><a href="#Register">S'inscrire</a></li>
+                        <li class="tab col s6 active"><a href="#Connexion">{{ 'Connectez-vous'|trans }}</a></li>
+                        <li class="tab col s6"><a href="#Register">{{ 'inscrivez-vous'|trans }}</a></li>
                     </ul>
                 </div>
                 <div id="Connexion" class="col s12">{{ render(controller('FOSUserBundle:Security:login')) }}</div>
