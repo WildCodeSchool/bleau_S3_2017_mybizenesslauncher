@@ -28,12 +28,12 @@
                     <div class="siteInternet_row center-align">
                         {{ form_label(form.siteInternet) }}
                         {{ form_errors(form.siteInternet) }}
-                        {{ form_widget(form.siteInternet, {'attr': {'placeholder': '  url:'}}) }}
+                        {{ form_widget(form.siteInternet) }}
                     </div>
                     <div class="ebustaUrl_row center-align">
                         {{ form_label(form.ebustaUrl) }}
                         {{ form_errors(form.ebustaUrl) }}
-                        {{ form_widget(form.ebustaUrl, {'attr': {'placeholder': '  url:'}}) }}
+                        {{ form_widget(form.ebustaUrl) }}
                     </div>
                     <div class="typeDeProjet_row center-align">
                         {{ form_label(form.typeDeProjet) }}
@@ -78,7 +78,8 @@
                 </div>
                 <div class="col s12 m6 l6 offset-l1">
                     <div class="col s12 center bouttonAjout">
-                        <a href="{{ path('newProfilRechercheProjet', {'id' : projet.id}) }}"><button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
+                        <a href="{{ path('newProfilRechercheProjet', {'id' : projet.id}) }}">
+                            <button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
                         </a>
                     </div>
                     <div class="profil_recherche">
@@ -158,7 +159,8 @@
                                 <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
                             </div>
                             <div class="col s12 center editbtn">
-                            <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
+                            <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}">
+                                <button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
                         </div>
 
                         </div>

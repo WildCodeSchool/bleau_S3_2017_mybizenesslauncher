@@ -27,9 +27,11 @@ class ProjetType extends AbstractType
             ))
             ->add('siteInternet', UrlType::class, array(
                 'required' => false,
+                'data' => ' http://',
             ))
             ->add('ebustaUrl', UrlType::class, array(
                 'required' => false,
+                'data' => ' http://',
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
