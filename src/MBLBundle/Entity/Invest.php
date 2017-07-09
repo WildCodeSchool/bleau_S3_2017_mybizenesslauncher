@@ -158,4 +158,33 @@ class Invest
     {
         return $this->profilrecherches;
     }
+    /**
+     * @var \MBLBundle\Entity\Profil
+     */
+    private $profils;
+
+
+    /**
+     * Set profils
+     *
+     * @param \MBLBundle\Entity\Profil $profils
+     *
+     * @return Invest
+     */
+    public function setProfils(\MBLBundle\Entity\Profil $profils = null)
+    {
+        $this->profils = $profils;
+
+        return $this;
+    }
+
+    /**
+     * Get profils
+     *
+     * @return \MBLBundle\Entity\Profil
+     */
+    public function getProfils()
+    {
+        return $this->profils;
+    }
 }

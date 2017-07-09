@@ -1,16 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
-<div id="register">
 
-    {{ form_start(form) }}
-    {{ form_rest(form) }}
-<div class="center">
-    <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
-</div>
 
-{{ form_end(form) }}
-
-</div>
-{#
 
 <div id="register">
     <div class="container">
@@ -25,7 +15,7 @@
                     <div class="col s6">
                         <div class="row">
                             <div class="col s12 center">
-                                <label>{{ 'Nom'|trans }}*</label>
+                                <label>{{ 'Nom:'|trans }}*</label>
                             </div>
                         </div>
                         {{ form_widget(form.nom, {'attr' : {'placeholder' : ' Nom'}}) }}
@@ -34,7 +24,7 @@
                     <div class="col s6">
                         <div class="row">
                             <div class="col s12 center">
-                                <label>{{ 'Prénom'|trans }}*</label>
+                                <label>{{ 'Prenom:'|trans }}*</label>
                             </div>
                         </div>
                         {{ form_widget(form.prenom, {'attr' : {'placeholder' : ' Prénom'}}) }}
@@ -43,7 +33,7 @@
                     <div class="col s6">
                         <div class="row">
                             <div class="col s12 center">
-                                <label>{{ 'Email'|trans }}*</label>
+                                <label>{{ 'E-mail'|trans }}*</label>
                             </div>
                         </div>
 
@@ -73,8 +63,8 @@
                     </div>
                 </div>
 
-                #}
-{#  Registration supplémentaire (optionnel) #}{#
+
+  Registration supplémentaire (optionnel)
 
 
                 <div class="row">
@@ -107,12 +97,10 @@
 
 
                                     <div class="col s6">
-<<<<<<< HEAD
+
                                         <div class="col s12 center">
                                             <label>{{ 'Localisation'|trans }}</label>
                                         </div>
-=======
->>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
 
 
                                         {{ form_widget(form.localisation, {'attr' : {'class' : 'center customRegister ','placeholder' : ' Localisation'}}) }}
@@ -120,22 +108,17 @@
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
-<<<<<<< HEAD
-                                            <label>{{ 'Ville'|trans }}</label>
-=======
-                                            {{ form_label(form.metier, 'Quel est votre profil :') }}
->>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
+
+                                            <label>{{ 'Quel est votre profil'|trans }}</label>
+
                                         </div>
                                         {{ form_widget(form.metier, {'attr' : {'class' : 'center customRegister lighten-4'}}) }}
                                         {{ form_errors(form.metier) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
-<<<<<<< HEAD
-                                            <label>{{ 'Quel est votre profil'|trans }}</label>
-=======
-                                            {{ form_label(form.ville, 'Ville') }}
->>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
+                                         <label>{{ 'Ville'|trans }}</label>
+
                                         </div>
 
                                         {{ form_widget(form.ville, {'attr' : {'class' : 'center customRegister ', 'placeholder' : ' Ville'}}) }}
@@ -193,4 +176,4 @@
             </div>
         </div>
     </div>
-</div>#}
+</div>

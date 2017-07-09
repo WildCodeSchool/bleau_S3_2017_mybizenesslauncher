@@ -17,8 +17,8 @@ MBLBundle\Entity\Invest:
             length: 255
     lifecycleCallbacks: {  }
 
-    oneToOne:
-        profil:
+    manyToOne:
+        profils:
             targetEntity: MBLBundle\Entity\Profil
             mappedBy: invest
 
