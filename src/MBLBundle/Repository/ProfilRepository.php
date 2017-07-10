@@ -108,8 +108,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('p.id as id', 'p.prenom as prenom',
             'p.description as description', 'p.localisation as localisation',
             'p.nom as nom', 'p.ville as ville', 'p.linkedIn as linkedIn')
-            ->where('p.lng = :locale')
-            ->setParameter('locale', $locale)
             ->andWhere('p.id = :loca')
             ->setParameter('loca', $idPro)
 

@@ -21,22 +21,22 @@
                         <div class="titre_row center-align">
                            <label>{{ 'Titre'|trans }}</label>
                             {{ form_errors(attribute(form, 'titre' ~ locale )) }}
-                            {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': '  titre:'}}) }}
+                            {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
                         </div>
                         <div class="description_row center-align">
                             <label>{{ 'Description'|trans }}</label>
                             {{ form_errors(attribute(form, 'description' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': '  Description'}}) }}
+                            {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
                         </div>
                         <div class="siteInternet_row center-align">
                              <label>{{ 'Site Internet'|trans }}</label>
                             {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': '  url:'}}) }}
+                            {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
                         </div>
                         <div class="ebustaUrl_row center-align">
                             <label>{{ 'ebusta Url'|trans }}</label>
                             {{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': '  url:'}}) }}
+                            {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': 'ebusta Url'|trans}}) }}
 
                         </div>
                     </div>
@@ -54,11 +54,11 @@
                         <div class="localisation center-align">
                             <label>{{ 'Localisation'|trans }}</label>
                             {{ form_errors(form.localisation ) }}
-                            {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
+                            {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
                         </div>
                         <div class="ville center-align">
-                            {{ form_label(form.ville, 'Ville :') }}
-                            {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                              <label>{{ 'Ville'|trans }}</label>
+                            {{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
                             {{ form_errors(form.ville) }}
                         </div>
                
