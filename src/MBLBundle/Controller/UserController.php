@@ -116,30 +116,29 @@ class UserController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $idloc = $request->request->get('mblbundle_profil')['localisation']['localisation'];
-        $idmetier = $request->request->get('mblbundle_profil')['metier'];
+        $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
 
-        if (!empty($idloc) && is_numeric($idmetier))
-        {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc, $locale);
-        }
-        elseif(!empty($idloc) || is_numeric($idmetier))
-        {
-            if (is_numeric($idmetier))
-            {
+        if ($request->isMethod('POST')) {
 
-                $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocalisation($idloc, $locale);
+
+            $idloc = $request->request->get('mblbundle_profil')['localisation'];
+            $idmetier = $request->request->get('mblbundle_profil')['metier'];
+
+            if (!empty($idloc) && is_numeric($idmetier)) {
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc, $locale);
+            } elseif (!empty($idloc) || is_numeric($idmetier)) {
+                if (is_numeric($idmetier)) {
+                    $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier, $locale);
+
+                } else {
+
+                    $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocalisation($idloc, $locale);
+                }
+            } else {
+                $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
             }
-            else
-            {
-                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier, $locale);
+        }
 
-            }
-        }
-        else
-        {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
-        }
         return $this->render('@MBL/Users/showAllProfils.html.twig', array(
             'profils'=>$profils,
             'form_localisation' => $form_loc->createView()//

@@ -209,14 +209,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
 
         foreach ($profils as $key => $profil)
         {
-//            Get metier et création d'un sous tableau'
-            $qb = $this->createQueryBuilder('p');
-            $qb->where('p.id = :id')
-                ->join('p.metier', 'm')
-                ->select('m.metier' . $locale . ' as metier')
-                ->setParameter('id', $profil['id']);
-            $profils[$key]['metier'] = $qb->getQuery()->getOneOrNullResult();
-
 //            Get fichier si défini et si null
             $qb = $this->createQueryBuilder('p');
             $qb->where('p.id = :id')
