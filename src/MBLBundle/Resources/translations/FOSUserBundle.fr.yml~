@@ -1,4 +1,3 @@
-layout.login: __layout.login
 'Pour les porteurs de projet': 'Pour les porteurs de projet'
 index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
 'Pour ceux qui cherchent un projet à intégrer': 'Pour ceux qui cherchent un projet à intégrer'
@@ -31,8 +30,8 @@ Bonjour: Buonjour
 'Mention légales': 'Mention légales'
 Presse: Presse
 Contact: Contact
-'Les projets': Les projets
-'Les profils': Les profils
+'Les projets': 'Les projets'
+'Les profils': 'Les profils'
 Conseils: Conseils
 Suivez: Souivez
 'More Links': 'Plus de lien'
@@ -73,7 +72,7 @@ Secteur: Secteur
 'Description:': 'Description:'
 'Localisation:': 'Localisation:'
 'renseignez votre localisation': 'renseignez votre localisation'
-'Investissement:': 'Investissement'
+'Investissement:': Investissement
 'En tant que:': 'En tant que:'
 'renseignez votre status': 'renseignez votre status'
 'Disponibilité:': 'Disponibilité:'
@@ -99,4 +98,27 @@ Titre: Titre
 Photo: Photo
 'edit Profil recherché': 'edit Profil recherché'
 'porteur du projet': 'porteur du projet'
-'Enregistrez-vous': 'Enregistrez-vous'
+Enregistrez-vous: Enregistrez-vous
+layoutlogout: Se déconnecter
+Bonjour: Bonjour
+'Votre mot de passe a bien été réinitialisé!': 'Votre mot de passe a bien été réinitialisé!'
+Enregistrez-vous: Enregistrez-vous
+'Nom:': 'Nom:'
+'Prenom:': 'Prenom:'
+E-mail: E-mail
+'Mot de passe': 'Mot de passe'
+'Confirmer votre mot de passe': 'Confirmer votre mot de passe'
+'Ajoutez une description plus complête': 'Ajoutez une description plus complête'
+Description: Description
+'Votre compte linkedIn': 'Votre compte linkedIn'
+Localisation: Localisation
+'Quel est votre profil': 'Quel est votre profil'
+Ville: Ville
+'Disponible en tant que': 'Disponible en tant que'
+Compétences: Compétences
+Disponibilité: Disponibilité
+'Où ça ?': 'Où ça ?'
+'Investissement possible': 'Investissement possible'
+'veuillez confirmer la création de votre compte en cliquant sur lien qui suit.': 'veuillez confirmer la création de votre compte en cliquant sur lien qui suit.'
+'A bientôt sur Innova''Up': 'A bientôt sur Innova''Up'
+Connectez-vous: Connectez-vous

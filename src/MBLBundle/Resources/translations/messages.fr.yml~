@@ -30,8 +30,8 @@ Bonjour: Buonjour
 'Mention légales': 'Mention légales'
 Presse: Presse
 Contact: Contact
-'Les projets': Les projets
-'Les profils': Les profils
+'Les projets': 'Les projets'
+'Les profils': 'Les profils'
 Conseils: Conseils
 Suivez: Souivez
 'More Links': 'Plus de lien'
@@ -72,7 +72,7 @@ Secteur: Secteur
 'Description:': 'Description:'
 'Localisation:': 'Localisation:'
 'renseignez votre localisation': 'renseignez votre localisation'
-'Investissement:': 'Investissement'
+'Investissement:': Investissement
 'En tant que:': 'En tant que:'
 'renseignez votre status': 'renseignez votre status'
 'Disponibilité:': 'Disponibilité:'
