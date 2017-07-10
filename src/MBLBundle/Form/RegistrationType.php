@@ -21,6 +21,7 @@ use MBLBundle\Entity\Ou;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 
 
@@ -38,7 +39,9 @@ class RegistrationType extends AbstractType
         $builder->add('nom')
 
             ->add('prenom')
-            ->add('lng')
+            ->add('lng', HiddenType::class, array(
+                             'data' => $this->locale,
+                             ))
             ->remove('username')
             ->add('description')
             ->add('linkedin', UrlType::class)

@@ -118,25 +118,11 @@ class UserController extends Controller
 
         $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
 
-        if ($request->isMethod('POST')) {
-
-
+        if ($request->isMethod('POST'))
+        {
             $idloc = $request->request->get('mblbundle_profil')['localisation'];
             $idmetier = $request->request->get('mblbundle_profil')['metier'];
-
-            if (!empty($idloc) && is_numeric($idmetier)) {
-                $profils = $em->getRepository('MBLBundle:Profil')->myfindByMetLoc($idmetier, $idloc, $locale);
-            } elseif (!empty($idloc) || is_numeric($idmetier)) {
-                if (is_numeric($idmetier)) {
-                    $profils = $em->getRepository('MBLBundle:Profil')->myfindByMet($idmetier, $locale);
-
-                } else {
-
-                    $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocalisation($idloc, $locale);
-                }
-            } else {
-                $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
-            }
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByVDeux($locale, $idloc, $idmetier);
         }
 
         return $this->render('@MBL/Users/showAllProfils.html.twig', array(
@@ -256,43 +242,7 @@ class UserController extends Controller
 
             ));
     }
-    // edit du profil recherché dans le edit project
-//
-//    public function newProfilRechercheProjectAction(Request $request, Projet $projet)
-//    {
-//
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $locale = $request->getLocale();
-//
-//        $profil_Recheche_exist =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProjet($projet, $locale);
-//
-//        $projet_profil = new ProfilRecherche();
-//        $form_pro = $this->createForm('MBLBundle\Form\ProfilRechercheType', $projet_profil, array(
-//            'locale' => $locale,
-//        ));
-//        $form_pro->handleRequest($request);
-//
-//        if ($form_pro->isValid()&&$form_pro->isSubmitted()) {
-//
-//            $em = $this->getDoctrine()->getManager();
-//
-//            $projet->addProfilsrecherch($projet_profil);
-//            $projet_profil->addProjet($projet);
-//            $em->persist($projet_profil);
-//            $em->flush();
-//
-//            return $this->redirectToRoute('editProjet', array('id'=>$projet->getId()));
-//        }
-//
-//        return $this->render('@MBL/Users/createProjetAddProfil.html.twig',
-//
-//            array('form_pro' => $form_pro->createView(),
-//                'projet' => $projet,
-//                'profil_Recheche_exist' => $profil_Recheche_exist,
-//
-//            ));
-//    }
+
     public function editProfilRechercheProjectAction(Request $request, ProfilRecherche $profilRecherche)
     {
 
@@ -326,8 +276,6 @@ class UserController extends Controller
     public function deleteProfilRechercheAction(Request $request, ProfilRecherche $profilRecherche)
     {
         $em = $this->getDoctrine()->getManager();
-////        dump($profilRecherche);die();
-//        $projet = $profilRecherche->getProjets()[0];
         $em->remove($profilRecherche);
         $content = new JsonResponse($profilRecherche);
         $em->flush();

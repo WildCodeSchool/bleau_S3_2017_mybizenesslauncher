@@ -41,7 +41,9 @@ class ProjetRechercheType extends AbstractType
                 'required'      => false,
                 'placeholder'   => '  Choisissez'
             ))
-            ->add('localisation', LocalisationProjetType::class)
+            ->add('localisation', LocalisationProjetType::class, array(
+                'label' => false
+            ))
      ;
     }
 
