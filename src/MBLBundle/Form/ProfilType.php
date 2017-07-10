@@ -101,7 +101,7 @@ class ProfilType extends AbstractType
                     'multiple'=> false,
                     'expanded'=> false,
                     'required' => false,
-                    'placeholder'=> ' Quel est votre profil?'
+                    'placeholder'=> 'Quel est votre profil?'|trans
             ))
             ->add('etq', EntityType::class,
                 array(
