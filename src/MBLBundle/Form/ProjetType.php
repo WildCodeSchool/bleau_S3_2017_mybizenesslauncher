@@ -37,6 +37,7 @@ class ProjetType extends AbstractType
             ))
             ->add('ebustaUrl'.$options["locale"], UrlType::class, array(
                 'required' => false
+
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',

@@ -25,6 +25,7 @@
                         {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': '  Description'}}) }}
                     </div>
                     <div class="siteInternet_row center-align">
+
                         <label>{{ 'Site Internet'|trans }}</label>
                         {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
                         {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': '  url:'}}) }}
@@ -76,7 +77,10 @@
                 </div>
                 <div class="col s12 m6 l6 offset-l1">
                     <div class="col s12 center bouttonAjout">
-                        <a href="{{ path('createProfilRechercheProjet', {'id' : projet.id}) }}"><button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
+
+                        <a href="{{ path('createProfilRechercheProjet', {'id' : projet.id}) }}">
+                            <button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
+
                         </a>
                     </div>
                     <div class="profil_recherche">
@@ -156,6 +160,7 @@
                                 <div class="col s12 center editbtn">
                                     <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
                                 </div>
+
 
                             </div>
 

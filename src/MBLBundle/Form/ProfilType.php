@@ -34,7 +34,8 @@ class ProfilType extends AbstractType
             ->add('prenom', TextType::class, array('required' => true))
             ->add('description', TextareaType::class)
             ->add('linkedIn', UrlType::class, array(
-                'required' => false
+                'required' => false,
+                'data' => ' http://'
             ))
 
             ->add('localisation', CountryType::class, array(

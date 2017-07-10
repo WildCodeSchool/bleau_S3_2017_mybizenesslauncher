@@ -147,7 +147,13 @@ h6 {
 }
 
 /* 2. INDEX */
-/* line 3, ../sass/_index.scss */
+/* line 2, ../sass/_index.scss */
+#index {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* line 8, ../sass/_index.scss */
 #index .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -155,17 +161,17 @@ h6 {
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 3, ../sass/_index.scss */
+  /* line 8, ../sass/_index.scss */
   #index .bandeau_homepage {
     display: none;
   }
 }
-/* line 13, ../sass/_index.scss */
+/* line 18, ../sass/_index.scss */
 #index h2 {
   font-size: 1.5em;
 }
 
-/* line 18, ../sass/_index.scss */
+/* line 23, ../sass/_index.scss */
 .Outils {
   padding-top: 70px;
   overflow-wrap: break-word;
@@ -177,80 +183,80 @@ h6 {
   hyphens: auto;
 }
 
-/* line 29, ../sass/_index.scss */
+/* line 34, ../sass/_index.scss */
 .Finance {
   margin-top: 30px;
 }
 
-/* line 33, ../sass/_index.scss */
+/* line 38, ../sass/_index.scss */
 .box_projet_profil * {
   text-align: center;
 }
 
-/* line 37, ../sass/_index.scss */
+/* line 42, ../sass/_index.scss */
 .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 41, ../sass/_index.scss */
+/* line 46, ../sass/_index.scss */
 .btn_bandeau_homepage:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 45, ../sass/_index.scss */
+/* line 50, ../sass/_index.scss */
 .btn_bandeau_homepage:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 37, ../sass/_index.scss */
+  /* line 42, ../sass/_index.scss */
   .btn_bandeau_homepage {
     display: none;
   }
 }
 
-/* line 52, ../sass/_index.scss */
+/* line 57, ../sass/_index.scss */
 .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 56, ../sass/_index.scss */
+/* line 61, ../sass/_index.scss */
 .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 60, ../sass/_index.scss */
+/* line 65, ../sass/_index.scss */
 .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 65, ../sass/_index.scss */
+  /* line 70, ../sass/_index.scss */
   .toHide {
     display: none !important;
   }
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 70, ../sass/_index.scss */
+  /* line 75, ../sass/_index.scss */
   .toShow {
     display: inline !important;
   }
 }
 
-/* line 75, ../sass/_index.scss */
+/* line 80, ../sass/_index.scss */
 .btn_eBusta {
   margin-top: 40px;
 }
 
-/* line 78, ../sass/_index.scss */
+/* line 83, ../sass/_index.scss */
 .logoEb {
   max-width: 180px;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
-  /* line 78, ../sass/_index.scss */
+  /* line 83, ../sass/_index.scss */
   .logoEb {
     display: none;
   }
@@ -266,11 +272,14 @@ Layout.html.twig
 }
 
 /* line 10, ../sass/_layout.scss */
-.footer {
+.page-footer {
   background-color: #4b494b;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
 }
 
-/* line 15, ../sass/_layout.scss */
+/* line 18, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -279,17 +288,17 @@ Layout.html.twig
   padding-top: 5px;
 }
 
-/* line 26, ../sass/_layout.scss */
+/* line 29, ../sass/_layout.scss */
 .color {
   color: #98d4e1;
 }
 
-/* line 30, ../sass/_layout.scss */
+/* line 33, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
 }
 
-/* line 35, ../sass/_layout.scss */
+/* line 38, ../sass/_layout.scss */
 .darkerBiz {
   font-size: 1.3em;
   font-weight: bold;
@@ -298,7 +307,7 @@ Layout.html.twig
   opacity: 0.5;
 }
 
-/* line 42, ../sass/_layout.scss */
+/* line 45, ../sass/_layout.scss */
 .lancer {
   font-size: 1em;
   font-weight: bold;
@@ -306,34 +315,34 @@ Layout.html.twig
   margin-left: 20px;
 }
 
-/* line 49, ../sass/_layout.scss */
+/* line 52, ../sass/_layout.scss */
 .lancer:hover {
   color: #6f9ea8;
   font-size: 1.1em;
 }
 
-/* line 54, ../sass/_layout.scss */
+/* line 57, ../sass/_layout.scss */
 .darkerBiz:hover {
   color: #FB5B57;
   opacity: 0.9;
 }
 
-/* line 58, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 .darkerTop:hover {
   color: #6f9ea8;
 }
 
-/* line 62, ../sass/_layout.scss */
+/* line 65, ../sass/_layout.scss */
 .dropdown-content li > a {
   color: #4b494b;
 }
 
-/* line 66, ../sass/_layout.scss */
+/* line 69, ../sass/_layout.scss */
 a .logoEbMenu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 66, ../sass/_layout.scss */
+  /* line 69, ../sass/_layout.scss */
   a .logoEbMenu {
     display: inline;
     max-height: 35px;
@@ -343,12 +352,12 @@ a .logoEbMenu {
   }
 }
 
-/* line 76, ../sass/_layout.scss */
+/* line 79, ../sass/_layout.scss */
 a .logoEbMenu:hover {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 76, ../sass/_layout.scss */
+  /* line 79, ../sass/_layout.scss */
   a .logoEbMenu:hover {
     display: inline;
     max-height: 35px;
@@ -358,7 +367,7 @@ a .logoEbMenu:hover {
   }
 }
 
-/* line 87, ../sass/_layout.scss */
+/* line 90, ../sass/_layout.scss */
 .material-icons {
   display: inline !important;
   vertical-align: middle !important;
@@ -373,119 +382,119 @@ a .logoEbMenu:hover {
   font-feature-settings: 'liga';
 }
 
-/* line 100, ../sass/_layout.scss */
+/* line 103, ../sass/_layout.scss */
 .material-icons.md-grey, .md-euro {
   font-size: 24px;
 }
 @media only screen and (max-width: 992px) {
-  /* line 100, ../sass/_layout.scss */
+  /* line 103, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     color: #4b494b;
   }
 }
 @media only screen and (min-width: 993px) {
-  /* line 100, ../sass/_layout.scss */
+  /* line 103, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     display: none !important;
   }
 }
 
-/* line 109, ../sass/_layout.scss */
+/* line 112, ../sass/_layout.scss */
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
 
-/* line 113, ../sass/_layout.scss */
+/* line 116, ../sass/_layout.scss */
 .dotCom {
   color: black;
   opacity: 0.5;
 }
 
-/* line 118, ../sass/_layout.scss */
+/* line 121, ../sass/_layout.scss */
 .BB:hover {
   border-bottom: 2px solid #FB5B57;
   width: 90%;
 }
 
-/* line 124, ../sass/_layout.scss */
+/* line 127, ../sass/_layout.scss */
 .modal .tabs {
   margin: 0;
   padding: 0;
   background-color: #98d4e1;
 }
-/* line 129, ../sass/_layout.scss */
+/* line 132, ../sass/_layout.scss */
 .modal .tab a {
   color: grey;
 }
-/* line 133, ../sass/_layout.scss */
+/* line 136, ../sass/_layout.scss */
 .modal .tab a:hover {
   color: #4b494b;
 }
-/* line 136, ../sass/_layout.scss */
+/* line 139, ../sass/_layout.scss */
 .modal .tab a.active {
   color: #4b494b;
 }
-/* line 139, ../sass/_layout.scss */
+/* line 142, ../sass/_layout.scss */
 .modal .tabs .indicator {
   background-color: #4b494b;
 }
 
-/* line 144, ../sass/_layout.scss */
+/* line 147, ../sass/_layout.scss */
 #Connexion, #register {
   margin-top: 25px;
 }
 
-/* line 147, ../sass/_layout.scss */
+/* line 150, ../sass/_layout.scss */
 .remember {
   margin-top: 10px;
 }
 
-/* line 150, ../sass/_layout.scss */
+/* line 153, ../sass/_layout.scss */
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
 
-/* line 156, ../sass/_layout.scss */
+/* line 159, ../sass/_layout.scss */
 .submitRegister {
   margin-top: 55px;
 }
 
-/* line 159, ../sass/_layout.scss */
+/* line 162, ../sass/_layout.scss */
 .moreRegisterHidden {
   display: none;
 }
 
-/* line 162, ../sass/_layout.scss */
+/* line 165, ../sass/_layout.scss */
 .moreRegister {
   margin-top: 25px;
 }
 
-/* line 165, ../sass/_layout.scss */
+/* line 168, ../sass/_layout.scss */
 textarea#fos_user_registration_form_description {
   height: 10em;
 }
 
-/* line 169, ../sass/_layout.scss */
+/* line 172, ../sass/_layout.scss */
 #fos_user_registration_form_description {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
 
-/* line 174, ../sass/_layout.scss */
+/* line 177, ../sass/_layout.scss */
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
 
-/* line 179, ../sass/_layout.scss */
+/* line 182, ../sass/_layout.scss */
 #login .btn, #register .btn {
   background: #98d4e1 !important;
 }
 
-/* line 183, ../sass/_layout.scss */
+/* line 186, ../sass/_layout.scss */
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
@@ -1072,4 +1081,29 @@ chat.html.twig
 /* line 22, ../sass/_showOneProfil.scss */
 #oneProfil .imgPhoto img {
   height: 17em;
+}
+
+/* line 5, ../sass/_footer.scss */
+#footer_apropos a:link, #footer_legal a:link, #footer_presse a:link, #footer_conseils a:link, #footer_contact a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+/* line 11, ../sass/_footer.scss */
+#footer_apropos a:visited, #footer_legal a:visited, #footer_presse a:visited, #footer_conseils a:visited, #footer_contact a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+/* line 17, ../sass/_footer.scss */
+#footer_apropos a:hover, #footer_legal a:hover, #footer_presse a:hover, #footer_conseils a:hover, #footer_contact a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/* line 23, ../sass/_footer.scss */
+#footer_apropos a:active, #footer_legal a:active, #footer_presse a:active, #footer_conseils a:active, #footer_contact a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
 }

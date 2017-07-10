@@ -59,7 +59,6 @@ deleteProfilRechercheProjet:
     defaults:
         _controller: MBLBundle:User:deleteProfilRecherche
 
-
 deleteProfilRerchercheProjet:
     path: /deleteProfil
     defaults: { _controller: MBLBundle:User:deleteProfilR}
@@ -94,7 +93,6 @@ chatIndex:
         _controller: MBLBundle:User:chatIndex
         id: null
 
-
 chatConnect:
     path: /chatConnect/{id}
     defaults: { _controller: MBLBundle:User:chatConnect}
@@ -106,11 +104,41 @@ connect:
         _controller: MBLBundle:User:connect
         id: null
 
-
 chatDisconnect:
     path: /chatDisconnect/{id}
     defaults: { _controller: MBLBundle:User:chatDisconnect}
     methods: GET
+
+#Routing for footer links
+apropos:
+    path: /apropos
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:apropos.html.twig
+
+legal:
+    path: /legal
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:legal.html.twig
+
+presse:
+    path: /presse
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:presse.html.twig
+
+contact:
+    path: /contact
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:contact.html.twig
+
+conseils:
+    path: /conseils
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: MBLBundle:Templates:conseils.html.twig
 
 # Cette route doit rester la dernière
 #remove_trailing_slash:

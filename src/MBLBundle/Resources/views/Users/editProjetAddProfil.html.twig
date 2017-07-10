@@ -4,6 +4,7 @@
 {% block titreH2 %}<h2>{{ 'edit Profil recherché'|trans }}</h2>{% endblock %}
 
 {% block body %}
+
 <div id="editPro">
     <div class="container container_body">
         <div class="row">
@@ -38,6 +39,7 @@
                     {{ form_label(form_pro.invest, 'Investissement ') }}
                     {{ form_errors(form_pro.invest) }}
                     {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
+
                 </div>
                 <div class="bouton">
                     <input class="btn" type="submit">

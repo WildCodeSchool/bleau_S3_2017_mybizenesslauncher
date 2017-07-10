@@ -238,6 +238,7 @@ class LoadInvestissementData extends AbstractFixture implements OrderedFixtureIn
     public function load(ObjectManager $manager)
     {
         $invests = array(
+
             array('1'=>'Non', '2'=>'Non'),
             array('1'=>'moin de 1000', '2'=>'inferiore a 1000'),
             array('1'=>'1000-5000', '2'=>'1000-5000'),
@@ -247,6 +248,7 @@ class LoadInvestissementData extends AbstractFixture implements OrderedFixtureIn
             array('1'=>'50000-100000', '2'=>'50000-100000'),
             array('1'=>'100000-200000', '2'=>'100000-200000'),
             array('1'=>'plus de 200000', '2'=>'oltre 200000')
+
         );
 
         foreach ($invests as $invest) {
@@ -298,6 +300,7 @@ class LoadTypeDeProjetData extends AbstractFixture implements OrderedFixtureInte
     public function load(ObjectManager $manager)
     {
         $typedeprojets = array(
+
             array('1'=>'Application Mobile', '2'=>'Appicazione mobile'),
             array('1'=>'Jeu Video', '2'=>'Videogioco'),
             array('1'=>'Logiciel', '2'=>'Software'),
@@ -306,6 +309,7 @@ class LoadTypeDeProjetData extends AbstractFixture implements OrderedFixtureInte
             array('1'=>'Société de Services', '2'=>'Servizi'),
             array('1'=>'Produit', '2'=>'Prodotti'),
             array('1'=>'Autre', '2'=>'Altro')
+
         );
 
         foreach ($typedeprojets as $typedeprojet) {
