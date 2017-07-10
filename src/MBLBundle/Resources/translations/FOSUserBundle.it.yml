@@ -1,6 +1,3 @@
-layout.login: poupi
-'connexion': Connexion
-layoutlogout: déconnexion
 'Pour les porteurs de projet': 'Per i leader di progetto'
 index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
 'Pour ceux qui cherchent un projet à intégrer': 'Per chi cerca un progetto di integrazione'
@@ -87,18 +84,42 @@ Secteur: Settore
 Enregistrez: Salvare
 Fichier: File
 Connectez-vous: Accesso
-Menu: __Menu
-Projet: __Projet
-inscrivez-vous: __inscrivez-vous
-'Votre Photo': '__Votre Photo'
-rechercher: __rechercher
-Métiers: __Métiers
-Statut: __Statut
-Mobilité: __Mobilité
-Domicile: __Domicile
-Titre: __Titre
-'ebusta Url': '__ebusta Url'
-Photo: __Photo
-'edit Profil recherché': '__edit Profil recherché'
-'porteur du projet': '__porteur du projet'
-'Enregistrez-vous': ''
+Menu: Menu
+Projet: Progetto
+inscrivez-vous: registrazione
+'Votre Photo': 'la tua foto'
+rechercher: ricerca
+Métiers: Maestria
+Statut: Statuto
+Mobilité: Mobilità
+Domicile: Domicilio
+Titre: Titolo
+'ebusta Url': 'Ebusta-Url'
+Photo: Foto
+'edit Profil recherché': 'Modifica profilo ricercato'
+'porteur du projet': 'responsabile del progetto'
+'Enregistrez-vous': 'registrazione'
+layoutlogout: sconnessione
+Bonjour: Buongiorno
+'Votre mot de passe a bien été réinitialisé!': 'La tua password è stata cambiata!'
+'Nom:': Nome
+'Prenom:': Conome
+E-mail: E-mail
+'Mot de passe': 'Password'
+'Confirmer votre mot de passe': 'Confermare la sua password'
+'Ajoutez une description plus complête': 'Una più completa descrizione'
+Description: Descrizione
+'Votre compte linkedIn': 'vuestro contolinkedIn'
+Localisation: Localisazion
+'Quel est votre profil': 'Qual è il tuo profilo'
+Ville: Cità
+'Disponible en tant que': 'Disponibile come'
+Compétences: competenze
+Disponibilité: Disponibilità
+'Où ça ?': 'Dove?'
+'Investissement possible': 'investimento possibile?'
+'veuillez confirmer la création de votre compte en cliquant sur lien qui suit.': 'si prega di confermare la creazione di account cliccando sul link qui sotto.'
+'A bientôt sur Innova''Up': 'presto su Innova''Up'
+Connectez-vous: Accesso
+layout.login: Accesso
+'connexion': Accesso

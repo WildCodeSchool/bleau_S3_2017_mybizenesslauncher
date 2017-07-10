@@ -23,8 +23,8 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
             'p.nom as nom', 'p.ville as ville', 'p.linkedIn as linkedIn')
 //            ->where('p.lng = :locale')
 //            ->setParameter('locale', $locale)
-            ->join('p.metier', 'm')
-            ->addSelect('m.metier' . $locale . ' as metier')
+//            ->join('p.metier', 'm')
+//            ->addSelect('m.metier' . $locale . ' as metier')
             ->andWhere('p.id = :loca')
             ->setParameter('loca', $idPro)
 
@@ -99,8 +99,8 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
 //            ->where('p.lng = :locale')
 //            ->setParameter('locale', $locale)
-            ->join('p.metier', 'm')
-            ->addSelect('m.metier' . $locale . ' as metier')
+//            ->join('p.metier', 'm')
+//            ->addSelect('m.metier' . $locale . ' as metier')
             ->setMaxResults(4)
             ->orderBy('p.id', 'DESC')
         ;
@@ -129,7 +129,7 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
             $qb->where('p.id = :id')
                 ->join('p.competences', 'c')
                 ->select('c.competences' . $locale . ' as competence')
-                ->setParameter('id', $profil['id']);;
+                ->setParameter('id', $profil['id']);
             $profils[$key]['competences'] = $qb->getQuery()->getResult();
 
         }
@@ -246,8 +246,8 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
 //            ->where('p.lng = :locale')
 //            ->setParameter('locale', $locale)
-            ->join('p.metier', 'm')
-            ->addSelect('m.metier' . $locale . ' as metier')
+//            ->join('p.metier', 'm')
+//            ->addSelect('m.metier' . $locale . ' as metier')
             ->orderBy('p.id', 'DESC')
 
 
@@ -294,8 +294,8 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
 //            ->where('p.lng = :locale')
 //            ->setParameter('locale', $locale)
-            ->join('p.metier', 'm')
-            ->addSelect('m.metier' . $locale . ' as metier')
+//            ->join('p.metier', 'm')
+//            ->addSelect('m.metier' . $locale . ' as metier')
             ->orderBy('p.id', 'DESC')
             ->andWhere('p.localisation = :loca')
             ->setParameter('loca', $idLoca)
