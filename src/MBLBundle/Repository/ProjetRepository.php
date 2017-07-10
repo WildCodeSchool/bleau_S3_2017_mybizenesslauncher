@@ -238,6 +238,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('id', $projet['id']);
             $projets[$key]['fichier'] = $qb->getQuery()->getResult();
         }
+        return $projets;
     }
 
     public function myfindBySecteurLoc($secteur, $Loc, $locale)
@@ -275,8 +276,9 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('id', $projet['id']);
             $projets[$key]['fichier'] = $qb->getQuery()->getResult();
         }
+        return $projets;
     }
-    public function myfindByTypeDeProjet($typeDeProjet, $locale)
+    public function myfindByTypeDeProjet($idTyp,  $locale)
     {
         $qb = $this->createQueryBuilder('p');
         $qb->select('p.description' . $locale . ' as description', 'p.id as id', 'p.titre' . $locale . ' as titre', 'p.localisation as localisation')
@@ -285,7 +287,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             ->join('p.secteur', 's')
             ->addSelect('s.secteurActivite' . $locale . ' as secteur')
             ->where('tp.id = :typId')
-            ->setParameter('typId', $typeDeProjet)
+            ->setParameter('typId', $idTyp)
             ->orderBy('p.id', 'DESC');
         $projets = $qb->getQuery()->getResult();
 
@@ -309,6 +311,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('id', $projet['id']);
             $projets[$key]['fichier'] = $qb->getQuery()->getResult();
         }
+        return $projets;
     }
     public function myfindByTypeDeProjetLoc($typeDeProjet, $Loc, $locale)
     {
@@ -345,6 +348,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('id', $projet['id']);
             $projets[$key]['fichier'] = $qb->getQuery()->getResult();
         }
+        return $projets;
     }
 
     public function myfindByTypEtSec($idSec, $idTyp, $locale)
