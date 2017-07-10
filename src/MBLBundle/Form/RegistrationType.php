@@ -44,7 +44,9 @@ class RegistrationType extends AbstractType
                              ))
             ->remove('username')
             ->add('description')
-            ->add('linkedin', UrlType::class)
+            ->add('linkedin', UrlType::class, array(
+            'required' => false
+            ))
             ->add('localisation', CountryType::class, array( 'choices' => array(
                 'France' => array(
                     'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
