@@ -28,6 +28,8 @@ class Profil extends BaseUser
 
     // Generated code
 
+
+
     /**
      * @var string
      */
@@ -51,12 +53,22 @@ class Profil extends BaseUser
     /**
      * @var string
      */
-    private $localisation;
+    private $localisationfr;
+
+    /**
+     * @var string
+     */
+    private $localisationit;
 
     /**
      * @var \MBLBundle\Entity\Invest
      */
     private $invest;
+
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
 
     /**
      * @var \MBLBundle\Entity\ETQ
@@ -191,27 +203,51 @@ class Profil extends BaseUser
     }
 
     /**
-     * Set localisation
+     * Set localisationfr
      *
-     * @param string $localisation
+     * @param string $localisationfr
      *
      * @return Profil
      */
-    public function setLocalisation($localisation)
+    public function setLocalisationfr($localisationfr)
     {
-        $this->localisation = $localisation;
+        $this->localisationfr = $localisationfr;
 
         return $this;
     }
 
     /**
-     * Get localisation
+     * Get localisationfr
      *
      * @return string
      */
-    public function getLocalisation()
+    public function getLocalisationfr()
     {
-        return $this->localisation;
+        return $this->localisationfr;
+    }
+
+    /**
+     * Set localisationit
+     *
+     * @param string $localisationit
+     *
+     * @return Profil
+     */
+    public function setLocalisationit($localisationit)
+    {
+        $this->localisationit = $localisationit;
+
+        return $this;
+    }
+
+    /**
+     * Get localisationit
+     *
+     * @return string
+     */
+    public function getLocalisationit()
+    {
+        return $this->localisationit;
     }
 
     /**
@@ -236,6 +272,30 @@ class Profil extends BaseUser
     public function getInvest()
     {
         return $this->invest;
+    }
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Profil
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
     }
 
     /**
@@ -435,6 +495,8 @@ class Profil extends BaseUser
     {
         return $this->chats;
     }
+<<<<<<< HEAD
+=======
     /**
      * @var \MBLBundle\Entity\Fichier
      */
@@ -493,4 +555,5 @@ class Profil extends BaseUser
     {
         return $this->ville;
     }
+>>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
 }

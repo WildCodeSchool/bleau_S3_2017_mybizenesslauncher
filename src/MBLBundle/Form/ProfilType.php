@@ -2,7 +2,9 @@
 
 namespace MBLBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -16,6 +18,8 @@ use MBLBundle\Entity\ETQ;
 use MBLBundle\Entity\Invest;
 use MBLBundle\Entity\Metier;
 use MBLBundle\Entity\Ou;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
+
 
 
 class ProfilType extends AbstractType
@@ -24,15 +28,17 @@ class ProfilType extends AbstractType
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder->add('nom', TextType::class, array('required' => true))
+    {   /*dump($options); die();*/
+        $builder
+            ->add('nom', TextType::class, array('required' => true))
             ->add('prenom', TextType::class, array('required' => true))
             ->add('description', TextareaType::class)
             ->add('linkedIn', UrlType::class, array(
                 'required' => false,
                 'data' => ' http://'
             ))
-            ->add('localisation', ChoiceType::class, array(
+
+            ->add('localisation', CountryType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -81,14 +87,17 @@ class ProfilType extends AbstractType
                     ),
                     'Autre'   => 'autre',
 
+
                 ),  'required'      => false,
                 'placeholder'   => '  Choisissez'
             ))
+
             ->add('ville')
+
             ->add('metier', EntityType::class,
                 array(
                     'class' => Metier::class,
-                    'choice_label' =>'metier',
+                    'choice_label' =>'metier'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
                     'required' => false,
@@ -97,7 +106,7 @@ class ProfilType extends AbstractType
             ->add('etq', EntityType::class,
                 array(
                     'class' => ETQ::class,
-                    'choice_label' =>'etq',
+                    'choice_label' =>'etq'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
                     'required' => false,
@@ -106,7 +115,7 @@ class ProfilType extends AbstractType
             ->add('ou', EntityType::class,
                 array(
                     'class' => Ou::class,
-                    'choice_label' =>'ou',
+                    'choice_label' =>'ou'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
                     'required' => false,
@@ -115,7 +124,7 @@ class ProfilType extends AbstractType
             ->add('invest', EntityType::class,
                 array(
                     'class' => Invest::class,
-                    'choice_label' =>'invest',
+                    'choice_label' =>'invest'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
                     'required' => false,
@@ -124,7 +133,7 @@ class ProfilType extends AbstractType
             ->add('dispo', EntityType::class,
                 array(
                     'class' => Dispo::class,
-                    'choice_label' =>'dispo',
+                    'choice_label' =>'dispo'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
                     'required' => false,
@@ -133,7 +142,7 @@ class ProfilType extends AbstractType
             ->add('competences', EntityType::class,
                 array(
                     'class' => Competences::class,
-                    'choice_label' =>'competences',
+                    'choice_label' =>'competences'.$options["locale"],
                     'multiple'=> true,
                     'expanded'=> false,
                     'required' => false
@@ -150,7 +159,8 @@ class ProfilType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Profil'
+            'data_class' => 'MBLBundle\Entity\Profil',
+            'locale'=>null
         ));
     }
 

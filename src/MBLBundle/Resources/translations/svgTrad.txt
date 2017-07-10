@@ -1,0 +1,136 @@
+
+############# INDEX PAGE ####################################
+'Pour les porteurs de projet': 'Per i leader di progetto'
+index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
+'Pour ceux qui cherchent un projet à intégrer': 'Per chi cerca un progetto di integrazione'
+index.description.howDo: 'Sei un vero erba startupper, si hanno le competenze per ottenere il beneficio di un progetto esistente, i progetti dei corsi per trovare che si potrebbe aiutare a portare il top!'
+'Outils pour se lancer': 'Strumenti per lanciare'
+'Trouve sur MyStartupTools.com': 'Trovato su MyStartupTools.com'
+'Tous les outils pour t’aider à lancer ton activité': 'Tutti gli strumenti per aiutarti a gestire la vostra azienda.'
+'Finance ton projet': 'Finanziare il progetto'
+index.description.ebusta: "Con le sue buste pubblici E-busta.com propongono di fare campagne di donazione di crowdfunding in cambio per aiutare a finanziare il progetto. Verrà applicata solo una commissione del 4% della somma raccolta, rendendo sito E-busta crowdfunding mercato più conveniente.\n"
+'Vous cherchez un associé': 'Alla ricerca di un compagno'
+'Parcourir les projets': 'Percorrere progetti'
+'Dépose ton projet': 'Rimozione vostro progetto'
+'Profils recherchés': 'Profili ricercati'
+Localisation: Posizione
+Description: Descrizione
+'Vous cherchez un projet où vous investir': 'Alla ricerca di un progetto in cui si investe'
+'Dépose ton profil': 'Rimozione del profilo'
+Profil: Profili
+'Parcourir les profils': 'Percorrere progetti'
+
+############### LAYOUT #######################################
+Bonjour: Buongiorno
+'Mon compte': Il mio conto
+'Gérer mon profil': Gestire il mio profilo
+'Voir mon profil': Visualizza il mio profilo
+'Créer un projet': Crea progetto
+'Voir mes projets': Vedere i miei progetti
+'Mes discussions': Mie discussioni
+'Log out': Esci
+'Liens utiles': Link utili
+'A propos': A proposito
+'Mention légales': Avviso legale
+Presse: Stampa
+Contact: Contatto
+'Les projets': Progetti
+'Les profils': Profili
+Conseils: Consiglio
+Suivez: Seguire
+'More Links': Altri link
+
+############## CHAT #######################################
+'Chat avec': discutere con
+Création: Creazione
+Envoyer: Mandare
+'Mise en Relation': 'Collegamento'
+'Voulez-vous vraiment supprimer cette personne?': Vuoi veramente cancellare questa persona?
+
+
+############ CONNECTION #####################################
+'Nom:': Nome
+'Prenom:': Conome
+Discuter: Discutere
+'Accepter de discuter': Accetto di discutere
+'Mise en Relation': 'Collegamento'
+
+
+############# CREATE PROJECT ##################################
+'Nouveau Projet': Nuovo Progetto
+
+{#TODO: Formulaire en double italien bdd it à faire #}
+
+############# CREATE PROJECT ADD PROFIL ##################################
+'Nouveau Profil recherché': Nuovo profilo ricercato
+'Profil Recherché': Profilo desiderato
+Disponibilité: Disponibilità
+'En tant que': 'Come'
+Investissement: Investimento
+Compétences: Competenze
+Supprimer: Rimuovere
+
+{# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
+
+############# EDIT PROFIL ##################################
+
+'Modifier mon profil': Modifica Profilo
+'Voir mon profil public': Visualizza il mio profilo pubblico
+Enregistrez: Salvare
+
+
+{# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
+
+############# EDIT PROJET ##################################
+'Actualiser le projet': Refresh Progetto
+Editer: Modifica
+{# TODO: Formulaire en double italien bdd it à faire + row profil recherché with local it #}
+
+############# HOMEPAGE PROFIL ##################################
+'Gérer mes projets':Gestisci i tuoi progetti
+{# doublons déjà traduit don't panic #}
+
+############### PROFILS RECHERCHES TEMPLATE #######################################
+{# all doublons #}
+
+############# SHOW ALL PROFILS ##################################
+'Nom et prénom :': 'Cognome e nome: '
+{# + doublons #}
+
+############# SHOW MY PROJECT ##################################
+'Parcourir vos projets': Sfoglia i vostri progetti
+Voir: Vedere
+{# + doublons #}
+
+############# SHOW ONE PROJECT ##################################
+'Projet créé le': 'Progetto creato il'
+'Non renseignée': 'imprecisato'
+'Site Internet': 'Sito web'
+'Non renseigné': 'Sconosciuto'
+Enveloppe: Busta
+'Type de projet': Tipo di progetto
+Secteur: Settore
+'Modifier mon projet': 'Modifica il mio progetto'
+{# + doublons #}
+
+############# SHOW PROFILS ##################################
+'Mon profil public': 'Il mio profilo pubblico'
+'Description:': 'Descrizione:'
+'Localisation:': 'Posizione:'
+'renseignez votre localisation': 'Specifica la tua posizione'
+'Investissement:': 'Investimento:'
+'En tant que:': 'Come:'
+'renseignez votre status': 'Specificare il proprio stato'
+'Disponibilité:': 'Disponibilità:'
+'Où:': 'Dove:'
+'Métiers:': 'Affari:'
+'précisez votre métier': 'Specificare vostri commerci'
+'Compétences:': 'Competenze:'
+'renseignez vos compétences': 'Specificare le tue abilità'
+{# + doublons #}
+
+############# SHOW PROJET ##################################
+{# all doublons #}
+
+
+

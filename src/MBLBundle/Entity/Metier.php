@@ -16,7 +16,12 @@ class Metier
     /**
      * @var string
      */
-    private $metier;
+    private $metierfr;
+
+    /**
+     * @var string
+     */
+    private $metierit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -48,27 +53,51 @@ class Metier
     }
 
     /**
-     * Set metier
+     * Set metierfr
      *
-     * @param string $metier
+     * @param string $metierfr
      *
      * @return Metier
      */
-    public function setMetier($metier)
+    public function setMetierfr($metierfr)
     {
-        $this->metier = $metier;
+        $this->metierfr = $metierfr;
 
         return $this;
     }
 
     /**
-     * Get metier
+     * Get metierfr
      *
      * @return string
      */
-    public function getMetier()
+    public function getMetierfr()
     {
-        return $this->metier;
+        return $this->metierfr;
+    }
+
+    /**
+     * Set metierit
+     *
+     * @param string $metierit
+     *
+     * @return Metier
+     */
+    public function setMetierit($metierit)
+    {
+        $this->metierit = $metierit;
+
+        return $this;
+    }
+
+    /**
+     * Get metierit
+     *
+     * @return string
+     */
+    public function getMetierit()
+    {
+        return $this->metierit;
     }
 
     /**

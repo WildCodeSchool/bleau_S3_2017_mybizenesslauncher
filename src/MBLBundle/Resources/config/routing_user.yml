@@ -79,6 +79,14 @@ deleteMyProject:
     path: /deleteMyProject/{id}
     defaults: { _controller: MBLBundle:User:deleteMyProject }
 
+
+testTraduction:
+    path: /test/{name}
+    defaults: { _controller: MBLBundle:User:traduction }
+
+
+
+
 chatIndex:
     path: /chatIndex/{id}
     defaults:

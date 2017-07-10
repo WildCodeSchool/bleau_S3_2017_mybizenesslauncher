@@ -20,8 +20,10 @@
 
                                         {% if profil.fichier is null %}
                                             <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
-                                            {% else %}
-                                                <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+
+                                        {% else %}
+                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}

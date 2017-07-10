@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Modifier votre profil</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Modifier mon profil'|trans }}</h2> {% endblock %}
 
 
 {% block body %}
@@ -39,13 +39,12 @@
                         {{ form_errors(edit_form.localisation) }}
                         {{ form_widget(edit_form.localisation, {'attr': {'placeholder': ' Localisation '}}) }}
                     </div>
+
                     <div class="ville divform">
                         {{ form_label(edit_form.ville, 'Ville :') }}
                         {{ form_widget(edit_form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
                         {{ form_errors(edit_form.ville) }}
                     </div>
-
-
                 </div>
 
 
@@ -95,21 +94,19 @@
                             </div>
                         </div>
                         <div class="col s3">
-                            <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                            <img class="hiddenPreview" id="preview" src="#" alt="{{ 'Votre Photo'|trans }}" />
                         </div>
                     </div>
 
                 </div>
                 <div class="col s12 divform">
                     <div class="col s6 btnleft">
-                        <input class="btn" type="submit" value="Enregistrez"/>
+                        <input class="btn" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
-                        <a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>
+                        <a class="btn" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
                     </div>
                 </div>
-
-
                 {{ form_end(edit_form) }}
             </div>
         </div>
@@ -142,7 +139,7 @@
             $('#preview').removeClass('hiddenPreview')
             $('#preview').slideDown(20000);
 
-            }));
+        }));
 
     </script>
 

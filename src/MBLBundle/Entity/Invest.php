@@ -9,6 +9,7 @@ class Invest
 {
 
 
+
     /**
      * @var integer
      */
@@ -17,7 +18,12 @@ class Invest
     /**
      * @var string
      */
-    private $invest;
+    private $investfr;
+
+    /**
+     * @var string
+     */
+    private $investit;
 
     /**
      * @var \MBLBundle\Entity\Profil
@@ -48,27 +54,51 @@ class Invest
     }
 
     /**
-     * Set invest
+     * Set investfr
      *
-     * @param string $invest
+     * @param string $investfr
      *
      * @return Invest
      */
-    public function setInvest($invest)
+    public function setInvestfr($investfr)
     {
-        $this->invest = $invest;
+        $this->investfr = $investfr;
 
         return $this;
     }
 
     /**
-     * Get invest
+     * Get investfr
      *
      * @return string
      */
-    public function getInvest()
+    public function getInvestfr()
     {
-        return $this->invest;
+        return $this->investfr;
+    }
+
+    /**
+     * Set investit
+     *
+     * @param string $investit
+     *
+     * @return Invest
+     */
+    public function setInvestit($investit)
+    {
+        $this->investit = $investit;
+
+        return $this;
+    }
+
+    /**
+     * Get investit
+     *
+     * @return string
+     */
+    public function getInvestit()
+    {
+        return $this->investit;
     }
 
     /**
@@ -127,5 +157,34 @@ class Invest
     public function getProfilrecherches()
     {
         return $this->profilrecherches;
+    }
+    /**
+     * @var \MBLBundle\Entity\Profil
+     */
+    private $profils;
+
+
+    /**
+     * Set profils
+     *
+     * @param \MBLBundle\Entity\Profil $profils
+     *
+     * @return Invest
+     */
+    public function setProfils(\MBLBundle\Entity\Profil $profils = null)
+    {
+        $this->profils = $profils;
+
+        return $this;
+    }
+
+    /**
+     * Get profils
+     *
+     * @return \MBLBundle\Entity\Profil
+     */
+    public function getProfils()
+    {
+        return $this->profils;
     }
 }

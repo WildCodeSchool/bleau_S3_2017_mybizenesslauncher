@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Mon profil public</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Mon profil public'|trans }}</h2> {% endblock %}
 
 {% block body %}
     <div id="myProfil">
@@ -26,55 +26,62 @@
                     </div>
 
                     <div class="col s6">
-                        <h6 class="center">Métiers</h6>
+                        <h6 class="center">{{ 'Métiers'|trans }}</h6>
                         {% if profil.metier is same as(null) %}
-                            <p class="center grey-text">Non renseigné</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.metier.metier }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s6">
-                        <h6 class="center">Compétences</h6>
+                        <h6 class="center">{{ 'Compétences'|trans }}</h6>
                         {% if profil.competences is empty %}
-                            <p class="center grey-text">renseignez vos compétences</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{% for competences in profil.competences %} {{ competences.competences }} {% endfor %}</p>
+
+                            {% for comp in profil.competences %}
+                                {% if loop.last %}
+                                    {{ comp.competence}}
+                                {% else %}
+                                    {{ comp.competence}},
+                                {% endif %}
+                            {% endfor %}
                         {% endif %}
                     </div>
 
 
                     <div class="col s12">
-                        <h6 class="center">Description</h6>
+                        <h6 class="center">{{ 'Description'|trans }}</h6>
                         {% if profil.description is same as(null) %}
-                            <p class="center grey-text">Non renseigné</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.description }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s12 m6">
-                        <h6 class="center">Investissement</h6>
+                        <h6 class="center">{{ 'Investissement'|trans }}</h6>
                         {% if profil.invest is same as(null) %}
-                            <p class="center grey-text">Non renseigné</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.invest.invest }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s12 m6">
-                        <h6 class="center">Statut</h6>
+                        <h6 class="center">{{'Statut'|trans }}</h6>
                         {% if profil.etq is same as(null) %}
-                            <p class="center grey-text">renseignez votre status</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.etq.etq }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s12 m6">
-                        <h6 class="center">Disponibilité</h6>
+                        <h6 class="center">{{ 'Disponibilité'|trans }}</h6>
                         {% if profil.dispo is same as(null) %}
-                            <p class="center grey-text">Non renseigné</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>
                                 {{ profil.dispo.dispo }}
@@ -83,18 +90,18 @@
                     </div>
 
                     <div class="col s12 m6">
-                        <h6 class="center">Mobilité</h6>
+                        <h6 class="center">{{ 'Mobilité'|trans }}</h6>
                         {% if profil.ou is same as(null) %}
-                            <p class="center grey-text">Non renseigné</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{{ profil.ou.Ou }}</p>
+                            <p>{{ profil.ou.ou }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s12 m6">
-                        <h6 class="center">Domicile</h6>
+                        <h6 class="center">{{ 'Domicile'|trans }}</h6>
                         {% if profil.localisation is same as(null) %}
-                            <p class="center grey-text">renseignez votre localisation</p>
+                            <p class="center grey-text">{{ 'renseignez votre localisation'|trans }}</p>
                         {% else %}
                             <p>{{ profil.localisation }}</p>
                         {% endif %}
@@ -104,14 +111,14 @@
 
                         <img class= "linkedIn responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
                         {% if profil.linkedIn is same as(null) %}
-                            <p class="center grey-text">Non renseigné</p>
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.linkedIn }}</p>
                         {% endif %}
                     </div>
 
                     <div class="col s12 divform ">
-                        <a class="btn grey " href="{{ path('editProfil', { 'id': profil.id }) }}">Modifier mon profil</a>
+                        <a class="btn grey " href="{{ path('editProfil', { 'id': profil.id }) }}">{{ 'Modifier mon profil'|trans }}</a>
 
                     </div>
                 </div>

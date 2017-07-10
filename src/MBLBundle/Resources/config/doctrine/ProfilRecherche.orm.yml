@@ -10,6 +10,8 @@ MBLBundle\Entity\ProfilRecherche:
                 strategy: AUTO
 
 
+
+
     manyToMany:
         projets:
             targetEntity: MBLBundle\Entity\Projet
