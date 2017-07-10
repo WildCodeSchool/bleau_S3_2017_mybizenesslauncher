@@ -4,7 +4,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
-{% block titreH2 %}<h2>Chat avec{#la personne avec qui vous voulez parler#}
+{% block titreH2 %}<h2>{{ 'Chat avec'|trans }}{#la personne avec qui vous voulez parler#}
     {% for profil in chat.profils %}
         {% if profil == app.user %}
         {% else %}
@@ -32,10 +32,10 @@
                                     <!-- Modal Structure -->
                                     <div id="modal1" class="modal">
                                         <div class="modal-content">
-                                            <h4>Voulez-vous vraiment supprimer cette personne?</h4>
+                                            <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
+                                            <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">{{ 'Oui'|trans }}</a>
                                         </div>
                                     </div>
                                 </a>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="col s4">
-                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Envoyer"></p>
+                        <p><input id="envoi" class="btn" type="submit" name="creation" value="{{ 'Envoyer'|trans }}"></p>
 
                     </div>
                     {{ form_end(form) }}
@@ -94,7 +94,7 @@
                             <input type="hidden" value="{{ text.id }}"/>
                             <div class="center">
                                 <b><i> {{ text.profil }} </i></b>
-                                <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+                                <span>{{ 'à'|trans }}  {{ text.dateCreation|date('H:i:s') }}</span>
                             </div>
 
                             <p> {{ text.msg }} </p>

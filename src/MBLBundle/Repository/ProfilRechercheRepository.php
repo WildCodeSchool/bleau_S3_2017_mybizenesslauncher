@@ -66,8 +66,8 @@ class ProfilRechercheRepository extends \Doctrine\ORM\EntityRepository
             ->addSelect('se.etq' . $locale . ' as etq')
             ->join('p.projets', 'pp')
 //
-//            ->andWhere('pp = :pid')
-//            ->setParameter('pid', $projet)
+            ->andWhere('pp = :pid')
+            ->setParameter('pid', $projet)
         ;
 
         $profilRechercheExist = $qb->getQuery()->getResult();

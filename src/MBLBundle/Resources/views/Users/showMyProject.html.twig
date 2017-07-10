@@ -4,9 +4,9 @@
 {% block titreH2 %} <h2>{{ 'Parcourir vos projets'|trans }}</h2> {% endblock %}
 {% block body %}
     <div id="showMyProjet">
-        {% if app.session.flashbag.has('notice') %}
-            {{ app.session.flashbag.get('notice') }}
-        {% endif %}
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <h2>{{ flashMessage }}</h2>
+        {% endfor %}
         <div class="box_projet">
             <div class="row">
 

@@ -18,7 +18,7 @@
                                 <label>{{ 'Nom:'|trans }}*</label>
                             </div>
                         </div>
-                        {{ form_widget(form.nom, {'attr' : {'placeholder' : ' Nom'}}) }}
+                        {{ form_widget(form.nom, {'attr' : {'placeholder' : 'Nom:'|trans}}) }}
                         {{ form_errors(form.nom) }}
                     </div>
                     <div class="col s6">
@@ -27,7 +27,7 @@
                                 <label>{{ 'Prenom:'|trans }}*</label>
                             </div>
                         </div>
-                        {{ form_widget(form.prenom, {'attr' : {'placeholder' : ' Prénom'}}) }}
+                        {{ form_widget(form.prenom, {'attr' : {'placeholder' : 'Prenom:'|trans}}) }}
                         {{ form_errors(form.prenom) }}
                     </div>
                     <div class="col s6">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
 
-                        {{ form_widget(form.email, {'attr' : {'placeholder' : ' E-mail'}}) }}
+                        {{ form_widget(form.email, {'attr' : {'placeholder' : 'E-mail'|trans}}) }}
                         {{ form_errors(form.email) }}
                     </div>
 
@@ -47,7 +47,7 @@
                                 <label>{{ 'Mot de passe'|trans }}*</label>
                             </div>
                         </div>
-                        {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : ' Mot de passe'}}) }}
+                        {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : 'Mot de passe'|trans}}) }}
                         {{ form_errors(form.plainPassword.first) }}
                     </div>
 
@@ -58,7 +58,7 @@
                                 <label>{{ 'Confirmer votre mot de passe'|trans }}*</label>
                             </div>
                         </div>
-                        {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : ' Confirmez votre mot de passe'}}) }}
+                        {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : 'Confirmer votre mot de passe'|trans}}) }}
                         {{ form_errors(form.plainPassword.second) }}
                     </div>
                     <div class="center">
@@ -66,13 +66,13 @@
                     </div>
                 </div>
 
+                {{ 'Registration supplémentaire (optionnel)'|trans }}
 
-  Registration supplémentaire (optionnel)
 
 
                 <div class="row">
                     <div class="col s12 center">
-                        <button type="button" class="btn registerPlus">Créer votre profil</button>
+                        <button type="button" class="btn registerPlus">{{ 'Créer votre profil'|trans }}</button>
                     </div>
                     <div class="col s12 center">
                         <div class="moreRegisterHidden moreRegister">
@@ -85,7 +85,7 @@
                                         <div class="col s12 center">
                                             <label>{{ 'Description'|trans }}</label>
                                         </div>
-                                        {{ form_widget(form.description, {'attr' : {'class' : 'customRegister ','placeholder' : ' Description'}}) }}
+                                        {{ form_widget(form.description, {'attr' : {'class' : 'customRegister ','placeholder' : 'Description'|trans}}) }}
                                         {{ form_errors(form.description) }}
                                     </div>
                                     <div class="col s6">
@@ -93,7 +93,7 @@
                                             <label>{{ 'Votre compte linkedIn'|trans }}</label>
                                         </div>
 
-                                        {{ form_widget(form.linkedin, {'attr' : {'class' : 'customRegister ','placeholder' : ' Linked-in'}}) }}
+                                        {{ form_widget(form.linkedin, {'attr' : {'class' : 'customRegister ','placeholder' : 'Votre compte linkedIn'|trans}}) }}
                                         {{ form_errors(form.linkedin) }}
 
                                     </div>
@@ -106,7 +106,7 @@
                                         </div>
 
 
-                                        {{ form_widget(form.localisation, {'attr' : {'class' : 'center customRegister ','placeholder' : ' Localisation'}}) }}
+                                        {{ form_widget(form.localisation, {'attr' : {'class' : 'center customRegister ','placeholder' : 'Localisation'|trans}}) }}
                                         {{ form_errors(form.localisation) }}
                                     </div>
                                     <div class="col s6">
@@ -115,7 +115,7 @@
                                             <label>{{ 'Quel est votre profil'|trans }}</label>
 
                                         </div>
-                                        {{ form_widget(form.metier, {'attr' : {'class' : 'center customRegister lighten-4'}}) }}
+                                        {{ form_widget(form.metier, {'attr' : {'class' : 'center customRegister lighten-4', 'placeholder': 'Quel est votre profil'|trans}}) }}
                                         {{ form_errors(form.metier) }}
                                     </div>
                                     <div class="col s6">
@@ -124,7 +124,7 @@
 
                                         </div>
 
-                                        {{ form_widget(form.ville, {'attr' : {'class' : 'center customRegister ', 'placeholder' : ' Ville'}}) }}
+                                        {{ form_widget(form.ville, {'attr' : {'class' : 'center customRegister ', 'placeholder' : 'Ville'|trans}}) }}
                                         {{ form_errors(form.ville) }}
 
                                     </div>
@@ -135,36 +135,36 @@
                                         <div class="col s12 center">
                                             <label>{{ 'Disponible en tant que'|trans }}</label>
                                         </div>
-                                        {{ form_widget(form.etq, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
+                                        {{ form_widget(form.etq, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Disponible en tant que'|trans }}) }}
                                         {{ form_errors(form.etq) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             <label>{{ 'Compétences'|trans }}</label>
                                         </div>
-                                        {{ form_widget(form.competences, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
+                                        {{ form_widget(form.competences, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Compétences'|trans }}) }}
                                         {{ form_errors(form.competences) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             <label>{{ 'Disponibilité'|trans }}</label>
                                         </div>
-                                        {{ form_widget(form.dispo, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
+                                        {{ form_widget(form.dispo, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Disponibilité'|trans}}) }}
                                         {{ form_errors(form.dispo) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             <label>{{ 'Où ça ?'|trans }}</label>
                                         </div>
-                                        {{ form_widget(form.ou, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
+                                        {{ form_widget(form.ou, {'attr' : {'class' : 'customRegister lighten-4','placeholder' : 'Où ça ?'|trans}}) }}
                                         {{ form_errors(form.ou) }}
                                     </div>
                                     <div class="col s6">
                                         <div class="col s12 center">
                                             <label>{{ 'Investissement possible'|trans }}</label>
                                         </div>
-                                        {{ form_widget(form.invest, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
-                                        {{ form_widget(form.invest, {'attr' : {'class' : 'customRegister lighten-4'}}) }}
+
+                                        {{ form_widget(form.invest, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Investissement possible'|trans}}) }}
                                         {{ form_errors(form.invest) }}
                                     </div>
                                 </div>

@@ -30,7 +30,7 @@ class ProjetRechercheType extends AbstractType
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => false,
-                'placeholder'   => '  Choisissez',
+                'placeholder'   => 'Choisissez',
 
             ))
             ->add('secteur', EntityType::class, array(
@@ -39,9 +39,11 @@ class ProjetRechercheType extends AbstractType
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => false,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => 'Choisissez'
             ))
-            ->add('localisation', LocalisationProjetType::class)
+            ->add('localisation', LocalisationProjetType::class, array(
+                'label' => false
+            ))
      ;
     }
 
