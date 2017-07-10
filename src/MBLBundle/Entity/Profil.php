@@ -28,6 +28,8 @@ class Profil extends BaseUser
 
     // Generated code
 
+
+
     /**
      * @var string
      */
@@ -57,6 +59,11 @@ class Profil extends BaseUser
      * @var \MBLBundle\Entity\Invest
      */
     private $invest;
+
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
 
     /**
      * @var \MBLBundle\Entity\ETQ
@@ -236,6 +243,30 @@ class Profil extends BaseUser
     public function getInvest()
     {
         return $this->invest;
+    }
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Profil
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
     }
 
     /**
@@ -436,33 +467,33 @@ class Profil extends BaseUser
         return $this->chats;
     }
     /**
-     * @var \MBLBundle\Entity\Fichier
+     * @var string
      */
-    private $fichier;
+    private $lng;
 
 
     /**
-     * Set fichier
+     * Set lng
      *
-     * @param \MBLBundle\Entity\Fichier $fichier
+     * @param string $lng
      *
      * @return Profil
      */
-    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    public function setLng($lng)
     {
-        $this->fichier = $fichier;
+        $this->lng = $lng;
 
         return $this;
     }
 
     /**
-     * Get fichier
+     * Get lng
      *
-     * @return \MBLBundle\Entity\Fichier
+     * @return string
      */
-    public function getFichier()
+    public function getLng()
     {
-        return $this->fichier;
+        return $this->lng;
     }
     /**
      * @var string
@@ -493,4 +524,5 @@ class Profil extends BaseUser
     {
         return $this->ville;
     }
+
 }

@@ -13,10 +13,11 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
-/web/bundles/
 .sass-cache
+/src/MBLBundle/Resources/translations/svgTrad.txt
+!/src/MBLBundle/Resources/translations/svgTrad.txt
 !/web/bundles/mbl/img/linkedIn.png
 /web/uploads/
-
-
 !/web/bundles/mbl/img/facebook.png
+!/web/bundles/
+

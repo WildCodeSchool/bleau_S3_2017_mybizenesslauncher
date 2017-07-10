@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Modifier votre profil</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Modifier mon profil'|trans }}</h2> {% endblock %}
 
 
 {% block body %}
@@ -11,19 +11,19 @@
                 {{ form_start(edit_form) }}
                 <div class="col s6">
                     <div class="col s12 divform">
-                        {{ form_label(edit_form.nom) }}
+                        <label>{{ 'Nom:'|trans }}*</label>
                         {{ form_errors(edit_form.nom) }}
-                        {{ form_widget(edit_form.nom, {'attr': {'placeholder': '  Nom'}}) }}
+                        {{ form_widget(edit_form.nom, {'attr': {'placeholder': 'Nom:'|trans}}) }}
                     </div>
 
                     <div class="col s12 divform">
-                        {{ form_label(edit_form.prenom) }}
+                        <label>{{ 'Prenom:'|trans }}*</label>
                         {{ form_errors(edit_form.prenom) }}
-                        {{ form_widget(edit_form.prenom, {'attr': {'placeholder': ' Prénom '}}) }}
+                        {{ form_widget(edit_form.prenom, {'attr': {'placeholder': 'prenom:'|trans}}) }}
                     </div>
 
                     <div class="col s12 divform">
-                        {{ form_label(edit_form.description) }}
+                        <label>{{ 'description'|trans }}*</label>
                         {{ form_errors(edit_form.description) }}
                         {{ form_widget(edit_form.description)}}
                     </div>
@@ -35,53 +35,52 @@
                     </div>
 
                     <div class="col s12 divform">
-                        {{ form_label(edit_form.localisation) }}
+                        <label>{{ 'Localisation'|trans }}*</label>
                         {{ form_errors(edit_form.localisation) }}
-                        {{ form_widget(edit_form.localisation, {'attr': {'placeholder': ' Localisation '}}) }}
+                        {{ form_widget(edit_form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
                     </div>
+
                     <div class="ville divform">
-                        {{ form_label(edit_form.ville, 'Ville :') }}
-                        {{ form_widget(edit_form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                        <label>{{ 'Ville'|trans }}*</label>
+                        {{ form_widget(edit_form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
                         {{ form_errors(edit_form.ville) }}
                     </div>
-
-
                 </div>
 
 
                 <div class="col s6">
                     <div class="col s12 divform sltbox">
-                        {{ form_label(edit_form.metier) }}
+                        <label>{{ 'Metier'|trans }}*</label>
                         {{ form_errors(edit_form.metier) }}
                         {{ form_widget(edit_form.metier, {'attr': {'placeholder': ' Métiers '}}) }}
                     </div>
 
                     <div class="col s12 divform sltbox">
-                        {{ form_label(edit_form.etq) }}
+                        <label>{{ 'En tant que'|trans }}*</label>
                         {{ form_errors(edit_form.etq) }}
                         {{ form_widget(edit_form.etq, {'attr': {'placeholder': ' En tant que '}}) }}
                     </div>
 
                     <div class="col s12 divform sltbox">
-                        {{ form_label(edit_form.ou) }}
+                        <label>{{ 'Où:'|trans }}*</label>
                         {{ form_errors(edit_form.ou) }}
                         {{ form_widget(edit_form.ou, {'attr': {'placeholder': ' Ou '}}) }}
                     </div>
 
                     <div class="col s12 divform sltbox">
-                        {{ form_label(edit_form.invest) }}
+                        <label>{{ 'Investissement'|trans }}*</label>
                         {{ form_errors(edit_form.invest) }}
                         {{ form_widget(edit_form.invest, {'attr': {'placeholder': ' Investissement '}}) }}
                     </div>
 
                     <div class="col s12 divform sltbox">
-                        {{ form_label(edit_form.dispo) }}
+                        <label>{{ 'Disponibilité'|trans }}*</label>
                         {{ form_errors(edit_form.dispo) }}
                         {{ form_widget(edit_form.dispo, {'attr': {'placeholder': ' Disponibilité '}}) }}
                     </div>
 
                     <div class="col s12 divform sltbox">
-                        {{ form_label(edit_form.competences) }}
+                        <label>{{ 'Compétences'|trans }}*</label>
                         {{ form_errors(edit_form.competences) }}
                         {{ form_widget(edit_form.competences, {'attr': {'placeholder': ' Compétences '}}) }}
                     </div>
@@ -95,21 +94,19 @@
                             </div>
                         </div>
                         <div class="col s3">
-                            <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                            <img class="hiddenPreview" id="preview" src="#" alt="{{ 'Votre Photo'|trans }}" />
                         </div>
                     </div>
 
                 </div>
                 <div class="col s12 divform">
                     <div class="col s6 btnleft">
-                        <input class="btn" type="submit" value="Enregistrez"/>
+                        <input class="btn" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
-                        <a class="btn" href="{{ path('showMyProfil') }}">Voir mon profil public</a>
+                        <a class="btn" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a>
                     </div>
                 </div>
-
-
                 {{ form_end(edit_form) }}
             </div>
         </div>
@@ -142,7 +139,7 @@
             $('#preview').removeClass('hiddenPreview')
             $('#preview').slideDown(20000);
 
-            }));
+        }));
 
     </script>
 

@@ -11,7 +11,11 @@
 {% block body_html %}
     {% autoescape false %}
 
-    Yoooooooo  {{ user.username }}, clickkk {{ confirmationUrl }}
+    {{ 'Bonjour'|trans }} {{ user.username }},
+    {{ 'veuillez confirmer la création de votre compte en cliquant sur lien qui suit.'|trans}}
+    {{ confirmationUrl }}
+
+    {{ 'A bientôt sur Innova\'Up'|trans }}
 
     {% endautoescape %}
 

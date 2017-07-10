@@ -10,5 +10,10 @@ namespace MBLBundle\Repository;
  */
 class TypeDeProjetRepository extends \Doctrine\ORM\EntityRepository
 {
-
+    public function getTypeDeProjetByLocale($locale)
+    {
+        return $this->createQueryBuilder('t')
+            ->select('t.typeDeProjet' . $locale)
+            ;
+    }
 }

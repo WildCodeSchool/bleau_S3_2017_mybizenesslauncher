@@ -8,6 +8,7 @@ use MBLBundle\Entity\ETQ;
 use MBLBundle\Entity\Invest;
 use MBLBundle\Entity\Metier;
 use MBLBundle\Entity\Ou;
+use MBLBundle\Entity\Projet;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -21,68 +22,29 @@ class ProjetRechercheType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('secteur', EntityType::class, array(
-                'class'         => 'MBLBundle\Entity\Secteur',
-                'choice_label'  => 'secteurActivite',
-                'multiple'      => false,
-                'expanded'      => false,
-                'required'       => false,
-                'placeholder'   => '  Choisissez'))
+        $builder
 
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
-                'choice_label'  => 'typeDeProjet',
+                'choice_label'  => 'typeDeProjet'. $options["locale"],
                 'multiple'      => false,
                 'expanded'      => false,
-                'required'       => false,
-                'placeholder'   => '  Choisissez'   ))
+                'required'      => false,
+                'placeholder'   => 'Choisissez',
+
+            ))
+            ->add('secteur', EntityType::class, array(
+                'class'         => 'MBLBundle\Entity\Secteur',
+                'choice_label' => 'secteurActivite'. $options["locale"],
+                'multiple'      => false,
+                'expanded'      => false,
+                'required'      => false,
+                'placeholder'   => 'Choisissez'
+            ))
             ->add('localisation', LocalisationProjetType::class, array(
                 'label' => false
             ))
-        ;
-
-//            ))
-//            ->add('etq', EntityType::class,
-//                array(
-//                    'class' => ETQ::class,
-//                    'choice_label' =>'etq',
-//                    'multiple'=> false,
-//                    'expanded'=> false
-//
-//                ))
-//            ->add('ou', EntityType::class,
-//                array(
-//                    'class' => Ou::class,
-//                    'choice_label' =>'ou',
-//                    'multiple'=> false,
-//                    'expanded'=> false
-//
-//                ))
-//            ->add('invest', EntityType::class,
-//                array(
-//                    'class' => Invest::class,
-//                    'choice_label' =>'invest',
-//                    'multiple'=> false,
-//                    'expanded'=> false
-//
-//                ))
-//
-//            ->add('dispo', EntityType::class,
-//                array(
-//                    'class' => Dispo::class,
-//                    'choice_label' =>'dispo',
-//                    'multiple'=> false,
-//                    'expanded'=> false
-//
-//                ))
-//            ->add('competences', EntityType::class,
-//                array(
-//                    'class' => Competences::class,
-//                    'choice_label' =>'competences',
-//                    'multiple'=> true,
-//                    'expanded'=> false
-//
-
+     ;
     }
 
     /**
@@ -91,7 +53,8 @@ class ProjetRechercheType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Projet'
+            'data_class' => null,
+            'locale'=> null
         ));
     }
 

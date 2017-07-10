@@ -765,22 +765,23 @@ input[type=search], textarea.materialize-textarea {
 }
 /* line 26, ../sass/_editShowProfil.scss */
 .editprofil .sltbox span {
-  z-index: 1;
+  z-index: 2;
+  font-size: 1.5em;
   color: black;
 }
-/* line 30, ../sass/_editShowProfil.scss */
+/* line 33, ../sass/_editShowProfil.scss */
 .editprofil .btnright a {
   float: right;
 }
-/* line 33, ../sass/_editShowProfil.scss */
+/* line 36, ../sass/_editShowProfil.scss */
 .editprofil .hiddenPreview {
   display: none;
 }
-/* line 36, ../sass/_editShowProfil.scss */
+/* line 39, ../sass/_editShowProfil.scss */
 .editprofil img {
   width: 100%;
 }
-/* line 39, ../sass/_editShowProfil.scss */
+/* line 42, ../sass/_editShowProfil.scss */
 .editprofil input:not([type]), .editprofil input[type=text], .editprofil input[type=password], .editprofil input[type=email], .editprofil input[type=url], .editprofil input[type=time],
 .editprofil input[type=date], .editprofil input[type=datetime], .editprofil input[type=datetime-local], .editprofil input[type=tel], .editprofil input[type=number],
 .editprofil input[type=search], .editprofil #mblbundle_profil_description {
@@ -788,22 +789,36 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 10px;
   outline: none;
 }
-/* line 47, ../sass/_editShowProfil.scss */
+/* line 50, ../sass/_editShowProfil.scss */
 .editprofil input:focus, .editprofil #mblbundle_profil_description:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   box-shadow: none;
 }
 
-/* line 58, ../sass/_editShowProfil.scss */
-.showprofil .cartepro {
+/* line 59, ../sass/_editShowProfil.scss */
+.showprofil {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+/* line 65, ../sass/_editShowProfil.scss */
+.showprofil h4, .showprofil h5, .showprofil p {
+  text-align: center;
+  word-wrap: break-word;
+}
+/* line 69, ../sass/_editShowProfil.scss */
+.showprofil .cartepro, .showprofil .cartepro2 {
   border: 1px solid red;
   background-color: #98d4e1;
   padding-left: 5%;
   padding-right: 5%;
   border-radius: 8px;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-/* line 68, ../sass/_editShowProfil.scss */
+/* line 80, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -812,9 +827,15 @@ input[type=search], textarea.materialize-textarea {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 79, ../sass/_editShowProfil.scss */
+/* line 87, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+/* line 92, ../sass/_editShowProfil.scss */
+.showprofil .modpro {
+  text-align: center;
 }
 
 /* line 2, ../sass/_showAllProfils.scss */

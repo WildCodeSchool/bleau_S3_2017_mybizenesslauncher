@@ -1,5 +1,5 @@
 {% extends '@MBL/layout.html.twig' %}
-{% block titreH2 %} <h2>Mon compte</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Mon compte'|trans }}</h2> {% endblock %}
 
 
 {% block body %}
@@ -7,25 +7,25 @@
 <div class="UHP">
     <div class="row btnlink">
         <div class="col s3 offset-s3">
-            <a class="waves-effect waves-light btn" href="{{ path('editProfil')}}">Gérer mon profil</a>
+            <a class="waves-effect waves-light btn" href="{{ path('editProfil')}}">{{ 'Gérer mon profil'|trans }}</a>
         </div>
         <div class="col s3">
-            <a class="waves-effect waves-light btn" href="{{ path('showMyProfil')}}">Voir mon profil public</a>
+            <a class="waves-effect waves-light btn" href="{{ path('showMyProfil')}}">{{ 'Voir mon profil public'|trans }}</a>
         </div>
      </div>
 
     <div class="row btnlink">
         <div class="col s3 offset-s3">
-            <a class="waves-effect waves-light btn" href="{{ path('createProjet') }}">Créer un projet</a>
+            <a class="waves-effect waves-light btn" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a>
         </div>
         <div class="col s3">
-            <a class="waves-effect waves-light btn" href="{{ path('showMyProject')}}">Gérer mes projets</a>
+            <a class="waves-effect waves-light btn" href="{{ path('showMyProject')}}">{{ 'Gérer mes projets'|trans }}</a>
         </div>
     </div>
 
     <div class="row btnlink btnlink1 ">
         <div class="col s3 offset-s3">
-            <a class="waves-effect waves-light btn" href="{{ path('connect')}}">Mes discussions</a>
+            <a class="waves-effect waves-light btn" href="{{ path('connect')}}">{{ 'Mes discussions'|trans }}</a>
         </div>
     </div>
 </div>

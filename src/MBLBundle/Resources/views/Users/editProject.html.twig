@@ -2,7 +2,7 @@
 
 {% extends 'MBLBundle::layout.html.twig' %}
 
-{% block titreH2 %}<h2>Actualiser le projet</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ 'Actualiser le projet'|trans }}</h2>{% endblock %}
 
 {% block body %}
     <div id="editProject">
@@ -12,42 +12,42 @@
                 <div class="col s12 m6 l5">
                     <div class="col s12 center modif">
                         <button class="btn" id="{{ projet.id }}">Editez votre projet</button>
-
                     </div>
                     {{ form_start(form) }}
                     <div class="titre_row center-align">
-                        {{ form_label(form.titre) }}
-                        {{ form_errors(form.titre) }}
-                        {{ form_widget(form.titre, {'attr': {'placeholder': '  Titre'}}) }}
+                        <label>{{ 'Titre'|trans }}</label>
+                        {{ form_errors(attribute(form, 'titre' ~ locale )) }}
+                        {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': '  titre:'}}) }}
                     </div>
                     <div class="description_row center-align">
-                        {{ form_label(form.description) }}
-                        {{ form_errors(form.description) }}
-                        {{ form_widget(form.description, {'attr': {'placeholder': '  Description'}}) }}
+                        <label>{{ 'Description'|trans }}</label>
+                        {{ form_errors(attribute(form, 'description' ~ locale)) }}
+                        {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': '  Description'}}) }}
                     </div>
                     <div class="siteInternet_row center-align">
-                        {{ form_label(form.siteInternet) }}
-                        {{ form_errors(form.siteInternet) }}
-                        {{ form_widget(form.siteInternet) }}
+
+                        <label>{{ 'Site Internet'|trans }}</label>
+                        {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
+                        {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': '  url:'}}) }}
                     </div>
                     <div class="ebustaUrl_row center-align">
-                        {{ form_label(form.ebustaUrl) }}
-                        {{ form_errors(form.ebustaUrl) }}
-                        {{ form_widget(form.ebustaUrl) }}
+                        <label>{{ 'ebusta Url'|trans }}</label>
+                        {{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
+                        {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': '  url:'}}) }}
                     </div>
                     <div class="typeDeProjet_row center-align">
-                        {{ form_label(form.typeDeProjet) }}
+                        <label>{{ 'Type de projet'|trans }}</label>
                         {{ form_errors(form.typeDeProjet) }}
                         {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
-                    </div>
-                    <div class="secteur center-align">
-                        {{ form_label(form.secteur) }}
+                        </div>
+                        <div class="secteur center-align">
+                        <label>{{ 'Secteur'|trans }}</label>
                         {{ form_errors(form.secteur) }}
                         {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
                     </div>
                     <div class="localisation center-align">
-                        {{ form_label(form.localisation) }}
-                        {{ form_errors(form.localisation) }}
+                        <label>{{ 'Localisation'|trans }}</label>
+                        {{ form_errors(form.localisation ) }}
                         {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
                     </div>
                     <div class="ville center-align">
@@ -58,11 +58,10 @@
 
                     <div class="row">
                         <div class="col s3">
-                            <div class="file center-align">
-                                {{ form_label(form.fichier) }}
-                                {{ form_errors(form.fichier) }}
-                                {{ form_widget(form.fichier) }}
-                            </div>
+                            <label>{{ 'Photo'|trans }}</label>  TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place
+
+                            {{ form_errors(form.fichier.file) }}
+                            {{ form_widget(form.fichier.file) }}
                         </div>
                         <div class="col s2">
                             <img src="{{ asset('uploads/images/'~ projet.fichier.photo) }}">
@@ -71,101 +70,101 @@
 
 
                     <div>
-                        <input class="btn" type="submit" value="Editer"/>
+                        <input class="btn" type="submit" value="{{ 'Editer'|trans }}"/>
                     </div>
 
                     {{ form_end(form) }}
                 </div>
                 <div class="col s12 m6 l6 offset-l1">
                     <div class="col s12 center bouttonAjout">
-                        <a href="{{ path('newProfilRechercheProjet', {'id' : projet.id}) }}">
+
+                        <a href="{{ path('createProfilRechercheProjet', {'id' : projet.id}) }}">
                             <button class="btn" id="{{ projet.id }}">Ajoutez un profil recherché</button>
+
                         </a>
                     </div>
                     <div class="profil_recherche">
-                    {% for profil in profil_exist %}
-
-
-                        <div class="col s6 vignette_projet_profilAdd z-depth-5">
-                            <div class="row type_metier">
-                                <div class="color col s12">
-                                    <h5 class="center">Profil Recherché</h5>
-                                    {% if profil.metier.metier is empty %}
-                                        <p class="center grey-text">renseigner</p>
-                                    {% else %}
-                                        <p>{{profil.metier.metier }} </p>
-                                    {% endif %}
-                                </div>
-                            </div>
-
-                            <div class="row info_projet_profilAdd">
-
-                                <div class="col s12">
-                                    <h6>Disponibilité</h6>
-                                    {% if profil.dispo.dispo is empty %}
-                                        <p class="center grey-text">renseigner</p>
-                                    {% else %}
-                                        <p>{{ profil.dispo.dispo }} </p>
-                                    {% endif %}
-                                    <div class="divider"></div>
-                                </div>
-                                <div class="col s12">
-                                    <h6>En tant que</h6>
-                                    {% if profil.etq.etq is empty %}
-                                        <p class="center grey-text">renseigner</p>
-                                    {% else %}
-                                        <p>{{ profil.etq.etq }} </p>
-                                    {% endif %}
-                                    <div class="divider"></div>
-                                </div>
-                                <div class="col s12">
-                                    <h6>Localisation</h6>
-                                    {% if profil.ou.ou is empty %}
-                                        <p class="center grey-text">renseigner</p>
-                                    {% else %}
-                                        <p>{{ profil.ou.ou }}</p>
-                                    {% endif %}
-                                    <div class="divider"></div>
-                                </div>
-                                <div class="col s12">
-                                    <h6>Investissement</h6>
-                                    {% if profil.invest.invest is empty %}
-                                    <p class="center grey-text">renseigner</p>
-                                {% else %}
-                                    <p>{{ profil.invest.invest }}</p>
-                                    {% endif %}<div class="divider"></div>
-                                </div>
-                                <div class="col s12">
-                                    <h6>Compétences</h6>
-                                    {% for comp in profil.competences %}
-                                        {% if comp.competences is empty %}
+                        {% for profil in profil_exist %}
+                            <div class="col s6 vignette_projet_profilAdd z-depth-5">
+                                <div class="row type_metier">
+                                    <div class="color col s12">
+                                        <h5 class="center">Profil Recherché</h5>
+                                        {% if profil.metier is empty %}
                                             <p class="center grey-text">renseigner</p>
                                         {% else %}
-                                            {% if loop.last %}
-                                                {{ comp.competences}}
-                                            {% else %}
-                                                {{ comp.competences}},
-                                            {% endif %}
+                                            <p>{{profil.metier }} </p>
                                         {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="row info_projet_profilAdd">
+
+                                    <div class="col s12">
+                                        <h6>Disponibilité</h6>
+                                        {% if profil.dispo is empty %}
+                                            <p class="center grey-text">renseigner</p>
+                                        {% else %}
+                                            <p>{{ profil.dispo }} </p>
+                                        {% endif %}
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>En tant que</h6>
+                                        {% if profil.etq is empty %}
+                                            <p class="center grey-text">renseigner</p>
+                                        {% else %}
+                                            <p>{{ profil.etq }} </p>
+                                        {% endif %}
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Localisation</h6>
+                                        {% if profil.ou is empty %}
+                                            <p class="center grey-text">renseigner</p>
+                                        {% else %}
+                                            <p>{{ profil.ou }}</p>
+                                        {% endif %}
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Investissement</h6>
+                                        {% if profil.invest is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.invest }}</p>
+                                        {% endif %}<div class="divider"></div>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>Compétences</h6>
+                                        {% for comp in profil.competence %}
+                                            {% if comp.competence is empty %}
+                                                <p class="center grey-text">renseigner</p>
+                                            {% else %}
+                                                {% if loop.last %}
+                                                    {{ comp.competence}}
+                                                {% else %}
+                                                    {{ comp.competence}},
+                                                {% endif %}
+                                            {% endif %}
 
 
-                                    {% endfor %}
+                                        {% endfor %}
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col s12 center">
+                                    <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
+                                </div>
+                                <div class="col s12 center editbtn">
+                                    <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
                                 </div>
 
 
                             </div>
 
-                            <div class="col s12 center">
-                                <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
-                            </div>
-                            <div class="col s12 center editbtn">
-                            <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}">
-                                <button class="btn editProfil" id="{{ profil.id }}">Editer</button></a>
-                        </div>
-
-                        </div>
-
-                    {% endfor %}
+                        {% endfor %}
                     </div>
 
                 </div>

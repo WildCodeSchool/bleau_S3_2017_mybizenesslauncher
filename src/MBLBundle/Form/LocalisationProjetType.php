@@ -69,7 +69,7 @@ class LocalisationProjetType extends AbstractType
                     'Autre'   => 'autre',
 
                 ),  'required'      => false,
-            'placeholder'   => '  Choisissez'
+            'placeholder'   => 'Choisissez'
             ));
     }
 

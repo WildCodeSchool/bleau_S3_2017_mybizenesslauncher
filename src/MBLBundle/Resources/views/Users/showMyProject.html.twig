@@ -1,15 +1,13 @@
 {% extends '@MBL/layout.html.twig' %}
 
 
-{% block titreH2 %} <h2>Parcourir vos projets</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Parcourir vos projets'|trans }}</h2> {% endblock %}
 {% block body %}
     <div id="showMyProjet">
-        {% if app.session.flashbag.has('notice') %}
-            {{ app.session.flashbag.get('notice') }}
-        {% endif %}
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <h2>{{ flashMessage }}</h2>
+        {% endfor %}
         <div class="box_projet">
-
-
             <div class="row">
 
                 {% for pro in projects %}
@@ -30,36 +28,34 @@
                                     {% if pro.fichier is null %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
-                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                     {% endif %}
-
-
-
                                 </div>
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h6>Type de projet</h6>
+                                    <h6>{{ 'Type de projet'|trans }}</h6>
                                     {% for comp in pro.typeDeProjet %}
                                         {{ comp.typeDeProjet}}
                                     {% endfor %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Profils recherchés</h6>
-                                    {% for profil in pro.profilsrecherches %}
-                                        {% if profil.metier.metier|length > 10 %}
+                                    <h6>{{ 'Profils recherchés'|trans }}</h6>
+
+                                    {% for profil in pro.metier %}
+                                        {% if profil.metier|length > 10 %}
                                             {% if loop.last %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }}
+                                                {{ profil.metier|slice(0,8) ~'...' }}
                                             {% else %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }},
+                                                {{ profil.metier|slice(0,8) ~'...' }},
                                             {% endif %}
 
-                                        {% else  %}
+                                        {% else %}
                                             {% if loop.last %}
-                                                {{ profil.metier.metier }}
+                                                {{ profil.metier }}
                                             {% else %}
-                                                {{ profil.metier.metier }},
+                                                {{ profil.metier }},
                                             {% endif %}
 
                                         {% endif %}
@@ -68,31 +64,23 @@
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Localisation</h6>
+                                    <h6>{{ 'Localisation'|trans }}</h6>
                                     <p>{{ pro.localisation }}</p>
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Description</h6>
+                                    <h6>{{ 'Description'|trans }}</h6>
                                     <p>{{ pro.description }}</p>
                                     <div class="divider"></div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col s12 m12 l6  ">
-                                    <a class="btn divform" href="{{ path('editProjet', {'id': pro.id }) }}">Editer</a>
-                                </div>
-                                <div class="col s12 m12 l6">
-                                    <a class="btn divform center-align" href="{{ path('deleteMyProject', {'id': pro.id }) }}">Supprimer</a>
-                                </div>
+
+                            <div class="col s12 divform ">
+                                <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">{{ 'Editer'|trans }}</a>
+                                <a class="waves-effect waves-light btn" href="{{ path('deleteMyProject', {'id' : pro.id })}}">{{ 'Supprimer'|trans }}</a>
                             </div>
                         </div>
-
-
-
                     </a>
-
-
                 {% endfor %}
 
             </div>

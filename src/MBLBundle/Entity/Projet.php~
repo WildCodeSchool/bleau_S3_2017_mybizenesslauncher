@@ -7,6 +7,8 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
+<<<<<<< HEAD
+=======
 //    /**
 //     * @var
 //     */
@@ -405,4 +407,5 @@ class Projet
     {
         return $this->ville;
     }
+>>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
 }

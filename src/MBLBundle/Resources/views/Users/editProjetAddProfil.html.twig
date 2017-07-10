@@ -1,55 +1,58 @@
+
 {% extends 'MBLBundle::layout.html.twig' %}
 
-{% block titreH2 %}<h2>Nouveau Profil recherché</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ 'edit Profil recherché'|trans }}</h2>{% endblock %}
 
 {% block body %}
-    <div id="EditPro">
-        <div class="container container_body">
-            <div class="row">
-                <div class="col s12 l5">
-                    {{ form_start(form_pro) }}
-                    <div class="center-align">
-                        {{ form_label(form_pro.metier, 'Profil recherché ') }}
-                        {{ form_errors(form_pro.metier) }}
-                        {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
-                        {{ form_errors(form_pro.etq) }}
-                        {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.competences, 'Compétences ') }}
-                        {{ form_errors(form_pro.competences) }}
-                        {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.dispo, 'Disponibilité ') }}
-                        {{ form_errors(form_pro.dispo) }}
-                        {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' Disponibilité'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.ou, 'Où ca ? ') }}
-                        {{ form_errors(form_pro.ou) }}
-                        {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.invest, 'Investissement ') }}
-                        {{ form_errors(form_pro.invest) }}
-                        {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
-                    </div>
-                    <div class="bouton">
-                        <input class="btn" type="submit">
-                    </div>
 
-
-                    {{ form_end(form_pro) }}
+<div id="editPro">
+    <div class="container container_body">
+        <div class="row">
+            <div class="col s12 l5">
+                {{ form_start(form_pro) }}
+                <div class="center-align">
+                    {{ form_label(form_pro.metier, 'Profil recherché ') }}
+                    {{ form_errors(form_pro.metier) }}
+                    {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
                 </div>
+                <div class="center-align">
+                    {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
+                    {{ form_errors(form_pro.etq) }}
+                    {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
+                </div>
+                <div class="center-align">
+                    {{ form_label(form_pro.competences, 'Compétences ') }}
+                    {{ form_errors(form_pro.competences) }}
+                    {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
+                </div>
+                <div class="center-align">
+                    {{ form_label(form_pro.dispo, 'Disponibilité ') }}
+                    {{ form_errors(form_pro.dispo) }}
+                    {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' disponibilité'}}) }}
+                </div>
+                <div class="center-align">
+                    {{ form_label(form_pro.ou, 'Où ca ? ') }}
+                    {{ form_errors(form_pro.ou) }}
+                    {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
+                </div>
+                <div class="center-align">
+                    {{ form_label(form_pro.invest, 'Investissement ') }}
+                    {{ form_errors(form_pro.invest) }}
+                    {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
+
+                </div>
+                <div class="bouton">
+                    <input class="btn" type="submit">
+                </div>
+
+                <input type="hidden" name="id" value="{{ projet.id }}">
+
+                {{ form_end(form_pro) }}
             </div>
+
         </div>
     </div>
-
-{% endblock %}
+    {% endblock %}
     {% block javascripts %}
         {{ parent() }}
         <script>

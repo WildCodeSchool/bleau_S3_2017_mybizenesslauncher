@@ -9,13 +9,16 @@ MBLBundle\Entity\Invest:
             generator:
                 strategy: AUTO
     fields:
-        invest:
+        investfr:
+            type: string
+            length: 255
+        investit:
             type: string
             length: 255
     lifecycleCallbacks: {  }
 
-    oneToOne:
-        profil:
+    manyToOne:
+        profils:
             targetEntity: MBLBundle\Entity\Profil
             mappedBy: invest
 

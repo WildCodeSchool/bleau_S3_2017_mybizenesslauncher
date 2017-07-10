@@ -21,4 +21,11 @@ class SecteurRepository extends \Doctrine\ORM\EntityRepository
             ;
 
     }
+
+    public function getSecteurByLocale($locale)
+    {
+        $po = $this->createQueryBuilder('s')
+            ->select('s.secteurActivite' . $locale)
+            ;
+    }
 }

@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block body_text %}
-Bonjour {{ user.username }} !
+{{ 'Bonjour'|trans}} {{ user.username }} !
 
-Votre mot de passe a bien été réinitialisé! {{ confirmationUrl }}
+{{ 'Votre mot de passe a bien été réinitialisé!'|trans}} {{ confirmationUrl }}
 
 MyBiznessLauncher Team
 {% autoescape false %}

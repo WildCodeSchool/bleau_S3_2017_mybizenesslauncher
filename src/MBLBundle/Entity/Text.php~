@@ -8,6 +8,7 @@ namespace MBLBundle\Entity;
 class Text
 {
 
+
     /**
      * @var integer
      */
@@ -21,7 +22,12 @@ class Text
     /**
      * @var \DateTime
      */
-    private $datecreation;
+    private $dateCreation;
+
+    /**
+     * @var string
+     */
+    private $profil;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -34,7 +40,7 @@ class Text
     public function __construct()
     {
         $this->chats = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->datecreation = new \DateTime();
+        $this->dateCreation = new \DateTime();
     }
 
     /**
@@ -78,9 +84,9 @@ class Text
      *
      * @return Text
      */
-    public function setDatecreation($datecreation)
+    public function setDateCreation($dateCreation)
     {
-        $this->datecreation = $datecreation;
+        $this->dateCreation = $dateCreation;
 
         return $this;
     }
@@ -90,9 +96,33 @@ class Text
      *
      * @return \DateTime
      */
-    public function getDatecreation()
+    public function getDateCreation()
     {
-        return $this->datecreation;
+        return $this->dateCreation;
+    }
+
+    /**
+     * Set profil
+     *
+     * @param string $profil
+     *
+     * @return Text
+     */
+    public function setProfil($profil)
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get profil
+     *
+     * @return string
+     */
+    public function getProfil()
+    {
+        return $this->profil;
     }
 
     /**
@@ -127,35 +157,6 @@ class Text
     public function getChats()
     {
         return $this->chats;
-    }
-    /**
-     * @var string
-     */
-    private $profil;
-
-
-    /**
-     * Set profil
-     *
-     * @param string $profil
-     *
-     * @return Text
-     */
-    public function setProfil($profil)
-    {
-        $this->profil = $profil;
-
-        return $this;
-    }
-
-    /**
-     * Get profil
-     *
-     * @return string
-     */
-    public function getProfil()
-    {
-        return $this->profil;
     }
     /**
      * @var integer

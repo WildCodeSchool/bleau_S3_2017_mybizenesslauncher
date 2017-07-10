@@ -7,12 +7,12 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: fr
+    locale: it
     upload_directory: '%kernel.root_dir%/web/uploads/images'
 
 framework:
     #esi: ~
-    translator: ~
+    translator: { fallbacks: ["%locale%"] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -23,7 +23,7 @@ framework:
     #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
-    default_locale: '%locale%'
+    default_locale: %locale%
     trusted_hosts: ~
     trusted_proxies: ~
     session:

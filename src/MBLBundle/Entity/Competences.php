@@ -8,6 +8,8 @@ namespace MBLBundle\Entity;
 class Competences
 {
 
+
+
     /**
      * @var integer
      */
@@ -16,7 +18,12 @@ class Competences
     /**
      * @var string
      */
-    private $competences;
+    private $competencesfr;
+
+    /**
+     * @var string
+     */
+    private $competencesit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -48,27 +55,51 @@ class Competences
     }
 
     /**
-     * Set competences
+     * Set competencesfr
      *
-     * @param string $competences
+     * @param string $competencesfr
      *
      * @return Competences
      */
-    public function setCompetences($competences)
+    public function setCompetencesfr($competencesfr)
     {
-        $this->competences = $competences;
+        $this->competencesfr = $competencesfr;
 
         return $this;
     }
 
     /**
-     * Get competences
+     * Get competencesfr
      *
      * @return string
      */
-    public function getCompetences()
+    public function getCompetencesfr()
     {
-        return $this->competences;
+        return $this->competencesfr;
+    }
+
+    /**
+     * Set competencesit
+     *
+     * @param string $competencesit
+     *
+     * @return Competences
+     */
+    public function setCompetencesit($competencesit)
+    {
+        $this->competencesit = $competencesit;
+
+        return $this;
+    }
+
+    /**
+     * Get competencesit
+     *
+     * @return string
+     */
+    public function getCompetencesit()
+    {
+        return $this->competencesit;
     }
 
     /**

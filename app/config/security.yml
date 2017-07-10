@@ -19,7 +19,7 @@ security:
         ###Nom du parefeu, identifiant unique pouvant être nommé comme on le souhaite###
         main:
             ###Masque d'url, dans ce cas on définit que le parefeu main protège le site entier###
-            pattern: ^/
+            pattern: ^/[a-z]+/
             ###Méthode d'authenfication utilisé par ce parefeu
             form_login:
                 ###Fournisseur d'utilisateurs que l'on retrouve quelques lignes plus haut###
@@ -28,7 +28,15 @@ security:
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
             ###Autorise la deconnexion###
-            logout: true
+
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                always_use_default_target_path: true
+                default_target_path: mbl_homepage
+            logout:
+                path:   fos_user_security_logout
+                target: mbl_homepage
+
 
             ###Autorise les anonymes à naviguer###
             anonymous: true
@@ -51,8 +59,8 @@ security:
 
     ###Contrôle d'accès aux pages###
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/createProject, role: ROLE_USER }

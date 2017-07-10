@@ -21,23 +21,7 @@ class ProfilRechercheType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('metier', EntityType::class,
-            array(
-                'class' => Metier::class,
-                'choice_label' =>'metier',
-                'multiple'=> false,
-                'expanded'=> false
-
-            ))
-            ->add('etq', EntityType::class,
-                array(
-                    'class' => ETQ::class,
-                    'choice_label' =>'etq',
-                    'multiple'=> false,
-                    'expanded'=> false
-
-                ))
-            ->add('ou', EntityType::class,
+        $builder->add('ou', EntityType::class,
                 array(
                     'class' => Ou::class,
                     'choice_label' =>'ou',
@@ -45,31 +29,61 @@ class ProfilRechercheType extends AbstractType
                     'expanded'=> false
 
                 ))
-            ->add('invest', EntityType::class,
-                array(
-                    'class' => Invest::class,
-                    'choice_label' =>'invest',
-                    'multiple'=> false,
-                    'expanded'=> false
 
-                ))
 
-            ->add('dispo', EntityType::class,
-                array(
-                    'class' => Dispo::class,
-                    'choice_label' =>'dispo',
-                    'multiple'=> false,
-                    'expanded'=> false
-
-                ))
-            ->add('competences', EntityType::class,
-                array(
-                    'class' => Competences::class,
-                    'choice_label' =>'competences',
-                    'multiple'=> true,
-                    'expanded'=> false
-
-                ));
+        ->add('metier', EntityType::class,
+        array(
+            'class' => Metier::class,
+            'choice_label' =>'metier'.$options["locale"],
+            'multiple'=> false,
+            'expanded'=> false,
+            'required' => false,
+            'placeholder'=> ' Quel est votre profil?'
+        ))
+        ->add('etq', EntityType::class,
+            array(
+                'class' => ETQ::class,
+                'choice_label' =>'etq'.$options["locale"],
+                'multiple'=> false,
+                'expanded'=> false,
+                'required' => false,
+                'placeholder'=> ' Disponible en tant que'
+            ))
+        ->add('ou', EntityType::class,
+            array(
+                'class' => Ou::class,
+                'choice_label' =>'ou'.$options["locale"],
+                'multiple'=> false,
+                'expanded'=> false,
+                'required' => false,
+                'placeholder'=> ' Où ça ?'
+            ))
+        ->add('invest', EntityType::class,
+            array(
+                'class' => Invest::class,
+                'choice_label' =>'invest'.$options["locale"],
+                'multiple'=> false,
+                'expanded'=> false,
+                'required' => false,
+                'placeholder'=> ' Investissement possible'
+            ))
+        ->add('dispo', EntityType::class,
+            array(
+                'class' => Dispo::class,
+                'choice_label' =>'dispo'.$options["locale"],
+                'multiple'=> false,
+                'expanded'=> false,
+                'required' => false,
+                'placeholder'=> ' Votre disponibilité'
+            ))
+        ->add('competences', EntityType::class,
+            array(
+                'class' => Competences::class,
+                'choice_label' =>'competences'.$options["locale"],
+                'multiple'=> true,
+                'expanded'=> false,
+                'required' => false
+            ));
     }
     
     /**
@@ -78,7 +92,8 @@ class ProfilRechercheType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\ProfilRecherche'
+            'data_class' => 'MBLBundle\Entity\ProfilRecherche',
+            'locale' => null
         ));
     }
 
