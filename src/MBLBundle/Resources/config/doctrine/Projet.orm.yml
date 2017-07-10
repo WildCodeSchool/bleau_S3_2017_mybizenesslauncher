@@ -70,7 +70,7 @@ MBLBundle\Entity\Projet:
         profilsrecherches:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             inversedBy: projets
-            cascade: ["persist"]
+            cascade: ["all"]
 
         profils:
             targetEntity: MBLBundle\Entity\Profil

@@ -16,7 +16,7 @@ MBLBundle\Entity\ProfilRecherche:
         projets:
             targetEntity: MBLBundle\Entity\Projet
             mappedBy: profilsrecherches
-            cascade: ["persist"]
+            cascade: ["all"]
 
         competences:
             targetEntity: MBLBundle\Entity\Competences
