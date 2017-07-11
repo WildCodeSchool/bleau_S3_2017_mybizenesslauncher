@@ -7,7 +7,11 @@ namespace MBLBundle\Entity;
  */
 class Competences
 {
+    public function __toString(){
+        return $this->competencesit;
+    }
 
+    /* CODE GENERATED */
 
 
     /**
