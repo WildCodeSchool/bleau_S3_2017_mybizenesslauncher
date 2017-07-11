@@ -48,14 +48,14 @@
     <!--Section projet & profil -->
     <div class="row box_projet_profil">
         <!--PROJET-->
-        <div class="col s12 l5 offset-l1 projet ">
+        <div class="col s12 m6 l5 offset-l1 projet ">
             <h3>{{ 'Vous cherchez un projet où vous investir'|trans}}</h3>
 
             <div class="row bouton_projet valign-wrapper">
-                <div class="col s5 btn_showProjet ">
+                <div class="col s12 m6 l5 offset-l1 btn_showProjet ">
                     <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans}}</a>
                 </div>
-                <div class="col s5 btn_createProjet">
+                <div class="col s12 m6 l5 offset-l1 btn_createProjet">
                     <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>
                 </div>
             </div>
@@ -63,12 +63,12 @@
                 {% for pro in projet %}
 
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s5 offset-s1 vignette_projet  z-depth-5">
+                        <div class="col s12 m6 l5 offset-l1 vignette_projet  z-depth-5">
                             <div class="row vignette ">
                                 <div class="col s12">
 
-                                    {% if pro.titre|length > 10 %}
-                                        <h4>{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
+                                    {% if pro.titre|length > 8 %}
+                                        <h4>{{ pro.titre|slice(0,6) ~ '...'  }}</h4>
                                     {% else  %}
                                         <h4>{{ pro.titre }}</h4>
                                     {% endif %}
@@ -147,14 +147,14 @@
 
 
         <!--PROFIL-->
-        <div class="col s12 l5 offset-l1 profil  ">
+        <div class="col s12 m6 l5 profil  ">
             <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
 
             <div class="row bouton_projet valign-wrapper">
-                <div class="col s5 btn_showProfil">
+                <div class="col s12 m6 l5 offset-l1 btn_showProfil">
                     <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Parcourir les profils'|trans}}</a>
                 </div>
-                <div class="col s5 btn_createProfil">
+                <div class="col s12 m6 l5 offset-l1 btn_createProfil">
                     <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Dépose ton profil'|trans}}</a>
                 </div>
 
@@ -164,11 +164,11 @@
             <div class="row ">
                 {% for pro in profils %}
                     <a href="{{ path('showProfil', {'id': pro.id}) }}">
-                        <div class="col s5 offset-s1 vignette_profil z-depth-5">
+                        <div class="col s12 m6 l5 offset-l1 vignette_profil z-depth-5">
                             <div class="row vignette ">
                                 <div class="col s12">
-                                    {% if pro.prenom|length > 10 %}
-                                        <h4>{{ pro.prenom|slice(0,8) ~ '...'  }}</h4>
+                                    {% if pro.prenom|length > 8 %}
+                                        <h4>{{ pro.prenom|slice(0,6) ~ '...'  }}</h4>
                                     {% else  %}
                                         <h4>{{ pro.prenom }} {{ pro.nom|slice(0,1) }}.</h4>
                                     {% endif %}
@@ -228,4 +228,5 @@
             </div>
         </div>
     </div>
+</div>
     {% endblock %}
