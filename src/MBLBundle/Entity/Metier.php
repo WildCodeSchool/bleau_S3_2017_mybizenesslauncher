@@ -7,6 +7,12 @@ namespace MBLBundle\Entity;
  */
 class Metier
 {
+    public function __toString(){
+        return $this->metierit;
+    }
+
+    /* CODE GENERATED */
+
 
     /**
      * @var integer

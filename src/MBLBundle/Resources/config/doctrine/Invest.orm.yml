@@ -17,13 +17,13 @@ MBLBundle\Entity\Invest:
             length: 255
     lifecycleCallbacks: {  }
 
-    manyToOne:
-        profils:
-            targetEntity: MBLBundle\Entity\Profil
-            mappedBy: invest
 
     oneToMany:
         profilrecherches:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: invest
 
+
+        profils:
+            targetEntity: MBLBundle\Entity\Profil
+            mappedBy: invest

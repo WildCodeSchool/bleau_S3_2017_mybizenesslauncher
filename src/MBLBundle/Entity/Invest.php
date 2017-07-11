@@ -7,8 +7,11 @@ namespace MBLBundle\Entity;
  */
 class Invest
 {
+    public function __toString(){
+        return $this->investit;
+    }
 
-
+    /* CODE GENERATED */
 
     /**
      * @var integer
@@ -26,14 +29,14 @@ class Invest
     private $investit;
 
     /**
-     * @var \MBLBundle\Entity\Profil
+     * @var \Doctrine\Common\Collections\Collection
      */
-    private $profil;
+    private $profilrecherches;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $profilrecherches;
+    private $profils;
 
     /**
      * Constructor
@@ -41,6 +44,7 @@ class Invest
     public function __construct()
     {
         $this->profilrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -102,30 +106,6 @@ class Invest
     }
 
     /**
-     * Set profil
-     *
-     * @param \MBLBundle\Entity\Profil $profil
-     *
-     * @return Invest
-     */
-    public function setProfil(\MBLBundle\Entity\Profil $profil = null)
-    {
-        $this->profil = $profil;
-
-        return $this;
-    }
-
-    /**
-     * Get profil
-     *
-     * @return \MBLBundle\Entity\Profil
-     */
-    public function getProfil()
-    {
-        return $this->profil;
-    }
-
-    /**
      * Add profilrecherch
      *
      * @param \MBLBundle\Entity\ProfilRecherche $profilrecherch
@@ -158,30 +138,35 @@ class Invest
     {
         return $this->profilrecherches;
     }
-    /**
-     * @var \MBLBundle\Entity\Profil
-     */
-    private $profils;
-
 
     /**
-     * Set profils
+     * Add profil
      *
-     * @param \MBLBundle\Entity\Profil $profils
+     * @param \MBLBundle\Entity\Profil $profil
      *
      * @return Invest
      */
-    public function setProfils(\MBLBundle\Entity\Profil $profils = null)
+    public function addProfil(\MBLBundle\Entity\Profil $profil)
     {
-        $this->profils = $profils;
+        $this->profils[] = $profil;
 
         return $this;
     }
 
     /**
+     * Remove profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     */
+    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils->removeElement($profil);
+    }
+
+    /**
      * Get profils
      *
-     * @return \MBLBundle\Entity\Profil
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getProfils()
     {

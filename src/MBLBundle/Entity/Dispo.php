@@ -8,7 +8,11 @@ namespace MBLBundle\Entity;
 class Dispo
 {
 
+    public function __toString(){
+        return $this->dispoit;
+    }
 
+    /* GENERATED CODE */
 
     /**
      * @var integer

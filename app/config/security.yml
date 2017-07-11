@@ -59,8 +59,9 @@ security:
 
     ###Contrôle d'accès aux pages###
     access_control:
-        - { path: ^/[a-z]+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, role: ROLE_ADMIN }
         - { path: ^/createProject, role: ROLE_USER }
+
