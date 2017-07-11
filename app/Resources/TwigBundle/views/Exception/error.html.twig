@@ -4,11 +4,11 @@
 
 <div class="row">
     <div class="col s4 offset-s4 center">
-        <p style="font-family: monospace; font-size: 1.5em; margin-top: 100px">Erreur 404, cette page n'existe pas, retournez à l'accueil du site en cliquant sur le bouton suivant
-            si le problème persiste, merci de contacter un administrateur via la rubrique "contact"</p>
+        <p style="font-family: monospace; font-size: 1.5em; margin-top: 100px">{{ 'Erreur 404, cette page nexiste pas, retournez à laccueil du site en cliquant sur le bouton suivant
+            si le problème persiste, merci de contacter un administrateur via la rubrique "contact"'|trans }}</p>
     </div>
     <div class="col s4 offset-s4 center">
-       <a href="{{ path('userHomepage') }}"> <button class="btn" style="background: black" type="button">Retour</button></a>
+       <a href="{{ path('userHomepage') }}"> <button class="btn" style="background: black" type="button">{{ 'Retour'|trans }}</button></a>
     </div>
 </div>
 

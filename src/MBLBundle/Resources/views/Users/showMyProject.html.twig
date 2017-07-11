@@ -33,16 +33,16 @@
                                 </div>
                             </div>
                             <div class="row info_projet">
-                                <div class="col s12">
+                                <div class="col s12 center">
 
-                                    <h6>{{ 'Type de projet'|trans }}</h6>
+                                    <h6 class="center">{{ 'Type de projet'|trans }}</h6>
 
                                         {{ pro.typeDeProjet}}
 
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>{{ 'Profils recherchés'|trans }}</h6>
+                                    <h6 class="center">{{ 'Profils recherchés'|trans }}</h6>
 
                                     {% for profil in pro.metier %}
                                         {% if profil.metier|length > 10 %}
@@ -65,13 +65,13 @@
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>{{ 'Localisation'|trans }}</h6>
-                                    <p>{{ pro.localisation }}</p>
+                                    <h6 class="center">{{ 'Localisation'|trans }}</h6>
+                                    <p class="center">{{ pro.localisation }}</p>
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>{{ 'Description'|trans }}</h6>
-                                    <p>{{ pro.description }}</p>
+                                    <h6 class="center">{{ 'Description'|trans }}</h6>
+                                    <p class="center">{{ pro.description }}</p>
                                     <div class="divider"></div>
                                 </div>
                             </div>
