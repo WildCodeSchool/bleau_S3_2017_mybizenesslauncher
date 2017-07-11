@@ -61,6 +61,8 @@ MBLBundle\Entity\Profil:
 
 
 
+
+
     manyToMany:
         competences:
             targetEntity: MBLBundle\Entity\Competences
@@ -79,3 +81,5 @@ MBLBundle\Entity\Profil:
         fichier:
             targetEntity: MBLBundle\Entity\Fichier
             cascade: ['all']
+
+

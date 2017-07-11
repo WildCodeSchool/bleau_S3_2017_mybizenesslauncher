@@ -56,9 +56,14 @@ class Profil extends BaseUser
     private $localisation;
 
     /**
-     * @var \MBLBundle\Entity\Invest
+     * @var string
      */
-    private $invest;
+    private $lng;
+
+    /**
+     * @var string
+     */
+    private $ville;
 
     /**
      * @var \MBLBundle\Entity\Fichier
@@ -84,6 +89,11 @@ class Profil extends BaseUser
      * @var \MBLBundle\Entity\Metier
      */
     private $metier;
+
+    /**
+     * @var \MBLBundle\Entity\Invest
+     */
+    private $invest;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -222,27 +232,51 @@ class Profil extends BaseUser
     }
 
     /**
-     * Set invest
+     * Set lng
      *
-     * @param \MBLBundle\Entity\Invest $invest
+     * @param string $lng
      *
      * @return Profil
      */
-    public function setInvest(\MBLBundle\Entity\Invest $invest = null)
+    public function setLng($lng)
     {
-        $this->invest = $invest;
+        $this->lng = $lng;
 
         return $this;
     }
 
     /**
-     * Get invest
+     * Get lng
      *
-     * @return \MBLBundle\Entity\Invest
+     * @return string
      */
-    public function getInvest()
+    public function getLng()
     {
-        return $this->invest;
+        return $this->lng;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Profil
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
     }
 
     /**
@@ -366,6 +400,30 @@ class Profil extends BaseUser
     }
 
     /**
+     * Set invest
+     *
+     * @param \MBLBundle\Entity\Invest $invest
+     *
+     * @return Profil
+     */
+    public function setInvest(\MBLBundle\Entity\Invest $invest = null)
+    {
+        $this->invest = $invest;
+
+        return $this;
+    }
+
+    /**
+     * Get invest
+     *
+     * @return \MBLBundle\Entity\Invest
+     */
+    public function getInvest()
+    {
+        return $this->invest;
+    }
+
+    /**
      * Add competence
      *
      * @param \MBLBundle\Entity\Competences $competence
@@ -466,63 +524,4 @@ class Profil extends BaseUser
     {
         return $this->chats;
     }
-    /**
-     * @var string
-     */
-    private $lng;
-
-
-    /**
-     * Set lng
-     *
-     * @param string $lng
-     *
-     * @return Profil
-     */
-    public function setLng($lng)
-    {
-        $this->lng = $lng;
-
-        return $this;
-    }
-
-    /**
-     * Get lng
-     *
-     * @return string
-     */
-    public function getLng()
-    {
-        return $this->lng;
-    }
-    /**
-     * @var string
-     */
-    private $ville;
-
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return Profil
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
-    }
-
 }
