@@ -19,7 +19,7 @@ security:
         ###Nom du parefeu, identifiant unique pouvant être nommé comme on le souhaite###
         main:
             ###Masque d'url, dans ce cas on définit que le parefeu main protège le site entier###
-            pattern: ^/[a-z]+/
+            pattern: ^/
             ###Méthode d'authenfication utilisé par ce parefeu
             form_login:
                 ###Fournisseur d'utilisateurs que l'on retrouve quelques lignes plus haut###
@@ -59,8 +59,8 @@ security:
 
     ###Contrôle d'accès aux pages###
     access_control:
-        - { path: ^/[a-z]+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/createProject, role: ROLE_USER }
