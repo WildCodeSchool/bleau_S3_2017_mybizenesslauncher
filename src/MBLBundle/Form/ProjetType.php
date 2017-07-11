@@ -45,7 +45,7 @@ class ProjetType extends AbstractType
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
-                'placeholder'   => '  Choisissez',
+                'placeholder'   => 'Choisissez',
                 'choice_translation_domain' => true
             ))
             ->add('secteur', EntityType::class, array(
@@ -54,7 +54,7 @@ class ProjetType extends AbstractType
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => 'Choisissez'
             ))
 
             ->add('localisation', ChoiceType::class, array(
@@ -107,7 +107,7 @@ class ProjetType extends AbstractType
                     'Autre'   => 'autre',
 
                 ),  'required'      => false,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => 'Choisissez'
             ))
             ->add('ville')
             ->add('fichier', FichierType::class)

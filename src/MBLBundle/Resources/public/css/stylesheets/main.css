@@ -544,7 +544,7 @@ input, button {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
-  height: 35em;
+  height: 37em;
   border: 2px solid #98d4e1;
   max-width: 300px;
 }
@@ -552,9 +552,10 @@ input, button {
 #showMyProjet .vignette_Myprojet:hover {
   background-color: #98d4e1;
 }
-/* line 24, ../sass/_showMyProject.scss */
-#showMyProjet .divform {
-  max-width: 130px;
+/* line 26, ../sass/_showMyProject.scss */
+#showMyProjet .divform .btn {
+  margin-top: 5px;
+  width: 130px;
 }
 
 /*
