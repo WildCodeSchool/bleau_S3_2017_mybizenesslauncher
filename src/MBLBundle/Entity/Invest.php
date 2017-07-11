@@ -187,4 +187,28 @@ class Invest
     {
         return $this->profils;
     }
+
+    /**
+     * Add profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     *
+     * @return Invest
+     */
+    public function addProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils[] = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Remove profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     */
+    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils->removeElement($profil);
+    }
 }
