@@ -13,11 +13,11 @@
                 <div class="row">
                     {{ form_start(form_localisation) }}
 
-                    <div class="col s3 m6 l6">
+                    <div class="col s12 m6 l3">
                         {{ form_row(form_localisation.localisation) }}
                         {{ form_errors(form_localisation.localisation) }}
                     </div>
-                    <div class="col s3 m6 l6">
+                    <div class="col s12 m6 l3">
 
                         {{ form_row(form_localisation.metier) }}
                         {{ form_errors(form_localisation.metier) }}
@@ -29,7 +29,7 @@
                 <div class="row">
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
-                            <div class="col l2 m3 s6 vignette_profil_all  z-depth-5">
+                            <div class="col l4 offset-l1 m6 s12 vignette_profil_all  z-depth-5">
                                 <div class="row vignette ">
                                     <div class="col s12">
                                         {% if pro.prenom|length > 10 %}

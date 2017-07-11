@@ -7,19 +7,19 @@
     <div class="showProjet">
         <div class="row">
             {{ form_start(form_secteur) }}
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 {{ form_row(form_secteur.secteur) }}
                 {{ form_errors(form_secteur.secteur) }}
             </div>
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 {{ form_row(form_secteur.typeDeProjet) }}
                 {{ form_errors(form_secteur.typeDeProjet) }}
             </div>
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 {{ form_row(form_secteur.localisation) }}
                 {{ form_errors(form_secteur.localisation) }}
             </div>
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 <input class="btn center" name="Rechercher" type="submit" value="{{ 'Rechercher'|trans }}">
             </div>
             {{ form_end(form_secteur) }}
@@ -29,7 +29,7 @@
             <div class="row">
                 {% for pro in projects %}
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s12 m6 l4 vignette_projet z-depth-5">
+                        <div class="col s12 m6 l4 offset-l1 vignette_projet z-depth-5">
                             <div class="row vignette">
 
                                 <div class="col s12">
