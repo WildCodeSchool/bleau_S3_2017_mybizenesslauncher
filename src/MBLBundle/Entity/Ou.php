@@ -8,7 +8,12 @@ namespace MBLBundle\Entity;
 class Ou
 {
 
+    public function __toString(){
+        return $this->ouit;
+    }
 
+
+    /* CODE GENERATED */
 
     /**
      * @var integer

@@ -21,6 +21,8 @@ MBLBundle\Entity\Invest:
         profilrecherches:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             mappedBy: invest
+
         profils:
             targetEntity: MBLBundle\Entity\Profil
             mappedBy: invest
+

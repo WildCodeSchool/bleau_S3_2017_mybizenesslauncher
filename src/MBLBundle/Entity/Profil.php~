@@ -8,10 +8,10 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class Profil extends BaseUser
 {
-    /**
-     * @var
-     */
-    protected $id;
+//    /**
+//     * @var
+//     */
+//    protected $id;
 
 //    /**
 //     * @var
@@ -30,6 +30,7 @@ class Profil extends BaseUser
 
 
 
+<<<<<<< HEAD
     /**
      * @var string
      */
@@ -525,4 +526,6 @@ class Profil extends BaseUser
         return $this->ville;
     }
 
+=======
+>>>>>>> be0948873573ff59d41582c7cddf0f0c9c455c4d
 }
