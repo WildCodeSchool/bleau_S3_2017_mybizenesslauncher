@@ -3,116 +3,118 @@
 {% extends 'MBLBundle::layout.html.twig' %}
 
 {% block titreH2 %}
-{% if projet is defined %}
-<h2>{{ 'Actualiser le projet'|trans }}</h2>
-{% else %}
-<h2>{{ 'Nouveau Projet'|trans }}</h2>
-{% endif %}
+    {% if projet is defined %}
+        <h2>{{ 'Actualiser le projet'|trans }}</h2>
+    {% else %}
+        <h2>{{ 'Nouveau Projet'|trans }}</h2>
+    {% endif %}
 {% endblock %}
 
 {% block body %}
+    <div id="createProjet" class="container">
+        <div class="row">
+            <div class="col s12 m12">
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="col s6">
+                        <div class="titre_row center-align">
+                            <label>{{ 'Titre'|trans }}</label>
+                            {{ form_errors(attribute(form, 'titre' ~ locale )) }}
+                            {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
+                        </div>
+                        <div class="description_row center-align">
+                            <label>{{ 'Description'|trans }}</label>
+                            {{ form_errors(attribute(form, 'description' ~ locale)) }}
+                            {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
+                        </div>
+                        <div class="siteInternet_row center-align">
+                            <label>{{ 'Site Internet'|trans }}</label>
+                            {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
+                            {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
+                        </div>
+                        <div class="ebustaUrl_row center-align">
+                            <label>{{ 'ebusta Url'|trans }}</label>
+                            {{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
+                            {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': 'ebusta Url'|trans}}) }}
 
-<div id="createProjet" class="container">
-<div class="row">
-<div class="col s12 m12">
-{{ form_start(form) }}
-<div class="row">
-<div class="col s6">
-<div class="titre_row center-align">
-<label>{{ 'Titre'|trans }}</label>
-{{ form_errors(attribute(form, 'titre' ~ locale )) }}
-{{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
-</div>
-<div class="description_row center-align">
-<label>{{ 'Description'|trans }}</label>
-{{ form_errors(attribute(form, 'description' ~ locale)) }}
-{{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
-</div>
-<div class="siteInternet_row center-align">
-<label>{{ 'Site Internet'|trans }}</label>
-{{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
-{{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
-</div>
-<div class="ebustaUrl_row center-align">
-<label>{{ 'ebusta Url'|trans }}</label>
-{{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
-{{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': 'ebusta Url'|trans}}) }}
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="typeDeProjet_row center-align">
+                            <label>{{ 'Type de projet'|trans }}</label>
+                            {{ form_errors(form.typeDeProjet) }}
+                            {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
+                        </div>
+                        <div class="secteur center-align">
+                            <label>{{ 'Secteur'|trans }}</label>
+                            {{ form_errors(form.secteur) }}
+                            {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
+                        </div>
+                        <div class="localisation center-align">
+                            <label>{{ 'Localisation'|trans }}</label>
+                            {{ form_errors(form.localisation ) }}
+                            {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
+                        </div>
+                        <div class="ville center-align">
+                            <label>{{ 'Ville'|trans }}</label>
+                            {{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
+                            {{ form_errors(form.ville) }}
+                        </div>
 
-</div>
-</div>
-<div class="col s6">
-<div class="typeDeProjet_row center-align">
-<label>{{ 'Type de projet'|trans }}</label>
-{{ form_errors(form.typeDeProjet) }}
-{{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
-</div>
-<div class="secteur center-align">
-<label>{{ 'Secteur'|trans }}</label>
-{{ form_errors(form.secteur) }}
-{{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
-</div>
-<div class="localisation center-align">
-<label>{{ 'Localisation'|trans }}</label>
-{{ form_errors(form.localisation ) }}
-{{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
-</div>
-<div class="ville center-align">
-<label>{{ 'Ville'|trans }}</label>
-{{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
-{{ form_errors(form.ville) }}
-</div>
+                        <div class="row">
+                            <div class="file center-align">
+                                <div class="col s6">
+                                    <label>{{ 'Photo(s)'|trans }}</label>
+                                    {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
+                                    {#{{ form_label(form.fichier.({{'Photo'|trans }}))  }}#}
+                                    {{ form_errors(form.fichier.file) }}
+                                    {{ form_widget(form.fichier.file) }}
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input class="btn submitProjet" type="submit" value="{{ 'Création'|trans }}"/>
+                </div>
+                {{ form_end(form) }}
 
-<div class="row">
-<div class="file center-align">
-<div class="col s6">
-<label>{{ 'Photo(s)'|trans }}</label> {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
-{#{{ form_label(form.fichier.({{'Photo'|trans }}))  }}#}
-{{ form_errors(form.fichier.file) }}
-{{ form_widget(form.fichier.file) }}
-</div>
-</div>
-<div class="col s4">
-<img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
-</div>
-</div>
-</div>
-</div>
-<div>
-<input class="btn submitProjet" type="submit" value="{{ 'Création'|trans }}"/>
-</div>
-{{ form_end(form) }}
-
-</div>
-</div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
+
 {% block javascripts %}
-{{ parent() }}
-<script>
-function readURL(input) {
+    {{ parent() }}
+    <script>
+        function readURL(input) {
 
-if (input.files && input.files[0]) {
-var reader = new FileReader();
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
-reader.onload = function (e) {
-$('#preview').attr('src', e.target.result);
-}
+                reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result);
+                }
 
-reader.readAsDataURL(input.files[0]);
-}
-}
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
-$("#mblbundle_projet_fichier_file").change(function(){
-readURL(this);
-});
-$(document).ready(function() {
-$('select').material_select();
-$('.file').on('click', '#mblbundle_projet_fichier_file', (function(){
-$('#preview').removeClass('hiddenPreview')
-$('#preview').slideDown(20000);
+        $("#mblbundle_projet_fichier_file").change(function(){
+            readURL(this);
+        });
+        $(document).ready(function() {
+            $('select').material_select();
+            $('.file').on('click', '#mblbundle_projet_fichier_file', (function(){
+                $('#preview').removeClass('hiddenPreview')
+                $('#preview').slideDown(20000);
 
-}));
+            }));
 
-});
-</script>
+        });
+    </script>
 {% endblock %}

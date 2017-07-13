@@ -206,44 +206,44 @@ h6 {
     display: none;
   }
 }
-/* line 58, ../sass/_index.scss */
+/* line 57, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 62, ../sass/_index.scss */
+/* line 61, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 66, ../sass/_index.scss */
+/* line 65, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 71, ../sass/_index.scss */
+  /* line 70, ../sass/_index.scss */
   #index .toHide {
     display: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 76, ../sass/_index.scss */
+  /* line 75, ../sass/_index.scss */
   #index .toShow {
     display: inline !important;
   }
 }
-/* line 81, ../sass/_index.scss */
+/* line 80, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
-/* line 84, ../sass/_index.scss */
+/* line 83, ../sass/_index.scss */
 #index .logoEb {
-  max-width: 180px;
+  max-width: 200px;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
-  /* line 84, ../sass/_index.scss */
+  /* line 83, ../sass/_index.scss */
   #index .logoEb {
     display: none;
   }
@@ -463,7 +463,7 @@ a .logoEbMenu:hover {
 }
 
 /* line 178, ../sass/_layout.scss */
-textarea#fos_user_registration_form_description {
+textarea #fos_user_registration_form_description {
   height: 10em;
 }
 
@@ -635,7 +635,7 @@ input[type=search], textarea.materialize-textarea {
   display: none;
 }
 /* line 45, ../sass/_formCreate.scss */
-#createProjet textarea#mblbundle_projet_description {
+#createProjet textarea #mblbundle_projet_description {
   height: 10em;
 }
 /* line 48, ../sass/_formCreate.scss */
