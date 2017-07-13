@@ -38,7 +38,7 @@ class ProfilRechercheType extends AbstractType
             'multiple'=> false,
             'expanded'=> false,
             'required' => false,
-            'placeholder'=> ' Quel est votre profil?'
+            'placeholder'=> 'Quel est votre profil?'
         ))
         ->add('etq', EntityType::class,
             array(
@@ -47,7 +47,7 @@ class ProfilRechercheType extends AbstractType
                 'multiple'=> false,
                 'expanded'=> false,
                 'required' => false,
-                'placeholder'=> ' Disponible en tant que'
+                'placeholder'=> 'Disponible en tant que'
             ))
         ->add('ou', EntityType::class,
             array(
@@ -56,7 +56,7 @@ class ProfilRechercheType extends AbstractType
                 'multiple'=> false,
                 'expanded'=> false,
                 'required' => false,
-                'placeholder'=> ' Où ça ?'
+                'placeholder'=> 'Où ça ?'
             ))
         ->add('invest', EntityType::class,
             array(
@@ -65,7 +65,7 @@ class ProfilRechercheType extends AbstractType
                 'multiple'=> false,
                 'expanded'=> false,
                 'required' => false,
-                'placeholder'=> ' Investissement possible'
+                'placeholder'=> 'Investissement possible'
             ))
         ->add('dispo', EntityType::class,
             array(
@@ -74,7 +74,7 @@ class ProfilRechercheType extends AbstractType
                 'multiple'=> false,
                 'expanded'=> false,
                 'required' => false,
-                'placeholder'=> ' Votre disponibilité'
+                'placeholder'=> 'Votre disponibilité'
             ))
         ->add('competences', EntityType::class,
             array(

@@ -315,57 +315,8 @@ class UserController extends Controller
             $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
             $Loc = $request->request->get('mblbundle_projet')['localisation']['localisation'];
 
-//        // Ajout des filtres
-//
-//        // Si les deux filtres sont selectionné on utilise la méthode écrite dans répositoryProjet
-            if (is_numeric($idSec) && is_numeric($idTyp) && !empty($Loc))
-            {
-                $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypSecLoc($idSec, $idTyp, $Loc, $locale);
-            }
-            elseif (!empty($Loc))
-            {
-                if(is_numeric($idSec) || is_numeric($idTyp))
-                {
-                    if(is_numeric($idSec))
-                    {
-                        $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteurLoc($idSec, $Loc, $locale);
-                    }
-                    else
-                    {
-                        $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjetLoc($idTyp, $Loc, $locale);
-                    }
-                }
-                elseif (!is_numeric($idSec) && !is_numeric($idTyp) && !empty($Loc))
-                {
-                    $projects = $em->getRepository('MBLBundle:Projet')->myfindByLoc($Loc, $locale);
-                }
 
-            }
-            //Si un filtre est selectionné on choisit lequel des deux a été envoyé et on utilise la méthode écrite dans répositoryProjet
-            elseif (is_numeric($idSec) && is_numeric($idTyp))
-            {
-                $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypEtSec($idSec, $idTyp, $locale);
-            }
-            elseif (is_numeric($idSec) || is_numeric($idTyp))
-            {
-                if(is_numeric($idSec))
-                {
-//                dump($idSec);die();
-                    $projects = $em->getRepository('MBLBundle:Projet')->myfindBySecteur($idSec, $locale);
-                }
-                else
-                {
-
-                    $projects = $em->getRepository('MBLBundle:Projet')->myfindByTypeDeProjet($idTyp, $locale);
-                }
-            }
-
-//        //Sinon on récupérera tous les projets
-            else
-            {
-                $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale);
-
-            }
+            $projects = $em->getRepository('MBLBundle:Projet')->myfindProjetByVDeux($idSec, $idTyp, $Loc, $locale);
 
         }
 

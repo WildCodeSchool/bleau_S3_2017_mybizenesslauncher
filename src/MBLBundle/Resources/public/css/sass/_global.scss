@@ -13,6 +13,7 @@ $BorderRadius : 8px;
 $small-and-down: "only screen and (max-width : 600px)";
 $medium-and-down: "only screen and (max-width : 992px)";
 $large-and-up: "only screen and (min-width : 993px)";
+$lar: "only screen and (max-width : 1228px)";
 
 
 /*
@@ -72,7 +73,7 @@ a { color: inherit; }
   margin-bottom: 10px;
   height: 30em;
   border: 2px solid $Colorblue;
-
+  min-width: 200px;
   max-width: 300px;
 
 }
@@ -88,6 +89,7 @@ a { color: inherit; }
 
   max-width: 300px;
 
+  min-width: 200px;
 
 }
 .vignette_profil:hover {

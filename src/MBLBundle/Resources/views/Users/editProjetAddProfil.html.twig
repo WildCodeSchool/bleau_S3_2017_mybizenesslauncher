@@ -11,38 +11,38 @@
             <div class="col s12 l5">
                 {{ form_start(form_pro) }}
                 <div class="center-align">
-                    {{ form_label(form_pro.metier, 'Profil recherché ') }}
+                    <h5 class="center">{{ 'Profil Recherché'|trans }}</h5>
                     {{ form_errors(form_pro.metier) }}
                     {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
                 </div>
                 <div class="center-align">
-                    {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
+                    <h5 class="center">{{ 'Disponible en tant que'|trans }}</h5>
+
                     {{ form_errors(form_pro.etq) }}
                     {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
                 </div>
                 <div class="center-align">
-                    {{ form_label(form_pro.competences, 'Compétences ') }}
+                    <h5 class="center">{{ 'Compétences:'|trans }}</h5>
                     {{ form_errors(form_pro.competences) }}
                     {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
                 </div>
                 <div class="center-align">
-                    {{ form_label(form_pro.dispo, 'Disponibilité ') }}
+                    <h5 class="center">{{ 'Disponibilité'|trans }}</h5>
                     {{ form_errors(form_pro.dispo) }}
                     {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' disponibilité'}}) }}
                 </div>
                 <div class="center-align">
-                    {{ form_label(form_pro.ou, 'Où ca ? ') }}
+                    <h5 class="center">{{ 'Où ça ?'|trans }}</h5>
                     {{ form_errors(form_pro.ou) }}
                     {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
                 </div>
                 <div class="center-align">
-                    {{ form_label(form_pro.invest, 'Investissement ') }}
+                    <h5 class="center">{{ 'Investissement:'|trans }}</h5>
                     {{ form_errors(form_pro.invest) }}
                     {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
-
                 </div>
                 <div class="bouton">
-                    <input class="btn" type="submit">
+                    <input class="btn" type="submit" value="{{ 'Editer profil recherché'|trans }}">
                 </div>
 
                 <input type="hidden" name="id" value="{{ projet.id }}">

@@ -7,7 +7,13 @@ namespace MBLBundle\Entity;
  */
 class ETQ
 {
+    public function __toString()
+    {
+       return  $this->etqit;
+    }
 
+
+    /* GENERATED CODE */
 
     /**
      * @var integer

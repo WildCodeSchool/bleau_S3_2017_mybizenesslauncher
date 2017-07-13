@@ -68,6 +68,7 @@ a {
   margin-bottom: 10px;
   height: 30em;
   border: 2px solid #98d4e1;
+  min-width: 200px;
   max-width: 300px;
 }
 
@@ -84,20 +85,33 @@ a {
   height: 30em;
   border: 2px solid #98d4e1;
   max-width: 300px;
+  min-width: 200px;
 }
 
+<<<<<<< HEAD
 /* line 93, ../sass/_global.scss */
+=======
+/* line 94, ../sass/_global.scss */
+>>>>>>> dev
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
+<<<<<<< HEAD
 /* line 96, ../sass/_global.scss */
+=======
+/* line 97, ../sass/_global.scss */
+>>>>>>> dev
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
+<<<<<<< HEAD
 /* line 100, ../sass/_global.scss */
+=======
+/* line 101, ../sass/_global.scss */
+>>>>>>> dev
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -109,45 +123,77 @@ a {
   hyphens: auto;
 }
 
+<<<<<<< HEAD
 /* line 110, ../sass/_global.scss */
+=======
+/* line 111, ../sass/_global.scss */
+>>>>>>> dev
 .photo_profil {
   border-radius: 8px;
 }
 
+<<<<<<< HEAD
 /* line 114, ../sass/_global.scss */
+=======
+/* line 115, ../sass/_global.scss */
+>>>>>>> dev
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
+<<<<<<< HEAD
 /* line 119, ../sass/_global.scss */
+=======
+/* line 120, ../sass/_global.scss */
+>>>>>>> dev
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
+<<<<<<< HEAD
 /* line 124, ../sass/_global.scss */
+=======
+/* line 125, ../sass/_global.scss */
+>>>>>>> dev
 .info_projet {
   height: 16em;
 }
 
+<<<<<<< HEAD
 /* line 128, ../sass/_global.scss */
+=======
+/* line 129, ../sass/_global.scss */
+>>>>>>> dev
 h6 {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 /* line 132, ../sass/_global.scss */
+=======
+/* line 133, ../sass/_global.scss */
+>>>>>>> dev
 .select-dropdown {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
 /* line 135, ../sass/_global.scss */
+=======
+/* line 136, ../sass/_global.scss */
+>>>>>>> dev
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
 
 /* 2. INDEX */
+<<<<<<< HEAD
 /* line 8, ../sass/_index.scss */
+=======
+/* line 6, ../sass/_index.scss */
+>>>>>>> dev
 #index .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -155,12 +201,16 @@ h6 {
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 8, ../sass/_index.scss */
+  /* line 6, ../sass/_index.scss */
   #index .bandeau_homepage {
     display: none;
   }
 }
+<<<<<<< HEAD
 /* line 17, ../sass/_index.scss */
+=======
+/* line 16, ../sass/_index.scss */
+>>>>>>> dev
 #index h2 {
   font-size: 1.5em;
 }
@@ -198,50 +248,86 @@ h6 {
 #index .btn_bandeau_homepage:focus {
   background-color: #f0f0f0;
 }
+<<<<<<< HEAD
 @media only screen and (max-width: 992px) {
+=======
+@media only screen and (max-width: 1228px) {
+>>>>>>> dev
   /* line 40, ../sass/_index.scss */
   #index .btn_bandeau_homepage {
     display: none;
   }
 }
+<<<<<<< HEAD
 /* line 55, ../sass/_index.scss */
+=======
+/* line 56, ../sass/_index.scss */
+>>>>>>> dev
 #index .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
+<<<<<<< HEAD
 /* line 59, ../sass/_index.scss */
+=======
+/* line 60, ../sass/_index.scss */
+>>>>>>> dev
 #index .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
+<<<<<<< HEAD
 /* line 63, ../sass/_index.scss */
+=======
+/* line 64, ../sass/_index.scss */
+>>>>>>> dev
 #index .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   /* line 68, ../sass/_index.scss */
+=======
+  /* line 69, ../sass/_index.scss */
+>>>>>>> dev
   #index .toHide {
     display: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   /* line 73, ../sass/_index.scss */
+=======
+  /* line 74, ../sass/_index.scss */
+>>>>>>> dev
   #index .toShow {
     display: inline !important;
   }
 }
+<<<<<<< HEAD
 /* line 78, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
 /* line 81, ../sass/_index.scss */
+=======
+/* line 79, ../sass/_index.scss */
+#index .btn_eBusta {
+  margin-top: 40px;
+}
+/* line 82, ../sass/_index.scss */
+>>>>>>> dev
 #index .logoEb {
   max-width: 180px;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   /* line 81, ../sass/_index.scss */
+=======
+  /* line 82, ../sass/_index.scss */
+>>>>>>> dev
   #index .logoEb {
     display: none;
   }
@@ -260,7 +346,7 @@ Layout.html.twig
 .page-footer {
   background-color: #4b494b;
   position: relative;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
 
@@ -547,7 +633,7 @@ input, button {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
-  height: 35em;
+  height: 37em;
   border: 2px solid #98d4e1;
   max-width: 300px;
 }
@@ -555,9 +641,10 @@ input, button {
 #showMyProjet .vignette_Myprojet:hover {
   background-color: #98d4e1;
 }
-/* line 24, ../sass/_showMyProject.scss */
-#showMyProjet .divform {
-  max-width: 130px;
+/* line 26, ../sass/_showMyProject.scss */
+#showMyProjet .divform .btn {
+  margin-top: 5px;
+  width: 130px;
 }
 
 /*

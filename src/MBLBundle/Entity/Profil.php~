@@ -8,10 +8,10 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class Profil extends BaseUser
 {
-    /**
-     * @var
-     */
-    protected $id;
+//    /**
+//     * @var
+//     */
+//    protected $id;
 
 //    /**
 //     * @var
@@ -30,6 +30,7 @@ class Profil extends BaseUser
 
 
 
+<<<<<<< HEAD
     /**
      * @var string
      */
@@ -53,12 +54,7 @@ class Profil extends BaseUser
     /**
      * @var string
      */
-    private $localisationfr;
-
-    /**
-     * @var string
-     */
-    private $localisationit;
+    private $localisation;
 
     /**
      * @var \MBLBundle\Entity\Invest
@@ -203,51 +199,27 @@ class Profil extends BaseUser
     }
 
     /**
-     * Set localisationfr
+     * Set localisation
      *
-     * @param string $localisationfr
+     * @param string $localisation
      *
      * @return Profil
      */
-    public function setLocalisationfr($localisationfr)
+    public function setLocalisation($localisation)
     {
-        $this->localisationfr = $localisationfr;
+        $this->localisation = $localisation;
 
         return $this;
     }
 
     /**
-     * Get localisationfr
+     * Get localisation
      *
      * @return string
      */
-    public function getLocalisationfr()
+    public function getLocalisation()
     {
-        return $this->localisationfr;
-    }
-
-    /**
-     * Set localisationit
-     *
-     * @param string $localisationit
-     *
-     * @return Profil
-     */
-    public function setLocalisationit($localisationit)
-    {
-        $this->localisationit = $localisationit;
-
-        return $this;
-    }
-
-    /**
-     * Get localisationit
-     *
-     * @return string
-     */
-    public function getLocalisationit()
-    {
-        return $this->localisationit;
+        return $this->localisation;
     }
 
     /**
@@ -495,36 +467,34 @@ class Profil extends BaseUser
     {
         return $this->chats;
     }
-<<<<<<< HEAD
-=======
     /**
-     * @var \MBLBundle\Entity\Fichier
+     * @var string
      */
-    private $fichier;
+    private $lng;
 
 
     /**
-     * Set fichier
+     * Set lng
      *
-     * @param \MBLBundle\Entity\Fichier $fichier
+     * @param string $lng
      *
      * @return Profil
      */
-    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    public function setLng($lng)
     {
-        $this->fichier = $fichier;
+        $this->lng = $lng;
 
         return $this;
     }
 
     /**
-     * Get fichier
+     * Get lng
      *
-     * @return \MBLBundle\Entity\Fichier
+     * @return string
      */
-    public function getFichier()
+    public function getLng()
     {
-        return $this->fichier;
+        return $this->lng;
     }
     /**
      * @var string
@@ -555,5 +525,7 @@ class Profil extends BaseUser
     {
         return $this->ville;
     }
->>>>>>> 757de3c825903ebf40f427389b04fb6b6dbb465f
+
+=======
+>>>>>>> be0948873573ff59d41582c7cddf0f0c9c455c4d
 }

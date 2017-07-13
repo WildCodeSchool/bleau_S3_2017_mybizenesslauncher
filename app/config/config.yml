@@ -92,3 +92,55 @@ fos_user:
 
     service:
         mailer: fos_user.mailer.twig_swift
+
+
+easy_admin:
+    entities:
+
+        Chat:
+            class: MBLBundle\Entity\Chat
+
+        Competences:
+            class: MBLBundle\Entity\Competences
+
+        Dispo:
+            class: MBLBundle\Entity\Dispo
+
+        ETQ:
+            class: MBLBundle\Entity\ETQ
+
+        Fichier:
+            class: MBLBundle\Entity\Fichier
+
+        Invest:
+            class: MBLBundle\Entity\Invest
+
+        Metier:
+            class: MBLBundle\Entity\Metier
+
+        Ou:
+            class: MBLBundle\Entity\Ou
+
+        Profil:
+            class: MBLBundle\Entity\Profil
+
+        ProfilRecherche:
+            class: MBLBundle\Entity\ProfilRecherche
+
+        Projet:
+            class: MBLBundle\Entity\Projet
+
+        Secteur:
+            class: MBLBundle\Entity\Secteur
+
+        Text:
+            class: MBLBundle\Entity\Text
+
+        TypeDeProjet:
+            class: MBLBundle\Entity\TypeDeProjet
+#        - MBLBundle\Entity\ImgProjet
+
+    site_name: "Innova'Up"
+    design:
+        brand_color: '#98d4e1'
+        color_scheme: 'light'
