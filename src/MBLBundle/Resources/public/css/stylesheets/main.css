@@ -613,39 +613,52 @@ input[type=search], textarea.materialize-textarea {
 /* line 27, ../sass/_formCreate.scss */
 #createProjet input:not([type]), #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
 #createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
-#createProjet input[type=search], #createProjet #mblbundle_projet_description, #createProjet #mblbundle_projet_localisation {
+#createProjet input[type=search], #createProjet textarea {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
-/* line 35, ../sass/_formCreate.scss */
-#createProjet input:focus, #createProjet #mblbundle_projet_description:focus, #createProjet #mblbundle_projet_localisation:focus {
-  border: 1.5px solid #98d4e1;
+/* line 36, ../sass/_formCreate.scss */
+#createProjet input:focus {
+  border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
   outline: none;
   box-shadow: none;
 }
-/* line 42, ../sass/_formCreate.scss */
+/* line 45, ../sass/_formCreate.scss */
 #createProjet .hiddenPreview {
   display: none;
 }
-/* line 45, ../sass/_formCreate.scss */
-#createProjet textarea#mblbundle_projet_description {
-  height: 10em;
-}
 /* line 48, ../sass/_formCreate.scss */
+#createProjet textarea {
+  height: 11em;
+  border-radius: 10px;
+}
+/* line 53, ../sass/_formCreate.scss */
+#createProjet textarea:focus {
+  border: 1.5px solid #98d4e1 !important;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+/* line 59, ../sass/_formCreate.scss */
 #createProjet .submitProjet {
   margin: auto;
   display: block;
   margin-bottom: 10px;
+  background-color: #98d4e1;
 }
-/* line 53, ../sass/_formCreate.scss */
+/* line 65, ../sass/_formCreate.scss */
 #createProjet img {
   width: 100%;
 }
-/* line 56, ../sass/_formCreate.scss */
+/* line 68, ../sass/_formCreate.scss */
 #createProjet ul li span {
   color: #4b494b;
+}
+/* line 71, ../sass/_formCreate.scss */
+#createProjet form {
+  margin-top: 50px;
 }
 
 /* line 2, ../sass/_formCreatePro.scss */
