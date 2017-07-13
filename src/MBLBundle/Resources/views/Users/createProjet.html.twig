@@ -2,9 +2,16 @@
 
 {% extends 'MBLBundle::layout.html.twig' %}
 
-{% block titreH2 %}<h2>Nouveau Projet</h2>{% endblock %}
+{% block titreH2 %}
+    {% if projet is defined %}
+        <h2>{{ 'Actualiser le projet'|trans }}</h2>
+    {% else %}
+        <h2>{{ 'Nouveau Projet'|trans }}</h2>
+    {% endif %}
+{% endblock %}
 
 {% block body %}
+
     <div id="createProjet" class="container">
         <div class="row">
             <div class="col s12 m12">
@@ -12,70 +19,71 @@
                 <div class="row">
                     <div class="col s6">
                         <div class="titre_row center-align">
-                            {{ form_label(form.titre) }}
-                            {{ form_errors(form.titre) }}
-                            {{ form_widget(form.titre, {'attr': {'placeholder': '  Titre'}}) }}
+                           <label>{{ 'Titre'|trans }}</label>
+                            {{ form_errors(attribute(form, 'titre' ~ locale )) }}
+                            {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
                         </div>
                         <div class="description_row center-align">
-                            {{ form_label(form.description) }}
-                            {{ form_errors(form.description) }}
-                            {{ form_widget(form.description, {'attr': {'placeholder': '  Description'}}) }}
+                            <label>{{ 'Description'|trans }}</label>
+                            {{ form_errors(attribute(form, 'description' ~ locale)) }}
+                            {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
                         </div>
                         <div class="siteInternet_row center-align">
-                            {{ form_label(form.siteInternet) }}
-                            {{ form_errors(form.siteInternet) }}
-                            {{ form_widget(form.siteInternet, {'attr': {'placeholder': '  URL:'}}) }}
+                             <label>{{ 'Site Internet'|trans }}</label>
+                            {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
+                            {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
                         </div>
                         <div class="ebustaUrl_row center-align">
-                            {{ form_label(form.ebustaUrl) }}
-                            {{ form_errors(form.ebustaUrl) }}
-                            {{ form_widget(form.ebustaUrl, {'attr': {'placeholder': '  URL:'}}) }}
+                            <label>{{ 'ebusta Url'|trans }}</label>
+                            {{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
+                            {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': 'ebusta Url'|trans}}) }}
+
                         </div>
                     </div>
                     <div class="col s6">
                         <div class="typeDeProjet_row center-align">
-                            {{ form_label(form.typeDeProjet) }}
+                            <label>{{ 'Type de projet'|trans }}</label>
                             {{ form_errors(form.typeDeProjet) }}
                             {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
                         </div>
                         <div class="secteur center-align">
-                            {{ form_label(form.secteur) }}
+                            <label>{{ 'Secteur'|trans }}</label>
                             {{ form_errors(form.secteur) }}
                             {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
                         </div>
                         <div class="localisation center-align">
-                            {{ form_label(form.localisation) }}
-                            {{ form_errors(form.localisation) }}
-                            {{ form_widget(form.localisation, {'attr': {'placeholder': '  Localisation:'}}) }}
+                            <label>{{ 'Localisation'|trans }}</label>
+                            {{ form_errors(form.localisation ) }}
+                            {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
                         </div>
                         <div class="ville center-align">
-                            {{ form_label(form.ville, 'Ville :') }}
-                            {{ form_widget(form.ville, {'attr' : {'placeholder' : ' Ville'}}) }}
+                              <label>{{ 'Ville'|trans }}</label>
+                            {{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
                             {{ form_errors(form.ville) }}
                         </div>
+               
                         <div class="row">
                             <div class="file center-align">
                                 <div class="col s6">
+                                <label>{{ 'photo'|trans }}</label> {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
 
-                                    {{ form_errors(form.fichier) }}
-                                    {{ form_widget(form.fichier) }}
+                                    {{ form_errors(form.fichier.file) }}
+                                    {{ form_widget(form.fichier.file) }}
                                 </div>
                             </div>
-                            <div class="col s6">
+                            <div class="col s4">
                                 <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <input class="btn submitProjet" type="submit" value="Création"/>
-        </div>
-        {{ form_end(form) }}
+            <div>
+                <input class="btn submitProjet" type="submit" value="{{ 'Création'|trans }}"/>
+            </div>
+            {{ form_end(form) }}
 
+        </div>
     </div>
-
 
 {% endblock %}
 {% block javascripts %}

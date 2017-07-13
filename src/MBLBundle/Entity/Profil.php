@@ -28,6 +28,8 @@ class Profil extends BaseUser
 
     // Generated code
 
+
+
     /**
      * @var string
      */
@@ -54,9 +56,19 @@ class Profil extends BaseUser
     private $localisation;
 
     /**
-     * @var \MBLBundle\Entity\Invest
+     * @var string
      */
-    private $invest;
+    private $lng;
+
+    /**
+     * @var string
+     */
+    private $ville;
+
+    /**
+     * @var \MBLBundle\Entity\Fichier
+     */
+    private $fichier;
 
     /**
      * @var \MBLBundle\Entity\ETQ
@@ -77,6 +89,11 @@ class Profil extends BaseUser
      * @var \MBLBundle\Entity\Metier
      */
     private $metier;
+
+    /**
+     * @var \MBLBundle\Entity\Invest
+     */
+    private $invest;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -215,27 +232,75 @@ class Profil extends BaseUser
     }
 
     /**
-     * Set invest
+     * Set lng
      *
-     * @param \MBLBundle\Entity\Invest $invest
+     * @param string $lng
      *
      * @return Profil
      */
-    public function setInvest(\MBLBundle\Entity\Invest $invest = null)
+    public function setLng($lng)
     {
-        $this->invest = $invest;
+        $this->lng = $lng;
 
         return $this;
     }
 
     /**
-     * Get invest
+     * Get lng
      *
-     * @return \MBLBundle\Entity\Invest
+     * @return string
      */
-    public function getInvest()
+    public function getLng()
     {
-        return $this->invest;
+        return $this->lng;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Profil
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set fichier
+     *
+     * @param \MBLBundle\Entity\Fichier $fichier
+     *
+     * @return Profil
+     */
+    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
+    {
+        $this->fichier = $fichier;
+
+        return $this;
+    }
+
+    /**
+     * Get fichier
+     *
+     * @return \MBLBundle\Entity\Fichier
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
     }
 
     /**
@@ -332,6 +397,30 @@ class Profil extends BaseUser
     public function getMetier()
     {
         return $this->metier;
+    }
+
+    /**
+     * Set invest
+     *
+     * @param \MBLBundle\Entity\Invest $invest
+     *
+     * @return Profil
+     */
+    public function setInvest(\MBLBundle\Entity\Invest $invest = null)
+    {
+        $this->invest = $invest;
+
+        return $this;
+    }
+
+    /**
+     * Get invest
+     *
+     * @return \MBLBundle\Entity\Invest
+     */
+    public function getInvest()
+    {
+        return $this->invest;
     }
 
     /**
@@ -434,63 +523,5 @@ class Profil extends BaseUser
     public function getChats()
     {
         return $this->chats;
-    }
-    /**
-     * @var \MBLBundle\Entity\Fichier
-     */
-    private $fichier;
-
-
-    /**
-     * Set fichier
-     *
-     * @param \MBLBundle\Entity\Fichier $fichier
-     *
-     * @return Profil
-     */
-    public function setFichier(\MBLBundle\Entity\Fichier $fichier = null)
-    {
-        $this->fichier = $fichier;
-
-        return $this;
-    }
-
-    /**
-     * Get fichier
-     *
-     * @return \MBLBundle\Entity\Fichier
-     */
-    public function getFichier()
-    {
-        return $this->fichier;
-    }
-    /**
-     * @var string
-     */
-    private $ville;
-
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return Profil
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
     }
 }

@@ -9,7 +9,10 @@ MBLBundle\Entity\Dispo:
             generator:
                 strategy: AUTO
     fields:
-        dispo:
+        dispofr:
+            type: string
+            length: 255
+        dispoit:
             type: string
             length: 255
     lifecycleCallbacks: {  }

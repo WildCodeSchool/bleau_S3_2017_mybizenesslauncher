@@ -7,84 +7,13 @@ namespace MBLBundle\Entity;
  */
 class Invest
 {
-
-
-    /**
-     * @var integer
-     */
-    private $id;
-
-    /**
-     * @var string
-     */
-    private $invest;
-
-    /**
-     * @var \MBLBundle\Entity\Profil
-     */
-    private $profil;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $profilrecherches;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->profilrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+    public function __toString(){
+        return $this->investit;
     }
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    /* CODE GENERATED */
 
-    /**
-     * Set invest
-     *
-     * @param string $invest
-     *
-     * @return Invest
-     */
-    public function setInvest($invest)
-    {
-        $this->invest = $invest;
-
-        return $this;
-    }
-
-    /**
-     * Get invest
-     *
-     * @return string
-     */
-    public function getInvest()
-    {
-        return $this->invest;
-    }
-
-    /**
-     * Set profil
-     *
-     * @param \MBLBundle\Entity\Profil $profil
-     *
-     * @return Invest
-     */
-    public function setProfil(\MBLBundle\Entity\Profil $profil = null)
-    {
-        $this->profil = $profil;
-
-        return $this;
-    }
-
+<<<<<<< HEAD
     /**
      * Get profil
      *
@@ -128,4 +57,35 @@ class Invest
     {
         return $this->profilrecherches;
     }
+    /**
+     * @var \MBLBundle\Entity\Profil
+     */
+    private $profils;
+
+
+    /**
+     * Set profils
+     *
+     * @param \MBLBundle\Entity\Profil $profils
+     *
+     * @return Invest
+     */
+    public function setProfils(\MBLBundle\Entity\Profil $profils = null)
+    {
+        $this->profils = $profils;
+
+        return $this;
+    }
+
+    /**
+     * Get profils
+     *
+     * @return \MBLBundle\Entity\Profil
+     */
+    public function getProfils()
+    {
+        return $this->profils;
+    }
+=======
+>>>>>>> be0948873573ff59d41582c7cddf0f0c9c455c4d
 }

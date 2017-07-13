@@ -1,136 +1,135 @@
 {% extends 'MBLBundle::layout.html.twig' %}
 
-{% block titreH2 %}<h2>Nouveau Profil recherché</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ 'Nouveau Profil recherché'|trans }}</h2>{% endblock %}
 
 {% block body %}
-    <div id="formCreatePro">
-        <div class="container container_body">
-            <div class="row">
-                <div class="col s12 l5">
-                    {{ form_start(form_pro) }}
-                    <div class="center-align">
-                        {{ form_label(form_pro.metier, 'Profil recherché ') }}
-                        {{ form_errors(form_pro.metier) }}
-                        {{ form_widget(form_pro.metier, {'attr': {'placeholder': '  Profil'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.etq, 'Disponible en tant que ') }}
-                        {{ form_errors(form_pro.etq) }}
-                        {{ form_widget(form_pro.etq, {'attr': {'placeholder': ' En tant que'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.competences, 'Compétences ') }}
-                        {{ form_errors(form_pro.competences) }}
-                        {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.dispo, 'Disponibilité ') }}
-                        {{ form_errors(form_pro.dispo) }}
-                        {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': ' disponibilité'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.ou, 'Où ca ? ') }}
-                        {{ form_errors(form_pro.ou) }}
-                        {{ form_widget(form_pro.ou, {'attr': {'placeholder': ' Où ça ?:'}}) }}
-                    </div>
-                    <div class="center-align">
-                        {{ form_label(form_pro.invest, 'Investissement ') }}
-                        {{ form_errors(form_pro.invest) }}
-                        {{ form_widget(form_pro.invest, {'attr': {'placeholder': ' Investissement:'}}) }}
-                    </div>
-                    <div class="bouton">
-                        <input class="btn" type="submit">
-                    </div>
-
-                    <input type="hidden" name="id" value="{{ projet.id }}">
-
-                    {{ form_end(form_pro) }}
+<div id="formCreatePro">
+    <div class="container container_body">
+        <div class="row">
+            <div class="col s12 l5">
+                {{ form_start(form_pro) }}
+                <div class="center-align">
+                    <h5 class="center">{{ 'Profil Recherché'|trans }}</h5>
+                    {{ form_errors(form_pro.metier) }}
+                    {{ form_widget(form_pro.metier, {'attr': {'placeholder': 'Profil'|trans}}) }}
                 </div>
-                <div class="col s12 l6 offset-l1">
+                <div class="center-align">
+                    <h5 class="center">{{ 'Disponible en tant que'|trans }}</h5>
 
-                    <div class="profil_recherche">
-                        {% for profil in profil_Recheche_exist %}
+                    {{ form_errors(form_pro.etq) }}
+                    {{ form_widget(form_pro.etq, {'attr': {'placeholder': 'En tant que'|trans}}) }}
+                </div>
+                <div class="center-align">
+                    <h5 class="center">{{ 'Compétences:'|trans }}</h5>
+                    {{ form_errors(form_pro.competences) }}
+                    {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
+                </div>
+                <div class="center-align">
+                    <h5 class="center">{{ 'Disponibilité'|trans }}</h5>
+                    {{ form_errors(form_pro.dispo) }}
+                    {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': 'Disponibilité:'|trans}}) }}
+                </div>
+                <div class="center-align">
+                    <h5 class="center">{{ 'Où ça ?'|trans }}</h5>
+                    {{ form_errors(form_pro.ou) }}
+                    {{ form_widget(form_pro.ou, {'attr': {'placeholder': 'Où ça ?'|trans}}) }}
+                </div>
+                <div class="center-align">
+                    <h5 class="center">{{ 'Investissement:'|trans }}</h5>
+                    {{ form_errors(form_pro.invest) }}
+                    {{ form_widget(form_pro.invest, {'attr': {'placeholder': 'Investissement:'|trans}}) }}
+                </div>
+                <div class="bouton">
+                    <input class="btn" type="submit" value="{{ 'Envoyer'|trans }}">
+                </div>
 
-                            <div class="col s6 vignette_projet_profilAdd z-depth-5">
-                                <div class="row type_metier">
-                                    <div class="color col s12">
-                                        <h5 class="center">Profil Recherché</h5>
-                                        {% if profil.metier.metier is empty %}
-                                            <p class="center grey-text">renseigner</p>
-                                        {% else %}
-                                            <p>{{profil.metier.metier }} </p>
-                                        {% endif %}
-                                    </div>
-                                </div>
+                <input type="hidden" name="id" value="{{ projet.id }}">
 
-                                <div class="row info_projet_profilAdd">
+                {{ form_end(form_pro) }}
+            </div>
+            <div class="col s12 l6 offset-l1">
 
-                                    <div class="col s12">
-                                        <h6>Disponibilité</h6>
-                                        {% if profil.dispo.dispo is empty %}
-                                            <p class="center grey-text">renseigner</p>
-                                        {% else %}
-                                            <p>{{ profil.dispo.dispo }} </p>
-                                        {% endif %}
-                                        <div class="divider"></div>
-                                    </div>
-                                    <div class="col s12">
-                                        <h6>En tant que</h6>
-                                        {% if profil.etq.etq is empty %}
-                                            <p class="center grey-text">renseigner</p>
-                                        {% else %}
-                                            <p>{{ profil.etq.etq }} </p>
-                                        {% endif %}
-                                        <div class="divider"></div>
-                                    </div>
-                                    <div class="col s12">
-                                        <h6>Localisation</h6>
-                                        {% if profil.ou.ou is empty %}
-                                            <p class="center grey-text">renseigner</p>
-                                        {% else %}
-                                            <p>{{ profil.ou.ou }}</p>
-                                        {% endif %}
-                                        <div class="divider"></div>
-                                    </div>
-                                    <div class="col s12">
-                                        <h6>Investissement</h6>
-                                        {% if profil.invest.invest is empty %}
-                                        <p class="center grey-text">renseigner</p>
+                <div class="profil_recherche">
+                    {% for profil in profil_Recheche_exist %}
+
+                        <div class="col s6 vignette_projet_profilAdd z-depth-5">
+                            <div class="row type_metier">
+                                <div class="color col s12">
+                                    <h5 class="center">{{ 'Profil Recherché'|trans }}</h5>
+                                    {% if profil.metier is empty %}
+                                        <p class="center grey-text">{{ 'renseignez votre status'|trans }}</p>
                                     {% else %}
-                                        <p>{{ profil.invest.invest }}</p>
-                                        {% endif %}<div class="divider"></div>
-                                    </div>
-                                    <div class="col s12">
-                                        <h6>Compétences</h6>
-                                        {% for comp in profil.competences %}
-                                            {% if comp.competences is empty %}
-                                                <p class="center grey-text">renseigner</p>
-                                            {% else %}
-                                                {% if loop.last %}
-                                                    {{ comp.competences}}
-                                                {% else %}
-                                                    {{ comp.competences}},
-                                                {% endif %}
-                                            {% endif %}
-
-
-                                        {% endfor %}
-                                    </div>
-
-
-                                </div>
-                                <div class="col s12">
-                                    <button class="btn deleteProfilR" id="{{ profil.id }}">Supprimer</button>
+                                        <p class="center">{{profil.metier }} </p>
+                                    {% endif %}
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
+
+                            <div class="row info_projet_profilAdd">
+
+                                <div class="col s12">
+                                    <h6>{{ 'Disponibilité'|trans }}</h6>
+                                    {% if profil.dispo is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.dispo }} </p>
+                                    {% endif %}
+                                    <div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>{{ 'En tant que'|trans }}</h6>
+                                    {% if profil.etq is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.etq}} </p>
+                                    {% endif %}
+                                    <div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>{{ 'Localisation'|trans }}</h6>
+                                    {% if profil.ou is empty %}
+                                        <p class="center grey-text">renseigner</p>
+                                    {% else %}
+                                        <p>{{ profil.ou }}</p>
+                                    {% endif %}
+                                    <div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>{{ 'Investissement'|trans }}</h6>
+                                    {% if profil.invest is empty %}
+                                    <p class="center grey-text">renseigner</p>
+                                {% else %}
+                                    <p>{{ profil.invest }}</p>
+                                    {% endif %}<div class="divider"></div>
+                                </div>
+                                <div class="col s12">
+                                    <h6>{{ 'Compétences'|trans }}</h6>
+
+                                    {% for comp in profil.competence %}
+                                        {% if comp.competence is empty %}
+                                            <p class="center grey-text">renseigner</p>
+                                        {% else %}
+                                            {% if loop.last %}
+                                                {{ comp.competence}}
+                                            {% else %}
+                                                {{ comp.competence}},
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col s8 offset-s2">
+                                <button class="btn deleteProfilR" id="{{ profil.id }}">{{ 'Supprimer'|trans }}</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
     </div>
+    {% endblock %}
 
-{% endblock %}
+
     {% block javascripts %}
         {{ parent() }}
         <script>
@@ -144,12 +143,9 @@
                         method: 'post',
                         url: '{{ path('createProfilRechercheProjet') }}',
                         data: data,
-
                         success: function(response){
-
                             $('.profil_recherche').append(response);
                             $('.vignette_projet_profilAdd:last-child').hide().fadeIn(2000);
-
                             form.trigger('reset');
                         }
                     });
@@ -164,15 +160,9 @@
                         data: {'id' : id},
                         success: function(){
                             $(content).fadeOut(2000);
-
                         }
-
                     });
-
-
                 })
-
-
             });
         </script>
     {% endblock %}

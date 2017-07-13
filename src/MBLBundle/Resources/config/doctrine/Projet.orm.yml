@@ -9,16 +9,33 @@ MBLBundle\Entity\Projet:
             generator:
                 strategy: AUTO
     fields:
-        titre:
-            type: string
-            length: 255
-        description:
-            type: text
-        siteInternet:
+        titrefr:
             type: string
             length: 255
             nullable: true
-        ebustaUrl:
+        titreit:
+            type: string
+            length: 255
+            nullable: true
+        descriptionfr:
+            type: text
+            nullable: true
+        descriptionit:
+            type: text
+            nullable: true
+        siteInternetfr:
+            type: string
+            length: 255
+            nullable: true
+        siteInternetit:
+            type: string
+            length: 255
+            nullable: true
+        ebustaUrlfr:
+            type: string
+            length: 255
+            nullable: true
+        ebustaUrlit:
             type: string
             length: 255
             nullable: true
@@ -32,7 +49,6 @@ MBLBundle\Entity\Projet:
             type: string
             length: 255
             nullable: true
-
 
     lifecycleCallbacks: {  }
 
@@ -54,7 +70,7 @@ MBLBundle\Entity\Projet:
         profilsrecherches:
             targetEntity: MBLBundle\Entity\ProfilRecherche
             inversedBy: projets
-            cascade: ["persist"]
+            cascade: ["all"]
 
         profils:
             targetEntity: MBLBundle\Entity\Profil

@@ -7,7 +7,11 @@ namespace MBLBundle\Entity;
  */
 class Invest
 {
+    public function __toString(){
+        return $this->investit;
+    }
 
+    /* CODE GENERATED */
 
     /**
      * @var integer
@@ -17,12 +21,12 @@ class Invest
     /**
      * @var string
      */
-    private $invest;
+    private $investfr;
 
     /**
-     * @var \MBLBundle\Entity\Profil
+     * @var string
      */
-    private $profil;
+    private $investit;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -30,11 +34,17 @@ class Invest
     private $profilrecherches;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $profils;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->profilrecherches = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->profils = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -48,51 +58,51 @@ class Invest
     }
 
     /**
-     * Set invest
+     * Set investfr
      *
-     * @param string $invest
+     * @param string $investfr
      *
      * @return Invest
      */
-    public function setInvest($invest)
+    public function setInvestfr($investfr)
     {
-        $this->invest = $invest;
+        $this->investfr = $investfr;
 
         return $this;
     }
 
     /**
-     * Get invest
+     * Get investfr
      *
      * @return string
      */
-    public function getInvest()
+    public function getInvestfr()
     {
-        return $this->invest;
+        return $this->investfr;
     }
 
     /**
-     * Set profil
+     * Set investit
      *
-     * @param \MBLBundle\Entity\Profil $profil
+     * @param string $investit
      *
      * @return Invest
      */
-    public function setProfil(\MBLBundle\Entity\Profil $profil = null)
+    public function setInvestit($investit)
     {
-        $this->profil = $profil;
+        $this->investit = $investit;
 
         return $this;
     }
 
     /**
-     * Get profil
+     * Get investit
      *
-     * @return \MBLBundle\Entity\Profil
+     * @return string
      */
-    public function getProfil()
+    public function getInvestit()
     {
-        return $this->profil;
+        return $this->investit;
     }
 
     /**
@@ -127,5 +137,39 @@ class Invest
     public function getProfilrecherches()
     {
         return $this->profilrecherches;
+    }
+
+    /**
+     * Add profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     *
+     * @return Invest
+     */
+    public function addProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils[] = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Remove profil
+     *
+     * @param \MBLBundle\Entity\Profil $profil
+     */
+    public function removeProfil(\MBLBundle\Entity\Profil $profil)
+    {
+        $this->profils->removeElement($profil);
+    }
+
+    /**
+     * Get profils
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProfils()
+    {
+        return $this->profils;
     }
 }

@@ -1,35 +1,35 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Parcourir les projets</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Parcourir les projets'|trans }}</h2> {% endblock %}
 {% block body %}
 
 
     <div class="showProjet">
         <div class="row">
             {{ form_start(form_secteur) }}
-
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 {{ form_row(form_secteur.secteur) }}
                 {{ form_errors(form_secteur.secteur) }}
             </div>
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 {{ form_row(form_secteur.typeDeProjet) }}
                 {{ form_errors(form_secteur.typeDeProjet) }}
             </div>
-            <div class="col s6">
+            <div class="col s12 m6 l6">
                 {{ form_row(form_secteur.localisation) }}
                 {{ form_errors(form_secteur.localisation) }}
             </div>
-            <div class="col s6">
-            <input class="btn center" name="Rechercher" type="submit">
+            <div class="col s12 m6 l6">
+                <input class="btn center" name="Rechercher" type="submit" value="{{ 'Rechercher'|trans }}">
             </div>
             {{ form_end(form_secteur) }}
         </div>
+
         <div class="box_projet">
             <div class="row">
                 {% for pro in projects %}
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s12 m6 l4 vignette_projet z-depth-5">
+                        <div class="col s12 m6 l4 offset-l1 vignette_projet z-depth-5">
                             <div class="row vignette">
 
                                 <div class="col s12">
@@ -40,41 +40,43 @@
                                     {% endif %}
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
-                                    {% if pro.fichier is null %}
+                                    {% if pro.photo is empty %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
-                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.photo ) }}">
                                     {% endif %}
                                 </div>
                             </div>
+
                             <div class="row info_projet">
                                 <div class="col s12">
-                                    <h6>Type de projet</h6>
 
-                                    {{ pro.typeDeProjet.typeDeProjet }}
+                                    <h6>{{ 'Type de projet'|trans }}</h6>
+                                    {{ pro.typeDeProjet }}
+
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Secteur</h6>
+                                    <h6>{{ 'Secteur'|trans }}</h6>
 
-                                    {{ pro.secteur.secteurActivite }}
+                                    {{ pro.secteur }}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Profils recherchés</h6>
-                                    {% for profil in pro.profilsrecherches %}
-                                        {% if profil.metier.metier|length > 10 %}
+                                    <h6>{{ 'Profils recherchés'|trans }}</h6>
+                                    {% for profil in pro['metier'] %}
+                                        {% if profil|length > 10 %}
                                             {% if loop.last %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }}
+                                                {{ profil['metier']|slice(0,8) ~'...' }}
                                             {% else %}
-                                                {{ profil.metier.metier|slice(0,8) ~'...' }},
+                                                {{ profil['metier']|slice(0,8) ~'...' }},
                                             {% endif %}
 
                                         {% else  %}
                                             {% if loop.last %}
-                                                {{ profil.metier.metier }}
+                                                {{ profil['metier'] }}
                                             {% else %}
-                                                {{ profil.metier.metier }},
+                                                {{ profil['metier'] }},
                                             {% endif %}
 
                                         {% endif %}
@@ -84,12 +86,12 @@
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Localisation</h6>
+                                    <h6>{{ 'Localisation'|trans }}</h6>
                                     <p>{{ pro.localisation }}</p>
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
-                                    <h6>Description</h6>
+                                    <h6>{{ 'Description'|trans }}</h6>
                                     <p>{{ pro.description }}</p>
                                 </div>
                             </div>

@@ -33,7 +33,15 @@ security:
                 failure_path_parameter: _failure_path
 
             ###Autorise la deconnexion###
-            logout: true
+
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                always_use_default_target_path: true
+                default_target_path: mbl_homepage
+            logout:
+                path:   fos_user_security_logout
+                target: mbl_homepage
+
 
             ###Autorise les anonymes à naviguer###
             anonymous: true

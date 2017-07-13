@@ -18,7 +18,7 @@ class SecteurType extends AbstractType
     {
         $builder->add('secteurActivite', EntityType::class, array(
         'class'         => 'MBLBundle\Entity\Secteur',
-        'choice_label'  => 'secteurActivite',
+        'choice_label'  => 'secteurActivite'.$options["locale"],
         'multiple'      => false,
         'expanded'      => false));
     }
@@ -29,7 +29,8 @@ class SecteurType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Secteur'
+            'data_class' => 'MBLBundle\Entity\Secteur',
+            'locale'=> null
         ));
     }
 

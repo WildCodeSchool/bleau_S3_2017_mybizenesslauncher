@@ -26,29 +26,41 @@ class LocalisationProfilType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('localisation', ChoiceType::class, array(
-            'choices' => array(
-                'France' => array(
-                    'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
-                    'Bourgogne-Franche-Comté' => 'France, Bourgogne-Franche-Comté',
-                    'Bretagne' => 'France, Bretagne',
-                    'Centre-Val de Loire' => 'France, Centre-Val de Loire',
-                    'Corse' => 'France, Corse',
-                    'Grand Est' => 'France, Grand Est',
-                    'Hauts-de-France' => 'France, Hauts-de-France',
-                    'Île-de-France' => 'France, Île-de-France',
-                    'Normandie' => 'France, Normandie',
-                    'Nouvelle-Aquitaine' => 'France, Nouvelle-Aquitaine',
-                    'Occitanie' => 'France, Occitanie',
-                    'Pays de la Loire' => 'France, Pays de la Loire',
-                    'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
-                    'Guadeloupe' => 'France, Guadeloupe',
-                    'Guyane' => 'France, Guyane',
-                    'Martinique' => 'France, Martinique',
-                    'Réunion' => 'France, Réunion',
-                    'Mayotte' => 'France, Mayotte'
-                ),
-                'Italie' => array(
+
+        $builder->add('metier', EntityType::class,
+            array(
+                'class' => Metier::class,
+                'choice_label' =>'metier' .$options["locale"],
+                'multiple'=> false,
+                'expanded'=> false,
+                'required' => false,
+                'placeholder'=> 'Quel est votre profil?'
+
+
+            ))
+            ->add('localisation', ChoiceType::class, array(
+                'choices' => array(
+                    'France' => array(
+                        'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
+                        'Bourgogne-Franche-Comté' => 'France, Bourgogne-Franche-Comté',
+                        'Bretagne' => 'France, Bretagne',
+                        'Centre-Val de Loire' => 'France, Centre-Val de Loire',
+                        'Corse' => 'France, Corse',
+                        'Grand Est' => 'France, Grand Est',
+                        'Hauts-de-France' => 'France, Hauts-de-France',
+                        'Île-de-France' => 'France, Île-de-France',
+                        'Normandie' => 'France, Normandie',
+                        'Nouvelle-Aquitaine' => 'France, Nouvelle-Aquitaine',
+                        'Occitanie' => 'France, Occitanie',
+                        'Pays de la Loire' => 'France, Pays de la Loire',
+                        'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
+                        'Guadeloupe' => 'France, Guadeloupe',
+                        'Guyane' => 'France, Guyane',
+                        'Martinique' => 'France, Martinique',
+                        'Réunion' => 'France, Réunion',
+                        'Mayotte' => 'France, Mayotte'
+                    ),
+                    'Italie' => array(
 
                     'Abruzzo' => 'Italie, Abruzzo',
                     'Alto Adige' => 'Italie, Alto Adige',
@@ -76,7 +88,7 @@ class LocalisationProfilType extends AbstractType
                 'Autre'   => 'autre',
 
             ),  'required'      => false,
-            'placeholder'   => '  Choisissez'
+            'placeholder'   => 'Choisissez'
         ));
     }
 
@@ -86,7 +98,8 @@ class LocalisationProfilType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Profil'
+            'data_class' => 'MBLBundle\Entity\Profil',
+            'locale'=>null
         ));
     }
 

@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>Parcourir les profils</h2> {% endblock %}
+{% block titreH2 %} <h2>{{ 'Parcourir les profils'|trans }}</h2> {% endblock %}
 {% block body %}
     <div id="showAllProfils">
         <div class="container-fluid">
@@ -13,22 +13,23 @@
                 <div class="row">
                     {{ form_start(form_localisation) }}
 
-                    <div class="col s3 m6 l6">
-                        {{ form_widget(form_localisation.localisation) }}
+                    <div class="col s12 m6 l6">
+                        {{ form_row(form_localisation.localisation) }}
                         {{ form_errors(form_localisation.localisation) }}
                     </div>
-                    <div class="col s3 m6 l6">
+                    <div class="col s12 m6 l6">
+
                         {{ form_row(form_localisation.metier) }}
                         {{ form_errors(form_localisation.metier) }}
                     </div>
-                    <input class="btn" name="Recherchez" type="submit">
+                    <input class="btn" name="Choisissez" type="submit" value="{{ 'Rechercher'|trans }}">
                     {{ form_end(form_localisation) }}
                 </div>
-                <div class="row">
 
+                <div class="row">
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
-                            <div class="col l2 m3 s6 vignette_profil_all  z-depth-5">
+                            <div class="col l4 offset-l1 m6 s12 vignette_profil_all  z-depth-5">
                                 <div class="row vignette ">
                                     <div class="col s12">
                                         {% if pro.prenom|length > 10 %}
@@ -36,58 +37,61 @@
                                         {% else  %}
                                             <h4>{{ pro.prenom }} {{ pro.nom|slice(0,1) }}.</h4>
                                         {% endif %}
-
                                     </div>
                                     <div class="col s8 offset-s2 photo_profil">
+
                                         {% if pro.fichier is null %}
                                             <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
+
                                             <img class="responsive-img"
                                                  src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
-                                        <h6>Profil</h6>
+                                        <h6>{{ 'Profil'|trans }}</h6>
 
-                                        {% if pro.metier.metier is defined  %}
-                                            {{ pro.metier.metier }}
-                                            {% else %}
-
+                                        {% if pro.metier is defined  %}
+                                            {{ pro.metier }}
+                                        {% else %}
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
+
                                     <div class="col s12">
-                                        <h6>Compétences</h6>
+                                        <h6>{{ 'Compétences'|trans }}</h6>
                                         {% for comp in pro.competences %}
                                             {% if loop.last %}
-                                                {{ comp.competences}}
+                                                {{ comp.competence}}
                                             {% else %}
-                                                {{ comp.competences}},
+                                                {{ comp.competence}},
                                             {% endif %}
                                         {% endfor %}
-
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
-                                        <h6>Localisation</h6>
+                                        <h5>{{ 'Localisation'|trans }}</h5>
                                         <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         <div class="divider"></div>
                                     </div>
-                                    <div class="col s12">
-                                        <h6>Description</h6>
-                                        <p>{{ pro.description }}</p>
 
+                                    <div class="col s12">
+                                        <h5>{{ 'Description'|trans }}</h5>
+                                        <p>{{ pro.description }}</p>
                                     </div>
 
                                 </div>
+
                                 {% if app.user.id is defined %}
                                     {% if app.user.id == pro.id %}
                                     {% else %}
                                         <div class="col s12">
-                                            <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">
-                                                Discuter</a>
+
+                                            <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
+
                                         </div>
                                     {% endif %}
                                 {% endif %}
@@ -99,6 +103,7 @@
         </div>
     </div>
 {% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
     <script>

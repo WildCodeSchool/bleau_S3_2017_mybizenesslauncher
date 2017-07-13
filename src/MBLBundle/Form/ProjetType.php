@@ -2,6 +2,7 @@
 
 namespace MBLBundle\Form;
 
+use MBLBundle\Entity\Projet;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -19,36 +20,43 @@ class ProjetType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre', TextType::class, array(
+
+        $builder->add('titre'.$options["locale"], TextType::class, array(
+            'required' => true
+        ))
+            ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true
             ))
-            ->add('description', TextareaType::class, array(
+
+            ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true
             ))
-            ->add('siteInternet', UrlType::class, array(
+            ->add('siteInternet'.$options["locale"], UrlType::class, array(
                 'required' => false,
-                'data' => ' http://',
+
             ))
-            ->add('ebustaUrl', UrlType::class, array(
-                'required' => false,
-                'data' => ' http://',
+            ->add('ebustaUrl'.$options["locale"], UrlType::class, array(
+                'required' => false
+
             ))
             ->add('typeDeProjet', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\TypeDeProjet',
-                'choice_label'  => 'typeDeProjet',
+                'choice_label'  => 'typeDeProjet'.$options["locale"],
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => 'Choisissez',
+                'choice_translation_domain' => true
             ))
             ->add('secteur', EntityType::class, array(
                 'class'         => 'MBLBundle\Entity\Secteur',
-                'choice_label'  => 'secteurActivite',
+                'choice_label' => 'secteurActivite'.$options["locale"],
                 'multiple'      => false,
                 'expanded'      => false,
                 'required'      => true,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => 'Choisissez'
             ))
+
             ->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
@@ -99,20 +107,22 @@ class ProjetType extends AbstractType
                     'Autre'   => 'autre',
 
                 ),  'required'      => false,
-                'placeholder'   => '  Choisissez'
+                'placeholder'   => 'Choisissez'
             ))
             ->add('ville')
             ->add('fichier', FichierType::class)
         ;
     }
-    
+
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MBLBundle\Entity\Projet'
+            'data_class' => Projet::class,
+            'locale' => null
 
         ));
     }

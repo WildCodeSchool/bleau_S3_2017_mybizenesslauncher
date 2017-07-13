@@ -1,6 +1,6 @@
 {% extends "@MBL/layout.html.twig" %}
 
-{% block titreH2 %}<h2>Mise en Relation</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ 'Mise en Relation'|trans }}</h2>{% endblock %}
 
 {% block body %}
     <div class="container" id="chat_connection">
@@ -20,8 +20,10 @@
 
                                         {% if profil.fichier is null %}
                                             <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
-                                            {% else %}
-                                                <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+
+                                        {% else %}
+                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
@@ -32,18 +34,18 @@
                                     {% if profil == app.user %}
                                     {% else %}
                                         {% if countV is empty %}
-                                            <p>Nom : {{ profil.nom }} <br/>
-                                                Prenom : {{ profil.prenom }}</p>
+                                            <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                         {% else %}
                                             {% for mss in countV  %}
                                                 {% if profil.prenom == mss['profil'] %}
-                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
-                                                    <p>Nom : {{ profil.nom }} <br/>
-                                                        Prenom : {{ profil.prenom }}</p>
+                                                    {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
+                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                 {% else %}
 
-                                                    <p>Nom : {{ profil.nom }} <br/>
-                                                        Prenom : {{ profil.prenom }}</p>
+                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                 {% endif %}
                                             {% endfor %}
                                         {% endif %}
@@ -92,19 +94,21 @@
                                     {% if profil == app.user %}
                                     {% else %}
                                         {% if countV is empty %}
-                                            <p>Nom : {{ profil.nom }} <br/>
-                                                Prenom : {{ profil.prenom }}</p>
+
+                                            <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                         {% else %}
 
                                             {% for mss in countV  %}
                                                 {% if profil.prenom == mss['profil'] %}
-                                                    Vous avez {{mss['nbmsg']}} nouveaux messages
-                                                    <p>Nom : {{ profil.nom }} <br/>
-                                                        Prenom : {{ profil.prenom }}</p>
+                                                    {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
+
+                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                 {% else %}
 
-                                                    <p>Nom : {{ profil.nom }} <br/>
-                                                        Prenom : {{ profil.prenom }}</p>
+                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                 {% endif %}
                                             {% endfor %}
                                         {% endif %}
@@ -125,7 +129,7 @@
                                 {% endif %}
                             </div>
                             <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="discuter"></a>
+                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="{{'Discuter'|trans  }}"></a>
                                 </p> </div>
                         </div>
                     {% else %}
@@ -144,11 +148,11 @@
                                         {% endif %}
                                     </div>
                                     <div class="col s3 Nom_prenom">
-                                        <p>Nom : {{ profil.nom }} </br>
-                                            Prenom : {{ profil.prenom }}</p>
+                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                     </div>
                                     <div class="col s7">
-                                        <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn" type="submit" value="Accepter de discuter"></a> </p>
+                                        <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>
                                     </div>
                                 </div>
                             {% endif %}

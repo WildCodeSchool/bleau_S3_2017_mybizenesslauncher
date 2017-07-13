@@ -1,9 +1,7 @@
 @import "global";
 #index {
-//For Materialize footer sticked at page bottom
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  //For Materialize footer sticked at page bottom
+
 
   .bandeau_homepage {
     width: 100%;
@@ -11,14 +9,14 @@
     background: $Colorblue;
     color: $ColorWhite;
     @media #{$small-and-down} {
-    display: none;}
-    }
-
-
-    h2 {
-      font-size: 1.5em;
-    }
+      display: none;}
   }
+
+
+  h2 {
+    font-size: 1.5em;
+  }
+
 
   .Outils {
     padding-top: 70px;
@@ -50,33 +48,34 @@
     &:focus {
       background-color: $Colorgrey;
     }
-    @media #{$medium-and-down} {
+    @media #{$lar} {
+
       display:none;
     }
   }
-.btn_bandeau_homepage_down {
-  background-color: $ColorWhite;
-  color: $Colorblue;
-  box-shadow: $BoxShadow;
-  &:hover {
-    background-color: $Colorgrey;
-    color: #6f9ea8;
+  .btn_bandeau_homepage_down {
+    background-color: $ColorWhite;
+    color: $Colorblue;
+    box-shadow: $BoxShadow;
+    &:hover {
+      background-color: $Colorgrey;
+      color: #6f9ea8;
+    }
+    &:focus {
+      background-color: $Colorgrey;
+    }
   }
-  &:focus {
-    background-color: $Colorgrey;
-  }
-}
 
-.toHide {
-  @media #{$medium-and-down} {
-    display: none !important;
+  .toHide {
+    @media #{$medium-and-down } {
+      display: none !important;
+    }
   }
-}
-.toShow {
-  @media #{$medium-and-down} {
-    display: inline !important;
+  .toShow {
+    @media #{$medium-and-down} {
+      display: inline !important;
+    }
   }
-}
   .btn_eBusta {
     margin-top: 40px;
   }
@@ -88,7 +87,7 @@
     }
 
   }
-
+}
 
 
 

@@ -4,7 +4,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
-{% block titreH2 %}<h2>Chat avec{#la personne avec qui vous voulez parler#}
+{% block titreH2 %}<h2>{{ 'Chat avec'|trans }}{#la personne avec qui vous voulez parler#}
     {% for profil in chat.profils %}
         {% if profil == app.user %}
         {% else %}
@@ -24,22 +24,22 @@
                     {% for chat in chats %}
                         {% if chat.connectionbyid > 0 %}
 
-                                <div class="chat_box">
-                                    <a href="#modal1">
+                            <div class="chat_box">
+                                <a href="#modal1">
                                     <div class="col s1 delete">
-                                         <p><i class="material-icons">delete</i></p>
+                                        <p><i class="material-icons">delete</i></p>
                                     </div>
-                                        <!-- Modal Structure -->
-                                        <div id="modal1" class="modal">
-                                            <div class="modal-content">
-                                                <h4>Voulez-vous vraiment supprimer cette personne?</h4>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">Oui</a>
-                                            </div>
+                                    <!-- Modal Structure -->
+                                    <div id="modal1" class="modal">
+                                        <div class="modal-content">
+                                            <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
                                         </div>
-                                    </a>
-                                    <a href="{{ path('chatIndex', {'id' : chat.id}) }}">
+                                        <div class="modal-footer">
+                                            <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">{{ 'Oui'|trans }}</a>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{{ path('chatIndex', {'id' : chat.id}) }}">
                                     <div class="col s3 Nom_prenom">
                                         {#Nom du profil avec qui l'on veut discuter#}
                                         {% for profil in chat.profils %}
@@ -61,8 +61,8 @@
                                         {#Dernier message avec ce profil#}
                                         <p> <i class="material-icons">chat</i></p>
                                     </div>
-                                    </a>
-                                </div>
+                                </a>
+                            </div>
 
                         {% endif %}
                     {% endfor %}
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="col s4">
-                        <p><input id="envoi" class="btn" type="submit" name="creation" value="Envoyer"></p>
+                        <p><input id="envoi" class="btn" type="submit" name="creation" value="{{ 'Envoyer'|trans }}"></p>
 
                     </div>
                     {{ form_end(form) }}
@@ -94,7 +94,7 @@
                             <input type="hidden" value="{{ text.id }}"/>
                             <div class="center">
                                 <b><i> {{ text.profil }} </i></b>
-                                <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+                                <span>{{ 'à'|trans }}  {{ text.dateCreation|date('H:i:s') }}</span>
                             </div>
 
                             <p> {{ text.msg }} </p>
@@ -122,36 +122,23 @@
     {{ parent() }}
     <script>
         $(document).ready(function () {
-
-                // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
             $('.modal').modal();
-
             $('form[name="mblbundle_text"]').submit(function (e) {
-
                 e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
                 // on sécurise les données
                 var message = $(this).serialize();
-
                 var remiseA = $(this);
-
                 $.ajax({
-
                     method: 'post',
                     url:'{{ path('chatIndex', {'id' : chat.id}) }}',
                     data: message,
-
-
                     success: function (response) {
                         $('#textAdded').append(response).hide().slideDown(200);
                         remiseA.trigger('reset');
                     }
                 })
-
             })
-
         });
-
-
-
     </script>
 {% endblock %}

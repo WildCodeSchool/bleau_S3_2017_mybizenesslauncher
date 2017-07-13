@@ -27,6 +27,10 @@ MBLBundle\Entity\Profil:
             type: string
             length: 255
             nullable: true
+        lng:
+            type: string
+            length: 3
+            nullable: true
         ville:
             type: string
             length: 255
@@ -51,6 +55,12 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Metier
             inversedBy: profils
 
+        invest:
+            targetEntity: MBLBundle\Entity\Invest
+            inversedBy: profils
+
+
+
 
 
     manyToMany:
@@ -68,10 +78,8 @@ MBLBundle\Entity\Profil:
 
 
     oneToOne:
-        invest:
-            targetEntity: MBLBundle\Entity\Invest
-            inversedBy: profil
-
         fichier:
             targetEntity: MBLBundle\Entity\Fichier
             cascade: ['all']
+
+
