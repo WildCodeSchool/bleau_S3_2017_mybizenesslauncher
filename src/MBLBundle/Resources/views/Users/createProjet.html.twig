@@ -19,12 +19,12 @@
                 <div class="row">
                     <div class="col s6">
                         <div class="titre_row center-align">
-                           <label>{{ 'Titre'|trans }}</label>
+                           <label>{{ 'Titre'|trans }}*</label>
                             {{ form_errors(attribute(form, 'titre' ~ locale )) }}
                             {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
                         </div>
                         <div class="description_row center-align">
-                            <label>{{ 'Description'|trans }}</label>
+                            <label>{{ 'Description'|trans }}*</label>
                             {{ form_errors(attribute(form, 'description' ~ locale)) }}
                             {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
                         </div>
@@ -42,17 +42,17 @@
                     </div>
                     <div class="col s6">
                         <div class="typeDeProjet_row center-align">
-                            <label>{{ 'Type de projet'|trans }}</label>
+                            <label>{{ 'Type de projet'|trans }}*</label>
                             {{ form_errors(form.typeDeProjet) }}
                             {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
                         </div>
                         <div class="secteur center-align">
-                            <label>{{ 'Secteur'|trans }}</label>
+                            <label>{{ 'Secteur'|trans }}*</label>
                             {{ form_errors(form.secteur) }}
                             {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
                         </div>
                         <div class="localisation center-align">
-                            <label>{{ 'Localisation'|trans }}</label>
+                            <label>{{ 'Localisation'|trans }}*</label>
                             {{ form_errors(form.localisation ) }}
                             {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
                         </div>

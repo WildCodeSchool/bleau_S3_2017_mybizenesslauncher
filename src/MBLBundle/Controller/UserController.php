@@ -33,6 +33,8 @@ class UserController extends Controller
             $current = $this->getUser();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
 
+
+
             $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
 
         }
@@ -361,10 +363,13 @@ class UserController extends Controller
         $prof = $profils[0]->getId();
         $profils = $em->getRepository('MBLBundle:Profil')->myfindProfilById($prof, $locale);
         $profils = $profils[0];
-//        $profils = $profils[0];
+
+        $profilexist = $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProjet($projet, $locale);
+
         return $this->render('@MBL/Users/showOneProject.html.twig', array(
             'projet' => $pro,
             'profil' => $profils,
+            'profil_recherche_exist' => $profilexist,
         ));
     }
 
