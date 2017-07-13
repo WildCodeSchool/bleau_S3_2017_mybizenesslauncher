@@ -30,8 +30,17 @@
         color: black;
 
     }
-    .btnright a{
-        float:right;
+    .btnleft{
+        text-align: center;
+    }
+    .btlft{
+        background-color: $Colorblue;
+    }
+    .btrght{
+        background-color: $Colorblue;
+    }
+    .btnright {
+        text-align: center;
     }
     .hiddenPreview {
         display: none;

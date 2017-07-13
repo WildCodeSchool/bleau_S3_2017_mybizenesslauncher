@@ -1,36 +1,39 @@
 
 @import "global";
 #showMyProjet {
-margin-top: 50px;
-.vignette_Myprojet
-{
-  background-color: $ColorDarkGrey;
-  border-radius: $BorderRadius;
-  margin-bottom: 10px;
-  height: 37em;
-  border: 2px solid $Colorblue;
-
-  max-width: 300px;
-
-}
-
+  margin-top: 50px;
+  .vignette_Myprojet
+  {
+    background-color: $ColorDarkGrey;
+    border-radius: $BorderRadius;
+    margin-bottom: 10px;
+    height: 37em;
+    max-width: 300px;
+  }
   .vignette_Myprojet:hover {
     background-color: $Colorblue;
   }
-
-
-  .divform{
-
-
-
-    .btn{
-      margin-top: 5px;
-    width: 130px ;
-    }
-
-
+  .imgvign{
+    padding-top: 6px;
   }
 }
+.divform{
+  .btn{
+    margin-top: 1px;
+    width: 100% ;
+  }
+  .btmodif{
+    background-color: $Colorblue;
+  }
+  .btdelete{
+    background-color: $Colorblue;
+    margin-bottom: 5px;
+  }
+  a:hover{
+    background-color: $ColorDarkGrey;
+  }
+}
+
 
 
 

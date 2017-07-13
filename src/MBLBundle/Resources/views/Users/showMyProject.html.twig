@@ -28,7 +28,7 @@
                                     {% if pro.fichier is null %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
-                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                        <img class="responsive-img imgvign" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                     {% endif %}
                                 </div>
                             </div>
@@ -77,8 +77,8 @@
                             </div>
 
                             <div class="col s12 divform center ">
-                                <a class="btn" href="{{ path('editProjet', {'id': pro.id }) }}">{{ 'Editer'|trans }}</a>
-                                <a class="btn" href="{{ path('deleteMyProject', {'id' : pro.id })}}">{{ 'Supprimer'|trans }}</a>
+                                <a class="btn btmodif" href="{{ path('editProjet', {'id': pro.id }) }}">{{ 'Editer'|trans }}</a>
+                                <a class="btn btdelete" href="{{ path('deleteMyProject', {'id' : pro.id })}}">{{ 'Supprimer'|trans }}</a>
                             </div>
                         </div>
                     </a>
