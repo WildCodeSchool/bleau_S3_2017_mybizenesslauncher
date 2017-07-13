@@ -1,131 +1,124 @@
-'Pour les porteurs de projet': 'Pour les porteurs de projet'
-index.description.but: Vous pouvez créer le projet, et décrire en détail les profils des co-fondateurs et partenaires recherchent. Ils auront alors accès à la description du projet et peut vous contacter
-'Pour ceux qui cherchent un projet à intégrer': 'Pour ceux qui cherchent un projet à intégrer'
-index.description.howDo: Vous êtes une vraie herbe startupper, vous avez les compétences nécessaires pour obtenir le bénéfice d'une conception existante, les projets de cours pour trouver que vous pourriez aider à apporter le haut!
-'Outils pour se lancer': 'Outils pour se lancer'
-'Trouve sur MyStartupTools.com': 'Trouve sur MyStartupTools.com'
-'Tous les outils pour t’aider à lancer ton activité': 'Tous les outils pour t’aider à lancer ton activité.'
-'Finance ton projet': 'Finance ton projet'
-index.description.ebusta: Avec ses enveloppes d'offre publique E-busta.com de faire don à la campagne de crowdfunding en échange d'aider à financer le projet. Il sera chargé une commission de 4% seulement du montant élevé, ce qui rend le site E-enveloppe crowdfunding marché le moins cher.
-'Vous cherchez un associé': 'Vous cherchez un associé'
-'Parcourir les projets': 'Parcourir les projets'
-'Dépose ton projet': 'Parcourir les projets'
-'Profils recherchés': 'Profils recherchés'
-Localisation: Localisation
-Description: Description
-'Vous cherchez un projet où vous investir': 'Vous cherchez un projet où vous investir'
-'Dépose ton profil': 'Dépose ton profil'
-Profil: Profil
-'Parcourir les profils': 'Parcourir les profils'
-Bonjour: Buonjour
-'Mon compte': 'Mon compte'
-'Gérer mon profil': 'Gérer mon profil'
-'Voir mon profil': 'Voir mon profil'
-'Créer un projet': 'Créer un projet'
-'Voir mes projets': 'Voir mes projets'
-'Mes discussions': 'Mes discussions'
-'Log out': Déconnection
-'Liens utiles': 'Liens utiles'
 'A propos': 'A propos'
-'Mention légales': 'Mention légales'
-Presse: Presse
-Contact: Contact
-'Les projets': 'Les projets'
-'Les profils': 'Les profils'
-Conseils: Conseils
-Suivez: Souivez
-'More Links': 'Plus de lien'
-'Chat avec': 'chat avec'
-Création: Création
-Envoyer: Envoyer
-'Nom:': Nom
-'Prenom:': Prénom
-Discuter: Discuter
-'Accepter de discuter': 'Accepter de discuter'
-'Nouveau Projet': 'Nouveau Projet'
-'Mise en Relation': 'Mise en Relation'
-'Voulez-vous vraiment supprimer cette personne?': 'Voulez-vous vraiment supprimer cette personne?'
-'Nouveau Profil recherché': 'Nouveau Profil recherché'
-'Profil Recherché': 'Profil Recherché'
-Disponibilité: Disponibilité
-'En tant que': 'En tant que'
-Investissement: Investissement
-Compétences: Compétences
-Supprimer: Supprimer
-'Modifier mon profil': 'Modifier mon profil'
-'Voir mon profil public': 'Voir mon profil public'
-'Actualiser le projet': 'Actualiser le projet'
-Editer: Editer
-'Gérer mes projets': 'Gérer mes projets'
-'Nom et prénom :': 'Nom et prénom :'
-'Parcourir vos projets': 'Parcourir vos projets'
-Voir: Voir
-'Projet créé le': 'Projet créé le'
-'Non renseignée': 'Non renseignée'
-'Site Internet': 'Site Internet'
-'Non renseigné': 'Non renseigné'
-Enveloppe: Enveloppe
-'Type de projet': 'Type de projet'
-Secteur: Secteur
-'Modifier mon projet': 'Modifier mon projet'
-'Mon profil public': 'Mon profil public'
-'Description:': 'Description:'
-'Localisation:': 'Localisation:'
-'renseignez votre localisation': 'renseignez votre localisation'
-'Investissement:': Investissement
-'En tant que:': 'En tant que:'
-'renseignez votre status': 'renseignez votre status'
-'Disponibilité:': 'Disponibilité:'
-'Où:': 'Où:'
-'Métiers:': 'Métiers:'
-'précisez votre métier': 'précisez votre métier'
-'Compétences:': 'Compétences:'
-'renseignez vos compétences': 'renseignez vos compétences'
-Enregistrez: Enregistrez
-Fichier: Fichier
-Connectez-vous: Connectez-vous
-Menu: Menu
-Projet: Projet
-inscrivez-vous: inscrivez-vous
-'Votre Photo': 'Votre Photo'
-rechercher: rechercher
-Métiers: Métiers
-Statut: Statut
-Mobilité: Mobilité
-Domicile: Domicile
-Titre: Titre
-'ebusta Url': 'ebusta Url'
-Photo: Photo
-'edit Profil recherché': 'edit Profil recherché'
-'porteur du projet': 'porteur du projet'
-Rechercher: Rechercher
-Metier: Métier
-Choisissez: Choisissez
-Quel est votre profil?: Quel est votre profil?
-Lien utiles: Lien utiles
-A propos: A propos
-Mention lègale: Mention légale
-Presse: Presse
-Contact: Contact
-Les projets: Les projets
-Les profils: Les profils
-Conseils: Conseils
-Suivez: Suivez
-'description': 'description'
-Métiers: Métiers
-Statut: Statut
-Mobilité: Mobilité
-Domicile: Domicile
-'Ville': 'Ville'
-'site internet': 'site internet'
-'Titre': 'Titre'
-'Mise en relation': 'Mise en relation'
-'Nom: ': 'Nom :'
-'Prenom: ': 'Prenom :'
-'Vous avez': 'Vous avez'
-'nouveaux messages': 'nouveaux messages'
-'Accepter de discuter': 'Accepter de discuter'
-'Chat avec': 'Chat avec'
-'Voulez-vous vraiment supprimer cette personne?': 'Voulez-vous vraiment supprimer cette personne?'
-'Oui': 'Oui'
 'à': 'à'
+'Accepter de discuter': 'Accepter la discussion'
+'Actualiser le projet': 'Actualiser le projet'
+'Chat avec': 'Chat avec'
+'Compétences:': 'Compétences:'
+'Créer un projet': 'Créer un projet'
+'Dépose ton profil': 'Dépose ton profil'
+'Dépose ton projet': 'Dépose ton projet'
+'Description:': 'Description:'
+'description': 'Description'
+'Disponibilité:': 'Disponibilité:'
+'ebusta Url': 'ebusta Url'
+'edit Profil recherché': 'edit Profil recherché'
+'En tant que:': 'En tant que:'
+'En tant que': 'En tant que'
+'Finance ton projet': 'Finance ton projet'
+'Gérer mes projets': 'Gérer mes projets'
+'Gérer mon profil': 'Gérer mon profil'
+'Investissement:': Investissement
+'Les profils': 'Les profils'
+'Les projets': 'Les projets'
+'Liens utiles': 'Liens utiles'
+'Localisation:': 'Domicile:'
+'Log out': Déconnexion
+'Mention légales': 'Mentions légales'
+'Mes discussions': 'Mes discussions'
+'Métiers:': 'Métiers:'
+'Mise en Relation': 'Mise en relation'
+'Mise en relation': 'Mise en relation'
+'Modifier mon profil': 'Modifier mon profil'
+'Modifier mon projet': 'Modifier mon projet'
+'Mon compte': 'Mon compte'
+'Mon profil public': 'Mon profil public'
+'Nom et prénom :': 'Nom et prénom :'
+'Nom: ': 'Nom:'
+'Nom:': Nom
+'Non renseigné': 'Non renseigné'
+'Non renseignée': 'Non renseignée'
+'Nouveau Profil recherché': 'Nouveau Profil recherché'
+'Nouveau Projet': 'Nouveau Projet'
+'nouveaux messages': 'nouveau(x) message(s)'
+'Où:': 'Où:'
+'Oui': 'Oui'
+'Outils pour se lancer': 'Outils pour se lancer'
+'Parcourir les profils': 'Parcourir les profils'
+'Parcourir les projets': 'Parcourir les projets'
+'Parcourir vos projets': 'Parcourir vos projets'
+'Photo(s)': Photo(s)
+'porteur du projet': 'Porteur du projet'
+'Pour ceux qui cherchent un projet à intégrer': 'Pour ceux qui cherchent un projet à intégrer'
+'Pour les porteurs de projet': 'Pour les porteurs de projet'
+'précisez votre métier': 'Précisez votre métier'
+'Prenom: ': 'Prénom:'
+'Prenom:': Prénom
+'Profil Recherché': 'Profil Recherché'
+'Profils recherchés': 'Profils recherchés'
+'Projet créé le': 'Projet créé le'
+'renseignez vos compétences': 'Renseignez vos compétences'
+'renseignez votre localisation': 'Renseignez votre adresse'
+'renseignez votre status': 'Renseignez votre statut'
+'Site Internet': 'Site Internet'
+'site internet': 'Site Internet'
+'Titre': 'Titre'
+'Tous les outils pour t’aider à lancer ton activité': 'tous les outils pour t’aider à lancer ton activité.'
+'Trouve sur MyStartupTools.com': 'Trouve sur MyStartupTools.com'
+'Type de projet': 'Type de projet'
+'Ville': 'Ville'
+'Voir mes projets': 'Voir mes projets'
+'Voir mon profil public': 'Voir mon profil public'
+'Voir mon profil': 'Voir mon profil'
+'Votre Photo': 'Votre photo'
+'Voulez-vous vraiment supprimer cette personne?': 'Voulez-vous vraiment supprimer cette personne ?'
+'Vous avez': 'Vous avez'
+'Vous cherchez un associé': 'Vous cherchez un associé'
+'Vous cherchez un projet où vous investir': 'Vous cherchez un projet où vous investir'
+A propos: A propos
+Bonjour: Bonjour
+Choisissez: Choisissez
+Compétences: Compétences
+Connectez-vous: Connectez-vous
+Conseils: Conseils
+Contact: Contact
+Création: Création
+Description: Description
+Discuter: Discuter
+Disponibilité: Disponibilité
+Domicile: Domicile
+Editer: Editer
+Enregistrez: Enregistrez
+Enveloppe: Enveloppe
+Envoyer: Envoyer
+Fichier: Fichier
+index.description.but: Tu peux créer ton projet, le décrire et détailler les profils de cofondateurs et associés
+que tu cherches. Ils auront alors accès à la description du projet et pourront te contacter.
+index.description.ebusta: Avec ses enveloppes publiques, E-busta.com vous propose de réaliser des campagnes de
+Crowdfunding de don en contrepartie pour vous aider à financer votre projet. Seule une commission de 4% du montant
+collecté sera appliquée, faisant de E-busta le site de Crowdfunding le moins cher du marché.
+index.description.howDo: Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit d'un projet
+existant, parcours les projets pour trouver celui que tu pourrais aider à porter au sommet !
+inscrivez-vous: Inscrivez-vous
+Investissement: Investissement
+Les profils: Les profils
+Les projets: Les projets
+Lien utiles: Liens utiles
+Localisation: Domicile
+Mention légale: Mentions légales
+Menu: Menu
+Metier: Métier
+Métiers: Métiers
+Mobilité: Mobilité
+Photo: Photo
+Presse: Presse
+Profil: Profil
+Projet: Projet
+Quel est votre profil?: Quel est votre profil ?
+rechercher: Rechercher
+Rechercher: Rechercher
+Secteur: Secteur
+Statut: Statut
+Suivez: Suivez
+Supprimer: Supprimer
+Titre: Titre
+Voir: Voir

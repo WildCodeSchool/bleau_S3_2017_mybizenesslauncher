@@ -1,9 +1,9 @@
 @import "global";
 #index {
-//For Materialize footer sticked at page bottom
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+////For Materialize footer sticked at page bottom
+//  display: flex;
+//  min-height: 100vh;
+//  flex-direction: column;
 
   .bandeau_homepage {
     width: 100%;
@@ -17,7 +17,6 @@
     h2 {
       font-size: 1.5em;
     }
-  }
 
   .Outils {
     padding-top: 70px;
@@ -87,6 +86,7 @@
     }
 
   }
+}
 
 
 
