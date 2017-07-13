@@ -5,7 +5,6 @@
 {% endblock %}
 {% block body %}
 
-
 <!--Bandeau de la homepage -->
 <div id="index">
     <div class="row">
@@ -149,7 +148,6 @@
                 </div>
             </div>
 
-
             <!--PROFIL-->
             <div class="col s12 m6 l5 profil  ">
                 <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
@@ -161,8 +159,6 @@
                         <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Dépose ton profil'|trans}}</a>
                     </div>
                 </div>
-
-
                 <div class="row ">
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', {'id': pro.id}) }}">
@@ -211,7 +207,6 @@
                                             <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         {% else %}
                                         {% endif %}
-
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -228,4 +223,4 @@
         </div>
     </div>
 </div>
-    {% endblock %}
+{% endblock %}
