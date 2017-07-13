@@ -1,12 +1,37 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script>
+        $( document ).ready(function() {
+            $(".button-collapse").sideNav();
+
+            $(".dropdown-button").dropdown();
+
+            $('.modal').modal();
+            /*$('ul.tabs').tabs();
+             $('ul.tabs').tabs('select_tab', 'tab_id');
+             $('.tabs').tabs({ 'swipeable': true });*/
+            $('.registerPlus').click(function () {
+                $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+            });
+
+            $('.connexion').trigger('click');
+
+        });
+    </script>
 {% endif %}
 
 <div id="login">
     <div class="container ">
+
         <h1 class="black-text center">{{ 'Connectez-vous'|trans}}</h1>
+        {% if error %}
+        <p style="color: red; margin-top: 0;" class="center">Erreur de connexion, E-mail ou mot de passe incorrect</p>
+        {% endif %}
+
         <div class="col s12 center">
             <form class="left-align" action="{{ path("fos_user_security_check") }}" method="post">
                 {% if csrf_token %}

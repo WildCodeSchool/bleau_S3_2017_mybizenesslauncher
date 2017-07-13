@@ -6,9 +6,6 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-
-
-
         <nav xmlns="http://www.w3.org/1999/html">
 
             <ul id="dropdown1" class="dropdown-content">
@@ -101,8 +98,8 @@
                     <li><a class="color darkerTop" href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
-                            {{ 'Parcourir les profils'|trans }}</a></li>
-                    <li><a class="color" href=#modal1>{{ 'Connectez-vous'|trans }}</a>
+                            Parcourir les profils</a></li>
+                    <li><a class="color connexion" href=#modal1>Connexion</a>
 
                     </li>
                 </ul>
@@ -187,6 +184,7 @@
             </div>
         </div>
     </footer>
+
 {% endblock %}
 
 
