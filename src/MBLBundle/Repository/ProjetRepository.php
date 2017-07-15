@@ -166,47 +166,6 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-
-    public function myfindByTypeDeProjetLoc($typeDeProjet, $Loc, $locale)
-    {
-        $qb = $this->createQueryBuilder('p');
-        $qb->select('p.description' . $locale . ' as description', 'p.id as id', 'p.titre' . $locale . ' as titre', 'p.localisation as localisation')
-            ->join('p.typeDeProjet', 'tp')
-            ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
-            ->join('p.secteur', 's')
-            ->addSelect('s.secteurActivite' . $locale . ' as secteur')
-            ->where('tp.id = :typId')
-            ->setParameter('typId', $typeDeProjet)
-            ->andWhere('p.localisation = :Loc')
-            ->setParameter('Loc', $Loc)
-            ->where('p.lngp = :locale')
-            ->setParameter('locale', $locale)
-            ->orderBy('p.id', 'DESC');
-        $projets = $qb->getQuery()->getResult();
-
-
-
-        foreach ($projets as $key => $projet) {
-            // Get metier et création d'un sous tableau'
-            $qb = $this->createQueryBuilder('p');
-            $qb->where('p.id = :id')
-                ->join('p.profilsrecherches', 'r')
-                ->join('r.metier', 'm')
-                ->select('m.metier' . $locale . ' as metier')
-                ->setParameter('id', $projet['id']);
-            $projets[$key]['metier'] = $qb->getQuery()->getResult();
-
-            // Get fichier si défini et si null
-            $qb = $this->createQueryBuilder('p');
-            $qb->where('p.id = :id')
-                ->join('p.fichier', 'f')
-                ->select('f.photo')
-                ->setParameter('id', $projet['id']);
-            $projets[$key]['fichier'] = $qb->getQuery()->getResult();
-        }
-        return $projets;
-    }
-
     public function findAllDesc($locale)
 
     {
