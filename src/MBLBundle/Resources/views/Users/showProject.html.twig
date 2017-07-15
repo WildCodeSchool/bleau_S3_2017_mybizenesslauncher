@@ -40,10 +40,10 @@
                                     {% endif %}
                                 </div>
                                 <div class="col s8 offset-s2 photo_profil">
-                                    {% if pro.photo is empty %}
+                                    {% if pro.fichier is empty %}
                                         <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
-                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.photo ) }}">
+                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier ) }}">
                                     {% endif %}
                                 </div>
                             </div>

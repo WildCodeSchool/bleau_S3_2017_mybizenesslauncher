@@ -149,6 +149,7 @@ class UserController extends Controller
             $projet->setDateCreation(new \DateTime());
             $projet->addprofil($this->getUser());
             $profil->addprojet($projet);
+            $projet->setLngp($locale);
             $em->persist($projet);
             $em->flush();
             $id = $projet->getId();

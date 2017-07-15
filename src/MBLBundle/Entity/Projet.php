@@ -514,4 +514,33 @@ class Projet
     {
         return $this->profils;
     }
+    /**
+     * @var string
+     */
+    private $lngp;
+
+
+    /**
+     * Set lngp
+     *
+     * @param string $lngp
+     *
+     * @return Projet
+     */
+    public function setLngp($lngp)
+    {
+        $this->lngp = $lngp;
+
+        return $this;
+    }
+
+    /**
+     * Get lngp
+     *
+     * @return string
+     */
+    public function getLngp()
+    {
+        return $this->lngp;
+    }
 }
