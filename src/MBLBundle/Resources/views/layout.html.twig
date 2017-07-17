@@ -89,7 +89,7 @@
                             {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
                     <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
                            data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
+                            tous les outils pour t’aider à lancer ton activité." href="#">{{ 'Outils pour se lancer'|trans }}</a></li>
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
                 </ul>
             </div>
@@ -112,13 +112,13 @@
                 </a>
                 <a class="tooltipped lancer" data-position="bottom" data-delay="50"
                    data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
+                            tous les outils pour t’aider à lancer ton activité." href="#">{{ 'Outils pour se lancer'|trans }}</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="color darkerTop" href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
-                            Parcourir les profils</a></li>
-                    <li><a class="color connexion" href=#modal1>Connexion</a>
+                            {{ 'Parcourir les profils'|trans }}</a></li>
+                    <li><a class="color connexion" href=#modal1> {{ 'Connectez-vous'|trans }}</a>
 
                     </li>
                 </ul>
@@ -163,10 +163,10 @@
                         Finance ton projet</a></li>
 
                     <li> <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{ path('showProject') }}">
-                            Parcourir les projets</a></li>
+                            {{ 'Parcourir les projets'|trans }} </a></li>
                     <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{path('showAllProfils')}}">
-                            Parcourir les profils</a></li>
-                    <li><a class="color" href=#modal1>Connexion</a>
+                            {{ 'Parcourir les profils'|trans }}</a></li>
+                    <li><a class="color" href=#modal1>{{ 'Connectez-vous'|trans }}</a>
                 </ul>
             </div>
         </nav>
