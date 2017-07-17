@@ -399,7 +399,7 @@ class UserController extends Controller
             $em->flush();
             if($request->getLocale() == "it")
             {
-                $this->get('session')->getFlashBag()->add('error', 'Il progetto è stato rimosso');
+                $this->get('session')->getFlashBag()->add('notice', 'Il progetto è stato rimosso');
 
             }
             else
@@ -413,7 +413,7 @@ class UserController extends Controller
         else {
             if($request->getLocale() == "it")
             {
-                $this->get('session')->getFlashBag()->add('error', 'Il progetto desiderato non esiste');
+                $this->get('session')->getFlashBag()->add('notice', 'Il progetto desiderato non esiste');
 
             }
             else
