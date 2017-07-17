@@ -51,8 +51,8 @@ class UserController extends Controller
             $current = $this->getUser();
             $currentId = $current->getId();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
-            $countContact = $em->getRepository('MBLBundle:Chat')->myQueriesForContact($current, $currentId, $zero);
-            $count = count($countContact);
+//            $countContact = $em->getRepository('MBLBundle:Chat')->myQueriesForContact($current, $currentId, $zero);
+//            $count = count($countContact);
 
             $content =  $this->renderView('@MBL/Users/countView.html.twig', array(
                 'count' => $countViews['nbmsg']));
