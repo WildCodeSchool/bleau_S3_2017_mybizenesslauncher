@@ -12,5 +12,18 @@
     text-align: center;
 
   }
+  .btnfilter{
+    padding-top: 30px;
+    text-align: center;
+    height:100%;
+    @media #{$small-and-down}{
+      padding-top: 0;
+    }
+  }
+
+  .center {
+    background-color: $Colorblue;
+
+  }
 
 }

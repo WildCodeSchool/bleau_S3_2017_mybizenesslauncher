@@ -99,6 +99,9 @@ a { color: inherit; }
 .info_projet {
   border-radius: $BorderRadius;
   overflow: scroll;
+  height: 16em;
+  background: $ColorWhite;
+
 }
 .vignette {
   border-radius: $BorderRadius;
@@ -114,18 +117,14 @@ a { color: inherit; }
   border-radius: $BorderRadius;
 
 }
-.photo_profil img {
-  height: 7em;
-  max-width: 120px;
-  max-height: 100px;
-}
-.photo_profil, .info_projet, .info_profil {
+//.photo_profil img {
+//  height: 7em;
+//  max-width: 120px;
+//  max-height: 100px;
+//}
+.info_profil {
   background: $ColorWhite;
   //margin-bottom: 10px;
-
-}
-.info_projet {
-  height: 16em;
 }
 
 h6 {
