@@ -57,12 +57,17 @@ Layout.html.twig
   font-size: 1.1em;
 }
 
+.lancerSmall {
+  font-size: 1em;
+  font-weight: bold !important;
+}
+
 .darkerBiz:hover {
   color: #FB5B57;
   opacity: 0.9;
 }
 .darkerTop:hover {
-  color: #6f9ea8;
+  color: $ColorDarkBlue;
 }
 
 .dropdown-content li > a {
@@ -79,6 +84,7 @@ a .logoEbMenu  {
      opacity: 0.5;
   }
 }
+
 a .logoEbMenu:hover {
   display: none;
   @media #{$medium-and-down} {
@@ -112,6 +118,7 @@ a .logoEbMenu:hover {
     display: none !important;
   }
 }
+
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
@@ -122,8 +129,7 @@ a .logoEbMenu:hover {
 }
 
 .BB:hover {
-  border-bottom: 2px solid #FB5B57;
-  width: 90%;
+  box-shadow: inset 0 -2px 0 #FB5B57;
 }
 
 .modal {
@@ -131,10 +137,9 @@ a .logoEbMenu:hover {
     margin : 0;
     padding: 0;
     background-color: $Colorblue;
-  }
+    }
     .tab a {
     color : grey;
-
     }
     .tab a:hover{
       color: $ColorDarkGrey;
@@ -145,47 +150,54 @@ a .logoEbMenu:hover {
   .tabs .indicator {
     background-color : $ColorDarkGrey;
   }
-
 }
+
 #Connexion, #register {
   margin-top: 25px;
 }
+
 .remember {
   margin-top: 10px;
 }
+
 [type="checkbox"]:checked+label:before {
 
   border-right: 2px solid $ColorDarkGrey;
   border-bottom: 2px solid $ColorDarkGrey;
-
 }
+
 .submitRegister {
   margin-top: 55px;
 }
+
 .moreRegisterHidden {
   display: none;
 }
+
 .moreRegister {
   margin-top: 25px;
 }
-textarea#fos_user_registration_form_description {
-  height: 10em;
 
+textarea #fos_user_registration_form_description {
+  height: 10em;
 }
+
 #fos_user_registration_form_description  {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
+
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
+
 #login .btn, #register .btn {
   background: $Colorblue !important;
-
 }
+
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus  {
   border: 1.5px solid $Colorblue !important;
   border-radius: 10px;

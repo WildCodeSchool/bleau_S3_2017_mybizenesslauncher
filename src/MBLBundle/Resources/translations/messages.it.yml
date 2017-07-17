@@ -1,129 +1,122 @@
-'Pour les porteurs de projet': 'Per i leader di progetto'
-index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
-'Pour ceux qui cherchent un projet à intégrer': 'Per chi cerca un progetto di integrazione'
-index.description.howDo: 'Sei un vero erba startupper, si hanno le competenze per ottenere il beneficio di un progetto esistente, i progetti dei corsi per trovare che si potrebbe aiutare a portare il top!'
-'Outils pour se lancer': 'Strumenti per lanciare'
-'Trouve sur MyStartupTools.com': 'Trovato su MyStartupTools.com'
-'Tous les outils pour t’aider à lancer ton activité': 'Tutti gli strumenti per aiutarti a gestire la vostra azienda.'
-'Finance ton projet': 'Finanziare il progetto'
-index.description.ebusta: "Con le sue buste pubblici E-busta.com propongono di fare campagne di donazione di crowdfunding in cambio per aiutare a finanziare il progetto. Verrà applicata solo una commissione del 4% della somma raccolta, rendendo sito E-busta crowdfunding mercato più conveniente.\n"
-'Vous cherchez un associé': 'Alla ricerca di un compagno'
-'Parcourir les projets': 'Percorrere progetti'
-'Dépose ton projet': 'Rimozione vostro progetto'
-'Profils recherchés': 'Profili ricercati'
-Localisation: Posizione
-Description: Descrizione
-'Vous cherchez un projet où vous investir': 'Alla ricerca di un progetto in cui si investe'
-'Dépose ton profil': 'Rimozione del profilo'
-Profil: Profili
-'Parcourir les profils': 'Percorrere profili'
-Bonjour: Buongiorno
-'Mon compte': 'Il mio conto'
-'Gérer mon profil': 'Gestire il mio profilo'
-'Voir mon profil': 'Visualizza il mio profilo'
-'Créer un projet': 'Crea progetto'
-'Voir mes projets': 'Vedere i miei progetti'
-'Mes discussions': 'Mie discussioni'
-'Log out': Esci
-'Liens utiles': 'Link utili'
 'A propos': 'A proposito'
-'Mention légales': 'Avviso legale'
-Presse: Stampa
-Contact: Contatto
-'Les projets': Progetti
-'Les profils': Profili
-Conseils: Consiglio
-Suivez: Seguire
-'More Links': 'Altri link'
-Création: Creazione
-Envoyer: Mandare
-'Nom:': Nome
-'Prenom:': Conome
-Discuter: Discutere
-'Accepter de discuter': 'Accetto di discutere'
-'Nouveau Projet': 'Nuovo Progetto'
-'Mise en Relation': Collegamento
-'Voulez-vous vraiment supprimer cette personne?': 'Vuoi veramente cancellare questa persona?'
-'Nouveau Profil recherché': 'Nuovo profilo ricercato'
-'Profil Recherché': 'Profilo desiderato'
-Disponibilité: Disponibilità
-'En tant que': Come
-Investissement: Investimento
-Compétences: Competenze
-Supprimer: Rimuovere
-'Modifier mon profil': 'Modifica Profilo'
-'Voir mon profil public': 'Visualizza il mio profilo pubblico'
-'Actualiser le projet': 'Refresh Progetto'
-Editer: Modifica
-'Gérer mes projets': 'Gestisci i tuoi progetti'
-'Nom et prénom :': 'Cognome e nome: '
-'Parcourir vos projets': 'Sfoglia i vostri progetti'
-Voir: Vedere
-'Projet créé le': 'Progetto creato il'
-'Non renseignée': imprecisato
-'Site Internet': 'Sito web'
-'Non renseigné': Sconosciuto
-Enveloppe: Busta
-'Type de projet': 'Tipo di progetto'
-Secteur: Settore
-'Modifier mon projet': 'Modifica il mio progetto'
-'Mon profil public': 'Il mio profilo pubblico'
-'Description:': 'Descrizione:'
-'Localisation:': 'Posizione:'
-'renseignez votre localisation': 'Specifica la tua posizione'
-'Investissement:': 'Investimento:'
-'En tant que:': 'Come:'
-'renseignez votre status': 'Specificare il proprio stato'
-'Disponibilité:': 'Disponibilità:'
-'Où:': 'Dove:'
-'Métiers:': 'Affari:'
-'précisez votre métier': 'Specificare vostri commerci'
-'Compétences:': 'Competenze:'
-'renseignez vos compétences': 'Specificare le tue abilità'
-Enregistrez: Salvare
-Fichier: File
-Connectez-vous: connectare
-Menu: 'Il mio conto'
-Projet: Progetto
-inscrivez-vous: inscrive
-Rechercher: ricercare
-Metier: professione
-Choisissez: scegliere
-Quel est votre profil?: Qual è il tuo profilo?
-Lien utiles: link utili
-A propos: su di noi
-Mention lègale: avviso legale
-Presse: stampa
-Contact: contatto
-Les projets: progetti
-Les profils: profili
-Conseils: consiglio
-Suivez: seguire
-'description': 'descrizione'
-Métiers: Professione
-Statut: Statuto
-Mobilité: Mobilità
-Domicile: Domicilio
-'Ville': 'Cità'
-'site internet': 'sito web'
-'Titre': Titulo
-'Mise en relation': collegamento
-'Nom: ': 'Nome :'
-'Prenom: ': 'Conome :'
-'Vous avez': 'lei ha'
-'nouveaux messages': 'nuovi messaggi'
-'Accepter de discuter': 'Accettare di discutere'
-'Chat avec': 'Chiacchierare con'
-'Voulez-vous vraiment supprimer cette personne?': 'Vuoi veramente cancellare questa persona?'
-'Oui': 'Sì'
 'à': 'alle'
+'Accepter de discuter': 'Accettare la discussione'
+'Accepter de discuter': 'Accettare la discussione'
+'Actualiser le projet': 'Attualizzare il progetto'
+'Chat avec': 'Chiacchierare con'
+'Compétences:': 'Competenze:'
+'Créer un projet': 'Creare un progetto'
+'Dépose ton profil': 'Deposita il tuo profilo'
+'Dépose ton projet': 'Deposita il tuo progetto'
+'Description:': 'Descrizione:'
+'description': 'Descrizione'
+'Disponibilité:': 'Disponibilità:'
 'Disponible en tant que': 'Disponibilità come'
-'Où ça ?': 'Dove?'
+'En tant que:': 'Come:'
+'En tant que': Come
+'Finance ton projet': 'Finanzia il tuo progetto'
+'Gérer mes projets': 'Gestire i miei progetti'
+'Gérer mon profil': 'Gestire i miei profili'
 'Investissement possible': 'Investimento possibile'
+'Investissement:': 'Investimento:'
+'Les profils': Profili
+'Les projets': Progetti
+'Liens utiles': 'Link utili'
+'Localisation:': 'Domicilio:'
+'Log out': Uscire
+'Mention légales': 'Note legali'
+'Mes discussions': 'Le mie discussioni'
+'Métiers:': 'Professioni:'
+'Mise en Relation': Collegamento
+'Mise en relation': Collegamento
+'Modifier mon profil': 'Modificare il moi profilo'
+'Modifier mon projet': 'Modificare il mio progetto'
+'Mon compte': 'Il mio account'
+'Mon profil public': 'Il mio profilo pubblico'
+'Nom et prénom :': 'Cognome e nome: '
+'Nom: ': 'Cognome:'
+'Nom:': Cognome
+'Non renseigné': Imprecisato
+'Non renseignée': Imprecisato
+'Nouveau Profil recherché': 'Nuovo profilo ricercato'
+'Nouveau Projet': 'Nuovo progetto'
+'nouveaux messages': 'nuovi messaggi'
+'Où ça ?': 'Dove?'
+'Où:': 'Dove:'
+'Oui': 'Sì'
+'Outils pour se lancer': 'Strumenti per imbarcarsi'
+'Parcourir les profils': 'Visionare i profili'
+'Parcourir les projets': 'Visionare i progetti'
+'Parcourir vos projets': 'Visionare vostri progetti'
+'Photo(s)': 'Foto'
+'Pour ceux qui cherchent un projet à intégrer': 'Per chi cerca un progetto a integrare'
+'Pour les porteurs de projet': 'Per i promotori di progetti'
+'précisez votre métier': 'Specificate la sua professione'
+'Prenom: ': 'Nome :'
+'Prenom:': Nome
+'Profil Recherché': 'Profilo ricercato'
+'Profils recherchés': 'Profili ricercati'
+'Projet créé le': 'Progetto creato il'
+'renseignez vos compétences': 'Specificate le vostre abilità'
+'renseignez votre localisation': 'Specificate la vostra residenza'
+'renseignez votre status': 'Specificate il suo status'
+'Site Internet': 'Sito web'
+'site internet': 'Sito web'
+'Titre': Titolo
+'Tous les outils pour t’aider à lancer ton activité': 'Tutti gli strumenti per aiutarti a lanciare la tua azienda.'
+'Trouve sur MyStartupTools.com': 'Trova su MyStartupTools.com'
+'Type de projet': 'Tipo di progetto'
+'Ville': 'Cità'
+'Voir mes projets': 'Vedere i miei progetti'
+'Voir mon profil public': 'Vedere il mio profilo pubblico'
+'Voir mon profil': 'Vedere il mio profilo'
 'Votre disponibilité': 'Disponibilità'
-'Ajoutez un profil recherché': 'aggiungere un profilo desiderato'
-'Editer votre projet': 'Modificare il progetto'
-'edit Profil recherché': 'Modifica profilo ricercato'
-'photo': 'foto'
+'Voulez-vous vraiment supprimer cette personne?': 'Vuoi davvero eliminare questa persona ?'
+'Vous avez': 'Lei ha'
+'Vous cherchez un associé': 'Sta cercando un socio'
+'Vous cherchez un projet où vous investir': 'Sta cercando un progetto in cui impegnarsi'
+A propos: Su di noi
+Bonjour: Buongiorno
+Choisissez: Scegliere
+Compétences: Competenze
+Connectez-vous: Accedi
+Conseils: Consigli
+Contact: Contatto
+Création: Creazione
+Description: Descrizione
+Discuter: Discutere
+Disponibilité: Disponibilità
+Domicile: Domicilio
+Editer: Modifica
+Enregistrez: Salvare
+Enveloppe: Busta
+Envoyer: Mandare
+Fichier: File
+index.description.but: "È possibile creare il progetto, descrivere e dettagliatamente i profili dei co-fondatori e partner che cercate. Saranno quindi avere accesso alla descrizione del progetto e può contattare l'utente.\n"
+index.description.ebusta: "Con le sue buste pubblici E-busta.com propongono di fare campagne di donazione di crowdfunding in cambio per aiutare a finanziare il progetto. Verrà applicata solo una commissione del 4% della somma raccolta, rendendo sito E-busta crowdfunding mercato più conveniente.\n"
+index.description.howDo: 'Sei un vero erba startupper, si hanno le competenze per ottenere il beneficio di un progetto esistente, i progetti dei corsi per trovare che si potrebbe aiutare a portare il top!'
+inscrivez-vous: inscrive
+Investissement: Investimento
+Les profils: profili
+Les projets: progetti
+Lien utiles: link utili
+Localisation: Posizione
+Mention lègale: avviso legale
+Menu: 'Il mio conto'
+Metier: professione
+Métiers: Professione
+Mobilité: Mobilità
+Presse: Stampa
+Presse: stampa
+Profil: Profili
+Projet: Progetto
+Quel est votre profil?: Qual è il tuo profilo?
+Rechercher: ricercare
+Secteur: Settore
+Statut: Statuto
+Suivez: Seguire
+Suivez: seguire
+Supprimer: Rimuovere
+Voir: Vedere
 Erreur 404, cette page nexiste pas, retournez à laccueil du site en cliquant sur le bouton suivant si le problème persiste, merci de contacter un administrateur via la rubrique "contact": Error 404"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                si le problème persiste, merci de contacter un administrateur via la rubrique "contact"                                                                                                                                                                      si le problème persiste, merci de contacter un administrateur via la rubrique "contact"
+
