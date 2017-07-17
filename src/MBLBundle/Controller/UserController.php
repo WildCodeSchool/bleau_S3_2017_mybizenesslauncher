@@ -40,7 +40,6 @@ class UserController extends Controller
     public function indexAction(Request $request)
 
     {
-
         $locale= $request->getLocale();
 
         $em = $this->getDoctrine()->getManager();
