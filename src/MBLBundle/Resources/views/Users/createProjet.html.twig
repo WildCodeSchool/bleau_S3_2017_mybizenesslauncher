@@ -11,7 +11,6 @@
 {% endblock %}
 
 {% block body %}
-
     <div id="createProjet" class="container">
         <div class="row formCreatePro">
             <div class="col s12 m12">
@@ -29,7 +28,7 @@
                             {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
                         </div>
                         <div class="siteInternet_row center-align">
-                             <label>{{ 'Site Internet'|trans }}</label>
+                            <label>{{ 'Site Internet'|trans }}</label>
                             {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
                             {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
                         </div>
@@ -57,16 +56,17 @@
                             {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
                         </div>
                         <div class="ville center-align">
-                              <label>{{ 'Ville'|trans }}</label>
+                            <label>{{ 'Ville'|trans }}</label>
                             {{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
                             {{ form_errors(form.ville) }}
                         </div>
-               
+
                         <div class="row">
                             <div class="file center-align">
                                 <div class="col s6">
-                                <label>{{ 'photo'|trans }}</label> {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
-
+                                    <label>{{ 'Photo(s)'|trans }}</label>
+                                    {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
+                                    {#{{ form_label(form.fichier.({{'Photo'|trans }}))  }}#}
                                     {{ form_errors(form.fichier.file) }}
                                     {{ form_widget(form.fichier.file) }}
                                 </div>
@@ -74,19 +74,21 @@
                             <div class="col s4">
                                 <img class="hiddenPreview" id="preview" src="#" alt="Votre Photo" />
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <input class="btn submitProjet" type="submit" value="{{ 'Création'|trans }}"/>
-            </div>
-            {{ form_end(form) }}
+                <div>
+                    <input class="btn submitProjet" type="submit" value="{{ 'Création'|trans }}"/>
+                </div>
+                {{ form_end(form) }}
 
+            </div>
         </div>
     </div>
     </div>
 
 {% endblock %}
+
 {% block javascripts %}
     {{ parent() }}
     <script>
