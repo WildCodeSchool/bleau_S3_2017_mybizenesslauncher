@@ -3,8 +3,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p class="center">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-
     <p class="center"><a href="{{path('mbl_homepage') }}">{{ 'registration.back'|trans }}</a></p>
 
 {% endblock fos_user_content %}

@@ -1,7 +1,7 @@
 <?php
 // src/Acme/UserBundle/Controller/RegistrationController.php
 
-namespace MBLBundle\Controller;
+namespace UserBundle\Controller;
 
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
@@ -45,6 +45,7 @@ class RegistrationController extends BaseController
         $form->setData($user);
 
         $form->handleRequest($request);
+        $session = $request->getSession();
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
@@ -62,12 +63,20 @@ class RegistrationController extends BaseController
 
                 return $response;
             }
+            $errors = $form->getErrors();
+            $nbErrors = $errors->count();
 
+            if ($nbErrors > 0)
+            {
+                $session->set('errors', $errors->__toString());
+                $session->set('nbErrors', $nbErrors);
+
+                return $this->redirectToRoute('mbl_homepage');
+            }
             $event = new FormEvent($form, $request);
 
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_FAILURE, $event);
             if (null !== $response = $event->getResponse()) {
-
                 return $response;
             }
         }
