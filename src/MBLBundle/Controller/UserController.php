@@ -32,11 +32,7 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $current = $this->getUser();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
-
-
-
             $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
-
         }
         return new Response($content);
     }
@@ -112,12 +108,8 @@ class UserController extends Controller
     {
 
         $locale = $request->getLocale();
-
-
         $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType',null , array('locale' => $locale));
-
         $em = $this->getDoctrine()->getManager();
-
         $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
 
         if ($request->isMethod('POST'))

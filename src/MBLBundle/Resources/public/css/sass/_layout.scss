@@ -6,10 +6,7 @@ Layout.html.twig
 {
   background-color:$Colorgrey;
 }
-.logotxt{
-  height:60px;
-  padding-top: 10px;
-}
+
 .page-footer
 {
   background-color:$ColorDarkGrey;
@@ -44,7 +41,12 @@ Layout.html.twig
   padding-left: 30px;
   color: #FB5B57;
   text-decoration: none;
+
+
 }
+//.darkerBiz img{
+//  height: 60px;
+//}
 .lancer {
   font-size: 1em;
   font-weight: bold;

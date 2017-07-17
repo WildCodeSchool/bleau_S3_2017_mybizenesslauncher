@@ -67,7 +67,6 @@ a {
   border-radius: 8px;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid #98d4e1;
   min-width: 200px;
   max-width: 300px;
 }
@@ -77,29 +76,28 @@ a {
   background-color: #98d4e1;
 }
 
-/* line 82, ../sass/_global.scss */
+/* line 83, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid #98d4e1;
   max-width: 300px;
   min-width: 200px;
 }
 
-/* line 94, ../sass/_global.scss */
+/* line 95, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 97, ../sass/_global.scss */
+/* line 98, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
 }
 
-/* line 101, ../sass/_global.scss */
+/* line 102, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -111,39 +109,39 @@ a {
   hyphens: auto;
 }
 
-/* line 111, ../sass/_global.scss */
+/* line 112, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 115, ../sass/_global.scss */
+/* line 116, ../sass/_global.scss */
 .photo_profil img {
   height: 7em;
   max-width: 120px;
   max-height: 100px;
 }
 
-/* line 120, ../sass/_global.scss */
+/* line 121, ../sass/_global.scss */
 .photo_profil, .info_projet, .info_profil {
   background: white;
 }
 
-/* line 125, ../sass/_global.scss */
+/* line 126, ../sass/_global.scss */
 .info_projet {
   height: 16em;
 }
 
-/* line 129, ../sass/_global.scss */
+/* line 130, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 133, ../sass/_global.scss */
+/* line 134, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 136, ../sass/_global.scss */
+/* line 137, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
@@ -258,13 +256,7 @@ Layout.html.twig
   background-color: #f0f0f0;
 }
 
-/* line 9, ../sass/_layout.scss */
-.logotxt {
-  height: 60px;
-  padding-top: 10px;
-}
-
-/* line 13, ../sass/_layout.scss */
+/* line 10, ../sass/_layout.scss */
 .page-footer {
   background-color: #4b494b;
   position: relative;
@@ -272,7 +264,7 @@ Layout.html.twig
   width: 100%;
 }
 
-/* line 21, ../sass/_layout.scss */
+/* line 18, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -281,17 +273,17 @@ Layout.html.twig
   padding-top: 5px;
 }
 
-/* line 32, ../sass/_layout.scss */
+/* line 29, ../sass/_layout.scss */
 .color {
   color: #98d4e1;
 }
 
-/* line 36, ../sass/_layout.scss */
+/* line 33, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
 }
 
-/* line 41, ../sass/_layout.scss */
+/* line 38, ../sass/_layout.scss */
 .darkerBiz {
   font-size: 1.3em;
   font-weight: bold;
@@ -300,7 +292,7 @@ Layout.html.twig
   text-decoration: none;
 }
 
-/* line 48, ../sass/_layout.scss */
+/* line 50, ../sass/_layout.scss */
 .lancer {
   font-size: 1em;
   font-weight: bold;
@@ -308,34 +300,34 @@ Layout.html.twig
   margin-left: 20px;
 }
 
-/* line 55, ../sass/_layout.scss */
+/* line 57, ../sass/_layout.scss */
 .lancer:hover {
   color: #6f9ea8;
   font-size: 1.1em;
 }
 
-/* line 60, ../sass/_layout.scss */
+/* line 62, ../sass/_layout.scss */
 .darkerBiz:hover {
   color: #FB5B57;
   opacity: 0.9;
 }
 
-/* line 64, ../sass/_layout.scss */
+/* line 66, ../sass/_layout.scss */
 .darkerTop:hover {
   color: #6f9ea8;
 }
 
-/* line 68, ../sass/_layout.scss */
+/* line 70, ../sass/_layout.scss */
 .dropdown-content li > a {
   color: #4b494b;
 }
 
-/* line 72, ../sass/_layout.scss */
+/* line 74, ../sass/_layout.scss */
 a .logoEbMenu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 72, ../sass/_layout.scss */
+  /* line 74, ../sass/_layout.scss */
   a .logoEbMenu {
     display: inline;
     max-height: 35px;
@@ -345,12 +337,12 @@ a .logoEbMenu {
   }
 }
 
-/* line 82, ../sass/_layout.scss */
+/* line 84, ../sass/_layout.scss */
 a .logoEbMenu:hover {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 82, ../sass/_layout.scss */
+  /* line 84, ../sass/_layout.scss */
   a .logoEbMenu:hover {
     display: inline;
     max-height: 35px;
@@ -360,7 +352,7 @@ a .logoEbMenu:hover {
   }
 }
 
-/* line 93, ../sass/_layout.scss */
+/* line 95, ../sass/_layout.scss */
 .material-icons {
   display: inline !important;
   vertical-align: middle !important;
@@ -375,119 +367,119 @@ a .logoEbMenu:hover {
   font-feature-settings: 'liga';
 }
 
-/* line 106, ../sass/_layout.scss */
+/* line 108, ../sass/_layout.scss */
 .material-icons.md-grey, .md-euro {
   font-size: 24px;
 }
 @media only screen and (max-width: 992px) {
-  /* line 106, ../sass/_layout.scss */
+  /* line 108, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     color: #4b494b;
   }
 }
 @media only screen and (min-width: 993px) {
-  /* line 106, ../sass/_layout.scss */
+  /* line 108, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     display: none !important;
   }
 }
 
-/* line 115, ../sass/_layout.scss */
+/* line 117, ../sass/_layout.scss */
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
 
-/* line 119, ../sass/_layout.scss */
+/* line 121, ../sass/_layout.scss */
 .dotCom {
   color: black;
   opacity: 0.5;
 }
 
-/* line 124, ../sass/_layout.scss */
+/* line 126, ../sass/_layout.scss */
 .BB:hover {
   border-bottom: 2px solid #FB5B57;
   width: 90%;
 }
 
-/* line 130, ../sass/_layout.scss */
+/* line 132, ../sass/_layout.scss */
 .modal .tabs {
   margin: 0;
   padding: 0;
   background-color: #98d4e1;
 }
-/* line 135, ../sass/_layout.scss */
+/* line 137, ../sass/_layout.scss */
 .modal .tab a {
   color: grey;
 }
-/* line 139, ../sass/_layout.scss */
+/* line 141, ../sass/_layout.scss */
 .modal .tab a:hover {
   color: #4b494b;
 }
-/* line 142, ../sass/_layout.scss */
+/* line 144, ../sass/_layout.scss */
 .modal .tab a.active {
   color: #4b494b;
 }
-/* line 145, ../sass/_layout.scss */
+/* line 147, ../sass/_layout.scss */
 .modal .tabs .indicator {
   background-color: #4b494b;
 }
 
-/* line 150, ../sass/_layout.scss */
+/* line 152, ../sass/_layout.scss */
 #Connexion, #register {
   margin-top: 25px;
 }
 
-/* line 153, ../sass/_layout.scss */
+/* line 155, ../sass/_layout.scss */
 .remember {
   margin-top: 10px;
 }
 
-/* line 156, ../sass/_layout.scss */
+/* line 158, ../sass/_layout.scss */
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
 
-/* line 162, ../sass/_layout.scss */
+/* line 164, ../sass/_layout.scss */
 .submitRegister {
   margin-top: 55px;
 }
 
-/* line 165, ../sass/_layout.scss */
+/* line 167, ../sass/_layout.scss */
 .moreRegisterHidden {
   display: none;
 }
 
-/* line 168, ../sass/_layout.scss */
+/* line 170, ../sass/_layout.scss */
 .moreRegister {
   margin-top: 25px;
 }
 
-/* line 171, ../sass/_layout.scss */
+/* line 173, ../sass/_layout.scss */
 textarea#fos_user_registration_form_description {
   height: 10em;
 }
 
-/* line 175, ../sass/_layout.scss */
+/* line 177, ../sass/_layout.scss */
 #fos_user_registration_form_description {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
 
-/* line 180, ../sass/_layout.scss */
+/* line 182, ../sass/_layout.scss */
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
 
-/* line 185, ../sass/_layout.scss */
+/* line 187, ../sass/_layout.scss */
 #login .btn, #register .btn {
   background: #98d4e1 !important;
 }
 
-/* line 189, ../sass/_layout.scss */
+/* line 191, ../sass/_layout.scss */
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
@@ -890,7 +882,6 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 8px;
   margin-bottom: 10px;
   height: 35em;
-  border: 2px solid #98d4e1;
   max-width: 300px;
 }
 /* line 22, ../sass/_showAllProfils.scss */
@@ -1095,7 +1086,6 @@ chat.html.twig
 }
 /* line 6, ../sass/_showMyProfil.scss */
 #myProfil .showProfil {
-  border: 2px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
   margin-bottom: 50px;
