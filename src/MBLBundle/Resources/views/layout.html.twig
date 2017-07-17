@@ -6,14 +6,18 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
+
 {#----------------------------------------------AVEC IDENTIFICATION#}
+
+
         <nav xmlns="http://www.w3.org/1999/html">
 
             <ul id="dropdown1" class="dropdown-content">
-                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
+                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}
+                       
                 <li class="divider"></li>
                 <li><a href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}
-                        {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                       </a></li>
                 <li><a href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
                 <li><a href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a></li>
                 <li><a href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
@@ -21,14 +25,18 @@
                 <li><a href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                         {{ render(controller('MBLBundle:User:countViews')) }}
                     </a></li>
-                <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
-                       data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
+                {#<li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"#}
+                       {#data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com#}
+                            {#tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>#}
 
                 <li><a href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
             <div class="nav-wrapper header">
-                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}"><img class="logotxt" src="{{ asset('bundles/mbl/img/logoinnovauptxt.png') }}"></a>
+                
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}"><img class="logotxt"
+                    src="{{ asset('bundles/mbl/img/logoinnovauptxt.png') }}">
+
+                </a>
                 <a class="tooltipped" data-position="bottom" data-delay="50"
                    data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
                             propose de réaliser des campagnes de Crowdfunding
@@ -46,12 +54,15 @@
                    class="button-collapse right"><i class="color material-icons">{{ 'Menu'|trans }}</i>
                 </a>
                 <ul class="right hide-on-med-and-down">
+
+                    <li><a class="color darkerTop"  href="{{ path('connect') }}">
+                            {{ render(controller('MBLBundle:User:countDemandeContact')) }}</a></li>
                     <li><a class="color darkerTop"  href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">
                             {{ 'Parcourir les profils'|trans }}</a></li>
                     <li><a class="color dropdown-button" href="#!" data-activates="dropdown1">
-                            <i class="right">{{ 'Mon compte'|trans }}</i></a></li>
+                            <i class="right">{{ 'Mon compte'|trans }} {{ render(controller('MBLBundle:User:countViews')) }}</i></a></li>
                 </ul>
 
                 <ul class="right show-on-medium hide-on-small hide-on-med-and-up">
@@ -69,19 +80,19 @@
                 </ul>
 
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}</a></li>
+                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}
+                        </a></li>
                     <li class="divider"></li>
-                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}
-                            {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
                     <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
                     <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a></li>
                     <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
                     <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
                     <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                             {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
-                    <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
-                           data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
+                    {#<li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"#}
+                           {#data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com#}
+                            {#tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>#}
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
                 </ul>
             </div>
@@ -104,13 +115,13 @@
                 </a>
                 <a class="tooltipped lancer" data-position="bottom" data-delay="50"
                    data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
+                            tous les outils pour t’aider à lancer ton activité." href="#">{{ 'Outils pour se lancer'|trans }}</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="color darkerTop" href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
-                            Parcourir les profils</a></li>
-                    <li><a class="color connexion" href=#modal1>Connexion</a>
+                            {{ 'Parcourir les profils'|trans }}</a></li>
+                    <li><a class="color connexion" href=#modal1> {{ 'Connectez-vous'|trans }}</a>
 
                     </li>
                 </ul>
@@ -155,10 +166,10 @@
                         Finance ton projet</a></li>
 
                     <li> <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{ path('showProject') }}">
-                            Parcourir les projets</a></li>
+                            {{ 'Parcourir les projets'|trans }} </a></li>
                     <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{path('showAllProfils')}}">
-                            Parcourir les profils</a></li>
-                    <li><a class="color" href=#modal1>Connexion</a>
+                            {{ 'Parcourir les profils'|trans }}</a></li>
+                    <li><a class="color" href=#modal1>{{ 'Connectez-vous'|trans }}</a>
                 </ul>
             </div>
         </nav>
