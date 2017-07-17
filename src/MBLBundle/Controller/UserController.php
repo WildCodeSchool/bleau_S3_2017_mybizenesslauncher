@@ -400,7 +400,6 @@ class UserController extends Controller
             if($request->getLocale() == "it")
             {
                 $this->get('session')->getFlashBag()->add('notice', 'Il progetto è stato rimosso');
-
             }
             else
             {
@@ -414,11 +413,9 @@ class UserController extends Controller
             if($request->getLocale() == "it")
             {
                 $this->get('session')->getFlashBag()->add('notice', 'Il progetto desiderato non esiste');
-
             }
             else
             {
-
                 $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
             }
             return $this->redirectToRoute('showMyProject');
@@ -524,13 +521,11 @@ class UserController extends Controller
         if($request->getLocale() == "it")
         {
             $this->get('session')->getFlashBag()->add('error', 'La richiesta di accesso è stato inviato');
-
         }
         else
         {
             $this->get('session')->getFlashBag()->add('error', 'Votre demande de connexion a été envoyée');
         }
-
         return $this->redirectToRoute('showAllProfils');
     }
 
