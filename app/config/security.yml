@@ -27,6 +27,11 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
+
+                failure_path:   /
+                failure_forward: false
+                failure_path_parameter: _failure_path
+
             ###Autorise la deconnexion###
 
                 login_path: fos_user_security_login
@@ -64,4 +69,9 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/createProject, role: ROLE_USER }
+        - { path: ^/editProfil, role: ROLE_USER }
+        - { path: ^/showMyProfil, role: ROLE_USER }
+        - { path: ^/showMyProject, role: ROLE_USER }
+        - { path: ^/connect, role: ROLE_USER }
+        - { path: ^/homepageProfil, role: ROLE_USER }
 

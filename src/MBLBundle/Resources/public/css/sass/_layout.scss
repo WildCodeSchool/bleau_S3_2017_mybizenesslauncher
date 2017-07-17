@@ -6,7 +6,10 @@ Layout.html.twig
 {
   background-color:$Colorgrey;
 }
-
+.logotxt{
+  height:60px;
+  padding-top: 10px;
+}
 .page-footer
 {
   background-color:$ColorDarkGrey;
@@ -40,7 +43,7 @@ Layout.html.twig
   font-weight: bold;
   padding-left: 30px;
   color: #FB5B57;
-  opacity: 0.5;
+  text-decoration: none;
 }
 .lancer {
   font-size: 1em;
@@ -189,3 +192,4 @@ input, button {
   outline: none !important;
   box-shadow: none !important;
 }
+

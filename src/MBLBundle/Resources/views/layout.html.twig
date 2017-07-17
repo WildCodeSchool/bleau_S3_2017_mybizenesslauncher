@@ -6,9 +6,6 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-
-
-
         <nav xmlns="http://www.w3.org/1999/html">
 
             <ul id="dropdown1" class="dropdown-content">
@@ -28,8 +25,7 @@
                 <li><a href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
             <div class="nav-wrapper header">
-                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}">Innova'Up<span class="dotCom">.com
-                    </span></a>
+                <a class="color darkerBiz" href="{{ path('mbl_homepage') }}"><img class="logotxt" src="{{ asset('bundles/mbl/img/logoinnovauptxt.png') }}"></a>
                 <a class="tooltipped" data-position="bottom" data-delay="50"
                    data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
                             propose de réaliser des campagnes de Crowdfunding
@@ -104,8 +100,8 @@
                     <li><a class="color darkerTop" href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
-                            {{ 'Parcourir les profils'|trans }}</a></li>
-                    <li><a class="color" href=#modal1>{{ 'Connectez-vous'|trans }}</a>
+                            Parcourir les profils</a></li>
+                    <li><a class="color connexion" href=#modal1>Connexion</a>
 
                     </li>
                 </ul>
@@ -190,6 +186,7 @@
             </div>
         </div>
     </footer>
+
 {% endblock %}
 
 
