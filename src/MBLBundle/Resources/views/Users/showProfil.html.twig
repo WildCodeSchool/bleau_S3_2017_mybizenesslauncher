@@ -37,13 +37,11 @@
                             {% for comp in profil.competences %}
                                 {% if loop.last %}
                                     <div class="chip">
-                                         {{ comp.competence}}
-                                        {#<i class="close material-icons">close</i>#}
+                                        {{ comp.competence}}
                                     </div>
                                 {% else %}
                                     <div class="chip">
                                         {{ comp.competence}}
-                                        {#<i class="close material-icons">close</i>#}
                                     </div>
                                 {% endif %}
                             {% endfor %}

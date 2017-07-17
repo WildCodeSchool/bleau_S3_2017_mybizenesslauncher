@@ -1,7 +1,10 @@
-@import "global";
+@import 'global';
 #index {
-  //For Materialize footer sticked at page bottom
 
+////For Materialize footer sticked at page bottom
+//  display: flex;
+//  min-height: 100vh;
+//  flex-direction: column;
 
   .bandeau_homepage {
     width: 100%;
@@ -12,10 +15,9 @@
       display: none;}
   }
 
-
-  h2 {
-    font-size: 1.5em;
-  }
+    h2 {
+      font-size: 1.5em;
+    }
 
 
   .Outils {
@@ -49,7 +51,6 @@
       background-color: $Colorgrey;
     }
     @media #{$lar} {
-
       display:none;
     }
   }
@@ -80,7 +81,7 @@
     margin-top: 40px;
   }
   .logoEb {
-    max-width: 180px;
+    max-width: 200px;
     height: auto;
     @media #{$medium-and-down} {
       display: none;

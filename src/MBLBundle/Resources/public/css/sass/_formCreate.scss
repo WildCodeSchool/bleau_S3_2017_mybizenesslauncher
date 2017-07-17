@@ -1,4 +1,4 @@
-@import "global";
+@import 'global';
 
 #createProjet
 {
@@ -40,11 +40,13 @@
     box-shadow: none;
   }
 
-
-
   .hiddenPreview {
     display: none ;
   }
+
+  textarea #mblbundle_projet_description{
+    height: 10em;
+
   textarea{
     height: 11em;
     border-radius: 10px;
@@ -55,6 +57,7 @@
     border-radius: 10px;
     outline: none;
     box-shadow: none;
+
   }
   .submitProjet {
     margin: auto;

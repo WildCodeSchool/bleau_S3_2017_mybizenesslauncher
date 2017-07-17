@@ -84,9 +84,6 @@ testTraduction:
     path: /test/{name}
     defaults: { _controller: MBLBundle:User:traduction }
 
-
-
-
 chatIndex:
     path: /chatIndex/{id}
     defaults:

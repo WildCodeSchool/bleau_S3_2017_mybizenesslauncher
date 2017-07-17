@@ -6,6 +6,7 @@
 
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
+{#----------------------------------------------AVEC IDENTIFICATION#}
         <nav xmlns="http://www.w3.org/1999/html">
 
             <ul id="dropdown1" class="dropdown-content">
@@ -20,6 +21,9 @@
                 <li><a href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                         {{ render(controller('MBLBundle:User:countViews')) }}
                     </a></li>
+                <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
+                       data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
 
                 <li><a href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
@@ -34,7 +38,7 @@
                             Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
                     <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                 </a>
-                <a class="tooltipped hide-on-large-only lancer" data-position="bottom" data-delay="50"
+                <a class="tooltipped hide-on-small-only hide-on-large-only lancer" data-position="bottom" data-delay="50"
                    data-tooltip="Trouve sur MyStartupTools.com
                             tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
 
@@ -50,7 +54,7 @@
                             <i class="right">{{ 'Mon compte'|trans }}</i></a></li>
                 </ul>
 
-                <ul class="right show-on-medium-and-down hide-on-med-and-up">
+                <ul class="right show-on-medium hide-on-small hide-on-med-and-up">
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
                            data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
                            le décrire et détailler les profils de cofondateurs et associés que tu cherches.
@@ -75,15 +79,21 @@
                     <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
                     <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                             {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                    <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
+                           data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
                 </ul>
             </div>
         </nav>
+
+        {#----------------------------- SANS IDENTIFICATION#}
     {% else %}
         <nav>
             <div class="nav-wrapper header">
                 <a class="color darkerBiz" href="{{ path('mbl_homepage') }}" ><img class="logotxt" src="{{ asset('bundles/mbl/img/logoinnovauptxt.png') }}"></a>
-                <a class="tooltipped" data-position="bottom" data-delay="50"
+                <a class="tooltipped hide-on-small-only hide-on-med-and-up" data-position="bottom"
+                   data-delay="50"
                    data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
                             propose de réaliser des campagnes de Crowdfunding
                             de don en contrepartie pour vous aider à financer
@@ -92,7 +102,7 @@
                             Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
                     <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                 </a>
-                <a class="tooltipped hide-on-large-only lancer" data-position="bottom" data-delay="50"
+                <a class="tooltipped lancer" data-position="bottom" data-delay="50"
                    data-tooltip="Trouve sur MyStartupTools.com
                             tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -104,7 +114,7 @@
 
                     </li>
                 </ul>
-                <ul class="right show-on-medium-and-down hide-on-med-and-up">
+                <ul class="right hide-on-small-only show-on-medium hide-on-med-and-up">
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
                            data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
                            le décrire et détailler les profils de cofondateurs et associés que tu cherches.
@@ -116,9 +126,39 @@
                            d’un projet existant, parcours les projets pour trouver celui que tu pourrais
                            aider à porter au sommet !
                            href="{{path('showAllProfils')}}">{{ 'Profil'|trans }}</a></li>
-                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                    <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({},
+                            'FOSUserBundle') }}
                         </a>
                     </li>
+                </ul>
+
+{#Menu small devices for non logged users#}
+
+                <a href="#" data-activates="mobile-demo"
+                   class="button-collapse right show-on-small hide-on-med-and-up">
+                    <i class="color material-icons">menu</i>
+                </a>
+                <ul class="side-nav" id="mobile-demo">
+                    <li class="divider"></li>
+                    <li><a class="tooltipped color darkerTop hide-on-med-and-up" data-position="bottom"
+                           data-delay="50"
+                           data-tooltip="Trouve sur MyStartupTools.com
+                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
+                    <li><a class="tooltipped color darkerTop show-on-medium" data-position="bottom"
+                       data-delay="50"
+                       data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
+                            propose de réaliser des campagnes de Crowdfunding
+                            de don en contrepartie pour vous aider à financer
+                            votre projet. Seule une commission de 4% du montant
+                            collecté sera appliquée, faisant de E-busta le site de
+                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                        Finance ton projet</a></li>
+
+                    <li> <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{ path('showProject') }}">
+                            Parcourir les projets</a></li>
+                    <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{path('showAllProfils')}}">
+                            Parcourir les profils</a></li>
+                    <li><a class="color" href=#modal1>Connexion</a>
                 </ul>
             </div>
         </nav>
@@ -148,18 +188,18 @@
         </div>
     </div>
 {% endblock %}
+
 {% block footer %}
     <footer class="page-footer footer">
         <div class="container">
             <div class="row">
                 <div class="col l4 offset-l2 s12">
-
                     <h5 class="white-text">{{ 'Lien utiles'|trans }}</h5>
-                    <ul>
+                    <ul class="liensfooter">
                         <li><a class="grey-text text-lighten-3"
                                href="{{ path('apropos') }}">{{ 'A propos'|trans }}</a></li>
                         <li><a class="grey-text text-lighten-3"
-                               href="{{ path('legal') }}">{{ 'Mention lègale'|trans }}</a></li>
+                               href="{{ path('legal') }}">{{ 'Mention légales'|trans }}</a></li>
                         <li><a class="grey-text text-lighten-3"
                                href="{{ path('presse') }}">{{ 'Presse'|trans }}</a></li>
                         <li><a class="grey-text text-lighten-3"
@@ -174,7 +214,8 @@
                 </div>
                 <div class="col l6 s12">
                     <h5 class="color-blue">{{ 'Suivez'|trans }} Innova-up.com</h5>
-                    <p class="grey-text text-lighten-4"><Facebook></Facebook></p>
+                    <a href="#"><img class="responsive-img" src="{{ asset('bundles/mbl/img/facebook.png') }}"
+                                     alt='Icône Facebook'></a>
                 </div>
 
             </div>
@@ -190,12 +231,12 @@
 
 
 {% block javascripts %}
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-
-            crossorigin="anonymous">
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script>
 
     $( document ).ready(function() {
@@ -211,6 +252,5 @@
             $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
         })
     });
-
     </script>
 {% endblock %}
