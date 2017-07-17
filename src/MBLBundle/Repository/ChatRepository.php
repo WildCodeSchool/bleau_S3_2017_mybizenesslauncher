@@ -11,6 +11,21 @@ namespace MBLBundle\Repository;
 class ChatRepository extends \Doctrine\ORM\EntityRepository
 {
 
+    public function  myQueriesForContact($current, $currentId, $zero)
+    {
+        return $this ->createQueryBuilder('c')
+            ->select('c')
+            ->join('c.profils', 'pro')
+            ->where('pro = :Profil')
+            ->setParameter('Profil', $current)
+            ->andWhere('c.connectionbyid = :idg')
+            ->setParameter('idg', $zero)
+            ->andWhere('c.connectionbyidcreator != :idd')
+            ->setParameter('idd', $currentId)
+            ->getQuery()
+            ->getResult();
+    }
+
     public function myfindByProfil($user)
     {
         return $this ->createQueryBuilder('c')

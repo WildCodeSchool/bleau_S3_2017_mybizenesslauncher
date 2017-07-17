@@ -54,6 +54,9 @@
                    class="button-collapse right"><i class="color material-icons">{{ 'Menu'|trans }}</i>
                 </a>
                 <ul class="right hide-on-med-and-down">
+
+                    <li><a class="color darkerTop"  href="{{ path('connect') }}">
+                            {{ render(controller('MBLBundle:User:countDemandeContact')) }}</a></li>
                     <li><a class="color darkerTop"  href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">
