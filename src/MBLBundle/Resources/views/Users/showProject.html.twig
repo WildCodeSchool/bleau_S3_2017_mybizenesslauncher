@@ -7,19 +7,19 @@
     <div class="showProjet">
         <div class="row">
             {{ form_start(form_secteur) }}
-            <div class="col s12 m6 l6">
+            <div class="col s12 m3 l3">
                 {{ form_row(form_secteur.secteur) }}
                 {{ form_errors(form_secteur.secteur) }}
             </div>
-            <div class="col s12 m6 l6">
+            <div class="col s12 m3 l3">
                 {{ form_row(form_secteur.typeDeProjet) }}
                 {{ form_errors(form_secteur.typeDeProjet) }}
             </div>
-            <div class="col s12 m6 l6">
+            <div class="col s12 m3 l3">
                 {{ form_row(form_secteur.localisation) }}
                 {{ form_errors(form_secteur.localisation) }}
             </div>
-            <div class="col s12 m6 l6">
+            <div class="col s12 m3 l3 btnfilter">
                 <input class="btn center" name="Rechercher" type="submit" value="{{ 'Rechercher'|trans }}">
             </div>
             {{ form_end(form_secteur) }}
@@ -36,14 +36,14 @@
                                     {% if pro.titre|length > 10 %}
                                         <h4>{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
                                     {% else  %}
-                                        <h4>{{ pro.titre }}</h4>
+                                        <h4>{{ pro.titre|capitalize }}</h4>
                                     {% endif %}
                                 </div>
-                                <div class="col s8 offset-s2 photo_profil">
+                                <div class="col s8 offset-s2 ">
                                     {% if pro.fichier is empty %}
-                                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                        <img src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                     {% else %}
-                                        <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                        <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                     {% endif %}
                                 </div>
                             </div>

@@ -95,9 +95,11 @@ a {
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
+  height: 16em;
+  background: white;
 }
 
-/* line 103, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -109,39 +111,27 @@ a {
   hyphens: auto;
 }
 
-/* line 113, ../sass/_global.scss */
+/* line 116, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 117, ../sass/_global.scss */
-.photo_profil img {
-  height: 7em;
-  max-width: 120px;
-  max-height: 100px;
-}
-
-/* line 122, ../sass/_global.scss */
-.photo_profil, .info_projet, .info_profil {
+/* line 125, ../sass/_global.scss */
+.info_profil {
   background: white;
 }
 
-/* line 127, ../sass/_global.scss */
-.info_projet {
-  height: 16em;
-}
-
-/* line 131, ../sass/_global.scss */
+/* line 130, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 135, ../sass/_global.scss */
+/* line 134, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 138, ../sass/_global.scss */
+/* line 137, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
@@ -164,7 +154,7 @@ h6 {
 #index h2 {
   font-size: 1.5em;
 }
-/* line 23, ../sass/_index.scss */
+/* line 22, ../sass/_index.scss */
 #index .Outils {
   padding-top: 70px;
   overflow-wrap: break-word;
@@ -175,73 +165,73 @@ h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* line 34, ../sass/_index.scss */
+/* line 33, ../sass/_index.scss */
 #index .Finance {
   margin-top: 30px;
 }
-/* line 38, ../sass/_index.scss */
+/* line 37, ../sass/_index.scss */
 #index .box_projet_profil * {
   text-align: center;
 }
-/* line 42, ../sass/_index.scss */
+/* line 41, ../sass/_index.scss */
 #index .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 46, ../sass/_index.scss */
+/* line 45, ../sass/_index.scss */
 #index .btn_bandeau_homepage:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 50, ../sass/_index.scss */
+/* line 49, ../sass/_index.scss */
 #index .btn_bandeau_homepage:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 1228px) {
-  /* line 42, ../sass/_index.scss */
+  /* line 41, ../sass/_index.scss */
   #index .btn_bandeau_homepage {
     display: none;
   }
 }
-/* line 57, ../sass/_index.scss */
+/* line 56, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 61, ../sass/_index.scss */
+/* line 60, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 65, ../sass/_index.scss */
+/* line 64, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 70, ../sass/_index.scss */
+  /* line 69, ../sass/_index.scss */
   #index .toHide {
     display: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 75, ../sass/_index.scss */
+  /* line 74, ../sass/_index.scss */
   #index .toShow {
     display: inline !important;
   }
 }
-/* line 80, ../sass/_index.scss */
+/* line 79, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
-/* line 83, ../sass/_index.scss */
+/* line 82, ../sass/_index.scss */
 #index .logoEb {
   max-width: 200px;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
-  /* line 83, ../sass/_index.scss */
+  /* line 82, ../sass/_index.scss */
   #index .logoEb {
     display: none;
   }
@@ -530,6 +520,22 @@ input, button {
 /* line 11, ../sass/_showProject.scss */
 .showProjet .box_projet * {
   text-align: center;
+}
+/* line 15, ../sass/_showProject.scss */
+.showProjet .btnfilter {
+  padding-top: 30px;
+  text-align: center;
+  height: 100%;
+}
+@media only screen and (max-width: 600px) {
+  /* line 15, ../sass/_showProject.scss */
+  .showProjet .btnfilter {
+    padding-top: 0;
+  }
+}
+/* line 24, ../sass/_showProject.scss */
+.showProjet .center {
+  background-color: #98d4e1;
 }
 
 /* line 3, ../sass/_showMyProject.scss */
