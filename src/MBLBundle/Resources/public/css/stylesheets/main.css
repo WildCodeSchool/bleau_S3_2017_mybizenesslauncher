@@ -95,9 +95,11 @@ a {
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
+  height: 16em;
+  background: white;
 }
 
-/* line 103, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -109,39 +111,27 @@ a {
   hyphens: auto;
 }
 
-/* line 113, ../sass/_global.scss */
+/* line 116, ../sass/_global.scss */
 .photo_profil {
   border-radius: 8px;
 }
 
-/* line 117, ../sass/_global.scss */
-.photo_profil img {
-  height: 7em;
-  max-width: 120px;
-  max-height: 100px;
-}
-
-/* line 122, ../sass/_global.scss */
-.photo_profil, .info_projet, .info_profil {
+/* line 125, ../sass/_global.scss */
+.info_profil {
   background: white;
 }
 
-/* line 127, ../sass/_global.scss */
-.info_projet {
-  height: 16em;
-}
-
-/* line 131, ../sass/_global.scss */
+/* line 130, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 135, ../sass/_global.scss */
+/* line 134, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 138, ../sass/_global.scss */
+/* line 137, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
@@ -164,7 +154,7 @@ h6 {
 #index h2 {
   font-size: 1.5em;
 }
-/* line 23, ../sass/_index.scss */
+/* line 22, ../sass/_index.scss */
 #index .Outils {
   padding-top: 70px;
   overflow-wrap: break-word;
@@ -175,73 +165,73 @@ h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* line 34, ../sass/_index.scss */
+/* line 33, ../sass/_index.scss */
 #index .Finance {
   margin-top: 30px;
 }
-/* line 38, ../sass/_index.scss */
+/* line 37, ../sass/_index.scss */
 #index .box_projet_profil * {
   text-align: center;
 }
-/* line 42, ../sass/_index.scss */
+/* line 41, ../sass/_index.scss */
 #index .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 46, ../sass/_index.scss */
+/* line 45, ../sass/_index.scss */
 #index .btn_bandeau_homepage:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 50, ../sass/_index.scss */
+/* line 49, ../sass/_index.scss */
 #index .btn_bandeau_homepage:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 1228px) {
-  /* line 42, ../sass/_index.scss */
+  /* line 41, ../sass/_index.scss */
   #index .btn_bandeau_homepage {
     display: none;
   }
 }
-/* line 57, ../sass/_index.scss */
+/* line 56, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 61, ../sass/_index.scss */
+/* line 60, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 65, ../sass/_index.scss */
+/* line 64, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 70, ../sass/_index.scss */
+  /* line 69, ../sass/_index.scss */
   #index .toHide {
     display: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 75, ../sass/_index.scss */
+  /* line 74, ../sass/_index.scss */
   #index .toShow {
     display: inline !important;
   }
 }
-/* line 80, ../sass/_index.scss */
+/* line 79, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
-/* line 83, ../sass/_index.scss */
+/* line 82, ../sass/_index.scss */
 #index .logoEb {
   max-width: 200px;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
-  /* line 83, ../sass/_index.scss */
+  /* line 82, ../sass/_index.scss */
   #index .logoEb {
     display: none;
   }
@@ -530,6 +520,22 @@ input, button {
 .showProjet .box_projet * {
   text-align: center;
 }
+/* line 15, ../sass/_showProject.scss */
+.showProjet .btnfilter {
+  padding-top: 30px;
+  text-align: center;
+  height: 100%;
+}
+@media only screen and (max-width: 600px) {
+  /* line 15, ../sass/_showProject.scss */
+  .showProjet .btnfilter {
+    padding-top: 0;
+  }
+}
+/* line 24, ../sass/_showProject.scss */
+.showProjet .center {
+  background-color: #98d4e1;
+}
 
 /* line 3, ../sass/_showMyProject.scss */
 #showMyProjet {
@@ -571,34 +577,45 @@ input, button {
   background-color: #4b494b;
 }
 
-/*
-registration
-*/
-/* line 5, ../sass/_registration.scss */
-.register_must {
+/* line 4, ../sass/_registration.scss */
+#register {
+  /*
+  registration
+  */
+}
+/* line 9, ../sass/_registration.scss */
+#register .register_must {
   /*background-color: $Colorblue !important;*/
 }
-
-/* line 12, ../sass/_registration.scss */
-label {
+/* line 16, ../sass/_registration.scss */
+#register label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.3em;
 }
-
-/* line 17, ../sass/_registration.scss */
-h1 {
+/* line 21, ../sass/_registration.scss */
+#register h1 {
   font-weight: bold;
   font-size: 1.7em;
 }
-
-/* line 25, ../sass/_registration.scss */
-input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url],
-input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-input[type=search], textarea.materialize-textarea {
+/* line 29, ../sass/_registration.scss */
+#register input:not([type]), #register input[type=text], #register input[type=password], #register input[type=email], #register input[type=url],
+#register input[type=time], #register input[type=date], #register input[type=datetime], #register input[type=datetime-local], #register input[type=tel], #register input[type=number],
+#register input[type=search], #register textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+/* line 39, ../sass/_registration.scss */
+#register input:focus {
+  border: 1.5px solid #98d4e1 !important;
+  border-radius: 10px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* line 45, ../sass/_registration.scss */
+#register textarea {
+  height: 20em;
 }
 
 /* line 4, ../sass/_formCreate.scss */
@@ -679,11 +696,11 @@ input[type=search], textarea.materialize-textarea {
 }
 
 /* line 2, ../sass/_formCreatePro.scss */
-#createProjet {
-  margin-top: 40px;
+#formCreatePro {
+  margin-top: 50px;
 }
 /* line 6, ../sass/_formCreatePro.scss */
-#createProjet .vignette_projet_profilAdd {
+#formCreatePro .vignette_projet_profilAdd {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -693,78 +710,70 @@ input[type=search], textarea.materialize-textarea {
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 16, ../sass/_formCreatePro.scss */
-#createProjet .vignette_projet_profilAdd:hover {
+/* line 19, ../sass/_formCreatePro.scss */
+#formCreatePro .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 20, ../sass/_formCreatePro.scss */
-#createProjet .info_projet_profilAdd {
+/* line 23, ../sass/_formCreatePro.scss */
+#formCreatePro .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
   margin: 5px;
   background-color: white;
   height: 18em;
 }
-/* line 28, ../sass/_formCreatePro.scss */
-#createProjet .uploadlft {
-  position: left;
-}
-/* line 31, ../sass/_formCreatePro.scss */
-#createProjet .submitProjet {
-  background-color: #98d4e1;
-}
-/* line 34, ../sass/_formCreatePro.scss */
-#createProjet .alignbtn {
-  text-align: center;
-}
 /* line 38, ../sass/_formCreatePro.scss */
-#createProjet .deleteProfilR {
+#formCreatePro .deleteProfilR {
   margin: 10px;
   background-color: #98d4e1;
 }
 /* line 47, ../sass/_formCreatePro.scss */
-#createProjet label.required:after {
+#formCreatePro label.required:after {
   content: "*";
 }
 /* line 50, ../sass/_formCreatePro.scss */
-#createProjet label {
+#formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
 /* line 57, ../sass/_formCreatePro.scss */
-#createProjet p .container {
+#formCreatePro p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 /* line 62, ../sass/_formCreatePro.scss */
-#createProjet p .btn {
+#formCreatePro p .btn {
   margin-bottom: 20px;
 }
-/* line 66, ../sass/_formCreatePro.scss */
-#createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
-#createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
-#createProjet input[type=search] {
+/* line 72, ../sass/_formCreatePro.scss */
+#formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
+#formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
+#formCreatePro input[type=search] {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 73, ../sass/_formCreatePro.scss */
-#createProjet input:focus {
+/* line 79, ../sass/_formCreatePro.scss */
+#formCreatePro input:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
 }
-/* line 83, ../sass/_formCreatePro.scss */
-#createProjet ul li span {
+/* line 84, ../sass/_formCreatePro.scss */
+#formCreatePro input {
+  background-color: #98d4e1;
+}
+/* line 89, ../sass/_formCreatePro.scss */
+#formCreatePro ul li span {
   color: #4b494b;
 }
-/* line 86, ../sass/_formCreatePro.scss */
-#createProjet [type="checkbox"]:checked + label:before {
+/* line 92, ../sass/_formCreatePro.scss */
+#formCreatePro [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
-/* line 92, ../sass/_formCreatePro.scss */
-#createProjet .profilR {
+/* line 98, ../sass/_formCreatePro.scss */
+#formCreatePro .profilR {
   margin-top: 40px;
 }
 
