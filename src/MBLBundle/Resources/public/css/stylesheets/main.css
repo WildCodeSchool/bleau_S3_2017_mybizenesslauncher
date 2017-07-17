@@ -720,69 +720,65 @@ input[type=search], textarea.materialize-textarea {
   background-color: white;
   height: 18em;
 }
-/* line 33, ../sass/_formCreatePro.scss */
-#createProjet .apercuimg {
-  text-align: center;
-}
-/* line 36, ../sass/_formCreatePro.scss */
+/* line 28, ../sass/_formCreatePro.scss */
 #createProjet .uploadlft {
   position: left;
 }
-/* line 39, ../sass/_formCreatePro.scss */
+/* line 31, ../sass/_formCreatePro.scss */
 #createProjet .submitProjet {
   background-color: #98d4e1;
 }
-/* line 42, ../sass/_formCreatePro.scss */
+/* line 34, ../sass/_formCreatePro.scss */
 #createProjet .alignbtn {
   text-align: center;
 }
-/* line 46, ../sass/_formCreatePro.scss */
+/* line 38, ../sass/_formCreatePro.scss */
 #createProjet .deleteProfilR {
   margin: 10px;
   background-color: #98d4e1;
 }
-/* line 55, ../sass/_formCreatePro.scss */
+/* line 47, ../sass/_formCreatePro.scss */
 #createProjet label.required:after {
   content: "*";
 }
-/* line 58, ../sass/_formCreatePro.scss */
+/* line 50, ../sass/_formCreatePro.scss */
 #createProjet label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 65, ../sass/_formCreatePro.scss */
+/* line 57, ../sass/_formCreatePro.scss */
 #createProjet p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 70, ../sass/_formCreatePro.scss */
+/* line 62, ../sass/_formCreatePro.scss */
 #createProjet p .btn {
   margin-bottom: 20px;
 }
-/* line 74, ../sass/_formCreatePro.scss */
+/* line 66, ../sass/_formCreatePro.scss */
 #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
 #createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
 #createProjet input[type=search] {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 81, ../sass/_formCreatePro.scss */
+/* line 73, ../sass/_formCreatePro.scss */
 #createProjet input:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
 }
-/* line 91, ../sass/_formCreatePro.scss */
+/* line 83, ../sass/_formCreatePro.scss */
 #createProjet ul li span {
   color: #4b494b;
 }
-/* line 94, ../sass/_formCreatePro.scss */
+/* line 86, ../sass/_formCreatePro.scss */
 #createProjet [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
-/* line 100, ../sass/_formCreatePro.scss */
+/* line 92, ../sass/_formCreatePro.scss */
 #createProjet .profilR {
   margin-top: 40px;
 }
