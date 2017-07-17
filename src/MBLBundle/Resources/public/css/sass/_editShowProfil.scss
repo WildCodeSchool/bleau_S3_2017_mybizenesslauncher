@@ -2,6 +2,7 @@
 // CSS de la page EDIT PROFIL
 .editprofil{
 
+    padding-top: 40px;
     .divform{
         text-align: center;
 
@@ -35,12 +36,18 @@
     }
     .btlft{
         background-color: $Colorblue;
+        box-shadow: 1px 1px 1px $ColorDarkGrey;
+
     }
     .btrght{
+        height: 33px;
+        text-decoration: none;
         background-color: $Colorblue;
+        box-shadow: 1px 1px 1px $ColorDarkGrey;
     }
     .btnright {
         text-align: center;
+        height: 33px;
     }
     .hiddenPreview {
         display: none;
