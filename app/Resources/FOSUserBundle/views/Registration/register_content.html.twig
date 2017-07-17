@@ -19,8 +19,16 @@
                 $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
             });
 
-            $('.connexion').trigger('click');
-            $('#Register').trigger('click');
+            var interval = null;
+
+            jQuery(function(){
+                interval = setInterval(callFunc, 1000);
+            });
+            function callFunc(){
+                jQuery('.connexion, .regOnglet a').trigger('click');
+                clearInterval(interval);
+            }
+
         });
     </script>
 {% endif %}
@@ -75,6 +83,15 @@
                         {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : 'Mot de passe'|trans}}) }}
                         {{ form_errors(form.plainPassword.first) }}
                     </div>
+                    <div class="col s6" style="margin-top: 60px;">
+                        <div class="row">
+                            <div class="col s12 center">
+                                <div class="center">
+                                    <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="col s6">
                         <div class="row">
@@ -86,9 +103,8 @@
                         {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : 'Confirmer votre mot de passe'|trans}}) }}
                         {{ form_errors(form.plainPassword.second) }}
                     </div>
-                    <div class="center">
-                        <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
-                    </div>
+
+
                 </div>
 
                 {{ 'Registration supplémentaire (optionnel)'|trans }}

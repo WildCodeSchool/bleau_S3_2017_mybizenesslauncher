@@ -578,34 +578,45 @@ input, button {
   background-color: #4b494b;
 }
 
-/*
-registration
-*/
-/* line 5, ../sass/_registration.scss */
-.register_must {
+/* line 4, ../sass/_registration.scss */
+#register {
+  /*
+  registration
+  */
+}
+/* line 9, ../sass/_registration.scss */
+#register .register_must {
   /*background-color: $Colorblue !important;*/
 }
-
-/* line 12, ../sass/_registration.scss */
-label {
+/* line 16, ../sass/_registration.scss */
+#register label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.3em;
 }
-
-/* line 17, ../sass/_registration.scss */
-h1 {
+/* line 21, ../sass/_registration.scss */
+#register h1 {
   font-weight: bold;
   font-size: 1.7em;
 }
-
-/* line 25, ../sass/_registration.scss */
-input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url],
-input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-input[type=search], textarea.materialize-textarea {
+/* line 29, ../sass/_registration.scss */
+#register input:not([type]), #register input[type=text], #register input[type=password], #register input[type=email], #register input[type=url],
+#register input[type=time], #register input[type=date], #register input[type=datetime], #register input[type=datetime-local], #register input[type=tel], #register input[type=number],
+#register input[type=search], #register textarea.materialize-textarea {
   border-bottom: none;
   border: 1.5px solid lightgray;
   border-radius: 10px;
+}
+/* line 39, ../sass/_registration.scss */
+#register input:focus {
+  border: 1.5px solid #98d4e1 !important;
+  border-radius: 10px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* line 45, ../sass/_registration.scss */
+#register textarea {
+  height: 20em;
 }
 
 /* line 4, ../sass/_formCreate.scss */
