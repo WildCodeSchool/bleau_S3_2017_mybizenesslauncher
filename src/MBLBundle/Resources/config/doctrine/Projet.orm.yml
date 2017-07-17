@@ -49,6 +49,10 @@ MBLBundle\Entity\Projet:
             type: string
             length: 255
             nullable: true
+        lngp:
+            type: string
+            length: 10
+            nullable: true
 
     lifecycleCallbacks: {  }
 

@@ -178,8 +178,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
             ->where('p.lng = :locale')
             ->setParameter('locale', $locale)
-//            ->join('p.metier', 'm')
-//            ->addSelect('m.metier' . $locale . ' as metier')
             ->setMaxResults(4)
             ->orderBy('p.id', 'DESC')
         ;
@@ -213,8 +211,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
 
         }
 
-        /*dump($projets); die();*/
-
         return $profils;
     }
 
@@ -227,8 +223,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
             ->where('p.lng = :locale')
             ->setParameter('locale', $locale)
-            ->join('p.metier', 'm')
-            ->addSelect('m.metier' . $locale . ' as metier')
             ->orderBy('p.id', 'DESC')
 
 
@@ -238,6 +232,13 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
 
         foreach ($profils as $key => $profil)
         {
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.metier', 'm')
+                ->select('m.metier' . $locale . ' as metier')
+                ->setParameter('id', $profil['id']);
+            $profils[$key]['metier'] = $qb->getQuery()->getOneOrNullResult();
+
 //            Get fichier si défini et si null
             $qb = $this->createQueryBuilder('p');
             $qb->where('p.id = :id')

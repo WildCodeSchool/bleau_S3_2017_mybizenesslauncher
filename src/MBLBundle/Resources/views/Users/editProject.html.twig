@@ -64,7 +64,10 @@
                             {{ form_widget(form.fichier.file) }}
                         </div>
                         <div class="col s2">
+                            {% if projet.fichier is empty %}
+                            {% else %}
                             <img src="{{ asset('uploads/images/'~ projet.fichier.photo) }}">
+                            {% endif %}
                         </div>
                     </div>
 
