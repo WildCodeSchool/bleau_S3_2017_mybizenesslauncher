@@ -2,6 +2,7 @@
 'à': 'à'
 'Accepter de discuter': 'Accepter la discussion'
 'Actualiser le projet': 'Actualiser le projet'
+'Ajoutez un profil recherché': 'Ajoutez un profil recherché'
 'Chat avec': 'Chat avec'
 'Compétences:': 'Compétences:'
 'Créer un projet': 'Créer un projet'
@@ -12,6 +13,7 @@
 'Disponibilité:': 'Disponibilité:'
 'ebusta Url': 'ebusta Url'
 'edit Profil recherché': 'edit Profil recherché'
+'Editer votre projet': 'Editer votre projet'
 'En tant que:': 'En tant que:'
 'En tant que': 'En tant que'
 'Finance ton projet': 'Finance ton projet'
@@ -32,7 +34,7 @@
 'Modifier mon projet': 'Modifier mon projet'
 'Mon compte': 'Mon compte'
 'Mon profil public': 'Mon profil public'
-'Nom et prénom :': 'Nom et prénom :'
+'Nom et prénom :': 'Nom et prénom:'
 'Nom: ': 'Nom:'
 'Nom:': Nom
 'Non renseigné': 'Non renseigné'
@@ -90,6 +92,7 @@ Editer: Editer
 Enregistrez: Enregistrez
 Enveloppe: Enveloppe
 Envoyer: Envoyer
+Erreur 404, cette page nexiste pas, retournez à laccueil du site en cliquant sur le bouton suivant si le problème persiste, merci de contacter un administrateur via la rubrique "contact": Erreur 404, cette page n'existe pas. Retournez à l'accueil du site en cliquant sur le bouton suivant. Si le problème persiste, merci de contacter un administrateur via la rubrique "contact".
 Fichier: Fichier
 index.description.but: Tu peux créer ton projet, le décrire et détailler les profils de cofondateurs et associés que tu cherches. Ils auront alors accès à la description du projet et pourront te contacter.
 index.description.ebusta: Avec ses enveloppes publiques, E-busta.com vous propose de réaliser des campagnes de Crowdfunding de don en contrepartie pour vous aider à financer votre projet. Seule une commission de 4% du montant collecté sera appliquée, faisant de E-busta le site de Crowdfunding le moins cher du marché.
@@ -117,21 +120,4 @@ Statut: Statut
 Suivez: Suivez
 Supprimer: Supprimer
 Titre: Titre
-Voir: Voir
-Mobilité: Mobilité
-Domicile: Domicile
-'Ville': 'Ville'
-'site internet': 'site internet'
-'Titre': 'Titre'
-'Mise en relation': 'Mise en relation'
-'Nom: ': 'Nom :'
-'Prenom: ': 'Prenom :'
-'Vous avez': 'Vous avez'
-'nouveaux messages': 'nouveaux messages'
-'Accepter de discuter': 'Accepter de discuter'
-'Chat avec': 'Chat avec'
-'Voulez-vous vraiment supprimer cette personne?': 'Voulez-vous vraiment supprimer cette personne?'
-'Oui': 'Oui'
-'à': 'à'
-'Ajoutez un profil recherché': 'Ajoutez un profil recherché'
-'Editer votre projet': 'Editer votre projet'
+Voir: Voir                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                si le problème persiste, merci de contacter un administrateur via la rubrique "contact"                                                                                                                                                                      si le problème persiste, merci de contacter un administrateur via la rubrique "contact"

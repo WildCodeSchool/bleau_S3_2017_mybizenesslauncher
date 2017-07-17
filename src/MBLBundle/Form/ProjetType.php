@@ -109,8 +109,12 @@ class ProjetType extends AbstractType
                 ),  'required'      => false,
                 'placeholder'   => 'Choisissez'
             ))
-            ->add('ville')
-            ->add('fichier', FichierType::class)
+            ->add('ville', TextType::class, array(
+        'required' => false
+    ))
+            ->add('fichier', FichierType::class, array(
+                'required' => false
+            ))
         ;
     }
 

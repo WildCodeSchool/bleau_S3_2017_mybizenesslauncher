@@ -1127,25 +1127,50 @@ chat.html.twig
   margin: 0;
 }
 /* line 7, ../sass/_showOneProject.scss */
+#oneProject .profil_recherche {
+  margin-top: 50px;
+}
+/* line 10, ../sass/_showOneProject.scss */
+#oneProject .vignette_projet_profilAdd {
+  background-color: #4b494b;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 30em;
+  border: 2px solid #f0f0f0;
+  max-width: 300px;
+}
+/* line 21, ../sass/_showOneProject.scss */
+#oneProject .vignette_projet_profilAdd:hover {
+  background-color: #f0f0f0;
+}
+/* line 25, ../sass/_showOneProject.scss */
+#oneProject .info_projet_profilAdd {
+  border-radius: 8px;
+  overflow: scroll;
+  margin: 5px;
+  background-color: white;
+  height: 18em;
+}
+/* line 32, ../sass/_showOneProject.scss */
 #oneProject .presProjet {
   padding: 0;
   margin: 0;
 }
-/* line 11, ../sass/_showOneProject.scss */
+/* line 36, ../sass/_showOneProject.scss */
 #oneProject .creeLePar {
   color: grey;
   font-style: italic;
 }
-/* line 15, ../sass/_showOneProject.scss */
+/* line 41, ../sass/_showOneProject.scss */
 #oneProject a.site {
   color: darkcyan;
 }
-/* line 18, ../sass/_showOneProject.scss */
+/* line 44, ../sass/_showOneProject.scss */
 #oneProject a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 23, ../sass/_showOneProject.scss */
+/* line 49, ../sass/_showOneProject.scss */
 #oneProject .cartepro {
   border: none;
   background-color: #98d4e1;
@@ -1154,7 +1179,7 @@ chat.html.twig
   padding-bottom: 20px;
   border-radius: 8px;
 }
-/* line 31, ../sass/_showOneProject.scss */
+/* line 57, ../sass/_showOneProject.scss */
 #oneProject .imgPhoto img {
   height: 17em;
 }

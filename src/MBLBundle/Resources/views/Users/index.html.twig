@@ -17,7 +17,7 @@
             <div class="col s12 m2 offset-m1">
                 <div class="row Outils">
                     <div class="col s12">
-                <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">
                             {{ 'Outils pour se lancer'|trans }}</a>
                     </div>
                     <div class="col s12">
@@ -33,11 +33,7 @@
                            href="https://www.e-busta.com/">{{ 'Finance ton projet'|trans}}</a>
                     </div>
                     <div class="col s6">
-<<<<<<< HEAD
                         <img class="responsive-img logoEb" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-{#=======#}
-                        {#<img class="responsive-img" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">#}
-{#>>>>>>> dev#}
                     </div>
                 </div>
                 <div class="row">
@@ -49,84 +45,6 @@
             </div>
         </div>
 
-
-{#<<<<<<< HEAD#}
-
-        {#<!--Section projet & profil -->#}
-        {#<div class="row box_projet_profil">#}
-            {#<!--PROJET-->#}
-            {#<div class="col s12 m6 l5 offset-l1 projet ">#}
-                {#<h3>{{ 'Vous cherchez un projet où vous investir'|trans}}</h3>#}
-
-                {#<div class="row bouton_projet valign-wrapper">#}
-                    {#<div class="col s12 m6 l5 offset-l1 btn_showProjet ">#}
-                        {#<a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans}}</a>#}
-                    {#</div>#}
-                    {#<div class="col s12 m6 l5 offset-l1 btn_createProjet">#}
-                        {#<a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>#}
-                    {#</div>#}
-                {#</div>#}
-                {#<div class="row ">#}
-                    {#{% for pro in projet %}#}
-
-                        {#<a href="{{ path('showOneProject', {'id': pro.id}) }}">#}
-                            {#<div class="col s12 m6 l5 offset-l1 vignette_projet  z-depth-5">#}
-                                {#<div class="row vignette ">#}
-                                    {#<div class="col s12">#}
-
-                                        {#{% if pro.titre|length > 8 %}#}
-                                            {#<h4>{{ pro.titre|slice(0,6) ~ '...'  }}</h4>#}
-                                        {#{% else  %}#}
-                                            {#<h4>{{ pro.titre }}</h4>#}
-                                        {#{% endif %}#}
-                                    {#</div>#}
-                                    {#<div class="col s8 offset-s2 photo_profil">#}
-                                        {#{% if pro.fichier is empty %}#}
-                                            {#<img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">#}
-                                        {#{% else %}#}
-
-                                            {#<img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">#}
-                                        {#{% endif %}#}
-                                    {#</div>#}
-                                {#</div>#}
-                                {#<div class="row info_projet">#}
-                                    {#<div class="col s12">#}
-                                        {#<h6>{{ 'Type de projet'|trans }}</h6>#}
-                                        {#{{ pro.typeDeProjet }}#}
-                                        {#<div class="divider"></div>#}
-                                    {#</div>#}
-
-                                    {#<div class="col s12">#}
-                                        {#<h6>{{ 'Secteur'|trans }}</h6>#}
-                                        {#{{ pro.secteur }}#}
-                                        {#<div class="divider"></div>#}
-                                    {#</div>#}
-
-
-                                    {#<div class="col s12">#}
-                                        {#<h6>{{ 'Profils recherchés'|trans }}</h6>#}
-
-                                        {#{% for profil in pro.metier %}#}
-                                            {#{% if profil['metier']|length > 10 %}#}
-                                                {#{% if loop.last %}#}
-                                                    {#{{ profil['metier']|slice(0,8) ~'...' }}#}
-                                                {#{% else %}#}
-                                                    {#{{ profil['metier']|slice(0,8) ~'...' }},#}
-                                                {#{% endif %}#}
-                                            {#{% else  %}#}
-                                                {#{% if loop.last %}#}
-                                                    {#{{ profil['metier'] }}#}
-                                                {#{% else %}#}
-                                                    {#{{ profil['metier'] }},#}
-                                                {#{% endif %}#}
-                                            {#{% endif %}#}
-                                        {#{% endfor %}#}
-                                        {#<div class="divider"></div>#}
-                                    {#</div>#}
-
-                                    {#<div class="col s12">#}
-                                        {#<h6>{{ 'Localisation'|trans}}</h6>#}
-{#=======#}
         <!--Section projet & profil -->
         <div class="row box_projet_profil">
             <!--PROJET-->
@@ -157,8 +75,9 @@
                                     </div>
                                     <div class="col s8 offset-s2 photo_profil">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                         {% else %}
+
                                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                         {% endif %}
                                     </div>
@@ -175,7 +94,6 @@
                                         {{ pro.secteur }}
                                         <div class="divider"></div>
                                     </div>
-
 
                                     <div class="col s12">
                                         <h6>{{ 'Profils recherchés'|trans }}</h6>
@@ -204,12 +122,12 @@
                                         {% if pro.localisation is not null %}
                                             <p>{{ pro.localisation }}</p>
                                         {% else %}
-                                            TODO: compléter avec un else pt être?
+                                            {#TODO: compléter avec un else pt être? #}
                                         {% endif %}
                                         {% if pro.ville|first is not null %}
                                             <p>{{ pro.ville|first }}</p>
                                         {% else %}
-                                            TODO: compléter avec un else pt être?
+                                            {#TODO: compléter avec un else pt être? #}
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
@@ -217,60 +135,17 @@
                                         <h6>{{ 'Description'|trans }}</h6>
                                         <p>{{ pro.description }}</p>
                                     </div>
-
                                 </div>
                             </div>
                         </a>
-
                     {% endfor %}
                 </div>
             </div>
->>>>>>> dev
-
-                                        {% if pro.localisation is not null %}
-                                            <p>{{ pro.localisation }}</p>
-                                        {% else %}
-                                            {#TODO: compléter avec un else pt être? #}
-                                        {% endif %}
-                                        {% if pro.ville|first is not null %}
-                                            <p>{{ pro.ville|first }}</p>
-                                        {% else %}
-                                            {#TODO: compléter avec un else pt être? #}
-                                        {% endif %}
-                                        <div class="divider"></div>
-                                    </div>
-                                    <div class="col s12">
-                                        <h6>{{ 'Description'|trans }}</h6>
-                                        <p>{{ pro.description }}</p>
-                                    </div>
-
-{#<<<<<<< HEAD#}
-                                {#</div>#}
-                            {#</div>#}
-                        {#</a>#}
-
-                    {#{% endfor %}#}
-                {#</div>#}
-            {#</div>#}
-{#=======#}
-            <!--PROFIL-->
-            <div class="col s12 m6 l5 profil">
-                <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
-
-                <div class="row bouton_projet valign-wrapper">
-                    <div class="col s12 m6 l5 offset-l1 btn_showProfil">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Parcourir les profils'|trans}}</a>
-                    </div>
-                    <div class="col s12 m6 l5 offset-l1 btn_createProfil">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Dépose ton profil'|trans}}</a>
-                    </div>
-
-                </div>
-{#>>>>>>> dev#}
 
             <!--PROFIL-->
             <div class="col s12 m6 l5 profil  ">
                 <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
+
                 <div class="row bouton_projet valign-wrapper">
                     <div class="col s12 m6 l5 offset-l1 btn_showProfil">
                         <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Parcourir les profils'|trans}}</a>
@@ -278,25 +153,10 @@
                     <div class="col s12 m6 l5 offset-l1 btn_createProfil">
                         <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Dépose ton profil'|trans}}</a>
                     </div>
-                </div>
-                <div class="row ">
-                    {% for pro in profils %}
-                        <a href="{{ path('showProfil', {'id': pro.id}) }}">
-                            <div class="col s12 m6 l5 offset-l1 vignette_profil z-depth-5">
-                                <div class="row vignette ">
-                                    <div class="col s12">
-                                        {% if pro.prenom|length > 8 %}
-                                            <h4>{{ pro.prenom|slice(0,6) ~ '...'  }}</h4>
-                                        {% else  %}
-                                            <h4>{{ pro.prenom }} {{ pro.nom|slice(0,1) }}.</h4>
-                                        {% endif %}
 
-{#<<<<<<< HEAD#}
-                                    {#</div>#}
-                                    {#<div class="col s8 offset-s2 photo_profil">#}
-                                        {#{% if pro.fichier is empty %}#}
-                                            {#<img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">#}
-=======
+                </div>
+
+
                 <div class="row ">
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', {'id': pro.id}) }}">
@@ -314,7 +174,6 @@
                                     <div class="col s8 offset-s2 photo_profil">
                                         {% if pro.fichier is empty %}
                                             <img class="responsive-img" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
->>>>>>> dev
                                         {% else %}
                                             {# TODO: à verifier #}
                                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
@@ -347,6 +206,7 @@
                                             <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         {% else %}
                                         {% endif %}
+
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -362,9 +222,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-{#</div>#}
-{#{% endblock %}#}
-=======
     {% endblock %}
->>>>>>> dev

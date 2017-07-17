@@ -9,33 +9,33 @@
             <div class="col s12 l5">
                 {{ form_start(form_pro) }}
                 <div class="center-align">
-                    <h5 class="center">{{ 'Profil Recherché'|trans }}</h5>
+                    <h5 class="center">{{ 'Profil Recherché'|trans }}*</h5>
                     {{ form_errors(form_pro.metier) }}
                     {{ form_widget(form_pro.metier, {'attr': {'placeholder': 'Profil'|trans}}) }}
                 </div>
                 <div class="center-align">
-                    <h5 class="center">{{ 'Disponible en tant que'|trans }}</h5>
+                    <h5 class="center">{{ 'Disponible en tant que'|trans }}*</h5>
 
                     {{ form_errors(form_pro.etq) }}
                     {{ form_widget(form_pro.etq, {'attr': {'placeholder': 'En tant que'|trans}}) }}
                 </div>
                 <div class="center-align">
-                    <h5 class="center">{{ 'Compétences:'|trans }}</h5>
+                    <h5 class="center">{{ 'Compétences:'|trans }}*</h5>
                     {{ form_errors(form_pro.competences) }}
                     {{ form_widget(form_pro.competences, {'attr': {'class': 'lighten-4'}}) }}
                 </div>
                 <div class="center-align">
-                    <h5 class="center">{{ 'Disponibilité'|trans }}</h5>
+                    <h5 class="center">{{ 'Disponibilité'|trans }}*</h5>
                     {{ form_errors(form_pro.dispo) }}
                     {{ form_widget(form_pro.dispo, {'attr': {'class': 'lighten-4','placeholder': 'Disponibilité:'|trans}}) }}
                 </div>
                 <div class="center-align">
-                    <h5 class="center">{{ 'Où ça ?'|trans }}</h5>
+                    <h5 class="center">{{ 'Où ça ?'|trans }}*</h5>
                     {{ form_errors(form_pro.ou) }}
                     {{ form_widget(form_pro.ou, {'attr': {'placeholder': 'Où ça ?'|trans}}) }}
                 </div>
                 <div class="center-align">
-                    <h5 class="center">{{ 'Investissement:'|trans }}</h5>
+                    <h5 class="center">{{ 'Investissement:'|trans }}*</h5>
                     {{ form_errors(form_pro.invest) }}
                     {{ form_widget(form_pro.invest, {'attr': {'placeholder': 'Investissement:'|trans}}) }}
                 </div>

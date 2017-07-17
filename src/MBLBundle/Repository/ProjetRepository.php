@@ -81,6 +81,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
             ->join('p.secteur', 's')
             ->addSelect('s.secteurActivite' . $locale . ' as secteur')
+            ->where('p.lngp = :locale')
+            ->setParameter('locale', $locale)
             ->setMaxResults(4)
             ->orderBy('p.id', 'DESC')
         ;
@@ -134,6 +136,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             ->join('p.profils', 'pro')
             ->where('pro = :pr')
             ->setParameter('pr', $id)
+            ->andwhere('p.lngp = :locale')
+            ->setParameter('locale', $locale)
             ->orderBy('p.id', 'DESC');
 
         $projets = $qb->getQuery()->getResult();
@@ -161,45 +165,6 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
         return $projets;
     }
 
-
-
-    public function myfindByTypeDeProjetLoc($typeDeProjet, $Loc, $locale)
-    {
-        $qb = $this->createQueryBuilder('p');
-        $qb->select('p.description' . $locale . ' as description', 'p.id as id', 'p.titre' . $locale . ' as titre', 'p.localisation as localisation')
-            ->join('p.typeDeProjet', 'tp')
-            ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
-            ->join('p.secteur', 's')
-            ->addSelect('s.secteurActivite' . $locale . ' as secteur')
-            ->where('tp.id = :typId')
-            ->setParameter('typId', $typeDeProjet)
-            ->andWhere('p.localisation = :Loc')
-            ->setParameter('Loc', $Loc)
-            ->orderBy('p.id', 'DESC');
-        $projets = $qb->getQuery()->getResult();
-
-
-
-        foreach ($projets as $key => $projet) {
-            // Get metier et création d'un sous tableau'
-            $qb = $this->createQueryBuilder('p');
-            $qb->where('p.id = :id')
-                ->join('p.profilsrecherches', 'r')
-                ->join('r.metier', 'm')
-                ->select('m.metier' . $locale . ' as metier')
-                ->setParameter('id', $projet['id']);
-            $projets[$key]['metier'] = $qb->getQuery()->getResult();
-
-            // Get fichier si défini et si null
-            $qb = $this->createQueryBuilder('p');
-            $qb->where('p.id = :id')
-                ->join('p.fichier', 'f')
-                ->select('f.photo')
-                ->setParameter('id', $projet['id']);
-            $projets[$key]['fichier'] = $qb->getQuery()->getResult();
-        }
-        return $projets;
-    }
 
     public function findAllDesc($locale)
 
@@ -210,10 +175,12 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
             ->join('p.secteur', 's')
             ->addSelect('s.secteurActivite' . $locale . ' as secteur')
-            ->join('p.fichier', 'f')
-            ->addSelect('f.photo as photo')
+            ->where('p.lngp = :locale')
+            ->setParameter('locale', $locale)
             ->orderBy('p.id', 'DESC');
+
         $projets = $qb->getQuery()->getResult();
+
         foreach ($projets as $key => $projet) {
             // Get metier et création d'un sous tableau'
             $qb = $this->createQueryBuilder('p');
@@ -223,6 +190,14 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->select('m.metier' . $locale . ' as metier')
                 ->setParameter('id', $projet['id']);
             $projets[$key]['metier'] = $qb->getQuery()->getResult();
+
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.fichier', 'f')
+                ->select('f.photo')
+                ->setParameter('id', $projet['id'])
+            ;
+            $projets[$key]['fichier'] = $qb->getQuery()->getResult();
 
 
         }
@@ -249,8 +224,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('secId', $idSec)
                 ->andWhere('p.localisation = :Loc')
                 ->setParameter('Loc', $Loc)
-                ->join('p.fichier', 'f')
-                ->addSelect('f.photo as photo')
+                ->andwhere('p.lngp = :locale')
+                ->setParameter('locale', $locale)
                 ->orderBy('p.id', 'DESC');
             $projets = $qb->getQuery()->getResult();
 
@@ -269,8 +244,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                         ->setParameter('Loc', $Loc)
                         ->andWhere('s.id = :secId')
                         ->setParameter('secId', $idSec)
-                        ->join('p.fichier', 'f')
-                        ->addSelect('f.photo as photo')
+                        ->andwhere('p.lngp = :locale')
+                        ->setParameter('locale', $locale)
                         ->orderBy('p.id', 'DESC');
                     $projets = $qb->getQuery()->getResult();
                 }
@@ -286,8 +261,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                         ->setParameter('typId', $idTyp)
                         ->andWhere('p.localisation = :Loc')
                         ->setParameter('Loc', $Loc)
-                        ->join('p.fichier', 'f')
-                        ->addSelect('f.photo as photo')
+                        ->andwhere('p.lngp = :locale')
+                        ->setParameter('locale', $locale)
                         ->orderBy('p.id', 'DESC');
                     $projets = $qb->getQuery()->getResult();
 
@@ -301,10 +276,9 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                     ->join('p.secteur', 's')
                     ->addSelect('s.secteurActivite' . $locale . ' as secteur')
                     ->where('p.localisation = :typId')
-                    ->join('p.fichier', 'f')
-                    ->addSelect('f.photo as photo')
                     ->setParameter('typId', $Loc)
-
+                    ->andwhere('p.lngp = :locale')
+                    ->setParameter('locale', $locale)
                     ->orderBy('p.id', 'DESC');
                 $projets = $qb->getQuery()->getResult();
             }
@@ -322,8 +296,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('typId', $idTyp)
                 ->andWhere('s.id = :secId')
                 ->setParameter('secId', $idSec)
-                ->join('p.fichier', 'f')
-                ->addSelect('f.photo as photo')
+                ->andwhere('p.lngp = :locale')
+                ->setParameter('locale', $locale)
                 ->orderBy('p.id', 'DESC');
             $projets = $qb->getQuery()->getResult();
         }
@@ -340,8 +314,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                     ->addSelect('s.secteurActivite' . $locale . ' as secteur')
                     ->andWhere('s.id = :secId')
                     ->setParameter('secId', $idSec)
-                    ->join('p.fichier', 'f')
-                    ->addSelect('f.photo as photo')
+                    ->andwhere('p.lngp = :locale')
+                    ->setParameter('locale', $locale)
                     ->orderBy('p.id', 'DESC');
                 $projets = $qb->getQuery()->getResult();
             }
@@ -356,8 +330,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                     ->addSelect('s.secteurActivite' . $locale . ' as secteur')
                     ->where('tp.id = :typId')
                     ->setParameter('typId', $idTyp)
-                    ->join('p.fichier', 'f')
-                    ->addSelect('f.photo as photo')
+                    ->andwhere('p.lngp = :locale')
+                    ->setParameter('locale', $locale)
                     ->orderBy('p.id', 'DESC');
                 $projets = $qb->getQuery()->getResult();
             }
@@ -372,8 +346,8 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->addSelect('tp.typeDeProjet' . $locale . ' as typeDeProjet')
                 ->join('p.secteur', 's')
                 ->addSelect('s.secteurActivite' . $locale . ' as secteur')
-                ->join('p.fichier', 'f')
-                ->addSelect('f.photo as photo')
+                ->where('p.lngp = :locale')
+                ->setParameter('locale', $locale)
                 ->orderBy('p.id', 'DESC');
             $projets = $qb->getQuery()->getResult();
 
@@ -388,6 +362,14 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->select('m.metier' . $locale . ' as metier')
                 ->setParameter('id', $projet['id']);
             $projets[$key]['metier'] = $qb->getQuery()->getResult();
+
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.fichier', 'f')
+                ->select('f.photo')
+                ->setParameter('id', $projet['id'])
+            ;
+            $projets[$key]['fichier'] = $qb->getQuery()->getResult();
 
 
         }

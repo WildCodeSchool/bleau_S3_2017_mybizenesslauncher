@@ -32,7 +32,7 @@ class ProfilType extends AbstractType
         $builder
             ->add('nom', TextType::class, array('required' => true))
             ->add('prenom', TextType::class, array('required' => true))
-            ->add('description', TextareaType::class)
+            ->add('description', TextareaType::class, array('required' => true))
             ->add('linkedIn', UrlType::class, array(
                 'required' => false,
                 'data' => ' http://'
@@ -88,7 +88,7 @@ class ProfilType extends AbstractType
                     'Autre'   => 'autre',
 
 
-                ),  'required'      => false,
+                ),  'required'      => true,
                 'placeholder'   => 'Choisissez'
             ))
 
@@ -100,7 +100,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'metier'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Quel est votre profil?'
             ))
             ->add('etq', EntityType::class,
@@ -109,7 +109,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'etq'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Disponible en tant que'
                 ))
             ->add('ou', EntityType::class,
@@ -118,7 +118,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'ou'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Où ça ?'
                 ))
             ->add('invest', EntityType::class,
@@ -127,7 +127,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'invest'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Investissement possible'
                 ))
             ->add('dispo', EntityType::class,
@@ -136,7 +136,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'dispo'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Votre disponibilité'
                 ))
             ->add('competences', EntityType::class,
@@ -145,7 +145,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'competences'.$options["locale"],
                     'multiple'=> true,
                     'expanded'=> false,
-                    'required' => false
+                    'required' => true
                 ))
             ->add('fichier', FichierType::class, array(
                 'required' => false
