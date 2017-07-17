@@ -25,9 +25,9 @@
                 <li><a href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                         {{ render(controller('MBLBundle:User:countViews')) }}
                     </a></li>
-                <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
-                       data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
+                {#<li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"#}
+                       {#data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com#}
+                            {#tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>#}
 
                 <li><a href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
             </ul>
@@ -90,9 +90,9 @@
                     <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
                     <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                             {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
-                    <li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"
-                           data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">{{ 'Outils pour se lancer'|trans }}</a></li>
+                    {#<li><a class="tooltipped hide-on-med-and-up hide-on-large-only lancerSmall"#}
+                           {#data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com#}
+                            {#tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>#}
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
                 </ul>
             </div>
