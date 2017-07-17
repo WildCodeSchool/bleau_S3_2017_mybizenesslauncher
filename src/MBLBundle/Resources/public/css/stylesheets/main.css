@@ -307,34 +307,58 @@ Layout.html.twig
   font-size: 1.1em;
 }
 
+<<<<<<< HEAD
 /* line 67, ../sass/_layout.scss */
+=======
+/* line 60, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .lancerSmall {
   font-size: 1em;
   font-weight: bold !important;
 }
 
+<<<<<<< HEAD
 /* line 72, ../sass/_layout.scss */
+=======
+/* line 65, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .darkerBiz:hover {
   color: #FB5B57;
   opacity: 0.9;
 }
 
+<<<<<<< HEAD
 /* line 76, ../sass/_layout.scss */
+=======
+/* line 69, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .darkerTop:hover {
   color: #6f9ea8;
 }
 
+<<<<<<< HEAD
 /* line 80, ../sass/_layout.scss */
+=======
+/* line 73, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .dropdown-content li > a {
   color: #4b494b;
 }
 
+<<<<<<< HEAD
 /* line 84, ../sass/_layout.scss */
+=======
+/* line 77, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 a .logoEbMenu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   /* line 84, ../sass/_layout.scss */
+=======
+  /* line 77, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
   a .logoEbMenu {
     display: inline;
     max-height: 35px;
@@ -344,12 +368,20 @@ a .logoEbMenu {
   }
 }
 
+<<<<<<< HEAD
 /* line 95, ../sass/_layout.scss */
+=======
+/* line 88, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 a .logoEbMenu:hover {
   display: none;
 }
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   /* line 95, ../sass/_layout.scss */
+=======
+  /* line 88, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
   a .logoEbMenu:hover {
     display: inline;
     max-height: 35px;
@@ -359,7 +391,11 @@ a .logoEbMenu:hover {
   }
 }
 
+<<<<<<< HEAD
 /* line 106, ../sass/_layout.scss */
+=======
+/* line 99, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .material-icons {
   display: inline !important;
   vertical-align: middle !important;
@@ -374,45 +410,74 @@ a .logoEbMenu:hover {
   font-feature-settings: 'liga';
 }
 
+<<<<<<< HEAD
 /* line 119, ../sass/_layout.scss */
+=======
+/* line 112, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .material-icons.md-grey, .md-euro {
   font-size: 24px;
 }
 @media only screen and (max-width: 992px) {
+<<<<<<< HEAD
   /* line 119, ../sass/_layout.scss */
+=======
+  /* line 112, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
   .material-icons.md-grey, .md-euro {
     color: #4b494b;
   }
 }
 @media only screen and (min-width: 993px) {
+<<<<<<< HEAD
   /* line 119, ../sass/_layout.scss */
+=======
+  /* line 112, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
   .material-icons.md-grey, .md-euro {
     display: none !important;
   }
 }
 
+<<<<<<< HEAD
 /* line 129, ../sass/_layout.scss */
+=======
+/* line 122, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
 
+<<<<<<< HEAD
 /* line 133, ../sass/_layout.scss */
+=======
+/* line 126, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .dotCom {
   color: black;
   opacity: 0.5;
 }
 
+<<<<<<< HEAD
 /* line 138, ../sass/_layout.scss */
+=======
+/* line 131, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .BB:hover {
   box-shadow: inset 0 -2px 0 #FB5B57;
 }
 
+<<<<<<< HEAD
 /* line 143, ../sass/_layout.scss */
+=======
+/* line 136, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .modal .tabs {
   margin: 0;
   padding: 0;
   background-color: #98d4e1;
 }
+<<<<<<< HEAD
 /* line 148, ../sass/_layout.scss */
 .modal .tab a {
   color: grey;
@@ -426,66 +491,125 @@ a .logoEbMenu:hover {
   color: #4b494b;
 }
 /* line 157, ../sass/_layout.scss */
+=======
+/* line 141, ../sass/_layout.scss */
+.modal .tab a {
+  color: grey;
+}
+/* line 144, ../sass/_layout.scss */
+.modal .tab a:hover {
+  color: #4b494b;
+}
+/* line 147, ../sass/_layout.scss */
+.modal .tab a.active {
+  color: #4b494b;
+}
+/* line 150, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .modal .tabs .indicator {
   background-color: #4b494b;
 }
 
+<<<<<<< HEAD
 /* line 162, ../sass/_layout.scss */
+=======
+/* line 155, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 #Connexion, #register {
   margin-top: 25px;
 }
 
+<<<<<<< HEAD
 /* line 166, ../sass/_layout.scss */
+=======
+/* line 159, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .remember {
   margin-top: 10px;
 }
 
+<<<<<<< HEAD
 /* line 170, ../sass/_layout.scss */
+=======
+/* line 163, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
 
+<<<<<<< HEAD
 /* line 176, ../sass/_layout.scss */
+=======
+/* line 169, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .submitRegister {
   margin-top: 55px;
 }
 
+<<<<<<< HEAD
 /* line 180, ../sass/_layout.scss */
+=======
+/* line 173, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .moreRegisterHidden {
   display: none;
 }
 
+<<<<<<< HEAD
 /* line 184, ../sass/_layout.scss */
+=======
+/* line 177, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 .moreRegister {
   margin-top: 25px;
 }
 
+<<<<<<< HEAD
 /* line 188, ../sass/_layout.scss */
+=======
+/* line 181, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 textarea #fos_user_registration_form_description {
   height: 10em;
 }
 
+<<<<<<< HEAD
 /* line 192, ../sass/_layout.scss */
+=======
+/* line 185, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 #fos_user_registration_form_description {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
 
+<<<<<<< HEAD
 /* line 198, ../sass/_layout.scss */
+=======
+/* line 191, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
 
+<<<<<<< HEAD
 /* line 204, ../sass/_layout.scss */
+=======
+/* line 197, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 #login .btn, #register .btn {
   background: #98d4e1 !important;
 }
 
+<<<<<<< HEAD
 /* line 208, ../sass/_layout.scss */
+=======
+/* line 201, ../sass/_layout.scss */
+>>>>>>> f8ca19a2c85e65074a34ecaf3a9dcd8ae93f338b
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
@@ -1125,28 +1249,46 @@ chat.html.twig
 
 /* line 3, ../sass/_showOneProfil.scss */
 #oneProfil {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 /* line 6, ../sass/_showOneProfil.scss */
+#oneProfil h4 {
+  font-weight: bold;
+}
+/* line 9, ../sass/_showOneProfil.scss */
+#oneProfil h6 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+/* line 13, ../sass/_showOneProfil.scss */
+#oneProfil p {
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 17, ../sass/_showOneProfil.scss */
+#oneProfil .section {
+  border-top: solid 1px white;
+}
+/* line 20, ../sass/_showOneProfil.scss */
 #oneProfil .showProfil {
   border: 2px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 12, ../sass/_showOneProfil.scss */
+/* line 26, ../sass/_showOneProfil.scss */
 #oneProfil a.site {
   color: darkcyan;
 }
-/* line 15, ../sass/_showOneProfil.scss */
+/* line 29, ../sass/_showOneProfil.scss */
 #oneProfil a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 19, ../sass/_showOneProfil.scss */
+/* line 33, ../sass/_showOneProfil.scss */
 #oneProfil .linkedIn {
   align-items: center;
 }
-/* line 22, ../sass/_showOneProfil.scss */
+/* line 36, ../sass/_showOneProfil.scss */
 #oneProfil .imgPhoto img {
   height: 17em;
 }
