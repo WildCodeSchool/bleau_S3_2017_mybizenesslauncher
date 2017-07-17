@@ -12,10 +12,11 @@
         <nav xmlns="http://www.w3.org/1999/html">
 
             <ul id="dropdown1" class="dropdown-content">
-                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}</a></li>
+                <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}
+                       
                 <li class="divider"></li>
                 <li><a href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}
-                        {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                       </a></li>
                 <li><a href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
                 <li><a href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a></li>
                 <li><a href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
@@ -51,7 +52,7 @@
                     <li><a class="color darkerTop"  href="{{path('showAllProfils')}}">
                             {{ 'Parcourir les profils'|trans }}</a></li>
                     <li><a class="color dropdown-button" href="#!" data-activates="dropdown1">
-                            <i class="right">{{ 'Mon compte'|trans }}</i></a></li>
+                            <i class="right">{{ 'Mon compte'|trans }} {{ render(controller('MBLBundle:User:countViews')) }}</i></a></li>
                 </ul>
 
                 <ul class="right show-on-medium-and-down hide-on-med-and-up">
@@ -69,10 +70,10 @@
                 </ul>
 
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}</a></li>
+                    <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}
+                        </a></li>
                     <li class="divider"></li>
-                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}
-                            {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
+                    <li><a class="color" href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}</a></li>
                     <li><a class="color" href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
                     <li><a class="color" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</a></li>
                     <li><a class="color" href="{{ path('createProjet') }}">{{ 'Créer un projet'|trans }}</a></li>
