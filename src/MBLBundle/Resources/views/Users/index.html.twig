@@ -148,10 +148,10 @@
 
                 <div class="row bouton_projet valign-wrapper">
                     <div class="col s12 m6 l5 offset-l1 btn_showProfil">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Parcourir les profils'|trans}}</a>
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('showAllProfils') }}">{{ 'Parcourir les profils'|trans}}</a>
                     </div>
                     <div class="col s12 m6 l5 offset-l1 btn_createProfil">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="#">{{ 'Dépose ton profil'|trans}}</a>
+                        <a class="waves-effect waves-red btn btn_bandeau_homepage " href="{{ path('fos_user_registration_register') }}">{{ 'Dépose ton profil'|trans}}</a>
                     </div>
 
                 </div>
