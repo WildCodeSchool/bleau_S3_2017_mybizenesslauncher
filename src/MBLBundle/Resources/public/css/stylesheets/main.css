@@ -1134,28 +1134,46 @@ chat.html.twig
 
 /* line 3, ../sass/_showOneProfil.scss */
 #oneProfil {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 /* line 6, ../sass/_showOneProfil.scss */
+#oneProfil h4 {
+  font-weight: bold;
+}
+/* line 9, ../sass/_showOneProfil.scss */
+#oneProfil h6 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+/* line 13, ../sass/_showOneProfil.scss */
+#oneProfil p {
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 17, ../sass/_showOneProfil.scss */
+#oneProfil .section {
+  border-top: solid 1px white;
+}
+/* line 20, ../sass/_showOneProfil.scss */
 #oneProfil .showProfil {
   border: 2px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 12, ../sass/_showOneProfil.scss */
+/* line 26, ../sass/_showOneProfil.scss */
 #oneProfil a.site {
   color: darkcyan;
 }
-/* line 15, ../sass/_showOneProfil.scss */
+/* line 29, ../sass/_showOneProfil.scss */
 #oneProfil a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 19, ../sass/_showOneProfil.scss */
+/* line 33, ../sass/_showOneProfil.scss */
 #oneProfil .linkedIn {
   align-items: center;
 }
-/* line 22, ../sass/_showOneProfil.scss */
+/* line 36, ../sass/_showOneProfil.scss */
 #oneProfil .imgPhoto img {
   height: 17em;
 }
