@@ -143,9 +143,16 @@
                                 <div class="col s12 connected">
                                     <div class="col s2 image">
                                         {#Nom du profil avec qui l'on veut discuter#}
-                                        {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/594a92cd332a3.png') }}" alt="" class="circle  responsive-img">
-                                        {% endif %}
+                                        {% for profil in chat.profils %}
+                                            {% if profil == app.user %}
+                                            {% else %}
+                                                {% if profil.fichier is null %}
+                                                    <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                                {% else %}
+                                                    <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <div class="col s3 Nom_prenom">
                                         <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>

@@ -72,20 +72,21 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid $Colorblue;
+
   min-width: 200px;
   max-width: 300px;
 
 }
 .vignette_projet:hover {
  background-color: $Colorblue;
+
 }
 .vignette_profil {
   background-color: $Colorblue;
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-  border: 2px solid $Colorblue;
+
 
   max-width: 300px;
 
