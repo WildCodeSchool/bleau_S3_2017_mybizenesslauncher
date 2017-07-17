@@ -1100,33 +1100,51 @@ chat.html.twig
 
 /* line 3, ../sass/_showMyProfil.scss */
 #myProfil {
-  margin-top: 50px;
+  margin-top: 40px;
 }
-/* line 6, ../sass/_showMyProfil.scss */
+/* line 5, ../sass/_showMyProfil.scss */
+#myProfil h4 {
+  font-weight: bold;
+}
+/* line 8, ../sass/_showMyProfil.scss */
+#myProfil h6 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+/* line 12, ../sass/_showMyProfil.scss */
+#myProfil p {
+  font-size: 1.3em;
+  text-align: center;
+}
+/* line 16, ../sass/_showMyProfil.scss */
+#myProfil .section {
+  border-top: solid 1px white;
+}
+/* line 19, ../sass/_showMyProfil.scss */
 #myProfil .showProfil {
   border: 2px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
   margin-bottom: 50px;
 }
-/* line 13, ../sass/_showMyProfil.scss */
+/* line 26, ../sass/_showMyProfil.scss */
 #myProfil a.site {
   color: darkcyan;
 }
-/* line 16, ../sass/_showMyProfil.scss */
+/* line 29, ../sass/_showMyProfil.scss */
 #myProfil a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 20, ../sass/_showMyProfil.scss */
+/* line 33, ../sass/_showMyProfil.scss */
 #myProfil .linkedIn {
   align-items: center;
 }
-/* line 23, ../sass/_showMyProfil.scss */
+/* line 36, ../sass/_showMyProfil.scss */
 #myProfil .imgPhoto img {
   height: 17em;
 }
-/* line 29, ../sass/_showMyProfil.scss */
+/* line 42, ../sass/_showMyProfil.scss */
 #myProfil .divform {
   text-align: center;
   margin-bottom: 25px;
