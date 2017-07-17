@@ -314,30 +314,34 @@ Layout.html.twig
   font-size: 1.1em;
 }
 
-
-/* line 57, ../sass/_layout.scss */
+/* line 60, ../sass/_layout.scss */
 .lancerSmall {
   font-size: 1em;
   font-weight: bold !important;
 }
 
+/* line 65, ../sass/_layout.scss */
 .darkerBiz:hover {
   color: #FB5B57;
   opacity: 0.9;
 }
 
+/* line 69, ../sass/_layout.scss */
 .darkerTop:hover {
   color: #6f9ea8;
 }
 
+/* line 73, ../sass/_layout.scss */
 .dropdown-content li > a {
   color: #4b494b;
 }
 
+/* line 77, ../sass/_layout.scss */
 a .logoEbMenu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
+  /* line 77, ../sass/_layout.scss */
   a .logoEbMenu {
     display: inline;
     max-height: 35px;
@@ -347,10 +351,12 @@ a .logoEbMenu {
   }
 }
 
+/* line 88, ../sass/_layout.scss */
 a .logoEbMenu:hover {
   display: none;
 }
 @media only screen and (max-width: 992px) {
+  /* line 88, ../sass/_layout.scss */
   a .logoEbMenu:hover {
     display: inline;
     max-height: 35px;
@@ -359,6 +365,8 @@ a .logoEbMenu:hover {
     opacity: 0.8;
   }
 }
+
+/* line 99, ../sass/_layout.scss */
 .material-icons {
   display: inline !important;
   vertical-align: middle !important;
@@ -373,106 +381,118 @@ a .logoEbMenu:hover {
   font-feature-settings: 'liga';
 }
 
+/* line 112, ../sass/_layout.scss */
 .material-icons.md-grey, .md-euro {
   font-size: 24px;
 }
 @media only screen and (max-width: 992px) {
+  /* line 112, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     color: #4b494b;
   }
 }
 @media only screen and (min-width: 993px) {
+  /* line 112, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     display: none !important;
   }
 }
+
+/* line 122, ../sass/_layout.scss */
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
 
+/* line 126, ../sass/_layout.scss */
 .dotCom {
   color: black;
   opacity: 0.5;
 }
 
+/* line 131, ../sass/_layout.scss */
 .BB:hover {
   box-shadow: inset 0 -2px 0 #FB5B57;
 }
 
+/* line 136, ../sass/_layout.scss */
 .modal .tabs {
   margin: 0;
   padding: 0;
   background-color: #98d4e1;
 }
+/* line 141, ../sass/_layout.scss */
 .modal .tab a {
   color: grey;
-}
-/* line 141, ../sass/_layout.scss */
-.modal .tab a:hover {
-  color: #4b494b;
 }
 /* line 144, ../sass/_layout.scss */
-.modal .tab a.active {
-  color: #4b494b;
-}
-/* line 135, ../sass/_layout.scss */
-.modal .tab a {
-  color: grey;
-}
-/* line 139, ../sass/_layout.scss */
 .modal .tab a:hover {
   color: #4b494b;
 }
-/* line 142, ../sass/_layout.scss */
+/* line 147, ../sass/_layout.scss */
 .modal .tab a.active {
   color: #4b494b;
 }
+/* line 150, ../sass/_layout.scss */
 .modal .tabs .indicator {
   background-color: #4b494b;
 }
+
+/* line 155, ../sass/_layout.scss */
 #Connexion, #register {
   margin-top: 25px;
 }
+
+/* line 159, ../sass/_layout.scss */
 .remember {
   margin-top: 10px;
 }
+
+/* line 163, ../sass/_layout.scss */
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
 
+/* line 169, ../sass/_layout.scss */
 .submitRegister {
   margin-top: 55px;
 }
 
+/* line 173, ../sass/_layout.scss */
 .moreRegisterHidden {
   display: none;
 }
+
+/* line 177, ../sass/_layout.scss */
 .moreRegister {
   margin-top: 25px;
 }
-/* line 178, ../sass/_layout.scss */
+
+/* line 181, ../sass/_layout.scss */
 textarea #fos_user_registration_form_description {
   height: 10em;
 }
 
-textarea#fos_user_registration_form_description {
-  height: 10em;
-}
-
+/* line 185, ../sass/_layout.scss */
 #fos_user_registration_form_description {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
+
+/* line 191, ../sass/_layout.scss */
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
+
+/* line 197, ../sass/_layout.scss */
 #login .btn, #register .btn {
   background: #98d4e1 !important;
 }
+
+/* line 201, ../sass/_layout.scss */
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
@@ -596,29 +616,29 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 10px;
 }
 
-/* line 5, ../sass/_formCreate.scss */
+/* line 4, ../sass/_formCreate.scss */
 #createProjet label.required:after {
   content: "*";
 }
-/* line 8, ../sass/_formCreate.scss */
+/* line 7, ../sass/_formCreate.scss */
 #createProjet label {
   color: #4b494b;
   font-size: 1.5em;
 }
-/* line 13, ../sass/_formCreate.scss */
+/* line 12, ../sass/_formCreate.scss */
 #createProjet .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 18, ../sass/_formCreate.scss */
+/* line 17, ../sass/_formCreate.scss */
 #createProjet .btn {
   margin-bottom: 20px;
 }
-/* line 23, ../sass/_formCreate.scss */
+/* line 21, ../sass/_formCreate.scss */
 #createProjet .select-wrapper {
   border-radius: 10px;
 }
-/* line 27, ../sass/_formCreate.scss */
+/* line 25, ../sass/_formCreate.scss */
 #createProjet input:not([type]), #createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
 #createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
 #createProjet input[type=search], #createProjet textarea {
@@ -626,50 +646,50 @@ input[type=search], textarea.materialize-textarea {
   border-radius: 10px;
   outline: none;
 }
-/* line 36, ../sass/_formCreate.scss */
+/* line 33, ../sass/_formCreate.scss */
 #createProjet input:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
   outline: none;
   box-shadow: none;
 }
-/* line 45, ../sass/_formCreate.scss */
+/* line 40, ../sass/_formCreate.scss */
 #createProjet .hiddenPreview {
   display: none;
 }
-/* line 45, ../sass/_formCreate.scss */
+/* line 44, ../sass/_formCreate.scss */
 #createProjet textarea #mblbundle_projet_description {
   height: 10em;
 }
-/* line 48, ../sass/_formCreate.scss */
-#createProjet textarea {
+/* line 47, ../sass/_formCreate.scss */
+#createProjet textarea #mblbundle_projet_description textarea {
   height: 11em;
   border-radius: 10px;
 }
-/* line 53, ../sass/_formCreate.scss */
-#createProjet textarea:focus {
+/* line 52, ../sass/_formCreate.scss */
+#createProjet textarea #mblbundle_projet_description textarea:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
   outline: none;
   box-shadow: none;
 }
 /* line 59, ../sass/_formCreate.scss */
-#createProjet .submitProjet {
+#createProjet textarea #mblbundle_projet_description .submitProjet {
   margin: auto;
   display: block;
   margin-bottom: 10px;
   background-color: #98d4e1;
 }
 /* line 65, ../sass/_formCreate.scss */
-#createProjet img {
+#createProjet textarea #mblbundle_projet_description img {
   width: 100%;
 }
 /* line 68, ../sass/_formCreate.scss */
-#createProjet ul li span {
+#createProjet textarea #mblbundle_projet_description ul li span {
   color: #4b494b;
 }
 /* line 71, ../sass/_formCreate.scss */
-#createProjet form {
+#createProjet textarea #mblbundle_projet_description form {
   margin-top: 50px;
 }
 

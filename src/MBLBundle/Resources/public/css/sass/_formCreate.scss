@@ -1,7 +1,6 @@
 @import 'global';
 
-#createProjet
-{
+#createProjet {
   label.required:after {
     content: "*";
   }
@@ -19,21 +18,19 @@
     margin-bottom: 20px;
   }
 
-
   .select-wrapper {
     border-radius: 10px;
   }
 
   input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time],
   input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number],
-  input[type=search], textarea  {
+  input[type=search], textarea {
     border: 1.5px solid lightgray;
     border-radius: 10px;
     outline: none;
   }
 
-
-  input:focus  {
+  input:focus {
     border: 1.5px solid $Colorblue !important;
     border-radius: 10px;
     outline: none;
@@ -41,40 +38,42 @@
   }
 
   .hiddenPreview {
-    display: none ;
+    display: none;
   }
 
-  textarea #mblbundle_projet_description{
+  textarea #mblbundle_projet_description {
     height: 10em;
 
-  textarea{
-    height: 11em;
-    border-radius: 10px;
+    textarea {
+      height: 11em;
+      border-radius: 10px;
 
-  }
-  textarea:focus {
-    border: 1.5px solid $Colorblue !important;
-    border-radius: 10px;
-    outline: none;
-    box-shadow: none;
+    }
+    textarea:focus {
+      border: 1.5px solid $Colorblue !important;
+      border-radius: 10px;
+      outline: none;
+      box-shadow: none;
 
-  }
-  .submitProjet {
-    margin: auto;
-    display: block;
-    margin-bottom: 10px;
-    background-color: $Colorblue;
-  }
-  img {
-    width: 100%;
-  }
-  ul li span {
-    color : $ColorDarkGrey;
-  }
-  form {
-    margin-top: 50px;
+    }
+    .submitProjet {
+      margin: auto;
+      display: block;
+      margin-bottom: 10px;
+      background-color: $Colorblue;
+    }
+    img {
+      width: 100%;
+    }
+    ul li span {
+      color: $ColorDarkGrey;
+    }
+    form {
+      margin-top: 50px;
+    }
   }
 }
+
 
 
 
