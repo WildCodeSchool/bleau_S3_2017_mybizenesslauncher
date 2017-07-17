@@ -9,19 +9,18 @@
                 <div class="col s12 m8 offset-l2 l6 offset-l3 showProfil">
                     <div class="col s12 m12 titre">
                         <h4 id="titre" class="center">{{ profil.prenom }} {{ profil.nom }}</h4>
-
                     </div>
 
-                    <div class="col s12 center imgPhoto">
+                    <div class="col s12 center imgPhoto section">
                         {% if profil.fichier is null %}
-                            <img class="responsive-img" src="{{ asset('uploads/images/59') }}">
+                            <img class="responsive-img" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                         {% else %}
                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ profil.fichier.photo ) }}">
                         {% endif %}
                     </div>
 
-                    <div class="col s6">
-                        <h6 class="center">{{ 'Métiers'|trans }}</h6>
+                    <div class="col s12 section">
+                        <h6 class="center titre">{{ 'Métiers'|trans }}</h6>
                         {% if profil.metier is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
@@ -29,7 +28,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s6">
+                    <div class="col s12 section">
                         <h6 class="center">{{ 'Compétences'|trans }}</h6>
                         {% if profil.competences is empty %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
@@ -37,16 +36,20 @@
 
                             {% for comp in profil.competences %}
                                 {% if loop.last %}
-                                    {{ comp.competence}}
+                                    <div class="chip">
+                                        {{ comp.competence}}
+                                    </div>
                                 {% else %}
-                                    {{ comp.competence}},
+                                    <div class="chip">
+                                        {{ comp.competence}}
+                                    </div>
                                 {% endif %}
                             {% endfor %}
                         {% endif %}
                     </div>
 
 
-                    <div class="col s12">
+                    <div class="col s12 section">
                         <h6 class="center">{{ 'Description'|trans }}</h6>
                         {% if profil.description is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
@@ -55,7 +58,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s12 m6">
+                    <div class="col s12 m6 section">
                         <h6 class="center">{{ 'Investissement'|trans }}</h6>
                         {% if profil.invest is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
@@ -64,7 +67,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s12 m6">
+                    <div class="col s12 m6 section">
                         <h6 class="center">{{'Statut'|trans }}</h6>
                         {% if profil.etq is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
@@ -73,7 +76,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s12 m6">
+                    <div class="col s12 m6 section">
                         <h6 class="center">{{ 'Disponibilité'|trans }}</h6>
                         {% if profil.dispo is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
@@ -84,7 +87,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s12 m6">
+                    <div class="col s12 m6 section">
                         <h6 class="center">{{ 'Mobilité'|trans }}</h6>
                         {% if profil.ou is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
@@ -93,7 +96,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s12 m6">
+                    <div class="col s12 m6 section">
                         <h6 class="center">{{ 'Domicile'|trans }}</h6>
                         {% if profil.localisation is same as(null) %}
                             <p class="center grey-text">{{ 'renseignez votre localisation'|trans }}</p>
@@ -102,17 +105,14 @@
                         {% endif %}
                     </div>
 
-                    <div class="col s12 m6">
-
-                        <img class= "linkedIn responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
+                    <div class="col s12 m6 section">
+                        <h6 class="center"><img class= "linkedIn responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}"></h6>
                         {% if profil.linkedIn is same as(null) %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
                             <p>{{ profil.linkedIn }}</p>
                         {% endif %}
                     </div>
-
-
                 </div>
             </div>
         </div>
