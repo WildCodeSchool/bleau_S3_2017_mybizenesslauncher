@@ -1,14 +1,39 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 
+{% if app.session.get('nbErrors') > 0 %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script>
+        $( document ).ready(function() {
+            $(".button-collapse").sideNav();
+
+            $(".dropdown-button").dropdown();
+
+            $('.modal').modal();
+            /*$('ul.tabs').tabs();
+             $('ul.tabs').tabs('select_tab', 'tab_id');
+             $('.tabs').tabs({ 'swipeable': true });*/
+            $('.registerPlus').click(function () {
+                $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
+            });
+
+            $('.connexion').trigger('click');
+            $('#Register').trigger('click');
+        });
+    </script>
+{% endif %}
 
 <div id="register">
     <div class="container">
         <div class="row">
-
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
             <h1 class="black-text center">{{ 'Enregistrez-vous'|trans}}</h1>
+            {% if app.session.get('nbErrors') > 0 %}
+                <p style="color: red; margin-top: 0;" class="center">{{ app.session.get('errors')|replace({'ERROR: ':''}) }}</p>
+            {% endif %}
             <div class="col s12 center">
 
                 <div class="row">
