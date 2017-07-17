@@ -19,8 +19,16 @@
                 $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
             });
 
-            $('.connexion').trigger('click');
-            $('#Register').trigger('click');
+            var interval = null;
+
+            jQuery(function(){
+                interval = setInterval(callFunc, 1000);
+            });
+            function callFunc(){
+                jQuery('.connexion, .regOnglet a').trigger('click');
+                clearInterval(interval);
+            }
+
         });
     </script>
 {% endif %}
