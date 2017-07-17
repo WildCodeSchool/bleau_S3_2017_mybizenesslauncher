@@ -1,24 +1,18 @@
 @import 'global';
 #index {
-
-////For Materialize footer sticked at page bottom
-//  display: flex;
-//  min-height: 100vh;
-//  flex-direction: column;
-
   .bandeau_homepage {
     width: 100%;
     margin: 0;
     background: $Colorblue;
     color: $ColorWhite;
     @media #{$small-and-down} {
-      display: none;}
+      display: none;
+     }
   }
 
     h2 {
       font-size: 1.5em;
     }
-
 
   .Outils {
     padding-top: 70px;
@@ -50,8 +44,9 @@
     &:focus {
       background-color: $Colorgrey;
     }
-    @media #{$lar} {
-      display:none;
+
+    @media #{$medium-and-down} {
+    display:none;
     }
   }
   .btn_bandeau_homepage_down {

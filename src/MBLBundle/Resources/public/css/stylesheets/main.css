@@ -149,7 +149,7 @@ h6 {
 }
 
 /* 2. INDEX */
-/* line 9, ../sass/_index.scss */
+/* line 3, ../sass/_index.scss */
 #index .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -157,16 +157,16 @@ h6 {
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 9, ../sass/_index.scss */
+  /* line 3, ../sass/_index.scss */
   #index .bandeau_homepage {
     display: none;
   }
 }
-/* line 18, ../sass/_index.scss */
+/* line 13, ../sass/_index.scss */
 #index h2 {
   font-size: 1.5em;
 }
-/* line 23, ../sass/_index.scss */
+/* line 17, ../sass/_index.scss */
 #index .Outils {
   padding-top: 70px;
   overflow-wrap: break-word;
@@ -177,73 +177,73 @@ h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* line 34, ../sass/_index.scss */
+/* line 28, ../sass/_index.scss */
 #index .Finance {
   margin-top: 30px;
 }
-/* line 38, ../sass/_index.scss */
+/* line 32, ../sass/_index.scss */
 #index .box_projet_profil * {
   text-align: center;
 }
-/* line 42, ../sass/_index.scss */
+/* line 36, ../sass/_index.scss */
 #index .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 46, ../sass/_index.scss */
+/* line 40, ../sass/_index.scss */
 #index .btn_bandeau_homepage:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 50, ../sass/_index.scss */
+/* line 44, ../sass/_index.scss */
 #index .btn_bandeau_homepage:focus {
   background-color: #f0f0f0;
 }
-@media only screen and (max-width: 1228px) {
-  /* line 42, ../sass/_index.scss */
+@media only screen and (max-width: 992px) {
+  /* line 36, ../sass/_index.scss */
   #index .btn_bandeau_homepage {
     display: none;
   }
 }
-/* line 57, ../sass/_index.scss */
+/* line 52, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 61, ../sass/_index.scss */
+/* line 56, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 65, ../sass/_index.scss */
+/* line 60, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 70, ../sass/_index.scss */
+  /* line 65, ../sass/_index.scss */
   #index .toHide {
     display: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 75, ../sass/_index.scss */
+  /* line 70, ../sass/_index.scss */
   #index .toShow {
     display: inline !important;
   }
 }
-/* line 80, ../sass/_index.scss */
+/* line 75, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
-/* line 83, ../sass/_index.scss */
+/* line 78, ../sass/_index.scss */
 #index .logoEb {
   max-width: 200px;
   height: auto;
 }
 @media only screen and (max-width: 992px) {
-  /* line 83, ../sass/_index.scss */
+  /* line 78, ../sass/_index.scss */
   #index .logoEb {
     display: none;
   }
@@ -261,10 +261,22 @@ Layout.html.twig
 /* line 9, ../sass/_layout.scss */
 .logotxt {
   height: 60px;
-  padding-top: 10px;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 992px) {
+  /* line 9, ../sass/_layout.scss */
+  .logotxt {
+    height: 45px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 9, ../sass/_layout.scss */
+  .logotxt {
+    height: 30px;
+  }
 }
 
-/* line 13, ../sass/_layout.scss */
+/* line 20, ../sass/_layout.scss */
 .page-footer {
   background-color: #4b494b;
   position: relative;
@@ -272,7 +284,7 @@ Layout.html.twig
   width: 100%;
 }
 
-/* line 21, ../sass/_layout.scss */
+/* line 28, ../sass/_layout.scss */
 .bandeau {
   height: 120px;
   background-color: #98d4e1;
@@ -281,17 +293,17 @@ Layout.html.twig
   padding-top: 5px;
 }
 
-/* line 32, ../sass/_layout.scss */
+/* line 37, ../sass/_layout.scss */
 .color {
   color: #98d4e1;
 }
 
-/* line 36, ../sass/_layout.scss */
+/* line 41, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
 }
 
-/* line 41, ../sass/_layout.scss */
+/* line 46, ../sass/_layout.scss */
 .darkerBiz {
   font-size: 1.3em;
   font-weight: bold;
@@ -300,63 +312,91 @@ Layout.html.twig
   text-decoration: none;
 }
 
-/* line 48, ../sass/_layout.scss */
-.lancer {
-  font-size: 1em;
-  font-weight: bold;
-  color: #98d4e1;
-  margin-left: 20px;
+/* line 53, ../sass/_layout.scss */
+.PP {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  /* line 53, ../sass/_layout.scss */
+  .PP {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 53, ../sass/_layout.scss */
+  .PP {
+    display: none;
+  }
 }
 
-/* line 55, ../sass/_layout.scss */
-.lancer:hover {
-  color: #6f9ea8;
-  font-size: 1.1em;
-}
-
-/* line 60, ../sass/_layout.scss */
-.lancerSmall {
-  font-size: 1em;
-  font-weight: bold !important;
-}
-
-/* line 65, ../sass/_layout.scss */
-.darkerBiz:hover {
-  color: #FB5B57;
-  opacity: 0.9;
-}
-
-/* line 69, ../sass/_layout.scss */
-.darkerTop:hover {
-  color: #6f9ea8;
-}
-
-/* line 73, ../sass/_layout.scss */
-.dropdown-content li > a {
-  color: #4b494b;
-}
-
-/* line 77, ../sass/_layout.scss */
+/* line 64, ../sass/_layout.scss */
 a .logoEbMenu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 77, ../sass/_layout.scss */
+  /* line 64, ../sass/_layout.scss */
   a .logoEbMenu {
     display: inline;
     max-height: 35px;
-    vertical-align: middle !important;
+    vertical-align: middle;
     margin-left: 20px;
     opacity: 0.5;
   }
 }
 
-/* line 88, ../sass/_layout.scss */
+/* line 74, ../sass/_layout.scss */
+.lancer {
+  display: none;
+  font-size: 1em;
+  font-weight: bold;
+  color: #98d4e1;
+  margin: 0 0 0 20px;
+}
+@media only screen and (max-width: 992px) {
+  /* line 74, ../sass/_layout.scss */
+  .lancer {
+    display: inline;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 74, ../sass/_layout.scss */
+  .lancer {
+    display: none;
+  }
+}
+
+/* line 90, ../sass/_layout.scss */
+.lancer:hover {
+  color: #6f9ea8;
+  font-size: 1.1em;
+}
+
+/* line 95, ../sass/_layout.scss */
+.darkerBiz:hover {
+  color: #FB5B57;
+  opacity: 0.9;
+}
+
+/* line 99, ../sass/_layout.scss */
+.darkerTop:hover {
+  color: #6f9ea8;
+}
+
+/* line 103, ../sass/_layout.scss */
+.dropdown-content li > a {
+  color: #4b494b;
+}
+
+/* line 107, ../sass/_layout.scss */
 a .logoEbMenu:hover {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 88, ../sass/_layout.scss */
+  /* line 107, ../sass/_layout.scss */
   a .logoEbMenu:hover {
     display: inline;
     max-height: 35px;
@@ -366,7 +406,7 @@ a .logoEbMenu:hover {
   }
 }
 
-/* line 99, ../sass/_layout.scss */
+/* line 118, ../sass/_layout.scss */
 .material-icons {
   display: inline !important;
   vertical-align: middle !important;
@@ -381,118 +421,118 @@ a .logoEbMenu:hover {
   font-feature-settings: 'liga';
 }
 
-/* line 112, ../sass/_layout.scss */
+/* line 131, ../sass/_layout.scss */
 .material-icons.md-grey, .md-euro {
   font-size: 24px;
 }
 @media only screen and (max-width: 992px) {
-  /* line 112, ../sass/_layout.scss */
+  /* line 131, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     color: #4b494b;
   }
 }
 @media only screen and (min-width: 993px) {
-  /* line 112, ../sass/_layout.scss */
+  /* line 131, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     display: none !important;
   }
 }
 
-/* line 122, ../sass/_layout.scss */
+/* line 141, ../sass/_layout.scss */
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
 
-/* line 126, ../sass/_layout.scss */
+/* line 145, ../sass/_layout.scss */
 .dotCom {
   color: black;
   opacity: 0.5;
 }
 
-/* line 131, ../sass/_layout.scss */
+/* line 150, ../sass/_layout.scss */
 .BB:hover {
   box-shadow: inset 0 -2px 0 #FB5B57;
 }
 
-/* line 136, ../sass/_layout.scss */
+/* line 155, ../sass/_layout.scss */
 .modal .tabs {
   margin: 0;
   padding: 0;
   background-color: #98d4e1;
 }
-/* line 141, ../sass/_layout.scss */
+/* line 160, ../sass/_layout.scss */
 .modal .tab a {
   color: grey;
 }
-/* line 144, ../sass/_layout.scss */
+/* line 163, ../sass/_layout.scss */
 .modal .tab a:hover {
   color: #4b494b;
 }
-/* line 147, ../sass/_layout.scss */
+/* line 166, ../sass/_layout.scss */
 .modal .tab a.active {
   color: #4b494b;
 }
-/* line 150, ../sass/_layout.scss */
+/* line 169, ../sass/_layout.scss */
 .modal .tabs .indicator {
   background-color: #4b494b;
 }
 
-/* line 155, ../sass/_layout.scss */
+/* line 174, ../sass/_layout.scss */
 #Connexion, #register {
   margin-top: 25px;
 }
 
-/* line 159, ../sass/_layout.scss */
+/* line 178, ../sass/_layout.scss */
 .remember {
   margin-top: 10px;
 }
 
-/* line 163, ../sass/_layout.scss */
+/* line 182, ../sass/_layout.scss */
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
 
-/* line 169, ../sass/_layout.scss */
+/* line 188, ../sass/_layout.scss */
 .submitRegister {
   margin-top: 55px;
 }
 
-/* line 173, ../sass/_layout.scss */
+/* line 192, ../sass/_layout.scss */
 .moreRegisterHidden {
   display: none;
 }
 
-/* line 177, ../sass/_layout.scss */
+/* line 196, ../sass/_layout.scss */
 .moreRegister {
   margin-top: 25px;
 }
 
-/* line 181, ../sass/_layout.scss */
+/* line 200, ../sass/_layout.scss */
 textarea #fos_user_registration_form_description {
   height: 10em;
 }
 
-/* line 185, ../sass/_layout.scss */
+/* line 204, ../sass/_layout.scss */
 #fos_user_registration_form_description {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
 
-/* line 191, ../sass/_layout.scss */
+/* line 210, ../sass/_layout.scss */
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
 
-/* line 197, ../sass/_layout.scss */
+/* line 216, ../sass/_layout.scss */
 #login .btn, #register .btn {
   background: #98d4e1 !important;
 }
 
-/* line 201, ../sass/_layout.scss */
+/* line 220, ../sass/_layout.scss */
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;

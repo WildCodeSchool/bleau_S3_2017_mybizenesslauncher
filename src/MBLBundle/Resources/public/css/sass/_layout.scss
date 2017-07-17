@@ -8,8 +8,15 @@ Layout.html.twig
 }
 .logotxt{
   height:60px;
-  padding-top: 10px;
+  vertical-align: middle;
+  @media #{$medium-and-down} {
+   height: 45px;
+  }
+  @media #{$small-and-down} {
+    height: 30px;
+  }
 }
+
 .page-footer
 {
   background-color:$ColorDarkGrey;
@@ -20,8 +27,6 @@ Layout.html.twig
 
 .bandeau
 {
-  //border-top: 3px solid white;
-  //border-bottom: 3px solid white;
   height: 120px;
   background-color: $Colorblue;
   color: White;
@@ -45,21 +50,46 @@ Layout.html.twig
   color: #FB5B57;
   text-decoration: none;
 }
+.PP{
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    margin:0;
+    padding: 0;
+  }
+  @media #{$small-and-down} {
+    display: none;
+  }
+}
+a .logoEbMenu  {
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    max-height: 35px;
+    vertical-align: middle;
+    margin-left: 20px;
+    opacity: 0.5;
+  }
+}
 .lancer {
+  display: none;
   font-size: 1em;
   font-weight: bold;
   color: $Colorblue;
-  margin-left: 20px;
-}
+  margin: 0 0 0 20px;
+  @media #{$medium-and-down} {
+    display: inline;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
 
+  @media #{$small-and-down} {
+    display: none;
+}
+}
 .lancer:hover {
   color: #6f9ea8;
   font-size: 1.1em;
-}
-
-.lancerSmall {
-  font-size: 1em;
-  font-weight: bold !important;
 }
 
 .darkerBiz:hover {
@@ -73,17 +103,6 @@ Layout.html.twig
 .dropdown-content li > a {
     color: $ColorDarkGrey;
   }
-
-a .logoEbMenu  {
-  display: none;
-    @media #{$medium-and-down} {
-     display: inline;
-      max-height: 35px;
-      vertical-align: middle !important;
-      margin-left: 20px;
-     opacity: 0.5;
-  }
-}
 
 a .logoEbMenu:hover {
   display: none;

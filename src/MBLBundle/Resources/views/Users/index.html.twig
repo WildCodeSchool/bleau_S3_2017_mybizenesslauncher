@@ -8,16 +8,20 @@
 <div id="index">
     <div class="row">
         <div class="col s12 bandeau_homepage ">
-            <div class="col s12 m4 presentation ">
-                <h2>{{ 'Pour les porteurs de projet'|trans }}<br/></h2>
-                <p>{{ 'index.description.but'|trans}}<br/></p>
-                <h2>{{ 'Pour ceux qui cherchent un projet à intégrer'|trans }}<br/></h2>
-                <p>{{ 'index.description.howDo'|trans}}</p>
+            <div class="col l4 presentation ">
+                <div class="col m6 l12">
+                    <h2>{{ 'Pour les porteurs de projet'|trans }}<br/></h2>
+                    <p>{{ 'index.description.but'|trans}}<br/></p>
+                </div>
+                <div class="col m6 l12">
+                    <h2>{{ 'Pour ceux qui cherchent un projet à intégrer'|trans }}<br/></h2>
+                    <p>{{ 'index.description.howDo'|trans}}</p>
+                </div>
             </div>
             <div class="col s12 m2 offset-m1">
-                <div class="row Outils">
+                <div class="row Outils hide-on-med-and-down">
                     <div class="col s12">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_outils" href="#">
+                        <a class="waves-effect btn btn_bandeau_homepage btn_outils" href="#">
                             {{ 'Outils pour se lancer'|trans }}</a>
                     </div>
                     <div class="col s12">
@@ -27,20 +31,19 @@
                 </div>
             </div>
             <div class="col m4 offset-m1">
-                <div class="row Finance">
+                <div class="row Finance hide-on-med-and-down">
                     <div class="col s6 btn_eBusta">
-                        <a class="waves-effect waves-red btn btn_bandeau_homepage btn_finance" target="blanck"
+                        <a class="waves-effect waves btn btn_bandeau_homepage btn_finance" target="blanck"
                            href="https://www.e-busta.com/">{{ 'Finance ton projet'|trans}}</a>
                     </div>
                     <div class="col s6">
                         <img class="responsive-img logoEb" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row hide-on-med-and-down">
                     <div class="col s12">
                         <p>{{ 'index.description.ebusta'|trans }}</p>
                     </div>
-
                 </div>
             </div>
         </div>
