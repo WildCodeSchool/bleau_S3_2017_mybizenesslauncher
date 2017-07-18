@@ -1,0 +1,9 @@
+@import "global";
+
+#redirect {
+  margin-top: 100px;
+  background-color: $Colorblue;
+    h2, span, i, h3 {
+      color: $ColorDarkGrey;
+    }
+}
