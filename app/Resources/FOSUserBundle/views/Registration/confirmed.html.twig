@@ -1,8 +1,14 @@
-{% extends "@FOSUser/layout.html.twig" %}
-
+{% extends 'base.html.twig' %}
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block fos_user_content %}
-    <p class="center"><a href="{{path('mbl_homepage') }}">{{ 'registration.back'|trans }}</a></p>
-
-{% endblock fos_user_content %}
+{% block body %}
+    <meta http-equiv="refresh" content="5; URL={{ path('mbl_homepage') }}" />
+    <div class="row" id="redirect">
+        <div class="col s4 offset-s4 center">
+            <h2>Félicitation ! Votre compte est créé avec succès !</h2>
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+            <h3 class="center">Redirection automatique...</h3>
+        </div>
+    </div>
+{% endblock body %}
