@@ -117,9 +117,7 @@
                         {% if app.user.id == profil.id %}
                         {% else %}
                             <div class="col s12 center">
-
-                                <a class="btn grey" href="{{ path('chatConnect', {'id': profil.id}) }}">{{ 'Discuter'|trans }}</a>
-
+                               <a class="btn grey" href="{{ path('chatConnect', {'id': profil.id}) }}">{{ 'Discuter'|trans }}</a>
                             </div>
                         {% endif %}
                     {% endif %}

@@ -7,22 +7,23 @@
             <div class="box_projet">
                 {% for flashMessage in app.session.flashbag.get('error') %}
 
-                   <h3>{{ flashMessage }}</h3>
+                    <h3>{{ flashMessage }}</h3>
 
                 {% endfor %}
                 <div class="row">
                     {{ form_start(form_localisation) }}
 
-                    <div class="col s12 m6 l6">
+                    <div class="col s12 m4 l4">
                         {{ form_row(form_localisation.localisation) }}
                         {{ form_errors(form_localisation.localisation) }}
                     </div>
-                    <div class="col s12 m6 l6">
-
+                    <div class="col s12 m4 l4">
                         {{ form_row(form_localisation.metier) }}
                         {{ form_errors(form_localisation.metier) }}
                     </div>
-                    <input class="btn" name="Choisissez" type="submit" value="{{ 'Rechercher'|trans }}">
+                    <div class="col s12 m4 l4 btnfilt">
+                        <input class="btn btnfilterAllprofil" name="Choisissez" type="submit" value="{{ 'Rechercher'|trans }}">
+                    </div>
                     {{ form_end(form_localisation) }}
                 </div>
 
@@ -31,36 +32,27 @@
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
                             <div class="col l4 offset-l1 m6 s12 vignette_profil_all  z-depth-5">
                                 <div class="row vignette ">
-                                    <div class="col s12">
-                                        {% if pro.prenom|length > 10 %}
-                                            <h4>{{ pro.prenom|slice(0,8) ~ '...'  }}</h4>
-                                        {% else  %}
-                                            <h4>{{ pro.prenom }} {{ pro.nom|slice(0,1) }}.</h4>
-                                        {% endif %}
+                                    <div class="col s12 intitul">
+                                        <h4>{{ pro.prenom|capitalize|slice(0,15)}}</h4>
                                     </div>
-                                    <div class="col s8 offset-s2 photo_profil">
-
-                                        {% if pro.fichier is null %}
-                                            <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                    <div class="col s8 offset-s2 encarttof">
+                                        {% if pro.fichier is empty %}
+                                            <img class="responsive-img logodefault" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-
-                                            <img class="responsive-img"
-                                                 src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
-
+                                            {# TODO: à verifier #}
+                                            <img class="responsive-img  logodefault" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
                                         <h6>{{ 'Profil'|trans }}</h6>
-
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
                                         {% else %}
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
-
                                     <div class="col s12">
                                         <h6>{{ 'Compétences'|trans }}</h6>
                                         {% for comp in pro.competences %}
@@ -76,6 +68,11 @@
                                         <h5>{{ 'Localisation'|trans }}</h5>
                                         <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         <div class="divider"></div>
+
+                                        <div class="col s12">
+                                            <h5>{{ 'Description'|trans }}</h5>
+                                            <p>{{ pro.description }}</p>
+                                        </div>
                                     </div>
 
                                     <div class="col s12">
@@ -89,9 +86,7 @@
                                     {% if app.user.id == pro.id %}
                                     {% else %}
                                         <div class="col s12">
-
-                                            <a class="btn grey" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
-
+                                            <a class="btn btndiscuss" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
                                         </div>
                                     {% endif %}
                                 {% endif %}

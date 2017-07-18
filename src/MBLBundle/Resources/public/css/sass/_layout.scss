@@ -44,26 +44,27 @@ Layout.html.twig
   color: White;
 }
 
-
 .darkerBiz {
   font-size: 1.3em;
   font-weight: bold;
   padding-left: 30px;
   color: #FB5B57;
   text-decoration: none;
-  height: 60px;
 }
 
-a .logoEbMenu  {
-  display: none;
-  @media #{$medium-and-down} {
-    display: inline;
-    max-height: 35px;
-    vertical-align: middle;
-    margin-left: 20px;
-    opacity: 0.5;
-  }
-}
+//Suppression sélecteur par Vincent: Vérifier
+//
+//a .logoEbMenu  {
+//  display: none;
+//  @media #{$medium-and-down} {
+//    display: inline;
+//    max-height: 35px;
+//    vertical-align: middle;
+//    margin-left: 20px;
+//    opacity: 0.5;
+//  }
+//}
+
 .lancer {
   display: none;
   @media #{$medium-and-down} {
