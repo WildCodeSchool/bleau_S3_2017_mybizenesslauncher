@@ -67,8 +67,8 @@
                                 <div class="row vignette ">
                                     <div class="col s12">
 
-                                        {% if pro.titre|length > 8 %}
-                                            <h4>{{ pro.titre|slice(0,6) ~ '...'  }}</h4>
+                                        {% if pro.titre|length > 10 %}
+                                            <h4>{{ pro.titre|slice(0,10) ~ '...'  }}</h4>
                                         {% else  %}
                                             <h4>{{ pro.titre }}</h4>
                                         {% endif %}
@@ -162,8 +162,8 @@
                             <div class="col s12 m6 l5 offset-l1 vignette_profil z-depth-5">
                                 <div class="row vignette ">
                                     <div class="col s12">
-                                        {% if pro.prenom|length > 8 %}
-                                            <h4>{{ pro.prenom|slice(0,6) ~ '...'  }}</h4>
+                                        {% if pro.prenom|length >10 %}
+                                            <h4>{{ pro.prenom|slice(0,10) ~ '...'  }}</h4>
                                         {% else  %}
                                             <h4>{{ pro.prenom }} {{ pro.nom|slice(0,1) }}.</h4>
                                         {% endif %}
