@@ -22,77 +22,80 @@
                         {{ form_errors(form_localisation.metier) }}
                     </div>
                     <div class="col s12 m4 l4 btnfilt">
-                    <input class="btn btnfilterAllprofil" name="Choisissez" type="submit" value="{{ 'Rechercher'|trans }}">
+                        <input class="btn btnfilterAllprofil" name="Choisissez" type="submit" value="{{ 'Rechercher'|trans }}">
+                    </div>
+                    {{ form_end(form_localisation) }}
                 </div>
-                {{ form_end(form_localisation) }}
-            </div>
 
-            <div class="row">
-                {% for pro in profils %}
-                    <a href="{{ path('showProfil', { 'id': pro.id }) }}">
-                        <div class="col l4 offset-l1 m6 s12 vignette_profil_all  z-depth-5">
-                            <div class="row vignette ">
-                                <div class="col s12 intitul">
-                                    <h4>{{ pro.prenom|capitalize|slice(0,15)}}</h4>
-                                </div>
-                                <div class="col s8 offset-s2 encarttof">
-                                    {% if pro.fichier is empty %}
-                                        <img class="responsive-img logodefault" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
-                                    {% else %}
-                                        {# TODO: à verifier #}
-                                        <img class="responsive-img  logodefault" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <div class="row info_projet">
-                                <div class="col s12">
-                                    <h6>{{ 'Profil'|trans }}</h6>
-
-                                    {% if pro.metier.metier is defined  %}
-                                        {{ pro.metier.metier }}
-                                    {% else %}
-                                    {% endif %}
-                                    <div class="divider"></div>
-                                </div>
-
-                                <div class="col s12">
-                                    <h6>{{ 'Compétences'|trans }}</h6>
-                                    {% for comp in pro.competences %}
-                                        {% if loop.last %}
-                                            {{ comp.competence}}
-                                        {% else %}
-                                            {{ comp.competence}},
-                                        {% endif %}
-                                    {% endfor %}
-                                    <div class="divider"></div>
-                                </div>
-                                <div class="col s12">
-                                    <h5>{{ 'Localisation'|trans }}</h5>
-                                    <p>{{ pro.localisation }}, {{ pro.ville }}</p>
-                                    <div class="divider"></div>
-                                </div>
-
-                                <div class="col s12">
-                                    <h5>{{ 'Description'|trans }}</h5>
-                                    <p>{{ pro.description }}</p>
-                                </div>
-
-                            </div>
-
-                            {% if app.user.id is defined %}
-                                {% if app.user.id == pro.id %}
-                                {% else %}
-                                    <div class="col s12">
-                                        <a class="btn btndiscuss" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
+                <div class="row">
+                    {% for pro in profils %}
+                        <a href="{{ path('showProfil', { 'id': pro.id }) }}">
+                            <div class="col l4 offset-l1 m6 s12 vignette_profil_all  z-depth-5">
+                                <div class="row vignette ">
+                                    <div class="col s12 intitul">
+                                        <h4>{{ pro.prenom|capitalize|slice(0,15)}}</h4>
                                     </div>
+                                    <div class="col s8 offset-s2 encarttof">
+                                        {% if pro.fichier is empty %}
+                                            <img class="responsive-img logodefault" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                        {% else %}
+                                            {# TODO: à verifier #}
+                                            <img class="responsive-img  logodefault" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="row info_projet">
+                                    <div class="col s12">
+                                        <h6>{{ 'Profil'|trans }}</h6>
+                                        {% if pro.metier.metier is defined  %}
+                                            {{ pro.metier.metier }}
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="col s12">
+                                        <h6>{{ 'Compétences'|trans }}</h6>
+                                        {% for comp in pro.competences %}
+                                            {% if loop.last %}
+                                                {{ comp.competence}}
+                                            {% else %}
+                                                {{ comp.competence}},
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="col s12">
+                                        <h5>{{ 'Localisation'|trans }}</h5>
+                                        <p>{{ pro.localisation }}, {{ pro.ville }}</p>
+                                        <div class="divider"></div>
+
+                                        <div class="col s12">
+                                            <h5>{{ 'Description'|trans }}</h5>
+                                            <p>{{ pro.description }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col s12">
+                                        <h5>{{ 'Description'|trans }}</h5>
+                                        <p>{{ pro.description }}</p>
+                                    </div>
+
+                                </div>
+
+                                {% if app.user.id is defined %}
+                                    {% if app.user.id == pro.id %}
+                                    {% else %}
+                                        <div class="col s12">
+                                            <a class="btn btndiscuss" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
+                                        </div>
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}
-                        </div>
-                    </a>
-                {% endfor %}
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}
 
