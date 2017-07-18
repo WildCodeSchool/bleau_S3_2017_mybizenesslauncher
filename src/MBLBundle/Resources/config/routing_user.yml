@@ -66,8 +66,10 @@ deleteProfilRerchercheProjet:
     defaults: { _controller: MBLBundle:User:deleteProfilR}
 
 showProject:
-    path: /showProject
-    defaults: { _controller: MBLBundle:User:showProject }
+    path: /showProject/{page}
+    defaults:
+        _controller: MBLBundle:User:showProject
+        page: null
 
 showOneProject:
     path: /showOneProject/{id}

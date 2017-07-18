@@ -133,13 +133,13 @@ class UserController extends Controller
 
         if (is_null($page))
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 4, 1);
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 12, 1);
             $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
 
         }
         else
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 4, $page);
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 12, $page);
             $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
         }
 
@@ -148,13 +148,13 @@ class UserController extends Controller
             $idloc = $request->request->get('mblbundle_profil')['localisation'];
             $idmetier = $request->request->get('mblbundle_profil')['metier'];
 
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByVDeux($locale,4, $page, $idloc, $idmetier);
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByVDeux($locale,12, $page, $idloc, $idmetier);
             $nbProfils = count($profils);
         }
 
         return $this->render('@MBL/Users/showAllProfils.html.twig', array(
             'profils'=>$profils,
-            'nombrePage' => ceil($nbProfils/4) ,
+            'nombrePage' => ceil($nbProfils/12),
             'form_localisation' => $form_loc->createView()
         ));
     }
@@ -326,7 +326,7 @@ class UserController extends Controller
         return $content;
     }
 
-    public function showProjectAction(Request $request)
+    public function showProjectAction(Request $request, $page)
     {
 //        dump($request); die();
 
@@ -336,26 +336,34 @@ class UserController extends Controller
 
         $form_secteur = $this->createForm('MBLBundle\Form\ProjetRechercheType', null, array('locale'=>$locale));
 
-        $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale);
-//        Récupération des ID de secteur et TYpe de projet depuis Parcourir les projets
+        if (is_null($page))
+        {
+            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale, 12, 1);
+            $nbProjects =  $em->getRepository('MBLBundle:Projet')->countProjects($locale);
+        }
+        else
+        {
+            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale, 12, $page);
+            $nbProjects =  $em->getRepository('MBLBundle:Projet')->countProjects($locale);
+        }
+
         if ($request->isMethod('POST'))
         {
             $idSec = $request->request->get('mblbundle_projet')['secteur'];
             $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
             $Loc = $request->request->get('mblbundle_projet')['localisation']['localisation'];
 
-
-            $projects = $em->getRepository('MBLBundle:Projet')->myfindProjetByVDeux($idSec, $idTyp, $Loc, $locale);
-
+            $projects = $em->getRepository('MBLBundle:Projet')->myfindProjetByVDeux($idSec, 12, $page, $idTyp, $Loc, $locale);
+            $nbProjects = count($projects);
         }
-
-
         return $this->render('@MBL/Users/showProject.html.twig', array(
 
             'projects'=> $projects,
             'form_secteur' =>$form_secteur->createView(),
-            'locale' => $locale
+            'locale' => $locale,
+            'nombrePage' => ceil($nbProjects/12),
         ));
+
     }
 
     public function showMyProjectAction(Request $request)
