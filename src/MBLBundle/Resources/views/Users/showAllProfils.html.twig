@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="row info_projet">
                                     <div class="col s12">
-                                        <h6>{{ 'Profil'|trans }}</h6>
+                                        <h5>{{ 'Profil'|trans }}</h5>
 
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
@@ -62,7 +62,7 @@
                                     </div>
 
                                     <div class="col s12">
-                                        <h6>{{ 'Compétences'|trans }}</h6>
+                                        <h5>{{ 'Compétences'|trans }}</h5>
                                         {% for comp in pro.competences %}
                                             {% if loop.last %}
                                                 {{ comp.competence}}

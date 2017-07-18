@@ -49,10 +49,7 @@ class UserController extends Controller
         {
             $em = $this->getDoctrine()->getManager();
             $current = $this->getUser();
-            $currentId = $current->getId();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
-            $countContact = $em->getRepository('MBLBundle:Chat')->myQueriesForContact($current, $currentId, $zero);
-            $count = count($countContact);
 
             $content =  $this->renderView('@MBL/Users/countView.html.twig', array(
                 'count' => $countViews['nbmsg']));
@@ -400,12 +397,27 @@ class UserController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($projet);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
+            if($request->getLocale() == "it")
+            {
+                $this->get('session')->getFlashBag()->add('notice', 'Il progetto è stato rimosso');
+            }
+            else
+            {
+                $this->get('session')->getFlashBag()->add('notice', 'Le projet a bien été supprimé');
+            }
+
             return $this->redirectToRoute('showMyProject');
         }
 
         else {
-            $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
+            if($request->getLocale() == "it")
+            {
+                $this->get('session')->getFlashBag()->add('notice', 'Il progetto desiderato non esiste');
+            }
+            else
+            {
+                $this->get('session')->getFlashBag()->add('notice', 'Le projet recherché n\'existe pas');
+            }
             return $this->redirectToRoute('showMyProject');
         }
     }
@@ -478,7 +490,16 @@ class UserController extends Controller
         if(!empty($chatexist))
         {
             // Si oui il existe déjà on envoi un message à l'utilisateur qu'il ne peut se connecter
-            $this->get('session')->getFlashBag()->add('error', 'Vous etes déjà connecté avec cette personne');
+            if($request->getLocale() == "it")
+            {
+                $this->get('session')->getFlashBag()->add('error', 'Si è già connessi con questa persona');
+
+            }
+            else
+            {
+                $this->get('session')->getFlashBag()->add('error', 'Vous etes déjà connecté avec cette personne');
+
+            }
             return $this->redirectToRoute('showAllProfils');
         }
         // Sinon on ajoute un objet chat
@@ -497,7 +518,14 @@ class UserController extends Controller
         $chat->setConnectionbyid(0);
         $em->persist($chat);
         $em->flush();
-        $this->get('session')->getFlashBag()->add('error', 'Votre demande de connexion a été envoyée');
+        if($request->getLocale() == "it")
+        {
+            $this->get('session')->getFlashBag()->add('error', 'La richiesta di accesso è stato inviato');
+        }
+        else
+        {
+            $this->get('session')->getFlashBag()->add('error', 'Votre demande de connexion a été envoyée');
+        }
         return $this->redirectToRoute('showAllProfils');
     }
 

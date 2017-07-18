@@ -15,7 +15,7 @@
             <ul id="dropdown1" class="dropdown-content">
                 <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.nom}}
                        
-                <li class="divider"></li>
+                        <div class="divider"></div>
                 <li><a href="{{ path('homepageProfil') }}">{{ 'Mon compte'|trans }}
                        </a></li>
                 <li><a href="{{ path('editProfil') }}">{{ 'Gérer mon profil'|trans }}</a></li>
@@ -38,17 +38,12 @@
 
                 </a>
                 <a class="tooltipped" data-position="bottom" data-delay="50"
-                   data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
-                            propose de réaliser des campagnes de Crowdfunding
-                            de don en contrepartie pour vous aider à financer
-                            votre projet. Seule une commission de 4% du montant
-                            collecté sera appliquée, faisant de E-busta le site de
-                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                   data-tooltip="{{ 'index.description.ebusta'|trans }}" href="https://www.e-busta.com/">
                     <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                 </a>
                 <a class="tooltipped hide-on-small-only hide-on-large-only lancer" data-position="bottom" data-delay="50"
-                   data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a>
+                   data-tooltip="{{ 'Trouve sur MyStartupTools.com'|trans }}
+                            {{ 'Tous les outils pour t’aider à lancer ton activité'|trans }}" href="#">{{ 'Se lancer'|trans }}</a>
 
                 <a href="#" data-activates="mobile-demo"
                    class="button-collapse right"><i class="color material-icons">{{ 'Menu'|trans }}</i>
@@ -67,15 +62,11 @@
 
                 <ul class="right show-on-medium hide-on-small hide-on-med-and-up">
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
-                           data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
-                           le décrire et détailler les profils de cofondateurs et associés que tu cherches.
-                           Ils auront alors accès à la description du projet et pourront te contacter."
+                           data-tooltip="{{ 'Pour les porteurs de projet'|trans }} {{ 'index.description.but'|trans }}"
                            href="{{ path('showProject') }}">{{ 'Projet'|trans }}</a></li>
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
-                           data-tooltip="Pour ceux qui cherchent un projet à intégrer:
-                           Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
-                           d’un projet existant, parcours les projets pour trouver celui que tu pourrais
-                           aider à porter au sommet !
+                           data-tooltip="{{ 'Pour ceux qui cherchent un projet à intégrer'|trans }}
+                           {{ 'index.description.howDo'|trans }}"
                            href="{{path('showAllProfils')}}">{{ 'Profil'|trans }}</a></li>
                 </ul>
 
@@ -105,17 +96,12 @@
                 <a class="color darkerBiz" href="{{ path('mbl_homepage') }}" ><img class="logotxt" src="{{ asset('bundles/mbl/img/logoinnovauptxt.png') }}"></a>
                 <a class="tooltipped hide-on-small-only hide-on-med-and-up" data-position="bottom"
                    data-delay="50"
-                   data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
-                            propose de réaliser des campagnes de Crowdfunding
-                            de don en contrepartie pour vous aider à financer
-                            votre projet. Seule une commission de 4% du montant
-                            collecté sera appliquée, faisant de E-busta le site de
-                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
+                   data-tooltip="{{ 'index.description.ebusta'|trans }}" href="https://www.e-busta.com/">
                     <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                 </a>
                 <a class="tooltipped lancer" data-position="bottom" data-delay="50"
-                   data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">{{ 'Outils pour se lancer'|trans }}</a>
+                   data-tooltip="{{ 'Trouve sur MyStartupTools.com'|trans }}
+                            {{ 'Tous les outils pour t’aider à lancer ton activité'|trans }}" href="#">{{ 'Se lancer'|trans }}</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a class="color darkerTop" href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }}</a></li>
@@ -127,15 +113,11 @@
                 </ul>
                 <ul class="right hide-on-small-only show-on-medium hide-on-med-and-up">
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
-                           data-tooltip="Pour les porteurs de projet: Tu peux créer ton projet,
-                           le décrire et détailler les profils de cofondateurs et associés que tu cherches.
-                           Ils auront alors accès à la description du projet et pourront te contacter."
+                           data-tooltip="{{ 'Pour les porteurs de projet'|trans }} {{ 'index.description.but'|trans }}"
                            href="{{ path('showProject') }}">{{ 'Projet'|trans }}</a></li>
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
-                           data-tooltip="Pour ceux qui cherchent un projet à intégrer:
-                           Tu es un véritable startupper en herbe, tu as des compétences à mettre au profit
-                           d’un projet existant, parcours les projets pour trouver celui que tu pourrais
-                           aider à porter au sommet !
+                           data-tooltip="{{ 'Pour ceux qui cherchent un projet à intégrer'|trans }}
+                           {{ 'index.description.howDo'|trans }}"
                            href="{{path('showAllProfils')}}">{{ 'Profil'|trans }}</a></li>
                     <li> <a class="color" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({},
                             'FOSUserBundle') }}
@@ -153,17 +135,12 @@
                     <li class="divider"></li>
                     <li><a class="tooltipped color darkerTop hide-on-med-and-up" data-position="bottom"
                            data-delay="50"
-                           data-tooltip="Trouve sur MyStartupTools.com
-                            tous les outils pour t’aider à lancer ton activité." href="#">Se lancer</a></li>
+                           data-tooltip="{{ 'Trouve sur MyStartupTools.com'|trans }}
+                            {{ 'Tous les outils pour t’aider à lancer ton activité'|trans }}" href="#">{{ 'Se lancer'|trans }}</a></li>
                     <li><a class="tooltipped color darkerTop show-on-medium" data-position="bottom"
                        data-delay="50"
-                       data-tooltip="Avec ses enveloppes publiques, E-busta.com vous
-                            propose de réaliser des campagnes de Crowdfunding
-                            de don en contrepartie pour vous aider à financer
-                            votre projet. Seule une commission de 4% du montant
-                            collecté sera appliquée, faisant de E-busta le site de
-                            Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
-                        Finance ton projet</a></li>
+                       data-tooltip="{{ 'index.description.ebusta'|trans }}" href="https://www.e-busta.com/">
+                        {{ 'Finance ton projet'|trans }}</a></li>
 
                     <li> <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{ path('showProject') }}">
                             {{ 'Parcourir les projets'|trans }} </a></li>
@@ -204,7 +181,13 @@
     <footer class="page-footer footer">
         <div class="container">
             <div class="row">
-                <div class="col l4 offset-l2 s12">
+                <div class="col l2 s12">
+                    <ul class="lang-menu">
+                        <li><a class="grey-text text-lighten-3" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">{{ 'FR'|trans }}</a> | <a class="grey-text text-lighten-3" href="{{  path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'it'}))}}">{{ 'IT'|trans }}</a></li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="col l4 s12">
                     <h5 class="white-text">{{ 'Lien utiles'|trans }}</h5>
                     <ul class="liensfooter">
                         <li><a class="grey-text text-lighten-3"
