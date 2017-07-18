@@ -137,6 +137,7 @@ conseils:
         _controller: FrameworkBundle:Template:template
         template: MBLBundle:Templates:conseils.html.twig
 
+
 # Cette route doit rester la dernière
 #remove_trailing_slash:
 #    path: /{url}
