@@ -7,7 +7,7 @@ Layout.html.twig
   background-color:$Colorgrey;
 }
 
-.logotxt{
+.logotxt {
   height:60px;
   vertical-align: middle;
   @media #{$medium-and-down} {
@@ -44,10 +44,6 @@ Layout.html.twig
   color: White;
 }
 
-.logotxt
-{
-  height: 60px;
-}
 
 .darkerBiz {
   font-size: 1.3em;
@@ -57,17 +53,7 @@ Layout.html.twig
   text-decoration: none;
   height: 60px;
 }
-.PP{
-  display: none;
-  @media #{$medium-and-down} {
-    display: inline;
-    margin:0;
-    padding: 0;
-  }
-  @media #{$small-and-down} {
-    display: none;
-  }
-}
+
 a .logoEbMenu  {
   display: none;
   @media #{$medium-and-down} {
@@ -80,19 +66,17 @@ a .logoEbMenu  {
 }
 .lancer {
   display: none;
-  font-size: 1em;
-  font-weight: bold;
-  color: $Colorblue;
-  margin: 0 0 0 20px;
   @media #{$medium-and-down} {
     display: inline;
-    margin-right: 0px;
+    font-size: 1em;
+    font-weight: bold;
+    color: $Colorblue;
+    margin: 0 0 0 5px;
     padding-right: 0px;
   }
-
   @media #{$small-and-down} {
     display: none;
-}
+  }
 }
 .lancer:hover {
   color: #6f9ea8;
@@ -155,7 +139,22 @@ a .logoEbMenu:hover {
   color: #6f9ea8;
 }
 
-
+.BB {
+  @media #{$medium-and-down} {
+    display: none;
+  }
+}
+.PP {
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    margin:0;
+    padding: 0;
+  }
+  @media #{$small-and-down} {
+    display: none;
+  }
+}
 .BB:hover {
   box-shadow: inset 0 -2px 0 #FB5B57;
 }
