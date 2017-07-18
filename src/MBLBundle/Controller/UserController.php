@@ -23,19 +23,39 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class UserController extends Controller
 {
 
-
-    public function countViewsAction()
+    public function countDemandeContactAction()
     {
         $content = 0;
+        $zero = 0;
         if(!is_null($this->getUser()))
         {
             $em = $this->getDoctrine()->getManager();
             $current = $this->getUser();
+            $currentId = $current->getId();
+            $countContact = $em->getRepository('MBLBundle:Chat')->myQueriesForContact($current, $currentId, $zero);
+            $count = count($countContact);
+
+            $content =  $this->renderView('@MBL/Templates/demandeContact.html.twig', array(
+                'demandeContact' => $count));
+
+        }
+        return new Response($content);
+    }
+    public function countViewsAction()
+    {
+        $content = 0;
+        $zero = 0;
+        if(!is_null($this->getUser()))
+        {
+            $em = $this->getDoctrine()->getManager();
+            $current = $this->getUser();
+            $currentId = $current->getId();
             $countViews = $em->getRepository('MBLBundle:Text')->myFindViews($current);
+            $countContact = $em->getRepository('MBLBundle:Chat')->myQueriesForContact($current, $currentId, $zero);
+            $count = count($countContact);
 
-
-
-            $content =  $this->renderView('@MBL/Users/countView.html.twig', array('count' => $countViews['nbmsg']));
+            $content =  $this->renderView('@MBL/Users/countView.html.twig', array(
+                'count' => $countViews['nbmsg']));
 
         }
         return new Response($content);
@@ -44,7 +64,6 @@ class UserController extends Controller
     public function indexAction(Request $request)
 
     {
-
         $locale= $request->getLocale();
 
         $em = $this->getDoctrine()->getManager();
@@ -112,12 +131,8 @@ class UserController extends Controller
     {
 
         $locale = $request->getLocale();
-
-
         $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType',null , array('locale' => $locale));
-
         $em = $this->getDoctrine()->getManager();
-
         $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
 
         if ($request->isMethod('POST'))
@@ -482,7 +497,8 @@ class UserController extends Controller
         $chat->setConnectionbyid(0);
         $em->persist($chat);
         $em->flush();
-        return $this->redirectToRoute('connect');
+        $this->get('session')->getFlashBag()->add('error', 'Votre demande de connexion a été envoyée');
+        return $this->redirectToRoute('showAllProfils');
     }
 
     public function connectAction(Request $request, $id)
@@ -490,10 +506,8 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $currentUser = $this->getUser();
         $countViews = 0;
+        $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentUser);
 
-        {
-            $countViews = $em->getRepository('MBLBundle:Text')->myFindCountViews($currentUser);
-        }
         // on fait la vérification de savoir si il y a un chat selectionné
         if(is_numeric($id))
         {

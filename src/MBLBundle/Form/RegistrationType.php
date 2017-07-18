@@ -7,21 +7,15 @@
  */
 namespace MBLBundle\Form;
 
-use MBLBundle\MBLBundle;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
-use MBLBundle\Entity\Competences;
-use MBLBundle\Entity\Dispo;
-use MBLBundle\Entity\ETQ;
-use MBLBundle\Entity\Invest;
-use MBLBundle\Entity\Metier;
-use MBLBundle\Entity\Ou;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use FOS\UserBundle\Util\LegacyFormHelper;
+
 
 
 
@@ -36,8 +30,8 @@ class RegistrationType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')
-
+        $builder
+            ->add('nom')
             ->add('prenom')
             ->add('lng', HiddenType::class, array(
                              'data' => $this->locale,
@@ -158,7 +152,21 @@ class RegistrationType extends AbstractType
                     'expanded'=> false,
                     'required' => false
 
-                ));
+                ))
+            ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array(
+                'label' => 'form.email',
+                'translation_domain' => 'FOSUserBundle',
+                'error_bubbling' => true
+                ))
+            ->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
+                'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
+                'options' => array('translation_domain' => 'FOSUserBundle'),
+                'first_options' => array('label' => 'form.password'),
+                'second_options' => array('label' => 'form.password_confirmation'),
+                'invalid_message' => 'fos_user.password.mismatch',
+                'error_bubbling' => true
+            ));
+
 
 
     }

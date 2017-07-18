@@ -6,6 +6,7 @@ Layout.html.twig
 {
   background-color:$Colorgrey;
 }
+
 .logotxt{
   height:60px;
   vertical-align: middle;
@@ -43,12 +44,18 @@ Layout.html.twig
   color: White;
 }
 
+.logotxt
+{
+  height: 60px;
+}
+
 .darkerBiz {
   font-size: 1.3em;
   font-weight: bold;
   padding-left: 30px;
   color: #FB5B57;
   text-decoration: none;
+  height: 60px;
 }
 .PP{
   display: none;
@@ -96,6 +103,12 @@ a .logoEbMenu  {
   color: #FB5B57;
   opacity: 0.9;
 }
+
+.lancerSmall {
+  font-size: 1em;
+  font-weight: bold !important;
+}
+
 .darkerTop:hover {
   color: $ColorDarkBlue;
 }
@@ -142,10 +155,6 @@ a .logoEbMenu:hover {
   color: #6f9ea8;
 }
 
-.dotCom {
-  color: black;
-  opacity: 0.5;
-}
 
 .BB:hover {
   box-shadow: inset 0 -2px 0 #FB5B57;
