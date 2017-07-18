@@ -113,25 +113,26 @@ a {
 
 /* line 116, ../sass/_global.scss */
 .photo_profil {
+  max-height: 7em;
   border-radius: 8px;
 }
 
-/* line 125, ../sass/_global.scss */
+/* line 127, ../sass/_global.scss */
 .info_profil {
   background: white;
 }
 
-/* line 130, ../sass/_global.scss */
+/* line 132, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 134, ../sass/_global.scss */
+/* line 136, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 137, ../sass/_global.scss */
+/* line 139, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
@@ -236,49 +237,45 @@ h6 {
     display: none;
   }
 }
-/* line 89, ../sass/_index.scss */
-#index .logodefault {
-  width: 90px;
-}
-/* line 92, ../sass/_index.scss */
+/* line 90, ../sass/_index.scss */
 #index .encarttof {
   padding-top: 10px;
 }
-/* line 95, ../sass/_index.scss */
+/* line 93, ../sass/_index.scss */
 #index .intitul {
   padding: 0;
 }
-/* line 98, ../sass/_index.scss */
+/* line 96, ../sass/_index.scss */
 #index .intitul h4 {
   margin-bottom: 10px;
   font-weight: bold;
 }
 @media only screen and (min-width: 993px) {
-  /* line 98, ../sass/_index.scss */
+  /* line 96, ../sass/_index.scss */
   #index .intitul h4 {
     font-size: 1.4em;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 98, ../sass/_index.scss */
+  /* line 96, ../sass/_index.scss */
   #index .intitul h4 {
     font-size: 1.4em;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 98, ../sass/_index.scss */
+  /* line 96, ../sass/_index.scss */
   #index .intitul h4 {
     font-size: 1.3em;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 111, ../sass/_index.scss */
+  /* line 109, ../sass/_index.scss */
   #index .vignette {
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 116, ../sass/_index.scss */
+  /* line 114, ../sass/_index.scss */
   #index .vignette1 {
     margin-bottom: 10;
   }

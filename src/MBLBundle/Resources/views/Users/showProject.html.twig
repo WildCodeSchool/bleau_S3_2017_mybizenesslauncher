@@ -78,6 +78,9 @@
 
 
                                     {% endfor %}
+                                    {% if pro['metier'] is empty %}
+                                        {{ 'Non renseigné'|trans }}
+                                    {% endif %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
@@ -94,6 +97,17 @@
 
                     </a>
                 {% endfor %}
+            </div>
+            <div class="row">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                    {% for i in range(1, nombrePage) %}
+
+                        <li class="active"><a href="{{ path('showProject', {'page':  i }) }}"> {{ i }}</a></li>
+
+                    {% endfor %}
+                    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                </ul>
             </div>
         </div>
     </div>
