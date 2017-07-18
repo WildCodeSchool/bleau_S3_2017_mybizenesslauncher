@@ -24,8 +24,10 @@ showMyProfil:
     defaults: { _controller: MBLBundle:User:showMyProfil }
 
 showAllProfils:
-    path: /showAllProfils
-    defaults: { _controller: MBLBundle:User:showAllProfils }
+    path: /showAllProfils/{page}
+    defaults:
+        _controller: MBLBundle:User:showAllProfils
+        page: null
 
 createProjet:
     path: /createProject

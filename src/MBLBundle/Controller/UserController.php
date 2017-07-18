@@ -124,24 +124,38 @@ class UserController extends Controller
             'profil' => $result,
         ));
     }
-    public function showAllProfilsAction(Request $request)
+    public function showAllProfilsAction(Request $request, $page)
     {
 
         $locale = $request->getLocale();
         $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType',null , array('locale' => $locale));
         $em = $this->getDoctrine()->getManager();
-        $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale);
+
+        if (is_null($page))
+        {
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 4, 1);
+            $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
+
+        }
+        else
+        {
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 4, $page);
+            $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
+        }
 
         if ($request->isMethod('POST'))
         {
             $idloc = $request->request->get('mblbundle_profil')['localisation'];
             $idmetier = $request->request->get('mblbundle_profil')['metier'];
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByVDeux($locale, $idloc, $idmetier);
+
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByVDeux($locale,4, $page, $idloc, $idmetier);
+            $nbProfils = count($profils);
         }
 
         return $this->render('@MBL/Users/showAllProfils.html.twig', array(
             'profils'=>$profils,
-            'form_localisation' => $form_loc->createView()//
+            'nombrePage' => ceil($nbProfils/4) ,
+            'form_localisation' => $form_loc->createView()
         ));
     }
 

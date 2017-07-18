@@ -1,6 +1,15 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>{{ 'Mon profil public'|trans }}</h2> {% endblock %}
+{% block titreH2 %} <h2>{% if app.user.id == profil.id %} }}
+        {{ 'Mon profil public'|trans }}
+    {% else %}
+        {{ 'Profil'|trans }}
+        {{ 'Prenom:'|trans }}
+        {{ profil.prenom|capitalize }}
+        {{ 'Nom:'|trans }}
+        {{ profil.nom|capitalize }}
+    {% endif %}</h2>
+{% endblock %}
 
 {% block body %}
     <div id="oneProfil">
