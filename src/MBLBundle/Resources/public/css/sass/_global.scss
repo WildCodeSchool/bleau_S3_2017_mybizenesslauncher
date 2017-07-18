@@ -25,7 +25,7 @@ html {
   }
 
 * {
-  text-align: justify;
+  //text-align: justify;
 }
 
 /*
@@ -101,7 +101,7 @@ a { color: inherit; }
   overflow: scroll;
   height: 16em;
   background: $ColorWhite;
-
+  margin-bottom: 10px;
 }
 .vignette {
   border-radius: $BorderRadius;

@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %}<h2>{{ projet.titre }}</h2>{% endblock %}
+{% block titreH2 %}<h2>{{ projet.titre|capitalize }}</h2>{% endblock %}
 
 {% block body %}
 
@@ -9,9 +9,7 @@
             <div class="row">
                 <div class="col s12 dateCreation">
                     <h6 id="dateCreation">{{ 'Projet créé le'|trans }} {{ projet.dateCreation|date('d-m-Y') }}</h6>
-                                    </div>
-                {#Caroussel#}
-
+                </div>
                 {#<div class="col s12 imgpro">#}
                 {#<img src="{{ asset('web/uploads/images/'~fichier.fichier) }}" class="responsive-img" alt="image"/>#}
                 {#</div>#}
@@ -156,140 +154,140 @@
 
 
 
-                    {#<div class="col s12 divform ">#}
-                    {#<a class="btn" href="{{ path('editProjet', {'id': projet.id }) }}">Editer</a>#}
-                    {#</div>#}
+                {#<div class="col s12 divform ">#}
+                {#<a class="btn" href="{{ path('editProjet', {'id': projet.id }) }}">Editer</a>#}
+                {#</div>#}
 
-                    {#Vignette profil du créateur du projet#}
+                {#Vignette profil du créateur du projet#}
 
-                    <div class="col s12 m6 cartepro">
-
-
-
-                        <div class="col s12 m12 titre">
-                            <h4 id="titre" class="center">{{ profil.prenom }} {{ profil.nom }}</h4>
-                            <p class="center darkgrey-text">({{ 'porteur du projet'|trans }})</p>
-                        </div>
-
-                        <div class="col s12 center imgPhoto">
-                            {% if profil.fichier is null %}
-                                <img class="responsive-img" src="{{ asset('uploads/images/595366915720d.jpeg') }}">
-                            {% else %}
-                                <img class="responsive-img" src="{{ asset('uploads/images/' ~ profil.fichier.photo ) }}">
-                            {% endif %}
-                        </div>
-
-                        <div class="row">
-                            <div class="col s6">
-                                <h6 class="center">{{ 'Métiers'|trans }}</h6>
-                                {% if profil.metier is same as(null) %}
-                                    <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
-                                {% else %}
-                                    <p class="center">{{ profil.metier.metier }}</p>
-                                {% endif %}
-                            </div>
-
-                            <div class="col s6">
-                                <h6 class="center">{{ 'Compétences'|trans }}</h6>
-                                {% if profil.competences is empty %}
-                                    <p class="center grey-text">{{ 'renseignez vos compétences'|trans }}</p>
-                                {% else %}
-
-                                    <p>{% for competences in profil.competences %} {{ competences.competence }} {% endfor %}</p>
-
-                                {% endif %}
-                            </div>
-                        </div>
+                <div class="col s12 m6 cartepro">
 
 
-                        <div class="col s12">
-                            <h6 class="center">{{ 'Description'|trans }}</h6>
-                            {% if profil.description is same as(null) %}
-                                <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
-                            {% else %}
-                                <p>{{ profil.description }}</p>
-                            {% endif %}
-                        </div>
-                        <div class="row">
 
-                            <div class="col s12 m6">
-                                <h6 class="center">{{ 'Investissement'|trans }}</h6>
-                                {% if profil.invest is same as(null) %}
-                                    <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
-                                {% else %}
-                                    <p class="center">{{ profil.invest.invest }}</p>
-                                {% endif %}
-                            </div>
+                    <div class="col s12 m12 titre">
+                        <h4 id="titre" class="center">{{ profil.prenom }} {{ profil.nom }}</h4>
+                        <p class="center darkgrey-text">({{ 'porteur du projet'|trans }})</p>
+                    </div>
 
-                            <div class="col s12 m6">
-                                <h6 class="center">{{ 'Statut'|trans }}</h6>
-                                {% if profil.etq is same as(null) %}
-                                    <p class="center grey-text">{{ 'renseignez votre status'|trans }}</p>
-                                {% else %}
-                                    <p class="center">{{ profil.etq.etq }}</p>
-                                {% endif %}
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                            <div class="col s12 m6">
-                                <h6 class="center">{{ 'Disponibilité'|trans }}</h6>
-                                {% if profil.dispo is same as(null) %}
-                                    <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
-                                {% else %}
-                                    <p class="center">{{ profil.dispo.dispo }}</p>
-                                {% endif %}
-                            </div>
-
-                            <div class="col s12 m6">
-                                <h6 class="center">{{ 'Mobilité'|trans }}</h6>
-                                {% if profil.ou is same as(null) %}
-                                    <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
-                                {% else %}
-
-                                    <p>{{ profil.ou.ou }}</p>
-
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="col s12 m6">
-                            <h6 class="center">{{ 'Domicile'|trans }}</h6>
-                            {% if profil.localisation is same as(null) %}
-                                <p class="center grey-text">{{ 'renseignez votre localisation'|trans }}</p>
-                            {% else %}
-                                <p>{{ profil.localisation }}</p>
-                            {% endif %}
-                        </div>
-
-
-                        <div class="col s12 m6">
-                            <h6 class="center">LinkedIn</h6>
-                            <img class="center responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
-                            {% if profil.linkedIn is same as(null) %}
-                                <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
-                            {% else %}
-                                <p>{{ profil.linkedIn }}</p>
-                            {% endif %}
-                        </div>
-                        {% if app.user.id is defined %}
-                            {% if app.user.id == profil.id %}
-                            {% else %}
-                                <div class="col s12 center">
-
-                                    <a class="btn grey" href="{{ path('chatConnect', {'id': profil.id}) }}">{{ 'Discuter'|trans }}</a>
-
-                                </div>
-                            {% endif %}
+                    <div class="col s12 center imgPhoto">
+                        {% if profil.fichier is null %}
+                            <img class="responsive-img" src="{{ asset('uploads/images/595366915720d.jpeg') }}">
+                        {% else %}
+                            <img class="responsive-img" src="{{ asset('uploads/images/' ~ profil.fichier.photo ) }}">
                         {% endif %}
+                    </div>
+
+                    <div class="row">
+                        <div class="col s6">
+                            <h6 class="center">{{ 'Métiers'|trans }}</h6>
+                            {% if profil.metier is same as(null) %}
+                                <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
+                            {% else %}
+                                <p class="center">{{ profil.metier.metier }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s6">
+                            <h6 class="center">{{ 'Compétences'|trans }}</h6>
+                            {% if profil.competences is empty %}
+                                <p class="center grey-text">{{ 'renseignez vos compétences'|trans }}</p>
+                            {% else %}
+
+                                <p>{% for competences in profil.competences %} {{ competences.competence }} {% endfor %}</p>
+
+                            {% endif %}
+                        </div>
+                    </div>
 
 
+                    <div class="col s12">
+                        <h6 class="center">{{ 'Description'|trans }}</h6>
+                        {% if profil.description is same as(null) %}
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
+                        {% else %}
+                            <p>{{ profil.description }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="row">
 
+                        <div class="col s12 m6">
+                            <h6 class="center">{{ 'Investissement'|trans }}</h6>
+                            {% if profil.invest is same as(null) %}
+                                <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
+                            {% else %}
+                                <p class="center">{{ profil.invest.invest }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s12 m6">
+                            <h6 class="center">{{ 'Statut'|trans }}</h6>
+                            {% if profil.etq is same as(null) %}
+                                <p class="center grey-text">{{ 'renseignez votre status'|trans }}</p>
+                            {% else %}
+                                <p class="center">{{ profil.etq.etq }}</p>
+                            {% endif %}
+                        </div>
 
                     </div>
+                    <div class="row">
+
+                        <div class="col s12 m6">
+                            <h6 class="center">{{ 'Disponibilité'|trans }}</h6>
+                            {% if profil.dispo is same as(null) %}
+                                <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
+                            {% else %}
+                                <p class="center">{{ profil.dispo.dispo }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="col s12 m6">
+                            <h6 class="center">{{ 'Mobilité'|trans }}</h6>
+                            {% if profil.ou is same as(null) %}
+                                <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
+                            {% else %}
+
+                                <p>{{ profil.ou.ou }}</p>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <h6 class="center">{{ 'Domicile'|trans }}</h6>
+                        {% if profil.localisation is same as(null) %}
+                            <p class="center grey-text">{{ 'renseignez votre localisation'|trans }}</p>
+                        {% else %}
+                            <p>{{ profil.localisation }}</p>
+                        {% endif %}
+                    </div>
+
+
+                    <div class="col s12 m6">
+                        <h6 class="center">LinkedIn</h6>
+                        <img class="center responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
+                        {% if profil.linkedIn is same as(null) %}
+                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
+                        {% else %}
+                            <p>{{ profil.linkedIn }}</p>
+                        {% endif %}
+                    </div>
+                    {% if app.user.id is defined %}
+                        {% if app.user.id == profil.id %}
+                        {% else %}
+                            <div class="col s12 center">
+
+                                <a class="btn grey" href="{{ path('chatConnect', {'id': profil.id}) }}">{{ 'Discuter'|trans }}</a>
+
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
+
+
+
                 </div>
             </div>
-
         </div>
+
     </div>
+
 {% endblock %}

@@ -12,39 +12,27 @@
 
                 {% for pro in projects %}
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s6 m3 l2 vignette_Myprojet  z-depth-5">
-                            <div class="row vignette ">
-                                <div class="col s12">
-                                    {#{{ dump(pro) }}#}
-
-                                    {% if pro.titre|length > 10 %}
-                                        <h4 class="center">{{ pro.titre|slice(0,8) ~ '...'  }}</h4>
-                                    {% else  %}
-                                        <h4 class="center">{{ pro.titre }}</h4>
-                                    {% endif %}
-
+                        <div class="col s6 m6 l5 vignette_Myprojet  z-depth-5">
+                            <div class="row vignettemypro ">
+                                <div class="col s12 intitul">
+                                    <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
                                 </div>
-                                <div class="col s8 offset-s2 center photo_profil">
-
+                                <div class="col s8 offset-s2 encarttof">
                                     {% if pro.fichier is empty %}
-                                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                        <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                     {% else %}
-                                        <img class="responsive-img imgvign" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                        <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                     {% endif %}
                                 </div>
                             </div>
                             <div class="row info_projet">
                                 <div class="col s12 center">
-
                                     <h6 class="center">{{ 'Type de projet'|trans }}</h6>
-
                                         {{ pro.typeDeProjet}}
-
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">
                                     <h6 class="center">{{ 'Profils recherchés'|trans }}</h6>
-
                                     {% for profil in pro.metier %}
                                         {% if profil.metier|length > 10 %}
                                             {% if loop.last %}
@@ -59,9 +47,7 @@
                                             {% else %}
                                                 {{ profil.metier }},
                                             {% endif %}
-
                                         {% endif %}
-
                                     {% endfor %}
                                     <div class="divider"></div>
                                 </div>
