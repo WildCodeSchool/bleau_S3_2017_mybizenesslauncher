@@ -161,10 +161,10 @@
                                     </div>
                                     <div class="col s8 offset-s2 encarttof">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img logodefault" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
                                             {# TODO: à verifier #}
-                                            <img class="responsive-img  logodefault" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>

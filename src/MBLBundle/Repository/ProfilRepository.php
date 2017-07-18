@@ -22,7 +22,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
             $qb = $this->createQueryBuilder('p');
             $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
                 ->join('p.metier', 'm')
-                ->addSelect('m.metier' . $locale . ' as metier')
                 ->where('m.id = :met')
                 ->setParameter('met', $idmetier)
                 ->andWhere('p.localisation = :loc')
@@ -42,7 +41,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
                 $qb = $this->createQueryBuilder('p');
                 $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
                     ->join('p.metier', 'm')
-                    ->addSelect('m.metier' . $locale . ' as metier')
                     ->where('m.id = :met')
                     ->setParameter('met', $idmetier)
                     ->andWhere('p.lng = :locale')
@@ -57,8 +55,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
             {
                 $qb = $this->createQueryBuilder('p');
                 $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
-                    ->join('p.metier', 'm')
-                    ->addSelect('m.metier' . $locale . ' as metier')
                     ->where('p.localisation = :loc')
                     ->setParameter('loc', $idloc)
                     ->andwhere('p.lng = :locale')
@@ -74,8 +70,6 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         {
             $qb = $this->createQueryBuilder('p');
             $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
-                ->join('p.metier', 'm')
-                ->addSelect('m.metier' . $locale . ' as metier')
                 ->where('p.lng = :locale')
                 ->setParameter('locale', $locale)
                 ->orderBy('p.id', 'DESC')
@@ -87,6 +81,12 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         }
         foreach ($profils as $key => $profil) {
 
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.metier', 'm')
+                ->select('m.metier' . $locale . ' as metier')
+                ->setParameter('id', $profil['id']);
+            $profils[$key]['metier'] = $qb->getQuery()->getOneOrNullResult();
 //            Get fichier si défini et si null
             $qb = $this->createQueryBuilder('p');
             $qb->where('p.id = :id')

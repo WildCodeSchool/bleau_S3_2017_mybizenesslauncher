@@ -12,7 +12,7 @@
 
                 {% for pro in projects %}
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s6 m3 l2 vignette_Myprojet  z-depth-5">
+                        <div class="col s12 m6 l4 offset-l1 vignette_Myprojet  z-depth-5">
                             <div class="row vignette ">
                                 <div class="col s12">
                                     {#{{ dump(pro) }}#}
@@ -27,9 +27,9 @@
                                 <div class="col s8 offset-s2 center photo_profil">
 
                                     {% if pro.fichier is empty %}
-                                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                                        <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                                     {% else %}
-                                        <img class="responsive-img imgvign" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                        <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                     {% endif %}
                                 </div>
                             </div>

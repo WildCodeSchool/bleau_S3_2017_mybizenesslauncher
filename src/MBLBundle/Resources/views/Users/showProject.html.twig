@@ -78,6 +78,9 @@
 
 
                                     {% endfor %}
+                                    {% if pro['metier'] is empty %}
+                                        {{ 'Non renseigné'|trans }}
+                                    {% endif %}
                                     <div class="divider"></div>
                                 </div>
                                 <div class="col s12">

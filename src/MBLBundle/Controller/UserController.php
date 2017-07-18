@@ -131,15 +131,15 @@ class UserController extends Controller
         $form_loc = $this->createForm('MBLBundle\Form\LocalisationProfilType',null , array('locale' => $locale));
         $em = $this->getDoctrine()->getManager();
 
-        if (is_null($page))
+        if ( $page >= 1)
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 12, 1);
-            $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
 
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 12, $page);
+            $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
         }
         else
         {
-            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 12, $page);
+            $profils = $em->getRepository('MBLBundle:Profil')->myfindByLocale($locale, 12, 1);
             $nbProfils =  $em->getRepository('MBLBundle:Profil')->countProfils($locale);
         }
 
@@ -147,7 +147,10 @@ class UserController extends Controller
         {
             $idloc = $request->request->get('mblbundle_profil')['localisation'];
             $idmetier = $request->request->get('mblbundle_profil')['metier'];
-
+            if (is_null($page))
+            {
+                $page = 1;
+            }
             $profils = $em->getRepository('MBLBundle:Profil')->myfindByVDeux($locale,12, $page, $idloc, $idmetier);
             $nbProfils = count($profils);
         }
@@ -336,14 +339,14 @@ class UserController extends Controller
 
         $form_secteur = $this->createForm('MBLBundle\Form\ProjetRechercheType', null, array('locale'=>$locale));
 
-        if (is_null($page))
+        if ( $page >= 1)
         {
-            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale, 12, 1);
+            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale, 12, $page);
             $nbProjects =  $em->getRepository('MBLBundle:Projet')->countProjects($locale);
         }
         else
         {
-            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale, 12, $page);
+            $projects = $em->getRepository('MBLBundle:Projet')->findAllDesc($locale, 12, 1);
             $nbProjects =  $em->getRepository('MBLBundle:Projet')->countProjects($locale);
         }
 
@@ -352,7 +355,10 @@ class UserController extends Controller
             $idSec = $request->request->get('mblbundle_projet')['secteur'];
             $idTyp = $request->request->get('mblbundle_projet')['typeDeProjet'];
             $Loc = $request->request->get('mblbundle_projet')['localisation']['localisation'];
-
+            if (is_null($page))
+            {
+                $page = 1;
+            }
             $projects = $em->getRepository('MBLBundle:Projet')->myfindProjetByVDeux($idSec, 12, $page, $idTyp, $Loc, $locale);
             $nbProjects = count($projects);
         }
