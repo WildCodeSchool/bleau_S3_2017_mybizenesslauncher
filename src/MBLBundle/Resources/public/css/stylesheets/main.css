@@ -1226,3 +1226,13 @@ chat.html.twig
   background-color: transparent;
   text-decoration: underline;
 }
+
+/* line 3, ../sass/_confirmationRegistration.scss */
+#redirect {
+  margin-top: 100px;
+  background-color: #98d4e1;
+}
+/* line 6, ../sass/_confirmationRegistration.scss */
+#redirect h2, #redirect span, #redirect i, #redirect h3 {
+  color: #4b494b;
+}
