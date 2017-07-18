@@ -236,6 +236,53 @@ h6 {
     display: none;
   }
 }
+/* line 89, ../sass/_index.scss */
+#index .logodefault {
+  width: 90px;
+}
+/* line 92, ../sass/_index.scss */
+#index .encarttof {
+  padding-top: 10px;
+}
+/* line 95, ../sass/_index.scss */
+#index .intitul {
+  padding: 0;
+}
+/* line 98, ../sass/_index.scss */
+#index .intitul h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 993px) {
+  /* line 98, ../sass/_index.scss */
+  #index .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* line 98, ../sass/_index.scss */
+  #index .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 98, ../sass/_index.scss */
+  #index .intitul h4 {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 111, ../sass/_index.scss */
+  #index .vignette {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 116, ../sass/_index.scss */
+  #index .vignette1 {
+    margin-bottom: 10;
+  }
+}
 
 /* 3. LAYOUT */
 /*
@@ -521,21 +568,68 @@ input, button {
 .showProjet .box_projet * {
   text-align: center;
 }
-/* line 15, ../sass/_showProject.scss */
+/* line 14, ../sass/_showProject.scss */
 .showProjet .btnfilter {
   padding-top: 30px;
   text-align: center;
   height: 100%;
 }
 @media only screen and (max-width: 600px) {
-  /* line 15, ../sass/_showProject.scss */
+  /* line 14, ../sass/_showProject.scss */
   .showProjet .btnfilter {
     padding-top: 0;
   }
 }
-/* line 24, ../sass/_showProject.scss */
+/* line 22, ../sass/_showProject.scss */
 .showProjet .center {
   background-color: #98d4e1;
+}
+/* line 25, ../sass/_showProject.scss */
+.showProjet .logodefault {
+  width: 90px;
+}
+/* line 28, ../sass/_showProject.scss */
+.showProjet .encarttof {
+  padding-top: 10px;
+}
+/* line 31, ../sass/_showProject.scss */
+.showProjet .intitul {
+  padding: 0;
+}
+/* line 34, ../sass/_showProject.scss */
+.showProjet .intitul h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 993px) {
+  /* line 34, ../sass/_showProject.scss */
+  .showProjet .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* line 34, ../sass/_showProject.scss */
+  .showProjet .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 34, ../sass/_showProject.scss */
+  .showProjet .intitul h4 {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 47, ../sass/_showProject.scss */
+  .showProjet .vignette {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 52, ../sass/_showProject.scss */
+  .showProjet .vignette1 {
+    margin-bottom: 10;
+  }
 }
 
 /* line 3, ../sass/_showMyProject.scss */
@@ -901,11 +995,11 @@ input, button {
 #showAllProfils {
   margin-top: 50px;
 }
-/* line 6, ../sass/_showAllProfils.scss */
+/* line 4, ../sass/_showAllProfils.scss */
 #showAllProfils .box_projet * {
   text-align: center;
 }
-/* line 11, ../sass/_showAllProfils.scss */
+/* line 7, ../sass/_showAllProfils.scss */
 #showAllProfils .vignette_profil_all {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -913,9 +1007,72 @@ input, button {
   height: 35em;
   max-width: 300px;
 }
-/* line 22, ../sass/_showAllProfils.scss */
+/* line 14, ../sass/_showAllProfils.scss */
 #showAllProfils .vignette_profil_all:hover {
   background-color: #4b494b;
+}
+/* line 17, ../sass/_showAllProfils.scss */
+#showAllProfils .logodefault {
+  width: 90px;
+}
+/* line 20, ../sass/_showAllProfils.scss */
+#showAllProfils .encarttof {
+  padding-top: 10px;
+}
+/* line 23, ../sass/_showAllProfils.scss */
+#showAllProfils .intitul {
+  padding: 0;
+}
+/* line 26, ../sass/_showAllProfils.scss */
+#showAllProfils .intitul h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 993px) {
+  /* line 26, ../sass/_showAllProfils.scss */
+  #showAllProfils .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* line 26, ../sass/_showAllProfils.scss */
+  #showAllProfils .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 26, ../sass/_showAllProfils.scss */
+  #showAllProfils .intitul h4 {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 39, ../sass/_showAllProfils.scss */
+  #showAllProfils .vignette {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 44, ../sass/_showAllProfils.scss */
+  #showAllProfils .vignette1 {
+    margin-bottom: 10;
+  }
+}
+/* line 49, ../sass/_showAllProfils.scss */
+#showAllProfils .btndiscuss {
+  background-color: gray;
+}
+/* line 52, ../sass/_showAllProfils.scss */
+#showAllProfils .btndiscuss:hover {
+  background-color: #98d4e1;
+}
+/* line 55, ../sass/_showAllProfils.scss */
+#showAllProfils .btnfilt {
+  padding-top: 30px;
+}
+/* line 58, ../sass/_showAllProfils.scss */
+#showAllProfils .btnfilterAllprofil {
+  background-color: #98d4e1;
 }
 
 /*

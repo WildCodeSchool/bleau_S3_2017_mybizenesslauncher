@@ -1,26 +1,61 @@
 @import "global";
 #showAllProfils {
-
   margin-top: 50px;
-
   .box_projet * {
     text-align: center;
-
-
   }
   .vignette_profil_all {
     background-color: $Colorblue;
     border-radius: $BorderRadius;
     margin-bottom: 10px;
     height: 35em;
-
-
     max-width: 300px;
-
-
   }
   .vignette_profil_all:hover {
     background-color: $ColorDarkGrey;
   }
+  .logodefault{
+    width: 90px;
+  }
+  .encarttof{
+    padding-top: 10px;
+  }
+  .intitul{
+    padding:0;
+  }
+  .intitul h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    @media #{$large-and-up}{
+      font-size: 1.4em;
+    }
+    @media #{$medium-and-down}{
+      font-size: 1.4em;
+    }
+    @media #{$small-and-down}{
+      font-size: 1.3em;
+    }
+  }
+  .vignette{
+    @media #{$small-and-down}{
+      margin-bottom: 0;
+    }
+  }
+  .vignette1{
+    @media #{$small-and-down}{
+      margin-bottom: 10;
+    }
+  }
+  .btndiscuss{
+    background-color: gray;
+  }
+  .btndiscuss:hover{
+    background-color: $Colorblue;
+  }
+  .btnfilt{
+    padding-top:30px;
+  }
+  .btnfilterAllprofil{
+    background-color: $Colorblue;  }
 
 }
