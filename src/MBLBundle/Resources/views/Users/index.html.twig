@@ -173,6 +173,8 @@
                                         <h6>{{ 'Profil'|trans}}</h6>
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
+                                            {% else %}
+                                            {{ 'Non renseigné'|trans }}
                                         {% endif %}
 
                                         <div class="divider"></div>
@@ -186,6 +188,9 @@
                                                 {{ comp.competence}},
                                             {% endif %}
                                         {% endfor %}
+                                        {% if pro.competences is empty %}
+                                            {{ 'Non renseigné'|trans }}
+                                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
@@ -193,13 +198,18 @@
                                         {% if pro.localisation and pro.ville is defined %}
                                             <p>{{ pro.localisation }}, {{ pro.ville }}</p>
                                         {% else %}
+                                            {{ 'Non renseigné'|trans }}
                                         {% endif %}
 
                                         <div class="divider"></div>
                                     </div>
                                     <div class="col s12">
                                         <h6>{{ 'Description'|trans}}</h6>
+                                        {% if pro.descritpion is defined %}
                                         <p>{{ pro.description }}</p>
+                    {% else %}
+                        {{ 'Non renseigné'|trans }}
+                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                 </div>
