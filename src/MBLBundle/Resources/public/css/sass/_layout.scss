@@ -144,12 +144,12 @@ a .logoEbMenu:hover {
   }
 }
 .PP {
-  display: none;
-  @media #{$medium-and-down} {
-    display: inline;
-    margin:0;
-    padding: 0;
-  }
+  //display: none;
+  //@media #{$medium-and-down} {
+  //  display: inline;
+  //  margin:0;
+  //  padding: 0;
+  //}
   @media #{$small-and-down} {
     display: none;
   }
