@@ -28,15 +28,17 @@
             <div class="nav-wrapper header">
                 <a class="color darkerBiz" href="{{ path('mbl_homepage') }}"><img class="logotxt"
                     src="{{ asset('bundles/mbl/img/logoinnovauptxt.png') }}"></a>
-                {#Vincent a supprimé sur img: hide-on-large-only hide-on-small-only#}
                 <a class="tooltipped" data-position="bottom" data-delay="50"
                    data-tooltip="{{ 'index.description.ebusta'|trans }}" href="https://www.e-busta.com/">
-                    <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                    <img class="responsive-img logoEbMenu hide-on-large-only hide-on-small-only" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                 </a>
                 <a class="tooltipped hide-on-small-only hide-on-large-only lancer" data-position="bottom" data-delay="50"
                    data-tooltip="{{ 'Trouve sur MyStartupTools.com'|trans }}
                             {{ 'Tous les outils pour t’aider à lancer ton activité'|trans }}"
                    href="#">{{ 'Se lancer'|trans }}</a>
+
+
+{#------------------------------------------------------#}
                 <a href="#" data-activates="mobile-demo"
                    class="button-collapse right"><i class="color material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
@@ -49,7 +51,7 @@
                     <li><a class="color dropdown-button" href="#!" data-activates="dropdown1">
                             <i class="right">{{ 'Mon compte'|trans }} {{ render(controller('MBLBundle:User:countViews')) }}</i></a></li>
                 </ul>
-                <ul class="right hide-on-large-only show-on-medium">
+                <ul class="right hide-on-large-only">
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
                            data-tooltip="{{ 'Pour les porteurs de projet'|trans }} {{ 'index.description.but'|trans }}"
                            href="{{ path('showProject') }}">{{ 'Projet'|trans }}</a></li>
@@ -59,9 +61,10 @@
                            href="{{path('showAllProfils')}}">{{ 'Profil'|trans }}</a></li>
                 </ul>
 
+{#______________________________________#}
+
                 <a href="#" data-activates="mobile-demo"
-                       class="button-collapse right hide-on-med-and-up">
-                        <i class="color material-icons">menu</i></a>
+                       class="button-collapse right hide-on-med-and-down"><i class="color material-icons">menu</i></a>
                 <ul class="side-nav" id="mobile-demo">
                     <li class="divider"></li>
                     <li><a class="color" href="#">{{ 'Bonjour'|trans }}  {{app.user.prenom}}
@@ -74,7 +77,8 @@
                     <li><a class="color" href="{{ path('showMyProject') }}">{{ 'Gérer mes projets'|trans }}</a></li>
                     <li><a class="color" href="{{ path('connect') }}">{{ 'Mes discussions'|trans }}
                             {{ render(controller('MBLBundle:User:countViews')) }}</a></li>
-                    <li><a class="tooltipped hide-on-med-and-up lancerSmall"
+                    <li class="divider hide-on-med-only"></li>
+                    <li><a class="tooltipped hide-on-med-and-up darkerTop lancerSmall"
                            data-position="bottom" data-delay="50" data-tooltip="Trouve sur MyStartupTools.com
                             tous les outils pour t’aider à lancer ton activité." href="#">{{ 'Outils pour se lancer'|trans }}</a></li>
                     <li><a class="tooltipped color darkerTop lancerSmall hide-on-med-and-up" data-position="bottom"
@@ -86,11 +90,12 @@
                             collecté sera appliquée, faisant de E-busta le site de
                             Crowdfunding le moins cher du marché." href="https://www.e-busta.com/">
                             {{ 'Finance ton projet'|trans }}</a></li>
-                    <li>
-                    {#<li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{ path('showProject') }}">#}
-                            {#{{ 'Parcourir les projets'|trans }} </a></li>#}
-                    {#<li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{path('showAllProfils')}}">#}
-                            {#{{ 'Parcourir les profils'|trans }}</a></li>#}
+                    <li class="divider"></li>
+                    <li><a class="color darkerTop show-on-medium-and-down lancerSmall" href="{{ path('showProject') }}">
+                            {{ 'Parcourir les projets'|trans }} </a></li>
+                    <li><a class="color darkerTop show-on-medium-and-down lancerSmall" href="{{path('showAllProfils')}}">
+                            {{ 'Parcourir les profils'|trans }}</a></li>
+                    <li class="divider"></li>
                     <li><a class="color" href="{{ path('fos_user_security_logout') }}">{{ 'Log out'|trans }}</a></li>
                 </ul>
             </div>
@@ -104,9 +109,7 @@
                 <a class="tooltipped" data-position="bottom"
                    data-delay="50" data-tooltip="{{ 'index.description.ebusta'|trans }}"
                    href="https://www.e-busta.com/">
-
-                    {#Vincent a supprimé sur img: hide-on-small-only#}
-                    <img class="responsive-img logoEbMenu" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                    <img class="responsive-img logoEbMenu hide-on-small-only" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
                 </a>
                 <a class="tooltipped lancer" data-position="bottom" data-delay="50"
                    data-tooltip="{{ 'Trouve sur MyStartupTools.com'|trans }}
@@ -117,7 +120,7 @@
                             {{ 'Parcourir les projets'|trans }}</a></li>
                     <li><a class="color darkerTop" href="{{path('showAllProfils')}}">
                             {{ 'Parcourir les profils'|trans }}</a></li>
-                    <li><a class="color connexion" href=#modal1> {{ 'Connexion'|trans }}</a></li>
+                    <li><a class="color connexion" href=#modal1> {{ 'Connectez-vous'|trans }}</a></li>
                 </ul>
                 <ul class="right PP hide-on-small-and-down">
                     <li><a class="color darkerTop tooltipped BB" data-position="bottom" data-delay="50"
@@ -132,9 +135,10 @@
                 </ul>
 
 {#Burger menu for small devices and non logged users#}
-
+                
+{#METTRE BURGER EN MOYEN AVEC PROJETS ET PROFILS#}
                 <a href="#" data-activates="mobile-demo"
-                   class="button-collapse right show-on-small hide-on-med-and-up">
+                   class="button-collapse right hide-on-med-and-up">
                     <i class="color material-icons">menu</i>
                 </a>
                 <ul class="side-nav" id="mobile-demo">
@@ -143,9 +147,7 @@
                            data-delay="50" data-tooltip="{{ 'Trouve sur MyStartupTools.com'|trans }}
                             {{ 'Tous les outils pour t’aider à lancer ton activité'|trans }}"
                     href="#">{{ 'Outils pour se lancer'|trans }}</a></li>
-
-                    {#Vincent a supprimé lancerSmall sur "a"#}
-                    <li><a class="tooltipped color darkerTop show-on-medium" data-position="bottom"
+                    <li><a class="tooltipped color darkerTop show-on-medium lancerSmall" data-position="bottom"
                        data-delay="50"
                        data-tooltip="{{ 'index.description.ebusta'|trans }}" href="https://www.e-busta.com/">
                         {{ 'Finance ton projet'|trans }}</a></li>
@@ -153,7 +155,7 @@
                             {{ 'Parcourir les projets'|trans }} </a></li>
                     <li><a class="color darkerTop show-on-small hide-on-med-and-up" href="{{path('showAllProfils')}}">
                             {{ 'Parcourir les profils'|trans }}</a></li>
-                    <li><a class="color" href=#modal1>{{ 'Connexion'|trans }}</a>
+                    <li><a class="color" href=#modal1>{{ 'Connectez-vous'|trans }}</a>
                 </ul>
             </div>
         </nav>
