@@ -7,7 +7,7 @@
 <!--Bandeau de la homepage -->
 <div id="index">
     <div class="row">
-        <div class="col s12 bandeau_homepage ">
+        <div class="col s12 bandeau_homepage">
             <div class="col l4 presentation ">
                 <div class="col m6 l12">
                     <h2>{{ 'Pour les porteurs de projet'|trans }}<br/></h2>
@@ -62,7 +62,7 @@
                         <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row vignette_projet_row ">
                     {% for pro in projet %}
 
                         <a href="{{ path('showOneProject', {'id': pro.id}) }}">
@@ -160,7 +160,7 @@
                             <div class="col s12 m6 l5 offset-l1 vignette_profil z-depth-5">
                                 <div class="row vignette1 ">
                                     <div class="col s12 intitul">
-                                            <h4>{{ pro.prenom|capitalize|slice(0,15)}} {{ pro.nom|slice(0,1) }}.</h4>
+                                        <h4>{{ pro.prenom|capitalize|slice(0,15)}} {{ pro.nom|slice(0,1) }}.</h4>
                                     </div>
                                     <div class="col s8 offset-s2 encarttof">
                                         {% if pro.fichier is empty %}
@@ -176,7 +176,7 @@
                                         <h6>{{ 'Profil'|trans}}</h6>
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
-                                            {% else %}
+                                        {% else %}
                                             {{ 'Non renseigné'|trans }}
                                         {% endif %}
 
@@ -209,10 +209,10 @@
                                     <div class="col s12">
                                         <h6>{{ 'Description'|trans}}</h6>
                                         {% if pro.descritpion is defined %}
-                                        <p>{{ pro.description }}</p>
-                    {% else %}
-                        {{ 'Non renseigné'|trans }}
-                        {% endif %}
+                                            <p>{{ pro.description }}</p>
+                                        {% else %}
+                                            {{ 'Non renseigné'|trans }}
+                                        {% endif %}
                                         <div class="divider"></div>
                                     </div>
                                 </div>

@@ -33,6 +33,10 @@ Layout.html.twig
   color: White;
   text-align: center;
   padding-top: 5px;
+  @media #{$small-and-down} {
+    display: none;
+
+  }
 }
 
 .color

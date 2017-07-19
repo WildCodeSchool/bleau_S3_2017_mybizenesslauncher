@@ -72,10 +72,12 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-
   min-width: 200px;
   max-width: 300px;
 
+}
+.vignette_projet_row{
+  left: 30%;
 }
 .vignette_projet:hover {
  background-color: $Colorblue;
@@ -102,6 +104,16 @@ a { color: inherit; }
   height: 16em;
   background: $ColorWhite;
 
+}
+.bandeau_homepage {
+  width: 100%;
+  margin: 0;
+  background: $Colorblue;
+  color: $ColorWhite;
+  @media #{$small-and-down} {
+    display: none;
+
+  }
 }
 .vignette {
   border-radius: $BorderRadius;

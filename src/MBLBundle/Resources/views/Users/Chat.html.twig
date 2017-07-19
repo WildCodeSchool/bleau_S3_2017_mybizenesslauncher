@@ -4,7 +4,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
-{% block titreH2 %}<h2>{{ 'Chat avec'|trans }}{#la personne avec qui vous voulez parler#}
+{% block titreH2 %}<h2 class="bandeau_homepage">{{ 'Chat avec'|trans }}{#la personne avec qui vous voulez parler#}
     {% for profil in chat.profils %}
         {% if profil == app.user %}
         {% else %}
