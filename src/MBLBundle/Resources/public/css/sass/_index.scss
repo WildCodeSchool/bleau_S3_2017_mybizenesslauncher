@@ -78,6 +78,10 @@
   .logoEb {
     max-width: 200px;
     height: auto;
+    @media screen and (min-width: 900px) and (max-width: 1345px) {
+      max-width: 150px;
+      height: auto;
+    }
     @media #{$medium-and-down} {
       display: none;
     }
