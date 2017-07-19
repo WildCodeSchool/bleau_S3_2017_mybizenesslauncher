@@ -62,12 +62,11 @@
                         <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>
                     </div>
                 </div>
-                <div class="row vignette_projet_row ">
+                <div class="row">
                     {% for pro in projet %}
-
                         <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                            <div class="col s12 m6 l5 offset-l1 vignette_projet  z-depth-5">
-                                <div class="row vignette ">
+                            <div class="col s12 m6 l5 offset-l1 z-depth-5">
+                                <div class="row vignette">
                                     <div class="col s12 intitul">
                                         <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
                                     </div>
