@@ -1,7 +1,6 @@
 @import 'global';
 #index {
 
-
     h2 {
       font-size: 1.5em;
     }
@@ -29,6 +28,8 @@
     background-color: $ColorWhite;
     color: $Colorblue;
     font-size: 0.9rem;
+    min-width: 150px;
+    max-width: 300px;
     box-shadow: $BoxShadow;
     height: 50px;
     padding: 7px;
