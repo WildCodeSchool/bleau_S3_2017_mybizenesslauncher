@@ -36,7 +36,10 @@
   .btn_bandeau_homepage {
     background-color: $ColorWhite;
     color: $Colorblue;
+    font-size: 0.9rem;
     box-shadow: $BoxShadow;
+    height: 50px;
+    padding: 7px;
     &:hover {
       background-color: $Colorgrey;
       color: #6f9ea8;
@@ -44,7 +47,6 @@
     &:focus {
       background-color: $Colorgrey;
     }
-
     @media #{$medium-and-down} {
     display:none;
     }
