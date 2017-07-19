@@ -158,10 +158,6 @@ class Text
     {
         return $this->chats;
     }
-    /**
-     * @var integer
-     */
-    private $seen;
 
 
     /**
@@ -187,4 +183,10 @@ class Text
     {
         return $this->seen;
     }
+    /**
+     * @var integer
+     */
+    private $seen;
+
+
 }
