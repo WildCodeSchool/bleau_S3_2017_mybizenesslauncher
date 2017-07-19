@@ -1,14 +1,24 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>{% if app.user.id == profil.id %} }}
-        {{ 'Mon profil public'|trans }}
+{% block titreH2 %} <h2>
+    {% if app.user.id is defined %}
+        {% if app.user.id == profil.id %} }}
+            {{ 'Mon profil public'|trans }}
+        {% else %}
+            {{ 'Profil'|trans }}
+            {{ 'Prenom:'|trans }}
+            {{ profil.prenom|capitalize }}
+            {{ 'Nom:'|trans }}
+            {{ profil.nom|capitalize }}
+        {% endif %}</h2>
     {% else %}
         {{ 'Profil'|trans }}
         {{ 'Prenom:'|trans }}
         {{ profil.prenom|capitalize }}
         {{ 'Nom:'|trans }}
         {{ profil.nom|capitalize }}
-    {% endif %}</h2>
+    {% endif %}
+
 {% endblock %}
 
 {% block body %}
@@ -126,7 +136,7 @@
                         {% if app.user.id == profil.id %}
                         {% else %}
                             <div class="col s12 center">
-                               <a class="btn grey" href="{{ path('chatConnect', {'id': profil.id}) }}">{{ 'Discuter'|trans }}</a>
+                                <a class="btn grey" href="{{ path('chatConnect', {'id': profil.id}) }}">{{ 'Discuter'|trans }}</a>
                             </div>
                         {% endif %}
                     {% endif %}
