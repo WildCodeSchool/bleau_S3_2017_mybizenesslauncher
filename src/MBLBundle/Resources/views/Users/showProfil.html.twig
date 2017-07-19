@@ -1,6 +1,6 @@
 {% extends '@MBL/layout.html.twig' %}
 
-{% block titreH2 %} <h2>
+{% block titreH2 %} <h2 class="bandeau_homepage">
     {% if app.user.id is defined %}
         {% if app.user.id == profil.id %} }}
             {{ 'Mon profil public'|trans }}
@@ -10,7 +10,7 @@
             {{ profil.prenom|capitalize }}
             {{ 'Nom:'|trans }}
             {{ profil.nom|capitalize }}
-        {% endif %}</h2>
+        {% endif %}
     {% else %}
         {{ 'Profil'|trans }}
         {{ 'Prenom:'|trans }}
@@ -18,7 +18,7 @@
         {{ 'Nom:'|trans }}
         {{ profil.nom|capitalize }}
     {% endif %}
-
+    </h2>
 {% endblock %}
 
 {% block body %}
