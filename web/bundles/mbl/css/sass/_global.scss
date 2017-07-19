@@ -1,0 +1,143 @@
+/*
+Variable globale
+
+CONSTANTE
+*/
+$Colorblue : #98d4e1;
+$Colorgrey : #f0f0f0;
+$ColorDarkGrey: #4b494b;
+$ColorDarkBlue: #6f9ea8;
+$ColorWhite : white;
+$BoxShadow: 2px 2px 3px grey;
+$BorderRadius : 8px;
+$small-and-down: "only screen and (max-width : 600px)";
+$medium-and-down: "only screen and (max-width : 992px)";
+$large-and-up: "only screen and (min-width : 993px)";
+$lar: "only screen and (max-width : 1228px)";
+
+
+/*
+Font
+*/
+//FONT Helvetica: https://www.fontify.me/webfont/36452/helvetica
+html {
+  font-family: font36452;
+  }
+
+* {
+  //text-align: justify;
+}
+
+/*
+Variable globale
+
+BALISE
+*/
+
+h1
+{
+  font-size: 1.5em;
+  color: white;
+}
+h3 {
+  font-size : 1.5em;
+}
+/*
+  Condition pour color font H2
+@function colorH2($bkgColor) {
+  $colorH2: '';
+
+  @if ($bkgColor == 'bleu') {
+    $colorH2: white;
+  } @else if ($bkgColor == 'gris') {
+    $colorH2: black;
+  }
+  @return $colorH2;
+*/
+h2
+{
+  color:$ColorWhite;
+  text-align: center;
+}
+body{
+  background-color: $Colorgrey;
+}
+
+
+a { color: inherit; }
+//Vignettes
+
+.vignette_projet {
+  background-color: $ColorDarkGrey;
+  border-radius: $BorderRadius;
+  margin-bottom: 10px;
+  height: 30em;
+
+  min-width: 200px;
+  max-width: 300px;
+
+}
+.vignette_projet:hover {
+ background-color: $Colorblue;
+
+}
+.vignette_profil {
+  background-color: $Colorblue;
+  border-radius: $BorderRadius;
+  margin-bottom: 10px;
+  height: 30em;
+
+
+  max-width: 300px;
+
+  min-width: 200px;
+
+}
+.vignette_profil:hover {
+  background-color: $ColorDarkGrey;
+}
+.info_projet {
+  border-radius: $BorderRadius;
+  overflow: scroll;
+  height: 16em;
+  background: $ColorWhite;
+  margin-bottom: 10px;
+}
+.vignette {
+  border-radius: $BorderRadius;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.photo_profil {
+  border-radius: $BorderRadius;
+
+}
+//.photo_profil img {
+//  height: 7em;
+//  max-width: 120px;
+//  max-height: 100px;
+//}
+.info_profil {
+  background: $ColorWhite;
+  //margin-bottom: 10px;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+.select-dropdown {
+  border-radius: 10px;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+  color: $ColorDarkGrey;
+}
+
+
+
+
