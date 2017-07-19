@@ -67,18 +67,21 @@ a {
   border-radius: 8px;
   margin-bottom: 10px;
   height: 30em;
-  margin-left: auto;
-  margin-right: auto;
   min-width: 200px;
   max-width: 300px;
 }
 
-/* line 84, ../sass/_global.scss */
+/* line 79, ../sass/_global.scss */
+.vignette_projet_row {
+  left: 30%;
+}
+
+/* line 82, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 88, ../sass/_global.scss */
+/* line 86, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -88,12 +91,12 @@ a {
   min-width: 200px;
 }
 
-/* line 100, ../sass/_global.scss */
+/* line 98, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 103, ../sass/_global.scss */
+/* line 101, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
@@ -101,7 +104,7 @@ a {
   background: white;
 }
 
-/* line 110, ../sass/_global.scss */
+/* line 108, ../sass/_global.scss */
 .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -109,13 +112,13 @@ a {
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 110, ../sass/_global.scss */
+  /* line 108, ../sass/_global.scss */
   .bandeau_homepage {
     display: none;
   }
 }
 
-/* line 120, ../sass/_global.scss */
+/* line 118, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -127,28 +130,28 @@ a {
   hyphens: auto;
 }
 
-/* line 130, ../sass/_global.scss */
+/* line 128, ../sass/_global.scss */
 .photo_profil {
   max-height: 7em;
   border-radius: 8px;
 }
 
-/* line 141, ../sass/_global.scss */
+/* line 139, ../sass/_global.scss */
 .info_profil {
   background: white;
 }
 
-/* line 146, ../sass/_global.scss */
+/* line 144, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 150, ../sass/_global.scss */
+/* line 148, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 153, ../sass/_global.scss */
+/* line 151, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }

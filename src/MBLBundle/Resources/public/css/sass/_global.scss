@@ -72,15 +72,13 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-margin-left: auto;
-  margin-right: auto;
   min-width: 200px;
   max-width: 300px;
 
 }
-//.vignette_projet_row{
-//  margin: auto;
-//}
+.vignette_projet_row{
+  left: 30%;
+}
 .vignette_projet:hover {
  background-color: $Colorblue;
 
