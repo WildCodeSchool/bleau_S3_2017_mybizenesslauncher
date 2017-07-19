@@ -585,10 +585,6 @@ input, button {
   text-align: center;
   height: 100px;
 }
-/* line 17, ../sass/_userHomepage.scss */
-#homepage .btnlink1 {
-  margin-bottom: 40px;
-}
 /* line 21, ../sass/_userHomepage.scss */
 #homepage .btn {
   background-color: #98d4e1;
