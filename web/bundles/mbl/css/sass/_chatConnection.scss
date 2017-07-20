@@ -1,0 +1,67 @@
+@import 'global';
+/*
+chat.html.twig
+*/
+#chat_connection {
+  margin-top: 50px;
+
+  .connected
+  {
+    margin-top: 15px;
+    color: black;
+    border: 1px solid #c8c8c8;
+    border-radius: 10px;
+
+  }
+  .Nom_prenom p
+  {
+    margin-left: 50px;
+    color: $ColorDarkGrey;
+    font-size: 1.2em;
+  }
+  .image img
+  {
+    height: 80px;
+
+  }
+  .btnfilterAllprofil{
+    background-color: $Colorblue;  }
+
+  //#new-text {
+  //  height: 70vh;
+  //  width: 80%;
+  //  position: absolute;
+  //  left: 20%;
+  //  margin: 0;
+  //  padding: 0;
+  //  top: 10vh;
+  //  overflow-y: scroll;
+  //}
+
+  //#textarea {
+  //  position: absolute;
+  //  height: 20vh;
+  //  width: 80%;
+  //  bottom: 0px;
+  //  left: 20%;
+  //  margin: 0;
+  //  padding: 0;
+  //  background: #f8f8f8;
+  //}
+  //
+
+  .group-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #c8c8c8;
+
+  }
+  //
+  //p, i {
+  //  color: #333;
+  //  margin: 0;
+  //  width: 100%;
+  //  word-break: break-all;
+  //}
+}
+

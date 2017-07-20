@@ -1,0 +1,239 @@
+@import 'global';
+/*
+Layout.html.twig
+*/
+.header
+{
+  background-color:$Colorgrey;
+}
+
+.logotxt {
+  height:60px;
+  vertical-align: middle;
+  @media #{$medium-and-down} {
+   height: 45px;
+  }
+  @media #{$small-and-down} {
+    height: 30px;
+  }
+}
+
+.page-footer
+{
+  background-color:$ColorDarkGrey;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.bandeau
+{
+  height: 120px;
+  background-color: $Colorblue;
+  color: White;
+  vertical-align: middle;
+  padding-top: 5px;
+  @media #{$small-and-down} {
+    display: none;
+
+  }
+}
+
+.color
+{
+  color: $Colorblue;
+}
+.bandeauH2
+{
+  color: White;
+}
+
+.darkerBiz {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-left: 30px;
+  color: #FB5B57;
+  text-decoration: none;
+}
+
+a .logoEbMenu  {
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    max-height: 35px;
+    vertical-align: middle;
+    margin-left: 20px;
+    opacity: 0.5;
+  }
+}
+
+.lancer {
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    font-size: 1em;
+    font-weight: bold;
+    color: $Colorblue;
+    margin: 0 0 0 5px;
+    padding-right: 0px;
+  }
+  @media #{$small-and-down} {
+    display: none;
+  }
+}
+.lancer:hover {
+  color: #6f9ea8;
+  font-size: 1.1em;
+}
+
+.darkerBiz:hover {
+  color: #FB5B57;
+  opacity: 0.9;
+}
+
+.lancerSmall {
+  font-size: 1em;
+  font-weight: bold !important;
+}
+
+.darkerTop:hover {
+  color: $ColorDarkBlue;
+}
+
+.dropdown-content li > a {
+    color: $ColorDarkGrey;
+  }
+
+a .logoEbMenu:hover {
+  display: none;
+  @media #{$medium-and-down} {
+    display: inline;
+    max-height: 35px;
+    vertical-align: middle !important;
+    margin-left: 20px;
+    opacity: 0.8;
+  }
+}
+
+.material-icons {
+  display: inline !important;
+  vertical-align: middle !important;
+  margin-left: 20px;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-grey, .md-euro {
+  font-size: 24px;
+  @media #{$medium-and-down} {
+    color: $ColorDarkGrey;
+  }
+  @media #{$large-and-up} {
+    display: none !important;
+  }
+}
+
+.material-icons.md-grey:hover, .md-euro:hover {
+  color: #6f9ea8;
+}
+
+.BB {
+  @media #{$medium-and-down} {
+    display: none;
+  }
+}
+.PP {
+  //display: none;
+  //@media #{$medium-and-down} {
+  //  display: inline;
+  //  margin:0;
+  //  padding: 0;
+  //}
+  @media #{$small-and-down} {
+    display: none;
+  }
+}
+.BB:hover {
+  box-shadow: inset 0 -2px 0 #FB5B57;
+}
+
+.modal {
+  .tabs {
+    margin : 0;
+    padding: 0;
+    background-color: $Colorblue;
+    }
+    .tab a {
+    color : grey;
+    }
+    .tab a:hover{
+      color: $ColorDarkGrey;
+    }
+    .tab a.active {
+      color: $ColorDarkGrey;
+    }
+  .tabs .indicator {
+    background-color : $ColorDarkGrey;
+  }
+}
+
+#Connexion, #register {
+  margin-top: 25px;
+}
+
+.remember {
+  margin-top: 10px;
+}
+
+[type="checkbox"]:checked+label:before {
+
+  border-right: 2px solid $ColorDarkGrey;
+  border-bottom: 2px solid $ColorDarkGrey;
+}
+
+.submitRegister {
+  margin-top: 55px;
+}
+
+.moreRegisterHidden {
+  display: none;
+}
+
+.moreRegister {
+  margin-top: 25px;
+}
+
+textarea #fos_user_registration_form_description {
+  height: 10em;
+}
+
+#fos_user_registration_form_description  {
+  border: 1.5px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+input, button {
+  border: 1.5px solid lightgray !important;
+  border-radius: 10px !important;
+  outline: none;
+}
+
+#login .btn, #register .btn {
+  background: $Colorblue !important;
+}
+
+#username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus  {
+  border: 1.5px solid $Colorblue !important;
+  border-radius: 10px;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+
