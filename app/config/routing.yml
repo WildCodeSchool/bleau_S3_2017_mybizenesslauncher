@@ -1,11 +1,12 @@
-
-
 mbl:
     resource: "@MBLBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/
     requirements:
         _locale: it|fr|
        #        _locale: fr|it
+
+user_bundle:
+    resource: "@UserBundle/Resources/config/routing.yml"
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

@@ -17,11 +17,6 @@ html {
   font-family: font36452;
 }
 
-/* line 32, ../sass/_global.scss */
-* {
-  text-align: justify;
-}
-
 /*
 Variable globale
 
@@ -107,6 +102,7 @@ a {
   overflow: scroll;
   height: 16em;
   background: white;
+  margin-bottom: 10px;
 }
 
 /* line 113, ../sass/_global.scss */
@@ -694,12 +690,6 @@ input, button {
     margin-bottom: 0;
   }
 }
-@media only screen and (max-width: 600px) {
-  /* line 52, ../sass/_showProject.scss */
-  .showProjet .vignette1 {
-    margin-bottom: 10;
-  }
-}
 
 /* line 3, ../sass/_showMyProject.scss */
 #showMyProjet {
@@ -712,6 +702,7 @@ input, button {
   margin-bottom: 10px;
   height: 37em;
   max-width: 300px;
+  min-width: 280px;
 }
 /* line 13, ../sass/_showMyProject.scss */
 #showMyProjet .vignette_Myprojet:hover {
@@ -721,24 +712,61 @@ input, button {
 #showMyProjet .imgvign {
   padding-top: 6px;
 }
-
 /* line 21, ../sass/_showMyProject.scss */
-.divform .btn {
+#showMyProjet .divform .btn {
   margin-top: 1px;
   width: 100%;
 }
 /* line 25, ../sass/_showMyProject.scss */
-.divform .btmodif {
+#showMyProjet .divform .btmodif {
   background-color: #98d4e1;
 }
 /* line 28, ../sass/_showMyProject.scss */
-.divform .btdelete {
+#showMyProjet .divform .btdelete {
   background-color: #98d4e1;
   margin-bottom: 5px;
 }
 /* line 32, ../sass/_showMyProject.scss */
-.divform a:hover {
+#showMyProjet .divform a:hover {
   background-color: #4b494b;
+}
+/* line 37, ../sass/_showMyProject.scss */
+#showMyProjet .encarttof {
+  padding-top: 10px;
+}
+/* line 40, ../sass/_showMyProject.scss */
+#showMyProjet .intitul {
+  padding: 0;
+  text-align: center;
+}
+/* line 44, ../sass/_showMyProject.scss */
+#showMyProjet .intitul h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 993px) {
+  /* line 44, ../sass/_showMyProject.scss */
+  #showMyProjet .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* line 44, ../sass/_showMyProject.scss */
+  #showMyProjet .intitul h4 {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 44, ../sass/_showMyProject.scss */
+  #showMyProjet .intitul h4 {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 57, ../sass/_showMyProject.scss */
+  #showMyProjet .vignettemypro {
+    margin-bottom: 0;
+  }
 }
 
 /* line 4, ../sass/_registration.scss */
@@ -864,11 +892,11 @@ input, button {
 }
 
 /* line 2, ../sass/_formCreatePro.scss */
-#formCreatePro {
+#createProjet {
   margin-top: 50px;
 }
 /* line 6, ../sass/_formCreatePro.scss */
-#formCreatePro .vignette_projet_profilAdd {
+#createProjet .vignette_projet_profilAdd {
   background-color: #4b494b;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -878,70 +906,70 @@ input, button {
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 19, ../sass/_formCreatePro.scss */
-#formCreatePro .vignette_projet_profilAdd:hover {
+/* line 16, ../sass/_formCreatePro.scss */
+#createProjet .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 23, ../sass/_formCreatePro.scss */
-#formCreatePro .info_projet_profilAdd {
+/* line 19, ../sass/_formCreatePro.scss */
+#createProjet .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
   margin: 5px;
   background-color: white;
   height: 18em;
 }
-/* line 38, ../sass/_formCreatePro.scss */
-#formCreatePro .deleteProfilR {
+/* line 26, ../sass/_formCreatePro.scss */
+#createProjet .deleteProfilR {
   margin: 10px;
   background-color: #98d4e1;
 }
-/* line 47, ../sass/_formCreatePro.scss */
-#formCreatePro label.required:after {
+/* line 30, ../sass/_formCreatePro.scss */
+#createProjet label.required:after {
   content: "*";
 }
-/* line 50, ../sass/_formCreatePro.scss */
-#formCreatePro label {
+/* line 33, ../sass/_formCreatePro.scss */
+#createProjet label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 57, ../sass/_formCreatePro.scss */
-#formCreatePro p .container {
+/* line 39, ../sass/_formCreatePro.scss */
+#createProjet p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 62, ../sass/_formCreatePro.scss */
-#formCreatePro p .btn {
-  margin-bottom: 20px;
-}
-/* line 72, ../sass/_formCreatePro.scss */
-#formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
-#formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
-#formCreatePro input[type=search] {
+/* line 44, ../sass/_formCreatePro.scss */
+#createProjet input[type=text], #createProjet input[type=password], #createProjet input[type=email], #createProjet input[type=url], #createProjet input[type=time],
+#createProjet input[type=date], #createProjet input[type=datetime], #createProjet input[type=datetime-local], #createProjet input[type=tel], #createProjet input[type=number],
+#createProjet input[type=search] {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 79, ../sass/_formCreatePro.scss */
-#formCreatePro input:focus {
+/* line 50, ../sass/_formCreatePro.scss */
+#createProjet input:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
 }
-/* line 84, ../sass/_formCreatePro.scss */
-#formCreatePro input {
+/* line 55, ../sass/_formCreatePro.scss */
+#createProjet .alignbtn {
+  text-align: center;
+}
+/* line 58, ../sass/_formCreatePro.scss */
+#createProjet .submitProjet {
   background-color: #98d4e1;
 }
-/* line 89, ../sass/_formCreatePro.scss */
-#formCreatePro ul li span {
+/* line 61, ../sass/_formCreatePro.scss */
+#createProjet ul li span {
   color: #4b494b;
 }
-/* line 92, ../sass/_formCreatePro.scss */
-#formCreatePro [type="checkbox"]:checked + label:before {
+/* line 64, ../sass/_formCreatePro.scss */
+#createProjet [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
-/* line 98, ../sass/_formCreatePro.scss */
-#formCreatePro .profilR {
+/* line 68, ../sass/_formCreatePro.scss */
+#createProjet .profilR {
   margin-top: 40px;
 }
 
@@ -989,25 +1017,26 @@ input, button {
 }
 /* line 42, ../sass/_editShowProfil.scss */
 .editprofil .btrght {
-  height: 33px;
+  height: 36px;
+  width: auto;
   text-decoration: none;
   background-color: #98d4e1;
   box-shadow: 1px 1px 1px #4b494b;
 }
-/* line 48, ../sass/_editShowProfil.scss */
+/* line 49, ../sass/_editShowProfil.scss */
 .editprofil .btnright {
   text-align: center;
-  height: 33px;
+  height: 36px;
 }
-/* line 52, ../sass/_editShowProfil.scss */
+/* line 53, ../sass/_editShowProfil.scss */
 .editprofil .hiddenPreview {
   display: none;
 }
-/* line 55, ../sass/_editShowProfil.scss */
+/* line 56, ../sass/_editShowProfil.scss */
 .editprofil img {
   width: 100%;
 }
-/* line 58, ../sass/_editShowProfil.scss */
+/* line 59, ../sass/_editShowProfil.scss */
 .editprofil input:not([type]), .editprofil input[type=text], .editprofil input[type=password], .editprofil input[type=email], .editprofil input[type=url], .editprofil input[type=time],
 .editprofil input[type=date], .editprofil input[type=datetime], .editprofil input[type=datetime-local], .editprofil input[type=tel], .editprofil input[type=number],
 .editprofil input[type=search], .editprofil #mblbundle_profil_description {
@@ -1015,25 +1044,30 @@ input, button {
   border-radius: 10px;
   outline: none;
 }
-/* line 66, ../sass/_editShowProfil.scss */
+/* line 67, ../sass/_editShowProfil.scss */
 .editprofil input:focus, .editprofil #mblbundle_profil_description:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   box-shadow: none;
 }
+/* line 72, ../sass/_editShowProfil.scss */
+.editprofil label {
+  color: #4b494b;
+  font-size: 1.5em;
+}
 
-/* line 75, ../sass/_editShowProfil.scss */
+/* line 80, ../sass/_editShowProfil.scss */
 .showprofil {
   margin: 0;
   max-width: none;
   width: 100%;
 }
-/* line 81, ../sass/_editShowProfil.scss */
+/* line 86, ../sass/_editShowProfil.scss */
 .showprofil h4, .showprofil h5, .showprofil p {
   text-align: center;
   word-wrap: break-word;
 }
-/* line 85, ../sass/_editShowProfil.scss */
+/* line 90, ../sass/_editShowProfil.scss */
 .showprofil .cartepro, .showprofil .cartepro2 {
   border: 1px solid red;
   background-color: #98d4e1;
@@ -1044,7 +1078,7 @@ input, button {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-/* line 96, ../sass/_editShowProfil.scss */
+/* line 101, ../sass/_editShowProfil.scss */
 .showprofil .imgpro {
   text-align: center;
   background-color: white;
@@ -1053,13 +1087,13 @@ input, button {
   margin-top: 3%;
   border-radius: 8px;
 }
-/* line 103, ../sass/_editShowProfil.scss */
+/* line 108, ../sass/_editShowProfil.scss */
 .showprofil .imgpro img {
   width: 60%;
   margin-top: 5%;
   margin-bottom: 3%;
 }
-/* line 108, ../sass/_editShowProfil.scss */
+/* line 113, ../sass/_editShowProfil.scss */
 .showprofil .modpro {
   text-align: center;
 }
@@ -1161,42 +1195,50 @@ chat.html.twig
   border-radius: 10px;
   color: #4b494b;
   margin-top: 5px;
+  height: 100px;
+  margin-bottom: 5px;
   background-color: #98d4e1;
 }
-/* line 18, ../sass/_chat.scss */
+@media only screen and (max-width: 992px) {
+  /* line 8, ../sass/_chat.scss */
+  #chat .chat_box {
+    height: 150px;
+  }
+}
+/* line 22, ../sass/_chat.scss */
 #chat .chat_box:hover {
   background-color: #f0f0f0;
 }
-/* line 30, ../sass/_chat.scss */
+/* line 34, ../sass/_chat.scss */
 #chat #chat_text {
   color: #4b494b;
   margin-top: 5px;
   border: 2px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 38, ../sass/_chat.scss */
+/* line 42, ../sass/_chat.scss */
 #chat .Nom_prenom p {
   color: #4b494b;
   font-size: 1.1em;
 }
-/* line 44, ../sass/_chat.scss */
+/* line 48, ../sass/_chat.scss */
 #chat .color-text {
   border: 1px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 51, ../sass/_chat.scss */
+/* line 55, ../sass/_chat.scss */
 #chat .color-text-user {
   border: 1px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 80, ../sass/_chat.scss */
+/* line 84, ../sass/_chat.scss */
 #chat .group-text {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #98d4e1;
 }
-/* line 85, ../sass/_chat.scss */
+/* line 89, ../sass/_chat.scss */
 #chat .btnfilterAllprofil {
   background-color: #98d4e1;
 }
@@ -1254,11 +1296,11 @@ chat.html.twig
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 23, ../sass/_showOneProject.scss */
+/* line 20, ../sass/_showOneProject.scss */
 #oneProject .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 27, ../sass/_showOneProject.scss */
+/* line 23, ../sass/_showOneProject.scss */
 #oneProject .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
@@ -1266,35 +1308,78 @@ chat.html.twig
   background-color: white;
   height: 18em;
 }
-/* line 34, ../sass/_showOneProject.scss */
-#oneProject .presProjet {
-  padding: 0;
+/* line 30, ../sass/_showOneProject.scss */
+#oneProject .proprio {
   margin: 0;
 }
-/* line 38, ../sass/_showOneProject.scss */
+/* line 33, ../sass/_showOneProject.scss */
+#oneProject .section {
+  border-top: solid 1px white;
+  padding: 0;
+}
+/* line 37, ../sass/_showOneProject.scss */
+#oneProject .presProjet1 h6 {
+  font-size: 1.4em;
+}
+/* line 40, ../sass/_showOneProject.scss */
+#oneProject .presProjet1 p {
+  font-size: 1.2em;
+}
+/* line 43, ../sass/_showOneProject.scss */
+#oneProject .presProjet1 {
+  padding: 0;
+  padding-top: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+/* line 50, ../sass/_showOneProject.scss */
+#oneProject .offpad {
+  padding-left: 0;
+  border-top: 1px solid white;
+}
+/* line 54, ../sass/_showOneProject.scss */
+#oneProject .offpad1 {
+  padding-left: 0;
+}
+/* line 57, ../sass/_showOneProject.scss */
 #oneProject .creeLePar {
   color: grey;
   font-style: italic;
 }
-/* line 43, ../sass/_showOneProject.scss */
+/* line 62, ../sass/_showOneProject.scss */
 #oneProject a.site {
   color: darkcyan;
 }
-/* line 46, ../sass/_showOneProject.scss */
+/* line 65, ../sass/_showOneProject.scss */
 #oneProject a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 51, ../sass/_showOneProject.scss */
+/* line 70, ../sass/_showOneProject.scss */
 #oneProject .cartepro {
   border: none;
   background-color: #98d4e1;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-bottom: 20px;
   border-radius: 8px;
+  text-align: center;
 }
-/* line 59, ../sass/_showOneProject.scss */
+/* line 79, ../sass/_showOneProject.scss */
+#oneProject .cartepro h6 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+/* line 83, ../sass/_showOneProject.scss */
+#oneProject .cartepro h4 {
+  margin-bottom: 0;
+}
+/* line 86, ../sass/_showOneProject.scss */
+#oneProject .cartepro p {
+  font-size: 1.3em;
+}
+/* line 89, ../sass/_showOneProject.scss */
 #oneProject .imgPhoto img {
   height: 17em;
 }
@@ -1345,52 +1430,52 @@ chat.html.twig
 #myProfil {
   margin-top: 40px;
 }
-/* line 5, ../sass/_showMyProfil.scss */
+/* line 6, ../sass/_showMyProfil.scss */
 #myProfil h4 {
   font-weight: bold;
 }
-/* line 8, ../sass/_showMyProfil.scss */
+/* line 9, ../sass/_showMyProfil.scss */
 #myProfil h6 {
   font-weight: bold;
   font-size: 1.4em;
 }
-/* line 12, ../sass/_showMyProfil.scss */
+/* line 13, ../sass/_showMyProfil.scss */
 #myProfil p {
   font-size: 1.3em;
   text-align: center;
 }
-/* line 16, ../sass/_showMyProfil.scss */
+/* line 17, ../sass/_showMyProfil.scss */
 #myProfil .btnfilterAllprofil {
   background-color: #98d4e1;
 }
-/* line 18, ../sass/_showMyProfil.scss */
+/* line 19, ../sass/_showMyProfil.scss */
 #myProfil .section {
   border-top: solid 1px white;
 }
-/* line 21, ../sass/_showMyProfil.scss */
+/* line 22, ../sass/_showMyProfil.scss */
 #myProfil .showProfil {
   background-color: #98d4e1;
   border-radius: 10px;
   margin-bottom: 50px;
 }
-/* line 28, ../sass/_showMyProfil.scss */
+/* line 29, ../sass/_showMyProfil.scss */
 #myProfil a.site {
   color: darkcyan;
 }
-/* line 31, ../sass/_showMyProfil.scss */
+/* line 32, ../sass/_showMyProfil.scss */
 #myProfil a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 35, ../sass/_showMyProfil.scss */
+/* line 36, ../sass/_showMyProfil.scss */
 #myProfil .linkedIn {
   align-items: center;
 }
-/* line 38, ../sass/_showMyProfil.scss */
+/* line 39, ../sass/_showMyProfil.scss */
 #myProfil .imgPhoto img {
   height: 17em;
 }
-/* line 44, ../sass/_showMyProfil.scss */
+/* line 45, ../sass/_showMyProfil.scss */
 #myProfil .divform {
   text-align: center;
   margin-bottom: 25px;
