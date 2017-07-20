@@ -21,6 +21,7 @@ class ProfilRechercheType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+<<<<<<< HEAD
         $builder->add('ou', EntityType::class,
             array(
                 'class' => Ou::class,
@@ -33,6 +34,9 @@ class ProfilRechercheType extends AbstractType
 
 
             ->add('metier', EntityType::class,
+=======
+        $builder->add('metier', EntityType::class,
+>>>>>>> dev
                 array(
                     'class' => Metier::class,
                     'choice_label' =>'metier'.$options["locale"],
