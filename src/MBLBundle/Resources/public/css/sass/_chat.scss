@@ -10,9 +10,13 @@ chat.html.twig
     border: 2px solid $Colorblue;
     border-radius: 10px;
     color: $ColorDarkGrey;
-
     margin-top: 5px;
+    height: 100px;
+    margin-bottom: 5px;
     background-color: $Colorblue;
+    @media #{$medium-and-down} {
+      height: 150px;
+    }
 
   }
   .chat_box:hover
