@@ -1,5 +1,5 @@
 @import "global";
-#createProjet
+#formCreatePro
 {
   margin-top: 50px;
 
@@ -7,14 +7,13 @@
     background-color: $ColorDarkGrey;
     border-radius: $BorderRadius;
     margin-bottom: 10px;
-    margin-right: 7px;
-    margin-left: 7px;
-    height: 30em;
+    height: 33em;
     border: 2px solid $Colorgrey;
     max-width: 300px;
   }
   .vignette_projet_profilAdd:hover {
     background-color: $Colorgrey;
+
   }
   .info_projet_profilAdd {
     border-radius: $BorderRadius;
@@ -22,7 +21,9 @@
     margin: 5px;
     background-color: white;
     height: 18em;
+
   }
+
   .deleteProfilR {
     margin: 10px;
     background-color: $Colorblue;
