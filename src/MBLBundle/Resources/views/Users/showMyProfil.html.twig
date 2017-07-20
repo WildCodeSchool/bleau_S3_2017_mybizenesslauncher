@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col s12 center imgPhoto  section">
-                        {% if profil.fichier is null %}
+                        {% if profil.fichier is empty %}
                             <img class="responsive-img" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                         {% else %}
                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ profil.fichier.photo ) }}">
