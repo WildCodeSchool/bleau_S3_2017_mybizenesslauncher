@@ -40,14 +40,15 @@
 
     }
     .btrght{
-        height: 33px;
+        height: 36px;
+        width:auto;
         text-decoration: none;
         background-color: $Colorblue;
         box-shadow: 1px 1px 1px $ColorDarkGrey;
     }
     .btnright {
         text-align: center;
-        height: 33px;
+        height: 36px;
     }
     .hiddenPreview {
         display: none;
@@ -67,6 +68,10 @@
         border: 1.5px solid $Colorblue;
         border-radius: 10px;
         box-shadow: none;
+    }
+    label {
+        color: $ColorDarkGrey;
+        font-size: 1.5em;
     }
 
 }

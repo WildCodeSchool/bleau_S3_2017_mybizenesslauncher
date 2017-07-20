@@ -69,14 +69,14 @@
                 <div class="row vignette_projet_row">
                     {% for pro in projet %}
                         <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                            <div class="col s12 m6 l5 offset-l1 z-depth-5 vignette_projet">
+                            <div class="col s12 m6 l5 offset-l1 vignette_projet z-depth-5">
                                 <div class="row vignette">
                                     <div class="col s12 intitul">
                                         <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
                                     </div>
                                     <div class="col s8 offset-s2 encarttof ">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img class="responsive-img logodefault" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
                                             <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                         {% endif %}
@@ -169,7 +169,6 @@
                                         {% if pro.fichier is empty %}
                                             <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-                                            {# TODO: à verifier #}
                                             <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
