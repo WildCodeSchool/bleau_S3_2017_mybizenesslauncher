@@ -31,7 +31,7 @@ Layout.html.twig
   height: 120px;
   background-color: $Colorblue;
   color: White;
-  text-align: center;
+  vertical-align: middle;
   padding-top: 5px;
   @media #{$small-and-down} {
     display: none;

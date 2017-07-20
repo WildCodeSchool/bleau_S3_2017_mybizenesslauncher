@@ -24,24 +24,25 @@
                     {% for chat in chats %}
                         {% if chat.connectionbyid > 0 %}
 
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">{{ 'Oui'|trans }}</a>
-                                </div>
-                            </div>
+
                             <div class="chat_box">
+
+                                <div id="modal1" class="modal">
+                                    <div class="modal-content">
+                                        <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">{{ 'Oui'|trans }}</a>
+                                    </div>
+                                </div>
                                 <a href="#modal1">
-                                    <div class="col s6 m3 l1 delete">
+                                    <div class="col s6 m1 l1 delete">
                                         <p><i class="material-icons">delete</i></p>
                                     </div>
                                     <!-- Modal Structure -->
 
                                 </a>
-
-                                <a href="{{ path('chatIndex', {'id' : chat.id}) }}">
+                                <a href="{{ path('chatIndex', {'id' : chat.id}) }}" >
                                     <div class="col s6 m3 l3 Nom_prenom">
                                         {#Nom du profil avec qui l'on veut discuter#}
                                         {% for profil in chat.profils %}
@@ -59,7 +60,7 @@
                                             <p>  {{ chatmsg.msg|slice(0,20) ~ '...' }}</p>
                                         {% endif %}
                                     </div>
-                                    <div class="col s6 m3 l2 Nom_prenom chat_box_icon">
+                                    <div class="col s6 m2 l2 Nom_prenom chat_box_icon">
                                         {#Dernier message avec ce profil#}
                                         <p> <i class="material-icons">chat</i></p>
                                     </div>
@@ -71,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="col s12 m7 offstet-m7 l7 offset-l1 " id="chat_text">
+            <div class="col s12 m7 offstet-m1 l7 offset-l1 " id="chat_text">
                 <div id="textarea" class="row">
                     {#Formulaire#}
                     {{ form_start(form, {'action': path('chatIndex', {'id' : chat.id}), 'method': 'GET'}) }}
