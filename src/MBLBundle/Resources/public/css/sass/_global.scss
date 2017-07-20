@@ -15,6 +15,12 @@ $medium-and-down: "only screen and (max-width : 992px)";
 $large-and-up: "only screen and (min-width : 993px)";
 //$lar: "only screen and (max-width : 1228px)";
 
+
+.bobol
+{
+  min-height: 500px;
+}
+
 /*
 Font
 */
@@ -62,7 +68,6 @@ body{
   background-color: $Colorgrey;
 }
 
-
 a { color: inherit; }
 //Vignettes
 
@@ -87,12 +92,8 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-
-
   max-width: 300px;
-
   min-width: 200px;
-
 }
 .vignette_profil:hover {
   background-color: $ColorDarkGrey;
@@ -102,16 +103,13 @@ a { color: inherit; }
   overflow: scroll;
   height: 16em;
   background: $ColorWhite;
-
 }
 .bandeau_homepage {
   width: 100%;
-  margin: 0;
   background: $Colorblue;
   color: $ColorWhite;
   @media #{$small-and-down} {
     display: none;
-
   }
 }
 .vignette {
@@ -128,7 +126,6 @@ a { color: inherit; }
 
   max-height: 7em;
   border-radius: $BorderRadius;
-
 }
 //.photo_profil img {
 //  height: 7em;

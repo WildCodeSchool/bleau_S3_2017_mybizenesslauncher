@@ -11,7 +11,7 @@
 
                 <div class="col s12 m6 l5">
                     <div class="col s12 center modif">
-                        <button class="btn" id="{{ projet.id }}">{{ 'Editer votre projet'|trans }}</button>
+                        <button class="btn btnfilterAllprofil" id="{{ projet.id }}">{{ 'Editer votre projet'|trans }}</button>
                     </div>
                     {{ form_start(form) }}
                     <div class="titre_row center-align">
@@ -73,7 +73,7 @@
 
 
                     <div>
-                        <input class="btn" type="submit" value="{{ 'Editer'|trans }}"/>
+                        <input class="btn btnfilterAllprofil" type="submit" value="{{ 'Editer'|trans }}"/>
                     </div>
 
                     {{ form_end(form) }}
@@ -82,7 +82,7 @@
                     <div class="col s12 center bouttonAjout">
 
                         <a href="{{ path('createProfilRechercheProjet', {'id' : projet.id}) }}">
-                            <button class="btn" id="{{ projet.id }}">{{ 'Ajoutez un profil recherché'|trans }}</button>
+                            <button class="btn btnfilterAllprofil" id="{{ projet.id }}">{{ 'Ajoutez un profil recherché'|trans }}</button>
 
                         </a>
                     </div>
@@ -158,10 +158,10 @@
                                 </div>
 
                                 <div class="col s12 center">
-                                    <button class="btn deleteProfilR" id="{{ profil.id }}">{{ 'Supprimer'|trans }}</button>
+                                    <button class="btn deleteProfilR btnfilterAllprofil" id="{{ profil.id }}">{{ 'Supprimer'|trans }}</button>
                                 </div>
                                 <div class="col s12 center editbtn">
-                                    <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn editProfil" id="{{ profil.id }}">{{ 'Editer'|trans }}</button></a>
+                                    <a href="{{ path('editProfilRechercheProjet', {'id':profil.id}) }}"><button class="btn btnfilterAllprofil editProfil" id="{{ profil.id }}">{{ 'Editer'|trans }}</button></a>
                                 </div>
 
 
