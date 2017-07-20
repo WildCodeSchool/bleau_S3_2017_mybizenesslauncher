@@ -907,11 +907,11 @@ input, button {
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 14, ../sass/_formCreatePro.scss */
+/* line 17, ../sass/_formCreatePro.scss */
 #formCreatePro .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 18, ../sass/_formCreatePro.scss */
+/* line 21, ../sass/_formCreatePro.scss */
 #formCreatePro .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
@@ -919,57 +919,57 @@ input, button {
   background-color: white;
   height: 18em;
 }
-/* line 27, ../sass/_formCreatePro.scss */
+/* line 32, ../sass/_formCreatePro.scss */
 #formCreatePro .deleteProfilR {
   margin: 10px;
   background-color: #98d4e1;
 }
-/* line 31, ../sass/_formCreatePro.scss */
+/* line 41, ../sass/_formCreatePro.scss */
 #formCreatePro label.required:after {
   content: "*";
 }
-/* line 34, ../sass/_formCreatePro.scss */
+/* line 44, ../sass/_formCreatePro.scss */
 #formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 40, ../sass/_formCreatePro.scss */
+/* line 51, ../sass/_formCreatePro.scss */
 #formCreatePro p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 45, ../sass/_formCreatePro.scss */
+/* line 56, ../sass/_formCreatePro.scss */
+#formCreatePro p .btn {
+  margin-bottom: 20px;
+}
+/* line 66, ../sass/_formCreatePro.scss */
 #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
 #formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
 #formCreatePro input[type=search] {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 51, ../sass/_formCreatePro.scss */
+/* line 73, ../sass/_formCreatePro.scss */
 #formCreatePro input:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
 }
-/* line 56, ../sass/_formCreatePro.scss */
-#formCreatePro .alignbtn {
-  text-align: center;
-}
-/* line 59, ../sass/_formCreatePro.scss */
-#formCreatePro .submitProjet {
+/* line 78, ../sass/_formCreatePro.scss */
+#formCreatePro input {
   background-color: #98d4e1;
 }
-/* line 62, ../sass/_formCreatePro.scss */
+/* line 83, ../sass/_formCreatePro.scss */
 #formCreatePro ul li span {
   color: #4b494b;
 }
-/* line 65, ../sass/_formCreatePro.scss */
+/* line 86, ../sass/_formCreatePro.scss */
 #formCreatePro [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
-/* line 69, ../sass/_formCreatePro.scss */
+/* line 92, ../sass/_formCreatePro.scss */
 #formCreatePro .profilR {
   margin-top: 40px;
 }
