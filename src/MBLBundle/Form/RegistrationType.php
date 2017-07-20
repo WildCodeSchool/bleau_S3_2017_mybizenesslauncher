@@ -12,22 +12,20 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use FOS\UserBundle\Util\LegacyFormHelper;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-
-
-
 class RegistrationType extends AbstractType
 {
     private $locale;
 
-    public function __construct($locale)
-    {
-        $this->locale = $locale;
-    }
+	public function __construct(RequestStack $requestStack)
+	{
+		$this->locale = $requestStack->getCurrentRequest()->getLocale();
+	}
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
