@@ -2,8 +2,8 @@
 
 
 #oneProject {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 
 
   .profil_recherche{
@@ -15,14 +15,10 @@
     margin-bottom: 10px;
     height: 30em;
     border: 2px solid $Colorgrey;
-
     max-width: 300px;
-
-
   }
   .vignette_projet_profilAdd:hover {
     background-color: $Colorgrey;
-
   }
   .info_projet_profilAdd {
     border-radius: $BorderRadius;
@@ -31,9 +27,32 @@
     background-color: white;
     height: 18em;
   }
-    .presProjet {
-    padding: 0;
-    margin: 0;
+  .proprio{
+    margin:0;
+  }
+  .section{
+    border-top: solid 1px white;
+    padding:0;
+  }
+  .presProjet1 h6{
+    font-size: 1.4em;
+  }
+  .presProjet1 p {
+    font-size: 1.2em;
+  }
+  .presProjet1 {
+    padding:0;
+    padding-top: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .offpad{
+    padding-left: 0;
+    border-top: 1px solid white;
+  }
+  .offpad1{
+    padding-left: 0;
   }
   .creeLePar {
     color: grey;
@@ -51,15 +70,26 @@
   .cartepro {
     border: none;
     background-color: $Colorblue;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
     padding-bottom: 20px;
     border-radius: $BorderRadius;
+    text-align: center;
+  }
+  .cartepro h6 {
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+  .cartepro h4 {
+margin-bottom: 0;
+  }
+  .cartepro p {
+    font-size: 1.3em;
   }
     .imgPhoto img
-    {
-      //max-height: 300px;
-      //max-width: 250px;
-      height: 17em;
-    }
+  {
+    //max-height: 300px;
+    //max-width: 250px;
+    height: 17em;
+  }
 }

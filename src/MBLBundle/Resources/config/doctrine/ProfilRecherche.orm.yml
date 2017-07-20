@@ -21,25 +21,41 @@ MBLBundle\Entity\ProfilRecherche:
         competences:
             targetEntity: MBLBundle\Entity\Competences
             inversedBy: profilsrecherches
-
+            joinTable:
+                name: profil_recherche_competences
+                joinColumns:
+                    profil_recherche_id:
+                        nullable: false
+                inverseJoinColumns:
+                    competences_id:
+                        nullable: false
 
     manyToOne:
         etq:
             targetEntity: MBLBundle\Entity\ETQ
             inversedBy: profilrecherches
-
+            joinColumn:
+                nullable: false
         ou:
             targetEntity: MBLBundle\Entity\Ou
             inversedBy: profilrecherches
+            joinColumn:
+                nullable: false
 
         invest:
             targetEntity: MBLBundle\Entity\Invest
             inversedBy: profilrecherches
+            joinColumn:
+                nullable: false
 
         dispo:
             targetEntity: MBLBundle\Entity\Dispo
             inversedBy: profilrecherches
+            joinColumn:
+                nullable: false
 
         metier:
             targetEntity: MBLBundle\Entity\Metier
             inversedBy: profilrecherches
+            joinColumn:
+                nullable: false
