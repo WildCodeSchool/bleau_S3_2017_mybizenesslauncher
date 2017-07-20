@@ -2,6 +2,7 @@
 @import "global";
 #showMyProjet {
   margin-top: 50px;
+text-align: center;
   .vignette_Myprojet {
     background-color: $ColorDarkGrey;
     border-radius: $BorderRadius;
@@ -9,6 +10,10 @@
     height: 37em;
     max-width: 300px;
     min-width: 280px;
+  }
+  .photo_profil
+  {
+    margin: auto;
   }
   .vignette_Myprojet:hover {
     background-color: $Colorblue;

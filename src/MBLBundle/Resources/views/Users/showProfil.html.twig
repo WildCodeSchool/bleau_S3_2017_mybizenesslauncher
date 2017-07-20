@@ -5,17 +5,15 @@
         {% if app.user.id == profil.id %}
             {{ 'Mon profil public'|trans }}
         {% else %}
-            {{ 'Profil'|trans }}
-            {{ 'Prenom:'|trans }}
+            {{ 'Prenom:'|trans }}:
             {{ profil.prenom|capitalize }}
-            {{ 'Nom:'|trans }}
+            {{ 'Nom:'|trans }}:
             {{ profil.nom|capitalize }}
         {% endif %}
     {% else %}
-        {{ 'Profil'|trans }}
-        {{ 'Prenom:'|trans }}
+        {{ 'Prenom:'|trans }}:
         {{ profil.prenom|capitalize }}
-        {{ 'Nom:'|trans }}
+        {{ 'Nom:'|trans }}:
         {{ profil.nom|capitalize }}
     {% endif %}
     </h2>

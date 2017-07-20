@@ -12,7 +12,7 @@
 
                 {% for pro in projects %}
                     <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                        <div class="col s6 m6 l5 vignette_Myprojet  z-depth-5">
+                        <div class="col s12 m6 l3 offset-l1 vignette_Myprojet  z-depth-5">
                             <div class="row vignettemypro ">
                                 <div class="col s12 intitul">
                                     <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
