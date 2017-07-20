@@ -37,8 +37,10 @@ class LocalisationProfilType extends AbstractType
                 'placeholder'=> 'Quel est votre profil?'
 
 
-            ))
-            ->add('localisation', ChoiceType::class, array(
+            ));
+        if ($options["locale"] == "fr")
+        {
+            $builder->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -60,36 +62,48 @@ class LocalisationProfilType extends AbstractType
                         'Réunion' => 'France, Réunion',
                         'Mayotte' => 'France, Mayotte'
                     ),
+                    'Autre'   => 'autre',
+
+                ),  'required'      => false,
+                'placeholder'   => 'Choisissez'
+            ));
+        }
+        else
+        {
+            $builder->add('localisation', ChoiceType::class, array(
+                'choices' => array(
                     'Italie' => array(
 
-                    'Abruzzo' => 'Italie, Abruzzo',
-                    'Alto Adige' => 'Italie, Alto Adige',
-                    'Basilicata' => 'Italie, Basilicata',
-                    'Calabria' => 'Italie, Calabria',
-                    'Campania' => 'Italie, Campania',
-                    'Centro' => 'Italie, Centro',
-                    'Emilia-Romagna' => 'Italie, Emilia-Romagna',
-                    'Friuli-Venezia Giulia' => 'Italie, Friuli-Venezia Giulia',
-                    'Lazio' => 'Italie, Lazio',
-                    'Liguria' => 'Italie, Liguria',
-                    'Lombardia' => 'Italie, Lombardia',
-                    'Marche' => 'Italie, Marche',
-                    'Molise' => 'Italie, Molise',
-                    'Piemonte' => 'Italie, Piemonte',
-                    'Puglia' => 'Italie, Puglia',
-                    'Sardegna' => 'Italie, Sardegna',
-                    'Sicilia' => 'Italie, Sicilia',
-                    'Toscana' => 'Italie, Toscana',
-                    'Trentino' => 'Italie, Trentino',
-                    'Umbria' => 'Italie, Umbria',
-                    'Valle d\'Aosta' => 'Italie, Valle d\'Aosta',
-                    'Veneto' => 'Italie, Veneto'
-                ),
-                'Autre'   => 'autre',
+                        'Abruzzo' => 'Italie, Abruzzo',
+                        'Alto Adige' => 'Italie, Alto Adige',
+                        'Basilicata' => 'Italie, Basilicata',
+                        'Calabria' => 'Italie, Calabria',
+                        'Campania' => 'Italie, Campania',
+                        'Centro' => 'Italie, Centro',
+                        'Emilia-Romagna' => 'Italie, Emilia-Romagna',
+                        'Friuli-Venezia Giulia' => 'Italie, Friuli-Venezia Giulia',
+                        'Lazio' => 'Italie, Lazio',
+                        'Liguria' => 'Italie, Liguria',
+                        'Lombardia' => 'Italie, Lombardia',
+                        'Marche' => 'Italie, Marche',
+                        'Molise' => 'Italie, Molise',
+                        'Piemonte' => 'Italie, Piemonte',
+                        'Puglia' => 'Italie, Puglia',
+                        'Sardegna' => 'Italie, Sardegna',
+                        'Sicilia' => 'Italie, Sicilia',
+                        'Toscana' => 'Italie, Toscana',
+                        'Trentino' => 'Italie, Trentino',
+                        'Umbria' => 'Italie, Umbria',
+                        'Valle d\'Aosta' => 'Italie, Valle d\'Aosta',
+                        'Veneto' => 'Italie, Veneto'
+                    ),
+                    'Autre'   => 'autre',
 
-            ),  'required'      => false,
-            'placeholder'   => 'Choisissez'
-        ));
+                ),  'required'      => false,
+                'placeholder'   => 'Choisissez'
+            ));
+        }
+
     }
 
     /**

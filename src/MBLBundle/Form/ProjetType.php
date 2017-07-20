@@ -55,9 +55,11 @@ class ProjetType extends AbstractType
                 'expanded'      => false,
                 'required'      => true,
                 'placeholder'   => 'Choisissez'
-            ))
+            ));
 
-            ->add('localisation', ChoiceType::class, array(
+        if ($options["locale"] == "fr")
+        {
+            $builder->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -79,6 +81,16 @@ class ProjetType extends AbstractType
                         'Réunion' => 'France, Réunion',
                         'Mayotte' => 'France, Mayotte'
                     ),
+                    'Autre'   => 'autre',
+
+                ),  'required'      => false,
+                'placeholder'   => 'Choisissez'
+            ));
+        }
+        else
+        {
+            $builder->add('localisation', ChoiceType::class, array(
+                'choices' => array(
                     'Italie' => array(
 
                         'Abruzzo' => 'Italie, Abruzzo',
@@ -108,8 +120,9 @@ class ProjetType extends AbstractType
 
                 ),  'required'      => false,
                 'placeholder'   => 'Choisissez'
-            ))
-            ->add('ville', TextType::class, array(
+            ));
+        }
+            $builder->add('ville', TextType::class, array(
         'required' => false
     ))
             ->add('fichier', FichierType::class, array(
