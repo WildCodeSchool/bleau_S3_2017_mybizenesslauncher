@@ -63,15 +63,14 @@
                     </div>
                         <div class="row">
                             <div class="file center-align">
-                                <div class="col s6 uploadlft">
+                                <div class="col s6 ">
                                     <label>{{ 'Photo(s)'|trans }}</label>
                                     {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
-                                    {#{{ form_label(form.fichier.({{'Photo'|trans }}))  }}#}
                                     {{ form_errors(form.fichier.file) }}
                                     {{ form_widget(form.fichier.file) }}
                                 </div>
                             </div>
-                            <div class="col s6 apercuimg">
+                            <div class="col s6 ">
                                 <img class="hiddenPreview  responsive-img" id="preview" src="#" alt="Votre Photo" />
                             </div>
                         </div>

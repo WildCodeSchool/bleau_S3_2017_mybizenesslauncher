@@ -1,7 +1,8 @@
 
 @import "global";
 #myProfil {
- margin-top: 40px;
+  margin-top: 40px;
+
   h4 {
     font-weight: bold;
   }
@@ -21,7 +22,7 @@
   .showProfil {
 
     background-color: $Colorblue;
- border-radius: 10px;
+    border-radius: 10px;
     margin-bottom: 50px;
     //font-style: italic;
   }
