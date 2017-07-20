@@ -5,10 +5,10 @@
     <meta http-equiv="refresh" content="5; URL={{ path('mbl_homepage') }}" />
     <div class="row" id="redirect">
         <div class="col s4 offset-s4 center">
-            <h2>Félicitation ! Votre compte est créé avec succès !</h2>
+            <h2>{{ 'Félicitation ! Votre compte a été créé avec succès !'|trans }}</h2>
             <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-            <span class="sr-only">Loading...</span>
-            <h3 class="center">Redirection automatique...</h3>
+            <span class="sr-only">{{ 'Chargement...'|trans }}</span>
+            <h3 class="center">{{ 'Redirection automatique...'|trans }}</h3>
         </div>
     </div>
 {% endblock body %}

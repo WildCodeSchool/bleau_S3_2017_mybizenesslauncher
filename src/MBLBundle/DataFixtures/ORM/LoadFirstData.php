@@ -240,7 +240,7 @@ class LoadInvestissementData extends AbstractFixture implements OrderedFixtureIn
         $invests = array(
 
             array('1'=>'Non', '2'=>'Non'),
-            array('1'=>'moin de 1000', '2'=>'inferiore a 1000'),
+            array('1'=>'moins de 1000', '2'=>'inferiore a 1000'),
             array('1'=>'1000-5000', '2'=>'1000-5000'),
             array('1'=>'5000-10000', '2'=>'5000-10000'),
             array('1'=>'10000-20000', '2'=>'10000-20000'),
