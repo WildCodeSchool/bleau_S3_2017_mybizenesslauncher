@@ -4,7 +4,7 @@ Variable globale
 
 CONSTANTE
 */
-/* line 18, ../sass/_global.scss */
+/* line 19, ../sass/_global.scss */
 .bobol {
   min-height: 500px;
 }
@@ -12,12 +12,12 @@ CONSTANTE
 /*
 Font
 */
-/* line 26, ../sass/_global.scss */
+/* line 28, ../sass/_global.scss */
 html {
   font-family: font36452;
 }
 
-/* line 30, ../sass/_global.scss */
+/* line 32, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -27,13 +27,13 @@ Variable globale
 
 BALISE
 */
-/* line 40, ../sass/_global.scss */
+/* line 42, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 45, ../sass/_global.scss */
+/* line 47, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -50,23 +50,23 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 60, ../sass/_global.scss */
+/* line 62, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 65, ../sass/_global.scss */
+/* line 67, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 70, ../sass/_global.scss */
+/* line 72, ../sass/_global.scss */
 a {
   color: inherit;
 }
 
-/* line 73, ../sass/_global.scss */
+/* line 75, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -76,17 +76,17 @@ a {
   max-width: 300px;
 }
 
-/* line 82, ../sass/_global.scss */
+/* line 84, ../sass/_global.scss */
 .vignette_projet_row {
   left: 30%;
 }
 
-/* line 85, ../sass/_global.scss */
+/* line 87, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 89, ../sass/_global.scss */
+/* line 91, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -96,12 +96,12 @@ a {
   min-width: 200px;
 }
 
-/* line 101, ../sass/_global.scss */
+/* line 103, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 104, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
@@ -109,20 +109,20 @@ a {
   background: white;
 }
 
-/* line 111, ../sass/_global.scss */
+/* line 113, ../sass/_global.scss */
 .bandeau_homepage {
   width: 100%;
   background: #98d4e1;
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 111, ../sass/_global.scss */
+  /* line 113, ../sass/_global.scss */
   .bandeau_homepage {
     display: none;
   }
 }
 
-/* line 120, ../sass/_global.scss */
+/* line 122, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -134,38 +134,38 @@ a {
   hyphens: auto;
 }
 
-/* line 130, ../sass/_global.scss */
+/* line 132, ../sass/_global.scss */
 .photo_profil {
   max-height: 7em;
   border-radius: 8px;
 }
 
-/* line 141, ../sass/_global.scss */
+/* line 143, ../sass/_global.scss */
 .info_profil {
   background: white;
 }
 
-/* line 146, ../sass/_global.scss */
+/* line 148, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 150, ../sass/_global.scss */
+/* line 152, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 153, ../sass/_global.scss */
+/* line 155, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
 
 /* 2. INDEX */
-/* line 5, ../sass/_index.scss */
+/* line 4, ../sass/_index.scss */
 #index h2 {
   font-size: 1.5em;
 }
-/* line 9, ../sass/_index.scss */
+/* line 8, ../sass/_index.scss */
 #index .Outils {
   padding-top: 70px;
   overflow-wrap: break-word;
@@ -176,128 +176,130 @@ h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-/* line 20, ../sass/_index.scss */
+/* line 19, ../sass/_index.scss */
 #index .Finance {
   margin-top: 30px;
 }
-/* line 24, ../sass/_index.scss */
+/* line 23, ../sass/_index.scss */
 #index .box_projet_profil * {
   text-align: center;
 }
-/* line 28, ../sass/_index.scss */
+/* line 27, ../sass/_index.scss */
 #index .btn_bandeau_homepage {
   background-color: white;
   color: #98d4e1;
   font-size: 0.9rem;
+  min-width: 150px;
+  max-width: 300px;
   box-shadow: 2px 2px 3px grey;
   max-width: 300px;
   min-width: 150px;
   height: 50px;
   padding: 7px;
 }
-/* line 37, ../sass/_index.scss */
+/* line 38, ../sass/_index.scss */
 #index .btn_bandeau_homepage:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 41, ../sass/_index.scss */
+/* line 42, ../sass/_index.scss */
 #index .btn_bandeau_homepage:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 28, ../sass/_index.scss */
+  /* line 27, ../sass/_index.scss */
   #index .btn_bandeau_homepage {
     display: none;
   }
 }
-/* line 48, ../sass/_index.scss */
+/* line 49, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down {
   background-color: white;
   color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 52, ../sass/_index.scss */
+/* line 53, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:hover {
   background-color: #f0f0f0;
   color: #6f9ea8;
 }
-/* line 56, ../sass/_index.scss */
+/* line 57, ../sass/_index.scss */
 #index .btn_bandeau_homepage_down:focus {
   background-color: #f0f0f0;
 }
 @media only screen and (max-width: 992px) {
-  /* line 61, ../sass/_index.scss */
+  /* line 62, ../sass/_index.scss */
   #index .toHide {
     display: none !important;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 66, ../sass/_index.scss */
+  /* line 67, ../sass/_index.scss */
   #index .toShow {
     display: inline !important;
   }
 }
-/* line 71, ../sass/_index.scss */
+/* line 72, ../sass/_index.scss */
 #index .btn_eBusta {
   margin-top: 40px;
 }
-/* line 74, ../sass/_index.scss */
+/* line 75, ../sass/_index.scss */
 #index .logoEb {
   max-width: 200px;
   height: auto;
 }
 @media screen and (min-width: 900px) and (max-width: 1345px) {
-  /* line 74, ../sass/_index.scss */
+  /* line 75, ../sass/_index.scss */
   #index .logoEb {
     max-width: 150px;
     height: auto;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 74, ../sass/_index.scss */
+  /* line 75, ../sass/_index.scss */
   #index .logoEb {
     display: none;
   }
 }
-/* line 86, ../sass/_index.scss */
+/* line 87, ../sass/_index.scss */
 #index .encarttof {
   padding-top: 10px;
 }
-/* line 89, ../sass/_index.scss */
+/* line 90, ../sass/_index.scss */
 #index .intitul {
   padding: 0;
 }
-/* line 92, ../sass/_index.scss */
+/* line 93, ../sass/_index.scss */
 #index .intitul h4 {
   margin-bottom: 10px;
   font-weight: bold;
 }
 @media only screen and (min-width: 993px) {
-  /* line 92, ../sass/_index.scss */
+  /* line 93, ../sass/_index.scss */
   #index .intitul h4 {
     font-size: 1.4em;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 92, ../sass/_index.scss */
+  /* line 93, ../sass/_index.scss */
   #index .intitul h4 {
     font-size: 1.4em;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 92, ../sass/_index.scss */
+  /* line 93, ../sass/_index.scss */
   #index .intitul h4 {
     font-size: 1.3em;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 105, ../sass/_index.scss */
+  /* line 106, ../sass/_index.scss */
   #index .vignette {
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 110, ../sass/_index.scss */
+  /* line 111, ../sass/_index.scss */
   #index .vignette1 {
     margin-bottom: 10;
   }
