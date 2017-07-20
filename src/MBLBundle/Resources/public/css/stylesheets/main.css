@@ -16,10 +16,7 @@ Font
 html {
   font-family: font36452;
 }
-/* line 32, ../sass/_global.scss */
-* {
-  text-align: justify;
-}
+
 /*
 Variable globale
 
@@ -1291,11 +1288,11 @@ chat.html.twig
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 23, ../sass/_showOneProject.scss */
+/* line 20, ../sass/_showOneProject.scss */
 #oneProject .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 27, ../sass/_showOneProject.scss */
+/* line 23, ../sass/_showOneProject.scss */
 #oneProject .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
@@ -1303,35 +1300,78 @@ chat.html.twig
   background-color: white;
   height: 18em;
 }
-/* line 34, ../sass/_showOneProject.scss */
-#oneProject .presProjet {
-  padding: 0;
+/* line 30, ../sass/_showOneProject.scss */
+#oneProject .proprio {
   margin: 0;
 }
-/* line 38, ../sass/_showOneProject.scss */
+/* line 33, ../sass/_showOneProject.scss */
+#oneProject .section {
+  border-top: solid 1px white;
+  padding: 0;
+}
+/* line 37, ../sass/_showOneProject.scss */
+#oneProject .presProjet1 h6 {
+  font-size: 1.4em;
+}
+/* line 40, ../sass/_showOneProject.scss */
+#oneProject .presProjet1 p {
+  font-size: 1.2em;
+}
+/* line 43, ../sass/_showOneProject.scss */
+#oneProject .presProjet1 {
+  padding: 0;
+  padding-top: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+/* line 50, ../sass/_showOneProject.scss */
+#oneProject .offpad {
+  padding-left: 0;
+  border-top: 1px solid white;
+}
+/* line 54, ../sass/_showOneProject.scss */
+#oneProject .offpad1 {
+  padding-left: 0;
+}
+/* line 57, ../sass/_showOneProject.scss */
 #oneProject .creeLePar {
   color: grey;
   font-style: italic;
 }
-/* line 43, ../sass/_showOneProject.scss */
+/* line 62, ../sass/_showOneProject.scss */
 #oneProject a.site {
   color: darkcyan;
 }
-/* line 46, ../sass/_showOneProject.scss */
+/* line 65, ../sass/_showOneProject.scss */
 #oneProject a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 51, ../sass/_showOneProject.scss */
+/* line 70, ../sass/_showOneProject.scss */
 #oneProject .cartepro {
   border: none;
   background-color: #98d4e1;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-bottom: 20px;
   border-radius: 8px;
+  text-align: center;
 }
-/* line 59, ../sass/_showOneProject.scss */
+/* line 79, ../sass/_showOneProject.scss */
+#oneProject .cartepro h6 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+/* line 83, ../sass/_showOneProject.scss */
+#oneProject .cartepro h4 {
+  margin-bottom: 0;
+}
+/* line 86, ../sass/_showOneProject.scss */
+#oneProject .cartepro p {
+  font-size: 1.3em;
+}
+/* line 89, ../sass/_showOneProject.scss */
 #oneProject .imgPhoto img {
   height: 17em;
 }
@@ -1382,52 +1422,52 @@ chat.html.twig
 #myProfil {
   margin-top: 40px;
 }
-/* line 5, ../sass/_showMyProfil.scss */
+/* line 6, ../sass/_showMyProfil.scss */
 #myProfil h4 {
   font-weight: bold;
 }
-/* line 8, ../sass/_showMyProfil.scss */
+/* line 9, ../sass/_showMyProfil.scss */
 #myProfil h6 {
   font-weight: bold;
   font-size: 1.4em;
 }
-/* line 12, ../sass/_showMyProfil.scss */
+/* line 13, ../sass/_showMyProfil.scss */
 #myProfil p {
   font-size: 1.3em;
   text-align: center;
 }
-/* line 16, ../sass/_showMyProfil.scss */
+/* line 17, ../sass/_showMyProfil.scss */
 #myProfil .btnfilterAllprofil {
   background-color: #98d4e1;
 }
-/* line 18, ../sass/_showMyProfil.scss */
+/* line 19, ../sass/_showMyProfil.scss */
 #myProfil .section {
   border-top: solid 1px white;
 }
-/* line 21, ../sass/_showMyProfil.scss */
+/* line 22, ../sass/_showMyProfil.scss */
 #myProfil .showProfil {
   background-color: #98d4e1;
   border-radius: 10px;
   margin-bottom: 50px;
 }
-/* line 28, ../sass/_showMyProfil.scss */
+/* line 29, ../sass/_showMyProfil.scss */
 #myProfil a.site {
   color: darkcyan;
 }
-/* line 31, ../sass/_showMyProfil.scss */
+/* line 32, ../sass/_showMyProfil.scss */
 #myProfil a.site:hover {
   color: darkslategray;
   text-decoration: underline;
 }
-/* line 35, ../sass/_showMyProfil.scss */
+/* line 36, ../sass/_showMyProfil.scss */
 #myProfil .linkedIn {
   align-items: center;
 }
-/* line 38, ../sass/_showMyProfil.scss */
+/* line 39, ../sass/_showMyProfil.scss */
 #myProfil .imgPhoto img {
   height: 17em;
 }
-/* line 44, ../sass/_showMyProfil.scss */
+/* line 45, ../sass/_showMyProfil.scss */
 #myProfil .divform {
   text-align: center;
   margin-bottom: 25px;
