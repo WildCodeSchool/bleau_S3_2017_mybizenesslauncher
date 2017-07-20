@@ -59,7 +59,11 @@
                         <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans}}</a>
                     </div>
                     <div class="col s12 m6 l5 offset-l1 btn_createProjet">
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>
+                        {% else %}
+                            <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('fos_user_registration_register') }}">{{ 'Dépose ton projet'|trans}}</a>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="row vignette_projet_row">

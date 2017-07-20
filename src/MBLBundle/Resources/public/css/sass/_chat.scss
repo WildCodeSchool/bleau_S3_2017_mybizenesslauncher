@@ -10,7 +10,7 @@ chat.html.twig
     border: 2px solid $Colorblue;
     border-radius: 10px;
     color: $ColorDarkGrey;
-    height: 80px;
+
     margin-top: 5px;
     background-color: $Colorblue;
 
@@ -19,16 +19,7 @@ chat.html.twig
   {
     background-color: $Colorgrey;
   }
-  .chat_box_user {
 
-    border: 2px solid $Colorblue;
-    border-radius: 10px;
-    color: $Colorgrey;
-    height: 80px;
-    margin-top: 5px;
-    background-color: $Colorblue;
-
-  }
 
   //#chat_box a {
   //  border: 1px solid #c8c8c8;
@@ -91,6 +82,8 @@ chat.html.twig
     margin-bottom: 10px;
     border-bottom: 1px solid $Colorblue;
   }
+  .btnfilterAllprofil{
+    background-color: $Colorblue;  }
   //
   //p, i {
   //  color: #333;

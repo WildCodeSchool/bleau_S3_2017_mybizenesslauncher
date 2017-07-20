@@ -3,174 +3,176 @@
 {% block titreH2 %}<h2>{{ 'Mise en Relation'|trans }}</h2>{% endblock %}
 
 {% block body %}
-    <div class="container" id="chat_connection">
-        <div class="row">
-            {% for chat in chats %}
+    <div id="chat_connection">
+        <div class="container">
+            <div class="row">
+                {% for chat in chats %}
 
-                {#Verifier que si le createur de la connection ne puisse pas accepter à la place de la personne visée#}
-                {% if chat.connectionbyidcreator == app.user.id %}
+                    {#Verifier que si le createur de la connection ne puisse pas accepter à la place de la personne visée#}
+                    {% if chat.connectionbyidcreator == app.user.id %}
 
-                    {% if chat.connectionbyid > 0 %}
-                        <div class="col s12 connected">
-                            <div class="col s2 image">
-                                {#Nom du profil avec qui l'on veut discuter#}
-                                {% for profil in chat.profils %}
-                                    {% if profil == app.user %}
-                                    {% else %}
-
-                                        {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
-
-                                        {% else %}
-                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
-
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="col s3 Nom_prenom">
-                                {#Nom du profil avec qui l'on veut discuter#}
-                                {% for profil in chat.profils %}
-                                    {% if profil == app.user %}
-                                    {% else %}
-                                        {% if countV is empty %}
-                                            <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
-                                        {% else %}
-                                            {% for mss in countV  %}
-                                                {% if profil.prenom == mss['profil'] %}
-                                                    {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
-                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
-                                                {% else %}
-
-                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
-                                                {% endif %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="col s5 Nom_prenom">
-                                {#Dernier message avec ce profil#}
-                                {% if chat.msgs is not empty%}
-                                    {% set chatmsg = chat.msgs|last %}
-                                    {% if chatmsg.msg|length > 50 %}
-                                        <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
-                                    {% else %}
-                                        <p>  {{ chatmsg.msg }}</p>
-                                    {% endif %}
-                                {% endif %}
-                            </div>
-                            <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="{{'Discuter'|trans  }}"></a>
-                                </p>
-                            </div>
-                        </div>
-
-
-                    {% endif %}
-                {% else %}
-                    {% if chat.connectionbyid > 0 %}
-                        <div class="col s12 connected">
-                            <div class="col s2 image">
-                                {#Nom du profil avec qui l'on veut discuter#}
-                                {% for profil in chat.profils %}
-                                    {% if profil == app.user %}
-                                    {% else %}
-                                        {% if profil.fichier is null %}
-                                            <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
-                                        {% else %}
-                                            <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="col s3 Nom_prenom">
-
-                                {#Nom du profil avec qui l'on veut discuter#}
-                                {% for profil in chat.profils %}
-                                    {% if profil == app.user %}
-                                    {% else %}
-                                        {% if countV is empty %}
-
-                                            <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                        {% if chat.connectionbyid > 0 %}
+                            <div class="col l12 connected">
+                                <div class="col s12 m6 l2 image">
+                                    {#Nom du profil avec qui l'on veut discuter#}
+                                    {% for profil in chat.profils %}
+                                        {% if profil == app.user %}
                                         {% else %}
 
-                                            {% for mss in countV  %}
-                                                {% if profil.prenom == mss['profil'] %}
-                                                    {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
+                                            {% if profil.fichier is null %}
+                                                <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle responsive-img">
 
-                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
-                                                {% else %}
-
-                                                    <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                        {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
-                                                {% endif %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="col s5 Nom_prenom">
-                                {#Dernier message avec ce profil#}
-                                {% if chat.msgs is not empty%}
-                                    {% set chatmsg = chat.msgs|last %}
-                                    {% if chatmsg.msg|length > 50 %}
-                                        <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
-                                    {% else %}
-                                        <p>  {{ chatmsg.msg }}</p>
-                                    {% endif %}
-
-
-                                {% endif %}
-                            </div>
-                            <div class="col s2">
-                                <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn" type="submit" value="{{'Discuter'|trans  }}"></a>
-                                </p> </div>
-                        </div>
-                    {% else %}
-
-                        {#Nom du profil avec qui l'on peut accepter de discuter#}
-                        {% for profil in chat.profils %}
-
-                            {% if profil == app.user %}
-                            {% else %}
-
-                                <div class="col s12 connected">
-                                    <div class="col s2 image">
-                                        {#Nom du profil avec qui l'on veut discuter#}
-                                        {% for profil in chat.profils %}
-                                            {% if profil == app.user %}
                                             {% else %}
-                                                {% if profil.fichier is null %}
-                                                    <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
-                                                {% else %}
-                                                    <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
-                                                {% endif %}
+                                                <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle responsive-img">
+
                                             {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                    <div class="col s3 Nom_prenom">
-                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
-                                    </div>
-                                    <div class="col s7">
-                                        <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>
-                                    </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                            {% endif %}
-                        {% endfor %}
+                                <div class="col s12 m6 l3 Nom_prenom">
+                                    {#Nom du profil avec qui l'on veut discuter#}
+                                    {% for profil in chat.profils %}
+                                        {% if profil == app.user %}
+                                        {% else %}
+                                            {% if countV is empty %}
+                                                <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                    {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                            {% else %}
+                                                {% for mss in countV  %}
+                                                    {% if profil.prenom == mss['profil'] %}
+                                                        {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
+                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                    {% else %}
+
+                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="col s12 m6 l5 Nom_prenom">
+                                    {#Dernier message avec ce profil#}
+                                    {% if chat.msgs is not empty%}
+                                        {% set chatmsg = chat.msgs|last %}
+                                        {% if chatmsg.msg|length > 50 %}
+                                            <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                        {% else %}
+                                            <p>  {{ chatmsg.msg }}</p>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                                <div class="col s12 m6 l2">
+                                    <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn btnfilterAllprofil" type="submit" value="{{'Discuter'|trans  }}"></a>
+                                    </p>
+                                </div>
+                            </div>
 
 
+                        {% endif %}
+                    {% else %}
+                        {% if chat.connectionbyid > 0 %}
+                            <div class="col s12 connected">
+                                <div class="col s12 m6 l2 image">
+                                    {#Nom du profil avec qui l'on veut discuter#}
+                                    {% for profil in chat.profils %}
+                                        {% if profil == app.user %}
+                                        {% else %}
+                                            {% if profil.fichier is null %}
+                                                <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                            {% else %}
+                                                <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="col s12 m6 l3 Nom_prenom">
+
+                                    {#Nom du profil avec qui l'on veut discuter#}
+                                    {% for profil in chat.profils %}
+                                        {% if profil == app.user %}
+                                        {% else %}
+                                            {% if countV is empty %}
+
+                                                <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                    {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                            {% else %}
+
+                                                {% for mss in countV  %}
+                                                    {% if profil.prenom == mss['profil'] %}
+                                                        {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
+
+                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                    {% else %}
+
+                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="col s12 m6 l5 Nom_prenom">
+                                    {#Dernier message avec ce profil#}
+                                    {% if chat.msgs is not empty%}
+                                        {% set chatmsg = chat.msgs|last %}
+                                        {% if chatmsg.msg|length > 50 %}
+                                            <p>  {{ chatmsg.msg|slice(0,50) ~ '...' }}</p>
+                                        {% else %}
+                                            <p>  {{ chatmsg.msg }}</p>
+                                        {% endif %}
+
+
+                                    {% endif %}
+                                </div>
+                                <div class="col s12 m6 l2">
+                                    <p><a href="{{ path('chatIndex', {'id' : chat.id}) }}"><input class="btn btnfilterAllprofil" type="submit" value="{{'Discuter'|trans  }}"></a>
+                                    </p> </div>
+                            </div>
+                        {% else %}
+
+                            {#Nom du profil avec qui l'on peut accepter de discuter#}
+                            {% for profil in chat.profils %}
+
+                                {% if profil == app.user %}
+                                {% else %}
+
+                                    <div class="col s12 connected">
+                                        <div class="col s12 m6 l2 image">
+                                            {#Nom du profil avec qui l'on veut discuter#}
+                                            {% for profil in chat.profils %}
+                                                {% if profil == app.user %}
+                                                {% else %}
+                                                    {% if profil.fichier is null %}
+                                                        <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                                    {% else %}
+                                                        <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="col s12 m6 l3 Nom_prenom">
+                                            <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
+                                                {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                        </div>
+                                        <div class="col s12 m6 l7">
+                                            <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn btnfilterAllprofil" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+
+                        {% endif %}
                     {% endif %}
-                {% endif %}
 
-            {% endfor %}
+                {% endfor %}
 
+            </div>
         </div>
     </div>
 {% endblock %}
