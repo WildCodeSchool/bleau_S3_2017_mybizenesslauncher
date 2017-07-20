@@ -11,13 +11,13 @@
 
             {% endfor %}
             <div class="row ">
-                <div class="col s12 m8 offset-l2 l6 offset-l3 showProfil">
+                <div class="col s12 m8 offset-l2 l6 offset-l3 showProfil z-depth-5">
                     <div class="col s12 m12 titre">
                         <h4 id="titre" class="center">{{ profil.prenom|capitalize }} {{ profil.nom|capitalize }}</h4>
                     </div>
 
                     <div class="col s12 center imgPhoto  section">
-                        {% if profil.fichier is null %}
+                        {% if profil.fichier is empty %}
                             <img class="responsive-img" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                         {% else %}
                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ profil.fichier.photo ) }}">

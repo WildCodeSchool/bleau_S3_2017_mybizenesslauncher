@@ -69,7 +69,7 @@
                 <div class="row vignette_projet_row">
                     {% for pro in projet %}
                         <a href="{{ path('showOneProject', {'id': pro.id}) }}">
-                            <div class="col s12 m6 l5 offset-l1 z-depth-5 vignette_projet">
+                            <div class="col s12 m6 l5 offset-l1 vignette_projet z-depth-5">
                                 <div class="row vignette">
                                     <div class="col s12 intitul">
                                         <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
@@ -169,7 +169,6 @@
                                         {% if pro.fichier is empty %}
                                             <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-                                            {# TODO: à verifier #}
                                             <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
@@ -211,12 +210,12 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>{{ 'Description'|trans}}</h6>
-                                        {% if pro.descritpion is defined %}
-                                            <p>{{ pro.description }}</p>
+                                        {% if pro.description is same as(null) %}
+                                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                                         {% else %}
-                                            {{ 'Non renseigné'|trans }}
+                                         {{ pro.description }}
                                         {% endif %}
-                                        <div class="divider"></div>
+
                                     </div>
                                 </div>
                             </div>

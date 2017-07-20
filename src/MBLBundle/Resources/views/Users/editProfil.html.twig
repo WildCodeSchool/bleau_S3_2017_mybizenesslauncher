@@ -88,13 +88,14 @@
                 <div class="col s12 divFichier">
                     <div class="row">
                         <div class="file center-align">
-                            <div class="col s3">
+                            <div class="col s6">
+                                <label>{{ 'Photo(s)'|trans }}</label>
                                 {{ form_errors(edit_form.fichier) }}
                                 {{ form_widget(edit_form.fichier) }}
                             </div>
                         </div>
-                        <div class="col s3">
-                            <img class="hiddenPreview" id="preview" src="#" alt="{{ 'Votre Photo'|trans }}" />
+                        <div class="col s6">
+                            <img class="hiddenPreview  responsive-img" id="preview" src="#" alt="Votre Photo" />
                         </div>
                     </div>
 
@@ -104,7 +105,9 @@
                         <input class="btn btlft" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
-                        <input class="btn btrght" href="{{ path('showMyProfil') }}" value="{{ 'Voir mon profil public'|trans }}"/>
+
+                       <a href="{{ path('showMyProfil') }}"><input class="btn btrght"  value="{{ 'Voir mon profil public'|trans }}"/></a>
+
                     </div>
                 </div>
                 {{ form_end(edit_form) }}

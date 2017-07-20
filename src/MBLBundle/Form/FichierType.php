@@ -16,6 +16,7 @@ class FichierType extends AbstractType
     {
         $builder
             ->add('file', FileType::class, array(
+                'label' => false,
                 'attr' => array(
                     "id" =>"imgInp"
                 )

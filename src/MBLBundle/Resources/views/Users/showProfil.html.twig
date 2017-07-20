@@ -2,20 +2,18 @@
 
 {% block titreH2 %} <h2 class="bandeau_homepage">
     {% if app.user.id is defined %}
-        {% if app.user.id == profil.id %} }}
+        {% if app.user.id == profil.id %}
             {{ 'Mon profil public'|trans }}
         {% else %}
-            {{ 'Profil'|trans }}
-            {{ 'Prenom:'|trans }}
+            {{ 'Prenom:'|trans }}:
             {{ profil.prenom|capitalize }}
-            {{ 'Nom:'|trans }}
+            {{ 'Nom:'|trans }}:
             {{ profil.nom|capitalize }}
         {% endif %}
     {% else %}
-        {{ 'Profil'|trans }}
-        {{ 'Prenom:'|trans }}
+        {{ 'Prenom:'|trans }}:
         {{ profil.prenom|capitalize }}
-        {{ 'Nom:'|trans }}
+        {{ 'Nom:'|trans }}:
         {{ profil.nom|capitalize }}
     {% endif %}
     </h2>
@@ -31,7 +29,7 @@
                     </div>
 
                     <div class="col s12 center imgPhoto section">
-                        {% if profil.fichier is null %}
+                        {% if profil.fichier is empty %}
                             <img class="responsive-img" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                         {% else %}
                             <img class="responsive-img" src="{{ asset('uploads/images/' ~ profil.fichier.photo ) }}">

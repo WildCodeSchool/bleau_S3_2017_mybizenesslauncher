@@ -1,6 +1,5 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-
 {% if app.session.get('nbErrors') > 0 %}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -27,8 +26,10 @@
             function callFunc(){
                 jQuery('.connexion, .regOnglet a').trigger('click');
                 clearInterval(interval);
+                $.ajax({
+                    url: '{{ path('remove_registration_session') }}'
+                })
             }
-
         });
     </script>
 {% endif %}
