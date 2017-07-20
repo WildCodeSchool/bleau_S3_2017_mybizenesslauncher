@@ -1161,42 +1161,50 @@ chat.html.twig
   border-radius: 10px;
   color: #4b494b;
   margin-top: 5px;
+  height: 100px;
+  margin-bottom: 5px;
   background-color: #98d4e1;
 }
-/* line 18, ../sass/_chat.scss */
+@media only screen and (max-width: 992px) {
+  /* line 8, ../sass/_chat.scss */
+  #chat .chat_box {
+    height: 150px;
+  }
+}
+/* line 22, ../sass/_chat.scss */
 #chat .chat_box:hover {
   background-color: #f0f0f0;
 }
-/* line 30, ../sass/_chat.scss */
+/* line 34, ../sass/_chat.scss */
 #chat #chat_text {
   color: #4b494b;
   margin-top: 5px;
   border: 2px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 38, ../sass/_chat.scss */
+/* line 42, ../sass/_chat.scss */
 #chat .Nom_prenom p {
   color: #4b494b;
   font-size: 1.1em;
 }
-/* line 44, ../sass/_chat.scss */
+/* line 48, ../sass/_chat.scss */
 #chat .color-text {
   border: 1px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 51, ../sass/_chat.scss */
+/* line 55, ../sass/_chat.scss */
 #chat .color-text-user {
   border: 1px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 80, ../sass/_chat.scss */
+/* line 84, ../sass/_chat.scss */
 #chat .group-text {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #98d4e1;
 }
-/* line 85, ../sass/_chat.scss */
+/* line 89, ../sass/_chat.scss */
 #chat .btnfilterAllprofil {
   background-color: #98d4e1;
 }
