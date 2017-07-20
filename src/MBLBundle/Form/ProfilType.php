@@ -1,5 +1,4 @@
 <?php
-
 namespace MBLBundle\Form;
 
 use Doctrine\ORM\EntityRepository;
@@ -19,9 +18,6 @@ use MBLBundle\Entity\Invest;
 use MBLBundle\Entity\Metier;
 use MBLBundle\Entity\Ou;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
-
-
-
 class ProfilType extends AbstractType
 {
     /**
@@ -30,15 +26,16 @@ class ProfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {   /*dump($options); die();*/
         $builder
-            ->add('nom', TextType::class, array('required' => false))
-            ->add('prenom', TextType::class, array('required' => false))
-            ->add('description', TextareaType::class, array('required' => false))
+            ->add('nom', TextType::class, array('required' => true))
+            ->add('prenom', TextType::class, array('required' => true))
+            ->add('description', TextareaType::class, array('required' => true))
             ->add('linkedIn', UrlType::class, array(
                 'required' => false,
                 'data' => ' http://VotrelinkedIn'
-            ))
-
-            ->add('localisation', CountryType::class, array(
+            ));
+        if ($options["locale"] == "fr")
+        {
+            $builder->add('localisation', ChoiceType::class, array(
                 'choices' => array(
                     'France' => array(
                         'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
@@ -60,8 +57,16 @@ class ProfilType extends AbstractType
                         'Réunion' => 'France, Réunion',
                         'Mayotte' => 'France, Mayotte'
                     ),
+                    'Autre'   => 'autre',
+                ),  'required'      => false,
+                'placeholder'   => 'Choisissez'
+            ));
+        }
+        else
+        {
+            $builder->add('localisation', ChoiceType::class, array(
+                'choices' => array(
                     'Italie' => array(
-
                         'Abruzzo' => 'Italie, Abruzzo',
                         'Alto Adige' => 'Italie, Alto Adige',
                         'Basilicata' => 'Italie, Basilicata',
@@ -86,30 +91,27 @@ class ProfilType extends AbstractType
                         'Veneto' => 'Italie, Veneto'
                     ),
                     'Autre'   => 'autre',
-
-
                 ),  'required'      => false,
                 'placeholder'   => 'Choisissez'
-            ))
-
-            ->add('ville')
-
+            ));
+        }
+        $builder->add('ville')
             ->add('metier', EntityType::class,
                 array(
                     'class' => Metier::class,
                     'choice_label' =>'metier'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Quel est votre profil?'
-            ))
+                ))
             ->add('etq', EntityType::class,
                 array(
                     'class' => ETQ::class,
                     'choice_label' =>'etq'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Disponible en tant que'
                 ))
             ->add('ou', EntityType::class,
@@ -118,7 +120,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'ou'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Où ça ?'
                 ))
             ->add('invest', EntityType::class,
@@ -127,7 +129,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'invest'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Investissement possible'
                 ))
             ->add('dispo', EntityType::class,
@@ -136,7 +138,7 @@ class ProfilType extends AbstractType
                     'choice_label' =>'dispo'.$options["locale"],
                     'multiple'=> false,
                     'expanded'=> false,
-                    'required' => false,
+                    'required' => true,
                     'placeholder'=> 'Votre disponibilité'
                 ))
             ->add('competences', EntityType::class,
@@ -145,14 +147,14 @@ class ProfilType extends AbstractType
                     'choice_label' =>'competences'.$options["locale"],
                     'multiple'=> true,
                     'expanded'=> false,
-                    'required' => false
+                    'required' => true
                 ))
             ->add('fichier', FichierType::class, array(
                 'required' => false
             ))
         ;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -163,7 +165,6 @@ class ProfilType extends AbstractType
             'locale'=>null
         ));
     }
-
     /**
      * {@inheritdoc}
      */
@@ -171,5 +172,4 @@ class ProfilType extends AbstractType
     {
         return 'mblbundle_profil';
     }
-
 }

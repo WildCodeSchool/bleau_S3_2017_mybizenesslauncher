@@ -3,22 +3,15 @@
 namespace MBLBundle\Controller;
 
 use MBLBundle\Entity\Chat;
-use MBLBundle\Entity\Fichier;
 use MBLBundle\Entity\Profil;
 use MBLBundle\Entity\ProfilRecherche;
 use MBLBundle\Entity\Projet;
 use MBLBundle\Entity\Text;
-use MBLBundle\Form\FichierType;
 use MBLBundle\Form\ProjetType;
-use MBLBundle\MBLBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
 
 class UserController extends Controller
 {
@@ -247,20 +240,26 @@ class UserController extends Controller
 
         if ($request->isXmlHttpRequest()) {
 
-            $em = $this->getDoctrine()->getManager();
+	        try {
+		        $em = $this->getDoctrine()->getManager();
 
-            $projet->addProfilsrecherch($projet_profil);
-            $projet_profil->addProjet($projet);
-            $em->persist($projet_profil);
-            $em->flush();
+		        $projet->addProfilsrecherch($projet_profil);
+		        $projet_profil->addProjet($projet);
+		        $em->persist($projet_profil);
+		        $em->flush();
 
-            $projet_profilId = $projet_profil->getId();
-            $projet_profilTemp =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProfilRecherche($projet_profilId, $locale);
-            $content = $this->renderView('@MBL/Users/profilsRechercheTemplate.html.twig', array(
-                'profil' => $projet_profilTemp[0]
-            ));
+		        $projet_profilId = $projet_profil->getId();
+		        $projet_profilTemp =  $em->getRepository('MBLBundle:ProfilRecherche')->myfindByProfilRecherche($projet_profilId, $locale);
+		        $response = $this->renderView('@MBL/Users/profilsRechercheTemplate.html.twig', array(
+			        'profil' => $projet_profilTemp[0]
+		        ));
+	        }
+	        catch (\Doctrine\DBAL\DBALException $e)
+	        {
+	        	$response = array('msg' => $e->getMessage());
+	        }
 
-            $response = new JsonResponse($content);
+            $response = new JsonResponse($response);
 
             return $response;
 
@@ -419,7 +418,7 @@ class UserController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteMyProjectAction(Projet $projet = null, $id)
+    public function deleteMyProjectAction(Projet $projet = null, Request $request)
     {
         if ($projet != null) {
             $em = $this->getDoctrine()->getManager();

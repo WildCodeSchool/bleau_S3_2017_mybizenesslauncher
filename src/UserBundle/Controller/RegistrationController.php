@@ -85,4 +85,21 @@ class RegistrationController extends BaseController
             'form' => $form->createView(),
         ));
     }
+
+	/**
+	 * Remove session after error registration
+	 * @param Request $request
+	 * @return Response
+	 */
+    public function removeSessionAction(Request $request)
+    {
+    	if ($request->isXmlHttpRequest())
+	    {
+	    	$session = $request->getSession();
+	    	$session->remove('errors');
+	    	$session->remove('nbErrors');
+
+	    	return new Response(200);
+	    }
+    }
 }
