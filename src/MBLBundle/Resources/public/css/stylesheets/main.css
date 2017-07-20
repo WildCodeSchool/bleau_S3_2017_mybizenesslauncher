@@ -7,12 +7,12 @@ CONSTANTE
 /*
 Font
 */
-/* line 23, ../sass/_global.scss */
+/* line 22, ../sass/_global.scss */
 html {
   font-family: font36452;
 }
 
-/* line 27, ../sass/_global.scss */
+/* line 26, ../sass/_global.scss */
 * {
   text-align: justify;
 }
@@ -22,13 +22,13 @@ Variable globale
 
 BALISE
 */
-/* line 37, ../sass/_global.scss */
+/* line 36, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 42, ../sass/_global.scss */
+/* line 41, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,23 +45,23 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 57, ../sass/_global.scss */
+/* line 56, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 62, ../sass/_global.scss */
+/* line 61, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 67, ../sass/_global.scss */
+/* line 66, ../sass/_global.scss */
 a {
   color: inherit;
 }
 
-/* line 70, ../sass/_global.scss */
+/* line 69, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -71,17 +71,17 @@ a {
   max-width: 300px;
 }
 
-/* line 79, ../sass/_global.scss */
+/* line 78, ../sass/_global.scss */
 .vignette_projet_row {
   left: 30%;
 }
 
-/* line 82, ../sass/_global.scss */
+/* line 81, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 86, ../sass/_global.scss */
+/* line 85, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -91,12 +91,12 @@ a {
   min-width: 200px;
 }
 
-/* line 98, ../sass/_global.scss */
+/* line 97, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 101, ../sass/_global.scss */
+/* line 100, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
@@ -104,7 +104,7 @@ a {
   background: white;
 }
 
-/* line 108, ../sass/_global.scss */
+/* line 107, ../sass/_global.scss */
 .bandeau_homepage {
   width: 100%;
   margin: 0;
@@ -112,13 +112,13 @@ a {
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 108, ../sass/_global.scss */
+  /* line 107, ../sass/_global.scss */
   .bandeau_homepage {
     display: none;
   }
 }
 
-/* line 118, ../sass/_global.scss */
+/* line 117, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -130,28 +130,28 @@ a {
   hyphens: auto;
 }
 
-/* line 128, ../sass/_global.scss */
+/* line 127, ../sass/_global.scss */
 .photo_profil {
   max-height: 7em;
   border-radius: 8px;
 }
 
-/* line 139, ../sass/_global.scss */
+/* line 138, ../sass/_global.scss */
 .info_profil {
   background: white;
 }
 
-/* line 144, ../sass/_global.scss */
+/* line 143, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 148, ../sass/_global.scss */
+/* line 147, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 151, ../sass/_global.scss */
+/* line 150, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
