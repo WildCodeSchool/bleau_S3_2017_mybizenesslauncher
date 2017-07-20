@@ -13,7 +13,7 @@ $BorderRadius : 8px;
 $small-and-down: "only screen and (max-width : 600px)";
 $medium-and-down: "only screen and (max-width : 992px)";
 $large-and-up: "only screen and (min-width : 993px)";
-$lar: "only screen and (max-width : 1228px)";
+//$lar: "only screen and (max-width : 1228px)";
 
 
 /*
@@ -72,10 +72,12 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-
   min-width: 200px;
   max-width: 300px;
 
+}
+.vignette_projet_row{
+  left: 30%;
 }
 .vignette_projet:hover {
  background-color: $Colorblue;
@@ -103,6 +105,16 @@ a { color: inherit; }
   background: $ColorWhite;
   margin-bottom: 10px;
 }
+.bandeau_homepage {
+  width: 100%;
+  margin: 0;
+  background: $Colorblue;
+  color: $ColorWhite;
+  @media #{$small-and-down} {
+    display: none;
+
+  }
+}
 .vignette {
   border-radius: $BorderRadius;
   overflow-wrap: break-word;
@@ -114,6 +126,8 @@ a { color: inherit; }
   hyphens: auto;
 }
 .photo_profil {
+
+  max-height: 7em;
   border-radius: $BorderRadius;
 
 }

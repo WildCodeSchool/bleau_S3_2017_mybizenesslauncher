@@ -1,20 +1,6 @@
 @import 'global';
 #index {
 
-////For Materialize footer sticked at page bottom
-//  display: flex;
-//  min-height: 100vh;
-//  flex-direction: column;
-
-  .bandeau_homepage {
-    width: 100%;
-    margin: 0;
-    background: $Colorblue;
-    color: $ColorWhite;
-    @media #{$small-and-down} {
-      display: none;}
-  }
-
     h2 {
       font-size: 1.5em;
     }
@@ -41,7 +27,12 @@
   .btn_bandeau_homepage {
     background-color: $ColorWhite;
     color: $Colorblue;
+    font-size: 0.9rem;
+    min-width: 150px;
+    max-width: 300px;
     box-shadow: $BoxShadow;
+    height: 50px;
+    padding: 7px;
     &:hover {
       background-color: $Colorgrey;
       color: #6f9ea8;
@@ -49,8 +40,8 @@
     &:focus {
       background-color: $Colorgrey;
     }
-    @media #{$lar} {
-      display:none;
+    @media #{$medium-and-down} {
+    display:none;
     }
   }
   .btn_bandeau_homepage_down {
@@ -82,13 +73,15 @@
   .logoEb {
     max-width: 200px;
     height: auto;
+    @media screen and (min-width: 900px) and (max-width: 1345px) {
+      max-width: 150px;
+      height: auto;
+    }
     @media #{$medium-and-down} {
       display: none;
     }
   }
-  .logodefault{
-    width: 90px;
-  }
+
   .encarttof{
     padding-top: 10px;
   }

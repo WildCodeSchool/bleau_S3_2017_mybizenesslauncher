@@ -1,7 +1,7 @@
 {% extends '@MBL/layout.html.twig' %}
 
 
-{% block titreH2 %} <h2>{{ 'Parcourir vos projets'|trans }}</h2> {% endblock %}
+{% block titreH2 %} <h2 class="bandeau_homepage">{{ 'Parcourir vos projets'|trans }}</h2> {% endblock %}
 {% block body %}
     <div id="showMyProjet">
         {% for flashMessage in app.session.flashbag.get('notice') %}

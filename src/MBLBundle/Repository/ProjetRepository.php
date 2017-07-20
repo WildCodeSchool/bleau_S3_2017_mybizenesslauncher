@@ -16,6 +16,17 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
      *
      *
      */
+
+    public function countProjects($locale)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->select('COUNT(p)')
+            ->where('p.lngp = :locale')
+            ->setParameter('locale', $locale)
+            ->getQuery();
+
+        return $query->getSingleScalarResult();
+    }
     public function myfindOneById($id, $locale)
     {
         $qb = $this->createQueryBuilder('p');
@@ -166,7 +177,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-    public function findAllDesc($locale)
+    public function findAllDesc($locale, $nombreParPage, $page)
 
     {
         $qb = $this->createQueryBuilder('p');
@@ -177,7 +188,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
             ->addSelect('s.secteurActivite' . $locale . ' as secteur')
             ->where('p.lngp = :locale')
             ->setParameter('locale', $locale)
-            ->orderBy('p.id', 'DESC');
+            ->orderBy('p.id', 'DESC')
+            ->setFirstResult(($page-1) * $nombreParPage)
+            // Ainsi que le nombre d'articles à afficher
+            ->setMaxResults($nombreParPage);
 
         $projets = $qb->getQuery()->getResult();
 
@@ -207,7 +221,7 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
 
 
 
-    public function myfindProjetByVDeux($idSec, $idTyp, $Loc, $locale)
+    public function myfindProjetByVDeux($idSec, $nombreParPage, $page, $idTyp, $Loc, $locale)
     {
 
         if(is_numeric($idSec) && is_numeric($idTyp) && !empty($Loc))
@@ -226,7 +240,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('Loc', $Loc)
                 ->andwhere('p.lngp = :locale')
                 ->setParameter('locale', $locale)
-                ->orderBy('p.id', 'DESC');
+                ->orderBy('p.id', 'DESC')
+                ->setFirstResult(($page-1) * $nombreParPage)
+                // Ainsi que le nombre d'articles à afficher
+                ->setMaxResults($nombreParPage);
             $projets = $qb->getQuery()->getResult();
 
         }
@@ -246,7 +263,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                         ->setParameter('secId', $idSec)
                         ->andwhere('p.lngp = :locale')
                         ->setParameter('locale', $locale)
-                        ->orderBy('p.id', 'DESC');
+                        ->orderBy('p.id', 'DESC')
+                        ->setFirstResult(($page-1) * $nombreParPage)
+                        // Ainsi que le nombre d'articles à afficher
+                        ->setMaxResults($nombreParPage);
                     $projets = $qb->getQuery()->getResult();
                 }
                 else
@@ -263,7 +283,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                         ->setParameter('Loc', $Loc)
                         ->andwhere('p.lngp = :locale')
                         ->setParameter('locale', $locale)
-                        ->orderBy('p.id', 'DESC');
+                        ->orderBy('p.id', 'DESC')
+                        ->setFirstResult(($page-1) * $nombreParPage)
+                        // Ainsi que le nombre d'articles à afficher
+                        ->setMaxResults($nombreParPage);
                     $projets = $qb->getQuery()->getResult();
 
                 }
@@ -279,7 +302,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                     ->setParameter('typId', $Loc)
                     ->andwhere('p.lngp = :locale')
                     ->setParameter('locale', $locale)
-                    ->orderBy('p.id', 'DESC');
+                    ->orderBy('p.id', 'DESC')
+                    ->setFirstResult(($page-1) * $nombreParPage)
+                    // Ainsi que le nombre d'articles à afficher
+                    ->setMaxResults($nombreParPage);
                 $projets = $qb->getQuery()->getResult();
             }
 
@@ -298,7 +324,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameter('secId', $idSec)
                 ->andwhere('p.lngp = :locale')
                 ->setParameter('locale', $locale)
-                ->orderBy('p.id', 'DESC');
+                ->orderBy('p.id', 'DESC')
+                ->setFirstResult(($page-1) * $nombreParPage)
+                // Ainsi que le nombre d'articles à afficher
+                ->setMaxResults($nombreParPage);
             $projets = $qb->getQuery()->getResult();
         }
         elseif (is_numeric($idSec) || is_numeric($idTyp))
@@ -316,7 +345,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                     ->setParameter('secId', $idSec)
                     ->andwhere('p.lngp = :locale')
                     ->setParameter('locale', $locale)
-                    ->orderBy('p.id', 'DESC');
+                    ->orderBy('p.id', 'DESC')
+                    ->setFirstResult(($page-1) * $nombreParPage)
+                    // Ainsi que le nombre d'articles à afficher
+                    ->setMaxResults($nombreParPage);
                 $projets = $qb->getQuery()->getResult();
             }
             else
@@ -332,7 +364,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                     ->setParameter('typId', $idTyp)
                     ->andwhere('p.lngp = :locale')
                     ->setParameter('locale', $locale)
-                    ->orderBy('p.id', 'DESC');
+                    ->orderBy('p.id', 'DESC')
+                    ->setFirstResult(($page-1) * $nombreParPage)
+                    // Ainsi que le nombre d'articles à afficher
+                    ->setMaxResults($nombreParPage);
                 $projets = $qb->getQuery()->getResult();
             }
         }
@@ -348,7 +383,10 @@ class ProjetRepository extends \Doctrine\ORM\EntityRepository
                 ->addSelect('s.secteurActivite' . $locale . ' as secteur')
                 ->where('p.lngp = :locale')
                 ->setParameter('locale', $locale)
-                ->orderBy('p.id', 'DESC');
+                ->orderBy('p.id', 'DESC')
+                ->setFirstResult(($page-1) * $nombreParPage)
+                // Ainsi que le nombre d'articles à afficher
+                ->setMaxResults($nombreParPage);
             $projets = $qb->getQuery()->getResult();
 
 

@@ -14,7 +14,7 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
      * @param $locale
      * @return array
      */
-    public function myfindByVDeux($locale, $idloc, $idmetier)
+    public function myfindByVDeux($locale, $nombreParPage, $page, $idloc, $idmetier)
     {
 
         if (!empty($idloc) && is_numeric($idmetier)) {
@@ -22,14 +22,16 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
             $qb = $this->createQueryBuilder('p');
             $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
                 ->join('p.metier', 'm')
-                ->addSelect('m.metier' . $locale . ' as metier')
                 ->where('m.id = :met')
                 ->setParameter('met', $idmetier)
                 ->andWhere('p.localisation = :loc')
                 ->setParameter('loc', $idloc)
                 ->andwhere('p.lng = :locale')
                 ->setParameter('locale', $locale)
-                ->orderBy('p.id', 'DESC');
+                ->orderBy('p.id', 'DESC')
+                ->setFirstResult(($page-1) * $nombreParPage)
+                // Ainsi que le nombre d'articles à afficher
+                ->setMaxResults($nombreParPage);
             $profils = $qb->getQuery()->getResult();
         }
         elseif (!empty($idloc) || is_numeric($idmetier))
@@ -39,25 +41,28 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
                 $qb = $this->createQueryBuilder('p');
                 $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
                     ->join('p.metier', 'm')
-                    ->addSelect('m.metier' . $locale . ' as metier')
                     ->where('m.id = :met')
                     ->setParameter('met', $idmetier)
                     ->andWhere('p.lng = :locale')
                     ->setParameter('locale', $locale)
-                    ->orderBy('p.id', 'DESC');
+                    ->orderBy('p.id', 'DESC')
+                    ->setFirstResult(($page-1) * $nombreParPage)
+                    // Ainsi que le nombre d'articles à afficher
+                    ->setMaxResults($nombreParPage);
                 $profils = $qb->getQuery()->getResult();
             }
             else
             {
                 $qb = $this->createQueryBuilder('p');
                 $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
-                    ->join('p.metier', 'm')
-                    ->addSelect('m.metier' . $locale . ' as metier')
                     ->where('p.localisation = :loc')
                     ->setParameter('loc', $idloc)
                     ->andwhere('p.lng = :locale')
                     ->setParameter('locale', $locale)
-                    ->orderBy('p.id', 'DESC');
+                    ->orderBy('p.id', 'DESC')
+                    ->setFirstResult(($page-1) * $nombreParPage)
+                    // Ainsi que le nombre d'articles à afficher
+                    ->setMaxResults($nombreParPage);
                 $profils = $qb->getQuery()->getResult();
             }
         }
@@ -65,16 +70,23 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
         {
             $qb = $this->createQueryBuilder('p');
             $qb->select('p.id as id', 'p.prenom as prenom', 'p.description as description', 'p.localisation as localisation', 'p.nom as nom', 'p.ville as ville')
-                ->join('p.metier', 'm')
-                ->addSelect('m.metier' . $locale . ' as metier')
                 ->where('p.lng = :locale')
                 ->setParameter('locale', $locale)
-                ->orderBy('p.id', 'DESC');
+                ->orderBy('p.id', 'DESC')
+                ->setFirstResult(($page-1) * $nombreParPage)
+                // Ainsi que le nombre d'articles à afficher
+                ->setMaxResults($nombreParPage);
 
             $profils = $qb->getQuery()->getResult();
         }
         foreach ($profils as $key => $profil) {
 
+            $qb = $this->createQueryBuilder('p');
+            $qb->where('p.id = :id')
+                ->join('p.metier', 'm')
+                ->select('m.metier' . $locale . ' as metier')
+                ->setParameter('id', $profil['id']);
+            $profils[$key]['metier'] = $qb->getQuery()->getOneOrNullResult();
 //            Get fichier si défini et si null
             $qb = $this->createQueryBuilder('p');
             $qb->where('p.id = :id')
@@ -215,8 +227,18 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
+    public function countProfils($locale)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->select('COUNT(p)')
+            ->where('p.lng = :locale')
+            ->setParameter('locale', $locale)
+            ->getQuery();
 
-    public function myfindByLocale($locale)
+        return $query->getSingleScalarResult();
+    }
+
+    public function myfindByLocale($locale, $nombreParPage, $page)
     {
 
         $qb = $this->createQueryBuilder('p');
@@ -224,9 +246,9 @@ class ProfilRepository extends \Doctrine\ORM\EntityRepository
             ->where('p.lng = :locale')
             ->setParameter('locale', $locale)
             ->orderBy('p.id', 'DESC')
-
-
-        ;
+            ->setFirstResult(($page-1) * $nombreParPage)
+            // Ainsi que le nombre d'articles à afficher
+            ->setMaxResults($nombreParPage);
 
         $profils = $qb->getQuery()->getResult();
 
