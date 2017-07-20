@@ -105,7 +105,9 @@
                         <input class="btn btlft" type="submit" value="{{ 'Enregistrez'|trans }}"/>
                     </div>
                     <div class="col s6 btnright">
-                        <button class="btn btrght" href="{{ path('showMyProfil') }}">{{ 'Voir mon profil public'|trans }}</button>
+
+                       <a href="{{ path('showMyProfil') }}"><input class="btn btrght"  value="{{ 'Voir mon profil public'|trans }}"/></a>
+
                     </div>
                 </div>
                 {{ form_end(edit_form) }}
