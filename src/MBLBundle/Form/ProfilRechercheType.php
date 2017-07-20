@@ -21,22 +21,16 @@ class ProfilRechercheType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-<<<<<<< HEAD
-        $builder->add('ou', EntityType::class,
-            array(
-                'class' => Ou::class,
-                'choice_label' =>'ou',
-                'multiple'=> false,
-                'expanded'=> false,
-                'required' => false
-
-            ))
-
-
+        $builder
+	        ->add('ou', EntityType::class,
+	            array(
+	                'class' => Ou::class,
+	                'choice_label' =>'ou',
+	                'multiple'=> false,
+	                'expanded'=> false,
+	                'required' => false
+	            ))
             ->add('metier', EntityType::class,
-=======
-        $builder->add('metier', EntityType::class,
->>>>>>> dev
                 array(
                     'class' => Metier::class,
                     'choice_label' =>'metier'.$options["locale"],
