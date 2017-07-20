@@ -210,12 +210,12 @@
                                     </div>
                                     <div class="col s12">
                                         <h6>{{ 'Description'|trans}}</h6>
-                                        {% if pro.descritpion is defined %}
-                                            <p>{{ pro.description }}</p>
+                                        {% if pro.description is same as(null) %}
+                                            <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                                         {% else %}
-                                            {{ 'Non renseigné'|trans }}
+                                         {{ pro.description }}
                                         {% endif %}
-                                        <div class="divider"></div>
+
                                     </div>
                                 </div>
                             </div>
