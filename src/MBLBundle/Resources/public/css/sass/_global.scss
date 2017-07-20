@@ -16,6 +16,11 @@ $large-and-up: "only screen and (min-width : 993px)";
 //$lar: "only screen and (max-width : 1228px)";
 
 
+.bobol
+{
+  min-height: 500px;
+}
+
 /*
 Font
 */
@@ -107,7 +112,6 @@ a { color: inherit; }
 }
 .bandeau_homepage {
   width: 100%;
-  margin: 0;
   background: $Colorblue;
   color: $ColorWhite;
   @media #{$small-and-down} {
