@@ -68,7 +68,6 @@ body{
   background-color: $Colorgrey;
 }
 
-
 a { color: inherit; }
 //Vignettes
 
@@ -93,12 +92,8 @@ a { color: inherit; }
   border-radius: $BorderRadius;
   margin-bottom: 10px;
   height: 30em;
-
-
   max-width: 300px;
-
   min-width: 200px;
-
 }
 .vignette_profil:hover {
   background-color: $ColorDarkGrey;
@@ -116,7 +111,6 @@ a { color: inherit; }
   color: $ColorWhite;
   @media #{$small-and-down} {
     display: none;
-
   }
 }
 .vignette {
@@ -133,7 +127,6 @@ a { color: inherit; }
 
   max-height: 7em;
   border-radius: $BorderRadius;
-
 }
 //.photo_profil img {
 //  height: 7em;

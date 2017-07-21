@@ -104,7 +104,7 @@ layoutlogout: sconnessione
 E-mail: E-mail
 'Mot de passe': Password
 'Confirmer votre mot de passe': 'Confermare la sua password'
-'Ajoutez une description plus complête': 'Una più completa descrizione'
+'Ajoutez une description plus complète': 'Una più completa descrizione'
 'Votre compte linkedIn': 'vuestro contolinkedIn'
 'Quel est votre profil': 'Qual è il tuo profilo'
 Ville: Cità
@@ -118,3 +118,6 @@ connexion: Accedi
 Registration supplémentaire (optionnel): Registrazione aggiuntiva (facoltativa)
 Créer votre profil: Crea il tuo profilo
 'Erreur de connexion, E-mail ou mot de passe incorrect': 'Errore di connessione, E-mail o password errata'
+'Félicitation ! Votre compte a été créé avec succès !': 'Complimenti! Il tuo account è stato creato!'
+'Chargement...': 'Caricamento...'
+'Redirection automatique...': 'Reindirizzamento automatico...'

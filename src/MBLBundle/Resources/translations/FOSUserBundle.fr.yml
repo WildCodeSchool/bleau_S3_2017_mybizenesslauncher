@@ -104,7 +104,7 @@ layoutlogout: 'Se déconnecter'
 E-mail: E-mail
 'Mot de passe': 'Mot de passe'
 'Confirmer votre mot de passe': 'Confirmer votre mot de passe'
-'Ajoutez une description plus complête': 'Ajoutez une description plus complête'
+'Ajoutez une description plus complète': 'Ajoutez une description plus complète'
 'Votre compte linkedIn': 'Votre compte linkedIn'
 'Quel est votre profil': 'Quel est votre profil'
 Ville: Ville
@@ -115,4 +115,7 @@ Ville: Ville
 'A bientôt sur Innova''Up': 'A bientôt sur Innova''Up'
 Registration supplémentaire (optionnel): Registration supplémentaire (optionnel)
 Créer votre profil: Créer votre profil
-'Erreur de connexion, E-mail ou mot de passe incorrect': Erreur de connexion, E-mail ou mot de passe incorrect
+'Erreur de connexion, E-mail ou mot de passe incorrect': 'Erreur de connexion, E-mail ou mot de passe incorrect'
+'Félicitation ! Votre compte a été créé avec succès !': 'Félicitation ! Votre compte a été créé avec succès !'
+'Chargement...': 'Chargement...'
+'Redirection automatique...': 'Redirection automatique...'
