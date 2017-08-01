@@ -22,8 +22,6 @@ MBLBundle\Entity\Chat:
             type: integer
             nullable: true
 
-    lifecycleCallbacks: {  }
-
     manyToMany:
         msgs:
             targetEntity: MBLBundle\Entity\Text
@@ -34,13 +32,5 @@ MBLBundle\Entity\Chat:
             targetEntity: MBLBundle\Entity\Profil
             mappedBy: chats
             cascade: ["persist"]
-
-#    oneToOne:
-#        userCreator:
-#            targetEntity: MBLBundle\Entity\Profil
-#        userCall:
-#            targetEntity: MBLBundle\Entity\Profil
-#
-
 
 

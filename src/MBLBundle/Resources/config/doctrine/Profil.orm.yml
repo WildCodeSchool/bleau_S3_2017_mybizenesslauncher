@@ -59,10 +59,6 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Invest
             inversedBy: profils
 
-
-
-
-
     manyToMany:
         competences:
             targetEntity: MBLBundle\Entity\Competences
@@ -75,7 +71,6 @@ MBLBundle\Entity\Profil:
             targetEntity: MBLBundle\Entity\Chat
             inversedBy: profils
             cascade: ["persist"]
-
 
     oneToOne:
         fichier:

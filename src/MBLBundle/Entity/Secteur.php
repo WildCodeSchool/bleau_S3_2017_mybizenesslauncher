@@ -8,6 +8,12 @@ namespace MBLBundle\Entity;
 class Secteur
 {
 
+	public function __toString()
+	{
+		return $this->getSecteurActiviteit();
+	}
+
+	// Generated code
 
     /**
      * @var integer

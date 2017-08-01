@@ -13,11 +13,6 @@ class Profil extends BaseUser
      */
     protected $id;
 
-//    /**
-//     * @var
-//     */
-//    protected $bioUrl;
-
     public function setEmail($email)
     {
         $email =is_null($email) ? '' : $email;
@@ -26,9 +21,12 @@ class Profil extends BaseUser
         return $this;
     }
 
-    // Generated code
+	public function __toString()
+	{
+		return $this->email;
+	}
 
-
+	// Generated code
 
     /**
      * @var string

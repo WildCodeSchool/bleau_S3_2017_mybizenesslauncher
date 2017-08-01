@@ -8,7 +8,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: it
+    locale: fr
     upload_directory: '%kernel.root_dir%/web/uploads/images'
 
 framework:
@@ -96,50 +96,112 @@ fos_user:
 
 
 easy_admin:
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i'
     entities:
-
-        Chat:
-            class: MBLBundle\Entity\Chat
-
         Competences:
             class: MBLBundle\Entity\Competences
+            form:
+                fields: ['competencesfr','competencesit']
 
         Dispo:
             class: MBLBundle\Entity\Dispo
+            form:
+                fields: ['dispofr','dispoit']
 
         ETQ:
             class: MBLBundle\Entity\ETQ
-
-        Fichier:
-            class: MBLBundle\Entity\Fichier
+            form:
+                fields: ['etqfr','etqit']
 
         Invest:
             class: MBLBundle\Entity\Invest
+            form:
+                fields: ['investfr','investit']
 
         Metier:
             class: MBLBundle\Entity\Metier
+            form:
+                fields: ['metierfr','metierit']
 
         Ou:
             class: MBLBundle\Entity\Ou
+            form:
+                fields: ['ouit','oufr']
 
         Profil:
             class: MBLBundle\Entity\Profil
+            disabled_actions: ['new']
+            list:
+                fields:
+                    - nom
+                    - prenom
+                    - email
+                    - description
+                    - linkedIn
+                    - localisation
+                    - lng
+                    - ville
+                    - etq
+                    - dispo
+                    - ou
+                    - metier
+                    - invest
+                    - { property: 'competences', type: 'array' }
+                    - { property: 'projets', type: 'array' }
+                    - enabled
+                    - lastLogin
+                    - { property: 'roles', type: 'array' }
+            edit:
+                fields:
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
 
         ProfilRecherche:
             class: MBLBundle\Entity\ProfilRecherche
+            disabled_actions: ['new', 'edit']
+            list:
+                fields:
+                    - etq
+                    - ou
+                    - invest
+                    - dispo
+                    - metier
+                    - { property: 'projets', type: 'array' }
+                    - { property: 'competences', type: 'array' }
 
         Projet:
             class: MBLBundle\Entity\Projet
+            disabled_actions: ['new', 'edit']
+            list:
+                fields:
+                    - titrefr
+                    - titreit
+                    - descriptionfr
+                    - descriptionit
+                    - siteInternetfr
+                    - siteInternetit
+                    - ebustaUrlfr
+                    - ebustaUrlit
+                    - localisation
+                    - dateCreation
+                    - ville
+                    - lngp
+                    - secteur
+                    - typeDeProjet
+                    - { property: 'profilsrecherches', type: 'array' }
+                    - { property: 'profils', type: 'array' }
 
         Secteur:
             class: MBLBundle\Entity\Secteur
-
-        Text:
-            class: MBLBundle\Entity\Text
+            form:
+                fields: ['secteurActivitefr','secteurActiviteit']
 
         TypeDeProjet:
             class: MBLBundle\Entity\TypeDeProjet
-#        - MBLBundle\Entity\ImgProjet
+            form:
+                fields: ['typeDeProjetfr','typeDeProjetit']
 
     site_name: "Innova'Up"
     design:

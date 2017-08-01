@@ -7,6 +7,14 @@ namespace MBLBundle\Entity;
  */
 class Projet
 {
+
+	public function __toString()
+	{
+		return $this->titreit;
+	}
+
+	// Generated code
+
     /**
      * @var integer
      */

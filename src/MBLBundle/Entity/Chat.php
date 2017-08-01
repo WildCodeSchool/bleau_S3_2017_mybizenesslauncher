@@ -7,8 +7,6 @@ namespace MBLBundle\Entity;
  */
 class Chat
 {
-
-
     /**
      * @var integer
      */

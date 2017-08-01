@@ -16,8 +16,6 @@ MBLBundle\Entity\Secteur:
             type: string
             length: 255
 
-    lifecycleCallbacks: {  }
-
     oneToMany:
         projets:
             targetEntity: MBLBundle\Entity\Projet

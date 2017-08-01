@@ -17,8 +17,6 @@ MBLBundle\Entity\Ou:
             length: 255
     lifecycleCallbacks: {  }
 
-
-
     oneToMany:
         profils:
             targetEntity: MBLBundle\Entity\Profil

@@ -8,6 +8,12 @@ namespace MBLBundle\Entity;
 class TypeDeProjet
 {
 
+	public function __toString()
+	{
+		return $this->getTypeDeProjetit();
+	}
+
+	// Generated code
 
     /**
      * @var integer

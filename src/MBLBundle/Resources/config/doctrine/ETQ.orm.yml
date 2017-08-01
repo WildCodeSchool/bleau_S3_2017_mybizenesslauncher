@@ -15,10 +15,6 @@ MBLBundle\Entity\ETQ:
         etqit:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
-
-
-
 
     oneToMany:
         profils:

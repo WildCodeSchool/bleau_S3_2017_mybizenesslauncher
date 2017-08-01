@@ -15,7 +15,6 @@ MBLBundle\Entity\Competences:
         competencesit:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
 
     manyToMany:
         profilsrecherches:

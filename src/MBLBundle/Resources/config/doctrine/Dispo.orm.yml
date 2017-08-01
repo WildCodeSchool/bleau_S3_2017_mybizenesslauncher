@@ -15,8 +15,6 @@ MBLBundle\Entity\Dispo:
         dispoit:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
-
 
     oneToMany:
         profils:
