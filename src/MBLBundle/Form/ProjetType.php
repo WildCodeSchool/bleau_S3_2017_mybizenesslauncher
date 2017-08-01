@@ -69,14 +69,14 @@ class ProjetType extends AbstractType
         if ($options["locale"] == "fr")
         {
             $builder->add('localisation', LocalisationFrType::class, array(
-	            'required'      => false,
+	            'required'      => true,
                 'placeholder'   => 'Choisissez'
             ));
         }
         else
         {
             $builder->add('localisation', LocalisationItType::class, array(
-	            'required'      => false,
+	            'required'      => true,
                 'placeholder'   => 'Choisissez'
             ));
         }

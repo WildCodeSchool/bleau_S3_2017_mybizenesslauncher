@@ -43,12 +43,12 @@
                         <div class="typeDeProjet_row center-align">
                             <label>{{ 'Type de projet'|trans }}*</label>
                             {{ form_errors(form.typeDeProjet) }}
-                            {{ form_widget(form.typeDeProjet, {'attr': {'class': 'blue lighten-4'}}) }}
+                            {{ form_widget(form.typeDeProjet) }}
                         </div>
                         <div class="secteur center-align">
                             <label>{{ 'Secteur'|trans }}*</label>
                             {{ form_errors(form.secteur) }}
-                            {{ form_widget(form.secteur, {'attr': {'class': 'blue lighten-4'}}) }}
+                            {{ form_widget(form.secteur) }}
                         </div>
                         <div class="localisation center-align">
                             <label>{{ 'Localisation'|trans }}*</label>
@@ -108,6 +108,8 @@
         });
         $(document).ready(function() {
             $('select').material_select();
+            $("select[required]").css({display: "inline", height: 0, padding: 0, width: 0, position: 'absolute', top: 33});
+
             $('.file').on('click', '#mblbundle_projet_fichier_file', (function(){
                 $('#preview').removeClass('hiddenPreview')
                 $('#preview').slideDown(20000);
