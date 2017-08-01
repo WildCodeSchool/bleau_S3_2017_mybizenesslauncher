@@ -17,10 +17,12 @@ class SecteurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('secteurActivite', EntityType::class, array(
-        'class'         => 'MBLBundle\Entity\Secteur',
-        'choice_label'  => 'secteurActivite'.$options["locale"],
-        'multiple'      => false,
-        'expanded'      => false));
+	        'class'         => 'MBLBundle\Entity\Secteur',
+	        'choice_label'  => 'secteurActivite'.$options["locale"],
+	        'multiple'      => false,
+	        'expanded'      => false
+            )
+        );
     }
     
     /**

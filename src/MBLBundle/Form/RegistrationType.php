@@ -7,6 +7,8 @@
  */
 namespace MBLBundle\Form;
 
+use MBLBundle\Form\CustomType\LocalisationFrType;
+use MBLBundle\Form\CustomType\LocalisationItType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -30,82 +32,20 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom')
+	        ->remove('username')
+	        ->add('nom')
             ->add('prenom')
             ->add('lng', HiddenType::class, array(
-                             'data' => $this->locale,
-                             ))
-            ->remove('username')
+	            'data' => $this->locale,
+                )
+            )
             ->add('description')
             ->add('linkedin', UrlType::class, array(
-            'required' => false
-            ));
-            if ($this->locale == "fr")
-                    {
-                        $builder->add('localisation', ChoiceType::class, array(
-                            'choices' => array(
-                                'France' => array(
-                                    'Auvergne-Rhône-Alpes' => 'France, Auvergne-Rhône-Alpes',
-                                    'Bourgogne-Franche-Comté' => 'France, Bourgogne-Franche-Comté',
-                                    'Bretagne' => 'France, Bretagne',
-                                    'Centre-Val de Loire' => 'France, Centre-Val de Loire',
-                                    'Corse' => 'France, Corse',
-                                    'Grand Est' => 'France, Grand Est',
-                                    'Hauts-de-France' => 'France, Hauts-de-France',
-                                    'Île-de-France' => 'France, Île-de-France',
-                                    'Normandie' => 'France, Normandie',
-                                    'Nouvelle-Aquitaine' => 'France, Nouvelle-Aquitaine',
-                                    'Occitanie' => 'France, Occitanie',
-                                    'Pays de la Loire' => 'France, Pays de la Loire',
-                                    'Provence-Alpes-Côte d\'Azur' => 'Provence-Alpes-Côte d\'Azur',
-                                    'Guadeloupe' => 'France, Guadeloupe',
-                                    'Guyane' => 'France, Guyane',
-                                    'Martinique' => 'France, Martinique',
-                                    'Réunion' => 'France, Réunion',
-                                    'Mayotte' => 'France, Mayotte'
-                                ),
-                                'Autre'   => 'autre',
+                'required' => false
+                )
+            )
 
-                            ),  'required'      => false,
-                            'placeholder'   => 'Choisissez'
-                        ));
-                    }
-                    else
-                    {
-                        $builder->add('localisation', ChoiceType::class, array(
-                            'choices' => array(
-                                'Italie' => array(
-
-                                    'Abruzzo' => 'Italie, Abruzzo',
-                                    'Alto Adige' => 'Italie, Alto Adige',
-                                    'Basilicata' => 'Italie, Basilicata',
-                                    'Calabria' => 'Italie, Calabria',
-                                    'Campania' => 'Italie, Campania',
-                                    'Centro' => 'Italie, Centro',
-                                    'Emilia-Romagna' => 'Italie, Emilia-Romagna',
-                                    'Friuli-Venezia Giulia' => 'Italie, Friuli-Venezia Giulia',
-                                    'Lazio' => 'Italie, Lazio',
-                                    'Liguria' => 'Italie, Liguria',
-                                    'Lombardia' => 'Italie, Lombardia',
-                                    'Marche' => 'Italie, Marche',
-                                    'Molise' => 'Italie, Molise',
-                                    'Piemonte' => 'Italie, Piemonte',
-                                    'Puglia' => 'Italie, Puglia',
-                                    'Sardegna' => 'Italie, Sardegna',
-                                    'Sicilia' => 'Italie, Sicilia',
-                                    'Toscana' => 'Italie, Toscana',
-                                    'Trentino' => 'Italie, Trentino',
-                                    'Umbria' => 'Italie, Umbria',
-                                    'Valle d\'Aosta' => 'Italie, Valle d\'Aosta',
-                                    'Veneto' => 'Italie, Veneto'
-                                ),
-                                'Autre'   => 'autre',
-
-                            ),  'required'      => false,
-                            'placeholder'   => 'Choisissez'
-                        ));
-                    }
-            $builder->add('ville')
+	        ->add('ville')
 
             ->add('metier', EntityType::class,
                 array(
@@ -116,7 +56,8 @@ class RegistrationType extends AbstractType
                     'required' => false,
                     'placeholder'=> 'Quel est votre profil?'
 
-                ))
+                )
+            )
             ->add('etq', EntityType::class,
                 array(
                     'class' => 'MBLBundle\Entity\ETQ',
@@ -126,7 +67,8 @@ class RegistrationType extends AbstractType
                     'required' => false,
                     'placeholder'=> 'Disponible en tant que'
 
-                ))
+                )
+            )
             ->add('ou', EntityType::class,
                 array(
                     'class' => 'MBLBundle\Entity\Ou',
@@ -137,7 +79,8 @@ class RegistrationType extends AbstractType
                     'placeholder'=> 'Où ça ?'
 
 
-                ))
+                )
+            )
             ->add('invest', EntityType::class,
                 array(
                     'class' => 'MBLBundle\Entity\Invest',
@@ -147,7 +90,8 @@ class RegistrationType extends AbstractType
                     'required' => false,
                     'placeholder'=> 'Investissement possible'
 
-                ))
+                )
+            )
 
             ->add('dispo', EntityType::class,
                 array(
@@ -158,7 +102,8 @@ class RegistrationType extends AbstractType
                     'required' => false,
                     'placeholder'=> 'Votre disponibilité'
 
-                ))
+                )
+            )
             ->add('competences', EntityType::class,
                 array(
                     'class' => 'MBLBundle\Entity\Competences',
@@ -167,12 +112,14 @@ class RegistrationType extends AbstractType
                     'expanded'=> false,
                     'required' => false
 
-                ))
+                )
+            )
             ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array(
                 'label' => 'form.email',
                 'translation_domain' => 'FOSUserBundle',
                 'error_bubbling' => true
-                ))
+                )
+            )
             ->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
                 'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
                 'options' => array('translation_domain' => 'FOSUserBundle'),
@@ -180,8 +127,23 @@ class RegistrationType extends AbstractType
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
                 'error_bubbling' => true
-            ));
+                )
+            );
 
+	    if ($this->locale == "fr")
+	    {
+		    $builder->add('localisation', LocalisationFrType::class, array(
+			    'required'      => false,
+			    'placeholder'   => 'Choisissez'
+		    ));
+	    }
+	    else
+	    {
+		    $builder->add('localisation', LocalisationItType::class, array(
+			    'required'      => false,
+			    'placeholder'   => 'Choisissez'
+		    ));
+	    }
 
 
     }

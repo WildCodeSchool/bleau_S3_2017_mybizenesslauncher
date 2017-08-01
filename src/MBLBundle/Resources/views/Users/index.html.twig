@@ -163,7 +163,7 @@
                             <div class="col s12 m6 l5 offset-l1 vignette_profil z-depth-5">
                                 <div class="row vignette1 ">
                                     <div class="col s12 intitul">
-                                        <h4>{{ pro.prenom|capitalize|slice(0,15)}} {{ pro.nom|slice(0,1) }}.</h4>
+                                        <h4>{{ pro.prenom|capitalize|slice(0,15)}} {{ pro.nom|slice(0,1)|capitalize }}.</h4>
                                     </div>
                                     <div class="col s8 offset-s2 encarttof">
                                         {% if pro.fichier is empty %}

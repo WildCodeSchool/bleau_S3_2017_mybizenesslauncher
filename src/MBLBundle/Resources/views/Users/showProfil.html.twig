@@ -5,16 +5,10 @@
         {% if app.user.id == profil.id %}
             {{ 'Mon profil public'|trans }}
         {% else %}
-            {{ 'Prenom:'|trans }}:
-            {{ profil.prenom|capitalize }}
-            {{ 'Nom:'|trans }}:
-            {{ profil.nom|capitalize }}
+            {{ 'Profil'|trans }}
         {% endif %}
     {% else %}
-        {{ 'Prenom:'|trans }}:
-        {{ profil.prenom|capitalize }}
-        {{ 'Nom:'|trans }}:
-        {{ profil.nom|capitalize }}
+        {{ 'Profil'|trans }}
     {% endif %}
     </h2>
 {% endblock %}
@@ -25,7 +19,7 @@
             <div class="row ">
                 <div class="col s12 m8 offset-l2 l6 offset-l3 showProfil ">
                     <div class="col s12 m12 titre">
-                        <h4 id="titre" class="center">{{ profil.prenom|capitalize }} {{ profil.nom|capitalize }}</h4>
+                        <h4 id="titre" class="center">{{ profil.prenom|capitalize|slice(0,15)}} {{ profil.nom|slice(0,1)|capitalize ~ '.' }}</h4>
                     </div>
 
                     <div class="col s12 center imgPhoto section">
