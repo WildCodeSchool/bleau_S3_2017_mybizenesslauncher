@@ -16,6 +16,12 @@ use Symfony\Component\HttpFoundation\Response;
 class UserController extends Controller
 {
 
+	public function changeLocaleAction(Request $request, $locale)
+	{
+		$request->setLocale($locale);
+		$this->redirectToRoute('mbl_homepage');
+	}
+
     public function countDemandeContactAction()
     {
         $content = 0;

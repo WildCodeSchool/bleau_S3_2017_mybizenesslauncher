@@ -5,6 +5,10 @@ mbl:
         _locale: it|fr|
        #        _locale: fr|it
 
+mbl_changeLocale:
+    path: /{locale}
+    defaults: { _controller: MBLBundle:User:changeLocale }
+
 user_bundle:
     resource: "@UserBundle/Resources/config/routing.yml"
 
