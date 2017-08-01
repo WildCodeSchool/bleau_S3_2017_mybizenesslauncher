@@ -20,7 +20,7 @@
                                         {% else %}
 
                                             {% if profil.fichier is null %}
-                                                <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle responsive-img">
+                                                <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}" alt="" class="circle responsive-img">
 
                                             {% else %}
                                                 <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle responsive-img">
@@ -35,18 +35,15 @@
                                         {% if profil == app.user %}
                                         {% else %}
                                             {% if countV is empty %}
-                                                <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                    {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                             {% else %}
                                                 {% for mss in countV  %}
                                                     {% if profil.prenom == mss['profil'] %}
                                                         {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
-                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                        <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                     {% else %}
 
-                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                        <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endif %}
@@ -81,7 +78,7 @@
                                         {% if profil == app.user %}
                                         {% else %}
                                             {% if profil.fichier is null %}
-                                                <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                                <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}" alt="" class="circle  responsive-img">
                                             {% else %}
                                                 <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                             {% endif %}
@@ -96,20 +93,17 @@
                                         {% else %}
                                             {% if countV is empty %}
 
-                                                <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                    {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                             {% else %}
 
                                                 {% for mss in countV  %}
                                                     {% if profil.prenom == mss['profil'] %}
                                                         {{ 'Vous avez'|trans }} {{mss['nbmsg']}} {{ 'nouveaux messages'|trans }}
 
-                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                        <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                     {% else %}
 
-                                                        <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                            {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                                        <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endif %}
@@ -148,7 +142,7 @@
                                                 {% if profil == app.user %}
                                                 {% else %}
                                                     {% if profil.fichier is null %}
-                                                        <img src="{{ asset('uploads/images/595a059630d89.png') }}" alt="" class="circle  responsive-img">
+                                                        <img src="{{ asset('bundles/mbl/img/logoebusta.png') }}" alt="" class="circle  responsive-img">
                                                     {% else %}
                                                         <img src="{{ asset('uploads/images/' ~ profil.fichier.photo) }}" alt="" class="circle  responsive-img">
                                                     {% endif %}
@@ -156,8 +150,7 @@
                                             {% endfor %}
                                         </div>
                                         <div class="col s12 m6 l3 Nom_prenom">
-                                            <p> {{ 'Nom: '|trans }} {{ profil.nom }} <br/>
-                                                {{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
+                                            <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                         </div>
                                         <div class="col s12 m6 l7">
                                             <p class="right"><a href="{{ path('connect', {'id' : chat.id}) }}"><input class="btn btnfilterAllprofil" type="submit" value="{{ 'Accepter de discuter'|trans }}"></a> </p>

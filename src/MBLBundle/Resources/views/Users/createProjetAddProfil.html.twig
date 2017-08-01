@@ -127,7 +127,17 @@
             </div>
         </div>
     </div>
+    <!-- Modal Structure -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content center">
+            Veuillez renseigner tous les champs
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fermer</a>
+        </div>
+    </div>
 </div>
+
     {% endblock %}
 
 
@@ -147,7 +157,7 @@
                         success: function(response){
                             if (response.msg)
                             {
-                                alert('Veuillez renseigner tous les champs')
+                                $('#errorModal').modal('open');
                             }
                             else
                             {
