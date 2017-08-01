@@ -6,17 +6,6 @@
             crossorigin="anonymous"></script>
     <script>
         $( document ).ready(function() {
-            $(".button-collapse").sideNav();
-
-            $(".dropdown-button").dropdown();
-
-            $('.modal').modal();
-            /*$('ul.tabs').tabs();
-             $('ul.tabs').tabs('select_tab', 'tab_id');
-             $('.tabs').tabs({ 'swipeable': true });*/
-            $('.registerPlus').click(function () {
-                $('.moreRegisterHidden').slideDown('slow').removeClass('moreRegisterHidden');
-            });
 
             var interval = null;
 
@@ -36,189 +25,167 @@
 
 <div id="register">
     <div class="container">
-        <div class="row">
+        <div class="row center">
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
-            <h1 class="black-text center">{{ 'Enregistrez-vous'|trans}}</h1>
-            {% if app.session.get('nbErrors') > 0 %}
-                <p style="color: red; margin-top: 0;" class="center">{{ app.session.get('errors')|replace({'ERROR: ':''}) }}</p>
-            {% endif %}
-            <div class="col s12 center">
+            <div class="row">
+                <h1 class="black-text center">{{ 'Enregistrez-vous'|trans}}</h1>
+                {% if app.session.get('nbErrors') > 0 %}
+                    <p style="color: red; margin-top: 0;" class="center">{{ app.session.get('errors')|replace({'ERROR: ':''}) }}</p>
+                {% endif %}
+            </div>
 
-                <div class="row">
-                    <div class="col s6">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <label>{{ 'Nom:'|trans }}*</label>
-                            </div>
-                        </div>
-                        {{ form_widget(form.nom, {'attr' : {'placeholder' : 'Nom:'|trans}}) }}
-                        {{ form_errors(form.nom) }}
-                    </div>
-                    <div class="col s6">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <label>{{ 'Prenom:'|trans }}*</label>
-                            </div>
-                        </div>
-                        {{ form_widget(form.prenom, {'attr' : {'placeholder' : 'Prenom:'|trans}}) }}
-                        {{ form_errors(form.prenom) }}
-                    </div>
-                    <div class="col s6">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <label>{{ 'E-mail'|trans }}*</label>
-                            </div>
-                        </div>
-
-                        {{ form_widget(form.email, {'attr' : {'placeholder' : 'E-mail'|trans}}) }}
-                        {{ form_errors(form.email) }}
-                    </div>
-
-                    <div class="col s6">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <label>{{ 'Mot de passe'|trans }}*</label>
-                            </div>
-                        </div>
-                        {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : 'Mot de passe'|trans}}) }}
-                        {{ form_errors(form.plainPassword.first) }}
-                    </div>
-                    <div class="col s6" style="margin-top: 60px;">
-                        <div class="row">
-                            <div class="col s12 center">
-                                <div class="center">
-                                    <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s6">
-                        <div class="row">
-                            <div class="col s12 center">
-
-                                <label>{{ 'Confirmer votre mot de passe'|trans }}*</label>
-                            </div>
-                        </div>
-                        {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : 'Confirmer votre mot de passe'|trans}}) }}
-                        {{ form_errors(form.plainPassword.second) }}
-                    </div>
-
-
+            <div class="row">
+                <div class="col m6 s12">
+                    <label>{{ 'Nom:'|trans }}*</label>
+                    {{ form_widget(form.nom, {'attr' : {'placeholder' : 'Nom:'|trans}}) }}
+                    {{ form_errors(form.nom) }}
                 </div>
-
-                {{ 'Registration supplémentaire (optionnel)'|trans }}
-
-
-
-                <div class="row">
-                    <div class="col s12 center">
-                        <button type="button" class="btn registerPlus">{{ 'Créer votre profil'|trans }}</button>
-                    </div>
-                    <div class="col s12 center">
-                        <div class="moreRegisterHidden moreRegister">
-                            <h1 class="black-text center">{{ 'Ajoutez une description plus complète'|trans}}</h1>
-
-
-                            <div class="col s12 center">
-                                <div class="row">
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Description'|trans }}</label>
-                                        </div>
-                                        {{ form_widget(form.description, {'attr' : {'class' : 'customRegister ','placeholder' : 'Description'|trans}}) }}
-                                        {{ form_errors(form.description) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Votre compte linkedIn'|trans }}</label>
-                                        </div>
-
-                                        {{ form_widget(form.linkedin, {'attr' : {'class' : 'customRegister ','placeholder' : 'Votre compte linkedIn'|trans}}) }}
-                                        {{ form_errors(form.linkedin) }}
-
-                                    </div>
-
-
-                                    <div class="col s6">
-
-                                        <div class="col s12 center">
-                                            <label>{{ 'Localisation'|trans }}</label>
-                                        </div>
-
-
-                                        {{ form_widget(form.localisation, {'attr' : {'class' : 'center customRegister ','placeholder' : 'Localisation'|trans}}) }}
-                                        {{ form_errors(form.localisation) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-
-                                            <label>{{ 'Quel est votre profil'|trans }}</label>
-
-                                        </div>
-                                        {{ form_widget(form.metier, {'attr' : {'class' : 'center customRegister lighten-4', 'placeholder': 'Quel est votre profil'|trans}}) }}
-                                        {{ form_errors(form.metier) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                         <label>{{ 'Ville'|trans }}</label>
-
-                                        </div>
-
-                                        {{ form_widget(form.ville, {'attr' : {'class' : 'center customRegister ', 'placeholder' : 'Ville'|trans}}) }}
-                                        {{ form_errors(form.ville) }}
-
-                                    </div>
-
-
-
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Disponible en tant que'|trans }}</label>
-                                        </div>
-                                        {{ form_widget(form.etq, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Disponible en tant que'|trans }}) }}
-                                        {{ form_errors(form.etq) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Compétences'|trans }}</label>
-                                        </div>
-                                        {{ form_widget(form.competences, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Compétences'|trans }}) }}
-                                        {{ form_errors(form.competences) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Disponibilité'|trans }}</label>
-                                        </div>
-                                        {{ form_widget(form.dispo, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Disponibilité'|trans}}) }}
-                                        {{ form_errors(form.dispo) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Où ça ?'|trans }}</label>
-                                        </div>
-                                        {{ form_widget(form.ou, {'attr' : {'class' : 'customRegister lighten-4','placeholder' : 'Où ça ?'|trans}}) }}
-                                        {{ form_errors(form.ou) }}
-                                    </div>
-                                    <div class="col s6">
-                                        <div class="col s12 center">
-                                            <label>{{ 'Investissement possible'|trans }}</label>
-                                        </div>
-
-                                        {{ form_widget(form.invest, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Investissement possible'|trans}}) }}
-                                        {{ form_errors(form.invest) }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="center">
-                                <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
-                            </div>
-                        </div>
-                    </div>
-                    {{ form_end(form) }}
+                <div class="col m6 s12">
+                    <label>{{ 'Prenom:'|trans }}*</label>
+                    {{ form_widget(form.prenom, {'attr' : {'placeholder' : 'Prenom:'|trans}}) }}
+                    {{ form_errors(form.prenom) }}
                 </div>
             </div>
+            <div class="row">
+                <div class="col s12">
+                    <label>{{ 'E-mail'|trans }}*</label>
+                    {{ form_widget(form.email, {'attr' : {'placeholder' : 'E-mail'|trans}}) }}
+                    {{ form_errors(form.email) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m6 s12">
+                    <label>{{ 'Mot de passe'|trans }}*</label>
+                    {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : 'Mot de passe'|trans}}) }}
+                    {{ form_errors(form.plainPassword.first) }}
+                </div>
+                <div class="col s6">
+                    <label>{{ 'Confirmer votre mot de passe'|trans }}*</label>
+                    {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : 'Confirmer votre mot de passe'|trans}}) }}
+                    {{ form_errors(form.plainPassword.second) }}
+                </div>
+            </div>
+            <div class="row" id="firstRegisterButton" style="margin-top: 60px;">
+                <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+            </div>
+
+            {{ 'Registration supplémentaire (optionnel)'|trans }}
+
+            <div class="row">
+                <button type="button" class="btn registerPlus">{{ 'Créer votre profil'|trans }}</button>
+            </div>
+            <div class="row">
+                <div class="moreRegisterHidden moreRegister">
+                    <h1 class="black-text">{{ 'Ajoutez une description plus complète'|trans}}</h1>
+
+                    <div class="col s12 center">
+                        <div class="row">
+                            <div class="col m6 s12">
+                                <label>{{ 'Description'|trans }}</label>
+                                {{ form_widget(form.description, {'attr' : {'class' : 'customRegister ','placeholder' : 'Description'|trans}}) }}
+                                {{ form_errors(form.description) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Votre compte linkedIn'|trans }}</label>
+                                {{ form_widget(form.linkedin, {'attr' : {'class' : 'customRegister ','placeholder' : 'Votre compte linkedIn'|trans}}) }}
+                                {{ form_errors(form.linkedin) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Localisation'|trans }}</label>
+                                {{ form_widget(form.localisation, {'attr' : {'class' : 'center customRegister ','placeholder' : 'Localisation'|trans}}) }}
+                                {{ form_errors(form.localisation) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Quel est votre profil'|trans }}</label>
+                                {{ form_widget(form.metier, {'attr' : {'class' : 'center customRegister lighten-4', 'placeholder': 'Quel est votre profil'|trans}}) }}
+                                {{ form_errors(form.metier) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Ville'|trans }}</label>
+                                {{ form_widget(form.ville, {'attr' : {'class' : 'center customRegister ', 'placeholder' : 'Ville'|trans}}) }}
+                                {{ form_errors(form.ville) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Disponible en tant que'|trans }}</label>
+                                {{ form_widget(form.etq, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Disponible en tant que'|trans }}) }}
+                                {{ form_errors(form.etq) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Compétences'|trans }}</label>
+                                {{ form_widget(form.competences, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Compétences'|trans }}) }}
+                                {{ form_errors(form.competences) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Disponibilité'|trans }}</label>
+                                {{ form_widget(form.dispo, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Disponibilité'|trans}}) }}
+                                {{ form_errors(form.dispo) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Où ça ?'|trans }}</label>
+                                {{ form_widget(form.ou, {'attr' : {'class' : 'customRegister lighten-4','placeholder' : 'Où ça ?'|trans}}) }}
+                                {{ form_errors(form.ou) }}
+                            </div>
+                            <div class="col m6 s12">
+                                <label>{{ 'Investissement possible'|trans }}</label>
+                                {{ form_widget(form.invest, {'attr' : {'class' : 'customRegister lighten-4', 'placeholder' : 'Investissement possible'|trans}}) }}
+                                {{ form_errors(form.invest) }}
+                            </div>
+                            <div class="col m6 s12 divFichier">
+                                <div class="row">
+                                    <div class="file center-align">
+                                        <div class="col s6">
+                                            <label>{{ 'Photo(s)'|trans }}</label>
+                                            {{ form_errors(form.fichier) }}
+                                            {{ form_widget(form.fichier) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <img class="hiddenPreview responsive-img" id="preview" src="#" alt="Votre Photo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+        $('.hiddenPreview').hide();
+        $('.registerPlus').click(function () {
+            $('.moreRegisterHidden').slideToggle();
+        })
+    });
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#fos_user_registration_form_fichier_file").change(function(){
+        readURL(this);
+    });
+    $('.file').on('click', '#fos_user_registration_form_fichier_file', (function(){
+        $('#preview').removeClass('hiddenPreview');
+        $('#preview').slideDown(400);
+    }));
+</script>

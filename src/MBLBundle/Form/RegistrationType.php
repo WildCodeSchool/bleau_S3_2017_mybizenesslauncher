@@ -46,6 +46,9 @@ class RegistrationType extends AbstractType
             )
 
 	        ->add('ville')
+	        ->add('fichier', FichierType::class, array(
+		        'required' => false
+	        ))
 
             ->add('metier', EntityType::class,
                 array(

@@ -218,11 +218,11 @@
                         {% endif %}
                     </div>
                     <div class="col s12 m6 section">
-                        <img class="center responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
-                        {% if profil.linkedIn is same as(null) %}
+                        <img style="margin-top: .5rem; margin-bottom: -0.29rem;" class="center responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}">
+                        {% if profil.linkedIn == 'http://VotrelinkedIn' %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{{ profil.linkedIn }}</p>
+                            <p><a href="{{ profil.linkedIn }}">Link</a></p>
                         {% endif %}
                     </div>
                     {% if app.user.id is defined %}
