@@ -40,10 +40,10 @@
                                     </div>
                                     <div class="col s8 offset-s2 encarttof">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}" alt="img_profil">
+                                            <img height="50px" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}" alt="img_profil">
                                         {% else %}
                                             {# TODO: à verifier #}
-                                            <img class="responsive-img  photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}" alt="img_profil">
+                                            <img height="50px" class="responsive-img  photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}" alt="img_profil">
                                         {% endif %}
                                     </div>
                                 </div>

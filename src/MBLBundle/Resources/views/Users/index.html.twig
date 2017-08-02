@@ -54,7 +54,7 @@
             <div class="col s12 m6 l5 offset-l1 projet ">
                 <h3>{{ 'Vous cherchez un projet où vous investir'|trans}}</h3>
 
-                <div class="row bouton_projet valign-wrapper">
+                <div style="height: 50px;" class="row bouton_projet valign-wrapper">
                     <div class="col s12 m6 l5 offset-l1 btn_showProjet ">
                         <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('showProject') }}">{{ 'Parcourir les projets'|trans}}</a>
                     </div>
@@ -76,9 +76,9 @@
                                     </div>
                                     <div class="col s8 offset-s2 encarttof ">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
             <div class="col s12 m6 l5 profil  ">
                 <h3>{{ 'Vous cherchez un associé'|trans}}</h3>
 
-                <div class="row bouton_projet valign-wrapper">
+                <div style="height: 50px;"  class="row bouton_projet valign-wrapper">
                     <div class="col s12 m6 l5 offset-l1 btn_showProfil">
                         <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('showAllProfils') }}">{{ 'Parcourir les profils'|trans}}</a>
                     </div>
@@ -167,9 +167,9 @@
                                     </div>
                                     <div class="col s8 offset-s2 encarttof">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>

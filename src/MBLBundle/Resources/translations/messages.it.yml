@@ -35,9 +35,7 @@
 'Ajoutez un profil recherché': 'Aggiungere un profilo desiderato'
 'Mon compte': 'Il mio account'
 'Mon profil public': 'Il mio profilo pubblico'
-'Nom et prénom :': 'Cognome e nome: '
-'Nom: ': 'Cognome:'
-'Nom:': Cognome
+'Nom et prénom :': 'Nome e cognome: '
 'Non renseigné': Imprecisato
 'Non renseignée': Imprecisato
 'Nouveau Profil recherché': 'Nuovo profilo ricercato'
@@ -56,6 +54,8 @@
 'précisez votre métier': 'Specificate la sua professione'
 'Prenom: ': 'Nome: '
 'Prenom:': Nome
+'Nom: ': 'Cognome:'
+'Nom:': Cognome
 'Profil Recherché': 'Profilo ricercato'
 'Profils recherchés': 'Profili ricercati'
 'Projet créé le': 'Progetto creato il'
@@ -67,6 +67,7 @@
 'Titre': Titolo
 'Tous les outils pour t’aider à lancer ton activité': 'Tutti gli strumenti per aiutarti a lanciare la tua azienda.'
 'Trouve sur MyStartupTools.com': 'Trova su MyStartupTools.com'
+'Slogan e-boosta': 'Con le sue buste pubblici E-busta.com propongono di fare campagne di donazione di crowdfunding in cambio per aiutare a finanziare il progetto. Solo verrà applicata una commissione del 4% della somma raccolta, rendendo sito E-busta crowdfunding il più economico sul mercato.'
 'Type de projet': 'Tipo di progetto'
 'Ville': 'Cità'
 'Voir mes projets': 'Vedere i miei progetti'

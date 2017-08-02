@@ -8,6 +8,18 @@ namespace MBLBundle\Entity;
 class ProfilRecherche
 {
 
+	public function __toString()
+	{
+		$str =
+			'En tant que: ' . $this->getEtq() . ' // ' .
+			'Ou: ' . $this->getOu() . ' // ' .
+			'Investissement: ' . $this->getInvest() . ' // ' .
+			'Disponibilité: ' . $this->getDispo() . ' // ' .
+			'Metier: ' . $this->getMetier() . ' // ';
+		return $str;
+	}
+
+	// Generated code
 
     /**
      * @var integer
