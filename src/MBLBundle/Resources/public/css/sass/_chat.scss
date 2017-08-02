@@ -4,7 +4,9 @@ chat.html.twig
 */
 #chat {
   margin-top: 50px;
-
+  @media #{$small-and-down}{
+    margin-top: 10px;
+  }
   .chat_box {
 
     border: 2px solid $Colorblue;
@@ -16,6 +18,9 @@ chat.html.twig
     background-color: $Colorblue;
     @media #{$medium-and-down} {
       height: 150px;
+    }
+    @media #{$small-and-down}{
+      height: 55px;
     }
 
   }
@@ -38,6 +43,12 @@ chat.html.twig
       //color: $Colorblue;
       border: 2px solid $Colorblue;
       border-radius: 10px;
+      @media #{$small-and-down}{
+        input[type=text]{
+          margin: auto;
+        }
+      }
+
     }
   .Nom_prenom p
   {
@@ -82,8 +93,7 @@ chat.html.twig
   //
 
   .group-text {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     border-bottom: 1px solid $Colorblue;
   }
   .btnfilterAllprofil{

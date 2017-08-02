@@ -6,119 +6,113 @@
 {% endblock %}
 {% block titreH2 %}<h2 class="bandeau_homepage">{{ 'Chat avec'|trans }}{#la personne avec qui vous voulez parler#}
     {% for profil in chat.profils %}
-        {% if profil == app.user %}
-        {% else %}
-            {{ profil.nom }} {{ profil.prenom }}</p>
+        {% if profil != app.user %}
+            {{ profil.prenom|capitalize|slice(0,15)}} {{ profil.nom|slice(0,1)|capitalize ~ '.' }}
         {% endif %}
     {% endfor %}
     </h2>{% endblock %}
 
 {% block body %}
 
-
-
     <div class="container-fluid" id="chat">
         <div class="row">
-            <div class="col s12 m4 l4">
-                <div class="row">
-                    {% for chat in chats %}
-                        {% if chat.connectionbyid > 0 %}
-
-
-                            <div class="chat_box">
-
-                                <div id="modal1" class="modal">
-                                    <div class="modal-content">
-                                        <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">{{ 'Oui'|trans }}</a>
-                                    </div>
-                                </div>
+            <div class="col s12 m4">
+                {% for chat in chats %}
+                    {% if chat.connectionbyid > 0 %}
+                        <div class="chat_box">
+                            <div class="col s2">
                                 <a href="#modal1">
-                                    <div class="col s6 m1 l1 delete">
-                                        <p><i class="material-icons">delete</i></p>
-                                    </div>
-                                    <!-- Modal Structure -->
-
+                                    <p><i class="material-icons">delete</i></p>
                                 </a>
+                            </div>
+                            <div class="col s10">
                                 <a href="{{ path('chatIndex', {'id' : chat.id}) }}" >
-                                    <div class="col s6 m3 l3 Nom_prenom">
+                                    <div class="col s12 m4 Nom_prenom">
                                         {#Nom du profil avec qui l'on veut discuter#}
                                         {% for profil in chat.profils %}
-                                            {% if profil == app.user %}
-                                            {% else %}
-                                                <p>{{ profil.nom }}<br>
-                                                    {{ profil.prenom }}</p>
+                                            {% if profil != app.user %}
+                                                <p>{{ profil.prenom|capitalize|slice(0,15)}} {{ profil.nom|slice(0,1)|capitalize ~ '.' }}</p>
                                             {% endif %}
                                         {% endfor %}
                                     </div>
-                                    <div class="col s6 m6 l6 Nom_prenom">
+                                    <div class="col m6 Nom_prenom hide-on-small-only">
                                         {#Dernier message avec ce profil#}
                                         {% if chat.msgs is not empty%}
                                             {% set chatmsg = chat.msgs|last %}
-                                            <p>  {{ chatmsg.msg|slice(0,20) ~ '...' }}</p>
+                                            <p>  {{ chatmsg.msg|slice(0,10) ~ '...' }}</p>
                                         {% endif %}
                                     </div>
-                                    <div class="col s6 m2 l2 Nom_prenom chat_box_icon">
+                                    <div class="col m2 Nom_prenom chat_box_icon hide-on-small-only">
                                         {#Dernier message avec ce profil#}
                                         <p> <i class="material-icons">chat</i></p>
                                     </div>
                                 </a>
                             </div>
-
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="col s12 m7 offstet-m1 l7 offset-l1 " id="chat_text">
-                <div id="textarea" class="row">
-                    {#Formulaire#}
-                    {{ form_start(form, {'action': path('chatIndex', {'id' : chat.id}), 'method': 'GET'}) }}
-                    <div class="col s8">
-                        <p>{{ form_widget(form.msg) }}</p>
-                    </div>
-
-                    <div class="col s4">
-                        <p><input id="envoi" class="btn btnfilterAllprofil" type="submit" name="creation" value="{{ 'Envoyer'|trans }}"></p>
-
-                    </div>
-                    {{ form_end(form) }}
-                </div>
-                <div id="textAdded">
-
-
-                </div>
-                {#Les textes déjà existant#}
-                {% for text in texts %}
-                    {% if text.profil == app.user.prenom  %}
-                        <div class="group-text color-text-user">
-                            <input type="hidden" value="{{ text.id }}"/>
-                            <div class="center">
-                                <b><i> {{ text.profil }} </i></b>
-                                <span>{{ 'à'|trans }}  {{ text.dateCreation|date('H:i:s') }}</span>
-                            </div>
-
-                            <p> {{ text.msg }} </p>
-                        </div>
-                    {% else %}
-                        <div class="group-text color-text">
-                            <input type="hidden" value="{{ text.id }}"/>
-                            <div class="center">
-                                <b><i> {{ text.profil }} </i></b>
-                                <span> à {{ text.dateCreation|date('H:i:s') }}</span>
-                            </div>
-
-                            <p> {{ text.msg }} </p>
                         </div>
                     {% endif %}
                 {% endfor %}
-                {#//Les textes qui seront ajouté en js#}
+            </div>
+
+            <div class="col s12 m7 offset-m1">
+                <div id="chat_text">
+                    <div id="textarea" class="row">
+                        {#Formulaire#}
+                        {{ form_start(form, {'action': path('chatIndex', {'id' : chat.id}), 'method': 'GET'}) }}
+                        <div class="col s12 m8">
+                            <p>{{ form_widget(form.msg) }}</p>
+                        </div>
+
+                        <div class="col s12 m4">
+                            <p><input id="envoi" class="btn btnfilterAllprofil" type="submit" name="creation" value="{{ 'Envoyer'|trans }}"></p>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                    <div id="textAdded">
+
+
+                    </div>
+                    {#Les textes déjà existant#}
+                    {% for text in texts %}
+                        {% if text.profil == app.user.prenom  %}
+                            <div class="group-text color-text-user">
+                                <input type="hidden" value="{{ text.id }}"/>
+                                <div class="center">
+                                    <b><i> {{ text.profil }} </i></b>
+                                    <span>{{ 'à'|trans }}  {{ text.dateCreation|date('H:i:s') }}</span>
+                                </div>
+
+                                <p> {{ text.msg }} </p>
+                            </div>
+                        {% else %}
+                            <div class="group-text color-text">
+                                <input type="hidden" value="{{ text.id }}"/>
+                                <div class="center">
+                                    <b><i> {{ text.profil }} </i></b>
+                                    <span> à {{ text.dateCreation|date('H:i:s') }}</span>
+                                </div>
+
+                                <p> {{ text.msg }} </p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    {#//Les textes qui seront ajouté en js#}
+                </div>
 
 
             </div>
         </div>
+
+
+        {# MODAL delete discussion #}
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>{{ 'Voulez-vous vraiment supprimer cette personne?'|trans }}</h4>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ path('chatDisconnect', {'id' : chat.id}) }}" class="modal-action modal-close waves-effect waves-green btn-flat">{{ 'Oui'|trans }}</a>
+            </div>
+        </div>
+
     </div>
 {% endblock %}
 {% block javascripts %}

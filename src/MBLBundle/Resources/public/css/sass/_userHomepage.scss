@@ -1,9 +1,6 @@
 @import "global";
 #homepage
 {
-
-
-
   .UHP{
     width:100%;
     padding-top:100px;
@@ -12,10 +9,6 @@
   .btnlink {
     text-align: center;
     height:100px;
-  }
-
-  .btnlink1{
-
   }
 
   .btn {
@@ -28,6 +21,18 @@
     }
     &:focus{
       background-color: $Colorblue;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .UHP{
+      width:100%;
+      padding-top:40px;
+    }
+
+    .btnlink {
+      text-align: center;
+      height:50px;
     }
   }
 }

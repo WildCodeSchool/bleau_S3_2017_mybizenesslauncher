@@ -21,6 +21,13 @@ $large-and-up: "only screen and (min-width : 993px)";
   min-height: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  .bobol
+  {
+    min-height: auto;
+  }
+}
+
 /*
 Font
 */
@@ -83,7 +90,11 @@ a { color: inherit; }
   height: 30em;
   min-width: 200px;
   max-width: 300px;
-
+  @media #{$small-and-down} {
+    height: auto;
+    min-width: 0;
+    max-width: none;
+  }
 }
 .vignette_projet_row{
   left: 30%;
@@ -99,6 +110,11 @@ a { color: inherit; }
   height: 30em;
   max-width: 300px;
   min-width: 200px;
+  @media #{$small-and-down} {
+    height: auto;
+    min-width: 0;
+    max-width: none;
+  }
 }
 .vignette_profil:hover {
   background-color: $ColorDarkGrey;
@@ -115,7 +131,9 @@ a { color: inherit; }
   background: $Colorblue;
   color: $ColorWhite;
   @media #{$small-and-down} {
-    display: none;
+    .bandeau_homepage{
+      font-size: 35px;
+    }
   }
 }
 .vignette {

@@ -34,7 +34,9 @@ Layout.html.twig
   vertical-align: middle;
   padding-top: 5px;
   @media #{$small-and-down} {
-    display: none;
+    .bandeau_homepage{
+      font-size: 35px;
+    }
 
   }
 }

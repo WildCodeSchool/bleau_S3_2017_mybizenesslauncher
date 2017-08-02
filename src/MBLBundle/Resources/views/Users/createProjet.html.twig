@@ -12,68 +12,64 @@
 
 {% block body %}
     <div id="createProjet" class="container">
-        <div class="row formCreatePro">
-            <div class="col s12 m12">
-                {{ form_start(form) }}
+        <div class="row formCreatePro center-align">
+            {{ form_start(form) }}
                 <div class="row">
-                    <div class="col s6">
-                        <div class="titre_row center-align">
-                            <label>{{ 'Titre'|trans }}*</label>
-                            {{ form_errors(attribute(form, 'titre' ~ locale )) }}
-                            {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
-                        </div>
-                        <div class="description_row center-align">
-                            <label>{{ 'Description'|trans }}*</label>
-                            {{ form_errors(attribute(form, 'description' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans}}) }}
-                        </div>
-                        <div class="siteInternet_row center-align">
-                            <label>{{ 'Site Internet'|trans }}</label>
-                            {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
-                        </div>
-                        <div class="ebustaUrl_row center-align">
-                            <label>{{ 'ebusta Url'|trans }}</label>
-                            {{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
-                            {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': 'ebusta Url'|trans}}) }}
+                    <div class="titre_row col m8 offset-m2 s12">
+                        <label>{{ 'Titre'|trans }}*</label>
+                        {{ form_errors(attribute(form, 'titre' ~ locale )) }}
+                        {{ form_widget(attribute(form, 'titre' ~ locale), {'attr': {'placeholder': 'Titre'|trans}}) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="description_row col m8 offset-m2 s12">
+                        <label>{{ 'Description'|trans }}*</label>
+                        {{ form_errors(attribute(form, 'description' ~ locale)) }}
+                        {{ form_widget(attribute(form, 'description' ~ locale), {'attr': {'placeholder': 'Description'|trans, 'rows': '6'}}) }}
+                    </div>
+                </div>
 
-                        </div>
+                <div class="siteInternet_row col m6 s12">
+                    <label>{{ 'Site Internet'|trans }}</label>
+                    {{ form_errors(attribute(form, 'siteInternet' ~ locale)) }}
+                    {{ form_widget(attribute(form, 'siteInternet' ~ locale), {'attr': {'placeholder': 'site internet'|trans}}) }}
+                </div>
+                <div class="ebustaUrl_row col m6 s12">
+                    <label>{{ 'ebusta Url'|trans }}</label>
+                    {{ form_errors(attribute(form, 'ebustaUrl' ~ locale)) }}
+                    {{ form_widget(attribute(form, 'ebustaUrl' ~ locale), {'attr': {'placeholder': 'ebusta Url'|trans}}) }}
+                </div>
+                <div class="typeDeProjet_row col m6 s12">
+                    <label>{{ 'Type de projet'|trans }}*</label>
+                    {{ form_errors(form.typeDeProjet) }}
+                    {{ form_widget(form.typeDeProjet) }}
+                </div>
+                <div class="secteur col m6 s12">
+                    <label>{{ 'Secteur'|trans }}*</label>
+                    {{ form_errors(form.secteur) }}
+                    {{ form_widget(form.secteur) }}
+                </div>
+                <div class="localisation col m6 s12">
+                    <label>{{ 'Localisation'|trans }}*</label>
+                    {{ form_errors(form.localisation ) }}
+                    {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
+                </div>
+                <div class="ville col m6 s12">
+                    <label>{{ 'Ville'|trans }}</label>
+                    {{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
+                    {{ form_errors(form.ville) }}
+                </div>
+                <div class="row">
+                    <div class="file center-align col s12">
+                        <label>{{ 'Photo(s)'|trans }}</label>
+                        {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
+                        {{ form_errors(form.fichier.file) }}
+                        {{ form_widget(form.fichier.file) }}
                     </div>
-                    <div class="col s6">
-                        <div class="typeDeProjet_row center-align">
-                            <label>{{ 'Type de projet'|trans }}*</label>
-                            {{ form_errors(form.typeDeProjet) }}
-                            {{ form_widget(form.typeDeProjet) }}
-                        </div>
-                        <div class="secteur center-align">
-                            <label>{{ 'Secteur'|trans }}*</label>
-                            {{ form_errors(form.secteur) }}
-                            {{ form_widget(form.secteur) }}
-                        </div>
-                        <div class="localisation center-align">
-                            <label>{{ 'Localisation'|trans }}*</label>
-                            {{ form_errors(form.localisation ) }}
-                            {{ form_widget(form.localisation, {'attr': {'placeholder': 'Localisation'|trans}}) }}
-                        </div>
-                        <div class="ville center-align">
-                            <label>{{ 'Ville'|trans }}</label>
-                            {{ form_widget(form.ville, {'attr' : {'placeholder' : 'Ville'|trans}}) }}
-                            {{ form_errors(form.ville) }}
-                        </div>
+                    <div class="col s12">
+                        <img class="hiddenPreview  responsive-img" id="preview" src="#" alt="Votre Photo" />
                     </div>
-                        <div class="row">
-                            <div class="file center-align">
-                                <div class="col s6 ">
-                                    <label>{{ 'Photo(s)'|trans }}</label>
-                                    {# TODO: dans le css mettre le label par defaut en hidden pour pouvoir faire apparaitre la traduction de photo à la place #}
-                                    {{ form_errors(form.fichier.file) }}
-                                    {{ form_widget(form.fichier.file) }}
-                                </div>
-                            </div>
-                            <div class="col s6 ">
-                                <img class="hiddenPreview  responsive-img" id="preview" src="#" alt="Votre Photo" />
-                            </div>
-                        </div>
+                </div>
 
                 </div>
                 <div class="alignbtn">

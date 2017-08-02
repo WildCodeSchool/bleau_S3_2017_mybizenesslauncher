@@ -27,9 +27,6 @@ class ProjetType extends AbstractType
 	        ->add('titre'.$options["locale"], TextType::class, array(
                 'required' => true
 	        ))
-            ->add('description'.$options["locale"], TextareaType::class, array(
-                'required' => true
-            ))
 
             ->add('description'.$options["locale"], TextareaType::class, array(
                 'required' => true

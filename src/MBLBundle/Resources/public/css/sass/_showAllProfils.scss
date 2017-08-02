@@ -10,6 +10,10 @@
     margin-bottom: 10px;
     height: 35em;
     max-width: 300px;
+    @media #{$small-and-down}{
+      max-width: none;
+      height: auto;
+    }
   }
   .vignette_profil_all:hover {
     background-color: $ColorDarkGrey;
@@ -43,7 +47,7 @@
   }
   .vignette1{
     @media #{$small-and-down}{
-      margin-bottom: 10;
+      margin-bottom: 10px;
     }
   }
   .btndiscuss{
@@ -56,6 +60,9 @@
     padding-top:30px;
   }
   .btnfilterAllprofil{
-    background-color: $Colorblue;  }
-
+    background-color: $Colorblue;
+  }
+  @media #{$small-and-down}{
+    margin-top: 10px;
+  }
 }

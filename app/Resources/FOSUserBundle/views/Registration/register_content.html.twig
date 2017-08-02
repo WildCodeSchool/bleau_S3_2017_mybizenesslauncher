@@ -1,5 +1,11 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
+<style>
+    #fos_user_registration_form_fichier_file{
+        width: 100%;
+    }
+</style>
+
 {% if app.session.get('nbErrors') > 0 %}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -60,7 +66,7 @@
                     {{ form_widget(form.plainPassword.first, {'attr' : {'placeholder' : 'Mot de passe'|trans}}) }}
                     {{ form_errors(form.plainPassword.first) }}
                 </div>
-                <div class="col s6">
+                <div class="col m6 s12">
                     <label>{{ 'Confirmer votre mot de passe'|trans }}*</label>
                     {{ form_widget(form.plainPassword.second, {'attr' : {'placeholder' : 'Confirmer votre mot de passe'|trans}}) }}
                     {{ form_errors(form.plainPassword.second) }}
@@ -134,11 +140,9 @@
                             <div class="col m6 s12 divFichier">
                                 <div class="row">
                                     <div class="file center-align">
-                                        <div class="col s6">
-                                            <label>{{ 'Photo(s)'|trans }}</label>
-                                            {{ form_errors(form.fichier) }}
-                                            {{ form_widget(form.fichier) }}
-                                        </div>
+                                        <label>{{ 'Photo(s)'|trans }}</label>
+                                        {{ form_errors(form.fichier) }}
+                                        {{ form_widget(form.fichier) }}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -150,7 +154,9 @@
                         </div>
                     </div>
                     <div class="row center">
-                        <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+                        <div class="col s12">
+                            <input class="btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+                        </div>
                     </div>
                 </div>
             </div>

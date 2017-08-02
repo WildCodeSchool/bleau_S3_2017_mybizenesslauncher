@@ -3,30 +3,33 @@
 {% block titreH2 %} <h2 class="bandeau_homepage">{{ 'Parcourir les profils'|trans }}</h2> {% endblock %}
 {% block body %}
     <div id="showAllProfils">
-        <div class="container-fluid">
-            <div class="box_projet">
+        <div class="showProjet">
+            <div class="center-align">
                 {% for flashMessage in app.session.flashbag.get('error') %}
-
                     <h3>{{ flashMessage }}</h3>
-
                 {% endfor %}
-                <div class="row">
-                    {{ form_start(form_localisation) }}
+            </div>
 
-                    <div class="col s12 m4 l4">
+            <div class="row">
+                {{ form_start(form_localisation) }}
+                <div class="row">
+                    <div class="col s12 m4 offset-m2">
                         {{ form_row(form_localisation.localisation) }}
                         {{ form_errors(form_localisation.localisation) }}
                     </div>
-                    <div class="col s12 m4 l4">
+                    <div class="col s12 m4">
                         {{ form_row(form_localisation.metier) }}
                         {{ form_errors(form_localisation.metier) }}
                     </div>
-                    <div class="col s12 m4 l4 btnfilt">
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 offset-m3">
                         <input class="btn btnfilterAllprofil" name="Choisissez" type="submit" value="{{ 'Rechercher'|trans }}">
                     </div>
-                    {{ form_end(form_localisation) }}
                 </div>
-
+                {{ form_end(form_localisation) }}
+            </div>
+            <div class="box_projet">
                 <div class="row">
                     {% for pro in profils %}
                         <a href="{{ path('showProfil', { 'id': pro.id }) }}">
@@ -37,17 +40,16 @@
                                     </div>
                                     <div class="col s8 offset-s2 encarttof">
                                         {% if pro.fichier is empty %}
-                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}" alt="img_profil">
                                         {% else %}
                                             {# TODO: à verifier #}
-                                            <img class="responsive-img  photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img class="responsive-img  photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}" alt="img_profil">
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="row info_projet">
-                                    <div class="col s12">
+                                    <div class="row">
                                         <h6>{{ 'Profil'|trans }}</h6>
-
                                         {% if pro.metier.metier is defined  %}
                                             {{ pro.metier.metier }}
                                         {% else %}
@@ -55,7 +57,7 @@
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
-                                    <div class="col s12">
+                                    <div class="row">
                                         <h6>{{ 'Compétences'|trans }}</h6>
                                         {% for comp in pro.competences %}
                                             {% if loop.last %}
@@ -69,7 +71,7 @@
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
-                                    <div class="col s12">
+                                    <div class="row">
                                         <h5>{{ 'Localisation'|trans }}</h5>
                                         {% if pro.localisation is defined %}
                                         <p>{{ pro.localisation }}, {{ pro.ville }}</p>
@@ -78,25 +80,18 @@
                                         {% endif %}
                                         <div class="divider"></div>
                                     </div>
-
-                                    <div class="col s12">
+                                    <div class="row">
                                         <h5>{{ 'Description'|trans }}</h5>
                                         {% if pro.descritpion is defined %}
-
                                             <p>{{ pro.description }}</p>
                                         {% else %}
                                             {{ 'Non renseigné'|trans }}
                                         {% endif %}
-
-
                                     </div>
-
                                 </div>
-
                                 {% if app.user.id is defined %}
-                                    {% if app.user.id == pro.id %}
-                                    {% else %}
-                                        <div class="col s12">
+                                    {% if app.user.id != pro.id %}
+                                        <div class="row">
                                             <a class="btn btnfilterAllprofil btndiscuss" href="{{ path('chatConnect', {'id': pro.id}) }}">{{ 'Discuter'|trans }}</a>
                                         </div>
                                     {% endif %}
@@ -107,16 +102,25 @@
                 </div>
                 <div class="row">
                     <ul class="pagination">
-                        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                        <li class="disabled">
+                            <a href="#!">
+                                <i class="material-icons">chevron_left</i>
+                            </a>
+                        </li>
 
                         {% for i in range(1, nombrePage) %}
-
-                            <li class="active"><a href="{{ path('showAllProfils', {'page':  i }) }}"> {{ i }}</a></li>
-
+                            <li class="active">
+                                <a href="{{ path('showAllProfils', {'page':  i }) }}">
+                                    {{ i }}
+                                </a>
+                            </li>
                         {% endfor %}
 
-
-                        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        <li class="waves-effect">
+                            <a href="#!">
+                                <i class="material-icons">chevron_right</i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

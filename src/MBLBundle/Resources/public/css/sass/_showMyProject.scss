@@ -2,7 +2,7 @@
 @import "global";
 #showMyProjet {
   margin-top: 50px;
-text-align: center;
+  text-align: center;
   .vignette_Myprojet {
     background-color: $ColorDarkGrey;
     border-radius: $BorderRadius;
@@ -64,6 +64,18 @@ text-align: center;
       margin-bottom: 0;
     }
   }
+  .vignette_Myprojet {
+    @media #{$small-and-down}{
+      padding-bottom: 20px;
+      height: auto;
+      max-width: none;
+      min-width: 0;
+    }
+  }
+  @media #{$small-and-down}{
+    margin: 20px;
+  }
+
 }
 
 

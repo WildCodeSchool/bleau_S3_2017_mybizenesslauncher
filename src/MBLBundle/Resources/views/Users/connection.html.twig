@@ -13,7 +13,7 @@
 
                         {% if chat.connectionbyid > 0 %}
                             <div class="col l12 connected">
-                                <div class="col s12 m6 l2 image">
+                                <div class="col s3 m6 l2 image">
                                     {#Nom du profil avec qui l'on veut discuter#}
                                     {% for profil in chat.profils %}
                                         {% if profil == app.user %}
@@ -29,7 +29,7 @@
                                         {% endif %}
                                     {% endfor %}
                                 </div>
-                                <div class="col s12 m6 l3 Nom_prenom">
+                                <div class="col s9 m6 l3 Nom_prenom">
                                     {#Nom du profil avec qui l'on veut discuter#}
                                     {% for profil in chat.profils %}
                                         {% if profil == app.user %}
@@ -72,7 +72,7 @@
                     {% else %}
                         {% if chat.connectionbyid > 0 %}
                             <div class="col s12 connected">
-                                <div class="col s12 m6 l2 image">
+                                <div class="col s3 m6 l2 image">
                                     {#Nom du profil avec qui l'on veut discuter#}
                                     {% for profil in chat.profils %}
                                         {% if profil == app.user %}
@@ -85,7 +85,7 @@
                                         {% endif %}
                                     {% endfor %}
                                 </div>
-                                <div class="col s12 m6 l3 Nom_prenom">
+                                <div class="col s9 m6 l3 Nom_prenom">
 
                                     {#Nom du profil avec qui l'on veut discuter#}
                                     {% for profil in chat.profils %}
@@ -136,7 +136,7 @@
                                 {% else %}
 
                                     <div class="col s12 connected">
-                                        <div class="col s12 m6 l2 image">
+                                        <div class="col s3 m6 l2 image">
                                             {#Nom du profil avec qui l'on veut discuter#}
                                             {% for profil in chat.profils %}
                                                 {% if profil == app.user %}
@@ -149,7 +149,7 @@
                                                 {% endif %}
                                             {% endfor %}
                                         </div>
-                                        <div class="col s12 m6 l3 Nom_prenom">
+                                        <div class="col s9 m6 l3 Nom_prenom">
                                             <p>{{ 'Prenom: '|trans }}{{ profil.prenom }}</p>
                                         </div>
                                         <div class="col s12 m6 l7">

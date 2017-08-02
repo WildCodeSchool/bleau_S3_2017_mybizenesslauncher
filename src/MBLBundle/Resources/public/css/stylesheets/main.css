@@ -9,10 +9,16 @@ CONSTANTE
   min-height: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  /* line 25, ../sass/_global.scss */
+  .bobol {
+    min-height: auto;
+  }
+}
 /*
 Font
 */
-/* line 28, ../sass/_global.scss */
+/* line 35, ../sass/_global.scss */
 html {
   font-family: font36452;
 }
@@ -22,13 +28,13 @@ Variable globale
 
 BALISE
 */
-/* line 42, ../sass/_global.scss */
+/* line 49, ../sass/_global.scss */
 h1 {
   font-size: 1.5em;
   color: white;
 }
 
-/* line 47, ../sass/_global.scss */
+/* line 54, ../sass/_global.scss */
 h3 {
   font-size: 1.5em;
 }
@@ -45,23 +51,23 @@ h3 {
   }
   @return $colorH2;
 */
-/* line 62, ../sass/_global.scss */
+/* line 69, ../sass/_global.scss */
 h2 {
   color: white;
   text-align: center;
 }
 
-/* line 67, ../sass/_global.scss */
+/* line 74, ../sass/_global.scss */
 body {
   background-color: #f0f0f0;
 }
 
-/* line 71, ../sass/_global.scss */
+/* line 78, ../sass/_global.scss */
 a {
   color: inherit;
 }
 
-/* line 73, ../sass/_global.scss */
+/* line 80, ../sass/_global.scss */
 .btn {
   line-height: normal !important;
   height: auto !important;
@@ -69,7 +75,7 @@ a {
   width: 100% !important;
 }
 
-/* line 79, ../sass/_global.scss */
+/* line 86, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -78,18 +84,26 @@ a {
   min-width: 200px;
   max-width: 300px;
 }
+@media only screen and (max-width: 600px) {
+  /* line 86, ../sass/_global.scss */
+  .vignette_projet {
+    height: auto;
+    min-width: 0;
+    max-width: none;
+  }
+}
 
-/* line 88, ../sass/_global.scss */
+/* line 99, ../sass/_global.scss */
 .vignette_projet_row {
   left: 30%;
 }
 
-/* line 91, ../sass/_global.scss */
+/* line 102, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 95, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -98,13 +112,21 @@ a {
   max-width: 300px;
   min-width: 200px;
 }
+@media only screen and (max-width: 600px) {
+  /* line 106, ../sass/_global.scss */
+  .vignette_profil {
+    height: auto;
+    min-width: 0;
+    max-width: none;
+  }
+}
 
-/* line 103, ../sass/_global.scss */
+/* line 119, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 106, ../sass/_global.scss */
+/* line 122, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
@@ -113,20 +135,20 @@ a {
   margin-bottom: 10px;
 }
 
-/* line 113, ../sass/_global.scss */
+/* line 129, ../sass/_global.scss */
 .bandeau_homepage {
   width: 100%;
   background: #98d4e1;
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 113, ../sass/_global.scss */
-  .bandeau_homepage {
-    display: none;
+  /* line 134, ../sass/_global.scss */
+  .bandeau_homepage .bandeau_homepage {
+    font-size: 35px;
   }
 }
 
-/* line 121, ../sass/_global.scss */
+/* line 139, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -138,28 +160,28 @@ a {
   hyphens: auto;
 }
 
-/* line 131, ../sass/_global.scss */
+/* line 149, ../sass/_global.scss */
 .photo_profil {
   max-height: 7em;
   border-radius: 8px;
 }
 
-/* line 141, ../sass/_global.scss */
+/* line 159, ../sass/_global.scss */
 .info_profil {
   background: white;
 }
 
-/* line 146, ../sass/_global.scss */
+/* line 164, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 150, ../sass/_global.scss */
+/* line 168, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 153, ../sass/_global.scss */
+/* line 171, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }
@@ -303,7 +325,7 @@ h6 {
 @media only screen and (max-width: 600px) {
   /* line 109, ../sass/_index.scss */
   #index .vignette1 {
-    margin-bottom: 10;
+    margin-bottom: 10px;
   }
 }
 
@@ -351,23 +373,23 @@ Layout.html.twig
   padding-top: 5px;
 }
 @media only screen and (max-width: 600px) {
-  /* line 29, ../sass/_layout.scss */
-  .bandeau {
-    display: none;
+  /* line 37, ../sass/_layout.scss */
+  .bandeau .bandeau_homepage {
+    font-size: 35px;
   }
 }
 
-/* line 42, ../sass/_layout.scss */
+/* line 44, ../sass/_layout.scss */
 .color {
   color: #98d4e1;
 }
 
-/* line 46, ../sass/_layout.scss */
+/* line 48, ../sass/_layout.scss */
 .bandeauH2 {
   color: White;
 }
 
-/* line 51, ../sass/_layout.scss */
+/* line 53, ../sass/_layout.scss */
 .darkerBiz {
   font-size: 1.3em;
   font-weight: bold;
@@ -376,12 +398,12 @@ Layout.html.twig
   text-decoration: none;
 }
 
-/* line 59, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 a .logoEbMenu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 59, ../sass/_layout.scss */
+  /* line 61, ../sass/_layout.scss */
   a .logoEbMenu {
     display: inline;
     max-height: 35px;
@@ -391,12 +413,12 @@ a .logoEbMenu {
   }
 }
 
-/* line 70, ../sass/_layout.scss */
+/* line 72, ../sass/_layout.scss */
 .lancer {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 70, ../sass/_layout.scss */
+  /* line 72, ../sass/_layout.scss */
   .lancer {
     display: inline;
     font-size: 1em;
@@ -407,46 +429,46 @@ a .logoEbMenu {
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 70, ../sass/_layout.scss */
+  /* line 72, ../sass/_layout.scss */
   .lancer {
     display: none;
   }
 }
 
-/* line 84, ../sass/_layout.scss */
+/* line 86, ../sass/_layout.scss */
 .lancer:hover {
   color: #6f9ea8;
   font-size: 1.1em;
 }
 
-/* line 89, ../sass/_layout.scss */
+/* line 91, ../sass/_layout.scss */
 .darkerBiz:hover {
   color: #FB5B57;
   opacity: 0.9;
 }
 
-/* line 94, ../sass/_layout.scss */
+/* line 96, ../sass/_layout.scss */
 .lancerSmall {
   font-size: 1em;
   font-weight: bold !important;
 }
 
-/* line 99, ../sass/_layout.scss */
+/* line 101, ../sass/_layout.scss */
 .darkerTop:hover {
   color: #6f9ea8;
 }
 
-/* line 103, ../sass/_layout.scss */
+/* line 105, ../sass/_layout.scss */
 .dropdown-content li > a {
   color: #4b494b;
 }
 
-/* line 107, ../sass/_layout.scss */
+/* line 109, ../sass/_layout.scss */
 a .logoEbMenu:hover {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  /* line 107, ../sass/_layout.scss */
+  /* line 109, ../sass/_layout.scss */
   a .logoEbMenu:hover {
     display: inline;
     max-height: 35px;
@@ -456,7 +478,7 @@ a .logoEbMenu:hover {
   }
 }
 
-/* line 118, ../sass/_layout.scss */
+/* line 120, ../sass/_layout.scss */
 .material-icons {
   display: inline !important;
   vertical-align: middle !important;
@@ -471,126 +493,126 @@ a .logoEbMenu:hover {
   font-feature-settings: 'liga';
 }
 
-/* line 131, ../sass/_layout.scss */
+/* line 133, ../sass/_layout.scss */
 .material-icons.md-grey, .md-euro {
   font-size: 24px;
 }
 @media only screen and (max-width: 992px) {
-  /* line 131, ../sass/_layout.scss */
+  /* line 133, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     color: #4b494b;
   }
 }
 @media only screen and (min-width: 993px) {
-  /* line 131, ../sass/_layout.scss */
+  /* line 133, ../sass/_layout.scss */
   .material-icons.md-grey, .md-euro {
     display: none !important;
   }
 }
 
-/* line 141, ../sass/_layout.scss */
+/* line 143, ../sass/_layout.scss */
 .material-icons.md-grey:hover, .md-euro:hover {
   color: #6f9ea8;
 }
 
 @media only screen and (max-width: 992px) {
-  /* line 145, ../sass/_layout.scss */
+  /* line 147, ../sass/_layout.scss */
   .BB {
     display: none;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 150, ../sass/_layout.scss */
+  /* line 152, ../sass/_layout.scss */
   .PP {
     display: none;
   }
 }
 
-/* line 161, ../sass/_layout.scss */
+/* line 163, ../sass/_layout.scss */
 .BB:hover {
   box-shadow: inset 0 -2px 0 #FB5B57;
 }
 
-/* line 166, ../sass/_layout.scss */
+/* line 168, ../sass/_layout.scss */
 .modal .tabs {
   margin: 0;
   padding: 0;
   background-color: #98d4e1;
 }
-/* line 171, ../sass/_layout.scss */
+/* line 173, ../sass/_layout.scss */
 .modal .tab a {
   color: grey;
 }
-/* line 174, ../sass/_layout.scss */
+/* line 176, ../sass/_layout.scss */
 .modal .tab a:hover {
   color: #4b494b;
 }
-/* line 177, ../sass/_layout.scss */
+/* line 179, ../sass/_layout.scss */
 .modal .tab a.active {
   color: #4b494b;
 }
-/* line 180, ../sass/_layout.scss */
+/* line 182, ../sass/_layout.scss */
 .modal .tabs .indicator {
   background-color: #4b494b;
 }
 
-/* line 185, ../sass/_layout.scss */
+/* line 187, ../sass/_layout.scss */
 #Connexion, #register {
   margin-top: 25px;
 }
 
-/* line 189, ../sass/_layout.scss */
+/* line 191, ../sass/_layout.scss */
 .remember {
   margin-top: 10px;
 }
 
-/* line 193, ../sass/_layout.scss */
+/* line 195, ../sass/_layout.scss */
 [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
 
-/* line 199, ../sass/_layout.scss */
+/* line 201, ../sass/_layout.scss */
 .submitRegister {
   margin-top: 55px;
 }
 
-/* line 203, ../sass/_layout.scss */
+/* line 205, ../sass/_layout.scss */
 .moreRegisterHidden {
   display: none;
 }
 
-/* line 207, ../sass/_layout.scss */
+/* line 209, ../sass/_layout.scss */
 .moreRegister {
   margin-top: 25px;
 }
 
-/* line 211, ../sass/_layout.scss */
+/* line 213, ../sass/_layout.scss */
 textarea #fos_user_registration_form_description {
   height: 10em;
 }
 
-/* line 215, ../sass/_layout.scss */
+/* line 217, ../sass/_layout.scss */
 #fos_user_registration_form_description {
   border: 1.5px solid lightgray;
   border-radius: 10px;
   outline: none;
 }
 
-/* line 221, ../sass/_layout.scss */
+/* line 223, ../sass/_layout.scss */
 input, button {
   border: 1.5px solid lightgray !important;
   border-radius: 10px !important;
   outline: none;
 }
 
-/* line 227, ../sass/_layout.scss */
+/* line 229, ../sass/_layout.scss */
 #login .btn, #register .btn {
   background: #98d4e1 !important;
 }
 
-/* line 231, ../sass/_layout.scss */
+/* line 233, ../sass/_layout.scss */
 #username:focus, #password:focus, #fos_user_registration_form_description:focus, .customRegister:focus {
   border: 1.5px solid #98d4e1 !important;
   border-radius: 10px;
@@ -598,29 +620,41 @@ input, button {
   box-shadow: none !important;
 }
 
-/* line 7, ../sass/_userHomepage.scss */
+/* line 4, ../sass/_userHomepage.scss */
 #homepage .UHP {
   width: 100%;
   padding-top: 100px;
 }
-/* line 12, ../sass/_userHomepage.scss */
+/* line 9, ../sass/_userHomepage.scss */
 #homepage .btnlink {
   text-align: center;
   height: 100px;
 }
-/* line 21, ../sass/_userHomepage.scss */
+/* line 14, ../sass/_userHomepage.scss */
 #homepage .btn {
   background-color: #98d4e1;
   width: 300px;
 }
-/* line 24, ../sass/_userHomepage.scss */
+/* line 17, ../sass/_userHomepage.scss */
 #homepage .btn:hover {
   background-color: #98d4e1;
   box-shadow: 2px 2px 3px grey;
 }
-/* line 29, ../sass/_userHomepage.scss */
+/* line 22, ../sass/_userHomepage.scss */
 #homepage .btn:focus {
   background-color: #98d4e1;
+}
+@media screen and (max-width: 600px) {
+  /* line 28, ../sass/_userHomepage.scss */
+  #homepage .UHP {
+    width: 100%;
+    padding-top: 40px;
+  }
+  /* line 33, ../sass/_userHomepage.scss */
+  #homepage .btnlink {
+    text-align: center;
+    height: 50px;
+  }
 }
 
 /* line 2, ../sass/_showProject.scss */
@@ -694,6 +728,12 @@ input, button {
   /* line 47, ../sass/_showProject.scss */
   .showProjet .vignette {
     margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 2, ../sass/_showProject.scss */
+  .showProjet {
+    padding: 20px;
   }
 }
 
@@ -777,6 +817,21 @@ input, button {
   /* line 62, ../sass/_showMyProject.scss */
   #showMyProjet .vignettemypro {
     margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 67, ../sass/_showMyProject.scss */
+  #showMyProjet .vignette_Myprojet {
+    padding-bottom: 20px;
+    height: auto;
+    max-width: none;
+    min-width: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 3, ../sass/_showMyProject.scss */
+  #showMyProjet {
+    margin: 20px;
   }
 }
 
@@ -915,11 +970,17 @@ input, button {
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 17, ../sass/_formCreatePro.scss */
+@media only screen and (max-width: 600px) {
+  /* line 6, ../sass/_formCreatePro.scss */
+  #formCreatePro .vignette_projet_profilAdd {
+    max-width: none;
+  }
+}
+/* line 18, ../sass/_formCreatePro.scss */
 #formCreatePro .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 21, ../sass/_formCreatePro.scss */
+/* line 22, ../sass/_formCreatePro.scss */
 #formCreatePro .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;
@@ -927,57 +988,57 @@ input, button {
   background-color: white;
   height: 18em;
 }
-/* line 32, ../sass/_formCreatePro.scss */
+/* line 33, ../sass/_formCreatePro.scss */
 #formCreatePro .deleteProfilR {
-  margin: 10px;
+  margin-top: 10px;
   background-color: #98d4e1;
 }
-/* line 41, ../sass/_formCreatePro.scss */
+/* line 42, ../sass/_formCreatePro.scss */
 #formCreatePro label.required:after {
   content: "*";
 }
-/* line 44, ../sass/_formCreatePro.scss */
+/* line 45, ../sass/_formCreatePro.scss */
 #formCreatePro label {
   color: dimgrey;
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 51, ../sass/_formCreatePro.scss */
+/* line 52, ../sass/_formCreatePro.scss */
 #formCreatePro p .container {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 56, ../sass/_formCreatePro.scss */
+/* line 57, ../sass/_formCreatePro.scss */
 #formCreatePro p .btn {
   margin-bottom: 20px;
 }
-/* line 66, ../sass/_formCreatePro.scss */
+/* line 67, ../sass/_formCreatePro.scss */
 #formCreatePro input[type=text], #formCreatePro input[type=password], #formCreatePro input[type=email], #formCreatePro input[type=url], #formCreatePro input[type=time],
 #formCreatePro input[type=date], #formCreatePro input[type=datetime], #formCreatePro input[type=datetime-local], #formCreatePro input[type=tel], #formCreatePro input[type=number],
 #formCreatePro input[type=search] {
   border: 1.5px solid lightgray;
   border-radius: 10px;
 }
-/* line 73, ../sass/_formCreatePro.scss */
+/* line 74, ../sass/_formCreatePro.scss */
 #formCreatePro input:focus {
   border: 1.5px solid #98d4e1;
   border-radius: 10px;
   outline: none;
 }
-/* line 78, ../sass/_formCreatePro.scss */
+/* line 79, ../sass/_formCreatePro.scss */
 #formCreatePro input {
   background-color: #98d4e1;
 }
-/* line 83, ../sass/_formCreatePro.scss */
+/* line 84, ../sass/_formCreatePro.scss */
 #formCreatePro ul li span {
   color: #4b494b;
 }
-/* line 86, ../sass/_formCreatePro.scss */
+/* line 87, ../sass/_formCreatePro.scss */
 #formCreatePro [type="checkbox"]:checked + label:before {
   border-right: 2px solid #4b494b;
   border-bottom: 2px solid #4b494b;
 }
-/* line 92, ../sass/_formCreatePro.scss */
+/* line 93, ../sass/_formCreatePro.scss */
 #formCreatePro .profilR {
   margin-top: 40px;
 }
@@ -1123,72 +1184,85 @@ input, button {
   height: 35em;
   max-width: 300px;
 }
-/* line 14, ../sass/_showAllProfils.scss */
+@media only screen and (max-width: 600px) {
+  /* line 7, ../sass/_showAllProfils.scss */
+  #showAllProfils .vignette_profil_all {
+    max-width: none;
+    height: auto;
+  }
+}
+/* line 18, ../sass/_showAllProfils.scss */
 #showAllProfils .vignette_profil_all:hover {
   background-color: #4b494b;
 }
-/* line 17, ../sass/_showAllProfils.scss */
+/* line 21, ../sass/_showAllProfils.scss */
 #showAllProfils .logodefault {
   width: 90px;
 }
-/* line 20, ../sass/_showAllProfils.scss */
+/* line 24, ../sass/_showAllProfils.scss */
 #showAllProfils .encarttof {
   padding-top: 10px;
 }
-/* line 23, ../sass/_showAllProfils.scss */
+/* line 27, ../sass/_showAllProfils.scss */
 #showAllProfils .intitul {
   padding: 0;
 }
-/* line 26, ../sass/_showAllProfils.scss */
+/* line 30, ../sass/_showAllProfils.scss */
 #showAllProfils .intitul h4 {
   margin-bottom: 10px;
   font-weight: bold;
 }
 @media only screen and (min-width: 993px) {
-  /* line 26, ../sass/_showAllProfils.scss */
+  /* line 30, ../sass/_showAllProfils.scss */
   #showAllProfils .intitul h4 {
     font-size: 1.4em;
   }
 }
 @media only screen and (max-width: 992px) {
-  /* line 26, ../sass/_showAllProfils.scss */
+  /* line 30, ../sass/_showAllProfils.scss */
   #showAllProfils .intitul h4 {
     font-size: 1.4em;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 26, ../sass/_showAllProfils.scss */
+  /* line 30, ../sass/_showAllProfils.scss */
   #showAllProfils .intitul h4 {
     font-size: 1.3em;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 39, ../sass/_showAllProfils.scss */
+  /* line 43, ../sass/_showAllProfils.scss */
   #showAllProfils .vignette {
     margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 44, ../sass/_showAllProfils.scss */
+  /* line 48, ../sass/_showAllProfils.scss */
   #showAllProfils .vignette1 {
-    margin-bottom: 10;
+    margin-bottom: 10px;
   }
 }
-/* line 49, ../sass/_showAllProfils.scss */
+/* line 53, ../sass/_showAllProfils.scss */
 #showAllProfils .btndiscuss {
   background-color: gray;
 }
-/* line 52, ../sass/_showAllProfils.scss */
+/* line 56, ../sass/_showAllProfils.scss */
 #showAllProfils .btndiscuss:hover {
   background-color: #98d4e1;
 }
-/* line 55, ../sass/_showAllProfils.scss */
+/* line 59, ../sass/_showAllProfils.scss */
 #showAllProfils .btnfilt {
   padding-top: 30px;
 }
-/* line 58, ../sass/_showAllProfils.scss */
+/* line 62, ../sass/_showAllProfils.scss */
 #showAllProfils .btnfilterAllprofil {
   background-color: #98d4e1;
+}
+@media only screen and (max-width: 600px) {
+  /* line 2, ../sass/_showAllProfils.scss */
+  #showAllProfils {
+    margin-top: 10px;
+  }
 }
 
 /*
@@ -1198,7 +1272,13 @@ chat.html.twig
 #chat {
   margin-top: 50px;
 }
-/* line 8, ../sass/_chat.scss */
+@media only screen and (max-width: 600px) {
+  /* line 5, ../sass/_chat.scss */
+  #chat {
+    margin-top: 10px;
+  }
+}
+/* line 10, ../sass/_chat.scss */
 #chat .chat_box {
   border: 2px solid #98d4e1;
   border-radius: 10px;
@@ -1209,45 +1289,56 @@ chat.html.twig
   background-color: #98d4e1;
 }
 @media only screen and (max-width: 992px) {
-  /* line 8, ../sass/_chat.scss */
+  /* line 10, ../sass/_chat.scss */
   #chat .chat_box {
     height: 150px;
   }
 }
-/* line 22, ../sass/_chat.scss */
+@media only screen and (max-width: 600px) {
+  /* line 10, ../sass/_chat.scss */
+  #chat .chat_box {
+    height: 55px;
+  }
+}
+/* line 27, ../sass/_chat.scss */
 #chat .chat_box:hover {
   background-color: #f0f0f0;
 }
-/* line 34, ../sass/_chat.scss */
+/* line 39, ../sass/_chat.scss */
 #chat #chat_text {
   color: #4b494b;
   margin-top: 5px;
   border: 2px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 42, ../sass/_chat.scss */
+@media only screen and (max-width: 600px) {
+  /* line 47, ../sass/_chat.scss */
+  #chat #chat_text input[type=text] {
+    margin: auto;
+  }
+}
+/* line 53, ../sass/_chat.scss */
 #chat .Nom_prenom p {
   color: #4b494b;
   font-size: 1.1em;
 }
-/* line 48, ../sass/_chat.scss */
+/* line 59, ../sass/_chat.scss */
 #chat .color-text {
   border: 1px solid #98d4e1;
   background-color: #98d4e1;
   border-radius: 10px;
 }
-/* line 55, ../sass/_chat.scss */
+/* line 66, ../sass/_chat.scss */
 #chat .color-text-user {
   border: 1px solid #98d4e1;
   border-radius: 10px;
 }
-/* line 84, ../sass/_chat.scss */
+/* line 95, ../sass/_chat.scss */
 #chat .group-text {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
   border-bottom: 1px solid #98d4e1;
 }
-/* line 89, ../sass/_chat.scss */
+/* line 99, ../sass/_chat.scss */
 #chat .btnfilterAllprofil {
   background-color: #98d4e1;
 }
@@ -1266,25 +1357,40 @@ chat.html.twig
   border: 1px solid #c8c8c8;
   border-radius: 10px;
 }
-/* line 16, ../sass/_chatConnection.scss */
+/* line 15, ../sass/_chatConnection.scss */
 #chat_connection .Nom_prenom p {
   margin-left: 50px;
   color: #4b494b;
   font-size: 1.2em;
 }
-/* line 22, ../sass/_chatConnection.scss */
+/* line 21, ../sass/_chatConnection.scss */
 #chat_connection .image img {
   height: 80px;
 }
-/* line 27, ../sass/_chatConnection.scss */
+/* line 26, ../sass/_chatConnection.scss */
 #chat_connection .btnfilterAllprofil {
   background-color: #98d4e1;
 }
-/* line 53, ../sass/_chatConnection.scss */
+/* line 30, ../sass/_chatConnection.scss */
 #chat_connection .group-text {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #c8c8c8;
+}
+@media only screen and (max-width: 600px) {
+  /* line 37, ../sass/_chatConnection.scss */
+  #chat_connection .image img {
+    height: auto;
+    margin-top: 10px;
+  }
+  /* line 41, ../sass/_chatConnection.scss */
+  #chat_connection .Nom_prenom p {
+    margin-left: auto;
+  }
+  /* line 44, ../sass/_chatConnection.scss */
+  #chat_connection .right {
+    float: none !important;
+  }
 }
 
 /* line 4, ../sass/_showOneProject.scss */
@@ -1422,11 +1528,17 @@ chat.html.twig
   border: 2px solid #f0f0f0;
   max-width: 300px;
 }
-/* line 26, ../sass/_editProject.scss */
+@media only screen and (max-width: 600px) {
+  /* line 18, ../sass/_editProject.scss */
+  #editProject .vignette_projet_profilAdd {
+    max-width: none;
+  }
+}
+/* line 29, ../sass/_editProject.scss */
 #editProject .vignette_projet_profilAdd:hover {
   background-color: #f0f0f0;
 }
-/* line 30, ../sass/_editProject.scss */
+/* line 33, ../sass/_editProject.scss */
 #editProject .info_projet_profilAdd {
   border-radius: 8px;
   overflow: scroll;

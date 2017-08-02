@@ -49,5 +49,8 @@
       margin-bottom: 0;
     }
   }
+  @media #{$small-and-down}{
+    padding: 20px;
+  }
 
 }

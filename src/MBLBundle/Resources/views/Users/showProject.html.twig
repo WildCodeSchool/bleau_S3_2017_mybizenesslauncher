@@ -44,20 +44,20 @@
                             </div>
 
                             <div class="row info_projet">
-                                <div class="col s12">
+                                <div class="row">
 
                                     <h6>{{ 'Type de projet'|trans }}</h6>
                                     {{ pro.typeDeProjet }}
 
                                     <div class="divider"></div>
                                 </div>
-                                <div class="col s12">
+                                <div class="row">
                                     <h6>{{ 'Secteur'|trans }}</h6>
 
                                     {{ pro.secteur }}
                                     <div class="divider"></div>
                                 </div>
-                                <div class="col s12">
+                                <div class="row">
                                     <h6>{{ 'Profils recherchés'|trans }}</h6>
                                     {% for profil in pro['metier'] %}
                                         {% if profil|length > 10 %}
@@ -83,12 +83,12 @@
                                     {% endif %}
                                     <div class="divider"></div>
                                 </div>
-                                <div class="col s12">
+                                <div class="row">
                                     <h6>{{ 'Localisation'|trans }}</h6>
                                     <p>{{ pro.localisation }}</p>
                                     <div class="divider"></div>
                                 </div>
-                                <div class="col s12">
+                                <div class="row">
                                     <h6>{{ 'Description'|trans }}</h6>
                                     <p>{{ pro.description }}</p>
                                 </div>
