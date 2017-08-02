@@ -18,31 +18,43 @@
                     <p>{{ 'index.description.howDo'|trans}}</p>
                 </div>
             </div>
-            <div class="col s12 m2 offset-m1">
-                <div class="row Outils hide-on-med-and-down">
-                    <div class="col s12">
-                        <a class="waves-effect waves-light btn btn_bandeau_homepage btn_outils valign-wrapper" href="#">
-                            {{ 'Outils pour se lancer'|trans }}</a>
+            <div class="col l8">
+                <div class="row">
+                    <div class="col m6 hide-on-med-and-down">
+                        <div class="Outils">
+                            <div class="col s12 center-align">
+                                <a class="waves-effect waves-light btn btn_bandeau_homepage btn_outils valign-wrapper" href="#">
+                                    {{ 'Outils pour se lancer'|trans }}
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col s12">
-                        <p>{{ 'Trouve sur MyStartupTools.com'|trans }}<br/>
-                            {{ 'Tous les outils pour t’aider à lancer ton activité'|trans}}</p>
+                    <div class="col m6 hide-on-med-and-down">
+                        <div class="Finance">
+                            <div class="col s6 btn_eBusta">
+                                <a class="waves-effect waves-light btn btn_bandeau_homepage btn_finance valign-wrapper" target="blanck"
+                                   href="https://www.e-busta.com/">{{ 'Finance ton projet'|trans}}</a>
+                            </div>
+                            <div class="col s6">
+                                <img class="responsive-img logoEb" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col m4 offset-m1">
-                <div class="row Finance hide-on-med-and-down">
-                    <div class="col s6 btn_eBusta">
-                        <a class="waves-effect waves-light btn btn_bandeau_homepage btn_finance valign-wrapper" target="blanck"
-                           href="https://www.e-busta.com/">{{ 'Finance ton projet'|trans}}</a>
+
+                <div class="row">
+                    <div class="col m6 hide-on-med-and-down">
+                        <div class="col s12 center-align">
+                            <p>
+                                {{ 'Trouve sur MyStartupTools.com'|trans }}
+                                {{ 'Tous les outils pour t’aider à lancer ton activité'|trans}}
+                            </p>
+                        </div>
                     </div>
-                    <div class="col s6">
-                        <img class="responsive-img logoEb" src="{{ asset('bundles/mbl/img/logoebusta.png') }}">
-                    </div>
-                </div>
-                <div class="row hide-on-med-and-down">
-                    <div class="col s12">
-                        <p>{{ 'index.description.ebusta'|trans }}</p>
+                    <div class="col m6 hide-on-med-and-down">
+                        <div class="col s12">
+                            <p>{{ 'index.description.ebusta'|trans }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,7 +72,7 @@
                     </div>
                     <div class="col s12 m6 l5 offset-l1 btn_createProjet">
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>
+                            <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('createProjet') }}">{{ 'Dépose ton projet'|trans}}</a>
                         {% else %}
                             <a class="waves-effect waves-light btn btn_bandeau_homepage valign-wrapper" href="{{ path('fos_user_registration_register') }}">{{ 'Dépose ton projet'|trans}}</a>
                         {% endif %}
@@ -74,11 +86,11 @@
                                     <div class="col s12 intitul">
                                         <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
                                     </div>
-                                    <div class="col s8 offset-s2 encarttof ">
+                                    <div class="col s12 encarttof valign-wrapper">
                                         {% if pro.fichier is empty %}
-                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                            <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -165,11 +177,11 @@
                                     <div class="col s12 intitul">
                                         <h4>{{ pro.prenom|capitalize|slice(0,15)}} {{ pro.nom|slice(0,1)|capitalize }}.</h4>
                                     </div>
-                                    <div class="col s8 offset-s2 encarttof">
+                                    <div class="col s12 encarttof valign-wrapper">
                                         {% if pro.fichier is empty %}
-                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                            <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                         {% else %}
-                                            <img height="100" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
+                                            <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}">
                                         {% endif %}
                                     </div>
                                 </div>

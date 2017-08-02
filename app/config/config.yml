@@ -207,3 +207,7 @@ easy_admin:
     design:
         brand_color: '#98d4e1'
         color_scheme: 'light'
+
+lexik_translation:
+    fallback_locale: ["%locale%"]         # (required) default locale(s) to use
+    managed_locales: [fr, it] # (required) locales that the bundle has to manage

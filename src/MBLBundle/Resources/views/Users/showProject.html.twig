@@ -34,11 +34,11 @@
                                 <div class="col s12 intitul">
                                     <h4>{{ pro.titre|capitalize|slice(0,30)}}</h4>
                                 </div>
-                                <div class="col s8 offset-s2 encarttof">
+                                <div class="col s12 encarttof valign-wrapper">
                                     {% if pro.fichier is empty %}
-                                        <img class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
+                                        <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}">
                                     {% else %}
-                                        <img class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
+                                        <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier[0].photo ) }}">
                                     {% endif %}
                                 </div>
                             </div>

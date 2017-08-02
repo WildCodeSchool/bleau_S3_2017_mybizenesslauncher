@@ -29,14 +29,12 @@
 'Mes discussions': 'Mes discussions'
 'Métiers:': 'Métiers:'
 'Mise en Relation': 'Mise en relation'
-'Mise en relation': 'Mise en relation'
 'Modifier mon profil': 'Modifier mon profil'
 'Modifier mon projet': 'Modifier mon projet'
 'Mon compte': 'Mon compte'
 'Mon profil public': 'Mon profil public'
 'Nom et prénom :': 'Nom et prénom:'
 'Nom: ': 'Nom:'
-'Nom:': Nom
 'Non renseigné': 'Non renseigné'
 'Non renseignée': 'Non renseignée'
 'Nouveau Profil recherché': 'Nouveau Profil recherché'
@@ -54,7 +52,6 @@
 'Pour les porteurs de projet': 'Pour les porteurs de projet'
 'précisez votre métier': 'Précisez votre métier'
 'Prenom: ': 'Prénom: '
-'Prenom:': Prénom
 'Profil Recherché': 'Profil Recherché'
 'Profils recherchés': 'Profils recherchés'
 'Projet créé le': 'Projet créé le'
@@ -62,7 +59,6 @@
 'renseignez votre localisation': 'Renseignez votre adresse'
 'renseignez votre status': 'Renseignez votre statut'
 'Site Internet': 'Site Internet'
-'site internet': 'Site Internet'
 'Titre': 'Titre'
 'Tous les outils pour t’aider à lancer ton activité': 'tous les outils pour t’aider à lancer ton activité.'
 'Trouve sur MyStartupTools.com': 'Trouve sur MyStartupTools.com'
@@ -85,7 +81,6 @@ Connectez-vous: Connexion
 Conseils: Conseils
 Contact: Contact
 Création: Création
-Description: Description
 Discuter: Discuter
 Disponibilité: Disponibilité
 Domicile: Domicile
@@ -114,7 +109,6 @@ Presse: Presse
 Profil: Profil
 Projet: Projet
 Quel est votre profil?: Quel est votre profil ?
-rechercher: Rechercher
 Rechercher: Rechercher
 Secteur: Secteur
 Statut: Statut

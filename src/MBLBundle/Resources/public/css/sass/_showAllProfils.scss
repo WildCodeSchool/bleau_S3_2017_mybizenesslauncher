@@ -23,6 +23,10 @@
   }
   .encarttof{
     padding-top: 10px;
+    height: 110px;
+    @media #{$small-and-down}{
+      height: auto;
+    }
   }
   .intitul{
     padding:0;

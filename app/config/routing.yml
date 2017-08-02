@@ -5,6 +5,10 @@ mbl:
         _locale: it|fr|
        #        _locale: fr|it
 
+lexik_translation_edition:
+    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+    prefix:   /admin/trad
+
 mbl_changeLocale:
     path: /{locale}
     defaults: { _controller: MBLBundle:User:changeLocale }

@@ -38,12 +38,12 @@
                                     <div class="col s12 intitul">
                                         <h4>{{ pro.prenom|capitalize|slice(0,15)}}</h4>
                                     </div>
-                                    <div class="col s8 offset-s2 encarttof">
+                                    <div class="col s12 encarttof valign-wrapper">
                                         {% if pro.fichier is empty %}
-                                            <img height="50px" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}" alt="img_profil">
+                                            <img style="margin: auto;" class="responsive-img photo_profil" src="{{ asset('bundles/mbl/img/logoinnovaupsstxt.png') }}" alt="img_profil">
                                         {% else %}
                                             {# TODO: à verifier #}
-                                            <img height="50px" class="responsive-img  photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}" alt="img_profil">
+                                            <img style="margin: auto;" class="responsive-img  photo_profil" src="{{ asset('uploads/images/' ~ pro.fichier.photo ) }}" alt="img_profil">
                                         {% endif %}
                                     </div>
                                 </div>
