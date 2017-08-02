@@ -118,10 +118,10 @@
 
                     <div class="col s12 m6 section">
                         <h6 class="center"><img class= "linkedIn responsive-img" src="{{ asset('bundles/mbl/img/Logo-2C-21px-TM.png') }}"></h6>
-                        {% if profil.linkedIn is same as(null) %}
+                        {% if profil.linkedIn == 'http://VotrelinkedIn' %}
                             <p class="center grey-text">{{ 'Non renseigné'|trans }}</p>
                         {% else %}
-                            <p>{{ profil.linkedIn }}</p>
+                            <p><a href="{{ profil.linkedIn }}">Link</a></p>
                         {% endif %}
                     </div>
                     {% if app.user.id is defined %}

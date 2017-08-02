@@ -61,7 +61,15 @@ a {
   color: inherit;
 }
 
-/* line 74, ../sass/_global.scss */
+/* line 73, ../sass/_global.scss */
+.btn {
+  line-height: normal !important;
+  height: auto !important;
+  padding: 10px !important;
+  width: 100% !important;
+}
+
+/* line 79, ../sass/_global.scss */
 .vignette_projet {
   background-color: #4b494b;
   border-radius: 8px;
@@ -71,17 +79,17 @@ a {
   max-width: 300px;
 }
 
-/* line 83, ../sass/_global.scss */
+/* line 88, ../sass/_global.scss */
 .vignette_projet_row {
   left: 30%;
 }
 
-/* line 86, ../sass/_global.scss */
+/* line 91, ../sass/_global.scss */
 .vignette_projet:hover {
   background-color: #98d4e1;
 }
 
-/* line 90, ../sass/_global.scss */
+/* line 95, ../sass/_global.scss */
 .vignette_profil {
   background-color: #98d4e1;
   border-radius: 8px;
@@ -91,12 +99,12 @@ a {
   min-width: 200px;
 }
 
-/* line 98, ../sass/_global.scss */
+/* line 103, ../sass/_global.scss */
 .vignette_profil:hover {
   background-color: #4b494b;
 }
 
-/* line 101, ../sass/_global.scss */
+/* line 106, ../sass/_global.scss */
 .info_projet {
   border-radius: 8px;
   overflow: scroll;
@@ -105,20 +113,20 @@ a {
   margin-bottom: 10px;
 }
 
-/* line 107, ../sass/_global.scss */
+/* line 113, ../sass/_global.scss */
 .bandeau_homepage {
   width: 100%;
   background: #98d4e1;
   color: white;
 }
 @media only screen and (max-width: 600px) {
-  /* line 107, ../sass/_global.scss */
+  /* line 113, ../sass/_global.scss */
   .bandeau_homepage {
     display: none;
   }
 }
 
-/* line 115, ../sass/_global.scss */
+/* line 121, ../sass/_global.scss */
 .vignette {
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -130,28 +138,28 @@ a {
   hyphens: auto;
 }
 
-/* line 125, ../sass/_global.scss */
+/* line 131, ../sass/_global.scss */
 .photo_profil {
   max-height: 7em;
   border-radius: 8px;
 }
 
-/* line 135, ../sass/_global.scss */
+/* line 141, ../sass/_global.scss */
 .info_profil {
   background: white;
 }
 
-/* line 140, ../sass/_global.scss */
+/* line 146, ../sass/_global.scss */
 h6 {
   font-weight: bold;
 }
 
-/* line 144, ../sass/_global.scss */
+/* line 150, ../sass/_global.scss */
 .select-dropdown {
   border-radius: 10px;
 }
 
-/* line 147, ../sass/_global.scss */
+/* line 153, ../sass/_global.scss */
 .dropdown-content li > a, .dropdown-content li > span {
   color: #4b494b;
 }

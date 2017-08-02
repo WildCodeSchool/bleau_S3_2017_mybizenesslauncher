@@ -70,7 +70,12 @@ body{
 
 a { color: inherit; }
 //Vignettes
-
+.btn{
+  line-height: normal !important;
+  height: auto !important;
+  padding: 10px !important;
+  width: 100% !important;
+}
 .vignette_projet {
   background-color: $ColorDarkGrey;
   border-radius: $BorderRadius;

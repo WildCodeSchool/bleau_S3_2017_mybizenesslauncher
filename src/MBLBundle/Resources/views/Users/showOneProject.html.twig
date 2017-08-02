@@ -135,7 +135,7 @@
 
                 <div class="col s12 m6 cartepro">
                     <div class="col s12 m12 titre">
-                        <h4>{{ profil.prenom|capitalize }} {{ profil.nom|capitalize }}</h4>
+                        <h4>{{ profil.prenom|capitalize|slice(0,15)}} {{ profil.nom|slice(0,1)|capitalize ~ '.' }}</h4>
                         <p class="center darkgrey-text proprio">({{ 'porteur du projet'|trans }})</p>
                     </div>
                     <div class="col s12 center imgPhoto section">
